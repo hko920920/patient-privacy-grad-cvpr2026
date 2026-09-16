@@ -86,7 +86,7 @@
     "independent_saved_tensor_verification": "PASS",
     "failure_cause_or_membership_performance_claim": false
   },
-  "updated_utc": "2026-09-16T10:56:35.688782+00:00",
+  "updated_utc": "2026-09-16T14:15:48.833312+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -137,7 +137,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_PUBLIC_OPERATING_CONFIRMATION_RESULTS_20260916.md",
+  "current_result_report": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md",
   "stage2_status": "in_progress",
   "comparison_completion_is_not_stage2_completion": true,
   "completed_rank_decomposition": {
@@ -184,7 +184,7 @@
     "original_verification_failure_preserved": true,
     "base_membership_performance_claim": false
   },
-  "next_task": "Bind the CFG7.5 conditional-head objective and fixed same-input generation comparison; re-extract changed-backbone features/predictions/residual/statistics/witnesses, fit public-only and pooled non-DP heads, verify zero/offline-online sampling, then compare actual generation. No old W or new DP solver. Estimated45-75min; update from a bounded extraction profile.",
+  "next_task": "Bounded20-30min design review using current results and existing cohort/statistic evidence: distinguish common calibration from genuinely additional private-cohort information. Justify any public-budget/matched-observation control or representation change before a new experiment; no arbitrary favorable distribution, seed/scale rescue, backbone retuning or DP solver expansion.",
   "completed_meanmax_decomposition": {
     "status": "completed_and_independently_verified",
     "scorers": 4,
@@ -203,7 +203,7 @@
     "finding": "Within-frozen-scorer spread removal lowers observed target ranking in8 contexts; all4 own-target difference intervals include0. Spread use is an existing aggregation property; participation specificity remains unidentified",
     "stage2_completion_claim": false
   },
-  "next_task_output": "Fresh-backbone non-DP public versus pooled head generation feasibility with fixed CFG semantics, new witnesses and numerical validation; not clinical efficacy or DP advantage.",
+  "next_task_output": "A concrete information-gap/representation justification or a decision to end/rework the current shared-head candidate, before further computation.",
   "user_priority_20260915": "User requested maximal concrete follow-through on remaining stage2 investigations; preserve framework and do not substitute further score decomposition for missing baseline execution",
   "completed_eu_comparison": {
     "status": "completed_and_independently_verified",
@@ -351,13 +351,13 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\public_operating_confirmation_20260916_v1",
-    "last_completed_report": "TRACK1_PUBLIC_OPERATING_CONFIRMATION_RESULTS_20260916.md",
-    "additional_execution_contract_fixed": true,
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\medical_head_20260916_v1",
+    "last_completed_report": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md",
+    "additional_execution_contract_fixed": false,
     "stage2_completion_claim": false,
-    "latest_design_review": "TRACK1_PUBLIC_OPERATING_CONFIRMATION_PROTOCOL_20260916.md",
+    "latest_design_review": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md#9",
     "new_two_track_experiment_started": true,
-    "new_two_track_experiment_status": "reserved_confirmation_passed_operating_backbone_conditionally_adopted_nonDP_head_next",
+    "new_two_track_experiment_status": "completed_private_incremental_utility_gate_not_passed_mixed",
     "latest_cpu_outputs": [
       "spec_sources/track1_cpu_allocation_20260916",
       "spec_sources/track2_cpu_audit_20260916"
@@ -473,7 +473,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "fresh_backbone_head_comparison_not_started",
+    "latest_planning_status": "design_review_next_no_new_GPU_contract",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -622,8 +622,8 @@
       "remaining_generation_package_not_completed": true
     },
     "next_substep_estimated_work_minutes": [
-      45,
-      75
+      20,
+      30
     ],
     "sampling_integration_contract_sha256": "c32c1cae5ac2a15b7c3af267f7e03d066e065213024a3bccd03fe40fec65fcfa",
     "historical_pre_sampling_last_completed": {
@@ -967,15 +967,133 @@
     "historical_pre_operating_confirmation_last_completed": {
       "last_completed_report": "TRACK1_PUBLIC_OPERATING_RESULTS_20260916.md",
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\public_operating_diagnostic_20260916_v1"
+    },
+    "medical_backbone_head": {
+      "status": "completed_private_incremental_utility_gate_not_passed_mixed",
+      "completed_utc": "2026-09-16T14:15:48.833312+00:00",
+      "protocol": "TRACK1_MEDICAL_HEAD_PROTOCOL_20260916.md",
+      "report": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md",
+      "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\medical_head_20260916_v1",
+      "initial_estimate_minutes": [
+        45,
+        75
+      ],
+      "records": 4352,
+      "patients": {
+        "public": 32,
+        "train": 80,
+        "eval": 40
+      },
+      "generated_images": 192,
+      "images_per_method": 64,
+      "latent_blocks": 16,
+      "reference_patients": 40,
+      "guidance": 7.5,
+      "objective": "guided residual; conditional head; X=7.5*phi; lambda=.001",
+      "development_MSE": {
+        "public": 0.4479379974827301,
+        "pooled": 0.4477524809409946,
+        "backbone": 0.46729679205928554
+      },
+      "generation_metrics": {
+        "backbone": {
+          "KID_mixed_descriptive": 0.43050582640115254,
+          "KID_by_condition": {
+            "normal": 0.43379874006310937,
+            "effusion": 0.4503897760164035
+          },
+          "KID_condition_mean": 0.44209425803975644,
+          "PRDC": {
+            "precision": 0.625,
+            "recall": 0.0,
+            "density": 0.38125000000000003,
+            "coverage": 0.375
+          },
+          "effective_rank64": 28.36855152633304,
+          "feature_variance64": 57.54466141262845,
+          "specific_matched_cosine": -0.21869896285432253,
+          "specific_margin": -0.0008314619873867109
+        },
+        "public": {
+          "KID_mixed_descriptive": 0.39705500873927013,
+          "KID_by_condition": {
+            "normal": 0.3968508484795792,
+            "effusion": 0.41674656059563686
+          },
+          "KID_condition_mean": 0.406798704537608,
+          "PRDC": {
+            "precision": 0.8125,
+            "recall": 0.0,
+            "density": 0.59375,
+            "coverage": 0.4
+          },
+          "effective_rank64": 26.498604605572687,
+          "feature_variance64": 60.850705630427335,
+          "specific_matched_cosine": -0.12246210304783522,
+          "specific_margin": -0.0030192141134894805
+        },
+        "pooled": {
+          "KID_mixed_descriptive": 0.40063191904395623,
+          "KID_by_condition": {
+            "normal": 0.40122826293216507,
+            "effusion": 0.4204418542824446
+          },
+          "KID_condition_mean": 0.41083505860730485,
+          "PRDC": {
+            "precision": 0.8125,
+            "recall": 0.0,
+            "density": 0.51875,
+            "coverage": 0.375
+          },
+          "effective_rank64": 26.185492760412302,
+          "feature_variance64": 61.209380760993916,
+          "specific_matched_cosine": -0.11279409168034647,
+          "specific_margin": -0.0031476519783737496
+        }
+      },
+      "private_incremental_utility_demonstrated": false,
+      "clinical_utility_proven": false,
+      "DP": false,
+      "new_backbone_training": false,
+      "backbone_backward": 0,
+      "total_UNet_calls": 10215,
+      "total_UNet_examples": 20430,
+      "total_VAE_decodes": 195,
+      "verification_checks": {
+        "head": 48233,
+        "generation": 133976,
+        "metrics": 1878
+      },
+      "partial_positive_signal": "Public head improves descriptive KID by7.98%; pooled improves matched BioViL cosine +.009668 but not specific margin, while KID/density/coverage are worse than public.",
+      "decision": "No new patient-DP solver or further backbone/seed/scale tuning. Bounded design review next; this one split does not prove private-data uselessness.",
+      "source_sha256": {
+        "contract.json": "32bc27e775395113d8075c212434563036755a040722ba43070206d06d8d3d33",
+        "generation_contract.json": "cbc4d3b6cf915079c4921442aeb0ed8f57513470c3aaedbe51a304271f0f08f7",
+        "evaluation_contract.json": "1d3ce75bc983bdaf0581ea255022230869275e5403d3fa88ad538aaf87c3d244",
+        "fit.json": "d9e2bd4d918140274d8ce392aefdb1e7d0b58c02e98b067d605a452d0a0bad5d",
+        "generation.json": "99ed15ddff05faf8418361a42c8556b0fe761d65689148206cb373e6c1b34907",
+        "evaluation.json": "be1df9e6606feb0cbae802ebc710b14b8358a83070fedd852f41a80a1ecd4e14",
+        "head_verification.json": "44d2889e84dca35e68b38578037c7c59758339a26708fe58697b398dcc301023",
+        "generation_verification.json": "5e68422ffae4b07d63a4aeb3cf02953e79ba534450fa2ca6252dbc95b7910d46",
+        "evaluation_verification.json": "52e4bd5da99fca8ee73dc2a335607ab90fd481eb4869382b481c9174568aa906",
+        "visual_review_root.json": "7cd67a0249788dae4444cb7989db7a1c37416857892ddc53cf5af7998bda54f0",
+        "presentation.json": "ab25abf9759c63d7fd72323f401ea25d48a3262318d422aaa5d5b469bdeda051"
+      }
+    },
+    "historical_pre_medical_head_last_completed": {
+      "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\public_operating_confirmation_20260916_v1",
+      "last_completed_report": "TRACK1_PUBLIC_OPERATING_CONFIRMATION_RESULTS_20260916.md",
+      "latest_planning_status": "fresh_backbone_head_comparison_not_started",
+      "new_two_track_experiment_status": "reserved_confirmation_passed_operating_backbone_conditionally_adopted_nonDP_head_next"
     }
   },
-  "step2_active_task": "Test actual small-head/private incremental generation utility on the conditionally adopted public E4/CFG7.5 backbone; keep old failed pilot and all frozen evidence.",
+  "step2_active_task": "Non-DP medical-head generation comparison completed; private incremental utility remains unconfirmed. Bounded design review next.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "step2_open_items": [
-    "Track1: fresh-backbone public-only versus pooled non-DP actual generation utility after the narrow reserved morphology gate passed.",
-    "Track1: patient-DP retention and fair quality-cost comparisons remain untested for this backbone.",
-    "Track1: coarse morphology is not clinical realism, condition accuracy, diversity or general stability; evaluate utility accordingly.",
-    "Track2: retained separately, not an automatic fallback."
+    "Track1: public head changes actual generation and improves some metrics, but pooled private increment is mixed and fails the current utility gate.",
+    "Track1: distinguish public sufficiency, cohort information and limited shared-head representation before further GPU/DP work.",
+    "Track1: clinical utility, independent reproducibility and patient-DP quality-cost superiority remain unestablished.",
+    "Track2 remains retained, not an automatic fallback."
   ],
   "step2_completed_diagnostics": [
     "CDI E480 extraction, four E/U cells18methods144AUC156contrasts and independent saved arithmetic/fit/statistics verification",
@@ -2181,7 +2299,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
+  "next_task_plan_report": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -2394,8 +2512,8 @@
     "new_experiments": 0
   },
   "next_package_total_work_hours": [
-    2.5,
-    5
+    0.3333333333333333,
+    0.5
   ],
   "current_research_questions": [
     "Does protected use of private patient data add meaningful generation utility over the available public-only adaptation?",
@@ -2659,7 +2777,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "TRACK1_PUBLIC_OPERATING_CONFIRMATION_PROTOCOL_20260916.md",
+  "current_planning_report": "REALISTIC_RESEARCH_PLAN_20260916.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -2724,5 +2842,121 @@
     },
     "confirmation_blinding_limit": "Root coordinator knew chosen E4; figure/task labels hidden; independent reviewer did not open mapping. Not fully two-reviewer identity-blind confirmation.",
     "all_original_evidence_preserved": true
-  }
+  },
+  "completed_track1_medical_head_20260916": {
+    "status": "completed_private_incremental_utility_gate_not_passed_mixed",
+    "completed_utc": "2026-09-16T14:15:48.833312+00:00",
+    "protocol": "TRACK1_MEDICAL_HEAD_PROTOCOL_20260916.md",
+    "report": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\medical_head_20260916_v1",
+    "initial_estimate_minutes": [
+      45,
+      75
+    ],
+    "records": 4352,
+    "patients": {
+      "public": 32,
+      "train": 80,
+      "eval": 40
+    },
+    "generated_images": 192,
+    "images_per_method": 64,
+    "latent_blocks": 16,
+    "reference_patients": 40,
+    "guidance": 7.5,
+    "objective": "guided residual; conditional head; X=7.5*phi; lambda=.001",
+    "development_MSE": {
+      "public": 0.4479379974827301,
+      "pooled": 0.4477524809409946,
+      "backbone": 0.46729679205928554
+    },
+    "generation_metrics": {
+      "backbone": {
+        "KID_mixed_descriptive": 0.43050582640115254,
+        "KID_by_condition": {
+          "normal": 0.43379874006310937,
+          "effusion": 0.4503897760164035
+        },
+        "KID_condition_mean": 0.44209425803975644,
+        "PRDC": {
+          "precision": 0.625,
+          "recall": 0.0,
+          "density": 0.38125000000000003,
+          "coverage": 0.375
+        },
+        "effective_rank64": 28.36855152633304,
+        "feature_variance64": 57.54466141262845,
+        "specific_matched_cosine": -0.21869896285432253,
+        "specific_margin": -0.0008314619873867109
+      },
+      "public": {
+        "KID_mixed_descriptive": 0.39705500873927013,
+        "KID_by_condition": {
+          "normal": 0.3968508484795792,
+          "effusion": 0.41674656059563686
+        },
+        "KID_condition_mean": 0.406798704537608,
+        "PRDC": {
+          "precision": 0.8125,
+          "recall": 0.0,
+          "density": 0.59375,
+          "coverage": 0.4
+        },
+        "effective_rank64": 26.498604605572687,
+        "feature_variance64": 60.850705630427335,
+        "specific_matched_cosine": -0.12246210304783522,
+        "specific_margin": -0.0030192141134894805
+      },
+      "pooled": {
+        "KID_mixed_descriptive": 0.40063191904395623,
+        "KID_by_condition": {
+          "normal": 0.40122826293216507,
+          "effusion": 0.4204418542824446
+        },
+        "KID_condition_mean": 0.41083505860730485,
+        "PRDC": {
+          "precision": 0.8125,
+          "recall": 0.0,
+          "density": 0.51875,
+          "coverage": 0.375
+        },
+        "effective_rank64": 26.185492760412302,
+        "feature_variance64": 61.209380760993916,
+        "specific_matched_cosine": -0.11279409168034647,
+        "specific_margin": -0.0031476519783737496
+      }
+    },
+    "private_incremental_utility_demonstrated": false,
+    "clinical_utility_proven": false,
+    "DP": false,
+    "new_backbone_training": false,
+    "backbone_backward": 0,
+    "total_UNet_calls": 10215,
+    "total_UNet_examples": 20430,
+    "total_VAE_decodes": 195,
+    "verification_checks": {
+      "head": 48233,
+      "generation": 133976,
+      "metrics": 1878
+    },
+    "partial_positive_signal": "Public head improves descriptive KID by7.98%; pooled improves matched BioViL cosine +.009668 but not specific margin, while KID/density/coverage are worse than public.",
+    "decision": "No new patient-DP solver or further backbone/seed/scale tuning. Bounded design review next; this one split does not prove private-data uselessness.",
+    "source_sha256": {
+      "contract.json": "32bc27e775395113d8075c212434563036755a040722ba43070206d06d8d3d33",
+      "generation_contract.json": "cbc4d3b6cf915079c4921442aeb0ed8f57513470c3aaedbe51a304271f0f08f7",
+      "evaluation_contract.json": "1d3ce75bc983bdaf0581ea255022230869275e5403d3fa88ad538aaf87c3d244",
+      "fit.json": "d9e2bd4d918140274d8ce392aefdb1e7d0b58c02e98b067d605a452d0a0bad5d",
+      "generation.json": "99ed15ddff05faf8418361a42c8556b0fe761d65689148206cb373e6c1b34907",
+      "evaluation.json": "be1df9e6606feb0cbae802ebc710b14b8358a83070fedd852f41a80a1ecd4e14",
+      "head_verification.json": "44d2889e84dca35e68b38578037c7c59758339a26708fe58697b398dcc301023",
+      "generation_verification.json": "5e68422ffae4b07d63a4aeb3cf02953e79ba534450fa2ca6252dbc95b7910d46",
+      "evaluation_verification.json": "52e4bd5da99fca8ee73dc2a335607ab90fd481eb4869382b481c9174568aa906",
+      "visual_review_root.json": "7cd67a0249788dae4444cb7989db7a1c37416857892ddc53cf5af7998bda54f0",
+      "presentation.json": "ab25abf9759c63d7fd72323f401ea25d48a3262318d422aaa5d5b469bdeda051"
+    }
+  },
+  "historical_pre_medical_head_next_package_total_work_hours": [
+    2.5,
+    5
+  ]
 }

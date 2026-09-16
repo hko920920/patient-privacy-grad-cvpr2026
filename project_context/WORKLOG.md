@@ -1,5 +1,18 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 130-MEDICAL-BACKBONE-NONDP-HEAD — 2026-09-16
+
+- 사용자의 다음 핵심 비교 요청을 실제 실행했다. 22:29:19 KST 시작, 최초 전체 예상 45–75분. **최종 연구 판정은 혼합적이며 사적 추가 생성 효용 관문 미통과**다. E4/CFG7.5는 유지했고 새 backbone·solver·seed·correction scale 탐색은 하지 않았다.
+- 실행 전 guided-residual objective를 고정했다. 조건부 Delta=phiW, guided residual epsilon_target−[eps_u+7.5(eps_c−eps_u)], X=7.5phi, 동일 환자 가중치, lambda=.001이다. 기존 CFG1 conditional-only MSE와 직접 비교하지 않는다. Public32·private-role80·개발40, 관측량 2/4/4장×8draw를 유지하고 모든 새 feature·prediction·A/B/Q·W·witness를 재생성했다. 데이터 독립 P만 재사용했다.
+- 명부 검토에서 reference는 기존 모든 평가/auxiliary 역할과 backbone 환자를 제외하면 normal30/effusion20명만 남아 실행 전 각20명, 총40명으로 고정했다. 최초 초안36명씩은 이 명부 확인 단계에서 수정됐으며 결과를 본 정정이 아니다. 혼합 KID의 shared-latent 상관 한계와 조건별 KID16vs20도 생성 전에 별도 평가 문서로 결속했다.
+- 실제 추출 4,352기록·UNet4,353calls/8,706examples·490.844초, fitting19.964초, backward0. 개발 MSE backbone .4672967921/public .4479379975/pooled .4477524809, pooled는 공개전용보다0.04142% 낮고35/40명에서 개선됐다. 이 작은 재사용 개발 차이를 생성 효용으로 대체하지 않았다.
+- 6개 witness 실제 모델 재추론, plain/zero/restored 전체30step exact, conditional-only/7.5Delta 확인 후 세 방법×16새latent×4prompt=192장을 모두 생성했다. 연결 포함635.610초,5,862UNet calls/11,724examples,195VAE,0B. 총 UNet10,215calls/20,430examples, 생성 peak3.930GiB다.
+- Root 한 명이 opaque ID의 여덟 grid 전체192장을 확인하고 mapping/score 전에 visual_review_root.json을 고정했다. 모두 gross chest는 식별되지만 사각형/태그/테두리·질감 인공물이 남고 public/pooled는 거의 비슷했다. 임상 판독·독립 두 판독·완전한 blind로 주장하지 않았다. 실제 원본 pixel을 수정하지 않은 모든192장 대응 grid를 research/figures에도 저장했다.
+- Pinned RAD-DINO/BioViL-T로 reference40+생성192장을23.935초에 인코딩했다. 미리 고른 혼합 실제/생성8입력 재실행 exact. 조건별 KID평균 backbone .4420942580/public .4067987045/pooled .4108350586이다. 공개head의7.98% 개선은 긍정적이지만 pooled는0.99% 악화, precision동일·density/coverage낮음이다. BioViL 해당prompt cosine pooled-public+.009668/13of16blocks, 기술95%범위[.003777,.016082]은 긍정적 관측이다. 그러나 margin−.000128/범위[−.005656,.004722], 다른prompt cosine도+.009796 올라 질환특이 이득으로 해석하지 않는다.
+- Head48,233검사/16.823초, generation133,976검사/19.633초, metrics1,878검사/1.085초로 각각 최초 PASS다. 저장 산술·provenance 검산과 일부 모델/encoder 재실행이며 전체 모델 독립 재현·통계적 표본 수가 아니다. Frozen 실행 코드나 tolerance를 결과에 맞춰 수정하지 않았다.
+- 현재 큰단계2·방향1 유지, DP 보류, 실행중없음. 다음은20–30분 설계 검토에서 공통 도메인 보정과 사적 코호트 추가 정보가 현재 구성에 실제로 구분되는지 좁힌다. 공개budget/동일관측량 대조나 표현 변경도 근거를 먼저 요구하고 유리한 분포를 만들지 않는다. 다음 검토/GPU는 이번 패키지에 자동 포함하지 않았다. 원격main 확인·push는 수행하지 않았다.
+- 최종 보고서 결속 검사는 기존1141로컬링크·221PDF앵커, 새29링크/이미지, frozen source100파일·기존계획17파일 불변, 원래실패adoption hash, 두state7핵심필드, 모든192개 그림원본pixel 일치를 확인했다. 깨진링크0이며 spec_sources/medical_head_report_verification_20260916.json에 저장했다. 실제22:29–23:18경KST 약49분으로 최초45–75분 예상 범위다.
+
 ## 129-PUBLIC-OPERATING-RESERVED-CONFIRMATION — 2026-09-16
 
 - 사용자 독립 확인 실행 요청에 따라 예약 C0–C3와 E4/CFG7.5를 그대로 실행했다. **좋은 결과: 두 판독자 각16/16·교집합16/16·prompt별4/4, 불일치0**. 생성 전에 원표 독립 고정·PASS 교집합·12/16 및2/4 기준을 명세했다. 이전 확인 실패나64장 결과를 변경하지 않았다.
