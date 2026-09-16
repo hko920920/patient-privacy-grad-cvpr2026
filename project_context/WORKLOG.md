@@ -5278,3 +5278,40 @@ noise/condition에서 synthetic images를 만들며, 생성물은 외부 연구,
 - 별도공개 quality32명×2장=64장의 원파일/cache/기존cohort분리/자료분포를 확인했다. 아직 추가512F는 실행하지 않았다. clip/scales/PSD/optimizer/반복seed의 공개선택 및 최종DP계약은 남아 있고 q.1/T500은 잠정값이다. 새학습의 실제DP효용·생성품질·강한사적회귀/DP-LoRA우위·논문기여는 미검증이다. 다음준비·구현예상30–60분이며 CPUprofile후계산시간을별도고지한다.
 - 기존 이중RDP calibrate_dual을 수정없이 실행했다. ε8·δ1e-5에서 q1/T1의σ=.6376701852165034, 잠정q.1/T500의σ=1.6360149290243424이다. 두 구현의 maxε를8로 맞췄으며 SGD Opacusε=7.99543747과 Googleε=8의 차이를 보존했다. 총12.123초CPU, 초기 낮은order의 수렴경고·보수적제외·최종order비해당도 JSON에 기록했다. 잡음배율만으로 효용우위를 주장하지 않는다.
 - 독립 명세검토는 fixed목적·통계재사용·환자인접성·분모·ridge·공개자료·비용공정성 범위PASS였다. 최종 구현의 공개/0초기화와 환자별 전처리독립 조건도 명시했다. DP실행PASS와 구별한다. 새3개HTML과 상태동기화 정적검사는1042로컬링크·221PDF앵커·깨진링크0이며 기존79편/75PDF를 유지했다. 전체 첫구현·실행·검산·후속명세·기록은13:50–14:32 KST경 약42분이다.
+
+## 120-TRACK1-PATIENT-DP-COMPARISON. 2026-09-16 — 공개 보정부터 실제 DP 비교·원인 검산까지
+
+- 사용자의 “이번엔끝까지,유리한결과” 지속요청에 따라14:38 KST부터 방향1을 이어갔다. 실질이득을 만드는 설계가 목표라고 설명하고 준비·구현·검토30–60분을 고지했다. public추출1–2분,공개profile후선택2–4분,본DP약1분,독립검산1–3분의예상을단계별로보고했다. 유리한결과만선택하거나비교조건을약화시키는승인으로해석하지않았다.
+- 기존quality32명×2장의공개보정자료를새run_public.py로512기록추출했다. 기존480장/UNet/source/cache/projection은변경하지않았고새adapter없음,원400명과환자교집합0을확인했다. 실제513F/0B,47.386초·통계2.359초. 독립raw/source/epsilon/projection/A/B 검산15,202항목9.102초PASS다. 코드최종화시점을실제대로남겼고GPU전동결을소급주장하지않았다.
+- 새dp_mechanisms.py에jointSSP와같은headPoisson userDP-SGD를구현했다. 환자gradient2(AW-B),add/remove고정N0,빈batch의noise/ridge,명시적randomstream,공개ridge를clip밖에한번적용하는경로를검사했다. 기존비DP수치소스를수정하지않았다. clip∞/sigma0는무잡음대조만허용했다. 내부재현seed/diagnostic과DP출력범위를구별했다.
+- 공개32의16/16두fold,각train16을5회반복한80slot은공개대리자료이며80독립환자가아니다. SSP와SGD각6후보×2fold×3noise,λ=.001,공개분위수/scales/LR/floor를사전계약으로고정했다. T500/2000/8000 중actualPoisson noise0/clip해제수렴검사를먼저했다. 양head에서500은미달,2000은통과했다. 공개CV144후보+24수렴fit,39.577초,public-onlyridge2개도저장했다. source의split public32/public검사오류는후보실행전정정하고원source/계약/실패profile를보존했다.
+- ε8/δ1e-5,환자추가/제거인접성·N0=80에서SSPσ=.6376701852,SGDq.1/T2000σ=2.9650482183이다. 공개선택독립검산은144trial·24수렴·최소선택·최종C/scales/LR/floor·원형두accountant를재계산해7,777항목5.095초PASS. 초기RDP低order수렴경고는보존하고최종order3.8의범위를구별했다. 검산파일명연결정정도본실행계약동결전에마쳤다.
+- 그뒤고정contract SHA7feffb493e03f88e62e20910789b69d48b87a39e936cbd256c75cc86de09ad6a로학습80명·개발40명에four-cell×16noise를실행했다. 같은A/Bcache를양쪽에주고모든SGD W0=0,공개보정과다른noise/mask stream을사용했다. 실제64개DP보정층+대조20개저장,실행기20.540초,새backbone0F/0B이다. public-only와이전비DP가중치재사용대조를포함한다.
+- 개발40명MSE는base .1796449533,fullDP-SGD .1743888460(2.9258%감소),staticDP-SGD .1748899546(2.6469%),fullSSP .1788939244(.4181%),staticSSP .1782926612(.7528%)였다. 각DP조건16/16base개선이며환자별16회평균도40/40개선했다. 그러나public-onlyfull .1740411864/static .1748271204를어떤DP반복도넘지못했다. 작은head의DP적응과SSP우위·사적자료추가효용을구별했다.
+- SSP무잡음대조에서floor0→공개선택floor만으로static .1747881251→.1782844792,full .1740077361→.1788863391로나빠졌다. 선택floor를유지한DPnoise의추가평균차이는약8.18e-6/7.59e-6다. 공개CV에서는noisyfloor0의MSE .275/.374와음의Gram고유값이관측돼floor가필요한이유도확인됐다. “선택floor가이번손실의주요연산”까지직접대조가있으며모든SSP실패나전역가산원인분해로확대하지않았다.
+- 공개전용과private80비DP최적해의MSE차이는full3.4257e-5/static3.9449e-5에불과했다. 이설정의작은private추가효용여지도정직하게기록했다. 전체학습/동일품질수백배를주장하지않고공통추출·공개보정비용을분리했다. 새생성영상·공격·본모델학습은없다.
+- 독립actual검산은생산자수치함수를import하지않고모든64개DP가중치·20control·4000trace업데이트·3400환자손실을재계산해41,812항목24.970초PASS,최대W차이2.78e-16이었다. source/계약/회계/출처/평가요약을결속했다. 결과원본과독립검산은frozen_residual_patient_dp_20260916_v1에보존했다.
+- 본평가전spec_sources/track1_public_reference_alternatives_20260916.md에표준대안의수식을정리했다. 공개중심SSP는n=N0에서만clip전원목적일치,publicGram+B-only는목적편향,publicW0의한번잔차갱신은오차(H0)^-1(A0-A)(W0-W*)라는정확한관계를갖는다. 공식DOPE-SGD등선행경계를인정하며새DP원리로부르지않았다. 현재네칸을변경하거나이대안의추가실험을실행하지않았다.
+- TRACK1_PATIENT_DP_PROTOCOL_20260916.md/RESULTS와HTML,현재상태/AGENTS/연구틀/두상태JSON을갱신했다. 다음은공개기준잔차보호와공개초기화강한SGD의비교설계이며공개전용baseline·동일목적/편향·의미있는효용여지를유지한다. 방향1우선·큰단계2와과거동결결과·최종cal/test는보존했다.
+- 최종HTML정적검사는1072개로컬링크·221개PDF앵커·깨진링크0,기존79편장부/75PDF유지,두상태핵심필드동기화PASS다. 검산자료는spec_sources/track1_patient_dp_html_state_verification_20260916.json에저장했다. 14:38–15:16 KST경약38분에구현·실행·분석·독립검산·기록을완료했다. 현재실행중작업은없으며표준공개기준대안의추가성능실험은미실행이다.
+
+## 121-REALISTIC-RESEARCH-PLAN — 2026-09-16
+
+- 사용자는 외부 의견 두 건을 참고해 연구질문의 타당성을 객관적으로 검토하고 현실적인 계획을 다시 세우라고 했다. 이어 기존 해결 원리를 지금 맥락에 적용해 기여를 만들 수 있는데 원리 중복만으로 배제하는지 지적했다. **새 DP 원리는 필수가 아니며, 원리의 선행 존재와 전체 적용의 기여 부재는 다르다**는 지적을 현재 계획의 우선 기준으로 반영했다.
+- 직전 문제 정의 점검은 spec_sources/track1_problem_framing_review_20260916.md에 보존했다. 현재 관측된 joint-SSP floor 손실, 좁은 public/private-only MSE 차이, 새로운 문제 후보, 일반화된 선행의 빈틈을 구분했다. residual 유무에 따라 방법/평가 논문이 자동 결정된다는 해석도 배제했다.
+- 이번에는 기존 실제 결과·코드·통계 schema·생성 이력과 근접 보호 연구를 대조했다. 독립 메모 세 개는 track1_replan_prior_review/feasibility/independent_20260916.md다. Ji2014 의료 로지스틱 회귀의 공개Hessian·사적gradient, DOPE-SGD, AdaSSP/BoostedAdaSSP, DP diffusion fine-tuning을 확인 범위와 함께 대조했다. Root는 Ji Methods/Algorithms/Discussion과 IHM v2의 row 인접성·§2–3 연산도 직접 읽었다. 최종학회판 재확인에 실패한 자료는 읽은 저자버전을 표시했다. 선행이 의료 diffusion·환자DP·출력 보정층의 전체 적용까지 해결했다는 결론은 내리지 않았다.
+- 최종 REALISTIC_RESEARCH_PLAN_20260916.md/realistic_research_plan.html은 생성 적응 구성의 기여와 선택적인 보호 solver 추가 기여를 분리한다. 표준 public-aware solver가 잘 작동하면 활용할 수 있다. 공격 연구에서 보호 학습으로 바뀐 문제·직접 선행·주평가도 명시했고 과거 patient-FPR 기준을 현재 주평가에 혼용하지 않았다.
+- 다음 한 패키지는 고정 public32:private80 환자 가중치의 pooled 비DP 참고점과 기존6모델의 sampling 연결, 총2–4시간의 작업 예산이다. 4prompt×4seed×6모델=96장과 guidance1을 제안하되 아직 실행계약은 아니다. 실제생성 hook은 없으므로 새 연결·W0/저장출력 일치 검산이 필요하다. RTX3070 8GB 및 기존 생성 실측을 참고하고 작은grid는 도메인/붕괴/조건반응 sanity에 한정한다. 사적효용·임상효용·CVPR성공 판정을 보장하지 않는다. 후속 기여/효용 명세는3–6시간 검토 예산이며 새 solver 개발은 자동 후속이 아니다.
+- RESEARCH_FRAMEWORK의 낡은 DP미실행 단계표와 현재위치, AGENTS/CURRENT_STATUS/두상태JSON/HTML상단을 동기화했다. 완료된 실험객체와 current_result_report가 그대로인 것을 상태갱신에서 확인했다. 기존 private/public protocol·가중치·수치·최종cal/test는 변경하지 않았다. 이번 새 GPU·학습·공격·생성 실험0이다.
+- 독립 계획 검토에서 사용자 정정과의 충돌, 부당한 자동중단, 작은생성진단 한계, 시간범위 혼선을 점검했다. HTML 정적검사1095로컬링크·221PDF앵커·깨진링크0,79편장부/75PDF 유지,두상태핵심필드동기화PASS. 근거는 spec_sources/realistic_plan_verification_20260916.json이다. 15:36:47–15:49경 KST 약13분에 계획·원문·실행가능성 검토와 기록을 마쳤다. 초기예상15–25분보다 일찍 완료했다.
+
+## 122-FOLLOWUP-GATES-AND-EVALUATOR-READINESS — 2026-09-16
+
+- 사용자가 2014 공개Hessian 선행, PDA-DPMD, 제한된공개자료 DPpretraining, 네gate, 기존RAD-DINO/BioViL-T 평가기를 포함한 후속 보고서를 제공했다. 큰 순서인 공개전용 대비 사적 추가 생성 효용→환자DP 아래 유지→품질·전체비용 비교를 채택하고 불필요한 필수조건은 수정했다. 기존원리를 활용한 의미있는 적용기여를 허용한다는 사용자 정정은 유지했다.
+- 공식원문을 확인했다. PDA-DPMD(ICML2022)는 공개mirror geometry와 사용자단위 DP-FedAvg 실험까지 있으나 의료diffusion출력head 전체적용은 아니다. Bu등 NeurIPS2024는 공개초기화→DPcontinualpretraining이며 noisyHessian을공개Hessian으로바꾸는solver자체가 아니다. 고정head H=2(A+λI)는 W불변이라 깊은모델의학습중곡률설명을그대로옮길수없다. 확인범위는 public_assisted_deep_priors_20260916.md에저장했다. Root는 CVPR2026공식reviewerguidelines의SOTA미초과단독거절금지와구체적prior대조요구도확인했다.
+- research_gate_review_20260916.md는public-only/pooled비DP가생성효용상한이아닌참고점,고정convexridge의warmstart와목적변경구분,ΔW안정성은필수gate아닌선택적설명분석,공유head와개인화구분,public-only보다추가효용/강한DP보다품질비용개선의두RQ를정리했다. 작은null만으로사적효용부재나평가논문성립을결론내리지않는다.
+- 평가기준비누락을정정했다. dp_training/k5_evaluator.py와RAD-DINO/BioViL-T고정weights,448장실제인코딩및독립전체재실행PASS,6개산술시험이이미있었다. 이번은파일SHA·패키지메타데이터·기존report·명부확인이며모델재로딩/추론/품질점수계산을하지않았다. 준비된분포/다양성/약한alignment도구와임상인증은구분했다. 자세한근거는 generation_evaluator_readiness_20260916.md다.
+- 기존448참조는현재fit80과32명,dev40과22명,cal140과59명,test140과65명,public32와11명이겹친다. 모든역할을환자단위제외하면259명남는다. 기존per-imagefeature는저장되지않아허용된새참조는재인코딩해야한다. 7조건의참조혼합과새4prompt정합,질환별BioViL한계도새명세에필요하다. 동결K5원448runner를이번연구에자동재사용하지않는다.
+- 초기96장계획에서DP16heads×각1장의혼합분포문제를찾아정정했다. 방법별manifestindex0의고정head하나로16장을생성하는탐색으로제안하며최고seed선택이아니다. 향후head별충분생성→metric→DPseed간요약한다. KIDsubset50는방법당16장에불가이며기존설정최소50은통계적충분성보장이아니다. 방법간영상을합쳐표본수를채우지않는다.
+- 다음패키지에평가기연결·참조분리추가30–60분을반영해총2.5–5시간으로조정했다. 과거448전체54.595초에근거한새355장추론·metric5–15분은아직계획치다. 새배치의점수는연결·탐색이지privateutilitygate통과가아니다. 두state/AGENTS/CURRENT_STATUS/RESEARCH_FRAMEWORK/HTML과현재계획§8을동기화했다. 완료된실험객체·actualresultpointer·동결코드/계약/가중치는그대로다.
+- 검증:1113로컬링크/221PDF앵커/깨진링크0,79편장부/75PDF유지,두state핵심필드동기화PASS. spec_sources/gate_review_plan_verification_20260916.json에기록했다. 15:55:33–16:07경KST약12분,초기예상10–20분범위내. 이번새GPU/학습/생성/품질score실행0이며현재실행중작업은없다.

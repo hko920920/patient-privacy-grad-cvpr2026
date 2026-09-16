@@ -74,6 +74,9 @@ def convert(md,from_review=False):
         if href=='TRACK1_CAPACITY_PROTOCOL_20260916.md':href='track1_capacity_protocol.html'
         if href=='TRACK1_CAPACITY_RESULTS_20260916.md':href='track1_capacity_results.html'
         if href=='TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md':href='track1_patient_dp_comparison_plan.html'
+        if href=='TRACK1_PATIENT_DP_PROTOCOL_20260916.md':href='track1_patient_dp_protocol.html'
+        if href=='TRACK1_PATIENT_DP_RESULTS_20260916.md':href='track1_patient_dp_results.html'
+        if href=='REALISTIC_RESEARCH_PLAN_20260916.md':href='realistic_research_plan.html'
         a['href']=href
     return str(soup)
 
@@ -126,6 +129,8 @@ def main():
     head = '<section class="panel"><h2>현재 두 방향: 보호 설계·효율 / 보호 평가 개선</h2><p><a href="two_track_deeper_check.html"><strong>최신 심화 검토: 선행 환원·두 v0의 CPU 비교·실패 원인</strong></a> · <a href="two_track_paper_designs.html">최초 설계</a> · <a href="research_framework.html">현재 연구틀</a></p><p>두 목표는 유지합니다. 현재 v0는 방향1의 직접 선행 중복과 계산 효율 문제, 방향2의 배분 비용·보류 문제를 확인해 의료·본학습 확대를 보류했습니다. 우리 초안의 검증 결과이며 기존 SOTA 전체의 실패나 두 연구 목표의 불가능성을 뜻하지 않습니다.</p><p>현재2번의 문헌·설계 검토입니다. 사전 고정 CPU 비교와 독립 검산을 마쳤고 새 GPU·의료학습은0입니다. 아래 환자 E/U·clipping 중심 안내는 이전 작업 이력입니다.</p></section>' + head
     head = '<section class="panel"><h2>현재2번: 보호 학습 연산과 보호 평가의 재설계</h2><p><a href="two_track_operation_redesign.html"><strong>2026-09-16 최신: 환자별 보호 통계로 생성 보정층 학습 / 증류 보호의 수리 선택 평가</strong></a> · <a href="research_framework.html">현재 연구틀</a></p><p>두 방향을 유지합니다. 방향1은 동결 모델의 작은 잔차층과 환자별 충분통계 보호로 구체화했습니다. 반복 역전파 제거와 표현력의 대가를 구분하고, 같은 head의 DP-SGD도 필수 비교로 둡니다. 방향2는 teacher·student 데이터 경로에 맞는 보호 수리 선택이 질문이며, 가까운 선행과 겹쳐 추가 기여가 미확정입니다.</p><p>이번 원문·수식·독립 검토에서 새 GPU·학습·공격은0입니다. 성능·신규성 검증 완료가 아닙니다. 아래 v0 CPU 결과와 E/U·clipping 안내는 이전 작업 이력입니다.</p></section>' + head
     head = '<section class="panel"><h2>방향1 첫 실제 결과: 작은 보정층의 적응 능력 확인</h2><p><a href="track1_capacity_results.html"><strong>2026-09-16 결과·의미·독립 검산</strong></a> · <a href="track1_capacity_protocol.html">고정 실행 조건</a> · <a href="research_framework.html">현재 연구틀</a></p><p>학습80명/평가40명·각4장. 비DP 시간·공간64차원 보정층의 개발평가 MSE가 base대비3.1384%, 단순16차원대비 .4467% 감소했습니다. 두 비교40/40이며 원시·통계 독립 검산PASS입니다. 단순층이 전체 감소의86.15%를 이미 얻었습니다.</p><p>본 추출5분15초, 총3850F/0B. 작은 함수족의 적응 근거이며 DP 적용 후 효용·생성 품질·새 기여는 미확인입니다. 다음은 같은 특징의 환자DP 통계 보호와 DP-SGD를 공정하게 비교하는 조건 구체화입니다.</p></section>' + head
+    head = '<section class="panel"><h2>방향1 최신 실제 결과: 환자DP 비교와 손실 원인</h2><p><a href="track1_patient_dp_results.html"><strong>64개 DP 보정층·20개 대조·독립 검산</strong></a> · <a href="track1_patient_dp_protocol.html">공개 보정과 실행 조건</a></p><p>ε8/δ1e-5에서 full64 DP-SGD는 기반 모델보다 MSE2.9258%, 일회 SSP는0.4181% 감소했습니다. 현재 SSP는 같은 head의 SGD보다 낮은 성능이며, 공개32명만의 회귀도 넘지 못했습니다. 선택된 floor가 SSP의 개선을 크게 깎는 것은 잡음 없는 대조로 확인했습니다.</p><p>본 비교20.540초·새backbone0F/0B, 독립 검산41,812항목PASS. 다음은 공개 기준을 활용하는 잔차 보호와 같은 공개 초기화를 받는 강한 대안의 대조입니다. 새 기여·생성 품질은 미검증입니다. 아래 준비·미실행 설명은 이전 기록 당시 상태입니다.</p></section>' + head
+    head = '<section class="panel"><h2>현재 계획: 기존 원리를 활용한 생성 적응의 기여 검토</h2><p><a href="realistic_research_plan.html"><strong>2026-09-16 현실적인 계획·판정 기준·예상 시간</strong></a> · <a href="research_framework.html">현재 연구틀</a></p><p>원리의 선행 존재만으로 의료 diffusion·환자DP 적용 기여를 배제하지 않습니다. 생성 적응 구성과 추가 보호 solver의 기여를 구분합니다. 다음은 공개+사적 비DP 대조와 현재 보정층의 실제 생성 연결, 기존 RAD-DINO/BioViL-T 평가기와 환자 분리 참조를 연결하며 구현·검토·분석 포함 총2.5–5시간으로 조정했습니다.</p><p>이번은 계획 재수립으로 새 실험0입니다. 실제 생성 효용·전체 비용·최종 기여는 미확정이며 작은 이미지 grid만으로 확정하지 않습니다. 아래 최신/다음 안내는 이전 시점의 이력입니다.</p></section>' + head
     head += '<p class="notice"><a href="purpose.html"><strong>이전 연구 목적: 환자 보호·보장 환산·재사용 비용과 공격의 역할</strong></a><br>현재 범위와 다음 작업은 위 두 방향 설계와 연구틀을 따릅니다.</p>'
     head += '<p class="notice"><a href="rationale.html"><strong>환자 집합 감사법 후보의 상세 근거와 반증 조건</strong></a><br>상관·사진 수·기존 방법·DP 보장의 관계. 추가 대조 2편은 본문에서 별도로 확인할 수 있습니다.</p>'
     head += '<p class="notice"><a href="design.html"><strong>설계 v0.1: 교차 사진 반응 감사 → DP 보호·효용·비용 비교</strong></a><br>첫 알고리즘 후보와 비교 계획의 원문입니다. 후속 구현·실행·검증 상태는 아래 최신 실행 기록을 따릅니다.</p>'
@@ -186,7 +191,10 @@ def main():
     for source, target, title in [
         ('TRACK1_CAPACITY_PROTOCOL_20260916.md','track1_capacity_protocol.html','방향1: 작은 잔차층의 실제 확인 계획'),
         ('TRACK1_CAPACITY_RESULTS_20260916.md','track1_capacity_results.html','방향1: 환자 분리 잔차층의 실제 결과'),
-        ('TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md','track1_patient_dp_comparison_plan.html','방향1: 다음 환자DP 비교 조건')]:
+        ('TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md','track1_patient_dp_comparison_plan.html','방향1: 다음 환자DP 비교 조건'),
+        ('TRACK1_PATIENT_DP_PROTOCOL_20260916.md','track1_patient_dp_protocol.html','방향1: 공개 보정과 환자DP 실행 조건'),
+        ('TRACK1_PATIENT_DP_RESULTS_20260916.md','track1_patient_dp_results.html','방향1: 실제 환자DP 결과와 손실 원인'),
+        ('REALISTIC_RESEARCH_PLAN_20260916.md','realistic_research_plan.html','의료 생성모델 환자 보호: 현실적인 다음 계획')]:
         if (ROOT/source).exists():
             body='<p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p>'+convert((ROOT/source).read_text(encoding='utf-8'))
             (ROOT/target).write_text(html_doc(title,body),encoding='utf-8')

@@ -6,6 +6,7 @@ verify existing saved runs; they do not introduce new experimental model fits.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime,timezone
 import hashlib
 import json
 import math
@@ -21,6 +22,11 @@ import numpy as np
 EPS=float(np.finfo(np.float64).eps)
 MECHANISM_SHA="b490512eae6fd38c6553c74c46070532d3f08a056f52430086d184f12a2cdbdd"
 STATUS="PASS_SAVED_PATIENT_DP_MECHANISMS_PUBLIC_CALIBRATION_AND_EVALUATION"
+CALIBRATION_PASS="PASS_PUBLIC_CALIBRATION_INDEPENDENT_SELECTION_ARITHMETIC_AND_ACCOUNTING"
+CALIBRATION_VERIFIER_SHA="4ea4a075d025d63556d3295690550d5c101f4b6e6044238ab0a9e5e1125bb916"
+ROOT=Path(__file__).resolve().parents[1]
+DEFAULT=ROOT/"_reports/frozen_residual_patient_dp_20260916_v1"
+CALIBRATION_DEFAULT=ROOT/"_reports/frozen_residual_public32_20260916_v1/dp_calibration_v1"
 
 
 def digest(path):
@@ -385,8 +391,17 @@ def verify_provenance(out,audit,calibration_verification_path):
     # independent public-selection verifier; no producer numerical function.
     audit.require(selection["status"]==CALIBRATION_PASS and selection["complete"] is True,
                   "independent public parameter-selection verification")
-    audit.require(selection["verifier_source_sha256"]==CALIBRATION_VERIFIER_SHA,
+    audit.require(selection["code_sha256"]==CALIBRATION_VERIFIER_SHA,
                   "independent public-selection verifier source")
+    audit.require(digest(Path(__file__).with_name("verify_public_calibration.py"))==CALIBRATION_VERIFIER_SHA,
+                  "actual independent public-selection verifier remains frozen")
+    audit.require(selection["protocol_sha256"]==digest(calibration_dir/"independent_selection_verification_protocol.json"),
+                  "independent public-selection protocol binding")
+    for key,name in (("params_sha256","params.json"),("accounting_sha256","accounting.json"),
+                     ("execution_sha256","execution.json"),("selection_contract_sha256","selection_contract.json")):
+        audit.require(selection[key]==digest(calibration_dir/name),"independent selection exact "+name)
+    audit.require(source("dp_calibration_v1/independent_selection_verification.json").resolve()
+                  ==Path(calibration_verification_path).resolve(),"private contract adopted verified public selection")
     for filename,expected in selection["input_sha256"].items():
         path=Path(filename)
         if not path.is_absolute():
@@ -467,3 +482,135 @@ def self_test():
     replay_sgd(aa,bb,{**sp,"steps":500,"public_denominator":80},np.full(500,.03),7,8)
     return {"status":"PASS_SYNTHETIC_ALGEBRA_AND_COST","checks":check.checks,
             "synthetic_500_step_full64_replay_seconds":time.perf_counter()-tick}
+
+
+def write_once(path,value):
+    with Path(path).open("x",encoding="utf-8") as handle:
+        json.dump(value,handle,indent=2,allow_nan=False)
+        handle.write("\n")
+
+
+def calibration_phase(directory):
+    """Reuse an existing PASS; otherwise invoke only the independent verifier."""
+    directory=Path(directory).resolve()
+    filename=directory/"independent_selection_verification.json"
+    source=Path(__file__).with_name("verify_public_calibration.py")
+    if digest(source)!=CALIBRATION_VERIFIER_SHA:
+        raise AssertionError("Independent public-selection verifier source changed")
+    if filename.exists():
+        result=read(filename)
+        if result.get("status")!=CALIBRATION_PASS or result.get("complete") is not True:
+            raise AssertionError("Existing public-selection verification did not pass; preserve it")
+        if result["code_sha256"]!=CALIBRATION_VERIFIER_SHA:
+            raise AssertionError("Existing public-selection verification source mismatch")
+        for path,value in result["input_sha256"].items():
+            if digest(path)!=value:
+                raise AssertionError("Changed public-selection input: "+path)
+        if digest(directory/"independent_selection_verification_protocol.json")!=result["protocol_sha256"]:
+            raise AssertionError("Changed public-selection verification protocol")
+        return result
+    from .verify_public_calibration import verify_calibration
+    return verify_calibration(directory)
+
+
+def verify_private(directory,calibration_directory):
+    """Completed saved experiment replay, never a new candidate-selection run."""
+    directory=Path(directory).resolve()
+    calibration_directory=Path(calibration_directory).resolve()
+    result_path=directory/"independent_verification.json"
+    protocol_path=directory/"independent_verification_protocol.json"
+    if result_path.exists() or protocol_path.exists():
+        raise FileExistsError("Preserve existing private verification attempt")
+    # Refuse incomplete experiment packets before recording a verification attempt.
+    execution=read(directory/"execution.json")
+    if execution.get("completed") is not True or not (directory/"analysis.json").is_file():
+        raise RuntimeError("Completed saved execution and analysis are required")
+    selection_path=calibration_directory/"independent_selection_verification.json"
+    source_hash=digest(__file__)
+    frozen={str(directory/name):digest(directory/name) for name in
+            ("contract.json","execution.json","models_manifest.json","controls.npz","analysis.json","evaluation_mse.npz")}
+    frozen[str(selection_path)]=digest(selection_path)
+    frozen[str(Path(__file__).resolve())]=source_hash
+    protocol={
+        "schema":"independent-saved-patient-dp-verification/v1",
+        "created_utc":datetime.now(timezone.utc).isoformat(),
+        "code_sha256":source_hash,
+        "input_sha256":frozen,
+        "calibration_verifier_sha256":CALIBRATION_VERIFIER_SHA,
+        "independence":"No producer numerical function imported. Manual SSP packing/eigenbasis solve and explicit per-patient SGD replay; no experimental candidate fitting.",
+        "numeric_policy":"Arithmetic and tolerances fixed in this verifier source before verification. Source finalized during or after producer execution; no pre-experiment tolerance-freeze claim.",
+        "tolerances":{"ordinary":{"atol":1e-11,"rtol":1e-10},
+            "SGD_step":{"atol":1e-12,"rtol":1e-11},
+            "SGD_final":{"atol":1e-10,"rtol":1e-9},
+            "SSP_weight_absolute":"4096*eps64*d*max(1,condition)*max(1,Frobenius_norm(W)); relative 1e-10",
+            "SSP_normalized_stationarity":"4096*eps64*d",
+            "patient_MSE":{"atol":1e-10,"rtol":1e-10},
+            "descriptive_summary":{"atol":1e-9,"rtol":1e-10}},
+        "scope":"All 64 saved DP model final weights, all 20 controls, full rep0 traces, all 3400 scalar patient losses; fixed public calibration provenance.",
+        "new_backbone_forward":0,"new_backbone_backward":0,
+        "privacy_scope":"Internal public-data simulation. Raw statistics, nonprivate controls and Gaussian RNG evidence are not a DP release; individual epsilon does not certify a joint 16-model release.",
+    }
+    write_once(protocol_path,protocol)
+    started=time.perf_counter()
+    audit=Audit()
+    try:
+        context=verify_provenance(directory,audit,selection_path)
+        replayed=verify_saved_models(directory,audit,context)
+        evaluation=verify_evaluation(directory,audit,context,replayed)
+        for path,value in frozen.items():
+            audit.require(digest(path)==value,"unchanged verification input "+path)
+        for path,value in context["contract"]["source_sha256"].items():
+            audit.require(digest(path)==value,"unchanged producer-bound input "+path)
+        for row in replayed["manifest"]:
+            audit.require(digest(directory/row["path"])==row["sha256"],"unchanged saved model")
+        result={
+            "status":STATUS,"complete":True,"checks":audit.checks,
+            "seconds":time.perf_counter()-started,"code_sha256":source_hash,
+            "protocol_sha256":digest(protocol_path),"input_sha256":context["input_sha256"],
+            "public_selection_verification_sha256":context["public_selection_verification_sha256"],
+            "calibration_verifier_sha256":CALIBRATION_VERIFIER_SHA,
+            "replay":replayed["diagnostics"],"evaluation":evaluation,
+            "comparisons":audit.comparisons,
+            "limits":[
+                "CPU verification of saved sufficient-statistics mechanisms, not an independent GPU feature extraction.",
+                "Public selection audit rechecks saved public candidate weights/objectives/choice; it does not independently refit every public candidate.",
+                "DP accountant provenance and q/T/sigma/epsilon/delta connections are checked; this verifier is not a new proof of the accountant.",
+                "Fixed input-bank denoising loss, not generated-image quality or a population clinical conclusion.",
+                "The reproducibility bundle and 16-model collection are not certified as one epsilon-8 external release.",
+                "Numerical tolerances were finalized before this verification, not asserted to have been frozen before the experiment."
+            ],
+            "new_backbone_forward":0,"new_backbone_backward":0,
+        }
+        write_once(result_path,result)
+        return result
+    except Exception as exc:
+        failure={"status":"FAILED_SAVED_PATIENT_DP_INDEPENDENT_VERIFICATION","complete":False,
+                 "error":repr(exc),"traceback":traceback.format_exc(),"checks":audit.checks,
+                 "comparisons":audit.comparisons,"seconds":time.perf_counter()-started,
+                 "code_sha256":source_hash,"protocol_sha256":digest(protocol_path)}
+        write_once(result_path,failure)
+        raise
+
+
+def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--phase",choices=("calibration","private","self-test"),required=True)
+    parser.add_argument("--run-dir",type=Path,default=DEFAULT)
+    parser.add_argument("--calibration-dir",type=Path,default=CALIBRATION_DEFAULT)
+    parser.add_argument("--expected-code-sha256")
+    args=parser.parse_args()
+    if args.expected_code_sha256 and digest(__file__)!=args.expected_code_sha256:
+        raise AssertionError("Verifier source hash mismatch")
+    if args.phase=="self-test":
+        result=self_test()
+    elif args.phase=="calibration":
+        result=calibration_phase(args.calibration_dir)
+    else:
+        result=verify_private(args.run_dir,args.calibration_dir)
+    print(json.dumps({k:result[k] for k in
+          ("status","complete","checks","seconds","code_sha256","replay","synthetic_500_step_full64_replay_seconds")
+          if k in result},indent=2),flush=True)
+
+
+if __name__=="__main__":
+    main()

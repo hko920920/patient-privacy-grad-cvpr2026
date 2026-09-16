@@ -1,0 +1,241 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>의료 생성모델 환자 보호: 현실적인 다음 계획</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p><h1>의료 생성모델 환자 보호 연구: 현실적인 다음 계획</h1>
+<p>2026-09-16. 현재 큰 단계는 <strong>2번: 선행 대조와 논문 문제·설계 구체화</strong>다. 방향1 보호 설계·효율을 우선하고 방향2 보호 평가 개선은 별도로 유지한다. 이번 작업은 계획 재수립이며 새로운 학습·생성·공격 실험은 실행하지 않았다.</p>
+<p><strong>후속 보고서 반영:</strong> 공개 보조 딥러닝 선행 두 편과 이미 준비된 RAD-DINO/BioViL-T 평가기를 추가 확인했다. 다음 패키지는 참조 환자 분리·탐색 정량 점수 연결을 포함해 <strong>2.5–5시간</strong>으로 조정한다. 과거2–4시간은 평가기 재사용 경로를 확인하기 전의 계획치다. §8의 기준선·잔차·비용·평가기 정정을 현재 판단에 적용한다. 이번 추가 검토도 새 실험0이다.</p>
+<h2>1. 이번에 바로잡은 판단</h2>
+<p><strong>기존 해결 원리를 새로운 맥락에 맞게 구성하여 중요한 문제를 해결하는 것도 기여가 될 수 있다. 새 DP 원리나 새 회귀법을 반드시 발명해야 한다는 조건은 없다.</strong> 원리의 선행 존재는 기여를 정확히 표현하고 기준선을 고르기 위한 근거이지, 응용·통합·실증 기여를 자동 배제하는 근거가 아니다. 사용자가 이 점을 명시적으로 재확인했다.</p>
+<p>공개 곡률·사적 gradient의 결합은 선행에 있다. 하지만 이번에 확인한 논문들이 <strong>공개 diffusion의 작은 공간·시간 출력 보정층을 통한 환자DP 의료 생성 적응</strong>까지 이미 해결했다는 결론은 얻지 않았다. 반대로 같은 조합의 논문을 못 봤다는 것만으로 신규성을 확보했다고 말하지도 않는다.</p>
+<p>따라서 현재의 논문 후보는 다음과 같다.</p>
+<blockquote>
+<p>공개 생성모델의 표현을 재사용하여 사적 backbone 역전파 없이 환자 단위로 보호된 의료영상 적응을 수행하고, 실제 생성 효용과 전체 계산비용의 유리한 절충을 제공할 수 있는가?</p>
+</blockquote>
+<p>검증 목표는 두 가지로 나눈다. <strong>공개전용 적응 위에 사적 환자자료가 더하는 의미 있는 생성 효용이 있는가</strong>, 그리고 <strong>같은 환자DP를 적용한 강한 기존 적응 방법보다 생성 효용–전체 비용의 절충이 좋아지는가</strong>다. 공개전용보다 효용과 비용을 모두 엄격하게 이겨야 한다는 조건은 없다. 현재 backbone은 의료영상에 적응시킬 공개 SD2.1이며, 이미 의료 전용으로 사전학습된 모델이라고 전제하지 않는다.</p>
+<p>이는 타당한 <strong>후보</strong>다. 현재의 작은 출력 head와 표준 보호 기구가 그 후보의 한 구현이다. 공개자료만으로 충분한지 묻는 질문은 이 후보의 필요성을 판단하는 하위 질문이며, 이를 논문 전체 주제나 residual 보호의 성공을 전제한 질문으로 확정하지 않는다.</p>
+<h2>2. 사용자가 제공한 보고서에서 받아들일 것과 고칠 것</h2>
+<table>
+<thead>
+<tr>
+<th>판단</th>
+<th>이번 계획의 처리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>큰 환자 보호 문제는 있고 좁은 기술 문제는 미확정</td>
+<td>타당하다. 우리 초안의 관측된 손실 원인과 선행 대비 기여는 구분한다</td>
+</tr>
+<tr>
+<td>감사 연구에서 보호 학습으로의 이동은 같은 주제를 좁히는 과정</td>
+<td>상위 목적·자료는 이어지지만 실제 연구문제·접근권·직접 비교·주평가는 바뀌었다. 전환을 명시한다</td>
+</tr>
+<tr>
+<td>CDI·MoFit·FACE-AUDITOR 등이 기여를 제한</td>
+<td>과거 공격 후보에는 직접 관련된다. 현재 보호 학습 후보의 신규성·기준선을 이 목록으로 판단하지 않는다</td>
+</tr>
+<tr>
+<td>CVPR이면 같은 patient-FPR·cost 이후 우위가 필요</td>
+<td>공격 성능 주장에 해당한다. 현재 주평가는 같은 환자DP 보장과 공개 정보에서의 생성 효용·전체 비용이다. 효율 주장은 품질을 맞추거나 품질–비용 곡선으로 비교한다</td>
+</tr>
+<tr>
+<td>public/private residual 분리로 반드시 좁혀야 한다</td>
+<td>미확정 해결 수단이다. public-only와 공개+사적 대조는 필요하지만 residual 변형 개발을 자동 다음 과제로 삼지 않는다</td>
+</tr>
+<tr>
+<td>residual 있으면 방법 논문, 없으면 평가 논문</td>
+<td>자동 분기는 아니다. 어떤 중요한 문제를 새롭게 해결하거나 판단을 바꾸는지가 따로 필요하다</td>
+</tr>
+</tbody>
+</table>
+<p>환자 MIA를 후속 보호 평가로 사용할 수는 있다. 공격 성공률은 형식적 DP 증명과 같지 않으며, 지금 보호 학습 후보를 판단하기 위해 과거 공격 실험을 전부 다시 수행할 필요는 없다.</p>
+<h2>3. 근접 선행을 어떻게 구분했는가</h2>
+<table>
+<thead>
+<tr>
+<th>직접 확인한 선행</th>
+<th>가져올 수 있는 원리</th>
+<th>현재 적용에서 따로 설명·검증할 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://link.springer.com/article/10.1186/1755-8794-7-S1-S14">Ji 등, 2014</a>, Methods/Algorithms1–2/Discussion</td>
+<td>공개 Hessian과 보호된 사적 gradient를 결합해 noisy Hessian의 역산 불안정을 피한다. 공개전용과도 비교한다</td>
+<td>분산 로지스틱 회귀의 원리 선행이다. 의료 diffusion의 공간·시간 특징, 생성 과정, 환자 묶음 및 실제 영상 효용까지 같은 결과로 보지 않는다</td>
+</tr>
+<tr>
+<td><a href="https://proceedings.mlr.press/v202/nasr23a/nasr23a.pdf">DOPE-SGD, ICML2023</a>, §3.1</td>
+<td>공개 gradient 기준의 중심화·clipping</td>
+<td>원리의 재발견을 주장하지 않는다. 같은 공개정보를 가진 강한 보호 학습 대안으로 재사용할 수 있다</td>
+</tr>
+<tr>
+<td><a href="https://proceedings.mlr.press/v162/amid22a/amid22a.pdf">PDA-DPMD, ICML2022</a>, Algorithm1/§§4–5</td>
+<td>공개 손실을 geometry로 쓰며 공개 초기화·보호 gradient를 결합한다. 사용자 단위 DP-FedAvg 실험도 있다</td>
+<td>공개 보조+사용자 단위 자체도 선행이다. 같은 head의 공개 보조 optimizer로 활용하되 의료 diffusion의 출력 보정 구성·생성 효용·전체 비용은 별도 비교한다</td>
+</tr>
+<tr>
+<td><a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/ac04e54e0a2d1927d60709019e4e7870-Paper-Conference.pdf">Bu 등, NeurIPS2024</a>, §§2–5/App.D</td>
+<td>Hessian 관점의 DP 최적화 지연 분석과 공개 학습 후 DP continual pretraining</td>
+<td>공개 Hessian 대체 solver 자체는 아니다. 고정 quadratic head의 Hessian은 W에 무관하므로 공개 초기화가 곡률 자체를 낮춘다는 설명을 그대로 옮기지 않는다</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2406.01355v1">DP diffusion fine-tuning 저자 원고 v1</a>, §3.1–3.2</td>
+<td>공개 생성모델과 작은 LoRA의 DP 적응</td>
+<td>현재 목적에 가까운 비교 계열이다. 출력 특징 head의 제한된 표현력과 backbone 역전파 제거의 실질적 품질–비용 절충을 비교한다. 원문의 image DP를 환자DP와 그대로 같다고 하지 않는다</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/1803.02596">AdaSSP</a>, <a href="https://arxiv.org/html/2601.07545v2">IHM v2</a></td>
+<td>사적 회귀·곡률 안정화와 기존 강한 해법</td>
+<td>같은 head의 보호 solver를 비교하는 후보이며, row 단위 보장을 환자 block으로 자동 전용하지 않는다. 모든 방법의 구현을 첫 판별의 선행조건으로 삼지 않는다</td>
+</tr>
+<tr>
+<td><a href="https://proceedings.mlr.press/v300/finn26a.html">Where the Score Lives, AISTATS2026</a></td>
+<td>고정 특징·회귀에 기반한 denoising/생성 접근</td>
+<td>회귀형 denoiser 자체의 첫 제안은 아니다. 공개 diffusion의 기존 표현과 환자 보호를 결합한 구성의 유효성은 별도 질문이다</td>
+</tr>
+</tbody>
+</table>
+<p>새로 제안할 수 있는 기여는 가령 <strong>기존 보호 원리로도 학습 가능한 생성 보정 표현을 구성하고, 그것이 실제 영상 효용을 유지하면서 비용을 낮추는 이유와 범위를 보여주는 것</strong>이다. 표준 공개 참조 solver가 가장 잘 작동하면 그 solver를 사용해도 된다. 그 결과가 좋다는 이유로 응용 기여를 폐기하지 않는다. 반대로 의료자료로 실행했다는 명칭 변경만으로 충분하다고 하지 않는다.</p>
+<p>상세 확인 범위는 <a href="spec_sources/track1_replan_prior_review_20260916.md">근접 보호 선행 검토</a>에 있다. DP-LoRA의 상세 재확인은 2024 v1이며 최종 학회판 전체를 다시 읽었다는 주장은 하지 않는다. IHM은 이번에 §2–3의 row 인접성과 연산도 확인했으나 환자 adaptation이나 전체 실험을 재현하지 않았다.</p>
+<h2>4. 현재 확보한 자산과 아직 빠진 연결</h2>
+<ul>
+<li>작은 보정층은 개발40명의 평균 denoising MSE를 낮췄다. 환자DP-SGD에서도 대부분 유지됐다. <a href="track1_patient_dp_results.html">실제 결과</a></li>
+<li>현재 joint-SSP 초안은 같은 head의 DP-SGD와 public-only에 졌다. 공개 선택된 고유값 하한이 유용한 보정도 억제했다. 이것은 그 초안의 관측된 문제다.</li>
+<li>public-only32 full MSE는 .1740411864, private-only80 비DP는 .1740069294다. 공개+사적 자료의 결합 효용, 통계적 동등성, 일반적인 사적 자료 가치 부재는 아직 확인하지 않았다.</li>
+<li>사적·평가 환자의 A/B/Q와 공개32의 같은 통계, 기존 가중치는 재사용 가능하다. 결합 비DP head의 계산에는 새로운 backbone 호출이 필요 없다.</li>
+<li>생성 중 새 head를 적용하는 wrapper는 아직 없다. 저장된 생성 runner는 기존 LoRA용이다. 현재 head는 weak-label 조건으로 학습했으며 null 조건 학습은 없으므로 CFG를 무심코 그대로 붙일 수 없다.</li>
+<li>환자별 통계는 환자 내 여러 영상·noise·공간 위치를 평균한다. 픽셀이나 noise draw를 독립 환자로 세지 않는다. 현재 NIH의 공개/사적 구분은 공개자료를 이용한 연구용 모사다.</li>
+<li>평균 denoising MSE는 생성 품질·질환 조건 정확도·합성자료의 학습 효용과 같지 않다. <strong>준비 상태 정정:</strong> RAD-DINO/BioViL-T 평가 코드·고정 모델 파일·448장 실제 인코딩·독립 전체 재실행 PASS가 이미 있다. KID/PRDC 산술도 구현·시험됐다. 현재 residual 생성물 연결은 아직 없고, 이 도구들은 특징분포·다양성·약한 텍스트 정렬 지표이며 임상 타당성 인증은 아니다. <a href="spec_sources/generation_evaluator_readiness_20260916.md">평가기 감사</a></li>
+</ul>
+<h2>5. 다음 한 번의 작업: 현재 구성의 생성 적용 가능성 확인</h2>
+<p><strong>총 2.5–5시간의 작업 예산</strong>으로 묶는다. 이는 생성·평가 코드 연결·참조 분리·검토·실행·해석을 포함한 계획치이며 GPU 학습시간이 아니다. 세부 생성 profile 후 계산 예상 시간을 갱신한다. 이 패키지의 끝에는 계속 검토할 이유, 고칠 문제, 또는 보류 사유를 한 보고서에 적는다. 작은 표본의 점수 계산 완료를 사적 생성 효용의 확인 완료로 부르지 않는다.</p>
+<h3>A. 빠진 비DP 대조를 캐시로 보완</h3>
+<p>기존 public32/private80의 환자당 동등 가중치로 <strong>공개+사적 결합 ridge</strong>를 static16/full64 각각 한 번 계산한다. 가중치는 결과 전에 32:80, λ=.001로 고정한다. 공개 환자는2장, 사적 환자는4장을 썼지만 사진 수 때문에 환자 가중치를 다르게 주지 않는다. 이 차이는 통계 추정 분산의 한계로 기록한다.</p>
+<p>같은 개발40명에서 base/public-only/private-only/pooled를 비교한다. pooled를 held-out 효용의 수학적 상한이라 부르지 않는다. rho·lambda·환자 subset을 이 결과에 맞춰 탐색하지 않는다. 예상 작업15–30분, 순수 계산은 초–분 단위, 새로운 backbone 계산0이다.</p>
+<h3>B. 기존 구성의 실제 생성 경로를 연결</h3>
+<p>동일 feature tap·projection·log-SNR basis를 sampling에 적용한다. W=0의 기반 모델 복원, 저장 noisy input에서 offline/online 출력 일치, scheduler 출력 parameterization을 먼저 확인한다. 학습조건과 일치시키기 위해 첫 primary는 조건부 guidance=1을 제안한다. CFG7.5는 null branch 적용 규칙을 별도로 정할 때만 대조하며 결과를 섞지 않는다.</p>
+<p>full64의 <strong>base/public-only/private-only 비DP/pooled 비DP/기존 DP-SGD/기존 SSP</strong>, 여섯 모델을 사전 고정4개 흉부영상 prompt×4개 sampling seed로 비교한다. 총96장, 같은 prompt·seed를 방법끼리 짝짓는다. <strong>DP 방법별로 기존 manifest index0 가중치 하나를 결과와 무관한 고정 대표로 지정하고, 같은 head로16장을 생성한다.</strong> 이전 미실행 제안인16개 DP head×각1장은 혼합분포를 만들므로 개별 학습모델의 KID/PRDC로 평가하지 않는다. 이번은 DP 각1회 모델의 탐색이며, 후속은 head별 충분한 생성→head별 metric→DP seed 간 요약 순서로 진행한다.</p>
+<p>FP32 특징, 256px, DDIM30을 기본 연결 조건으로 두고 최초 소량 profile 후 메모리·속도를 기록한다. RTX3070 8GB가 현재 확인된 장비다. 기존 생성의 장당3.2–5.5초 이력은 참고값이며 새 hook/조건과 같은 실측이 아니다. 연결·검산45–90분, profile·생성15–30분, 전체 판독·분석30–60분을 계획한다. 과거 계약과 가중치는 변경하지 않고 새 실행 명세를 만든다.</p>
+<h3>C. 판정 범위를 지켜서 결과를 해석</h3>
+<p>96장으로 확인할 것은 수치적 붕괴, 기본 흉부영상 형성, 반복적인 artifact, 조건 변화에 대한 출력 반응과 실제 적용 경로다. 조건 반응이 곧 병변의 의학적 정확성은 아니다. 모든 이미지를 보존하고 같은 표본의 paired 결과를 본다. 작은 grid/FID나 미세한 MSE 차이로 임상 효용·논문 경쟁력을 선언하지 않는다.</p>
+<p>기존 정량 평가기를 같은 패키지에 연결한다. 원 참조448명은 현재 fit/selection/calibration/test/public32와 환자 교집합이 있으므로 통째로 재사용하지 않는다. 다섯 집합을 모두 제외한 <strong>259명</strong>이 후보 참조다. 그중 실제 생성 prompt와 같은 조건 혼합을 갖도록 사용할 명부·조건 가중치를 결과 전에 정한다. 원448의 개별 feature는 저장되지 않아 새 참조를 재인코딩해야 한다. 원본 K5 계약·코드는 변경하지 않는다.</p>
+<p>방법당16장은 기존 KID subset50를 쓸 수 없다. 이번에는 별도 소표본 정책을 사전에 정한 탐색 수치만 내고, 이후 기존 설정을 쓰려면 <strong>방법당 최소50장</strong>이 필요하다. 50은 코드의 필요 표본 수이지 충분한 통계적 검정력의 보장이 아니다. 서로 다른 방법이나 DP 가중치의 영상을 합쳐 표본 수를 채우지 않는다. BioViL-T 전체 사전검사의 양수 결과가 모든 질환 prompt에 성립한 것은 아니므로, 조건별 한계를 기록하고 양수 조건만 골라 쓰지 않는다. 이들 지표는 목적에 맞는 생성 효용의 실증에 활용하며, 논문 주장과 무관한 새 임상 검증을 무조건 필수 관문으로 추가하지 않는다.</p>
+<p>평가기의 과거 실측은448장 RAD-DINO30.693초/BioViL-image11.388초, 전체54.595초다. 259참조+96생성의 새 인코딩·점수 계산은 입출력·로딩 포함 <strong>5–15분의 잠정 계산 예산</strong>, 연결·명부·정합 검토는 <strong>30–60분 추가 작업</strong>으로 잡았다. 신규 경로 실측은 아직 없다. 이 범위를 위 총2.5–5시간에 포함한다.</p>
+<table>
+<thead>
+<tr>
+<th>결과</th>
+<th>바로 할 결정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>구현 오류</td>
+<td>검증 가능한 버그만 고친다. 알고리즘 실패나 성공으로 해석하지 않는다. 예산 초과 시 원인과 새 시간을 보고한다</td>
+</tr>
+<tr>
+<td>비DP 구성도 반복적으로 생성 붕괴·목표 도메인 부적합</td>
+<td>보호 solver 변형의 확대를 보류한다. 먼저 현재 표현·기반 모델의 적용성이 문제인지 구분한다</td>
+</tr>
+<tr>
+<td>생성 경로는 정상이고 사적 추가 효용의 근거가 남음</td>
+<td>아래 한 번의 기여·평가 명세 단계로 간다. 새 solver가 꼭 필요하다는 결론은 아니다</td>
+</tr>
+<tr>
+<td>공개전용과 사적 사용의 차이가 작거나 작은 표본에서 불분명</td>
+<td>가치 부재를 확정하지 않는다. 이를 판별할 적절한 효용 평가가 가능한지 다음 명세 단계에서 비용까지 정한다. 자동 DP 변형 탐색은 하지 않는다</td>
+</tr>
+</tbody>
+</table>
+<p>미세한 p-value, 임의의 MSE 0.5% 문턱, 보기 좋은 몇 장을 합격선으로 삼지 않는다. 적절한 평가가 준비되지 않았다는 이유를 숨기고 '최소 실험으로 논문 가능성 판단 완료'라고 하지 않는다.</p>
+<h2>6. 그다음 일정은 결과와 주장에 연결한다</h2>
+<table>
+<thead>
+<tr>
+<th>순서</th>
+<th>산출물·판단</th>
+<th>예상 작업 시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이번</td>
+<td>적용 기여를 허용하는 선행 대조와 본 계획·현재 상태 정리</td>
+<td>15–25분 계획, 실제 종료시간 별도 기록</td>
+</tr>
+<tr>
+<td>다음</td>
+<td>위 A–C 한 패키지: pooled 대조+생성 경로+참조 분리+탐색 정량 점수</td>
+<td><strong>총2.5–5시간</strong>, GPU는 일부</td>
+</tr>
+<tr>
+<td>적용 가능성이 남으면</td>
+<td>한 장의 기여 명세: 사용 목적, 기존에서 가져온 부분, 이 맥락의 구성/발견, 실제 생성 효용·필요 효과·baseline·표본 수·예상 비용</td>
+<td><strong>3–6시간 검토 예산</strong>. 이미 있는 평가기를 먼저 재사용하고, 추가 downstream 과제가 주장상 필요한 경우만 확보 비용을 포함</td>
+</tr>
+<tr>
+<td>명세가 구체화되면</td>
+<td>한 번의 제한된 환자DP 비교: 강한 공개 활용 기준선과 목적에 맞는 생성 효용</td>
+<td><strong>구현·평가 준비1–2작업일의 초기 범위</strong>. 실제 계산시간은 새 profile로 고정. 작은 cached head fit은 초–분이고 생성/효용 평가가 지배할 수 있음</td>
+</tr>
+<tr>
+<td>필요한 이득·범위가 보이면</td>
+<td>별도 환자·가능한 독립 설정, 보호 강도와 품질–비용 곡선, 필요한 DP-LoRA/회귀/생성 기준선 비교</td>
+<td>아직 전체 학습시간 미산정. 앞 단계의 실행량과 실측으로 본실험 명세·예산을 먼저 작성</td>
+</tr>
+</tbody>
+</table>
+<p>작업일은 구현·검토·계산 대기를 합친 일정 추정이며 GPU 시간과 다르다. 현재 장비에서 전체 논문을 몇백 시간이라고 다시 외삽하지 않는다. 최소 생성 진단을 수십 시간의 새 본학습으로 몰래 늘리지 않는다.</p>
+<p>기여 명세에서는 다음 두 주장을 분리한다.</p>
+<ol>
+<li><strong>생성 적응 구성의 기여:</strong> 기존 보호 원리를 사용하더라도, 공개 diffusion의 제한된 표현이 유용한 의료 적응을 환자DP 아래 적은 자원으로 제공한다면 그 이유·범위·절충을 검증한다. 같은 head의 DP-SGD도 backbone backward0인 공정한 대안으로 둔다. DP-LoRA 비교는 표현력과 실제 생성 효용을 포함한다.</li>
+<li><strong>보호 solver의 추가 기여:</strong> 기존 solver보다 별도 이득을 주장할 근거가 있을 때만 세운다. 공개참조·중심화 자체를 새로 이름 붙이지 않는다. 이 두 번째 주장이 없어도 첫 번째를 자동 배제하지 않는다.</li>
+</ol>
+<p>공개+사적 목적을 선택하면 같은 목적의 public-aware DP-SGD와 비교한다. 공개 초기화만 한 private-only DP-SGD는 pooled 목적과 다르다. 공개/사적 계수를 함께 쓰는 보호 업데이트는 clipping·고정 분모·잡음 크기·회계를 다시 명세한다. 단순 warm start에 옛 hyperparameter를 그대로 준 비교를 '최강 baseline'이라 부르지 않는다.</p>
+<h2>7. 반복적인 작은 실험으로 돌아가지 않기 위한 운영 기준</h2>
+<ul>
+<li>각 작업 시작 전 큰 단계, 이번 질문, 결과가 바꿀 결정, 예상 시간을 적는다. 끝에서는 관측 사실·기여 해석·미확인·다음 결정을 한 번에 보고한다.</li>
+<li>문헌의 원리 중복만으로 후보를 폐기하지 않는다. 현재 적용 전체를 다룬 선행인지와 실제 남는 가치·차이를 대조한다. 모든 강한 방법의 실패를 아이디어 제안의 필수조건으로 삼지 않는다.</li>
+<li>현재초안에 불리한 결과는 기록하고, 표준 방법이 더 잘 작동하면 활용한다. 반복적인 C/floor/seed 탐색으로 초안을 구하는 것을 기본 계획으로 삼지 않는다.</li>
+<li>개발40명은 이미 여러 번 본 자료다. 작은 진단의 결과를 최종 일반화 근거로 사용하지 않는다. 최종calibration/test 각140명은 이 패키지에 쓰지 않는다.</li>
+<li>의미 있는 사적 추가 가치가 끝내 확인되지 않으면 이 데이터·표현·목표의 보호방법 확장을 보류할 수 있다. 그때 평가논문이 자동 확보되거나 환자DP 연구 전체가 불가능해지는 것은 아니다.</li>
+<li>방향2는 별도 문제·기여 명세가 있을 때 다시 비교한다. 방향1이 어려워졌다는 이유로 예전 E/U 공격이나 증류 실험을 자동 재개하지 않는다. 졸논에는 검증된 보호·효용·비용 비교와 재현 자산을 활용할 수 있지만 학위 요건 충족이나 CVPR 채택을 보장하지 않는다.</li>
+</ul>
+<p>근거 메모: <a href="spec_sources/track1_replan_feasibility_20260916.md">실행 가능성</a>, <a href="spec_sources/track1_replan_independent_20260916.md">독립 계획 검토</a>, <a href="spec_sources/track1_replan_prior_review_20260916.md">근접 선행</a>, <a href="spec_sources/track1_problem_framing_review_20260916.md">직전 문제 정의 점검</a>. 하위 메모의 제안 시간·모델 수·순서가 다를 경우 본 통합 계획을 현재 우선 기준으로 삼는다.</p>
+<h2>8. 후속 보고서의 네 gate를 적용하는 정확한 범위</h2>
+<p>큰 방향인 <strong>공개전용 대비 사적 추가 생성 효용 → 환자DP 아래 유지 → 품질·전체 비용 비교</strong>는 채택한다. 기존 원리의 적용 기여와 새로운 solver 자체의 기여를 구분한다는 원칙도 유지한다. <a href="https://cvpr.thecvf.com/Conferences/2026/ReviewerGuidelines">CVPR2026 공식 reviewer 지침</a>은 SOTA 수치를 넘지 못한 사실만으로 거절하지 말고 신규성과 잠재 영향을 함께 보며, 중복 주장에는 구체적 선행과 밀접성 설명을 요구한다. 이것이 현재 후보의 채택 가능성을 보장하지는 않는다.</p>
+<table>
+<thead>
+<tr>
+<th>보고서에서 제안한 조건</th>
+<th>채택·수정 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>공개전용과 pooled 비DP를 상한으로 비교</td>
+<td>둘 다 강한 참고점이다. pooled ridge는 해당 유한 정규화 학습목적의 최적해이며 held-out 생성 효용의 상한은 아니다</td>
+</tr>
+<tr>
+<td>공개 초기화 후 사적 학습을 별도 transfer baseline으로 추가</td>
+<td>유한 반복·clipping·DP noise에 대한 대조로 유효하다. 같은 고정 convex ridge를 충분히 풀면 초기값과 무관하므로 별도 비DP 해처럼 중복 집계하지 않는다. pooled 목적과 private-only 목적도 구분한다</td>
+</tr>
+<tr>
+<td>ΔW의 구조·안정성이 필수 Gate2</td>
+<td>방법의 작동 설명에 필요할 때 하는 보조 분석이다. 가중치 좌표·조건수에 따른 변화보다 실제 예측/생성의 재현 가능한 효과를 우선한다. 안정적 가중치 잔차를 모든 후보의 필수조건으로 만들지 않는다</td>
+</tr>
+<tr>
+<td>patient-specific residual만 보호</td>
+<td>현재 모델은 환자마다 별도 head를 만드는 개인화가 아니다. 환자별 통계를 묶어 보호해 하나의 공유 보정층을 학습한다. denoising 잔차, 공개 대비 가중치 차이, 환자별 gradient 잔차를 같은 양처럼 쓰지 않는다</td>
+</tr>
+<tr>
+<td>public-only와 DP-SGD보다 모두 높은 효용·낮은 비용</td>
+<td>공개전용에는 의미 있는 추가 효용을, 강한 환자DP 학습에는 품질–비용 절충 개선을 각각 묻는다. 사적 자료를 쓰지 않는 공개 기준선보다 비용까지 낮아야 할 필요는 없다</td>
+</tr>
+<tr>
+<td>작은 비교에서 이득이 없으면 사적자료가 불필요</td>
+<td>작은 표본의 미검출과 목적상 실질적 이득 부재는 다르다. 평가의 정밀도가 부족하면 미확인으로 기록하고 판별 가능한 표본·지표·비용을 먼저 명세한다. 음성 결과만으로 평가논문을 자동 선언하지 않는다</td>
+</tr>
+</tbody>
+</table>
+<p>이 네 gate는 후보를 설계하기 위한 새로운 허가조건이 아니라 투자와 검증 순서다. 잔차 구조 분석과 비용 profile은 필요한 비교와 병렬로 할 수 있다. 새 public-geometry solver를 먼저 여러 개 만드는 순서로 돌아가지 않는다.</p>
+<p>추가 원문·검토: <a href="spec_sources/public_assisted_deep_priors_20260916.md">공개 보조 딥러닝 선행</a>, <a href="spec_sources/research_gate_review_20260916.md">gate의 논리 검토</a>, <a href="spec_sources/generation_evaluator_readiness_20260916.md">평가기 준비와 참조 환자 감사</a>.</p></main></body></html>

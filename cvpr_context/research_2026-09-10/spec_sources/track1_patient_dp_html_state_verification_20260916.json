@@ -1,0 +1,16 @@
+{
+  "rows": 79,
+  "checked_local_links": 1072,
+  "checked_pdf_page_anchors": 221,
+  "broken_links": [],
+  "timestamp_utc": "2026-09-16T06:15:38.295370+00:00",
+  "state_key_sync": "PASS",
+  "sha256": {
+    "TRACK1_PATIENT_DP_PROTOCOL_20260916.md": "28cc85bba6e5f180744ae1e337520381d47e879367c0e18aaa26eed80ce907a1",
+    "TRACK1_PATIENT_DP_RESULTS_20260916.md": "af78cef04dd3f1280bb1f023250eb5ed11f824850a49ace706eb8127bbb64b41",
+    "track1_patient_dp_results.html": "dbd0031ed4349ed5127d7e8ab0c7eb54f696b0a017f9ca5c9340682bbef54b40",
+    "research_state.json": "c3b6c3d014c250f36f7868dd7d0bfc2ace7859d354c094b8628832e4e1d0305a",
+    "patient_baseline_spec.json": "2b8b036506f460f5999ec5f8764ff92a9bc6c4b704574367c4ba0b4e2da655b2",
+    "spec_sources/track1_public_reference_alternatives_20260916.md": "e59a4d90b0719599a3edcce33c3e93fffa31e0e4f04626d743a6d27435365cad"
+  }
+}

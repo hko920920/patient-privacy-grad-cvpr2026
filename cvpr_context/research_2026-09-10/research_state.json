@@ -15,22 +15,22 @@
     },
     {
       "number": 3,
-      "status": "track1_nonprivate_implementation_complete_dp_comparison_contract_in_progress",
-      "meaning": "Restricted residual family and sufficient-statistic code implemented; privacy algebra helpers alone are not a completed DP training protocol."
+      "status": "fixed_head_and_first_patient_DP_implementation_complete_application_claim_under_design",
+      "meaning": "Generation integration and whole-application contribution require further work; new DP principles are not mandatory."
     },
     {
       "number": 4,
-      "status": "track1_nonprivate_development_capacity_verified_full_claim_unvalidated",
-      "meaning": "40 patient-disjoint development cases support denoising adaptation; no generation quality, DP utility or final paper validation."
+      "status": "nonprivate_and_patient_DP_denoising_development_evidence_complete_generation_utility_unvalidated",
+      "meaning": "Existing development results are preserved; actual generated utility, private added value and final contribution are not established."
     }
   ],
-  "next_task": "Extract the fixed independent public quality32 calibration statistics, validate optimizer sufficiency, and freeze clipping/scales/PSD/optimizer/seeds before the same-head patient-DP four-cell comparison.",
-  "next_task_output": "Public calibration and frozen implementation contract; public dual-RDP precheck is distinct from DP model execution; report CPU timing before running.",
+  "next_task": "One bounded pooled-control, generation-integration and exploratory-metric package using existing evaluator code, patient-disjoint reference candidates and matched prompt mixtures.",
+  "next_task_output": "Fixed pooled references, verified sampling hook, all paired images, eligible reference manifest and exploratory RAD-DINO/BioViL-T scores with sample-size limits, measured costs and a decision report.",
   "step2_open_items": [
-    "Track1: equal-head DP-SGD and strong private regression comparison versus joint-statistic protection; noise dimension, Gram conditioning and clipping distortion.",
-    "Track1: actual generation utility and matched user-DP total compute versus DP-LoRA; no automatic speed or epsilon advantage.",
-    "Track2: a concrete diffusion protection-repair decision beyond SELENA, Aerni and Students Parrot; patient split or teacher/student four cells alone are known.",
-    "Both: standard components do not rule out an empirical paper, but generic one-shot, correlation or private-student leakage claims are not new."
+    "Track1: useful sampling behavior of the existing compact head; public-plus-private added value versus public-only in the fixed development setup.",
+    "Track1: a concrete application/integration claim with real generation utility and total cost; use strong existing public-informed solvers if appropriate.",
+    "Track1: patient-DP, public-access and objective alignment for subsequent quality-cost comparisons; formal utility evaluation is not yet ready.",
+    "Track2: retained as a separate protection-evaluation question, not an automatic fallback for a weak track1 pilot."
   ],
   "step2_completed_diagnostics": [
     "Core source/code premise review within documented scope",
@@ -57,7 +57,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Track1 non-DP capacity experiment completed and independently verified; specifying fair same-head patient-DP comparison using cached per-patient sufficient statistics.",
+  "step2_active_task": "Evaluate the useful medical generation-adaptation application of existing principles, separately from any optional new private-regression solver claim.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -72,13 +72,13 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_capacity_20260916_v1",
-    "last_completed_report": "TRACK1_CAPACITY_RESULTS_20260916.md",
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
+    "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
     "additional_execution_contract_fixed": false,
     "stage2_completion_claim": false,
-    "latest_design_review": "TWO_TRACK_OPERATION_REDESIGN_20260916.md",
+    "latest_design_review": "REALISTIC_RESEARCH_PLAN_20260916.md",
     "new_two_track_experiment_started": true,
-    "new_two_track_experiment_status": "track1_nonprivate_capacity_completed_verified_dp_comparison_not_run",
+    "new_two_track_experiment_status": "track1_patient_dp_comparison_completed_verified",
     "latest_cpu_outputs": [
       "spec_sources/track1_cpu_allocation_20260916",
       "spec_sources/track2_cpu_audit_20260916"
@@ -114,9 +114,93 @@
       "new_two_track_experiment_started": false,
       "new_two_track_experiment_status": "operation_redesign_completed_no_new_experiment"
     },
-    "latest_comparison_plan": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md"
+    "latest_comparison_plan": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
+    "next_execution_not_started": true,
+    "completed_track1_patient_dp": {
+      "report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
+      "protocol": "TRACK1_PATIENT_DP_PROTOCOL_20260916.md",
+      "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
+      "status": "completed_independently_verified",
+      "dp_simulation": true,
+      "epsilon_per_fixed_mechanism": 8.0,
+      "delta_per_fixed_mechanism": 1e-05,
+      "adjacency": "add_remove_one_patient",
+      "train_patients": 80,
+      "development_patients": 40,
+      "public_calibration_patients": 32,
+      "models": 64,
+      "noise_repeats_per_cell": 16,
+      "controls": 20,
+      "new_backbone_forward": 0,
+      "new_backbone_backward": 0,
+      "execution_seconds": 20.539959600078873,
+      "verification_checks": 41812,
+      "verification_seconds": 24.9702,
+      "summaries": {
+        "static_SSP": {
+          "mean_mse": 0.17829266123068704,
+          "sd_between_noise_seeds": 1.9160089199905054e-05,
+          "min_seed_mean": 0.17825882561128045,
+          "max_seed_mean": 0.1783219531529403,
+          "relative_reduction_from_base_percent": 0.7527581625995354,
+          "repeats_better_than_base": 16,
+          "relative_reduction_from_public_only_percent": -1.9822673021086297,
+          "repeats_better_than_public_only": 0,
+          "positive_patients_against_base_for_mean_model_loss": 40,
+          "mean_fit_seconds": 0.0010351874807383865
+        },
+        "static_SGD": {
+          "mean_mse": 0.17488995459762705,
+          "sd_between_noise_seeds": 3.886832769320624e-05,
+          "min_seed_mean": 0.17484040373443202,
+          "max_seed_mean": 0.1749830891730983,
+          "relative_reduction_from_base_percent": 2.6468868708814846,
+          "repeats_better_than_base": 16,
+          "relative_reduction_from_public_only_percent": -0.03594076792565217,
+          "repeats_better_than_public_only": 0,
+          "positive_patients_against_base_for_mean_model_loss": 40,
+          "mean_fit_seconds": 0.44731766249606153
+        },
+        "full_SSP": {
+          "mean_mse": 0.17889392436886492,
+          "sd_between_noise_seeds": 1.351752568463932e-05,
+          "min_seed_mean": 0.17886995240213935,
+          "max_seed_mean": 0.1789157132916997,
+          "relative_reduction_from_base_percent": 0.41806290553876285,
+          "repeats_better_than_base": 16,
+          "relative_reduction_from_public_only_percent": -2.7882698719429917,
+          "repeats_better_than_public_only": 0,
+          "positive_patients_against_base_for_mean_model_loss": 40,
+          "mean_fit_seconds": 0.015248412499204278
+        },
+        "full_SGD": {
+          "mean_mse": 0.17438884599596732,
+          "sd_between_noise_seeds": 4.0580769051393105e-05,
+          "min_seed_mean": 0.17430970838506482,
+          "max_seed_mean": 0.1744546368070063,
+          "relative_reduction_from_base_percent": 2.9258307501888625,
+          "repeats_better_than_base": 16,
+          "relative_reduction_from_public_only_percent": -0.19975708023498207,
+          "repeats_better_than_public_only": 0,
+          "positive_patients_against_base_for_mean_model_loss": 40,
+          "mean_fit_seconds": 0.5344559374862001
+        }
+      },
+      "public_only_full_mse": 0.17404118640360117,
+      "conclusions": [
+        "Compact-head denoising adaptation remains with patient DP-SGD.",
+        "Current zero-centered joint SSP loses to same-head SGD and public-only ridge.",
+        "Selected spectral floor is a directly controlled major observed SSP loss.",
+        "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
+      ]
+    },
+    "latest_planning_status": "followup_gates_and_evaluator_readiness_review_complete",
+    "proposed_next_package_total_hours": [
+      2.5,
+      5
+    ]
   },
-  "updated_utc": "2026-09-16T05:30:09.256147+00:00",
+  "updated_utc": "2026-09-16T07:06:18.641664+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -167,7 +251,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_CAPACITY_RESULTS_20260916.md",
+  "current_result_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -651,7 +735,7 @@
       "Independent score audit checks saved inputs/scalers/prediction arithmetic, not a fresh independent logistic solver fit."
     ]
   },
-  "finalnextquestion": "Does the observed restricted-head denoising gain survive a fair patient-DP comparison, given the full64 statistic dimension2336 versus static16 dimension200 and only0.4467% extra nonprivate MSE reduction?",
+  "finalnextquestion": "Does this compact generation-adaptation construction merit a concrete utility-cost evaluation, with public-only and pooled controls, without assuming that known protection ingredients disqualify an application contribution?",
   "completed_cross_intervention": {
     "status": "completed_fixed_two_patient_intervention_diagnostic",
     "current_step": 2,
@@ -1283,7 +1367,9 @@
       "New membership attack",
       "Previous clipping-observation hypothesis"
     ],
-    "current_deliverable": "TWO_TRACK_OPERATION_REDESIGN_20260916.md"
+    "current_deliverable": "REALISTIC_RESEARCH_PLAN_20260916.md",
+    "known_principle_application_contribution_allowed": true,
+    "new_DP_principle_mandatory": false
   },
   "prior_diagnostic_open_items_20260915": [
     "Concretize shared design assumptions and reasoned paper candidates; no universal all-baseline-failure prerequisite",
@@ -1366,7 +1452,7 @@
     "auxiliary_information": "Our CDI U-fitting result is observed; operational access and solution boundary incomplete",
     "protection_observation": "Recorded candidate plus restricted local clipping evidence; patient MIA/protection-choice link incomplete"
   },
-  "latest_design_report": "TWO_TRACK_OPERATION_REDESIGN_20260916.md",
+  "latest_design_report": "REALISTIC_RESEARCH_PLAN_20260916.md",
   "latest_user_scope_20260916": {
     "thesis_goal_may_change": true,
     "priority": "A defensible paper contribution; develop both protection-design efficiency and protection-evaluation improvement",
@@ -1379,16 +1465,18 @@
   "two_track_designs": {
     "report": "TWO_TRACK_OPERATION_REDESIGN_20260916.md",
     "status": "concrete_operation_candidates_no_efficacy_or_novelty_confirmation",
-    "priority": "Track1 frozen residual representation and patient-statistic contract; track2 decision improvement remains a separate research question.",
+    "priority": "Track1 application feasibility and utility-cost contribution; standard solver reuse allowed. Track2 retained independently.",
     "track1": {
       "proposal": "Spatially shared frozen-denoiser time-feature residual head fitted from jointly clipped and Gaussian-noised patient sufficient statistics.",
       "spec": "spec_sources/track1_operation_redesign_20260916.md",
       "confirmed_logic": "Fixed-feature quadratic finite loss depends on A/B; bounded patient statistics admit standard Gaussian protection; backbone backward is unnecessary.",
       "strong_counterbaseline": "Same-head DP-SGD also has zero backbone backward and may reuse the same private feature bank. Separate this from full DP-LoRA comparison.",
       "prior_boundary": "One-shot private feature generation, SSP, denoising ridge and small feature models already exist.",
-      "unverified": "Generated quality, patient-DP utility and fair same-head/strong-private-regression/DP-LoRA advantage; the initial nonprivate capacity question is now supported in one fixed development setting.",
+      "unverified": "Real generation utility, private incremental value, matched total-cost advantage and contribution of the whole adaptation construction. First fixed-head patient-DP denoising comparison is complete.",
       "capacity_report": "TRACK1_CAPACITY_RESULTS_20260916.md",
-      "capacity_status": "patient_disjoint_development_nonprivate_MSE_gain_verified"
+      "capacity_status": "patient_disjoint_development_nonprivate_MSE_gain_verified",
+      "patient_dp_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
+      "patient_dp_status": "completed_independently_verified"
     },
     "track2": {
       "proposal": "Identify which teacher/student data-path repair changes the actual protection-utility-cost decision in diffusion distillation.",
@@ -1402,7 +1490,8 @@
     "new_training_runs": 0,
     "new_attack_runs": 0,
     "new_synthetic_efficacy_runs": 0,
-    "verification": "spec_sources/two_track_operation_verification_20260916.json"
+    "verification": "spec_sources/two_track_operation_verification_20260916.json",
+    "current_plan": "REALISTIC_RESEARCH_PLAN_20260916.md"
   },
   "prior_closest_literature_focus_20260916": [
     "User Inference (EMNLP2024)",
@@ -1564,9 +1653,9 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
+  "next_task_plan_report": "REALISTIC_RESEARCH_PLAN_20260916.md",
   "track1_dp_comparison_design_20260916": {
-    "status": "comparison_structure_reviewed_public_calibration_and_dp_execution_pending",
+    "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
     "cells": [
       "static16-SSP",
@@ -1580,20 +1669,207 @@
     "delta": 1e-05,
     "public_calibration_patients": 32,
     "public_calibration_images_per_patient": 2,
-    "public_calibration_extracted": false,
+    "public_calibration_extracted": true,
     "sgd_q_candidate": 0.1,
     "sgd_steps_candidate": 500,
-    "sgd_budget_final": false,
-    "final_execution_contract_frozen": false,
-    "new_dp_models_trained": 0,
+    "sgd_budget_final": true,
+    "final_execution_contract_frozen": true,
+    "new_dp_models_trained": 64,
     "estimated_preparation_minutes": [
       30,
       60
     ],
     "accounting_precheck": "spec_sources/track1_dp_accounting_precheck_20260916.json",
-    "accounting_precheck_status": "PASS_PUBLIC_ACCOUNTING_ONLY"
+    "accounting_precheck_status": "PASS_PUBLIC_ACCOUNTING_ONLY",
+    "sgd_steps_actual": 2000,
+    "result_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md"
   },
   "historical_open_items_closed_by_capacity_20260916": [
     "Track1: feature API, inference-available inputs, fixed patient objective and source contract; actual nonprivate restricted-family capacity."
+  ],
+  "pre_patient_dp_current_result_report_20260916": "TRACK1_CAPACITY_RESULTS_20260916.md",
+  "completed_track1_patient_dp_20260916": {
+    "report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
+    "protocol": "TRACK1_PATIENT_DP_PROTOCOL_20260916.md",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
+    "status": "completed_independently_verified",
+    "dp_simulation": true,
+    "epsilon_per_fixed_mechanism": 8.0,
+    "delta_per_fixed_mechanism": 1e-05,
+    "adjacency": "add_remove_one_patient",
+    "train_patients": 80,
+    "development_patients": 40,
+    "public_calibration_patients": 32,
+    "models": 64,
+    "noise_repeats_per_cell": 16,
+    "controls": 20,
+    "new_backbone_forward": 0,
+    "new_backbone_backward": 0,
+    "execution_seconds": 20.539959600078873,
+    "verification_checks": 41812,
+    "verification_seconds": 24.9702,
+    "summaries": {
+      "static_SSP": {
+        "mean_mse": 0.17829266123068704,
+        "sd_between_noise_seeds": 1.9160089199905054e-05,
+        "min_seed_mean": 0.17825882561128045,
+        "max_seed_mean": 0.1783219531529403,
+        "relative_reduction_from_base_percent": 0.7527581625995354,
+        "repeats_better_than_base": 16,
+        "relative_reduction_from_public_only_percent": -1.9822673021086297,
+        "repeats_better_than_public_only": 0,
+        "positive_patients_against_base_for_mean_model_loss": 40,
+        "mean_fit_seconds": 0.0010351874807383865
+      },
+      "static_SGD": {
+        "mean_mse": 0.17488995459762705,
+        "sd_between_noise_seeds": 3.886832769320624e-05,
+        "min_seed_mean": 0.17484040373443202,
+        "max_seed_mean": 0.1749830891730983,
+        "relative_reduction_from_base_percent": 2.6468868708814846,
+        "repeats_better_than_base": 16,
+        "relative_reduction_from_public_only_percent": -0.03594076792565217,
+        "repeats_better_than_public_only": 0,
+        "positive_patients_against_base_for_mean_model_loss": 40,
+        "mean_fit_seconds": 0.44731766249606153
+      },
+      "full_SSP": {
+        "mean_mse": 0.17889392436886492,
+        "sd_between_noise_seeds": 1.351752568463932e-05,
+        "min_seed_mean": 0.17886995240213935,
+        "max_seed_mean": 0.1789157132916997,
+        "relative_reduction_from_base_percent": 0.41806290553876285,
+        "repeats_better_than_base": 16,
+        "relative_reduction_from_public_only_percent": -2.7882698719429917,
+        "repeats_better_than_public_only": 0,
+        "positive_patients_against_base_for_mean_model_loss": 40,
+        "mean_fit_seconds": 0.015248412499204278
+      },
+      "full_SGD": {
+        "mean_mse": 0.17438884599596732,
+        "sd_between_noise_seeds": 4.0580769051393105e-05,
+        "min_seed_mean": 0.17430970838506482,
+        "max_seed_mean": 0.1744546368070063,
+        "relative_reduction_from_base_percent": 2.9258307501888625,
+        "repeats_better_than_base": 16,
+        "relative_reduction_from_public_only_percent": -0.19975708023498207,
+        "repeats_better_than_public_only": 0,
+        "positive_patients_against_base_for_mean_model_loss": 40,
+        "mean_fit_seconds": 0.5344559374862001
+      }
+    },
+    "public_only_full_mse": 0.17404118640360117,
+    "conclusions": [
+      "Compact-head denoising adaptation remains with patient DP-SGD.",
+      "Current zero-centered joint SSP loses to same-head SGD and public-only ridge.",
+      "Selected spectral floor is a directly controlled major observed SSP loss.",
+      "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
+    ]
+  },
+  "pre_realistic_plan_planning_20260916": {
+    "next_task": "Develop and compare public-reference residual protection against equally public-initialized strong DP-SGD and public-only ridge. Preserve the observed small private-data utility margin; no outcome-driven cohort or baseline weakening.",
+    "next_task_output": "Concrete fixed-objective/bias/noise derivation, closest standard public-information baselines, independent public calibration-role design, same privacy accounting and predeclared utility/cost criterion before a separate new development run.",
+    "next_task_plan_report": "spec_sources/track1_public_reference_alternatives_20260916.md",
+    "step2_active_task": "First patient-DP fixed-head comparison completed and verified; connect the observed noisy-Gram/floor loss to a public-reference design and meaningful private utility beyond public-only baselines.",
+    "latest_design_report": "TWO_TRACK_OPERATION_REDESIGN_20260916.md",
+    "finalnextquestion": "Does the observed restricted-head denoising gain survive a fair patient-DP comparison, given the full64 statistic dimension2336 versus static16 dimension200 and only0.4467% extra nonprivate MSE reduction?"
+  },
+  "current_paper_problem_fixed": false,
+  "research_question_status": "Legitimate application candidate and feasibility question; final technical contribution and real generation utility remain unestablished.",
+  "new_dp_principle_required": false,
+  "new_solver_required_for_application_contribution": false,
+  "realistic_replan_20260916": {
+    "report": "REALISTIC_RESEARCH_PLAN_20260916.md",
+    "status": "planning_complete_no_new_experiment",
+    "user_correction": "Known principles may produce a meaningful new application/integration contribution. Ingredient overlap is not evidence that this full application was already solved.",
+    "primary_candidate": "Useful patient-DP medical diffusion adaptation with frozen public representations and no private backbone backward, using an appropriate existing or improved protection solver.",
+    "next_package_total_hours": [
+      2.5,
+      5
+    ],
+    "next_package_is_gpu_training_hours": false,
+    "models_for_limited_generation": [
+      "base",
+      "public_only",
+      "private_nonprivate",
+      "public_private_pooled_nonprivate",
+      "existing_private_DP_SGD",
+      "existing_private_SSP"
+    ],
+    "proposed_images": 96,
+    "proposed_primary_guidance": 1.0,
+    "proposal_is_execution_contract": false,
+    "secondary_track_auto_selected": false,
+    "new_gpu_runs": 0,
+    "new_training_runs": 0,
+    "new_attack_runs": 0,
+    "evaluator_followup_review": "spec_sources/generation_evaluator_readiness_20260916.md",
+    "proposed_DP_head_policy": "fixed manifest index0 per method; no best-model selection or pooled different-head generator metrics"
+  },
+  "pre_gate_review_realistic_replan_20260916": {
+    "report": "REALISTIC_RESEARCH_PLAN_20260916.md",
+    "status": "planning_complete_no_new_experiment",
+    "user_correction": "Known principles may produce a meaningful new application/integration contribution. Ingredient overlap is not evidence that this full application was already solved.",
+    "primary_candidate": "Useful patient-DP medical diffusion adaptation with frozen public representations and no private backbone backward, using an appropriate existing or improved protection solver.",
+    "next_package_total_hours": [
+      2,
+      4
+    ],
+    "next_package_is_gpu_training_hours": false,
+    "models_for_limited_generation": [
+      "base",
+      "public_only",
+      "private_nonprivate",
+      "public_private_pooled_nonprivate",
+      "existing_private_DP_SGD",
+      "existing_private_SSP"
+    ],
+    "proposed_images": 96,
+    "proposed_primary_guidance": 1.0,
+    "proposal_is_execution_contract": false,
+    "secondary_track_auto_selected": false,
+    "new_gpu_runs": 0,
+    "new_training_runs": 0,
+    "new_attack_runs": 0
+  },
+  "followup_gate_review_20260916": {
+    "status": "completed_source_and_readiness_review_no_new_experiment",
+    "report": "REALISTIC_RESEARCH_PLAN_20260916.md",
+    "source_note": "spec_sources/public_assisted_deep_priors_20260916.md",
+    "gate_note": "spec_sources/research_gate_review_20260916.md",
+    "readiness_note": "spec_sources/generation_evaluator_readiness_20260916.md",
+    "generation_metrics_implemented_and_preflight_verified": true,
+    "original_real_reference_patients": 448,
+    "overlap_with_current_roles": {
+      "fit": 32,
+      "development": 22,
+      "calibration": 59,
+      "test": 65,
+      "public32": 11
+    },
+    "eligible_reference_candidates_after_patient_exclusions": 259,
+    "candidate_reference_is_fresh_independent_final_test": false,
+    "old_per_image_encoder_features_saved": false,
+    "prompt_reference_mixture_requires_new_specification": true,
+    "next_package_total_work_hours": [
+      2.5,
+      5
+    ],
+    "exploratory_images_per_method": 16,
+    "initial_DP_head_selection": "fixed manifest index0 per method; no best-model selection or pooled different-head generator metrics",
+    "KID_subset50_requires_at_least50_per_method_but_not_power_guarantee": true,
+    "parameter_residual_stability_required": false,
+    "reference_models_are_generation_utility_upper_bounds": false,
+    "strict_cost_superiority_to_public_only_required": false,
+    "novel_DP_solver_required": false,
+    "new_experiments": 0
+  },
+  "next_package_total_work_hours": [
+    2.5,
+    5
+  ],
+  "current_research_questions": [
+    "Does protected use of private patient data add meaningful generation utility over the available public-only adaptation?",
+    "Does this generation-adaptation construction improve the utility-total-cost tradeoff against strong patient-DP learners at matched public access and privacy constraints?"
   ]
 }
