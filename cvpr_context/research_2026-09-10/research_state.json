@@ -24,8 +24,8 @@
       "meaning": "Existing development results are preserved; actual generated utility, private added value and final contribution are not established."
     }
   ],
-  "next_task": "One bounded pooled-control, generation-integration and exploratory-metric package using existing evaluator code, patient-disjoint reference candidates and matched prompt mixtures.",
-  "next_task_output": "Fixed pooled references, verified sampling hook, all paired images, eligible reference manifest and exploratory RAD-DINO/BioViL-T scores with sample-size limits, measured costs and a decision report.",
+  "next_task": "Realistic-plan5B: verify fixed-head sampling integration (zero-head base recovery, saved-input offline/online agreement and scheduler semantics); then profile fixed generation.",
+  "next_task_output": "Verified sampling wrapper and numerical evidence; no generated utility claim from tiny denoising differences.",
   "step2_open_items": [
     "Track1: useful sampling behavior of the existing compact head; public-plus-private added value versus public-only in the fixed development setup.",
     "Track1: a concrete application/integration claim with real generation utility and total cost; use strong existing public-informed solvers if appropriate.",
@@ -72,13 +72,13 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
-    "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_pooled_reference_20260916_v1",
+    "last_completed_report": "TRACK1_POOLED_REFERENCE_RESULTS_20260916.md",
     "additional_execution_contract_fixed": false,
     "stage2_completion_claim": false,
     "latest_design_review": "REALISTIC_RESEARCH_PLAN_20260916.md",
     "new_two_track_experiment_started": true,
-    "new_two_track_experiment_status": "track1_patient_dp_comparison_completed_verified",
+    "new_two_track_experiment_status": "pooled_nonDP_reference_completed_verified",
     "latest_cpu_outputs": [
       "spec_sources/track1_cpu_allocation_20260916",
       "spec_sources/track2_cpu_audit_20260916"
@@ -194,13 +194,164 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "followup_gates_and_evaluator_readiness_review_complete",
+    "latest_planning_status": "realistic_plan5A_completed_5B_pending",
     "proposed_next_package_total_hours": [
       2.5,
       5
+    ],
+    "historical_pre_pooled_last_completed": {
+      "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
+      "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
+      "new_two_track_experiment_status": "track1_patient_dp_comparison_completed_verified"
+    },
+    "completed_track1_pooled_reference": {
+      "report": "TRACK1_POOLED_REFERENCE_RESULTS_20260916.md",
+      "status": "completed_independently_verified",
+      "current_step": 2,
+      "realistic_plan_substep": "5A only",
+      "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_pooled_reference_20260916_v1",
+      "contract_sha256": "f3f12aa72ae1cf6fe0f4aa0070532c8b2ecb9b7834992f863bc2dd646b41d55d",
+      "analysis_sha256": "347da6d7e7a9364ba49e613d299b6b4c1d1ce6069b1a0331c9f8f6d4ea23807b",
+      "verification_sha256": "a1e0bb4d773a5f459342cc4d2e64d3756d07bd4ecf95eacf6eb011d3b5223347",
+      "patients": {
+        "public": 32,
+        "private": 80,
+        "development": 40
+      },
+      "families": {
+        "static": {
+          "references": {
+            "base": {
+              "mean_mse": 0.17964495328020189,
+              "pooled_training_regularized_objective": 0.7228623251271576
+            },
+            "public_only": {
+              "mean_mse": 0.1748271203880173,
+              "pooled_training_regularized_objective": 0.7052479577561873,
+              "own_objective_stationarity_norm": 3.598138533515486e-18
+            },
+            "private_only": {
+              "mean_mse": 0.1747876716746816,
+              "pooled_training_regularized_objective": 0.7052166891580386,
+              "own_objective_stationarity_norm": 6.1098904938009154e-18
+            },
+            "pooled": {
+              "mean_mse": 0.1747957492640288,
+              "pooled_training_regularized_objective": 0.7052107744344787,
+              "own_objective_stationarity_norm": 4.337909693015408e-18
+            }
+          },
+          "paired_comparisons": {
+            "pooled_vs_public_only": {
+              "mean_improvement": 3.1371123988473136e-05,
+              "relative_reduction_percent": 0.017944083228532845,
+              "patient_improved": 39,
+              "patient_tied": 0,
+              "patient_worse": 1,
+              "median_improvement": 3.08060485598588e-05,
+              "minimum_improvement": -7.1026414859842735e-06,
+              "maximum_improvement": 6.277095756357376e-05
+            },
+            "pooled_vs_private_only": {
+              "mean_improvement": -8.077589347224579e-06,
+              "relative_reduction_percent": -0.004621372474289121,
+              "patient_improved": 6,
+              "patient_tied": 0,
+              "patient_worse": 34,
+              "median_improvement": -7.84401243482391e-06,
+              "minimum_improvement": -2.058741236762862e-05,
+              "maximum_improvement": 7.483634029276098e-06
+            },
+            "pooled_vs_base": {
+              "mean_improvement": 0.004849204016173108,
+              "relative_reduction_percent": 2.6993266037424073,
+              "patient_improved": 40,
+              "patient_tied": 0,
+              "patient_worse": 0,
+              "median_improvement": 0.004841412642684298,
+              "minimum_improvement": 0.0038564410791252224,
+              "maximum_improvement": 0.006534561223832253
+            }
+          }
+        },
+        "full": {
+          "references": {
+            "base": {
+              "mean_mse": 0.17964495328020189,
+              "pooled_training_regularized_objective": 0.7228623251271576
+            },
+            "public_only": {
+              "mean_mse": 0.17404118640360117,
+              "pooled_training_regularized_objective": 0.7025751848366664,
+              "own_objective_stationarity_norm": 6.216648558982528e-18
+            },
+            "private_only": {
+              "mean_mse": 0.1740069293740371,
+              "pooled_training_regularized_objective": 0.7025212837752752,
+              "own_objective_stationarity_norm": 5.432607270058811e-18
+            },
+            "pooled": {
+              "mean_mse": 0.1740121971240744,
+              "pooled_training_regularized_objective": 0.7025104148283035,
+              "own_objective_stationarity_norm": 1.0267014642636853e-17
+            }
+          },
+          "paired_comparisons": {
+            "pooled_vs_public_only": {
+              "mean_improvement": 2.898927952676919e-05,
+              "relative_reduction_percent": 0.016656562808956672,
+              "patient_improved": 37,
+              "patient_tied": 0,
+              "patient_worse": 3,
+              "median_improvement": 2.632343611240484e-05,
+              "minimum_improvement": -1.6914561585118504e-05,
+              "maximum_improvement": 7.721507838470698e-05
+            },
+            "pooled_vs_private_only": {
+              "mean_improvement": -5.267750037273728e-06,
+              "relative_reduction_percent": -0.003027321990120531,
+              "patient_improved": 9,
+              "patient_tied": 0,
+              "patient_worse": 31,
+              "median_improvement": -4.010841926138653e-06,
+              "minimum_improvement": -2.4172994620874633e-05,
+              "maximum_improvement": 1.3056295733337997e-05
+            },
+            "pooled_vs_base": {
+              "mean_improvement": 0.005632756156127526,
+              "relative_reduction_percent": 3.1354936797705717,
+              "patient_improved": 40,
+              "patient_tied": 0,
+              "patient_worse": 0,
+              "median_improvement": 0.005675130976782489,
+              "minimum_improvement": 0.004557870353457727,
+              "maximum_improvement": 0.007427893647763084
+            }
+          }
+        }
+      },
+      "verification_checks": 481,
+      "execution_seconds": 0.09151609998662025,
+      "verification_seconds": 0.19712360005360097,
+      "new_pooled_models": 2,
+      "new_backbone_forward": 0,
+      "new_backbone_backward": 0,
+      "generated_images": 0,
+      "dp_applied": false,
+      "conclusion": "Small descriptive development denoising improvement over public-only; generated private incremental utility remains unestablished.",
+      "next_substep": "5B sampling integration correctness, then separately fixed generation/evaluation",
+      "next_substep_estimated_work_minutes": [
+        45,
+        90
+      ],
+      "remaining_generation_package_not_completed": true
+    },
+    "next_substep_estimated_work_minutes": [
+      45,
+      90
     ]
   },
-  "updated_utc": "2026-09-16T07:06:18.641664+00:00",
+  "updated_utc": "2026-09-16T07:34:33.579209+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -251,7 +402,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
+  "current_result_report": "TRACK1_POOLED_REFERENCE_RESULTS_20260916.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -1871,5 +2022,149 @@
   "current_research_questions": [
     "Does protected use of private patient data add meaningful generation utility over the available public-only adaptation?",
     "Does this generation-adaptation construction improve the utility-total-cost tradeoff against strong patient-DP learners at matched public access and privacy constraints?"
-  ]
+  ],
+  "pre_pooled_current_result_report_20260916": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
+  "completed_track1_pooled_reference_20260916": {
+    "report": "TRACK1_POOLED_REFERENCE_RESULTS_20260916.md",
+    "status": "completed_independently_verified",
+    "current_step": 2,
+    "realistic_plan_substep": "5A only",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_pooled_reference_20260916_v1",
+    "contract_sha256": "f3f12aa72ae1cf6fe0f4aa0070532c8b2ecb9b7834992f863bc2dd646b41d55d",
+    "analysis_sha256": "347da6d7e7a9364ba49e613d299b6b4c1d1ce6069b1a0331c9f8f6d4ea23807b",
+    "verification_sha256": "a1e0bb4d773a5f459342cc4d2e64d3756d07bd4ecf95eacf6eb011d3b5223347",
+    "patients": {
+      "public": 32,
+      "private": 80,
+      "development": 40
+    },
+    "families": {
+      "static": {
+        "references": {
+          "base": {
+            "mean_mse": 0.17964495328020189,
+            "pooled_training_regularized_objective": 0.7228623251271576
+          },
+          "public_only": {
+            "mean_mse": 0.1748271203880173,
+            "pooled_training_regularized_objective": 0.7052479577561873,
+            "own_objective_stationarity_norm": 3.598138533515486e-18
+          },
+          "private_only": {
+            "mean_mse": 0.1747876716746816,
+            "pooled_training_regularized_objective": 0.7052166891580386,
+            "own_objective_stationarity_norm": 6.1098904938009154e-18
+          },
+          "pooled": {
+            "mean_mse": 0.1747957492640288,
+            "pooled_training_regularized_objective": 0.7052107744344787,
+            "own_objective_stationarity_norm": 4.337909693015408e-18
+          }
+        },
+        "paired_comparisons": {
+          "pooled_vs_public_only": {
+            "mean_improvement": 3.1371123988473136e-05,
+            "relative_reduction_percent": 0.017944083228532845,
+            "patient_improved": 39,
+            "patient_tied": 0,
+            "patient_worse": 1,
+            "median_improvement": 3.08060485598588e-05,
+            "minimum_improvement": -7.1026414859842735e-06,
+            "maximum_improvement": 6.277095756357376e-05
+          },
+          "pooled_vs_private_only": {
+            "mean_improvement": -8.077589347224579e-06,
+            "relative_reduction_percent": -0.004621372474289121,
+            "patient_improved": 6,
+            "patient_tied": 0,
+            "patient_worse": 34,
+            "median_improvement": -7.84401243482391e-06,
+            "minimum_improvement": -2.058741236762862e-05,
+            "maximum_improvement": 7.483634029276098e-06
+          },
+          "pooled_vs_base": {
+            "mean_improvement": 0.004849204016173108,
+            "relative_reduction_percent": 2.6993266037424073,
+            "patient_improved": 40,
+            "patient_tied": 0,
+            "patient_worse": 0,
+            "median_improvement": 0.004841412642684298,
+            "minimum_improvement": 0.0038564410791252224,
+            "maximum_improvement": 0.006534561223832253
+          }
+        }
+      },
+      "full": {
+        "references": {
+          "base": {
+            "mean_mse": 0.17964495328020189,
+            "pooled_training_regularized_objective": 0.7228623251271576
+          },
+          "public_only": {
+            "mean_mse": 0.17404118640360117,
+            "pooled_training_regularized_objective": 0.7025751848366664,
+            "own_objective_stationarity_norm": 6.216648558982528e-18
+          },
+          "private_only": {
+            "mean_mse": 0.1740069293740371,
+            "pooled_training_regularized_objective": 0.7025212837752752,
+            "own_objective_stationarity_norm": 5.432607270058811e-18
+          },
+          "pooled": {
+            "mean_mse": 0.1740121971240744,
+            "pooled_training_regularized_objective": 0.7025104148283035,
+            "own_objective_stationarity_norm": 1.0267014642636853e-17
+          }
+        },
+        "paired_comparisons": {
+          "pooled_vs_public_only": {
+            "mean_improvement": 2.898927952676919e-05,
+            "relative_reduction_percent": 0.016656562808956672,
+            "patient_improved": 37,
+            "patient_tied": 0,
+            "patient_worse": 3,
+            "median_improvement": 2.632343611240484e-05,
+            "minimum_improvement": -1.6914561585118504e-05,
+            "maximum_improvement": 7.721507838470698e-05
+          },
+          "pooled_vs_private_only": {
+            "mean_improvement": -5.267750037273728e-06,
+            "relative_reduction_percent": -0.003027321990120531,
+            "patient_improved": 9,
+            "patient_tied": 0,
+            "patient_worse": 31,
+            "median_improvement": -4.010841926138653e-06,
+            "minimum_improvement": -2.4172994620874633e-05,
+            "maximum_improvement": 1.3056295733337997e-05
+          },
+          "pooled_vs_base": {
+            "mean_improvement": 0.005632756156127526,
+            "relative_reduction_percent": 3.1354936797705717,
+            "patient_improved": 40,
+            "patient_tied": 0,
+            "patient_worse": 0,
+            "median_improvement": 0.005675130976782489,
+            "minimum_improvement": 0.004557870353457727,
+            "maximum_improvement": 0.007427893647763084
+          }
+        }
+      }
+    },
+    "verification_checks": 481,
+    "execution_seconds": 0.09151609998662025,
+    "verification_seconds": 0.19712360005360097,
+    "new_pooled_models": 2,
+    "new_backbone_forward": 0,
+    "new_backbone_backward": 0,
+    "generated_images": 0,
+    "dp_applied": false,
+    "conclusion": "Small descriptive development denoising improvement over public-only; generated private incremental utility remains unestablished.",
+    "next_substep": "5B sampling integration correctness, then separately fixed generation/evaluation",
+    "next_substep_estimated_work_minutes": [
+      45,
+      90
+    ],
+    "remaining_generation_package_not_completed": true
+  },
+  "latest_user_execution_scope_20260916": "Proceed slowly and thoroughly, one substep at a time; section5A completed this turn."
 }

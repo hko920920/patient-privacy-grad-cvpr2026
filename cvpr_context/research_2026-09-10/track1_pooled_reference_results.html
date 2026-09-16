@@ -1,0 +1,97 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>방향1: 공개+사적 비DP 대조 결과</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p><h1>방향1: 공개+사적 비DP 대조 계산 결과</h1>
+<p><strong>공개32명에 사적 역할80명을 더한 보정층은 공개전용보다 개발 denoising 오차가 조금 낮았다. full64의 상대 감소는 0.01666%이며, 실제 생성 효용의 추가 가치는 아직 확인하지 않았다.</strong> 현재 큰 단계2·방향1 안에서 <a href="realistic_research_plan.html">현실 계획</a> §5A만 완료했다. §5B 생성 연결과 §5C 생성·정량 평가는 아직 실행하지 않았다.</p>
+<h2>1. 이번 작업이 필요한 이유와 고정 조건</h2>
+<p>앞선 비교는 공개전용32명과 사적전용80명이었다. 이번에는 공개자료를 이미 사용하는 조건에서 사적자료를 함께 넣은 비DP 기준점을 확보했다. 새 solver나 DP 변형을 탐색하는 작업이 아니다.</p>
+<ul>
+<li>동일 frozen SD2.1 특징, static16/full64, 기존 λ=.001을 유지했다.</li>
+<li>공개32명과 사적80명은 각 환자에게 같은 가중치를 준다. 환자 내부는 공개2장/사적4장, 각8 noise draw의 기존 평균이다. 사진 수 차이는 추정 분산의 한계이며 환자 가중치 차이로 바꾸지 않았다.</li>
+<li><code>A_pool=(32*A_public+80*A_private)/112</code>, B와 Q도 같은 방식. <code>W=(A_pool+.001 I)^(-1)B_pool</code>을 각 head에서 한 번 계산했다.</li>
+<li>학습 목적은 환자 평균 <strong>출력4채널 합</strong> 손실에 ridge를 더한 값이다. 개발평가는 ridge 없이 손실을4로 나눈 MSE이다.</li>
+<li>평가 자료는 기존에 반복 사용한 환자40명이다. 잠긴 calibration/test 각140명은 ID 중복 확인 외에 사용하지 않았다.</li>
+<li>환자군·가중치·λ를 결과에 맞춰 바꾸지 않았다. 생산 코드와 독립 검산 코드를 실행 전 계약에 SHA256으로 결속했다.</li>
+</ul>
+<p>공개·사적은 모두 NIH 공개자료에서 지정한 역할이다. 실제 비공개 병원 코호트의 효과를 측정한 것이 아니다.</p>
+<h2>2. 결과: 낮을수록 좋은 개발 denoising MSE</h2>
+<table>
+<thead>
+<tr>
+<th>학습 조건</th>
+<th style="text-align: right;">static16</th>
+<th style="text-align: right;">full64</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기반 모델</td>
+<td style="text-align: right;">0.1796449533</td>
+<td style="text-align: right;">0.1796449533</td>
+</tr>
+<tr>
+<td>공개전용32명</td>
+<td style="text-align: right;">0.1748271204</td>
+<td style="text-align: right;">0.1740411864</td>
+</tr>
+<tr>
+<td>사적전용80명, 비DP</td>
+<td style="text-align: right;">0.1747876717</td>
+<td style="text-align: right;">0.1740069294</td>
+</tr>
+<tr>
+<td><strong>공개32+사적80명, 비DP</strong></td>
+<td style="text-align: right;"><strong>0.1747957493</strong></td>
+<td style="text-align: right;"><strong>0.1740121971</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>결합 모델의 비교</th>
+<th style="text-align: right;">static16</th>
+<th style="text-align: right;">full64</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>공개전용 대비 MSE 절대 감소</td>
+<td style="text-align: right;">0.0000313711</td>
+<td style="text-align: right;">0.0000289893</td>
+</tr>
+<tr>
+<td>공개전용 대비 MSE 상대 감소</td>
+<td style="text-align: right;">0.0179441%</td>
+<td style="text-align: right;">0.0166566%</td>
+</tr>
+<tr>
+<td>공개전용보다 개선된 개발 환자</td>
+<td style="text-align: right;">39/40</td>
+<td style="text-align: right;">37/40</td>
+</tr>
+<tr>
+<td>사적전용 대비 MSE 절대 증가</td>
+<td style="text-align: right;">0.0000080776</td>
+<td style="text-align: right;">0.0000052678</td>
+</tr>
+<tr>
+<td>기반 모델 대비 MSE 상대 감소</td>
+<td style="text-align: right;">2.69933%</td>
+<td style="text-align: right;">3.13549%</td>
+</tr>
+</tbody>
+</table>
+<p>사적전용이 결합 모델보다 약간 좋았다. 결합 모델이 최소화하는 것은 <strong>결합 학습자료의 정규화 목적</strong>이며, 별도 개발자료의 MSE가 아니다. 실제로 결합 학습 목적은 모든 대조보다 낮았고 개발 오차의 순서는 달랐다. pooled를 held-out·생성 품질의 상한이라 부르지 않는 이유가 여기에 있다.</p>
+<h2>3. 이 결과가 말하는 것과 다음 결정</h2>
+<p>현재 고정된 표현·학습목적·분할에서 공개전용 위에 사적 역할자료를 추가한 차이는 <strong>수치적으로 재현되지만 작다</strong>. 개선 환자가 다수라는 사실만으로 효과 크기가 충분하다거나 다른 환자·noise·생성 결과에서 재현됐다고 말할 수 없다. 이번은 독립 새 test가 아니며 유의성 검정도 하지 않았다.</p>
+<p>공개전용과의 비교에는 학습 환자 수 증가도 포함된다. 이를 사적자료에만 있는 특별한 신호의 발견으로 해석하지 않는다. 기존 patient-DP-SGD는 사적전용 목적이었으므로, 이번 pooled 비DP와의 차이를 그대로 같은 목적에서의 순수 DP 손실이라고 부르지 않는다.</p>
+<p><strong>다음은 §5B의 실제 sampling 연결 검증이다.</strong> 다른 λ나 공개·사적 가중치를 탐색하지 않고, 확보한 가중치를 그대로 사용한다. W=0 기반 모델 복원, 저장 noisy input의 offline/online 보정 일치, scheduler 출력 해석을 먼저 확인한다. 예상 구현·검산 <strong>45–90분</strong>, GPU 계산은 최초 profile 후 따로 보고한다. 그 뒤에 고정 여섯 모델의 생성96장과 개발용 정량 평가를 진행한다. 방법당16장은 연결·탐색 범위이며 사적 생성 효용의 확정 검정이 아니다.</p>
+<h2>4. 검산·비용·저장 위치</h2>
+<ul>
+<li>자료 독립 감사: 계약 핵심23개 필드·동일 projection·검산 결속 캐시 hash 일치. train80/public32/dev40 분리와 잠긴 평가 환자 제외를 확인했다. <a href="spec_sources/pooled_reference_provenance_20260916.md">자료 감사 메모</a>.</li>
+<li>산술 독립 검산 <strong>PASS, 481개 확인</strong>. 생산 코드의 그룹 가중평균·일반 선형해법과 별도로, 112명 직접 누적평균·Cholesky와 삼각대입·환자별 손실식을 사용했다. 가중치8개(기반0 포함), 환자 손실320개, 짝지은 요약6개와 기존 대조 복원을 검산했다.</li>
+<li>독립 해의 최대 가중치 차이 <code>7.22e-16</code>, 환자별 손실 차이 <code>2.78e-17</code>. 원시 특징 추출은 과거 검산된 캐시를 재사용했으며 이번 GPU 재추론은 없다.</li>
+<li>본 CPU 계산·분석·저장 <strong>0.092초</strong>, 독립 검산 <strong>0.197초</strong>. 구현·출처 검토·기록에 든 작업시간과 구별한다. 기존 특징 추출 비용을 포함한 전체 학습시간으로 해석하지 않는다.</li>
+<li>신규 pooled head2개, 기존 공개/사적 기준 재계산4개. 새 backbone forward/backward0, 생성0, DP 학습0.</li>
+</ul>
+<p><a href="../../code_working/_reports/frozen_residual_pooled_reference_20260916_v1/contract.json">실행 계약</a> · <a href="../../code_working/_reports/frozen_residual_pooled_reference_20260916_v1/analysis.json">정확한 결과</a> · <a href="../../code_working/_reports/frozen_residual_pooled_reference_20260916_v1/models.npz">가중치</a> · <a href="../../code_working/_reports/frozen_residual_pooled_reference_20260916_v1/evaluation_mse.npz">환자별 오차</a> · <a href="../../code_working/_reports/frozen_residual_pooled_reference_20260916_v1/execution.json">실행 시간·hash</a> · <a href="../../code_working/_reports/frozen_residual_pooled_reference_20260916_v1/independent_verification.json">독립 검산</a>.</p>
+<p><a href="../../code_working/frozen_residual_head/run_pooled_reference.py">계산 코드</a> · <a href="../../code_working/frozen_residual_head/verify_pooled_reference.py">독립 검산 코드</a>. 이전 capacity/public/patient-DP 코드·계약·결과는 수정하지 않았다.</p></main></body></html>

@@ -1,0 +1,19 @@
+{
+  "status": "PASS_POOLED_REPORT_LINKS_STATE_AND_FROZEN_SOURCES",
+  "static": {
+    "rows": 79,
+    "checked_local_links": 1116,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_report_local_links": 12,
+  "aligned_state_keys": [
+    "current_step",
+    "current_result_report",
+    "next_task",
+    "active_execution",
+    "completed_track1_pooled_reference_20260916"
+  ],
+  "source_hashes_rechecked": 19,
+  "new_experiments_during_doc_check": 0
+}
