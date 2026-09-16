@@ -1,0 +1,125 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>방향1: E4·CFG7.5 예약 입력의 최종 확인 결과</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p><h1>공개 의료 LoRA: E4·CFG7.5 예약 입력 확인 결과</h1>
+<p><strong>판정: 이번 확인은 좋다. 두 판독자 모두16/16장 통과, prompt별4/4로 사전에 정한 형태 관문을 넘었다. E4·CFG7.5를 후속 비DP 작은 head 비교의 운영 backbone으로 조건부 채택한다.</strong></p>
+<p>이제 이 공개 recipe의 step/seed/CFG 조정을 멈추고, 새 backbone에서 작은 head와 사적 자료가 실제 생성 효용을 더하는지 검증할 수 있다. 임상 품질·일반화 안정성·CFG7.5 우월성·private 추가 효용·patient-DP 성능을 확보했다는 뜻은 아니다. 이전 E4/CFG1 확인10/16 실패는 그대로 보존했다.</p>
+<h2>1. 무엇을 실제 실행했나</h2>
+<p><a href="track1_public_operating_confirmation_protocol.html">생성 전에 고정한 확인 명세</a>에 따라 직전 개발 실험의 계약에 이미 예약된 C0–C3 네 seed를 사용했다. 이 네 실제 initial tensor를 generic/normal/effusion/cardiomegaly 네 prompt에 공통 적용해16장을 한 번만 생성했다.</p>
+<p>E4 checkpoint, CFG7.5, FP32, DDIM30 eta0,256px, pinned SD2.1/VAE를 유지했다. conditional/null embedding은 직전 검증된 입력에서 exact 재사용했다. 새로운 text encoding·학습·역전파·작은 head·DP 실행은 모두0이다. 결과를 보고 checkpoint·seed·CFG를 바꾸거나 재생성하지 않았다.</p>
+<p>이번 실행 계약 SHA256: <code>9cb1d51b6d11ad5e046d5d207283788459e5980306d82836c9729231746c31bb</code>.</p>
+<h2>2. 판독 결과</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th style="text-align: right;">통과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>root 판독</td>
+<td style="text-align: right;">16/16</td>
+</tr>
+<tr>
+<td>별도 독립 판독</td>
+<td style="text-align: right;">16/16</td>
+</tr>
+<tr>
+<td>두 판독자의 PASS 교집합</td>
+<td style="text-align: right;"><strong>16/16</strong></td>
+</tr>
+<tr>
+<td>Generic</td>
+<td style="text-align: right;">4/4</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td style="text-align: right;">4/4</td>
+</tr>
+<tr>
+<td>Effusion</td>
+<td style="text-align: right;">4/4</td>
+</tr>
+<tr>
+<td>Cardiomegaly</td>
+<td style="text-align: right;">4/4</td>
+</tr>
+<tr>
+<td>판독 불일치</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>관문은 전체≥12/16 및 모든 prompt≥2/4였다. 네 latent block별로도4/4였다. 모든 영상을 보존했다.</p>
+<p><img alt="고정 확인16장 전체와 교집합 판정" src="../../code_working/_reports/public_operating_confirmation_20260916_v1/confirmation_reviewed.png"/></p>
+<p>두 판독자는 다른 원표를 읽기 전에 각각 판정을 파일에 확정했다. 독립 판독 담당은 opaque ID grid·ID 목록·경계 PNG4장만 읽었고, 이번 checkpoint/CFG/prompt/seed 매핑이나 다른 판독 결과를 보지 않았다. root는 실행자이므로 E4/CFG7.5 정체를 알고 있었으며, prompt/seed label이 없는 전체 grid를 먼저 판독했다. 완전한 이중 눈가림으로 부르지 않는다.</p>
+<p>두 명 모두 AI 판독자이며 임상 전문가 검토가 아니다. 별도 판독은 기준 적용의 일관성을 확인하는 절차이지, 서로 독립인 두 임상 검사나 모집단 표본으로 해석하지 않는다. 같은 네 latent를 모든 prompt가 공유하므로16개 독립 입력의 안정성 추정도 아니다.</p>
+<h2>3. 좋아진 점과 남은 한계</h2>
+<p><strong>좋아진 점:</strong> 공개자료만으로 만든 E4가 이전 개발 묶음과 별도로 예약한 새 입력에서도 기본 흉부 형태를 유지했다. 고정한 형태 관문을 통과했으므로 작은 head의 다음 적용성 검사를 시작할 운영 근거가 생겼다. 현재 공개 backbone을 더 조정하는 데 시간을 쓰지 않는다.</p>
+<p><strong>남은 한계:</strong> 영상이 매우 매끈하고 대비가 강하며 렌더링처럼 보인다. prompt가 다른 영상끼리도 구도가 비슷해 보인다. 이것은 두 비임상 판독자의 시각 관찰이고, 임상 사실성·질환 conditioning·다양성·memorization을 정량 평가한 결과가 아니다. 정면 흉부 형태가 식별된다는 좁은 기준을 넘었을 뿐이다.</p>
+<p>이번 확인은 E4/CFG7.5 하나만 실행했다. CFG1 대조가 없으므로 CFG7.5의 상대 우월성이나 이전 실패를 고친 원인을 주장할 수 없다. 앞선 새 개발64장에서는 CFG1도 잘 나왔다는 사실과 이전 pilot 확인 미통과를 모두 유지한다.</p>
+<h2>4. 수치 검산과 정정</h2>
+<p>최종 독립 저장 산술 검산은 <strong>5,734항목 PASS</strong>다. 예약seed→실제 CPU latent, 조건 cache와 null/conditional branch 순서,16개 고정 cell,480개 CFG/DDIM 전이,PNG 후처리,checkpoint exact·추론 전후 모델 불변, 기존 source hash를 확인했다. 이는 저장 tensor를 별도 산술로 검산한 것이며 전체 UNet/VAE 재추론이나 생성 품질의 증거 수가 아니다.</p>
+<p>최초 검산은 scheduler config 전체 dict 비교에서 실패했다. 달랐던 것은 <code>_use_default_values</code>의 항목 순서뿐이었다. 해당 diffusers 구현은 이 목록을 <code>list(set(...))</code>으로 생성하므로 프로세스에 따라 직렬화 순서가 달라질 수 있다. 실제 scheduler parameter 값과 목록의 항목은 모두 같았다.</p>
+<p>원 코드·<a href="../../code_working/_reports/public_operating_confirmation_20260916_v1/verification_attempt1_failed.json">최초 실패 기록</a>을 보존하고 별도v2에서 이 metadata 목록만 정렬해 항목과 중복 개수를 대조했다. 나머지 config 값은 exact 비교를 유지했다. 수치 알고리즘·허용오차·영상·입력·모델은 바꾸지 않았고 GPU 재실행도0이다. v2 및 실제 library source hash를 최종 검산 결과에 기록했다.</p>
+<h2>5. 실제 비용</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th style="text-align: right;">실측</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>확인 실행 함수 전체</td>
+<td style="text-align: right;"><strong>63.620초</strong></td>
+</tr>
+<tr>
+<td>16장 sampling/decode 합계</td>
+<td style="text-align: right;">45.438초</td>
+</tr>
+<tr>
+<td>장당 sampling/decode 평균</td>
+<td style="text-align: right;">2.840초</td>
+</tr>
+<tr>
+<td>UNet API calls / batch examples</td>
+<td style="text-align: right;">480 / 960</td>
+</tr>
+<tr>
+<td>VAE decode</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td>새 text encoding / 학습 / backward</td>
+<td style="text-align: right;">모두0</td>
+</tr>
+<tr>
+<td>Peak allocated GPU memory</td>
+<td style="text-align: right;">4,218,274,304bytes, 약3.93GiB</td>
+</tr>
+<tr>
+<td>최종 저장 산술 검산</td>
+<td style="text-align: right;">5.739초</td>
+</tr>
+</tbody>
+</table>
+<p>실행 함수 전체와 구현·판독·기록을 포함한 사람 기준 작업 시간을 구분한다. 시작 전 전체15–25분, GPU1–2분을 예상했다. 생성 이미지는16장으로 고정했고 추가 seed/예시를 생성하지 않았다.</p>
+<h2>6. 채택 범위와 다음 한 단계</h2>
+<p>새 <a href="../../code_working/_reports/public_operating_confirmation_20260916_v1/adoption_status.json">채택 상태</a>는 <strong>후속 비DP 작은 head 적용성 평가만 조건부 승인</strong>한다. 기존 pilot의 adoption=false 파일을 수정하지 않는다. 새 판단은 별도 계약·판정·상태로 기록한다. DP 실행과 임상 사용은 승인하지 않으며, 새 효용 근거가 필요하다.</p>
+<p>고정 checkpoint SHA256은 <code>7bc5ce421cc02091e8c3812676e9c27dc58330afce5e9384abd8edc9f61a3b91</code>이다. base revision·VAE·scheduler·prompt encoding·CFG·precision·해상도는 이번 계약/실제 입력/실행 packet에 결속돼 있다.</p>
+<p>다음은 <strong>새 backbone 위의 비DP head 생성 비교 한 패키지</strong>다. 예상45–75분이며, 첫 소량 추출의 실측으로 계산시간을 갱신한다.</p>
+<ol>
+<li>기존 분리된 public32/private80/development40 역할을 유지하고 새 backbone의 특징·base prediction·residual·A/B/Q·witness를 재추출한다. 같은 채널 tap의 데이터 독립 random P만 재사용 가능하다. 기존 generic-base W를 이식하지 않는다.</li>
+<li>새 public-only·public+private head를 계산하고, CFG7.5에서 conditional-only correction의 의미·배율과 offline/online 일치를 검산한다. <code>Delta=0</code>의 동일 경로 복원도 확인한다. head 학습목표와 guided sampling 출력의 연결을 실행 명세에 먼저 적는다.</li>
+<li>고정 backbone / public head / pooled head를 같은 prompt·latent로 실제 생성해 비교한다. 본 패키지의 이미지 수와 평가 범위는 시작 때 고정한다. denoising MSE만으로 생성 효용을 판정하지 않는다.</li>
+</ol>
+<p>CFG는 conditional correction뿐 아니라 그 오차와 추후 DP noise의 출력 영향도 확대한다. 이번 형태 통과만으로 small-head 방식이 유리해졌다고 가정하지 않는다. 다음 결과에서도 추가 생성 효용이 없으면 새 DP solver 탐색을 자동으로 붙이지 않는다.</p>
+<h2>7. 재현·판정 파일</h2>
+<ul>
+<li><a href="../../code_working/_reports/public_operating_confirmation_20260916_v1/contract.json">실행 계약</a>, <a href="../../code_working/_reports/public_operating_confirmation_20260916_v1/execution.json">실제 실행</a>, <a href="../../code_working/_reports/public_operating_confirmation_20260916_v1/manifest.json">16장 manifest</a></li>
+<li><a href="../../code_working/_reports/public_operating_confirmation_20260916_v1/review_root.json">root 원표</a>, <a href="../../code_working/_reports/public_operating_confirmation_20260916_v1/review_independent.json">별도 독립 원표</a>, <a href="../../code_working/_reports/public_operating_confirmation_20260916_v1/confirmation_decision.json">고정 관문 집계</a></li>
+<li><a href="../../code_working/_reports/public_operating_confirmation_20260916_v1/verification.json">수치 검산</a>, <a href="../../code_working/public_medical_backbone/confirm_operating.py">생산 코드</a>, <a href="../../code_working/public_medical_backbone/verify_confirmation.py">원 검산기</a>, <a href="../../code_working/public_medical_backbone/verify_confirmation_v2.py">정정 검산기v2</a></li>
+<li><a href="track1_public_operating_results.html">직전64장 개발 결과</a>, <a href="track1_public_medical_backbone_results.html">그대로 보존한 이전 확인 실패</a></li>
+</ul>
+<p>이번은 로컬 실행·검산·판독 결과다. 사용자가 제공한 원격 main SHA를 별도로 확인하거나 push했다고 주장하지 않는다.</p></main></body></html>

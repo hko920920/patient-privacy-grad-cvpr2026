@@ -1,5 +1,15 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 129-PUBLIC-OPERATING-RESERVED-CONFIRMATION — 2026-09-16
+
+- 사용자 독립 확인 실행 요청에 따라 예약 C0–C3와 E4/CFG7.5를 그대로 실행했다. **좋은 결과: 두 판독자 각16/16·교집합16/16·prompt별4/4, 불일치0**. 생성 전에 원표 독립 고정·PASS 교집합·12/16 및2/4 기준을 명세했다. 이전 확인 실패나64장 결과를 변경하지 않았다.
+- 새 에이전트를 생성하지 않고 기존 독립 판독 담당에게 허용된 opaque grid/ID/원본만 전달했다. root와 담당은 다른 원표를 보지 않은 채 각각 확정했다. root는 실행상 후보 정체를 알고 있으므로 완전한 이중blind를 주장하지 않았다. 단일 모델계열 AI 두 판독은 임상·모집단 검증이 아니며 독립 잡음단위는4개다.
+- root 원표SHA8b2e829a2e74788e0e265b69539b7926658fecb6caca04b76f3db58143d906e6, 독립 원표SHA6d01fa601fe8d878f37cdb0bc0ca52acf3cbe26259dc457271141cd3da9d738b. 독립 담당도 매끈하고 유사한 구도를 관찰했지만 고정 gross 형태 기준과 의료 품질을 구분했다. 후속 비DP head 실험용 운영backbone만 조건부 채택했다.
+- 새16장·UNet480API/960examples·VAE16·text encoding0·학습/backward/head/DP0. 실제 실행63.620초, sampling/decode45.438초(평균2.840초),peak4,218,274,304bytes. 초기 전체15–25분/GPU1–2분 예상.22:00경KST 시작했다.
+- 최초 검산은 scheduler `_use_default_values` 순서의 dict 비교에서 실패했다. 실제diffusers는list(set(...))으로 metadata를 만들며 실제 parameter는 같았다. 원코드·실패를 보존하고 별도v2에서 해당 목록의 항목/중복 수만 정렬해 대조했다. 나머지config exact·수치허용오차 유지, 영상/입력 변경0·GPU재실행0. 최종 저장 산술5734검사PASS/5.739초이며 모델 전체 재추론은 아니다.
+- 새adoption_status는 비DP head 평가용으로만 승인, 기존pilot adoption=false는 그대로 보존했다. DP실행/임상사용승인없음. 다음은 새backbone 특징/통계/W·CFG conditional-head 연결 및zero/offline-online 검산과 public-only/pooled 생성 비교 한 패키지(45–75분 예상)다. 현재큰단계2·방향1,공개recipe추가조정종료. 결과/원표/상태/HTML기록을갱신하며원격main확인/push를주장하지않는다.
+- 최종 문서·원표 재집계PASS:1,137로컬링크·221PDF앵커·새20링크/이미지·깨진링크0,실행source54개/기존계획17파일 불변,16PNG와16trace hash·두state7필드 일치·이전adoption파일 불변. 집계는 별도set교집합/Counter로도16/16·각4/4 재확인했다. `spec_sources/public_operating_confirmation_report_verification_20260916.json`에 저장했다. 전체22:00–22:15경KST 약15분으로 최초예상15–25분 범위, GPU포함 실행함수64초이며 현재실행중없음.
+
 ## 128-PUBLIC-OPERATING-DIAGNOSTIC — 2026-09-16
 
 - 사용자 검토에 따라 운용 조건 진단을 실제 실행했다. **새 입력의 형태에는 긍정적이지만 CFG를 높여 이전 실패를 해결했다는 근거는 없음**이 최종 판정이다. 큰단계2·방향1 유지. 시작20:58KST, 준비·구현·실행·검산·판독·기록 전체35–60분 및 GPU3–6분 예상 시간을 먼저 보고했다.

@@ -1,0 +1,38 @@
+{
+  "schema": "public-operating-confirmation-report-verification/v1",
+  "utc": "2026-09-16T13:14:11.219222+00:00",
+  "static_review": {
+    "rows": 79,
+    "checked_local_links": 1137,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_links_and_images": 20,
+  "broken_links": [],
+  "runtime_sources_unchanged": 54,
+  "frozen_plan_files_unchanged": 17,
+  "raw_images_and_traces_checked": 32,
+  "ballots_independently_recounted": true,
+  "total_joint_pass": 16,
+  "per_prompt_pass": {
+    "generic": 4,
+    "normal": 4,
+    "effusion": 4,
+    "cardiomegaly": 4
+  },
+  "old_failed_adoption_unchanged": true,
+  "state_fields_equal": [
+    "current_step",
+    "current_result_report",
+    "current_planning_report",
+    "next_task",
+    "next_task_output",
+    "step2_active_task",
+    "active_execution"
+  ],
+  "confirmation_executed": true,
+  "DP_executed": false,
+  "current_report_sha256": "ad4e419ac69be9f92e34cc70a84d2c6a32d06c42cb166bc53d0f589f6ebf82d8",
+  "current_html_sha256": "53ed794fac9625cc877415222c3775c0575e388a42b493c306f0a52b1b0e8cc8",
+  "status": "PASS"
+}

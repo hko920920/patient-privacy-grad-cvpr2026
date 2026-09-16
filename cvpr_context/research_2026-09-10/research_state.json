@@ -24,12 +24,12 @@
       "meaning": "Existing development results are preserved; actual generated utility, private added value and final contribution are not established."
     }
   ],
-  "next_task": "Bind an independent confirmation review procedure and run the already-reserved16 fresh images for E4/CFG7.5 once. No adoption/private head until that separate gate passes; on failure, close this recipe and allow only one stronger public backbone alternative.",
-  "next_task_output": "Separate confirmation16 with fixed tensors, independent morphology review, numerical binding and a bounded adopt/reject decision; estimated15-25min. Not executed yet.",
+  "next_task": "Bind the CFG7.5 conditional-head objective and fixed same-input generation comparison; re-extract changed-backbone features/predictions/residual/statistics/witnesses, fit public-only and pooled non-DP heads, verify zero/offline-online sampling, then compare actual generation. No old W or new DP solver. Estimated45-75min; update from a bounded extraction profile.",
+  "next_task_output": "Fresh-backbone non-DP public versus pooled head generation feasibility with fixed CFG semantics, new witnesses and numerical validation; not clinical efficacy or DP advantage.",
   "step2_open_items": [
-    "Track1: establish a sufficiently stable public medical generator/configuration after the fixed public-LoRA confirmation gate failed.",
-    "Track1: only after backbone adoption, test public-only versus pooled non-DP private incremental generation utility with fresh backbone-dependent statistics.",
-    "Track1: patient-DP retention and fair quality-cost comparisons remain untested for the new backbone.",
+    "Track1: fresh-backbone public-only versus pooled non-DP actual generation utility after the narrow reserved morphology gate passed.",
+    "Track1: patient-DP retention and fair quality-cost comparisons remain untested for this backbone.",
+    "Track1: coarse morphology is not clinical realism, condition accuracy, diversity or general stability; evaluate utility accordingly.",
     "Track2: retained separately, not an automatic fallback."
   ],
   "step2_completed_diagnostics": [
@@ -57,7 +57,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Complete bounded public-backbone confirmation before testing fresh-head private incremental generation utility; original pilot failure remains preserved.",
+  "step2_active_task": "Test actual small-head/private incremental generation utility on the conditionally adopted public E4/CFG7.5 backbone; keep old failed pilot and all frozen evidence.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -72,13 +72,13 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\public_operating_diagnostic_20260916_v1",
-    "last_completed_report": "TRACK1_PUBLIC_OPERATING_RESULTS_20260916.md",
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\public_operating_confirmation_20260916_v1",
+    "last_completed_report": "TRACK1_PUBLIC_OPERATING_CONFIRMATION_RESULTS_20260916.md",
     "additional_execution_contract_fixed": true,
     "stage2_completion_claim": false,
-    "latest_design_review": "TRACK1_PUBLIC_OPERATING_PROTOCOL_20260916.md",
+    "latest_design_review": "TRACK1_PUBLIC_OPERATING_CONFIRMATION_PROTOCOL_20260916.md",
     "new_two_track_experiment_started": true,
-    "new_two_track_experiment_status": "public_operating_diagnostic_complete_candidate_not_adopted",
+    "new_two_track_experiment_status": "reserved_confirmation_passed_operating_backbone_conditionally_adopted_nonDP_head_next",
     "latest_cpu_outputs": [
       "spec_sources/track1_cpu_allocation_20260916",
       "spec_sources/track2_cpu_audit_20260916"
@@ -194,7 +194,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "fixed_development_run_complete_reserved_confirmation_not_executed",
+    "latest_planning_status": "fresh_backbone_head_comparison_not_started",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -343,8 +343,8 @@
       "remaining_generation_package_not_completed": true
     },
     "next_substep_estimated_work_minutes": [
-      15,
-      25
+      45,
+      75
     ],
     "sampling_integration_contract_sha256": "c32c1cae5ac2a15b7c3af267f7e03d066e065213024a3bccd03fe40fec65fcfa",
     "historical_pre_sampling_last_completed": {
@@ -650,6 +650,44 @@
     "historical_pre_operating_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\public_medical_backbone_20260916_v1",
       "last_completed_report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md"
+    },
+    "public_operating_confirmation": {
+      "status": "complete",
+      "protocol": "TRACK1_PUBLIC_OPERATING_CONFIRMATION_PROTOCOL_20260916.md",
+      "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\public_operating_confirmation_20260916_v1",
+      "contract_sha256": "9cb1d51b6d11ad5e046d5d207283788459e5980306d82836c9729231746c31bb",
+      "planned_images": 16,
+      "new_training": false,
+      "private_head_or_DP": false,
+      "reviewers": 2,
+      "common_latent_blocks": 4,
+      "previous_failed_pilot_unchanged": true,
+      "actual_images": 16,
+      "execution_seconds": 63.62040670006536,
+      "verification_status": "PASS_RESERVED_CONFIRMATION_SAVED_TENSORS",
+      "verification_checks": 5734,
+      "passes_gate": true,
+      "total_pass": 16,
+      "per_prompt_pass": {
+        "generic": 4,
+        "normal": 4,
+        "effusion": 4,
+        "cardiomegaly": 4
+      },
+      "reviewer_pass_counts": {
+        "root": 16,
+        "independent": 16
+      },
+      "disagreements": [],
+      "adoption": "conditional operating backbone only for fresh non-DP head feasibility",
+      "DP_experiment_approved": false,
+      "clinical_use_approved": false,
+      "research_judgment": "Good for predefined gross morphology gate, not clinical quality, higher-CFG superiority, general stability, private utility or DP efficacy.",
+      "adoption_status_file": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\public_operating_confirmation_20260916_v1\\adoption_status.json"
+    },
+    "historical_pre_operating_confirmation_last_completed": {
+      "last_completed_report": "TRACK1_PUBLIC_OPERATING_RESULTS_20260916.md",
+      "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\public_operating_diagnostic_20260916_v1"
     }
   },
   "updated_utc": "2026-09-16T10:56:35.683237+00:00",
@@ -703,7 +741,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_PUBLIC_OPERATING_RESULTS_20260916.md",
+  "current_result_report": "TRACK1_PUBLIC_OPERATING_CONFIRMATION_RESULTS_20260916.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -2582,7 +2620,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "TRACK1_PUBLIC_OPERATING_PROTOCOL_20260916.md",
+  "current_planning_report": "TRACK1_PUBLIC_OPERATING_CONFIRMATION_PROTOCOL_20260916.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
