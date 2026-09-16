@@ -1,0 +1,23 @@
+{
+  "status": "PASS_LORA_CONTROL_REPORTS_STATE_LINKS_AND_FROZEN_PACKET",
+  "utc": "2026-09-16T10:19:48.257783+00:00",
+  "static": {
+    "rows": 79,
+    "checked_local_links": 1123,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_report_links_and_images": 22,
+  "state_keys": [
+    "current_step",
+    "current_result_report",
+    "next_task",
+    "active_execution",
+    "completed_track1_lora_positive_control_20260916"
+  ],
+  "source_hashes": 33,
+  "amendment_bound_files": 6,
+  "independent_packet_still_bound": true,
+  "original_failure_preserved": true,
+  "extra_GPU_runs": 0
+}

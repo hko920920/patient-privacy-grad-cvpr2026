@@ -1,5 +1,15 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 125-LORA-POSITIVE-CONTROL-AND-CONDITION-BRIDGE — 2026-09-16
+
+- 연구 판정: **경로 진단에는 긍정적, 생성 품질은 부족**. 과거 M1 정상/effusion prompt의 두 PNG를 파일 해시까지 재현했다. 원형 pipeline과 같은 실제 latent·embedding을 준 직접 경로의 전체 저장값이 일치했다. 현재 FP32/CFG1/캐시/초기 잡음까지 옮겨도 기본 흉부 형태는 남지만 최종 영상에 artifact와 심한 형상 왜곡이 있다. 임상 품질·작은head 효용·DP 기여로 확대하지 않았다.
+- 사전 두 조건×여섯 단계12장 전체 보존.360UNet 호출·540batch examples·12VAE decode·0backward·0새학습. 원형 실행22.093초,bridge43.748초,실제 생성구간합계40.019초,peak4,220,371,456bytes. 사용자에게 처음30–60분,검산수정 추가약5분,기록약10분 예상 보고. 작업18:50 시작,19:20경 최종 정리로 약30분 규모이며 GPU 실행시간과 구분했다.
+- 최초 독립검산127번째 항목에서 Windows timestep int32와 int64 가정의 불일치로 실패했다. 원 코드/계약/실패/생성 결과를 보존했다. 시간값만 signed int32/int64로 허용·값범위 exact검증하는 별도v2,그리고그PASS를읽는별도bridge진입점을만들었다. 수치함수·허용범위는동일,원형GPU재실행0. v2는원형855개,최종4503개·360DDIM전이PASS. 최초실패를PASS로덮어쓰지않았다.
+- 자료/추론/검산 담당의 독립 검토와 root 직접12장 확인. 마지막초기latent·conditioninghash·DDIM일정은직전base와exact. cache교체는시각적으로유사해도수치는달라서동일하다고쓰지않았다.순차변경은보편적인요인별인과효과가아니다. 이전basePNG반올림/LoRA버림의표시차이도명시했다.
+- M1은 사적역할nonDP진단용으로공개backbone이아니다. 로컬공개LoRAsmoke/resume시험들은가중치를보존하지않아즉시재사용할공개의료생성모델은확인못했다. 기존1000step실측496.59초를공개32명64장에자동복제하면반복노출이약4.4회→62.5회로달라진다. 다음하나는공개backbone자료·학습경계와새head대조명세(설계30–45분)이며새학습시간은선정후보고한다.기존W이식/96장/새solver자동확대없음.
+- TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md/HTML,실행명세HTML,원형출처메모,정정기록,두state,AGENTS/CURRENT_STATUS/RESEARCH_FRAMEWORK/현실계획§5B를갱신했다. 현재큰단계2·방향1,실행중작업없음. 아래이전갱신·다음안내는이력이다.
+
+
 마지막 갱신: 2026-09-09  
 현재 단계: NIH X-ray B0 448장 무결성 PASS·gross off-domain flag 이후 full K5 matrix와 M0는 미시작; 2026-09-09 기록 감사에서 B0가 모든 private-role update보다 먼저였다는 넓은 표현을 철회하고 full 4,000-step matrix 이전으로 제한함. 별도 CVPR 스트림의 최신 authority는 18번 SOTA 대조이며 현재 후보는 patient-calibrated set-level diffusion audit + 동일 patient budget DP 비교임  
 다음 승인 지점: 학위논문 통합 실험은 별도 승인 후 matrix 초기화와 M0만 실행; CVPR 기획은 PC-SMEA exact statistic·threat model·null calibration·baseline 계약을 결과 전에 동결. 두 결정은 서로를 자동 승인하지 않음

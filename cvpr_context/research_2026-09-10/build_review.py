@@ -80,6 +80,8 @@ def convert(md,from_review=False):
         if href=='TRACK1_POOLED_REFERENCE_RESULTS_20260916.md':href='track1_pooled_reference_results.html'
         if href=='TRACK1_SAMPLING_INTEGRATION_PROTOCOL_20260916.md':href='track1_sampling_integration_protocol.html'
         if href=='TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md':href='track1_sampling_integration_results.html'
+        if href=='TRACK1_LORA_POSITIVE_CONTROL_PROTOCOL_20260916.md':href='track1_lora_positive_control_protocol.html'
+        if href=='TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md':href='track1_lora_positive_control_results.html'
         a['href']=href
     return str(soup)
 
@@ -151,6 +153,7 @@ def main():
     head = '<section class="panel"><h2>현재 진행: 공개+사적 비DP 대조 완료</h2><p><a href="track1_pooled_reference_results.html"><strong>첫 하위작업 결과·481개 독립 확인</strong></a></p><p>공개32+사적80명 결합 full64는 공개전용보다 개발 denoising MSE가0.01666% 낮았고37/40명에서 개선됐습니다. 차이는 작으며 실제 생성 효용은 미확인입니다. 현재 큰 단계2·방향1, 다음은 sampling 연결·정합 검증(예상45–90분)입니다. 생성은 아직 실행하지 않았습니다. 아래 안내는 이전 기록입니다.</p></section>' + head
     head = '<section class="panel"><h2>현재 판정: 연결은 정확하지만 생성 결과는 나쁨</h2><p><a href="track1_sampling_integration_results.html"><strong>고정6장 전체·6,475개 검산·다음 결정</strong></a></p><p>base/public/pooled 모두 이번 두 조건에서 흉부영상 형태를 만들지 못했습니다. 96장 확대와 새 solver 탐색은 보류합니다. 다음은 이미 흉부영상 형태를 생성한 기존 LoRA 양성 대조와 현재 sampling 경로의 조건을 연결하는 최소 확인(예상30–60분)입니다. 현재 큰 단계2·방향1이며 아래 안내는 이전 기록입니다.</p></section>' + head
     controls='''<section class="panel"><div class="filters"><label>목록 범위<select id="scope"><option value="all">전체 79편</option><option value="legacy">기존 관련 67편</option><option value="legacy35">기존 최신 판정 35편</option><option value="new">이번 추가 12편</option><option value="direct">공격·생성 비교 후보 26편</option></select></label><label>역할<select id="role"><option value="all">모든 역할</option>'''
+    head = '<section class="panel"><h2>최신 판정: LoRA 경로 진단은 긍정적, 영상 품질은 아직 부족</h2><p><a href="track1_lora_positive_control_results.html"><strong>12장 전체·과거 재현·현재 조건 대조</strong></a> · <a href="track1_lora_positive_control_protocol.html">실행 전 명세</a></p><p>과거 이미지2장과 같은 입력의 직접 sampling 경로를 정확히 재현했습니다. 현재 FP32/CFG1/캐시/초기 잡음에서도 LoRA는 기본 흉부 형태를 만들지만, 마지막 두 영상에는 뚜렷한 왜곡과 잡상이 있습니다. 작은 head의 효용·의료 품질·환자DP 성공은 아직 확인하지 못했습니다.</p><p>독립 최종 검산4,503개PASS, 새학습0. 사적역할 M1을 공개 기반모델로 사용하지 않습니다. 다음은 공개 의료 기반모델의 자료·훈련 경계와 새head 대조 명세(설계30–45분)입니다. 현재 큰단계2·방향1, 아래 다음 안내는 이전 기록입니다.</p></section>' + head
     controls+=''.join('<option value="'+k+'">'+esc(v)+' ('+str(stats[k])+')</option>' for k,v in ROLES.items())
     controls+='''</select></label><label>확인 수준<select id="status"><option value="all">모든 확인 수준</option><option value="selected">PDF 선택 절 (75)</option><option value="partial">공식 본문 일부 (3)</option><option value="abstract">초록만 (1)</option><option value="replay">공개 packet 재계산 (2)</option></select></label><label>발표 형식<select id="venue"><option value="all">모든 발표 형식</option><option value="main">메인 학회 표기</option><option value="other">저널·워크샵·공개본 등</option></select></label><label class="search">논문명·방법·검토 내용 검색<input id="search" type="search" placeholder="예: MoFit, CLiD, 환자 평균, FPR" autocomplete="off"></label></div><p id="count" aria-live="polite"></p><button id="reset" type="button">필터 초기화</button><button id="expand" type="button">표시된 검토 펼치기</button><button id="collapse" type="button">모두 접기</button><p class="meta">비교 후보 수는 전부 실행할 의무 목록이나 같은 문제의 SOTA 순위가 아니다. 접근 권한과 주장에 맞는 비교군을 선택한다.</p></section>'''
     cards=[]
@@ -202,6 +205,8 @@ def main():
         ('TRACK1_POOLED_REFERENCE_RESULTS_20260916.md','track1_pooled_reference_results.html','방향1: 공개+사적 비DP 대조 결과'),
         ('TRACK1_SAMPLING_INTEGRATION_PROTOCOL_20260916.md','track1_sampling_integration_protocol.html','방향1: 실제 sampling 연결 검증 명세'),
         ('TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md','track1_sampling_integration_results.html','방향1: 연결 PASS·현재 생성 부적합 결과'),
+        ('TRACK1_LORA_POSITIVE_CONTROL_PROTOCOL_20260916.md','track1_lora_positive_control_protocol.html','방향1: 기존 LoRA 양성 대조 재현 계획'),
+        ('TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md','track1_lora_positive_control_results.html','방향1: 기존 LoRA 재현·현재 생성 조건 대조 결과'),
         ('REALISTIC_RESEARCH_PLAN_20260916.md','realistic_research_plan.html','의료 생성모델 환자 보호: 현실적인 다음 계획')]:
         if (ROOT/source).exists():
             body='<p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p>'+convert((ROOT/source).read_text(encoding='utf-8'))

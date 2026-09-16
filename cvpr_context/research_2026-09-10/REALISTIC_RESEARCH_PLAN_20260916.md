@@ -71,6 +71,8 @@
 
 ### B. 기존 구성의 실제 생성 경로를 연결
 
+**2026-09-16 LoRA 양성 대조까지 완료:** [최신12장·해석](TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md). 과거 이미지2장과 직접경로가 정확히 재현됐고, 현재 동일 초기값·conditioning의FP32/CFG1에서도 LoRA가 기본 흉부 형태를 만들었다. 최종 두 장은 왜곡이 뚜렷하므로 생성품질 성공은 아니다. 원 generic base+head의 두조건 실패는 유지하며, 다음 하나는 공개 의료 기반모델의 자료·훈련 경계와 그 위에서 새로 학습할head의 대조명세다(설계30–45분,선정후학습시간별도). 사적역할M1을공개backbone으로사용하거나기존W를이식하지않는다. 아래96장계획은계속보류다.
+
 **2026-09-16 연결 검증·최소6장 완료:** [결과](TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md). 연결 산술·전체 원상복구6,475개PASS이나 두고정조건의base/public/pooled6장모두흉부영상형성실패다. 아래96장확대는현재보류하며 C의‘목표도메인부적합’분기에따른다. 다음은기존step1000LoRA 양성대조와현재sampling조건을연결하는최소확인,예상30–60분이다. 기존LoRA를공개DP-safebackbone으로전환한다는뜻이아니다. 현재연구적결과는나쁘며새solver로해결될것이라추정하지않는다.
 
 동일 feature tap·projection·log-SNR basis를 sampling에 적용한다. W=0의 기반 모델 복원, 저장 noisy input에서 offline/online 출력 일치, scheduler 출력 parameterization을 먼저 확인한다. 학습조건과 일치시키기 위해 첫 primary는 조건부 guidance=1을 제안한다. CFG7.5는 null branch 적용 규칙을 별도로 정할 때만 대조하며 결과를 섞지 않는다.

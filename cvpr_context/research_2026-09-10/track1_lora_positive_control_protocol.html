@@ -1,0 +1,55 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>방향1: 기존 LoRA 양성 대조 재현 계획</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p><h1>방향1: 기존 LoRA 양성 대조 재현과 sampling 조건 연결</h1>
+<p><strong>실행 전 판단:</strong> 일반 SD2.1+작은 head의 앞선 생성 결과는 나빴다. 이번에는 이미 기본 흉부영상 형태를 만든 기존 모델로 생성 출발점과 경로를 확인한다. 성공해도 새 head의 효용이나 환자DP 기여가 확인되는 것은 아니다.</p>
+<p>M1 step1000을 이름 순서로 고정한다. 옛 no-finding/effusion 두 이미지, 원 prompt, 원 CUDA seed와 체크포인트를 사용한다. M2나 보기 좋은 seed를 추가 선택하지 않는다. 기존 generic-base head는 <strong>적용하지 않는다</strong>. M1은 사적 역할 자료로 학습한 진단용 대조이며, 공개DP-safe backbone이나 최종 독립 효용 평가 모델이 아니다.</p>
+<h2>A. 과거 결과부터 재현</h2>
+<p>원 loader대로 backbone FP16·LoRA FP32·autocast FP16을 보존한다. VAE FP16, pipeline 직접 text encoding,256px,DDIM30,CFG7.5,CUDA noise generator를 유지한다. 출력 PNG는 원래와 같은 uint8 버림으로 저장한다. 원 historical initial latent는 저장돼 있지 않아 동일한 초기값을 미리 보장하지는 않는다. 이번 실제 초기 latent·embedding·UNet 출력·guided epsilon·scheduler 전이·decode를 전부 기록하고 과거 PNG와 파일/픽셀 exact 일치를 목표로 대조한다.</p>
+<p>원 함수 wrapper는 반환값을 바꾸지 않고 <code>finally</code>에서 복구한다. scheduler.step wrapper는 signature를 보존한다. A를 별도 실행·독립 검산하고2장 모두 직접 확인한 뒤 B로 간다. 재현이 맞지 않으면 기록을 보존하고 원 조건부터 검토한다.</p>
+<h2>B. 실제로 캡처한 같은 입력으로 경로만 변경</h2>
+<p>원 pipeline에서 나온 초기 latent·[null,conditional] embedding을 그대로 직접 UNet→DDIM 루프에 넣는다. 같은 mixed weights·autocast·CFG7.5·scheduler·VAE를 유지한다. 30step 전체 입력·raw epsilon·CFG epsilon·latent와 최종 decode/image가 원 pipeline과 exact인지 확인한다. CFG는 같은 batch2에서 원 dtype과 순서를 유지한다.</p>
+<h2>C. 고정된 순서로 현재 조건까지 연결</h2>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>직전 단계에서 변경하는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원형 pipeline</td>
+<td>과거 조건 재현</td>
+</tr>
+<tr>
+<td>직접 FP16 경로</td>
+<td>경로만 변경, 실제 입력 동일</td>
+</tr>
+<tr>
+<td>직접 FP32·CFG7.5</td>
+<td>UNet/VAE 및 입력을 같은 값의 FP32로 승격, autocast 해제</td>
+</tr>
+<tr>
+<td>직접 FP32·CFG1</td>
+<td>guidance와 그에 따른 null branch 제외만 변경</td>
+</tr>
+<tr>
+<td>직접 FP32·현재 conditioning</td>
+<td>기존 캐시의 conditional embedding만 사용</td>
+</tr>
+<tr>
+<td>직접 FP32·현재 noise</td>
+<td>직전 sampling 패킷 base가 실제 사용한 초기 latent로 변경</td>
+</tr>
+</tbody>
+</table>
+<p>FP32 승격 후 다시 half로 돌아가지 않는다. 같은값 FP32로 표현한 UNet 가중치 hash를 전후 비교해 원 가중치가 보존되는지 확인한다. 최종 단계의 초기 latent·conditioning은 앞선 base/head 패킷과 exact 대조한다. 이 순서는 해당 경로에서의 변화를 보여주며, 서로 상호작용하는 요인의 보편적 인과 분해라고 주장하지 않는다.</p>
+<p>각 단계2조건, 총12경로·12장·360UNet 호출(540 batch examples),새역전파/학습0이다. 이미지·수치를 보고 조건을 조정하지 않는다. 모든12장을 보존하고 판독한다. 독립 검산은 저장 CFG/DDIM/영상 변환과 A/B 일치·조건 변경·hash를 확인하며 UNet/VAE 자체를 다시 CPU 추론하는 것은 아니다.</p>
+<h2>판단과 다음 범위</h2>
+<ul>
+<li>과거 경로 재현 실패: 원 checkpoint·환경·입력부터 복구한다.</li>
+<li>원 경로는 성공하지만 어느 연결 단계에서 기본 외형이 무너짐: 그 조건의 적합성을 먼저 확인한다.</li>
+<li>현재 동일 입력 조건에서도 LoRA가 기본 CXR 외형을 만들면: 일반 base+작은head의 출발 구성 문제 쪽으로 좁힐 근거다. 작은head 전체의 불가능성을 증명하지 않는다.</li>
+<li>후속 후보는 공개 의료 기반모델 위에서 다시 특징을 추출·학습하는 작은 patient-private head이다. 기존W를LoRA위로옮겨그효과를판정하지않으며,새후보의추가효용·DP보존·품질비용우위는별도미검증이다.</li>
+</ul>
+<p>처음 보고한 예상은 <strong>30–60분의 설계·실행·검산·기록</strong>, 실제 생성 계산은 수분 규모다. 이번에96장 품질평가·새solver·새backbone/head학습은 하지 않는다.</p>
+<p><a href="spec_sources/lora_positive_control_provenance_20260916.md">과거 자료 감사</a> · <a href="../../code_working/frozen_residual_head/run_lora_positive_control.py">생산 코드</a> · <a href="../../code_working/frozen_residual_head/verify_lora_positive_control.py">독립 검산기</a>.</p></main></body></html>
