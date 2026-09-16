@@ -1,0 +1,707 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>실험별 시간 검토 · Spark 4대</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}</style></head><body><main><p><a href="index.html">문헌 검토</a> · <a href="design.html">설계</a> · <a href="RUNTIME_REVIEW.md">Markdown</a></p><section class="panel" aria-labelledby="budget-title"><h2 id="budget-title">사용 가능한 장비·시간으로 다시 계산</h2>
+<p>아래는 가정한 작업량을 장비 용량으로 나눈 값입니다. 구현·단계 의존성·사람의 검토 시간과 K5의 별도 3070 실행은 제외합니다.</p>
+<div class="filters">
+<label>Spark 대수<select id="nodes"><option>1</option><option>2</option><option>3</option><option selected>4</option></select></label>
+<label>하루 사용시간<select id="daily"><option>8</option><option>12</option><option>16</option><option selected>24</option></select></label>
+<label>유효 가동률<select id="util"><option value="0.6">60%</option><option value="0.8" selected>80%</option><option value="1">100%</option></select></label>
+<label>처리량 가정<select id="scenario"><option value="0">빠름</option><option value="1" selected>중앙 계획값</option><option value="2">느림</option></select></label>
+<label>최종 비교 범위<select id="extension"><option value="0">m=2 중심</option><option value="1" selected>m=5 본표 포함</option></select></label>
+</div><p id="budget-output" role="status" aria-live="polite"></p>
+<p class="meta">실측 전 일정 판단용. 모든 원형 MoFit의 전수 평가, U 재학습, 추가 dataset/backbone, 재설계 반복은 포함되지 않습니다.</p></section><h1>현재 설계의 실험별 시간 검토 — Spark 4대 조건</h1>
+<p>2026-09-11. 기존 설계·실행 코드·저장된 시간·환자 메타데이터를 대조한 계획 검토다. Spark 접속이나 새 학습·공격을 실행한 결과가 아니다. <a href="design.html">설계</a> · <a href="runtime_budget.json">근거와 계산 JSON</a> · <a href="review_runtime_budget.py">계산 재현 스크립트</a>.</p>
+<p><strong>먼저 작은 진단으로 갈 방향을 결정하고, 그 뒤 본실험을 확정하는 순서다.</strong> 4대를 전용으로 하루 24시간 쓰고, 한 명이 구현·분석을 집중 수행하며 큰 방향 변경이 없는 중앙 시나리오에서 NIH/SD2.1 중심의 CVPR 실험·원고는 약 <strong>6–10주를 예약하는 안</strong>이다. m=5를 모든 방법에 확장하고 처리량이 느린 시나리오면 <strong>10–14주 이상</strong>도 가능하다. 이는 투고 기여의 성립이나 완수 시점 보장이 아니다.</p>
+<p>첫 <strong>1–2주</strong> 목표는 공개 모델에서 기본 신호와 실행 가능성을 확인하는 것이다. 강한 비교군까지 갖춘 기여 판정은 <strong>3–4주</strong> 정도를 먼저 배정한다. 1,000-step 약식 학습에서 신호가 없다는 사실만으로 방법을 반증하지 않고, 모델의 도메인 적응 여부를 함께 확인한다.</p>
+<p><strong>1. 시간표의 전제</strong></p>
+<ul>
+<li>Spark 네 대의 존재는 사용자 전언이며 전용·동시 사용 시간은 미확인이다. 기본 계산은 4대 ×24시간 ×0.8 = <strong>하루 76.8 장치시간</strong> 처리다. 80%는 실측 효율이 아닌 작업 불균형·재시작·빈 슬롯 여유다.</li>
+<li>한 대의 학습 속도는 우선 기존 3070과 같다고 둔다. 대화의 이미지 생성 1–2배 추정치를 DP 학습·gradient 공격에 적용하지 않는다.</li>
+<li><strong>장치시간</strong>은 각 장비의 실행시간 합이다. <strong>병렬 환산시간</strong>은 이를 3.2로 나눈 용량 계산이다. 구현, 단계 의존성, 사람의 판정 대기는 포함되지 않아서 실제 완료일과 같지 않다.</li>
+<li>아래 빠름/중앙/느림 값은 가정한 처리량과 예약 예산이다. 신뢰구간·실측 최소/최대가 아니다. 특히 새 공격, CDI, GSA/Tracing, MoFit 이식의 초/환자는 아직 측정하지 않았다.</li>
+<li>K5는 기존 3070의 순차 실행기를 유지하는 기본안이다. Spark는 CVPR 개발과 이식된 K10을 독립 작업으로 나눈다. <a href="https://docs.nvidia.com/dgx/dgx-spark-porting-guide/index.html">공식 Spark 이식 문서</a>는 ARM/Blackwell 환경을 설명한다. 현재 Windows DPAPI 저장·재시작과 고정 라이브러리 환경은 이식 검증이 필요하다.</li>
+<li>비용 비교용 학습 batch, 환자 sampling, clipping, noise, 최종 step은 유지한다. 메모리가 늘었다는 이유로 DP의 논리적 batch를 임의로 키우지 않는다.</li>
+</ul>
+<p><strong>2. 실제 환자 수와 아직 성립하지 않은 U 조건</strong></p>
+<table>
+<thead>
+<tr>
+<th>기존 K10 cohort</th>
+<th>전체 환자</th>
+<th>보유 기록 2장 이상</th>
+<th>보유 기록 5장 이상</th>
+<th>K10 이미지 수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>members</td>
+<td>1816</td>
+<td>865</td>
+<td>304</td>
+<td>4740</td>
+</tr>
+<tr>
+<td>nonmembers</td>
+<td>1816</td>
+<td>865</td>
+<td>304</td>
+<td>4740</td>
+</tr>
+</tbody>
+</table>
+<p>따라서 E/m=2에는 <strong>865 member +865 nonmember =1,730명</strong>, E/m=5에는 <strong>304+304 =608명</strong>이라는 메타데이터 상한이 있다. 이미지 접근·중복·시나리오 확인 전 숫자다. calibration으로 보류한 nonmember도 점수는 계산하므로 비용에는 포함한다. 1/3을 calibration에 쓰면 대략 m=2에서 288명, m=5에서 101명이며 정확한 hash 분할·검정력은 별도 고정한다. m=5의 1% FPR 결과는 특히 불확실성이 크다.</p>
+<p>U는 실제 학습에 포함되지 않은 같은 환자의 기록이다. 현재 K10은 cap 안의 기록을 모두 training manifest에 둔다. 따라서 cap 밖에서 U 두 장을 얻으려면 원자료가 12장 이상, U 다섯 장이면 15장 이상 필요하다. <strong>고정 member cohort에서 해당 환자는 각각 58명·38명</strong>이다. 파일이 실제로 확보됐거나 중복을 제거해도 적격이라는 뜻은 아니다. 이 숫자는 U의 큰 확증 실험이 현재 checkpoint만으로 바로 가능하다는 전제를 깨뜨린다.</p>
+<p>U를 중심 주장으로 삼으려면 공개 개발 단계에서부터 기록을 사전에 남기는 분할, 적절한 표본력, 별도 최종 training manifest 또는 추가 데이터가 필요하다. 그러면 기존 K10과 조건이 달라진 모델은 재학습 예산을 추가한다. U/P, 두 번째 dataset, P512, 새 보호 알고리즘은 아래 기본 합계에 자동 포함하지 않았다. <strong>U가 핵심 기여라면 아래 추가 행까지 포함한 일정으로 판단해야 한다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>U/P를 수행하는 방식</th>
+<th>추가 계산의 가정</th>
+<th>추가 일정·제약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기존 K10의 cap 밖 사진만 사용</td>
+<td>잠재 member58명 이하의 U/m=2 탐색</td>
+<td>파일 확보·중복 검사가 선행. 큰 표본의 low-FPR 확증을 대체하지 못함</td>
+</tr>
+<tr>
+<td>사진을 미리 남겨 둔 별도 U/m=2 최종 모델</td>
+<td>4조건×3seeds 새 학습36–60시간 +1,730명×12모델의 전체 baseline 약349–1,540시간 +준비·평가20–80시간</td>
+<td>합계 약405/800/1,680 장치시간(빠름/중앙/느림), 네 대의 용량상 약5.3/10.4/21.9일. 새 분할·회계·검증에5–10작업일 추가, 대략2–5주 이상 별도 예약</td>
+</tr>
+<tr>
+<td>부분 겹침 P 한 조건</td>
+<td>U를 위해 만든 모델의 training/held-out 기록을 섞어 평가할 수 있으면 추가 학습 없음</td>
+<td>환자×모델×선택한 방법의 초/환자로 새 평가량 계산. E/U와 동일 score 캐시가 아닌 probe는 재계산</td>
+</tr>
+</tbody>
+</table>
+<p>U/m=2의 1,730명도 <strong>시간 산정용 규모</strong>다. 원자료4장 이상 private_train은1,893명으로 기록 두 장을 남기는 대안의 후보 풀이지만, exact matching·파일·독립 분할·검정력이 확인된 것은 아니다. 이 대안은 cap 밖의 추가 파일만 찾는 방식과 달리, 이미 cap 안에 확보된 기록을 미리 학습에서 제외하는 경로도 가능하다. 최종 train manifest와 noise 회계를 다시 고정해야 한다. <strong>E와 U 모두 큰 본표로 유지하면 중앙 시나리오에서 약8–14주 이상으로 확대해 예약하는 편이 맞다.</strong></p>
+<p><strong>3. 공통 학습을 모델별로 검토</strong></p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>학습 횟수</th>
+<th>3070 기준 장치시간</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M0</td>
+<td>1</td>
+<td>1–3</td>
+<td>추정. 비DP batch 8; 장시간 완료 기록 없음</td>
+</tr>
+<tr>
+<td>M1-I8</td>
+<td>1</td>
+<td>4–6</td>
+<td>4-step 17.562초; 단순 환산 4.88시간</td>
+</tr>
+<tr>
+<td>M1-G8</td>
+<td>1</td>
+<td>4–6</td>
+<td>4-step 17.411초; 단순 환산 4.84시간</td>
+</tr>
+<tr>
+<td>M2-P8</td>
+<td>1</td>
+<td>3–5</td>
+<td>4-step 7.945초; 단순 환산 2.21시간을 넓혀 예약</td>
+</tr>
+<tr>
+<td>K5 학습 합계</td>
+<td>4</td>
+<td>12–20</td>
+<td>기존 3070 실행 경로의 계획 범위</td>
+</tr>
+<tr>
+<td>K5 준비·생성·검증</td>
+<td>1</td>
+<td>3–6</td>
+<td>B0 448장 기완료; 새 arm 생성·평가 및 여유</td>
+</tr>
+<tr>
+<td>K5 전체</td>
+<td>4</td>
+<td>15–26</td>
+<td>현재 실행 순서 유지; Spark 4대로 나누지 않음</td>
+</tr>
+<tr>
+<td>K10 핵심</td>
+<td>12</td>
+<td>36–60</td>
+<td>위 네 조건 ×3 독립 seed ×4000 steps</td>
+</tr>
+<tr>
+<td>K10 A0/A1/A2</td>
+<td>3</td>
+<td>8–14</td>
+<td>각 1 seed; 기전 대조는 유지</td>
+</tr>
+<tr>
+<td>K10 P4</td>
+<td>1</td>
+<td>3–5</td>
+<td>시간 산정용 1 seed 가정; 최종 반복 수 미고정</td>
+</tr>
+<tr>
+<td>K10 학습 합계</td>
+<td>16</td>
+<td>47–79</td>
+<td>P2는 회계 곡선으로 계상, 학습 추가하지 않음</td>
+</tr>
+</tbody>
+</table>
+<p>K5의 4-step 시간을 1,000배 한 수치가 과거 16–21시간, K10 핵심 39–48시간 추정의 출발점이었다. 그러나 Poisson sampling의 네 번 관측은 실제 이미지·환자 작업량의 장기 평균이 아니다. 이번 검토에서는 M2와 전체 범위를 넓혀 예약한다. 이는 새 장시간 실측 결과가 아니다.</p>
+<p>K10은 cap이 커져도 고정 4,000 steps이고, M1은 기대 8장/step, M2는 약 8.02장/step이므로 dataset 장수 비율로 학습시간을 다시 곱하지 않는다. K10 핵심 36–60시간은 네 Spark에 작업을 잘 배분하면 용량상 <strong>11.3–18.8시간</strong>, 추가 모델까지 47–79시간은 <strong>14.7–24.7시간</strong>이다. 환경 준비, 입력 구성, 각 모델의 생성·검증 및 도메인 판정 때문에 실제 예약은 핵심 <strong>1–2일</strong>, 추가 조건 포함 <strong>2–3일</strong> 정도를 먼저 잡는다. 이식 완료 이후의 예상이다.</p>
+<p>M1-I8/M1-G8의 sampling·diffusion draw는 조건을 맞추되 Gaussian stream은 독립이다. 여러 장비에서 동일한 분할·초기화 계약·stream 분리를 보존해야 한다. 한 arm을 특정 장비에만 고정하지 말고 장비 성능 차이도 기록한다. B0는 추가 학습이 없으며 동일 base 검사를 seed 수만큼 독립 모델로 반복 계산할 필요가 없다.</p>
+<p><strong>4. D0–D3: 주제를 좁히는 데 필요한 실제 작업</strong></p>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>구현·검토에 배정할 시간</th>
+<th>GPU 실행과 산출</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D0: 핵심 주장·비교 조건·표본 역할 정리</td>
+<td>1–2 작업일</td>
+<td>E/U 중 주장을 분명히 하고 실패 기준을 적는다. GPU 거의 없음</td>
+</tr>
+<tr>
+<td>Spark 환경·코드 이식</td>
+<td>2–5 작업일, D1과 일부 병행</td>
+<td>한 대에서 검증 후 네 대에 같은 환경. 4–16 장치시간 예약</td>
+</tr>
+<tr>
+<td>D1: loss/base 차이·probe·비용 기록</td>
+<td>3–5 작업일</td>
+<td>기존 공통 점수 평가기는 재사용, 새 feature/gradient 경로는 구현. 2–12 장치시간</td>
+</tr>
+<tr>
+<td>D2: 공개 LoRA 두 개, 각 1,000 steps</td>
+<td>준비·해석 1–2 작업일</td>
+<td>학습 0.5–2 장치시간 가정. 두 모델의 포함 집단 교환은 단일 환자 인과 실험이 아님</td>
+</tr>
+<tr>
+<td>D2: 256명 ×2모델, m=2</td>
+<td>구현 완료 후 0.5–1일</td>
+<td>후보+loss+SecMI+PFAMI 1회, 대조 준비 포함 약 3.6–15.7 장치시간</td>
+</tr>
+<tr>
+<td>D3: 강한 비교군 이식</td>
+<td>5–10 작업일</td>
+<td>CDI·MoFit·CLiD·GSA/Tracing adapter와 원형/변형을 구별</td>
+</tr>
+<tr>
+<td>D3: 200명 ×2모델의 공통 baseline 비교</td>
+<td>구현 후 0.5–2일</td>
+<td>한 설정 6.7–29.7 장치시간. 반복 탐색 횟수만큼 추가</td>
+</tr>
+<tr>
+<td>D3: 제거·교란·선형 관계 대조</td>
+<td>2–4 작업일</td>
+<td>8–40 장치시간 예약. 최초에 모든 반증 대조를 수행</td>
+</tr>
+<tr>
+<td>D3: MoFit 원형의 작은 직접 비교</td>
+<td>해석 1–2 작업일, 계산과 병행</td>
+<td>200명 ×2장 ×2모델 =800 image-model 평가. 다음 절의 원형 예산</td>
+</tr>
+</tbody>
+</table>
+<p>구현·개발·calibration·최종 test 환자는 분리해야 한다. 여기의 256명/200명은 시간 산정용 규모이고 이번에 실제 환자를 배정한 것이 아니다. 원형 baseline이 더 많은 별도 shadow 모델·보조 label을 요구하면 그 재현 비용을 추가하고 정보 조건을 맞춘다.</p>
+<p><strong>5. D4: 주요 공격을 하나씩 계산</strong></p>
+<p>E/m=2, 1,730명 ×12개 최종 모델에 한 설정씩 적용하는 예산이다. 초/환자는 해당 환자의 두 사진을 처리하는 전체 시간 가정이며 base·대조 호출을 후보 시간에 포함한다. 전처리·모델 load·보조 fitting의 공통 준비는 별도 행이다. 여러 hyperparameter나 시간 예산점을 돌리면 그 횟수를 추가한다.</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>연산량 검토</th>
+<th>초/환자 가정 (빠름/중앙/느림)</th>
+<th>전체 장치시간 (빠름/중앙/느림)</th>
+<th>4대 환산시간, 중앙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>고정 denoising loss</td>
+<td>20 F/장 (K10 기본); m=2에서 40 F</td>
+<td>1.0 / 2.0 / 4.0</td>
+<td>5.8 / 11.5 / 23.1</td>
+<td>3.6</td>
+</tr>
+<tr>
+<td>SecMI</td>
+<td>논문 stat 설정 약 12 NFE/장; SD2.1 adapter에 따라 확정</td>
+<td>0.5 / 1.5 / 3.0</td>
+<td>2.9 / 8.7 / 17.3</td>
+<td>2.7</td>
+</tr>
+<tr>
+<td>CLiD</td>
+<td>경제형 설정 약 15 queries/장; prompt 정보 일치</td>
+<td>1.0 / 2.0 / 5.0</td>
+<td>5.8 / 11.5 / 28.8</td>
+<td>3.6</td>
+</tr>
+<tr>
+<td>PFAMI</td>
+<td>20/110 queries/장 설정; 시간표는 높은 예산도 포함하는 가정</td>
+<td>2.0 / 6.0 / 15.0</td>
+<td>11.5 / 34.6 / 86.5</td>
+<td>10.8</td>
+</tr>
+<tr>
+<td>GSA1/2·Tracing 묶음</td>
+<td>선택 timestep의 F/B와 gradient feature; 세 방법의 가족 전체 예산</td>
+<td>6.0 / 10.0 / 30.0</td>
+<td>34.6 / 57.7 / 173.0</td>
+<td>18.0</td>
+</tr>
+<tr>
+<td>CDI 환자 확장</td>
+<td>multiple loss 50 F/장 + gradient masking 20 F/10 B + 기타 score + L-BFGS 호출</td>
+<td>5.0 / 12.0 / 30.0</td>
+<td>28.8 / 69.2 / 173.0</td>
+<td>21.6</td>
+</tr>
+<tr>
+<td>교차 사진 probe</td>
+<td>m=2: 312 F + 72 B / 환자</td>
+<td>15.0 / 30.0 / 60.0</td>
+<td>86.5 / 173.0 / 346.0</td>
+<td>54.1</td>
+</tr>
+<tr>
+<td>MoFit 제한 예산 + 교차 사진 적용</td>
+<td>원형과 별도인 제한 예산 비교; 원형 소규모 비교는 별도 계상</td>
+<td>30.0 / 60.0 / 120.0</td>
+<td>173.0 / 346.0 / 692.0</td>
+<td>108.1</td>
+</tr>
+</tbody>
+</table>
+<p>GSA/Tracing 행은 가족 전체의 예산이며 구현이 다른 세 독립 완전 재현에 그대로 적용하는 고정 수치가 아니다. 모든 module/timestep feature가 실제로 필요한지는 method contract에서 확정한다. CDI 공식 코드의 noise optimization은 max_iter=5이나 L-BFGS line search는 iteration당 forward/backward를 여러 번 부를 수 있다. 이를 단순히 5 query로 세지 않는다.</p>
+<p>단일영상 점수의 mean/max/median/top-25%, 동일 feature의 moments/Deep Sets, threshold·bootstrap은 feature를 이미 얻었다면 주로 CPU 또는 작은 fitting 작업이다. 집계 방법 수만큼 diffusion forward 전체를 중복 실행하지 않는다. 반대로 prompt/noise/모델이 다른 졸논 score는 CVPR score와 같은 것으로 간주해 비용에서 빼지 않는다.</p>
+<p><strong>새 probe만의 감도</strong></p>
+<p>m=2의 312 forward +72 backward는 batching 전 model-example 연산 수다. 위 중앙 30초는 이 연산이 실제 30초에 끝났다는 뜻이 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>가정한 초/환자</th>
+<th>1,730명×12모델 장치시간</th>
+<th>4대·80% 환산시간</th>
+<th>하루24시간 환산일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15</td>
+<td>86.5</td>
+<td>27.0</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>30</td>
+<td>173.0</td>
+<td>54.1</td>
+<td>2.3</td>
+</tr>
+<tr>
+<td>60</td>
+<td>346.0</td>
+<td>108.1</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>120</td>
+<td>692.0</td>
+<td>216.2</td>
+<td>9.0</td>
+</tr>
+</tbody>
+</table>
+<p>m=5는 같은 구현에서 사진 수에 비례한다고 가정하면 환자당 2.5배다. 하지만 해당 cohort는 608명이므로 전체 비용은 m=2의 <strong>약 87.9%</strong>다. 후보의 중앙 예산은 m=2 <strong>173.0시간</strong>, m=5 <strong>152.0시간</strong>으로 합계 <strong>325.0 장치시간</strong>이다. 네 대·80%로 약 101.6시간, 24시간 가동 시 4.2일의 용량이다. 이것은 새 probe 한 방법의 E 두 조건만 계산한 값이다.</p>
+<p><strong>6. 가장 큰 위험 항목: MoFit 원형</strong></p>
+<p>저자는 특정 RTX 4090 설정에서 원형 영상당 <strong>7–9분</strong>, 단계별 VRAM 약 <strong>14.8–20.7GB</strong>를 보고한다. <a href="https://arxiv.org/html/2602.22689v1#A1.SS8">논문 A.8</a>. 이 값은 Spark 또는 우리 P256/LoRA의 실측이 아니다. 두 단계 early stopping을 각각 평가한 시간을 더해서 검증된 전체 runtime으로 쓰지 않는다.</p>
+<p>현재 E/m=2 전수를 원형으로 돌리면 1,730×2×12 = <strong>41,520 image-model 평가</strong>다. 저자의 7–9분 속도와 같다고만 가정해도 <strong>4,844–6,228 장치시간</strong>, 네 대·80%·24시간 기준 <strong>63–81일</strong>이다. Spark에서 더 느리거나 P256에서 빨라질 가능성은 이 별도 속도 가정에 들어 있지 않다.</p>
+<p>그래서 시간 검토용 계획은 <strong>원형 소규모 직접 대조 + 전 표본의 제한 예산 비교</strong>를 분리한다. 원형 소규모 800평가에 Spark에서 7.5/15/30분씩 든다고 가정해 100/200/400 장치시간을 배정했다. 이 세 속도는 <strong>새로 둔 예약 시나리오</strong>이며 NVIDIA/저자가 보고한 Spark 숫자가 아니다. 대조군들도 같은 작은 표본으로 평가하고 이 표에서는 정밀한 1% FPR 우월성을 주장하지 않는다.</p>
+<p>전 표본의 제한 예산 MoFit은 원형 재현이라고 이름 붙이지 않는다. 우리 방법과 같은 wall-time·접근권한·label 예산을 비교하고, MoFit의 conditioning을 다른 사진에 적용하는 직접 확장도 포함한다. 원형이 더 강하고 그 차이가 핵심 주장에 영향을 주면 표본과 계산을 확대하거나 주장을 제한해야 한다. <strong>원형 전수 SOTA 비교까지 완료한다는 약속은 6–10주 계획에 없다.</strong></p>
+<p><strong>7. 제거 실험은 어떤 것을 다시 돌려야 하는가</strong></p>
+<table>
+<thead>
+<tr>
+<th>제거/대조</th>
+<th>추가 계산</th>
+<th>배치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자기 사진에서 탐색·평가</td>
+<td>support probe 재사용 가능, 자기 사진 평가 추가</td>
+<td>D3 전부, D4 고정 핵심 조건</td>
+</tr>
+<tr>
+<td>다른 사진으로 전이</td>
+<td>주 방법의 본 계산</td>
+<td>D4 비용에 포함</td>
+</tr>
+<tr>
+<td>base 차이 제거</td>
+<td>최적화 목적이 달라져 probe 재탐색 필요</td>
+<td>단순 score 후처리로 대체 불가</td>
+</tr>
+<tr>
+<td>다른 환자 대조 제거</td>
+<td>T와 C를 별도 보관했다면 T 재집계</td>
+<td>새 diffusion 계산 거의 없음</td>
+</tr>
+<tr>
+<td>선형 gradient Gram</td>
+<td>고정점의 gradient 추출이 없으면 새 F/B 필요</td>
+<td>nonlinear probe와 비교</td>
+</tr>
+<tr>
+<td>조건을 맞춘 다른 환자 묶음</td>
+<td>바뀐 support/query에 필요한 추가 계산</td>
+<td>cohort·교란 조건을 유지</td>
+</tr>
+<tr>
+<td>MoFit conditioning의 교차 사진 적용</td>
+<td>MoFit embedding 재사용 + query 평가</td>
+<td>제한 예산/원형 각각 구별</td>
+</tr>
+<tr>
+<td>Quantile/Deep Sets/moments·동일 보정</td>
+<td>보조 fitting/CPU 집계</td>
+<td>동일 feature이면 재추출 불필요</td>
+</tr>
+</tbody>
+</table>
+<p>최종 제거 실험 시간은 <strong>M0/P8 ×3 seeds =6모델</strong>, 1,730명에 후보를 두 번 더 돌리는 정도를 예약한 계산이다. 실제 호출 수를 증명한 등식은 아니다. 약 <strong>86.5/173/346 장치시간</strong>의 빠름/중앙/느림 예산이다. 표본과 모델 범위는 결과를 보기 전에 고정하며, I8/G8에서도 같은 분석을 주장하려면 해당 추가 비용을 더한다. m=5 제거 실험 전수는 포함하지 않았다.</p>
+<p><strong>8. 기존 졸논과 공통인 평가·D5</strong></p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>현재 정해진 작업량 / 시간 가정</th>
+<th>중복 방지·미정 부분</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기존 K10 기본 membership</td>
+<td>모델당 3,632명, 총 9,480장 ×20 loss cells; SecMI 추가</td>
+<td>기본 표와 CVPR의 prompt/noise가 다르면 각각 평가. B0·추가모델 포함 16–80 장치시간 예약</td>
+</tr>
+<tr>
+<td>bounded extraction 생성</td>
+<td>B0+16학습모델 =17모델 ×2,450장 =41,650장</td>
+<td>3070의 1.08524초/장과 같은 속도 가정이면 생성만 12.6시간. 빠름/느림 가정 9.3–23.1시간</td>
+</tr>
+<tr>
+<td>extraction 비교·필터</td>
+<td>reference 21,756 train+4,740 holdout, 공개 음성 pair 10만 이상</td>
+<td>생성 외 검색/후보 검증 6–30 장치시간 예약. 모든 이미지 쌍의 SSIM을 단순 전수 계산하면 이 예산을 크게 넘을 수 있어, 필터 구현 검토가 선행</td>
+</tr>
+<tr>
+<td>소규모 생성 품질·RAD-DINO/BioViL-T</td>
+<td>기존 evaluator 재사용</td>
+<td>3–12 장치시간 예약, 의료적 독립 검증으로 확대 해석하지 않음</td>
+</tr>
+<tr>
+<td>downstream 효용</td>
+<td>시간 산정용 5,000장/모델 ×12 =60,000장</td>
+<td>생성 18.1시간(기존 속도). generator별 classifier 3 seeds + real baseline3 =39회, 회당0.5/1/2시간 가정. 전체 약34.8/61.1/117.3 장치시간</td>
+</tr>
+<tr>
+<td>동일 환자 예산 보호·회계·재사용 비용</td>
+<td>G8/P8 비교, I8 단위 불일치, exact checkpoint 재분석</td>
+<td>구현·분석 3–5 작업일; 같은 checkpoint 회계 대조는 새 학습이 아님</td>
+</tr>
+<tr>
+<td>통계·CI·표·원고</td>
+<td>기존 K10 10,000 patient bootstrap와 별도 CVPR calibration 분석</td>
+<td>분석3–5일, 집필5–10일. GPU4대여도 사람이 검토하는 시간은 그대로 필요</td>
+</tr>
+</tbody>
+</table>
+<p>downstream의 생성량·classifier 설정은 아직 확정 계약이 아니다. 생성량이 모델당 5천/1만/5만장이면 12모델의 생성만 약 <strong>18.1/36.2/180.9시간</strong>으로 변한다. 확정 전에 의료적 효용 질문과 필요한 표본량을 먼저 정한다.</p>
+<p><strong>9. 전체 작업량의 합산과 네 대의 효과</strong></p>
+<p>다음 표는 각 가정을 빠짐없이 합친 것이다. 중앙값은 확률적 기대값이 아니라 비교 가능한 예약안이다. 원형 MoFit 전수·U 재학습·두 번째 dataset과 방법 재설계 반복은 제외돼 있다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>작업</th>
+<th>장치시간 빠름/중앙/느림</th>
+<th>4대 환산시간 중앙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setup</td>
+<td>Spark 이식·환경/재시작 확인</td>
+<td>4.0 / 8.0 / 16.0</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>D1</td>
+<td>새 feature/probe 구현 점검</td>
+<td>2.0 / 6.0 / 12.0</td>
+<td>1.9</td>
+</tr>
+<tr>
+<td>D2_train</td>
+<td>공개 비DP 모델 2개 × 1000 steps</td>
+<td>0.5 / 1.0 / 2.0</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>D2_pilot</td>
+<td>256명 × 2모델 첫 진단</td>
+<td>3.6 / 7.6 / 15.7</td>
+<td>2.4</td>
+</tr>
+<tr>
+<td>D3_baselines</td>
+<td>200명 × 2모델 baseline 개발 평가 1회</td>
+<td>6.7 / 13.7 / 29.7</td>
+<td>4.3</td>
+</tr>
+<tr>
+<td>D3_ablations</td>
+<td>개발 제거 실험·공정성 진단</td>
+<td>8.0 / 16.0 / 40.0</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>D3_mofit_full</td>
+<td>MoFit 원형 800 이미지 평가</td>
+<td>100.0 / 200.0 / 400.0</td>
+<td>62.5</td>
+</tr>
+<tr>
+<td>K10_core</td>
+<td>K10 핵심 12회 학습</td>
+<td>36.0 / 48.0 / 60.0</td>
+<td>15.0</td>
+</tr>
+<tr>
+<td>K10_extra</td>
+<td>A0/A1/A2 + P4 각 1회 예산</td>
+<td>11.0 / 15.0 / 19.0</td>
+<td>4.7</td>
+</tr>
+<tr>
+<td>K10_quality</td>
+<td>소규모 품질 생성·특징·검증</td>
+<td>3.0 / 6.0 / 12.0</td>
+<td>1.9</td>
+</tr>
+<tr>
+<td>K10_mia</td>
+<td>기존 기본 MIA·B0 및 추가모델</td>
+<td>16.0 / 40.0 / 80.0</td>
+<td>12.5</td>
+</tr>
+<tr>
+<td>K10_extraction_gen</td>
+<td>17모델 ×2450 추출용 생성</td>
+<td>9.3 / 12.6 / 23.1</td>
+<td>3.9</td>
+</tr>
+<tr>
+<td>K10_extraction_filter</td>
+<td>추출 대조·검색·후보 확인</td>
+<td>6.0 / 12.0 / 30.0</td>
+<td>3.8</td>
+</tr>
+<tr>
+<td>D4_E2</td>
+<td>E m=2 1730명 ×12모델 전체 비교</td>
+<td>348.9 / 712.2 / 1,539.7</td>
+<td>222.6</td>
+</tr>
+<tr>
+<td>D4_ablations</td>
+<td>최종 제거 실험 6모델·후보 2회 상당 예산</td>
+<td>86.5 / 173.0 / 346.0</td>
+<td>54.1</td>
+</tr>
+<tr>
+<td>D4_fit</td>
+<td>Quantile·Deep Sets·moments fitting</td>
+<td>2.0 / 6.0 / 12.0</td>
+<td>1.9</td>
+</tr>
+<tr>
+<td>D5_utility</td>
+<td>5천장/모델 ×12 생성, classifier39회</td>
+<td>34.8 / 61.1 / 117.3</td>
+<td>19.1</td>
+</tr>
+<tr>
+<td>D5_stats</td>
+<td>통계·보호 비교 보조 GPU</td>
+<td>0.0 / 1.0 / 3.0</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>D4_E5</td>
+<td>E m=5 608명 ×12모델 전체 비교</td>
+<td>306.5 / 625.7 / 1,352.8</td>
+<td>195.5</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>처리량 시나리오</th>
+<th>m=2 중심 전체 장치시간</th>
+<th>4대 환산일</th>
+<th>m=5 본표까지 장치시간</th>
+<th>4대 환산일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>작업이 빠른 경우</td>
+<td>678.3</td>
+<td>8.8</td>
+<td>984.9</td>
+<td>12.8</td>
+</tr>
+<tr>
+<td>중앙 계획값</td>
+<td>1,339.2</td>
+<td>17.4</td>
+<td>1,964.9</td>
+<td>25.6</td>
+</tr>
+<tr>
+<td>작업이 느린 경우</td>
+<td>2,757.5</td>
+<td>35.9</td>
+<td>4,110.3</td>
+<td>53.5</td>
+</tr>
+</tbody>
+</table>
+<p>네 대에서 독립 작업이 충분할 때의 <strong>용량 환산</strong>이다. K5는 별도로 기존 3070에 15–26시간을 예약하며 상당 부분 병행할 수 있다. 표의 환산일에 실제 구현·분석·선행 단계의 대기를 더해야 한다. 각 단계의 일정을 4로 나누거나, 총 장치시간이 4분의 1이 됐다고 쓰지 않는다.</p>
+<table>
+<thead>
+<tr>
+<th>Spark 대수</th>
+<th>하루 사용시간</th>
+<th>하루 유효 장치시간</th>
+<th>m=2 중심 중앙 환산일</th>
+<th>m=5 포함 중앙 환산일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>24</td>
+<td>76.8</td>
+<td>17.4</td>
+<td>25.6</td>
+</tr>
+<tr>
+<td>4</td>
+<td>16</td>
+<td>51.2</td>
+<td>26.2</td>
+<td>38.4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>8</td>
+<td>25.6</td>
+<td>52.3</td>
+<td>76.8</td>
+</tr>
+<tr>
+<td>2</td>
+<td>24</td>
+<td>38.4</td>
+<td>34.9</td>
+<td>51.2</td>
+</tr>
+<tr>
+<td>1</td>
+<td>24</td>
+<td>19.2</td>
+<td>69.7</td>
+<td>102.3</td>
+</tr>
+</tbody>
+</table>
+<p>중앙 작업량은 m=2 중심 <strong>약 1,339 장치시간</strong>, m=5 본표까지 <strong>약 1,965 장치시간</strong>이다. 예전 400시간은 한 공격 ×2,000명 ×12모델 ×1분이라는 예시였다. 이번 수치는 여러 방법, 개발, 원형 MoFit의 작은 대조, 제거 실험, 생성·효용까지 합쳤으므로 대상 범위가 다르다. 실제 짧은 처리량을 넣으면 이 표의 각 행을 즉시 다시 계산할 수 있다.</p>
+<p><strong>10. 순서를 반영한 실행 예약안</strong></p>
+<table>
+<thead>
+<tr>
+<th>기간</th>
+<th>우선 산출</th>
+<th>장비 사용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1주차</td>
+<td>질문·E/U 범위와 data 역할, 한 Spark 환경, D1, D2 시작</td>
+<td>3070은 K5 M0 도메인 검증; Spark는 개발·이식</td>
+</tr>
+<tr>
+<td>2주차</td>
+<td>작은 신호 진단, 유사 환자·선형 반응 대조</td>
+<td>개발용 모델/평가를 분리 배치; K5는 기존 순서 유지</td>
+</tr>
+<tr>
+<td>3–4주차</td>
+<td>강한 baseline·MoFit 원형 소규모 대조·독립 pilot로 방법 판정</td>
+<td>네 Spark에 서로 독립인 방법/환자 작업, 완료 후 최종 설정 고정</td>
+</tr>
+<tr>
+<td>이후 2–4주 이상</td>
+<td>K10 공유 모델·최종 E/m=2·제거 실험·필요한 m=5</td>
+<td>완료 checkpoint별로 평가 시작; 의존성 없는 작업은 빈 장비에 배치</td>
+</tr>
+<tr>
+<td>결과가 모이는 기간~마지막 1–2주</td>
+<td>보호/효용 비교·오탐/불확실성·그림·원고</td>
+<td>CPU 분석/집필과 GPU 작업 일부 병행</td>
+</tr>
+</tbody>
+</table>
+<p>중앙 가정이면 전체 <strong>6–10주</strong>를 예약할 수 있으나, m=5까지 모든 방법을 느린 처리량으로 수행하면 계산 용량만 약 <strong>53.5일</strong>이다. 그 경우 구현·검토까지 <strong>10–14주 이상</strong>을 잡아야 한다. 하루16시간만 쓸 수 있으면 계산 기간은 24시간 사용의1.5배다. U를 주요 기여로 유지할 추가 모델·표본 설계가 필요하면 이 일정은 별도 상향해야 한다.</p>
+<p>처음부터 네 Spark를 하나의 분산 학습으로 묶는 시간 이득을 전제하지 않는다. 현재 크기의 실험은 조건·seed·환자 batch를 독립 job으로 나누는 방식이 먼저다. 큰 모델 하나가 한 대 메모리에 들어가지 않을 때에만 별도 분산 실행 검토가 필요하다.</p>
+<p><strong>11. 시간을 줄일 수 있는 곳과 첫 측정</strong></p>
+<ul>
+<li>D2/D3에서 가능성을 먼저 검토해 성립하지 않는 후보의 대규모 최종 실행을 피한다. 확정된 졸논 대조군은 원하는 결과가 아니라고 삭제하지 않는다.</li>
+<li>같은 K10 checkpoint의 학습·생성·동일 평가를 두 원고에서 재사용한다. 통계 집계법 수, 두 회계 방식 수를 새 diffusion 실행 수로 곱하지 않는다.</li>
+<li>exact model/prompt/noise/전처리가 같은 base·feature 계산만 캐시한다. 환자 집합, probe, m, noise bank가 달라져 필요한 계산은 남긴다. 기존 restricted 저장 경로에 무단 영구 feature bank를 추가하지 않는다.</li>
+<li>첫 Spark 검증에서 공개 개발용 각 학습 경로의 warm-up 뒤 고정 구간 step time, 후보/각 baseline의 m=2·m=5 초/환자, 최대 메모리, cold/warm load와 batch scaling을 기록한다. 예컨대 공개 환자32명과 warm-up20/measured100-step 진단은 <strong>향후 제안</strong>이며 이번에 실행하지 않았다.</li>
+<li>시간 비교는 mean/p50/p95와 총 wall time, forward/backward 수를 함께 확인한다. 두 단계 MoFit은 전체 경로를 시간 재야 한다.</li>
+<li>장비별 runtime 차이 때문에 logical DP batch나 연구 조건을 바꾸지 않는다. 계산 batch만 바꾸는 경우에도 같은 점수·gradient·회계 의미를 유지하는지 검증한다.</li>
+</ul>
+<p><strong>졸업논문 전용으로 별도 남는 작업:</strong> model-bound receipt 3–5 작업일, PP-Mark 의료 재보정·통합 3–7 작업일, 통합 evidence 검증 3–5 작업일, 본문 개편5–10 작업일이라는 기존 추정이 있다. 이들은 CVPR 방법의 신규성 검증과 별도이며 위 CVPR 완료 예산에 모두 더한 것이 아니다. 실제 보호 release를 목표로 한 secure RNG 이식·fresh retraining도 별도다.</p>
+<p>근거: <a href="design.html">실제 설계</a>, <a href="../19_졸논_CVPR_공통실험_재사용과_분기계획_2026-09-09.md">공통 운영 기록</a>, <a href="../../code_working/XRAY_DP_ATTACK_PROTOCOL_GATE.md">K10 프로토콜</a>, <a href="../../code_working/XRAY_K5_FEASIBILITY_EXECUTION_PLAN.md">K5 계획</a>, <a href="baseline_preparation.html">비교군 구현 상태</a>, <a href="code_sources/X01/conf/attack/cdi.yaml">CDI 설정</a>, <a href="code_sources/X12/COCO/MoFit_COCO.py">MoFit 코드</a>. source hash와 계산의 전제는 <a href="runtime_budget.json">JSON</a>에 함께 보관한다.</p><script>const budgetData={"core": [678.3255555555555, 1339.1662905555556, 2757.501111111111], "full": [984.8588888888889, 1964.899623888889, 4110.301111111111]};
+function updateBudget(){const n=Number(document.getElementById('nodes').value);
+const h=Number(document.getElementById('daily').value),u=Number(document.getElementById('util').value);
+const s=Number(document.getElementById('scenario').value),extra=document.getElementById('extension').value==='1';
+const work=(extra?budgetData.full:budgetData.core)[s],capacity=n*h*u;
+document.getElementById('budget-output').textContent='총 '+work.toLocaleString('ko-KR',{maximumFractionDigits:1})+' 장치시간 ÷ 하루 '+capacity.toLocaleString('ko-KR',{maximumFractionDigits:1})+' 유효 장치시간 = 계산 용량 약 '+(work/capacity).toFixed(1)+'일';}
+for(const el of document.querySelectorAll('select'))el.addEventListener('change',updateBudget);
+updateBudget();</script></main></body></html>

@@ -1,0 +1,18 @@
+{
+  "arithmetic": "PASS",
+  "sources_checked": 16,
+  "static": {
+    "rows": 79,
+    "checked_local_links": 547,
+    "checked_pdf_page_anchors": 201,
+    "broken_links": []
+  },
+  "browser": {
+    "status": "PASS",
+    "default": "총 1,964.9 장치시간 ÷ 하루 76.8 유효 장치시간 = 계산 용량 약 25.6일",
+    "changed": "총 4,110.3 장치시간 ÷ 하루 19.2 유효 장치시간 = 계산 용량 약 214.1일",
+    "m2_only": "총 2,757.5 장치시간 ÷ 하루 19.2 유효 장치시간 = 계산 용량 약 143.6일",
+    "javascript_exceptions": 0
+  },
+  "training_or_attack_executed": false
+}

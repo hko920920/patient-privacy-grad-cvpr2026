@@ -1,0 +1,6 @@
+# Diagnostic compatibility environment for the exact-base gate.
+# PyTorch 2.6.0+cu124, torchvision 0.21.0, transformers 4.56.2,
+# accelerate 1.14.0, safetensors 0.8.0 and huggingface-hub 0.34.5 are
+# inherited from the host environment and recorded in each result.
+diffusers==0.30.2
+peft==0.12.0

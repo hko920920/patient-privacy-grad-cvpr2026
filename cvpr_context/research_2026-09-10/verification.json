@@ -1,0 +1,165 @@
+{
+  "static": {
+    "rows": 79,
+    "checked_local_links": 524,
+    "checked_pdf_page_anchors": 201,
+    "broken_links": []
+  },
+  "browser": {
+    "new": {
+      "checks": [
+        {
+          "field": "scope",
+          "value": "all",
+          "count": 79
+        },
+        {
+          "field": "scope",
+          "value": "legacy",
+          "count": 67
+        },
+        {
+          "field": "scope",
+          "value": "legacy35",
+          "count": 35
+        },
+        {
+          "field": "scope",
+          "value": "new",
+          "count": 12
+        },
+        {
+          "field": "scope",
+          "value": "direct",
+          "count": 26
+        },
+        {
+          "field": "role",
+          "value": "attack",
+          "count": 13
+        },
+        {
+          "field": "role",
+          "value": "training",
+          "count": 13
+        },
+        {
+          "field": "role",
+          "value": "unit",
+          "count": 7
+        },
+        {
+          "field": "role",
+          "value": "medical",
+          "count": 20
+        },
+        {
+          "field": "role",
+          "value": "federated",
+          "count": 4
+        },
+        {
+          "field": "role",
+          "value": "alternative",
+          "count": 16
+        },
+        {
+          "field": "role",
+          "value": "thesis",
+          "count": 3
+        },
+        {
+          "field": "role",
+          "value": "background",
+          "count": 3
+        },
+        {
+          "field": "status",
+          "value": "selected",
+          "count": 75
+        },
+        {
+          "field": "status",
+          "value": "partial",
+          "count": 3
+        },
+        {
+          "field": "status",
+          "value": "abstract",
+          "count": 1
+        },
+        {
+          "field": "status",
+          "value": "replay",
+          "count": 2
+        },
+        {
+          "field": "search",
+          "value": "NO_SUCH_PAPER_12345",
+          "count": 0
+        }
+      ],
+      "combined": 7,
+      "search": true,
+      "expand": true,
+      "collapse": true,
+      "reset": 79
+    },
+    "legacy": [
+      {
+        "file": "index.html",
+        "cards": 71,
+        "banner": true,
+        "options": [
+          {
+            "value": "",
+            "count": 71
+          },
+          {
+            "value": "priority",
+            "count": 15
+          },
+          {
+            "value": "latest",
+            "count": 35
+          }
+        ]
+      },
+      {
+        "file": "cvpr_patient_dp.html",
+        "cards": 35,
+        "banner": true,
+        "options": [
+          {
+            "value": "",
+            "count": 35
+          },
+          {
+            "value": "tier:1",
+            "count": 6
+          },
+          {
+            "value": "tier:2",
+            "count": 13
+          },
+          {
+            "value": "tier:3",
+            "count": 16
+          },
+          {
+            "value": "priority",
+            "count": 15
+          }
+        ]
+      }
+    ],
+    "rationale": {
+      "paragraphs": 66,
+      "tables": 6,
+      "footnotes": 13,
+      "rawFootnotes": false,
+      "additionalSources": 2
+    },
+    "javascript_exceptions": 0
+  }
+}

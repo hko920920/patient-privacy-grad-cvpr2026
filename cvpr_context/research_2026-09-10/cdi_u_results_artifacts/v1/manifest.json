@@ -1,0 +1,28 @@
+{
+  "schema": "cdi-u-report-artifacts/v1",
+  "created_utc": "2026-09-14T16:30:13.583473+00:00",
+  "renderer_source": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\render_cdi_u_results.py",
+  "renderer_sha256": "e9170ce6482dbbb1b335b43804dda14b460bb2e0afa5cc09d10f5991cfab1fe4",
+  "matplotlib_version": "3.7.2",
+  "input_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\execution.json": "6b888ff99c7f465cc75a8a1f9923ba63aeb8649e12c85158d9db336350e37966",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\results.json": "4f9556a381a337104aa9b0efa66f9daafb4ef171b12940e766454e84112af921",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\protocol.json": "06a0d489b22250d4a28fd61b64aa2fe9ba5924aa71435b7e600185e6a25462c3",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\verification.json": "8e0cf8ff81a38ee9951a7058154be15865db56ba8b69d5f8faad1be9f6ef7a1c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\verification_protocol.json": "e5f5eb889ff8d296b01661b638f0a5d0d333b3858c5ebe976b4dbb94a45da070",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\analysis_v1\\provenance.json": "231e85757cf2215d3559058e1943d2f597c8e4e18c5a040411c6ea537a67b63c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\analysis_v1\\analysis.json": "7647a80dd26c10a85bae08691edba40f14d29a98c4566ffb04c6abce49fcbdfe",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\analysis_v1\\contract_copy.json": "6f0afa62cf2bbf26790370965c4716f3afc927e0ab2412f8c4e6befbe02efca3"
+  },
+  "output_sha256": {
+    "report_table.json": "8fcfccec4e17be0aa383d984f0571d09690cd95b9643322fcaf65959071c4f5e",
+    "selection_auc_all19.csv": "853a6957b418ae40d0301ae4b6f236de9b3e1d46e76cd8571840602e4c2a6686",
+    "selection_auc_all19.png": "50bc0514c0de06c42f2a73d8243d678f08e91a34c85b4e1d6de561a1f7a2f0fb",
+    "selection_auc_all19.svg": "2ecf8d44c5a256126d50031a90d4c3982ea7fbd1a9a1c1bfb2d8ddc6466c802a"
+  },
+  "new_statistics": false,
+  "new_fitting": false,
+  "new_GPU_execution": false,
+  "winner_selection": false,
+  "human_conclusion_generated": false
+}

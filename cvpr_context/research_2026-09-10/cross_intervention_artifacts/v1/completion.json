@@ -1,0 +1,26 @@
+{
+  "schema": "cross-intervention-completion/v1",
+  "complete": true,
+  "current_step": 2,
+  "stage2_complete": false,
+  "ended_utc": "2026-09-15T12:25:52.208988+00:00",
+  "frozen_extraction_inputs_unchanged": 528,
+  "no_running_task_processes_verified": true,
+  "record_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\STAGE2_CROSS_PATIENT_INTERVENTION_20260915.md": "cb3c9ba8258410c8626a8a6638cf97adcf9cb89f01553f7aaf5e95bb186441fc",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\stage2_cross_patient_intervention.html": "c5054332dd3a497a88454995fd126289b807a88db4be123a845fc1d17d0126f9",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\RESEARCH_FRAMEWORK.md": "6bce7ad4b1f8c10c5b2d2f3ff159703806cd80eb1b2401301202cf833d371f42",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\research_state.json": "d61006b1d652da7327b5e795fc5f2af90b7fbae71ce184cc7481340933c0a9ec",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\patient_baseline_spec.json": "a5f74e21f6971f2f11c49770a974ff795257f172ea75f49e67608ca053d271da",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\build_review.py": "e30ed959c67e03fbbe635e43c52fc63cf9f977c0db169cc9c09cdf08d4bcefe0",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\verify_review.py": "01c2a64a0159f60beb69cc89bed5c127e7fdce5bb587db7be7944820687aeac2",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\cross_intervention_artifacts\\v1\\manifest.json": "a9bd5c076d22c079ff7d3d4308eb0c7d17c7cfece1db7397d3ba7ece1af612bd",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\cross_intervention_artifacts\\v1\\html_link_verification.json": "7ec956f24889ab29997b274b744ca725dca42de1589ad642be4934673a32175e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\cross_intervention_scope_review_20260915.md": "28d917dd6ccc4674752b188aa4955ac6069e356dbe25a79361855a743770a532",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CURRENT_STATUS.md": "9a44b602211259f0e680fc27bbba3a9c6770f609c59d08ebd9b04066ec7b162b",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\WORKLOG.md": "6d72f87df6f111376a2ca3979b535548849b4921b38c2149732140b998347d76"
+  },
+  "GPU_runner_seconds": 1155.005598000018,
+  "raw_verification_status": "PASS_CROSS_PATIENT_CDI_SAVED_ARITHMETIC_PROVENANCE_AND_P_DL_REPLAY",
+  "scorer_verification_status": "PASS_INDEPENDENT_CROSS_PATIENT_FIXED_SCORER_ARITHMETIC_AND_PROVENANCE"
+}

@@ -1,0 +1,114 @@
+{
+  "policy": {
+    "schema": "masked-endpoint-independent-analysis/v1",
+    "patient_id": "14393",
+    "current_step": 2,
+    "stored_cells": 4464,
+    "paired_cells": 2232,
+    "new_forward": 2260,
+    "reused_cells": 2204,
+    "backward": 0,
+    "orientation": "negative image loss before patient mean/max; MoFit h=conditioned-minus-null MSE",
+    "change": "treatment minus control; contribution slots8 versus0, all other scheduled slots fixed",
+    "generic_t140": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "prefixes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "primary": "negative saved GPU FP32 MSE",
+      "additional": [
+        "negative residual FP64 MSE",
+        "negative residual FP64 L2"
+      ]
+    },
+    "cdi_dl_t100": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "prefixes": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "primary": "negative saved GPU FP32 L2",
+      "additional": [
+        "negative CPU FP32 MSE",
+        "negative residual FP64 MSE",
+        "negative residual FP64 L2"
+      ]
+    },
+    "fixed_mofit": {
+      "queries": [
+        "00014393_002.png",
+        "00014393_006.png",
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "source_embeddings": [
+        "00014393_002.png",
+        "00014393_006.png",
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "source_model": "original model_1",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "fresh_mean": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "conditions": [
+        "null",
+        "00014393_002.png",
+        "00014393_006.png",
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "h": "conditioned-minus-same-query-same-noise-null MSE; FP32 primary and FP64 sensitivity",
+      "pooling": "average fixed noise set within each query/condition cell, then mean/max the two E or U photos; differences last"
+    },
+    "patient_summaries": "all41 separately; p14393 highlighted only by prespecified identity",
+    "selection_context": "40 paired patient changes, all/A/B descriptive count, mean, median, SD, quartiles, min, max and sign counts",
+    "AUC": false,
+    "CI": false,
+    "fitting": false,
+    "reference_selection": false,
+    "limitations": [
+      "One selected patient and one fixed training realization; no population effect or attack performance.",
+      "Control masks eight losses with original denominator and forward slots, not a resized-dataset retrain.",
+      "Runtime full-weight fingerprints are checked against artifact/checkpoint values; neural predictions are not independently rerun.",
+      "FP64 residual arithmetic checks saved predictions, not an independently executed FP64 neural model.",
+      "MoFit embeddings and posterior latents remain treatment-derived; control optimization is not rerun.",
+      "Selection A/B are context groups; their membership does not change across this intervention.",
+      "No stage2 completion or new-method superiority follows automatically."
+    ]
+  },
+  "analyzer_sha256": "e24aac2f16802fd563f594ab0cd28ded3be8d53c43e84dba7ee7e77bdb5ac913",
+  "producer_sha256": "c0d5af1eb1cda141a33f9a5663b0e8ec8b2004654f9bfa2d91855ea365146262",
+  "noising_helper_sha256": "ba710cb9d80fb92e6e70b4b850333df4d5087c12b855e425bfda7b271c94c195",
+  "code_timing": "Frozen after endpoint GPU began and before this verifier reads endpoint results; original producer analysis policy was fixed before GPU."
+}

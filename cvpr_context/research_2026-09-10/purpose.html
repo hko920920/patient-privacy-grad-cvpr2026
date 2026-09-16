@@ -1,0 +1,45 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RESEARCH_PURPOSE.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>환자 보호·보장 환산 연구와 공격 연구의 관계</h1>
+<p><strong>2026-09-15 현재 연구 구조:</strong> <a href="paper_level_redesign.html">졸논과 CVPR을 목적 중심으로 다시 연결한 설계</a>를 따른다. 원래 보호·재사용 판단을 유지하고 CVPR의 환자 노출 평가 기여를 연결한다. 아래 새 공격 중심 설명은 검토 이력이며, 새 공격 우월성을 필수 목표로 올리지 않는다.</p>
+<p><strong>후속 실제 설계:</strong> 사용자는 이 연결과 앞선 근거를 기준으로 실제 설계를 시작하자고 요청했다. <a href="design.html">설계 v0.1</a>에 교차 사진 반응 감사 후보와 보호 비교를 구체화했다. 아래 목적 확인을 보존하며, 이후 상태는 '구체적 후보 설계 작성, 구현·성능·기여 미검증'이다.</p>
+<p>원래 연구 목적은 의료 생성모델을 환자 개인정보가 보호되도록 학습하고, 기록된 image-level DP 근거가 어떤 조건에서 patient-level 보장을 허용하는지 확인해 재사용과 재학습의 비용·효용을 비교하는 것이다. 환자 참여를 더 정확히 알아내는 공격은 이 보호를 경험적으로 시험하는 도구로 들어간다.</p>
+<p>초기 01번 기록은 image-DP evidence에서 patient-level claim으로의 환산과 reuse-versus-retrain 경계를 중심 질문으로 삼았다. 10번도 공격을 평가 도구로 명시했다. 18번 이후에는 CVPR의 독립 방법 기여를 찾는 과정에서 새 환자 집합 공격법을 주기여로 올리는 방향 전환을 제안했다. 최근 24번의 상세 근거는 그 공격 중심 후보의 성립 조건을 설명한다.</p>
+<p><strong>이 둘은 관련된 연구지만 중심 성과가 다르다.</strong> 원래 연구의 성과는 정당한 환자 보장 아래 모델을 언제 재사용할 수 있고, 언제 어떤 추가 조치나 재학습이 필요한지 판단하는 근거와 비용·효용 개선이다. 공격 중심 연구의 성과는 같은 접근·계산량·오탐률에서 기존 공격보다 참여 여부를 잘 판별하는 새 방법이다. 후자가 전자에서 필연적으로 따라오거나 CVPR에 필수인 것은 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>확인 항목</th>
+<th>역할과 해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DP 메커니즘·실행 조건</td>
+<td>sampling, clipping, noise, contribution cap, 전체 release 경계가 증명의 조건과 맞는지 확인</td>
+</tr>
+<tr>
+<td>Privacy accounting·환산</td>
+<td>실제 학습 조건에 근거한 image→patient 보장과 목표 예산 충족 여부 판단</td>
+</tr>
+<tr>
+<td>Membership 등 공격</td>
+<td>허용된 실험에서 경험적 노출을 측정하고 평가의 약점·구현 오류 가능성을 진단</td>
+</tr>
+<tr>
+<td>재사용·재학습 비교</td>
+<td>정당한 보장과 요구 효용을 충족하는 선택의 연산·데이터·학습 비용 비교</td>
+</tr>
+</tbody>
+</table>
+<p>DP는 특정 환자의 참여 여부를 절대로 추측할 수 없게 한다는 약속이 아니라, 정의한 인접 데이터 사이에서 학습 결과 분포의 차이를 제한하는 보장이다. 한 환자의 전체 기여를 보호하려면 그 보호 단위가 맞아야 한다. ε·δ는 보통 해당 메커니즘과 실행 조건으로 계산한 수학적 경계이며, 공격 정확도를 측정해 얻는 실측 위험 수치와 다르다. <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">DP 정의</a></p>
+<p>환산은 같은 모델에 적용 가능한 보장 범위를 분석하는 것이며 모델을 더 보호하도록 바꾸는 연산은 아니다. 타이트한 회계가 기존의 보수적 경계를 개선할 수는 있지만 알려진 실행 조건과 정리의 가정이 필요하다. 공격이 실패했다는 사실만으로 더 작은 ε를 부여하거나 환자 보장을 인증할 수 없다. <a href="https://arxiv.org/abs/2401.10294">DP-SGD group 회계</a></p>
+<p>경험적 공격이 위험을 찾으면 노출과 가정·구현을 조사할 이유가 생긴다. 공격 성공 자체가 올바른 DP 보장의 위반을 뜻하지는 않는다. 특정 보장을 반증하려면 인접 실험과 통계적 불확실성을 포함한 추가 조건이 필요하다. 공격이 실패한 경우에도 해당 공격과 평가 조건에서 검출하지 못했다는 범위를 넘을 수 없다.</p>
+<p>현재 목적을 기준으로는 기존의 강한 공격을 공정한 평가 도구로 먼저 사용하고, 그것이 연구 질문을 충분히 평가하지 못한다는 근거가 있을 때 새 감사법을 별도 방법 후보로 판단하는 것이 타당하다. 기존 ULS/ELS·group accounting·DP 생성 선행 때문에 보호·환산·비용 비교 쪽의 독립 기여 역시 아직 확보된 것은 아니다. <a href="https://arxiv.org/abs/2407.07737">ULS/ELS 선행</a></p>
+<p>이번 목적 확인은 공격 연구를 최종 채택하거나 폐기한 결정으로 기록하지 않는다. 현재 질문은 원래 보호 목표와 최근 제안의 관계를 묻는 것이다. 기존 문헌 대조와 조건부 후보 분석은 보존하되 공격 중심 전환이 자동 확정된 현재 목표인 것처럼 설명하지 않는다. 본학습·동결 실험 계약·검증 결과의 변경은 없다.</p>
+<p><strong>새 공격법의 기여와 현재 확보한 것</strong></p>
+<p>새 공격 연구는 기존 측정에서 드러나지 않던 노출을 발견하고, 이를 검출하는 방법을 제공하거나 더 현실적인 정보·비용 조건에서도 감사를 가능하게 하는 데 기여할 수 있다. 예를 들어 MoFit은 정답 training caption을 갖지 않는 조건에서 사용할 모델 적합 conditioning을 제안한다. 이는 '더 잘 공격한다'는 목표에 대응하는 구체적인 기술적 제안이 있는 사례다. <a href="https://arxiv.org/abs/2602.22689">MoFit 원문</a></p>
+<p>현재 환자 집합 후보에서 기여로 입증해야 할 내용은 ① 기존 공격과 표준 환자 집계가 놓치는 membership 관련 반응의 발견, ② 그 반응을 추출·활용하는 설명 가능한 새 방법, ③ 동일 접근·사진 수·보조 정보·오탐률·계산량에서 남는 개선이다. 여러 사진·상관·표준 보정을 사용한다는 것만으로 이 기여가 확보되는 것은 아니다. 실제로 작동하면 기존 평가가 어떤 노출을 과소측정했는지 확인하고 보호 방법을 더 엄격하게 비교할 수 있다. 그 결과로 DP 보장 자체를 경험적으로 인증하는 것은 아니다.</p>
+<p><strong>현재는 구체적으로 입증된 새 반응·새 공격 알고리즘·의료 환자 성능 개선을 확보하지 못했다.</strong> 문헌 검토는 기여 충돌과 조건부 연구 질문을 정리했으며, 이미 완성된 새 방법을 찾아냈다는 결과가 아니다. 따라서 '새 공격법 개발'은 기여 목표이고, 원래 보호·환산 연구를 대체할 확정 기여가 아니다.</p>
+<p><strong>공격 기여와 보호 연구를 연결하는 결과</strong></p>
+<p>새 감사법이 기존 평가가 놓치던 노출을 검출한다면, 그 측정으로 보호 방법을 더 엄밀하게 비교하고 설계·평가를 개선할 수 있다. 결합 연구의 성과 후보는 새 검출 방법, 보호 단위·보조 정보·계산량을 맞춘 노출/효용 비교, 그 비교가 제공하는 보호 설계나 선택의 근거다. 동일 patient ε·δ에서 효용과 경험적 노출을 비교하거나, 목표 보장과 요구 효용을 만족하는 선택들의 비용을 비교하는 식으로 질문을 명확히 한다.</p>
+<p>새 감사법의 성능 향상과 보호 비교에 대한 실질적 기여는 각각 입증해야 한다. 새로운 측정으로 기존 결론을 더 강하게 뒷받침하는 경우도 있으며, 보호 방법의 순위가 반드시 뒤집혀야 하는 것은 아니다. 경험적 공격 결과로 formal DP 회계를 대체하지 않는다. 이 연결의 이해와 연구 방향의 최종 채택은 구분한다.</p></main></body></html>

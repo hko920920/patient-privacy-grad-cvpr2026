@@ -1,0 +1,19 @@
+{
+  "rows": 79,
+  "checked_local_links": 1042,
+  "checked_pdf_page_anchors": 221,
+  "broken_links": [],
+  "timestamp_utc": "2026-09-16T05:31:29.052499+00:00",
+  "state_key_sync": "PASS",
+  "sha256": {
+    "TRACK1_CAPACITY_RESULTS_20260916.md": "0eccdae4b5feab5108df2450d046ce0c5d9b2b0d101c274edab2adb74054fadc",
+    "TRACK1_CAPACITY_PROTOCOL_20260916.md": "aa96a9e1dbe6aab399cd0e9259f9222b7101cd328546013b1f3a4d4d01d60761",
+    "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md": "9a2a8d59daf2e70e7432173c5aa3b93cb46199313a158bbea5559f9aaefb6a03",
+    "track1_capacity_results.html": "7e9523ccce1f818523f5e4965282bd090e035edd22d5b56e3392d78b71c01c06",
+    "track1_patient_dp_comparison_plan.html": "4f83f4fc8e9f9982cf621be1c6b34e80d0babb547129dec6a7bcb449bec98001",
+    "research_state.json": "d0ff5ba4abec98ae6bc9bdb2a5d7ec5d00bfdc41bc32948e94991026bc3e8a0e",
+    "patient_baseline_spec.json": "50358e47e07c058b01c1b94903f937bc7981d586c366e3343a352849ee6b70fc",
+    "spec_sources/track1_dp_accounting_precheck_20260916.json": "27723033c7bf84b8f3890770f1ba1181e75efe8ba5d2c908824f8f90391577de"
+  },
+  "independent_dp_plan_review": "PASS for design only: fixed objective, cached gradients, add/remove sensitivity, Poisson denominator, public calibration and cost fairness; no DP execution validation."
+}

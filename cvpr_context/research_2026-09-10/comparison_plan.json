@@ -1,0 +1,45 @@
+{
+  "as_of": "2026-09-10",
+  "status": "literature_and_public_packet_preparation; private_patient_experiments_not_run",
+  "attack_candidates": [
+    {"id":"A08","method":"DIME","access":"denoiser forward","auxiliary":"known members/nonmembers for calibration in reported setup","priority":"forward-access main comparison","cost":"2 forward queries as defined by authors","control":"same calibration labels; bias/crowding features; preprint, not main-conference certified"},
+    {"id":"A09","method":"Quantile-regression MIA","access":"denoiser / SecMI features","auxiliary":"public nonmember training data","priority":"calibration baseline","cost":"attack feature extraction plus quantile regression fitting","control":"per-example quantile is not automatically a finite-sample patient guarantee"},
+    {"id":"A10","method":"PIA / PIAN","access":"denoiser forward","auxiliary":"threshold calibration","priority":"low-cost control","cost":"2 forward queries","control":"report PIA and PIAN separately; normalization can hurt SD"},
+    {"id":"A11","method":"SecMI-stat / SecMI-NN","access":"denoiser forward","auxiliary":"NN requires labeled auxiliary samples","priority":"historical strong control","cost":"paper stat configuration about 12 NFE","control":"stat and learned classifier need separate information budgets"},
+    {"id":"A12","method":"CLiD-th / CLiD-vector","access":"conditional and unconditional denoiser","auxiliary":"caption variants; shadow scores for th weight","priority":"conditional-model main comparison","cost":"configuration-dependent; paper economical setting around 15 queries","control":"same caption knowledge; member-positive ROC; supplied score replay completed"},
+    {"id":"A13","method":"ReDiffuse","access":"image variation API","auxiliary":"labeled score-training subset in learned attack","priority":"required if variation API claim","cost":"multiple complete image variations, not equal to denoiser NFE","control":"cannot substitute for text-only API access"},
+    {"id":"X01","method":"CDI","access":"gray-box or white-box by feature family","auxiliary":"held-out reference set and split scoring fit","priority":"mandatory set-inference contribution comparison","cost":"depends on selected loss/gradient/noise-optimization features","control":"match set size, member fraction, independent reference and repeated-null FPR"},
+    {"id":"X02","method":"Tracing the Roots","access":"model gradients","auxiliary":"labeled train packet / shadow-equivalent calibration","priority":"white-box main comparison","cost":"loss plus gradient features across timesteps","control":"full features versus reduced timestep subset; public linear probe replay completed"},
+    {"id":"X03","method":"GSA1 / GSA2","access":"model gradients","auxiliary":"shadow/auxiliary labeled gradient data","priority":"white-box control","cost":"timestep aggregation and backward passes","control":"norm of mean gradient differs from mean of gradient norms; LoRA modules fixed"},
+    {"id":"X04","method":"SD-MIA","access":"text-to-image output API","auxiliary":"text variants plus image/text encoders","priority":"mandatory if output-only or small-set claim","cost":"several prompt variants, multiple full images per variant","control":"10/30-image sets already evaluated; compare patient bags and query budget"},
+    {"id":"X05","method":"NDSS fine-tuned diffusion black-box MIA","access":"image output / generation interface","auxiliary":"scenario-dependent captions, shadow training, captioner fine-tuning","priority":"required for black-box fine-tuning claim","cost":"captioning, generation, similarity and shadow computation","control":"match one of the four threat scenarios; no free known-member labels"},
+    {"id":"X11","method":"PFAMI-Met / PFAMI-NNs","access":"intermediate denoising gray-box","auxiliary":"Met statistic; NNs uses shadow training","priority":"LoRA main comparison","cost":"20 / 110 queries in Table IV setting","control":"within-query perturbations; same crop and pathology-preservation assumptions"},
+    {"id":"X12","method":"MoFit","access":"input/embedding gradients through denoiser","auxiliary":"VLM initialization and labeled calibration subset","priority":"caption-free white-box main comparison","cost":"paper 7-9 min/image on RTX4090; early stopping also exists","control":"LoRA result near chance; SD table selects known memorized members; independent calibration"}
+  ],
+  "training_candidates": [
+    {"id":"B08","method":"DP-LoRA","priority":"shared backbone core","adaptation":"record original and patient-ULS variant","control":"same backbone/public data; QKV/projection; rank8 versus rank16; multiplicity"},
+    {"id":"B09","method":"DPDM","priority":"from-scratch claim","adaptation":"patient-average multiplicity loss then patient clipping","control":"full trainable capacity, batch/compute and public pretraining"},
+    {"id":"B10","method":"DP-LDM","priority":"shared backbone core","adaptation":"attention-only record and patient variants","control":"LoRA already in ablations; same trainable modules and public AE"},
+    {"id":"B11","method":"PrivImage","priority":"public-data selection claim","adaptation":"bound patient histogram contribution and compose costs","control":"selection budget plus private tuning; public domain match"},
+    {"id":"B12","method":"dp-promise","priority":"conditional on proof/code reconciliation","adaptation":"not yet eligible for same-epsilon patient guarantee","control":"Phase I input-noise target joint dependence; asymptotic accounting"},
+    {"id":"B13","method":"RAPID","priority":"retrieval/compute or broad DP generation claim","adaptation":"patient bound on private endpoint training; public retrieval fixed","control":"public KB and retrieval encoder provenance; substitution adjacency; HPO cost"},
+    {"id":"B14","method":"DP 3D medical LDM","priority":"3D medical generation claim","adaptation":"verify volume versus all-patient adjacency","control":"public AE/PT, pathology control, different anatomy/resolution"},
+    {"id":"B15","method":"DP diffusion useful images","priority":"utility/timestep/multiplicity claim","adaptation":"same patient clipping and accountant","control":"public pretraining, nonuniform timestep, noise/augmentation multiplicity"},
+    {"id":"B16","method":"SPTI","priority":"high-resolution or no-finetuning claim","adaptation":"patient-bounded private votes","control":"text bottleneck, captioner access, frozen generator and all query costs"},
+    {"id":"B17","method":"RPGen","priority":"robust public pretraining claim","adaptation":"patient vote selection plus patient DP fine-tuning","control":"AMP ablation and domain matching; source access only partial"},
+    {"id":"X08","method":"DP-FETA","priority":"no-public-data or private-prototype claim","adaptation":"patient central query and training contribution bounds","control":"central-query privacy plus fine-tuning; augmentations"},
+    {"id":"X09","method":"FETA-Pro","priority":"private-prototype/curriculum or broad DP generation claim","adaptation":"patient bounds for spatial/frequency/training releases","control":"three privacy costs, same public resources and high memory budget"},
+    {"id":"X10","method":"DP-SAD","priority":"conditional on proof/code reconciliation","adaptation":"not yet eligible for same-epsilon patient guarantee","control":"T noise scaling and actual gradient sensitivity; teacher/discriminator provenance"}
+  ],
+  "unit_baselines": ["B01","B02","B03","B04","B05","B06","B07"],
+  "fixed_controls": [
+    "member=1; higher canonical score means member; never flip using test AUC",
+    "patient-disjoint development, nonmember calibration, final member/nonmember test",
+    "same patient bags and records; known training records versus unseen same-patient photos declared separately",
+    "mean/max/median/top-k and valid-p-value Bonferroni/Simes only under their stated assumptions",
+    "frozen patient calibration for all aggregators; no test-set hyperparameter selection",
+    "same forward NFE, backward passes, full generations, wall time, VRAM and auxiliary training budgets",
+    "patient add/remove or substitute adjacency and all releases/selection costs declared",
+    "condition on public k/labels only if actually permitted; test hidden-count/label scenario separately"
+  ]
+}

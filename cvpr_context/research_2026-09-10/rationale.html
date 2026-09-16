@@ -1,0 +1,318 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PATIENT_AUDIT_RATIONALE.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}body{background:white;color:#222}main{max-width:940px}p{margin:18px 0}h1{margin-bottom:30px}table{font-size:15px}.footnote{font-size:14px}@media print{main{max-width:none;padding:0}a{color:inherit}table{font-size:11px}}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>환자 집합 감사법을 우선 검증할 근거와 성립 조건</h1>
+<p><strong>목적 확인:</strong> 아래는 새 공격·감사법을 주기여로 삼는 후보의 분석이다. 원래 보호·보장 환산·재사용 비용 연구와의 관계는 <a href="purpose.html">연구 목적과 공격의 역할</a>을 우선 확인한다. 공격 중심 전환이 자동 확정됐다는 의미로 해석하지 않는다.</p>
+<p><strong>현재 검토한 후보 중 환자 집합 diffusion 감사법을 우선 검증할 근거는 있다. 그 근거는 실제 보호 대상과 맞는 질문, 단일영상 점수가 놓칠 수 있는 정보, 명확한 대조 실험, 기존 자산으로 시작할 수 있는 검증 경로다. 새로운 공격 신호나 우월한 알고리즘을 확보했다는 근거는 아직 없다.</strong> 이 판단은 연구 우선순위에 관한 것으로, CVPR 채택 확률의 추정이나 선행 부재의 증명이 아니다.</p>
+<p>핵심 가설은 다음과 같다. 여러 환자의 영상으로 학습한 하나의 생성모델에 대해, 같은 환자의 반복 관측에서 중복된 증거와 학습 참여 때문에 생긴 반응을 구별할 수 있다면, 같은 접근 권한·보조 정보·계산량·환자 오탐률에서 기존 공격보다 유용한 감사를 할 수 있다. 이 가설에서 아직 확인되지 않은 부분은 바로 <strong>학습 참여의 반응을 구별할 수 있는지, 기존 방법으로 충분하지 않은지</strong>다.</p>
+<p><strong>1. 보호 대상과 검정 대상이 맞아야 한다.</strong></p>
+<p>이미지 membership의 질문은 특정 파일이 학습에 사용됐는지다. 환자 membership의 질문은 특정 사람의 자료가 학습에 기여했는지다. 한 환자가 여러 날짜의 사진을 제공하면 두 질문은 달라진다. 환자가 가진 새 사진이 학습에 들어가지 않았더라도, 그 환자의 다른 사진이 사용됐다면 환자 membership은 양성일 수 있다.</p>
+<p>연구의 기본 단위는 환자 i의 학습 기록 집합 Dᵢ와 감사 시 사용할 수 있는 관측 집합 Xᵢ다. 학습 기여 수 k_train과 감사 관측 수 k_audit는 구분해야 한다. K10 contribution cap은 학습 기여를 제한하는 조건이며, 감사자가 항상 10장을 갖는다는 뜻이 아니다. 몇 장을 학습에 넣었는지, 몇 장을 질의했는지, 두 집합에 같은 파일이 있는지를 별도로 고정해야 한다.</p>
+<table>
+<thead>
+<tr>
+<th>감사 시나리오</th>
+<th>양성 환자의 감사 사진</th>
+<th>검증하는 능력</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>학습 포함 여부를 모르는 보유 사진의 감사</td>
+<td>일부 또는 전부가 실제 학습 파일과 일치할 수 있음</td>
+<td>여러 기록의 membership 신호를 묶는 능력</td>
+</tr>
+<tr>
+<td>같은 환자의 다른 사진을 이용한 감사</td>
+<td>학습 파일과 전부 불일치하도록 평가자가 구성</td>
+<td>관측하지 못한 기록을 통한 환자의 학습 참여를 추론하는 능력</td>
+</tr>
+<tr>
+<td>합성 영상에서 같은 환자 찾기</td>
+<td>생성물과 실제 보유 사진을 비교</td>
+<td>identity 연결 또는 복제 탐지; membership과 별도 정의 필요</td>
+</tr>
+</tbody>
+</table>
+<p>둘째 시나리오는 더 강한 실용적 질문이지만 더 어렵고, 이미 사용자 공격 선행이 있다. 첫째 시나리오의 성공을 둘째의 성공으로 확대하지 않아야 한다. 같은 기관·질환 등 평가가 정한 모집단에서 환자를 나눈 뒤 양성·음성 환자의 자료 조건을 맞춰야 한다. 특정 병원의 환자라는 사실을 알아내는 것과, 그 병원 모델의 학습에 실제 참여했는지를 구별해야 한다.</p>
+<p>Nature의 환자 위험 연구는 평균 공격성능이 낮아도 특정 환자의 위험이 높을 수 있음을 보여준다. 이는 환자 단위 평가의 중요성을 뒷받침한다. 그 연구의 여러 target model에 걸친 개별 record 위험과 환자별 최대 AUC는, 한 generator의 환자 집합 ROC와 다른 평가량이다. 해당 관찰만으로 새로운 diffusion 감사법의 필요성이나 성능을 추론할 수 없다.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p><strong>2. 가능성의 첫 실질적 근거는 관측을 한 숫자로 줄일 때 버릴 수 있는 정보다.</strong></p>
+<p>단일영상 공격은 loss, 복원 오차, perturbation 반응, gradient 등에서 membership 점수를 만든다. 평균이나 최대값으로 환자 점수를 만들면, 어떤 관측끼리 비슷한 반응을 보였는지, 일부 관측만 특이했는지, 여러 조건에서 반응이 유지됐는지가 소실될 수 있다. 원래 관측에 유용한 정보가 있는데 특정 요약이 버린다면, 다른 특징이나 결합 방식이 더 잘 작동할 가능성은 있다.</p>
+<p>그러나 정보 손실 가능성과 실제 정보의 존재는 다르다. 관측 가능한 모든 모델 반응의 분포가 참여 환자와 비참여 환자에서 같다면 어떤 집계도 membership 정보를 만들어낼 수 없다. 관계를 복잡하게 표현하는 신경망을 추가하는 것만으로 해결되지 않는다. 유용한 차이가 단일 점수들의 평균·상위값·분산이나 기존 관계 특징에 이미 담겨 있다면 새 방법의 여지도 줄어든다.</p>
+<p>Diffusion의 여러 timestep, noise 조건, conditioning, gradient는 서로 다른 반응을 살필 수 있는 통로다. 여기서 <strong>같은 환자의 서로 다른 촬영이 공유하는 학습 반응</strong>이 있는지 묻는 것이 작업 가설이다. 현재의 2D generator는 한 장씩 학습하므로 환자 집합의 관계를 직접 학습한다고 전제할 수 없다. 공유된 반응이 해부학·질환·전처리에서 온 것인지, 실제 참여에서 온 것인지 실험으로 분리해야 한다.</p>
+<p><strong>3. 사진 간 상관은 해결해야 할 어려움이며, 공짜로 얻는 공격 이득이 아니다.</strong></p>
+<p>다음은 실제 환자 측정 결과가 아닌 설명용 모형이다. 환자 i의 j번째 사진 점수를 <code>sᵢⱼ = μ·Yᵢ + bᵢ + eᵢⱼ</code>로 놓는다. Yᵢ는 참여 여부, bᵢ는 참여와 무관한 환자 공통 편차, eᵢⱼ는 사진별 편차다. bᵢ와 eᵢⱼ가 서로 독립이고 사진별 편차도 독립이라는 가정 아래, k장 평균의 분산은 <code>Var(bᵢ) + Var(eᵢⱼ)/k</code>다.</p>
+<p>사진을 추가하면 사진별 흔들림은 줄지만 환자 공통 편차는 남는다. 동일한 분산과 공통 상관계수 ρ를 갖는 점수의 평균에 대해, 독립 관측 몇 개와 같은 분산인지를 나타내는 수는 <code>k_eff = k / [1 + (k−1)ρ]</code>다. 이는 이 모형에서 평균의 분산을 설명하는 수이며 임의의 공격 성능이나 환자 데이터 전체의 정보량 공식은 아니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">실제 점수 수 k</th>
+<th style="text-align: right;">가정한 점수 상관 ρ</th>
+<th style="text-align: right;">평균 분산 기준 k_eff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10.00</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">1.82</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0.9</td>
+<td style="text-align: right;">1.10</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">1.23</td>
+</tr>
+</tbody>
+</table>
+<p>같은 사진을 복제해 20장으로 만든 경우와 서로 다른 시점·관측을 20개 확보한 경우를 같은 증거량으로 취급하면 안 된다는 뜻이다. 이때 평가 모델을 고정해야 하며, 학습 데이터 자체를 중복시켜 모델의 암기를 바꾸는 실험과 구분해야 한다.</p>
+<p>남는 가능성은 중복된 반응을 반복 질의하는 비용을 줄이거나, 환자 공통 편차와 membership에 관련된 변화를 구별하는 데 있다. 다만 whitening, covariance 가중치, random-effects 모형, 중복 제거, 다양성 기반 선택은 알려진 통계·학습 도구다. 그런 도구를 적용했다는 이유만으로 새 기여라고 할 수 없다. 표준 도구로 충분하면 그 결과를 받아들여야 한다.</p>
+<p><strong>4. 사진 수에 따른 오탐 차이는 중요하지만, 표준 환자 보정으로 해결될 수도 있다.</strong></p>
+<p>비회원 이미지의 개별 오탐률이 1%이고 각 오탐 사건이 독립이라고 가정하자. 사진 중 하나만 양성이어도 환자를 양성으로 판정하는 규칙의 오탐률은 <code>1−0.99ᵏ</code>다. 2장은 약 1.99%, 10장은 9.56%, 20장은 18.21%다. 이는 설명용 계산이며 실제 CXR 오탐률을 예측한 결과가 아니다. 오탐 사건이 완전히 같으면 여러 장이어도 1%이므로, 상관이 언제나 오탐률을 더 높인다는 주장도 틀리다.</p>
+<p>이 문제만 고친 결과로 강한 방법 기여를 주장하기는 어렵다. 기존 점수를 환자별로 집계한 다음, 독립된 비회원 환자 집합에서 전체 판정 규칙을 보정할 수 있기 때문이다. 환자 내부 이미지의 독립성이 없어도, 환자 집합 사이에 필요한 교환가능성이 성립하면 환자 단위 rank 보정을 사용할 수 있다. 이것이 모든 기관·질환·사진 수 조건의 FPR를 동시에 보장한다는 뜻은 아니다.</p>
+<p>따라서 새 방법과 기존 방법 모두 동일한 환자 보정을 받아야 한다. 같은 실제 환자 오탐률에서 더 많은 참여 환자를 찾아내는지, 같은 탐지력에 더 적은 비용이 드는지가 남는 비교다. Quantile-regression MIA는 이미 개별 영상에 맞춘 임계값 학습을 다룬다. 분위수나 보정 계층 자체의 최초성을 주장할 수 없다.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></p>
+<p>표본 수 역시 환자로 계산해야 한다. 비회원 환자 100명에게서 사진 1,000장을 얻었다고 저오탐률 평가의 독립 비회원 수가 1,000명이 되지 않는다. 독립 보정 환자 n명에서 단순 rank p-value의 최소값은 <code>1/(n+1)</code>이므로 n=999일 때 최소값이 0.001이다. 이 해상도를 얻는 것과 모집단 FPR 0.1%를 높은 확률로 보증하는 것은 별개다. 테스트 환자 수와 신뢰구간도 따로 필요하다.</p>
+<p><strong>5. 선행은 연구 동기를 뒷받침하는 동시에 새 기여의 범위를 강하게 제한한다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>선행</th>
+<th>이미 다루는 부분</th>
+<th>현재 질문에 적용할 때 남는 확인 사항</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CDI, CVPR 2025</td>
+<td>여러 영상 특징, scoring, 집합 통계 검정; 일부만 학습에 포함된 경우도 평가</td>
+<td>동일 분포 대조 자료와 표본 가정을 맞추고 작은 환자 집합에 적응한 강한 기준선</td>
+</tr>
+<tr>
+<td>SD-MIA, CVPR 2026</td>
+<td>출력 API, cross-modal perturbation과 10/30장 집합 평가</td>
+<td>환자 내 상관과 실제 학습 명부를 갖춘 조건, 생성 비용을 맞춘 성능</td>
+</tr>
+<tr>
+<td>FACE-AUDITOR, USENIX Security 2023</td>
+<td>여러 얼굴 관측과 유사도 reference로 사용자 학습 참여 감사</td>
+<td>얼굴인식 모델과 diffusion 모델의 출력·학습 목적 차이</td>
+</tr>
+<tr>
+<td>User-level embedding MIA, 2022 워크숍</td>
+<td>같은 사용자의 centroid·pairwise 거리, 학습에 없는 사진을 이용한 추론</td>
+<td>표준 환자 관계 특징만으로 충분한지</td>
+</tr>
+<tr>
+<td>SD-MI, AAAI 2023</td>
+<td>target–anchor 유사도 분포, 학습된 anchor 가중치</td>
+<td>원래 record 판정과 환자 판정의 차이; diffusion에서 관측 가능한 표현</td>
+</tr>
+<tr>
+<td>Patient Membership Inference, IJCNN 2025</td>
+<td>같은 환자의 비학습 자료, perturbation 반응의 집합 특징</td>
+<td>개인화 모델의 1-of-N 환자 식별과 여러 환자가 학습한 generator의 이진 감사 차이</td>
+</tr>
+<tr>
+<td>Quantile MIA, ICML 2024</td>
+<td>영상별 임계값 학습</td>
+<td>기존 점수 전체에 동일 환자 보정을 붙인 후에도 남는 개선</td>
+</tr>
+<tr>
+<td>MoFit, ICLR 2026; DIME, 2026 preprint</td>
+<td>caption 대체·model response 또는 적은 질의로 공격</td>
+<td>같은 접근·label·계산량에서의 환자 단위 효용</td>
+</tr>
+</tbody>
+</table>
+<p>표의 각 근거는 CDI,<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> SD-MIA,<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> FACE-AUDITOR,<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> embedding MIA,<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> SD-MI,<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> IJCNN patient inference,<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> Quantile,<sup id="fnref2:8"><a class="footnote-ref" href="#fn:8">8</a></sup> MoFit<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup> 및 DIME<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> 원문이다. SD-MI와 SD-MIA는 다른 논문이다. 전자는 Re-ID의 target–anchor 관계를 사용하고 후자는 생성모델 출력 API에 대한 공격이다.</p>
+<p>CDI는 특히 강한 반론이다. 이미 집합화와 새 특징을 결합했기 때문에 새 접근은 CDI를 포함한 기존 특징에 같은 환자 보정을 붙인 방법보다 나아야 한다. 단순히 원래 검정의 가정을 어기는 데이터에 CDI를 적용한 뒤 실패했다고 보고하는 비교는 설득력이 없다. SD-MIA가 작은 집합을 평가하므로 사진 수가 적다는 주장만으로도 충분하지 않다.</p>
+<p>관계 특징의 가능성은 기존 사용자·Re-ID 공격이 뒷받침하지만, 이것은 diffusion에서 미해결 신호가 존재한다는 증거가 아니다. IJCNN의 개인화 EEG/ECG 모델은 여러 환자가 참여하는 영상 generator와 문제 구조가 다르다. 그 차이는 검증할 질문을 남기지만, 과제명을 바꾸는 것 자체가 방법의 기여가 되지는 않는다.</p>
+<p><strong>6. 제한된 계산량은 실용적인 이유이며, 독립 기여가 되려면 환자 구조와 연결돼야 한다.</strong></p>
+<p>감사에는 이미지를 몇 장 볼지뿐 아니라 각 이미지에 어떤 timestep·noise·perturbation을 몇 번 적용할지라는 선택이 있다. 한 사진에 더 많은 질의를 쓰는 것과 다른 사진을 보는 것의 추가 정보가 다를 수 있다. 같은 환자의 유사한 관측에 모든 예산을 균등 배분할 때 생기는 비효율이 관찰된다면, 관계를 이용한 배분을 연구할 여지가 있다.</p>
+<p>그러나 early stopping, timestep subsampling, 점수가 높은 사진 선택, 일반적인 예산 배분은 이미 존재하는 아이디어다. MoFit도 조기 종료를 평가하고 DIME도 질의 효율을 전면에 둔다.<sup id="fnref2:9"><a class="footnote-ref" href="#fn:9">9</a></sup><sup id="fnref2:10"><a class="footnote-ref" href="#fn:10">10</a></sup> 새 기여라면 왜 특정 환자 관측을 다시 보는 것보다 다른 관측을 보는 편이 유리한지 설명하고, 균등 배분·무작위 선택·다양성 선택·기존 조기 종료보다 유리함을 보여야 한다.</p>
+<p>비용은 forward 한 번, backward 한 번, 완성 이미지 한 장을 같은 '1 query'로 합산해서는 안 된다. 같은 장비·batch 조건의 실제 시간과 forward/backward 횟수, captioner·reference·shadow 비용을 함께 보고해야 한다. 공개 모델의 내부 접근을 쓴 방법과 출력 API만 사용한 방법은 서로 다른 비교군이다. 고정된 순차 정책을 보정부터 테스트까지 동일하게 적용해야 하며, 관측 도중 p-value를 보고 임의로 멈추면서 고정 시점의 보장만 인용해서는 안 된다.</p>
+<p><strong>7. 가장 큰 기술적 위험은 의료 LoRA에서 유용한 흔적 자체가 약할 수 있다는 점이다.</strong></p>
+<p>강한 단일영상 공격이 일반 모델에서 잘 작동해도 해당 의료 LoRA에서 신호가 남는지는 별도 문제다. MoFit의 Pokemon LoRA 평가에서는 MoFit AUC 54.35%, TPR@1%FPR 0%, PFAMI는 77.50%, 1%가 보고됐다. 서로 다른 모델·자료의 한 설정이며 의료 결과로 일반화할 수 없지만, 낮은 오탐률에서 유용한 신호를 전제하면 안 된다는 경고다.<sup id="fnref3:9"><a class="footnote-ref" href="#fn:9">9</a></sup></p>
+<p>여러 사진에서 신호가 보이지 않는 원인은 적어도 세 가지다. 모델이 충분히 일반화하거나 DP로 신호를 줄였을 수 있고, 사용한 공격 특징이 적절하지 않을 수 있으며, 유한 표본에서 저오탐률 성능을 분해할 능력이 부족할 수도 있다. 이 셋을 구별하지 않고 '기존 공격이 약하니 새 공격이 성공할 공간이 크다'고 추론하는 것은 잘못이다.</p>
+<p>먼저 같은 모집단에서 구성한 비DP 또는 약한 보호 모델의 적법한 연구 평가에서 유용한 신호가 있는지 확인해야 한다. 그다음 실제 목표 보호 조건에서도 기존 방법 대비 개선이 남는지 판단한다. 공격이 실패했다는 것만으로 안전을 인증하지 않으며, 취약한 모델에서만 성공한 공격을 목표 보호 모델에 대한 성공으로 표현하지 않는다.</p>
+<p><strong>8. patient-DP는 이 연구의 비교 조건이며, 상관을 이용해 이론 보장을 우회하는 목표가 아니다.</strong></p>
+<p>올바른 patient-DP는 한 환자의 전체 기여를 인접 데이터의 차이로 정의한다. 그 단위로 성립한 보장은 환자 내부 기록의 상관 때문에 자동으로 무너지지 않는다. DP 정의의 두 인접 학습 분포를 구별하는 검정이라면 <code>TPR ≤ exp(ε)·FPR + δ</code>가 따른다. 이는 적절한 인접 실험에 관한 경계이며, 분포가 다른 임의의 member/nonmember 코호트 ROC에 무조건 대입할 수 없다.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup></p>
+<p>한 번 공개된 DP 모델에서 이미지를 추가 생성하거나 고정 모델의 출력으로 감사를 수행하는 것은 해당 모델의 후처리다. 별도의 private data 재접근·재학습·추가 release가 있다면 그 경계는 다시 따져야 한다. 감사 횟수 자체를 매번 새 training ε로 더하거나, 강한 감사가 기존 수학적 보장을 깨는 것으로 설명하지 않는다.<sup id="fnref2:12"><a class="footnote-ref" href="#fn:12">12</a></sup></p>
+<p>Record-DP를 환자 보장으로 환산할 때와 처음부터 user sampling을 사용하는 경우는 동일 privacy unit·회계·연산량으로 비교해야 한다. 환자 평균 clipping과 fixed-compute ULS/ELS는 이미 직접 선행이다.<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup> 이 때문에 현재 후보에서 단순 patient-DP 학습 구현을 새 방법의 중심으로 삼기보다, 보호 단위가 맞는 조건에서 감사의 효용을 검증하는 것이 더 일관된 선택이다. 이것은 현 후보에 대한 전략적 판단이며 학습 개선 연구 전체의 가능성을 낮게 평가한 결론은 아니다.</p>
+<p><strong>9. 다른 후보보다 먼저 검증할 이유는 범위와 반증 가능성에 있다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>현재 논의한 후보</th>
+<th>남아 있는 주요 부담</th>
+<th>우선순위 판단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>표준 patient-DP와 image-DP의 효용 비교</td>
+<td>ULS/ELS와 tight 회계 선행; 비교만으로 독립 방법을 만들기 어려움</td>
+<td>중요한 실증 기반</td>
+</tr>
+<tr>
+<td>환자 Re-ID·copy·효용 지표를 결합</td>
+<td>기존 의료 재식별·암기·벤치마크와 기여 충돌</td>
+<td>새로운 발견이 나오는지에 따라 평가 연구 가능</td>
+</tr>
+<tr>
+<td>새 DP 생성 학습법</td>
+<td>강한 학습 선행, 정확한 회계, 반복 학습 비용을 함께 해결</td>
+<td>현재 구체적 개선 기전이 부족</td>
+</tr>
+<tr>
+<td>환자 집합 diffusion 감사법</td>
+<td>관계 정보가 실제 membership와 연결되는지 미확인</td>
+<td>고정 모델·강한 기준선에서 핵심 가설부터 검증 가능</td>
+</tr>
+</tbody>
+</table>
+<p>기존 생성 checkpoint, 환자 분할, 전처리를 활용해 점수·관계 특징을 살필 수 있다는 점은 실험 효율의 장점이다. 데이터나 코드가 있다는 사실 자체는 신규성 근거가 아니다. 핵심 가설 검증에 K10 전체 matrix나 수백 개 target model 학습을 항상 선행시킬 필요가 없다는 정도의 장점이며, 초기 성공 뒤에는 여러 학습 seed·보호 조건·자료 설정을 통한 일반화 검증이 필요하다.</p>
+<p>따라서 '가장 가능성이 있다'는 말의 정확한 의미는 <strong>현재 가진 후보 중 문제를 명확히 정의하고, 강한 선행에 대해 빠르게 맞고 틀림을 가려볼 경로가 가장 구체적이다</strong>는 것이다. 모든 대안의 성공확률을 비교한 순위는 아니다. 고정 모델 결과는 그 모델에 대한 환자 구분 성능을 평가하고, 모델 학습의 변동성까지 평가하려면 추가 학습 반복이 필요하다.</p>
+<p><strong>10. 주장을 올리려면 기존 방법을 충분히 강하게 만들어도 차이가 남아야 한다.</strong></p>
+<p>비교 상대는 단일영상 공격 원본 하나로 끝나지 않는다. 해당 접근 조건의 강한 원본 공격, 그 점수에 mean/max/median/top-k를 적용한 환자 버전, 동일 보정, 기존 관계 특징과 일반 집합 모델까지 포함해야 한다. 모든 후보를 같은 표에서 무조건 실행한다는 뜻이 아니라 새 방법이 주장하는 접근·자료 조건에 맞는 강한 기준선을 구성한다는 뜻이다.</p>
+<table>
+<thead>
+<tr>
+<th>확인할 문제</th>
+<th>필요한 대조</th>
+<th>긍정적으로 해석할 수 있는 결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>보정만 좋아진 것인가</td>
+<td>모든 방법에 동일 환자 calibration</td>
+<td>같은 실제 FPR에서 탐지력 차이 유지</td>
+</tr>
+<tr>
+<td>사진을 더 많이 본 효과인가</td>
+<td>같은 k_audit·질의 예산</td>
+<td>동일 관측·연산량에서 차이 유지</td>
+</tr>
+<tr>
+<td>기존 관계 특징이면 충분한가</td>
+<td>centroid/pairwise, reference similarity, 표준 집합 모델</td>
+<td>단순 관계 표현으로 설명되지 않는 차이</td>
+</tr>
+<tr>
+<td>같은 사람임을 알아낸 것뿐인가</td>
+<td>target 모델 무관 encoder, 미세조정 전 모델, 환자 라벨 무작위화 진단</td>
+<td>대상 모델의 실제 참여와 연결되는 반응</td>
+</tr>
+<tr>
+<td>기관·질환·촬영 조건 편향인가</td>
+<td>같은 출처 분할, metadata 조건 대조, k 일치</td>
+<td>출처·구성 차이를 줄여도 차이 유지</td>
+</tr>
+<tr>
+<td>중복으로 확신만 늘어나는가</td>
+<td>고정 모델에서 audit 사진 복제·부분표집</td>
+<td>반복된 같은 증거를 독립 증거로 세지 않음</td>
+</tr>
+<tr>
+<td>새 구성요소가 필요한가</td>
+<td>제안 특징·관계 처리·예산 배분의 ablation</td>
+<td>설명한 기전과 맞는 개선 패턴</td>
+</tr>
+<tr>
+<td>하나의 모델에서만 되는가</td>
+<td>독립 환자·seed·가능한 자료/기관 설정</td>
+<td>불확실성과 적용 범위를 명시한 일관된 결과</td>
+</tr>
+</tbody>
+</table>
+<p>환자별 train/test 경계는 generator 학습 명부와 공격 개발·보정·최종 평가 사이에서 각각 명시해야 한다. 공격을 개발한 환자와 최종 평가 환자를 분리하고, 최종 평가 환자의 생성 학습 참여 여부는 평가자가 정한 명부에서만 가져온다. 알려진 member label·shadow 모델·reference data를 새 방법만 더 쓰면 개선을 귀속시킬 수 없다.</p>
+<p>환자 순서를 무작위화하거나 label을 순열화하는 진단도 실제 기전을 입증하는 완전한 인과 실험은 아니다. 필요하면 독립 연구용 통제 학습에서 환자 포함/제외를 바꿔 반응을 확인할 수 있다. 동일 모델을 고정해 개발할 수 있다는 점과 학습 효과의 인과 확인에 재학습이 필요한 점을 혼동하지 않는다.</p>
+<p><strong>11. 의미 있는 성공과 방향 전환을 가르는 기준은 미리 정할 수 있다.</strong></p>
+<p>방법 기여로 진행할 근거는 동일 조건의 강한 기준선보다 높은 탐지력 또는 낮은 비용을 얻고, 그 개선이 환자 구조에 관한 설명·ablation과 일치하며, 독립 평가와 유한 표본 불확실성을 견디는 경우다. 특정 환자 집합 크기에서만 성립하면 그 적용 범위를 좁혀 보고한다. 보장된 개선폭이나 임의의 채택 기준 숫자를 지금 정할 근거는 없다.</p>
+<p>표준 집계와 동일 보정만으로 개선이 사라지면 단순 결합의 새 방법 주장은 중단한다. 실제 membership와 무관한 identity·기관 정보만 남아도 같은 판단이다. 제대로 맞춘 기존 관계 특징이 충분하거나, 같은 비용에서 최신 공격을 이기지 못하거나, 목표 모델에서 신호가 너무 약하면 다른 기여 방향을 검토해야 한다. 무한정 특징을 추가해 우연히 좋은 최종 시험 결과를 고르는 것은 검증이 아니다.</p>
+<p>새 알고리즘이 나오지 않더라도, 널리 쓰이는 평가가 환자 위험을 체계적으로 오측정한다는 새로운 발견과 충분한 증거는 독립 연구 기여가 될 수 있다. 다만 환자 단위의 중요성·집계 효과·의료 재식별·단순 지표 결합은 이미 선행이 강하다. 그러한 평가 연구가 성립하려면 알려진 현상의 반복을 넘어서는 발견이 필요하다. 공개 CVPR 2026 심사 지침도 성능뿐 아니라 신규성과 잠재적 영향을 함께 고려하도록 한다. 새 알고리즘만이 유일한 논문 형태라는 뜻은 아니다.<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup></p>
+<p><strong>12. 현재 판단의 증거 수준은 네 단계로 구분된다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>주장</th>
+<th>현재 근거 수준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>환자 단위 위험과 생성모델 감사는 중요한 문제다</td>
+<td>직접 선행이 뒷받침</td>
+</tr>
+<tr>
+<td>환자 집합의 크기·상관·관측 조건은 평가 설계에 영향을 준다</td>
+<td>정의와 설명용 수학으로 분명함</td>
+</tr>
+<tr>
+<td>우리 의료 diffusion에서 기존 방법이 놓치는 추가 신호가 있다</td>
+<td>미확인 작업 가설</td>
+</tr>
+<tr>
+<td>그 신호로 공정한 비교에서 이기는 새 방법을 만들 수 있다</td>
+<td>미확인</td>
+</tr>
+<tr>
+<td>완성된 결과가 CVPR 경쟁력을 갖는다</td>
+<td>결과·일반성·기여 대조 전에는 판단 불가</td>
+</tr>
+</tbody>
+</table>
+<p>환자 집합 감사법은 <strong>동기가 강하고 반증 가능한 연구 후보</strong>다. 계속 좁혀볼 판단의 근거는 있지만 성공을 예상할 직접 실험 증거는 없다. 다음 과학적 판단은 '선행과 다른 표현을 만들었는가'가 아니라, <strong>선행을 충분히 강하게 적용해도 남는 실재하는 한계를 설명하고 개선했는가</strong>에 달려 있다.</p>
+<p><strong>출처</strong></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Knolle et al. <em>Disparate privacy risks from medical AI</em>. Nature, 2026. <a href="https://www.nature.com/articles/s41586-026-10688-0">원문</a>. Record/patient 위험의 정의와 방법 부분. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Dubiński et al. <em>CDI: Copyrighted Data Identification in Diffusion Models</em>. CVPR 2025. <a href="https://arxiv.org/html/2411.12858v3">원문 §§4–5 및 부록</a>. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>Qi et al. <em>Black-box Membership Inference Attacks on the Pre-training Data of Image-generation Models</em>. CVPR 2026. <a href="https://arxiv.org/html/2605.27020v1">SD-MIA 원문</a>. <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p>Chen et al. <em>FACE-AUDITOR: Data Auditing in Facial Recognition Systems</em>. USENIX Security 2023. <a href="https://www.usenix.org/conference/usenixsecurity23/presentation/chen-min">공식 출판 페이지</a>. <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p>Li, Rezaei, Liu. <em>User-Level Membership Inference Attack against Metric Embedding Learning</em>. 2022; ICLR PAIR²Struct 워크숍. <a href="https://arxiv.org/abs/2203.02077">원문 §§3–4</a>. <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p>Gao et al. <em>Similarity Distribution Based Membership Inference Attack on Person Re-identification</em>. AAAI 2023. <a href="https://ojs.aaai.org/index.php/AAAI/article/view/26731">공식 출판 페이지</a>, <a href="https://iip.tongji.edu.cn/pdf/2023AAAI-GJY.pdf">저자 PDF</a>. 원문 pp.1–6; 관계·anchor 방법과 Table 1. <a href="rationale_sources/R01.html">로컬 보완 메모</a>. <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:7">
+<p>Baninajjar et al. <em>Robustness and Privacy Interplay in Patient Membership Inference</em>. IJCNN 2025. <a href="https://lup.lub.lu.se/search/files/227035246/RobustnessPrivacy_IJCNN25.pdf">대학 공개 PDF</a>. PDF p.3 및 pp.5–9의 문제 정의·방법·평가; 표지 때문에 논문 페이지와 PDF 페이지가 다름. <a href="rationale_sources/R02.html">로컬 보완 메모</a>. <a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+<li id="fn:8">
+<p>Tang et al. <em>Membership Inference Attacks on Diffusion Models via Quantile Regression</em>. ICML 2024, PMLR 235. <a href="https://proceedings.mlr.press/v235/tang24g.html">원문</a>. <a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref2:8" title="Jump back to footnote 8 in the text">↩</a></p>
+</li>
+<li id="fn:9">
+<p>Jeon et al. <em>No Caption, No Problem: Caption-Free Membership Inference via Model-Fitted Embeddings</em>. ICLR 2026. <a href="https://arxiv.org/html/2602.22689v1">원문 Table 5, §§5.6.3/A.7/A.8</a>. <a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref2:9" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref3:9" title="Jump back to footnote 9 in the text">↩</a></p>
+</li>
+<li id="fn:10">
+<p><em>DIME: Query-Efficient Framework for Membership Inference on Diffusion Models</em>. 2026 preprint. <a href="https://arxiv.org/abs/2608.22824">원문</a>. <a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">↩</a><a class="footnote-backref" href="#fnref2:10" title="Jump back to footnote 10 in the text">↩</a></p>
+</li>
+<li id="fn:11">
+<p>Charles et al. <em>Fine-Tuning Large Language Models with User-Level Differential Privacy</em>. 2024 공개본. <a href="https://arxiv.org/abs/2407.07737">원문</a>. ULS/ELS, fixed-compute 비교; 의료 생성 실험과 구분. <a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">↩</a></p>
+</li>
+<li id="fn:12">
+<p>Dwork and Roth. <em>The Algorithmic Foundations of Differential Privacy</em>. 2014. <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">저자 공개 원문, §2.3</a>. DP 정의·후처리; TPR 경계는 정의를 판정 사건에 적용한 귀결. <a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref2:12" title="Jump back to footnote 12 in the text">↩</a></p>
+</li>
+<li id="fn:13">
+<p>CVPR. <em>2026 Reviewer Guidelines</em>. <a href="https://cvpr.thecvf.com/Conferences/2026/ReviewerGuidelines">공식 지침</a>. 특정 향후 연도의 채택 확률이나 기준을 보장하는 자료는 아님. <a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">↩</a></p>
+</li>
+</ol>
+</div></main></body></html>

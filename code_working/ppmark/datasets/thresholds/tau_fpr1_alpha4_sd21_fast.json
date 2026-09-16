@@ -1,0 +1,15 @@
+{
+  "tau_score": 2.372129110186471,
+  "mean": 0.7768305739418766,
+  "std": 0.5829916474452079,
+  "min": 0.0033660964066382637,
+  "max": 3.5341710624079687,
+  "p95": 1.896944141970938,
+  "p99": 2.372129110186471,
+  "p999": 2.922508929418896,
+  "count": 1000,
+  "fpr_target": 0.01,
+  "scores_csv": "datasets/neg_calib_1000_sd21/scores.csv",
+  "manifest": "datasets/neg_calib_1000_sd21/manifest.jsonl",
+  "metadata": "outputs/calib_pos_alpha4_k1000/metadata.json"
+}

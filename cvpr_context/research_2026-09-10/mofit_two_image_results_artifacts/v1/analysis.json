@@ -1,0 +1,1185 @@
+{
+  "schema": "mofit-one-patient-two-image-analysis/v1",
+  "status": "PASS_FIXED_SCALAR_AND_POOLING_ARITHMETIC",
+  "current_step": 2,
+  "patient_id": "14393",
+  "independent_patients": 1,
+  "records": 8,
+  "unique_images": 4,
+  "image_scores": [
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "image_id": "00014393_002.png",
+      "image_member": 1,
+      "score": "h",
+      "value": 0.026688039302825928
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "image_id": "00014393_002.png",
+      "image_member": 1,
+      "score": "negative_u",
+      "value": -0.3030516505241394
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "image_id": "00014393_002.png",
+      "image_member": 1,
+      "score": "negative_v",
+      "value": 0.01206350326538086
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "image_id": "00014393_002.png",
+      "image_member": 1,
+      "score": "negative_u_plus_v",
+      "value": -0.29098814725875854
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "image_id": "00014393_006.png",
+      "image_member": 1,
+      "score": "h",
+      "value": 0.03231304883956909
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "image_id": "00014393_006.png",
+      "image_member": 1,
+      "score": "negative_u",
+      "value": -0.26978838443756104
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "image_id": "00014393_006.png",
+      "image_member": 1,
+      "score": "negative_v",
+      "value": 0.015207380056381226
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "image_id": "00014393_006.png",
+      "image_member": 1,
+      "score": "negative_u_plus_v",
+      "value": -0.2545810043811798
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "image_id": "00014393_001.png",
+      "image_member": 0,
+      "score": "h",
+      "value": 0.02607947587966919
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "image_id": "00014393_001.png",
+      "image_member": 0,
+      "score": "negative_u",
+      "value": -0.2599949836730957
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "image_id": "00014393_001.png",
+      "image_member": 0,
+      "score": "negative_v",
+      "value": 0.012765184044837952
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "image_id": "00014393_001.png",
+      "image_member": 0,
+      "score": "negative_u_plus_v",
+      "value": -0.24722979962825775
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "image_id": "00014393_004.png",
+      "image_member": 0,
+      "score": "h",
+      "value": 0.026675909757614136
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "image_id": "00014393_004.png",
+      "image_member": 0,
+      "score": "negative_u",
+      "value": -0.2830108404159546
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "image_id": "00014393_004.png",
+      "image_member": 0,
+      "score": "negative_v",
+      "value": 0.013293147087097168
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "image_id": "00014393_004.png",
+      "image_member": 0,
+      "score": "negative_u_plus_v",
+      "value": -0.2697176933288574
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "image_id": "00014393_002.png",
+      "image_member": 0,
+      "score": "h",
+      "value": 0.029697448015213013
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "image_id": "00014393_002.png",
+      "image_member": 0,
+      "score": "negative_u",
+      "value": -0.3043285310268402
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "image_id": "00014393_002.png",
+      "image_member": 0,
+      "score": "negative_v",
+      "value": 0.012326359748840332
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "image_id": "00014393_002.png",
+      "image_member": 0,
+      "score": "negative_u_plus_v",
+      "value": -0.2920021712779999
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "image_id": "00014393_006.png",
+      "image_member": 0,
+      "score": "h",
+      "value": 0.02209019660949707
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "image_id": "00014393_006.png",
+      "image_member": 0,
+      "score": "negative_u",
+      "value": -0.2708853483200073
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "image_id": "00014393_006.png",
+      "image_member": 0,
+      "score": "negative_v",
+      "value": 0.01745915412902832
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "image_id": "00014393_006.png",
+      "image_member": 0,
+      "score": "negative_u_plus_v",
+      "value": -0.253426194190979
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "image_id": "00014393_001.png",
+      "image_member": 0,
+      "score": "h",
+      "value": 0.016351968050003052
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "image_id": "00014393_001.png",
+      "image_member": 0,
+      "score": "negative_u",
+      "value": -0.26180902123451233
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "image_id": "00014393_001.png",
+      "image_member": 0,
+      "score": "negative_v",
+      "value": 0.012620270252227783
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "image_id": "00014393_001.png",
+      "image_member": 0,
+      "score": "negative_u_plus_v",
+      "value": -0.24918875098228455
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "image_id": "00014393_004.png",
+      "image_member": 0,
+      "score": "h",
+      "value": 0.02720952033996582
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "image_id": "00014393_004.png",
+      "image_member": 0,
+      "score": "negative_u",
+      "value": -0.2857056260108948
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "image_id": "00014393_004.png",
+      "image_member": 0,
+      "score": "negative_v",
+      "value": 0.012736082077026367
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "image_id": "00014393_004.png",
+      "image_member": 0,
+      "score": "negative_u_plus_v",
+      "value": -0.2729695439338684
+    }
+  ],
+  "aggregates": [
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "score": "h",
+      "pool": "mean",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": 0.02950054407119751
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "score": "h",
+      "pool": "max",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": 0.03231304883956909
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "score": "negative_u",
+      "pool": "mean",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": -0.2864200174808502
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "score": "negative_u",
+      "pool": "max",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": -0.26978838443756104
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "score": "negative_v",
+      "pool": "mean",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": 0.013635441660881042
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "score": "negative_v",
+      "pool": "max",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": 0.015207380056381226
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "score": "negative_u_plus_v",
+      "pool": "mean",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": -0.2727845758199692
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "E",
+      "score": "negative_u_plus_v",
+      "pool": "max",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": -0.2545810043811798
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "score": "h",
+      "pool": "mean",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": 0.026377692818641663
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "score": "h",
+      "pool": "max",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": 0.026675909757614136
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "score": "negative_u",
+      "pool": "mean",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": -0.27150291204452515
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "score": "negative_u",
+      "pool": "max",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": -0.2599949836730957
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "score": "negative_v",
+      "pool": "mean",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": 0.01302916556596756
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "score": "negative_v",
+      "pool": "max",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": 0.013293147087097168
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "score": "negative_u_plus_v",
+      "pool": "mean",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": -0.2584737464785576
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_1",
+      "member": 1,
+      "scenario": "U",
+      "score": "negative_u_plus_v",
+      "pool": "max",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": -0.24722979962825775
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "score": "h",
+      "pool": "mean",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": 0.02589382231235504
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "score": "h",
+      "pool": "max",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": 0.029697448015213013
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "score": "negative_u",
+      "pool": "mean",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": -0.28760693967342377
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "score": "negative_u",
+      "pool": "max",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": -0.2708853483200073
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "score": "negative_v",
+      "pool": "mean",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": 0.014892756938934326
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "score": "negative_v",
+      "pool": "max",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": 0.01745915412902832
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "score": "negative_u_plus_v",
+      "pool": "mean",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": -0.27271418273448944
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "E",
+      "score": "negative_u_plus_v",
+      "pool": "max",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "value": -0.253426194190979
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "score": "h",
+      "pool": "mean",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": 0.021780744194984436
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "score": "h",
+      "pool": "max",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": 0.02720952033996582
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "score": "negative_u",
+      "pool": "mean",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": -0.27375732362270355
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "score": "negative_u",
+      "pool": "max",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": -0.26180902123451233
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "score": "negative_v",
+      "pool": "mean",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": 0.012678176164627075
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "score": "negative_v",
+      "pool": "max",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": 0.012736082077026367
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "score": "negative_u_plus_v",
+      "pool": "mean",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": -0.2610791474580765
+    },
+    {
+      "patient_id": "14393",
+      "model": "model_2",
+      "member": 0,
+      "scenario": "U",
+      "score": "negative_u_plus_v",
+      "pool": "max",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "value": -0.24918875098228455
+    }
+  ],
+  "target_differences": [
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "h",
+      "unit": "image",
+      "image_id": "00014393_002.png",
+      "pool": null,
+      "participant_score": 0.026688039302825928,
+      "nonparticipant_score": 0.029697448015213013,
+      "participant_minus_nonparticipant": -0.003009408712387085
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "h",
+      "unit": "image",
+      "image_id": "00014393_006.png",
+      "pool": null,
+      "participant_score": 0.03231304883956909,
+      "nonparticipant_score": 0.02209019660949707,
+      "participant_minus_nonparticipant": 0.010222852230072021
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "h",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "mean",
+      "participant_score": 0.02950054407119751,
+      "nonparticipant_score": 0.02589382231235504,
+      "participant_minus_nonparticipant": 0.0036067217588424683
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "h",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "max",
+      "participant_score": 0.03231304883956909,
+      "nonparticipant_score": 0.029697448015213013,
+      "participant_minus_nonparticipant": 0.002615600824356079
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_u",
+      "unit": "image",
+      "image_id": "00014393_002.png",
+      "pool": null,
+      "participant_score": -0.3030516505241394,
+      "nonparticipant_score": -0.3043285310268402,
+      "participant_minus_nonparticipant": 0.0012768805027008057
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_u",
+      "unit": "image",
+      "image_id": "00014393_006.png",
+      "pool": null,
+      "participant_score": -0.26978838443756104,
+      "nonparticipant_score": -0.2708853483200073,
+      "participant_minus_nonparticipant": 0.001096963882446289
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_u",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "mean",
+      "participant_score": -0.2864200174808502,
+      "nonparticipant_score": -0.28760693967342377,
+      "participant_minus_nonparticipant": 0.0011869221925735474
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_u",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "max",
+      "participant_score": -0.26978838443756104,
+      "nonparticipant_score": -0.2708853483200073,
+      "participant_minus_nonparticipant": 0.001096963882446289
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_v",
+      "unit": "image",
+      "image_id": "00014393_002.png",
+      "pool": null,
+      "participant_score": 0.01206350326538086,
+      "nonparticipant_score": 0.012326359748840332,
+      "participant_minus_nonparticipant": -0.00026285648345947266
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_v",
+      "unit": "image",
+      "image_id": "00014393_006.png",
+      "pool": null,
+      "participant_score": 0.015207380056381226,
+      "nonparticipant_score": 0.01745915412902832,
+      "participant_minus_nonparticipant": -0.0022517740726470947
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_v",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "mean",
+      "participant_score": 0.013635441660881042,
+      "nonparticipant_score": 0.014892756938934326,
+      "participant_minus_nonparticipant": -0.0012573152780532837
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_v",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "max",
+      "participant_score": 0.015207380056381226,
+      "nonparticipant_score": 0.01745915412902832,
+      "participant_minus_nonparticipant": -0.0022517740726470947
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_u_plus_v",
+      "unit": "image",
+      "image_id": "00014393_002.png",
+      "pool": null,
+      "participant_score": -0.29098814725875854,
+      "nonparticipant_score": -0.2920021712779999,
+      "participant_minus_nonparticipant": 0.001014024019241333
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_u_plus_v",
+      "unit": "image",
+      "image_id": "00014393_006.png",
+      "pool": null,
+      "participant_score": -0.2545810043811798,
+      "nonparticipant_score": -0.253426194190979,
+      "participant_minus_nonparticipant": -0.0011548101902008057
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_u_plus_v",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "mean",
+      "participant_score": -0.2727845758199692,
+      "nonparticipant_score": -0.27271418273448944,
+      "participant_minus_nonparticipant": -7.039308547973633e-05
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "score": "negative_u_plus_v",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "max",
+      "participant_score": -0.2545810043811798,
+      "nonparticipant_score": -0.253426194190979,
+      "participant_minus_nonparticipant": -0.0011548101902008057
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "h",
+      "unit": "image",
+      "image_id": "00014393_001.png",
+      "pool": null,
+      "participant_score": 0.02607947587966919,
+      "nonparticipant_score": 0.016351968050003052,
+      "participant_minus_nonparticipant": 0.009727507829666138
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "h",
+      "unit": "image",
+      "image_id": "00014393_004.png",
+      "pool": null,
+      "participant_score": 0.026675909757614136,
+      "nonparticipant_score": 0.02720952033996582,
+      "participant_minus_nonparticipant": -0.0005336105823516846
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "h",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "mean",
+      "participant_score": 0.026377692818641663,
+      "nonparticipant_score": 0.021780744194984436,
+      "participant_minus_nonparticipant": 0.0045969486236572266
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "h",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "max",
+      "participant_score": 0.026675909757614136,
+      "nonparticipant_score": 0.02720952033996582,
+      "participant_minus_nonparticipant": -0.0005336105823516846
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_u",
+      "unit": "image",
+      "image_id": "00014393_001.png",
+      "pool": null,
+      "participant_score": -0.2599949836730957,
+      "nonparticipant_score": -0.26180902123451233,
+      "participant_minus_nonparticipant": 0.001814037561416626
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_u",
+      "unit": "image",
+      "image_id": "00014393_004.png",
+      "pool": null,
+      "participant_score": -0.2830108404159546,
+      "nonparticipant_score": -0.2857056260108948,
+      "participant_minus_nonparticipant": 0.0026947855949401855
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_u",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "mean",
+      "participant_score": -0.27150291204452515,
+      "nonparticipant_score": -0.27375732362270355,
+      "participant_minus_nonparticipant": 0.0022544115781784058
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_u",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "max",
+      "participant_score": -0.2599949836730957,
+      "nonparticipant_score": -0.26180902123451233,
+      "participant_minus_nonparticipant": 0.001814037561416626
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_v",
+      "unit": "image",
+      "image_id": "00014393_001.png",
+      "pool": null,
+      "participant_score": 0.012765184044837952,
+      "nonparticipant_score": 0.012620270252227783,
+      "participant_minus_nonparticipant": 0.00014491379261016846
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_v",
+      "unit": "image",
+      "image_id": "00014393_004.png",
+      "pool": null,
+      "participant_score": 0.013293147087097168,
+      "nonparticipant_score": 0.012736082077026367,
+      "participant_minus_nonparticipant": 0.0005570650100708008
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_v",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "mean",
+      "participant_score": 0.01302916556596756,
+      "nonparticipant_score": 0.012678176164627075,
+      "participant_minus_nonparticipant": 0.0003509894013404846
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_v",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "max",
+      "participant_score": 0.013293147087097168,
+      "nonparticipant_score": 0.012736082077026367,
+      "participant_minus_nonparticipant": 0.0005570650100708008
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_u_plus_v",
+      "unit": "image",
+      "image_id": "00014393_001.png",
+      "pool": null,
+      "participant_score": -0.24722979962825775,
+      "nonparticipant_score": -0.24918875098228455,
+      "participant_minus_nonparticipant": 0.0019589513540267944
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_u_plus_v",
+      "unit": "image",
+      "image_id": "00014393_004.png",
+      "pool": null,
+      "participant_score": -0.2697176933288574,
+      "nonparticipant_score": -0.2729695439338684,
+      "participant_minus_nonparticipant": 0.0032518506050109863
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_u_plus_v",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "mean",
+      "participant_score": -0.2584737464785576,
+      "nonparticipant_score": -0.2610791474580765,
+      "participant_minus_nonparticipant": 0.0026054009795188904
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "score": "negative_u_plus_v",
+      "unit": "patient_two_image_pool",
+      "image_id": null,
+      "pool": "max",
+      "participant_score": -0.24722979962825775,
+      "nonparticipant_score": -0.24918875098228455,
+      "participant_minus_nonparticipant": 0.0019589513540267944
+    }
+  ],
+  "original_huv": [
+    {
+      "model": "model_1",
+      "image_id": "00014393_002.png",
+      "scenario": "E",
+      "h": 0.026688039302825928,
+      "u": 0.3030516505241394,
+      "v": -0.01206350326538086
+    },
+    {
+      "model": "model_1",
+      "image_id": "00014393_001.png",
+      "scenario": "U",
+      "h": 0.02607947587966919,
+      "u": 0.2599949836730957,
+      "v": -0.012765184044837952
+    },
+    {
+      "model": "model_2",
+      "image_id": "00014393_002.png",
+      "scenario": "E",
+      "h": 0.029697448015213013,
+      "u": 0.3043285310268402,
+      "v": -0.012326359748840332
+    },
+    {
+      "model": "model_2",
+      "image_id": "00014393_001.png",
+      "scenario": "U",
+      "h": 0.016351968050003052,
+      "u": 0.26180902123451233,
+      "v": -0.012620270252227783
+    },
+    {
+      "model": "model_1",
+      "image_id": "00014393_006.png",
+      "scenario": "E",
+      "h": 0.03231304883956909,
+      "u": 0.26978838443756104,
+      "v": -0.015207380056381226
+    },
+    {
+      "model": "model_1",
+      "image_id": "00014393_004.png",
+      "scenario": "U",
+      "h": 0.026675909757614136,
+      "u": 0.2830108404159546,
+      "v": -0.013293147087097168
+    },
+    {
+      "model": "model_2",
+      "image_id": "00014393_006.png",
+      "scenario": "E",
+      "h": 0.02209019660949707,
+      "u": 0.2708853483200073,
+      "v": -0.01745915412902832
+    },
+    {
+      "model": "model_2",
+      "image_id": "00014393_004.png",
+      "scenario": "U",
+      "h": 0.02720952033996582,
+      "u": 0.2857056260108948,
+      "v": -0.012736082077026367
+    }
+  ],
+  "scope": [
+    "No final-score winner, gamma, robust scaling, auxiliary selection, AUC, CI, threshold, or fitting",
+    "No individual-patient causal conclusion: entire A/B training cohorts differ",
+    "One patient, two E and two U images, one frozen draw configuration; not noise-repetition confirmation",
+    "Both-target differences are analyst-only diagnostics, not inputs available to a single-target deployed attack",
+    "Additional images were selected by the existing cohort plan, not by their unseen new scores",
+    "All eight records and all four scalar orientations are retained; prior four results stay unchanged",
+    "Raw arithmetic/optimizer validation is delegated to the frozen input verifiers; this module verifies scalar aggregation only"
+  ],
+  "AUC_computed": false,
+  "CI_computed": false,
+  "gamma_or_final_score_selected": false,
+  "new_fitting": false,
+  "new_GPU_calls": 0,
+  "individual_causal_claim": false,
+  "stage2_completion_claim": false
+}

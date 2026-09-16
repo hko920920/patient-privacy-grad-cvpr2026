@@ -1,0 +1,38 @@
+{
+  "schema": "cross-intervention-dino-metadata-correction/v1",
+  "analysis_policy_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\patient_cross_intervention_analysis_contract_20260915.json",
+  "analysis_policy_sha256": "b0855a8bdec2e1a5f738d35ee12930bf0dfd7a21c603cf55f343ba99ccf5bc70",
+  "source_v1_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\analyze_cross_patient_intervention.py",
+  "source_v1_sha256": "8de498cd7bb5e2e683902b917340708ddbec866dcf3bdf702e21836e9d37c1a6",
+  "source_v2_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\analyze_cross_patient_intervention_v2.py",
+  "source_v2_sha256": "e3c191ba1e1430cf5bf6b1f6349cff3d71b2437db9bae43e417af5d10f30601b",
+  "v1_preserved": true,
+  "source_numerical_functions_AST_identical": [
+    "cross_contrast",
+    "context_indices",
+    "arithmetic_envelope",
+    "sign_report",
+    "helper",
+    "policy_and_sources",
+    "load_matrices",
+    "self_test"
+  ],
+  "changed_function_names": [
+    "run",
+    "main"
+  ],
+  "changed_behavior": "DINO reused U rows set p_in_prior_coefficient_fit=True; existing score/delta computations and every other method are unchanged.",
+  "reason": "Existing encoder_control.py fits its StandardScaler and LR on the original fit80 including patient14393. The generic parameter=None branch incorrectly marked this reused scorer as p-excluded.",
+  "source_evidence": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\encoder_control.py": "f61cfc83d5142705e73c8f2f66727fccfbb89728e5960d365f0c3757dab1de8b",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\encoder_control\\report.json": "98a34dd4a09deb88524b3aeb7bdb3fa45205b4c7aa41a6ce1a5be3048425ff5c"
+  },
+  "old_output_tag": "existing_scorer_analysis_v1",
+  "new_output_tag": "existing_scorer_analysis_v2",
+  "new_q_intervention_scores_read": false,
+  "new_fitting": false,
+  "new_GPU": false,
+  "master_policy_unchanged": true,
+  "scorer_code_not_bound_in_master_policy": true,
+  "numerical_computation_changed": false
+}

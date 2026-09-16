@@ -1,0 +1,508 @@
+{
+  "schema": "patient-audit-runtime-review/v1",
+  "date": "2026-09-11",
+  "scope": "LOCAL_DOCUMENT_CODE_METADATA_REVIEW_AND_BUDGET_ARITHMETIC",
+  "experiment_executed": false,
+  "remote_access_used": false,
+  "training_contract_modified": false,
+  "patient_identifiers_emitted": false,
+  "spark_access": "User reports four units exist; simultaneous reservation is unconfirmed",
+  "assumptions": {
+    "devices": 4,
+    "hours_per_day": 24,
+    "utilization": 0.8,
+    "spark_vs_3070_training_speed_assumed": 1.0,
+    "m2_models": 12,
+    "primary_model_runs": 12,
+    "extra_model_runs_for_budget": 4,
+    "P4_seed_count_for_budget_only": 1,
+    "P2_training_count": 0,
+    "B0_scored_once": true,
+    "m5_rate_scaling": 2.5,
+    "pilot_patients": 256,
+    "pilot_models": 2,
+    "strong_pilot_patients": 200,
+    "strong_pilot_models": 2,
+    "mofit_original_pilot_images": 800,
+    "mofit_minutes_per_image_assumed": [
+      7.5,
+      15,
+      30
+    ],
+    "synthetic_images_per_generator": 5000,
+    "classifier_fit_count": 39,
+    "fitting_and_calibration_patients_are_additional_to_final_test": true,
+    "rates_include_processed_calibration_patients_in_cohort": true,
+    "unimplemented_method_ranges_are_not_confidence_intervals": true
+  },
+  "measured_3070_dryrun": {
+    "M1-G8": {
+      "steps": 4,
+      "seconds": 17.410822399891913,
+      "naive_4000_step_hours": 4.836339555525531
+    },
+    "M1-I8": {
+      "steps": 4,
+      "seconds": 17.562008899636567,
+      "naive_4000_step_hours": 4.8783358054546015
+    },
+    "M2-P8": {
+      "steps": 4,
+      "seconds": 7.945361699908972,
+      "naive_4000_step_hours": 2.2070449166413812
+    }
+  },
+  "measured_3070_generation_seconds_per_image": 1.08524,
+  "cohort_metadata": {
+    "members": {
+      "patients": 1816,
+      "capped_images": 4740,
+      "E_m2": 865,
+      "E_m5": 304,
+      "metadata_raw_ge12": 58,
+      "metadata_raw_ge15": 38
+    },
+    "nonmembers": {
+      "patients": 1816,
+      "capped_images": 4740,
+      "E_m2": 865,
+      "E_m5": 304,
+      "metadata_raw_ge12": 52,
+      "metadata_raw_ge15": 21
+    }
+  },
+  "methods": [
+    {
+      "id": "loss",
+      "name": "고정 denoising loss",
+      "seconds": [
+        1,
+        2,
+        4
+      ],
+      "calls": "20 F/장 (K10 기본); m=2에서 40 F",
+      "role": "기본",
+      "status": "PLANNING_RATE_ASSUMPTION_NOT_SPARK_BENCHMARK",
+      "hours_E2": [
+        5.766666666666667,
+        11.533333333333333,
+        23.066666666666666
+      ],
+      "hours_E5": [
+        5.066666666666666,
+        10.133333333333333,
+        20.266666666666666
+      ]
+    },
+    {
+      "id": "secmi",
+      "name": "SecMI",
+      "seconds": [
+        0.5,
+        1.5,
+        3
+      ],
+      "calls": "논문 stat 설정 약 12 NFE/장; SD2.1 adapter에 따라 확정",
+      "role": "기본",
+      "status": "PLANNING_RATE_ASSUMPTION_NOT_SPARK_BENCHMARK",
+      "hours_E2": [
+        2.8833333333333333,
+        8.65,
+        17.3
+      ],
+      "hours_E5": [
+        2.533333333333333,
+        7.6,
+        15.2
+      ]
+    },
+    {
+      "id": "clid",
+      "name": "CLiD",
+      "seconds": [
+        1,
+        2,
+        5
+      ],
+      "calls": "경제형 설정 약 15 queries/장; prompt 정보 일치",
+      "role": "직접",
+      "status": "PLANNING_RATE_ASSUMPTION_NOT_SPARK_BENCHMARK",
+      "hours_E2": [
+        5.766666666666667,
+        11.533333333333333,
+        28.833333333333332
+      ],
+      "hours_E5": [
+        5.066666666666666,
+        10.133333333333333,
+        25.333333333333332
+      ]
+    },
+    {
+      "id": "pfami",
+      "name": "PFAMI",
+      "seconds": [
+        2,
+        6,
+        15
+      ],
+      "calls": "20/110 queries/장 설정; 시간표는 높은 예산도 포함하는 가정",
+      "role": "직접",
+      "status": "PLANNING_RATE_ASSUMPTION_NOT_SPARK_BENCHMARK",
+      "hours_E2": [
+        11.533333333333333,
+        34.6,
+        86.5
+      ],
+      "hours_E5": [
+        10.133333333333333,
+        30.4,
+        76.0
+      ]
+    },
+    {
+      "id": "gradient",
+      "name": "GSA1/2·Tracing 묶음",
+      "seconds": [
+        6,
+        10,
+        30
+      ],
+      "calls": "선택 timestep의 F/B와 gradient feature; 세 방법의 가족 전체 예산",
+      "role": "직접",
+      "status": "PLANNING_RATE_ASSUMPTION_NOT_SPARK_BENCHMARK",
+      "hours_E2": [
+        34.6,
+        57.666666666666664,
+        173.0
+      ],
+      "hours_E5": [
+        30.4,
+        50.666666666666664,
+        152.0
+      ]
+    },
+    {
+      "id": "cdi",
+      "name": "CDI 환자 확장",
+      "seconds": [
+        5,
+        12,
+        30
+      ],
+      "calls": "multiple loss 50 F/장 + gradient masking 20 F/10 B + 기타 score + L-BFGS 호출",
+      "role": "직접",
+      "status": "PLANNING_RATE_ASSUMPTION_NOT_SPARK_BENCHMARK",
+      "hours_E2": [
+        28.833333333333332,
+        69.2,
+        173.0
+      ],
+      "hours_E5": [
+        25.333333333333332,
+        60.8,
+        152.0
+      ]
+    },
+    {
+      "id": "ours",
+      "name": "교차 사진 probe",
+      "seconds": [
+        15,
+        30,
+        60
+      ],
+      "calls": "m=2: 312 F + 72 B / 환자",
+      "role": "후보",
+      "status": "PLANNING_RATE_ASSUMPTION_NOT_SPARK_BENCHMARK",
+      "hours_E2": [
+        86.5,
+        173.0,
+        346.0
+      ],
+      "hours_E5": [
+        76.0,
+        152.0,
+        304.0
+      ]
+    },
+    {
+      "id": "mofit_budget",
+      "name": "MoFit 제한 예산 + 교차 사진 적용",
+      "seconds": [
+        30,
+        60,
+        120
+      ],
+      "calls": "원형과 별도인 제한 예산 비교; 원형 소규모 비교는 별도 계상",
+      "role": "직접",
+      "status": "PLANNING_RATE_ASSUMPTION_NOT_SPARK_BENCHMARK",
+      "hours_E2": [
+        173.0,
+        346.0,
+        692.0
+      ],
+      "hours_E5": [
+        152.0,
+        304.0,
+        608.0
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "id": "setup",
+      "name": "Spark 이식·환경/재시작 확인",
+      "hours": [
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "id": "D1",
+      "name": "새 feature/probe 구현 점검",
+      "hours": [
+        2,
+        6,
+        12
+      ]
+    },
+    {
+      "id": "D2_train",
+      "name": "공개 비DP 모델 2개 × 1000 steps",
+      "hours": [
+        0.5,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "D2_pilot",
+      "name": "256명 × 2모델 첫 진단",
+      "hours": [
+        3.631111111111111,
+        7.6177777777777775,
+        15.662222222222223
+      ]
+    },
+    {
+      "id": "D3_baselines",
+      "name": "200명 × 2모델 baseline 개발 평가 1회",
+      "hours": [
+        6.722222222222222,
+        13.722222222222221,
+        29.666666666666668
+      ]
+    },
+    {
+      "id": "D3_ablations",
+      "name": "개발 제거 실험·공정성 진단",
+      "hours": [
+        8,
+        16,
+        40
+      ]
+    },
+    {
+      "id": "D3_mofit_full",
+      "name": "MoFit 원형 800 이미지 평가",
+      "hours": [
+        100,
+        200,
+        400
+      ]
+    },
+    {
+      "id": "K10_core",
+      "name": "K10 핵심 12회 학습",
+      "hours": [
+        36,
+        48,
+        60
+      ]
+    },
+    {
+      "id": "K10_extra",
+      "name": "A0/A1/A2 + P4 각 1회 예산",
+      "hours": [
+        11,
+        15,
+        19
+      ]
+    },
+    {
+      "id": "K10_quality",
+      "name": "소규모 품질 생성·특징·검증",
+      "hours": [
+        3,
+        6,
+        12
+      ]
+    },
+    {
+      "id": "K10_mia",
+      "name": "기존 기본 MIA·B0 및 추가모델",
+      "hours": [
+        16,
+        40,
+        80
+      ]
+    },
+    {
+      "id": "K10_extraction_gen",
+      "name": "17모델 ×2450 추출용 생성",
+      "hours": [
+        9.255555555555556,
+        12.555623888888888,
+        23.13888888888889
+      ]
+    },
+    {
+      "id": "K10_extraction_filter",
+      "name": "추출 대조·검색·후보 확인",
+      "hours": [
+        6,
+        12,
+        30
+      ]
+    },
+    {
+      "id": "D4_E2",
+      "name": "E m=2 1730명 ×12모델 전체 비교",
+      "hours": [
+        348.8833333333333,
+        712.1833333333333,
+        1539.7
+      ]
+    },
+    {
+      "id": "D4_ablations",
+      "name": "최종 제거 실험 6모델·후보 2회 상당 예산",
+      "hours": [
+        86.5,
+        173,
+        346
+      ]
+    },
+    {
+      "id": "D4_fit",
+      "name": "Quantile·Deep Sets·moments fitting",
+      "hours": [
+        2,
+        6,
+        12
+      ]
+    },
+    {
+      "id": "D5_utility",
+      "name": "5천장/모델 ×12 생성, classifier39회",
+      "hours": [
+        34.833333333333336,
+        61.08733333333333,
+        117.33333333333334
+      ]
+    },
+    {
+      "id": "D5_stats",
+      "name": "통계·보호 비교 보조 GPU",
+      "hours": [
+        0,
+        1,
+        3
+      ]
+    }
+  ],
+  "extension": {
+    "id": "D4_E5",
+    "name": "E m=5 608명 ×12모델 전체 비교",
+    "hours": [
+      306.53333333333336,
+      625.7333333333333,
+      1352.8
+    ]
+  },
+  "spark_device_hours_core": [
+    678.3255555555555,
+    1339.1662905555556,
+    2757.501111111111
+  ],
+  "spark_device_hours_with_m5": [
+    984.8588888888889,
+    1964.899623888889,
+    4110.301111111111
+  ],
+  "pool_equivalent_days_core": [
+    8.832364004629628,
+    17.43706107494213,
+    35.90496238425926
+  ],
+  "pool_equivalent_days_with_m5": [
+    12.823683449074073,
+    25.58463051938657,
+    53.519545717592585
+  ],
+  "separate_3070_K5_hours": [
+    15,
+    20,
+    26
+  ],
+  "exclusions": [
+    "Full original MoFit over every final patient/model; only 800-image original-method study budgeted",
+    "Scenario U/P confirmatory training and data acquisition",
+    "Second dataset/backbone, P512, new protection algorithm, broad HPO and repeated redesign",
+    "Dissertation-only receipt, PP-Mark and formal release reruns",
+    "Unspecified additional labeled shadow models needed by a comparator's original protocol"
+  ],
+  "limitations": [
+    "Every Spark rate is an assumption; no Spark or new attack runtime measured.",
+    "Pool-equivalent days are workload/capacity, not a dependency-aware completion forecast.",
+    "K5 stays on existing 3070 runner; Spark model training requires a separately reviewed port.",
+    "Cached rows may be reused only with identical model/input/prompt/noise/score contracts.",
+    "Final method comparison and early stopping must be fixed before final results."
+  ],
+  "conditional_U_m2_matrix": {
+    "status": "NEW_SPLIT_AND_TRAINING_PROPOSAL_NOT_FROZEN",
+    "patients_assumed": 1730,
+    "models_assumed": 12,
+    "new_training_hours": [
+      36,
+      48,
+      60
+    ],
+    "setup_and_evaluation_overhead_hours": [
+      20,
+      40,
+      80
+    ],
+    "all_method_evaluation_hours": [
+      348.8833333333333,
+      712.1833333333333,
+      1539.7
+    ],
+    "additional_total_hours": [
+      404.8833333333333,
+      800.1833333333333,
+      1679.7
+    ],
+    "eligibility_and_power_verified": false
+  },
+  "source_sha256": {
+    "CVPR 주제 탐색/research_2026-09-10/EXPERIMENT_DESIGN.md": "f8b7adc0c40509b1ec4d2f092ba61cc6976e484a4543383c3be7b7979fa393d8",
+    "CVPR 주제 탐색/research_2026-09-10/experiment_design.json": "6e947cf2d8514ee65f8356e72a5a0a2bf13f820679012a64bb6d1e43d840f07e",
+    "CVPR 주제 탐색/research_2026-09-10/design_feasibility.json": "c1e49fddc95938073e1a814215c50a5affeb96abcd458a651f9043ba0c4b9eb3",
+    "CVPR 주제 탐색/research_2026-09-10/comparison_plan.json": "44342a3eeae5931bdbca6b0a5904558a0144fe522a8e15099dd0bb200565e89f",
+    "CVPR 주제 탐색/research_2026-09-10/BASELINE_PREPARATION.md": "b01e3ebcf80bced693457e22ed2e554c74874e31b4e2df61a77e329a332f95d2",
+    "code_working/_reports/nih_cxr14_dp_attack_protocol_v1_001/protocol.json": "f2757dc7ebc7488b6a9dd0f69227419ea16bb9a3e9bd4434514cb19afd2b4018",
+    "code_working/_reports/nih_cxr14_k5_private_research_dryrun_v1_001/public_report.json": "77fa9097f1fa161e42e72b7e182f5e0a59cb47ec5d89209929dee0e95767fb87",
+    "code_working/_data/derived/nih_cxr14_pa_target_enriched_v1/patients_private.csv": "46c564fbd76c5189b23ac687e3171903f7854d53dcc3e0b5a038ca5e26c4f0f0",
+    "code_working/_reports/nih_cxr14_dp_attack_protocol_v1_001/mia_members_private.csv": "f0f5a802090bc42ba268d9bb79e49b3bc2a4501ff4d3ee24739565eebf26b3f5",
+    "code_working/_reports/nih_cxr14_dp_attack_protocol_v1_001/mia_nonmembers_private.csv": "a71010809b400c9e7c1041953ad83569dbf6c55e79a9001efc85f49ae3e018f2",
+    "code_working/XRAY_K5_FEASIBILITY_EXECUTION_PLAN.md": "cb0778cafee26537ab77c05d37e1c897be5cfb1091d22900818cc3cb1ea357c4",
+    "code_working/dp_training/k5_full_runner.py": "d152c59aba4087809a4ac2251e183306c7541eddac4fd0d64a7d46554de66505",
+    "CVPR 주제 탐색/research_2026-09-10/code_sources/X01/conf/attack/cdi.yaml": "e9b15e7a6297dc3dd8124d8df9fdc27d529d4773f415d0bf7b7a75b81bad8e95",
+    "CVPR 주제 탐색/research_2026-09-10/code_sources/X01/conf/attack/noise_optim.yaml": "16f59c521e545551b28ae5fbf86fb2d02d9835a46e55cd31cd7ced6d4bd74466",
+    "CVPR 주제 탐색/research_2026-09-10/code_sources/X01/conf/attack/multiple_loss.yaml": "50ad33315408d604c65877eb41599bf207fe8541bca36df5a628855a46274556",
+    "CVPR 주제 탐색/research_2026-09-10/code_sources/X12/COCO/MoFit_COCO.py": "8feb1888194ebe2704bdd08daebf6c636ddfabbd6664744eb6fa4a405617e481"
+  }
+}

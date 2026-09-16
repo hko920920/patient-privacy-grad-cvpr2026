@@ -1,0 +1,8 @@
+{
+  "protocol_sha256": "935799dee23d4437de332955688adf07916f512fdc0df918050141939866293a",
+  "script_sha256": "b0483194534336899c01736d3fbe2a1f5f916a170527f11c528cb5ab42b33cd1",
+  "python": "3.11.5",
+  "numpy": "1.26.4",
+  "execution_start_unix": 1789531720.1002693,
+  "all_policy_choices_frozen_before_results": true
+}

@@ -1,0 +1,127 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>U_EIGHT_PATIENT_ANALYSIS.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>U 기존 8명 결과 분석 — 첫 판별력 진단</h1>
+<p><strong>후속 검증의 정정:</strong> 현재 판단은 <a href="u_verification_results.html">실제 재검증 결과와 FP32 endpoint 보완</a>을 우선한다. 아래는 원래 FP16 점수의 최초 분석 이력이다. 비영점 입력 미분과 최적화 추적·전체 재현은 후속에서 실제 수행했으며, 작은 참여 모델−미참여 모델 차이가 평가 정밀도에 민감한 사례를 확인했다. 보정 후 퍼짐 증가만으로 보정 실패를 지목한 설명은 <a href="u_pilot_review.html">정밀 검토</a>에서 철회했다. 동일 순위·반전 정답·평균 AUC 0.5도 독립 실패 증거 여러 개가 아니다. 원래 계획된 fitting과 추가 이득 비교는 아직 미실시이며, 아래 숫자와 원결과는 보존한다.</p>
+<p>2026-09-14. 사용자의 “우선 하나만 진행”에 따라 <strong>이미 계산된 U 8명 결과의 분석만</strong> 수행했다.</p>
+<p><strong>현재 8명에서는 새 후보 점수의 일관된 참여 판별력이나 단순 점수 대비 이득을 확인하지 못했다.</strong> 모델 1의 AUC 0.6875만 보고 성공으로 해석할 수 없다. 같은 환자의 참여를 교환한 모델 2에서는 0.3125이며, 후보 점수의 환자 순위는 두 모델에서 완전히 같다. 이 결과는 현재 후보의 성공 증거가 없다는 뜻이다. 작은 개발 표본에서 나온 결과이므로 U 문제 전체의 불가능성까지 입증하지는 않는다.</p>
+<h2>1. 이번 분석 범위</h2>
+<ul>
+<li>기존 두 1,000-step non-DP 모델과 개발 역할의 환자 8명을 사용했다. 환자마다 U 사진 2장은 두 모델의 추가학습 모두에서 제외되어 있다.</li>
+<li>모델별 참여 4명·미참여 4명이며, 같은 환자의 참여 정답이 두 모델에서 반전된다. 총 16개 모델-환자 관측을 독립 환자 16명으로 세지 않는다.</li>
+<li>저장된 결과·cohort·checkpoint·구현 hash와 관측 역할을 재검증했다. 이번 분석의 추가 모델 질의·학습·추가 환자는 모두 0이다.</li>
+<li>점수 방향은 모든 모델에서 “높을수록 참여”로 고정해 읽었다. 결과를 본 뒤 모델별 부호를 바꾸거나 분류기·threshold를 학습하지 않았다. gradient 관계 점수도 이 방향의 단순 기술통계이며 원형 공격 재현이 아니다.</li>
+<li>E 대조 확대, 개발 80명/방법 선택 40명 확대, 보정·시험 평가와 새 baseline 구현은 이번에 수행하지 않았다.</li>
+</ul>
+<h2>2. 모델별 판별 결과</h2>
+<p>AUC는 참여 환자와 미참여 환자를 한 명씩 골랐을 때 참여 환자의 점수가 더 높게 순위화되는 정도다. 0.5는 순위 판별의 우연 수준 기준이다. 여기서 모델당 4×4=16쌍뿐이므로 AUC는 매우 거칠다.</p>
+<table>
+<thead>
+<tr>
+<th>저장된 점수</th>
+<th style="text-align: right;">모델 1 AUC</th>
+<th style="text-align: right;">모델 2 AUC</th>
+<th style="text-align: right;">두 모델 단순 평균</th>
+<th style="text-align: right;">같은 환자에서 참여 시 점수 상승</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>새 후보: 교차 사진 반응 − 다른 환자 대조</strong></td>
+<td style="text-align: right;"><strong>0.6875</strong></td>
+<td style="text-align: right;"><strong>0.3125</strong></td>
+<td style="text-align: right;"><strong>0.5000</strong></td>
+<td style="text-align: right;"><strong>4/8명</strong></td>
+</tr>
+<tr>
+<td>음의 loss 평균</td>
+<td style="text-align: right;">0.7500</td>
+<td style="text-align: right;">0.2500</td>
+<td style="text-align: right;">0.5000</td>
+<td style="text-align: right;">5/8명</td>
+</tr>
+<tr>
+<td>음의 loss 최댓값</td>
+<td style="text-align: right;">0.6875</td>
+<td style="text-align: right;">0.3125</td>
+<td style="text-align: right;">0.5000</td>
+<td style="text-align: right;">4/8명</td>
+</tr>
+<tr>
+<td>base − target loss 평균</td>
+<td style="text-align: right;">0.6250</td>
+<td style="text-align: right;">0.4375</td>
+<td style="text-align: right;">0.53125</td>
+<td style="text-align: right;">5/8명</td>
+</tr>
+<tr>
+<td>초기 conditioning gradient 내적</td>
+<td style="text-align: right;">0.2500</td>
+<td style="text-align: right;">0.6250</td>
+<td style="text-align: right;">0.4375</td>
+<td style="text-align: right;">4/8명</td>
+</tr>
+<tr>
+<td>초기 conditioning gradient cosine</td>
+<td style="text-align: right;">0.3125</td>
+<td style="text-align: right;">0.7500</td>
+<td style="text-align: right;">0.53125</td>
+<td style="text-align: right;">5/8명</td>
+</tr>
+</tbody>
+</table>
+<p>두 모델 평균은 의존된 진단쌍을 기술하는 요약이다. 독립 반복 실험의 추정치나 실제 하나의 배포 공격 결과가 아니다. 0.53125를 의미 있는 개선으로 판정하지 않는다. 단순 loss 등은 저장된 값의 비교이며 SecMI·CDI·MoFit 원형 재현이나 공정한 비용 비교를 수행했다는 뜻이 아니다.</p>
+<p><img alt="두 모델의 AUC와 동일 환자의 참여 전후 후보 점수" src="../../code_working/_reports/cvpr_u_pilot_v1_001/analysis/U_step1000_n8_v1/u_eight_patient_diagnostic.png" style="width:100%;height:auto;"/></p>
+<p><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/analysis/U_step1000_n8_v1/u_eight_patient_diagnostic.png">그림 PNG</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/analysis/U_step1000_n8_v1/u_eight_patient_diagnostic.pdf">그림 PDF</a></p>
+<p>오른쪽 그림의 선은 같은 환자의 두 모델 점수를 연결한다. 선 색은 그 환자를 포함한 모델을 뜻한다. 다른 모델의 점수와 실제 참여 정답을 함께 보는 것은 실험자의 진단이며, 실제 감사자에게 추가 입력으로 주는 방법이 아니다.</p>
+<h2>3. 핵심 단서: 참여가 바뀌어도 환자 순위가 유지된다</h2>
+<p>새 후보의 두 모델 사이 환자 순위 상관(Spearman)은 <strong>1.0</strong>이다. 환자 두 명씩 비교한 28쌍의 대소 순서가 <strong>28/28쌍 동일</strong>하다. 참여 정답은 반전됐는데 순위는 그대로이므로, 모델 1에서의 0.6875와 모델 2에서의 0.3125가 상보적으로 나온다. 이 구조에서 평균 0.5가 정확히 나오는 것은 실제 모집단 성능을 정밀하게 추정했다는 뜻이 아니다.</p>
+<p>같은 환자의 후보 점수를 참여 모델 − 미참여 모델로 빼면:</p>
+<ul>
+<li>상승 4명, 하락 4명, 동일 0명이다.</li>
+<li>평균 차이는 −0.0000748313, 중앙값은 +0.0000009571이다.</li>
+<li>환자 한 명을 두 모델에서 함께 제외하는 8가지 민감도 점검에서도 후보의 평균 AUC는 모두 0.5였다. 이는 leave-one-patient-out 민감도이며 신뢰구간 또는 p-value가 아니다.</li>
+</ul>
+<p><strong>해석상의 단서:</strong> 현재 점수에서는 참여 배정에 따른 변화보다 환자·영상에 고정된 차이가 순위를 더 크게 좌우할 가능성이 있다. 사진 난이도·촬영 조건·환자 특성, 짧은 학습에서의 약한 참여 신호 등 어느 원인인지는 이 분석만으로 구분하지 못한다. 병원 편향 또는 re-ID가 원인이라고 확정하지 않는다.</p>
+<p>두 모델은 여러 환자의 포함을 함께 바꾸고 공통 초기화·배경을 공유한다. 위 차이는 단일 환자의 포함 효과를 식별하는 인과 추정이나 DP 인접 데이터 비교가 아니다.</p>
+<h2>4. 이미 저장된 구성값의 추가 확인</h2>
+<p>다른 환자 대조를 빼기 전 own gain 평균은 모델 1/2 AUC가 각각 0.5/0.5였다. reference gain 평균은 0.1875/0.75였다. 따라서 이 표본에서 대조 항을 빼기만 하면 안정적인 참여 신호가 나온다고 말할 수 없다. 이는 저장된 값의 분해 진단이며 새 GPU 제거 실험은 아니다.</p>
+<p>같은 환자에서 base 보정 전후 점수의 참여 − 미참여 차이는 수치 오차 범위에서 동일했다. 공개 base와 query noise를 공유하므로 base 항이 차분에서 상쇄되는 구조와 일치한다. 두 결과를 서로 독립된 참여 신호처럼 세지 않는다.</p>
+<h2>5. 현재 가능한 결론과 한계</h2>
+<p>현재 후보를 성공한 공격 또는 기존 방법보다 우월한 방법으로 올릴 근거는 없다. 다음 진행 시에도 “이미 효과가 검증됐다”는 전제를 두지 않는다.</p>
+<p>다만 표본은 개발 환자 8명이며, 두 모델은 독립 seed 반복이 아니다. 점수 조합·일관된 보정·강한 대조·독립 평가를 하지 않았으므로 모든 가능한 환자 단위 공격의 성능까지 결론 내리지 않는다. 모델별 점수 방향을 학습하는 방법을 나중에 검토한다면 별도 방법 선택 자료에서 확인해야 하며, 지금의 8명에 맞춘 부호 반전 결과를 성능으로 제시하지 않는다.</p>
+<p>모델별 미참여 환자가 4명이라 경험적 FPR은 25% 단위다. 이 자료에서 5% 또는 1% 오탐률의 TPR을 추정하지 않았다. 이번에 새로운 성능 성공 기준이나 DP 보장을 만들지 않았다.</p>
+<h2>6. 재현 및 검증</h2>
+<p>별도 코드가 sklearn의 AUROC, scipy의 Spearman과 원결과에서 다시 만든 환자별 차이를 이용해 검증했다. 점수 6종의 모델별 AUC 12개, 환자 제외 요약 48개, 환자별 차이 48행, 원점수 16행과 입력 hash 5개가 일치했다. <strong>PASS는 계산의 일치에 대한 판정이며 연구 가설 성공 판정이 아니다.</strong></p>
+<p><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/analysis/U_step1000_n8_v1/analysis.json">분석 JSON</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/analysis/U_step1000_n8_v1/scores.csv">환자별 원점수 CSV</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/analysis/U_step1000_n8_v1/paired_scores.csv">동일 환자 차이 CSV</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/analysis/U_step1000_n8_v1/verification.json">별도 검증</a></p>
+<p>재현 코드는 <code>u_patient_audit.analyze_u_smoke</code>, 별도 검증은 <code>u_patient_audit.verify_u_analysis</code>, 그림 생성은 <code>u_patient_audit.render_u_analysis</code>다. 완료된 분석 결과는 덮어쓰지 않게 했다.</p>
+<p><a href="u_execution_status.html">전체 실행 기록</a> · <a href="u_execution_plan.html">원래 실행 계획</a></p>
+<h2>7. 비용 제약 후속: 추가 환자 실행 보류와 CPU 구조 점검</h2>
+<p>사용자는 80명 확대의 시간 부담과 16명의 판단 가능성에 이의를 제기했다. 16명이라는 숫자는 시간 절약안일 뿐 충분한 검증 규모로 산정된 수가 아니었다. <strong>현재 후보의 80명/16명 확대는 시작하지 않고 보류한다.</strong> 점수·대조 설계의 수정 근거를 먼저 검토한다.</p>
+<p>별도 읽기 전용 코드 검토에서는 동결 수식과 다른 명백한 구현 오류를 발견하지 못했다. 두 checkpoint의 adapter 256개 tensor도 모두 서로 달랐다. 이것이 모든 실행 오류의 부재나 충분한 참여 신호를 증명하지는 않는다.</p>
+<p>저장된 8명 결과에서 각 환자의 두 모델 평균 점수의 표준편차와 같은 환자의 모델 간 점수 변화 RMS를 계산했다.</p>
+<table>
+<thead>
+<tr>
+<th>저장된 구성값</th>
+<th style="text-align: right;">환자 간 점수 표준편차</th>
+<th style="text-align: right;">같은 환자의 모델 간 변화 RMS</th>
+<th style="text-align: right;">변화 RMS / 환자 간 표준편차</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다른 환자 대조를 빼기 전 own gain</td>
+<td style="text-align: right;">0.00148071</td>
+<td style="text-align: right;">0.00022120</td>
+<td style="text-align: right;">0.1494</td>
+</tr>
+<tr>
+<td>대조를 뺀 현재 후보 response</td>
+<td style="text-align: right;">0.00218521</td>
+<td style="text-align: right;">0.00018204</td>
+<td style="text-align: right;">0.0833</td>
+</tr>
+</tbody>
+</table>
+<p>대조 차감 후 이 표본의 환자 간 점수 퍼짐은 약 1.48배 커졌으며, 모델 간 변화에 비해 환자 간 차이가 더 크게 남았다. 이 기술통계와 앞선 AUC·순위 결과는 현재 보정이 의도한 효과를 보였다고 보기 어렵다는 점검 근거다. 분산 증가 하나로 보정 방법의 실패 원인이나 membership 신호 대 잡음비를 확정하지 않는다. 두 모델이 여러 환자 배정을 동시에 바꾼다는 한계도 유지한다.</p>
+<p>효과적인 LoRA weight update의 두 모델 cosine은 0.84646이었다. 이는 두 adapter가 완전히 같은 것이 아니라는 추가 확인이며, 파라미터 차이를 기능 차이·MIA 성공으로 확대하지 않는다. NumPy 점수 재계산과 128개 층의 실제 dense LoRA 곱으로 별도 수치 검증을 완료했다. 추가 GPU 질의·학습·환자는 0이다.</p>
+<p><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/analysis/U_step1000_n8_v1/structure_check.json">CPU 구조 점검</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/analysis/U_step1000_n8_v1/structure_verification.json">별도 계산 검증</a></p></main></body></html>

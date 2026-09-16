@@ -1,0 +1,47 @@
+{
+  "status": "PASS_INDEPENDENT_FINAL_LEDGER_ROC_AND_STOP_ARITHMETIC",
+  "records_verified": 768,
+  "distinct_iid_cohorts": 128,
+  "independently_checked_decisions": 500,
+  "allocation_trace_scope": "Source-policy replay for null-bottleneck v0 only; no independent allocation-policy proof.",
+  "allocation_trace": {
+    "no_sharing": {
+      "allocated_member": 5317,
+      "allocated_null": 2259,
+      "positive_proxy_member": 2111,
+      "positive_proxy_null": 37,
+      "zero_proxy_member": 3206,
+      "zero_proxy_null": 2222,
+      "zero_all_null_proxy_but_positive_member_selected": 2111,
+      "forced_member": 133,
+      "forced_null": 320
+    },
+    "nested_sharing": {
+      "allocated_member": 2446,
+      "allocated_null": 3287,
+      "positive_proxy_member": 2059,
+      "positive_proxy_null": 42,
+      "zero_proxy_member": 387,
+      "zero_proxy_null": 3245,
+      "zero_all_null_proxy_but_positive_member_selected": 2058,
+      "forced_member": 128,
+      "forced_null": 320
+    }
+  },
+  "cp_flatness_example": {
+    "zero_128_upper": 0.07254292479817266,
+    "zero_256_upper": 0.03695427148975561,
+    "proxy_128_to_256_upper": 0.05139529403721919,
+    "scope": "Exact standard CP arithmetic, illustrative boundary of the frozen proxy; not an extra score-law trial."
+  },
+  "input_sha256": {
+    "protocol.json": "0241a7f4396a0f83046da5b2fe9d7439539deb02bc75ec84c5e568c93f7d6a3f",
+    "run_cpu_audit.py": "89b6b06edc75543f95e8bb343144b77cbc4d76a53c60afc2dabf3ad74e4d9388",
+    "execution_protocol.json": "b45ea10a81caf344af65b958cde29a1edd931487fc96308d2df54ac9ff1dcfb1",
+    "results.json": "a3ad7508d0978ab0fd76939766b3c08a81fbff82516f9a13b48cf143782709f5",
+    "traces.json": "aaaad0b5be621223934d8a7eaeadc38c7df4699bba89bd3b374746f9e157d820",
+    "results.csv": "08dd5686d450a0dbc47bc102f0cca8e1f9edd0dc12cbc631bd7689ad88084cd8",
+    "output_manifest.json": "753a631429cf35e6015aa37f169b64681be105c3d59867328653244dceb4e2a0"
+  },
+  "verifier_sha256": "adb11ed07f9ebdf92bdbccef5e4f413b771945812be066e3716c760b7707ce76"
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "mofit-patient14393-two-image-analysis-contract/v1",
+  "created_utc": "2026-09-15T06:28:04.895066+00:00",
+  "current_step": 2,
+  "patient_id": "14393",
+  "eval_role": "fit",
+  "assignment_group": "A",
+  "models": [
+    "model_1",
+    "model_2"
+  ],
+  "images": {
+    "E": [
+      "00014393_002.png",
+      "00014393_006.png"
+    ],
+    "U": [
+      "00014393_001.png",
+      "00014393_004.png"
+    ]
+  },
+  "original_run_directories": [
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_full_v1",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_target2_full_v1"
+  ],
+  "new_run_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_remaining_pair_v1",
+  "new_extraction_contract": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_remaining_pair_contract_v1.json",
+  "required_verification_statuses": [
+    "PASS_SAVED_MOFIT_ARITHMETIC_AND_PROVENANCE_FD_REVIEW_SEPARATE",
+    "PASS_TARGET2_SAVED_MOFIT_ARITHMETIC_AND_ACTUAL_NONMEMBERSHIP",
+    "PASS_REMAINING_PAIR_SAVED_MOFIT_ARITHMETIC_AND_ACTUAL_MEMBERSHIP"
+  ],
+  "original_frozen_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_full_v1\\results.json": "084f9bc4ed96834c77ec679fb42ea4d219f0f0b5477604387f0778c9c136c607",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_full_v1\\protocol.json": "a38469dfeb6a6e4e8a33156bb067ec1bddf321b31e6378d0deaaba683380693d",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_full_v1\\execution.json": "5de851d9fd8154f687883642ced27696fbfca548add9c8d85961afca500cb78a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_full_v1\\verification.json": "d20bdc454d05f74faaf37a32279f8eeec9d67056b88127cf3309f6afd84fe9de",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_full_v1\\raw.pt": "b824a8cd1587f72447b529aa33ea4a9f87d87c84ce70abc82be402ea42842a95",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_target2_full_v1\\results.json": "637ddad9ce77cbfc9b83659d3fcb344aa5d66d44fcdf13ba627dd03fe8558588",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_target2_full_v1\\protocol.json": "a09fb6826a11a86c799fa3b32721b5fb7425c88f04d7bc09dcd8c78d45d9943b",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_target2_full_v1\\execution.json": "c9942dfa9f246653560b8ee010204b0549e9658cb76f1286dee82fa0b5572f3c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_target2_full_v1\\verification.json": "048abbd01ac6acad12156386ae4e9927c1adbd4cf3b3eacf474b903507bad141",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_target2_full_v1\\raw.pt": "a76e394a684586ff9e687e426f4bc4d4515e89999d9829be6769a97e9526e16b"
+  },
+  "analysis_source_sha256": "aa97d16f3e85c844cb6d411cbcb8a79d76a6ef247be3e6652afff7d85cf1080e",
+  "score_order": [
+    "h",
+    "negative_u",
+    "negative_v",
+    "negative_u_plus_v"
+  ],
+  "definitions": {
+    "h": "L_optimized-L_null (source member-high)",
+    "negative_u": "-L_null",
+    "negative_v": "-(L_VLM-L_null)",
+    "negative_u_plus_v": "-(u+v)=-L_VLM"
+  },
+  "pool_order": [
+    "mean",
+    "max"
+  ],
+  "pool_policy": "Apply fixed member-high sign first, then pool the two independently optimized image scores",
+  "target_difference": "model_1(participant)-model_2(nonparticipant), separately for every image and every E/U mean/max",
+  "expected_records": 8,
+  "expected_unique_images": 4,
+  "independent_patients": 1,
+  "expected_image_score_rows": 32,
+  "expected_aggregate_rows": 32,
+  "expected_target_difference_rows": 32,
+  "exposure_policy": "model1 E image_member=1 and positive actual exposure; every U and all model2 images image_member=0",
+  "fixed_scope": [
+    "No final-score winner, gamma, robust scaling, auxiliary selection, AUC, CI, threshold, or fitting",
+    "No individual-patient causal conclusion: entire A/B training cohorts differ",
+    "One patient, two E and two U images, one frozen draw configuration; not noise-repetition confirmation",
+    "Both-target differences are analyst-only diagnostics, not inputs available to a single-target deployed attack",
+    "Additional images were selected by the existing cohort plan, not by their unseen new scores",
+    "All eight records and all four scalar orientations are retained; prior four results stay unchanged",
+    "Raw arithmetic/optimizer validation is delegated to the frozen input verifiers; this module verifies scalar aggregation only"
+  ],
+  "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_patient14393_two_image_analysis_v1",
+  "new_fitting": false,
+  "new_GPU_calls": 0,
+  "stage2_completion_claim": false
+}

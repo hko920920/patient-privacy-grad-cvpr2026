@@ -1,0 +1,712 @@
+[
+  {
+    "id": "A01",
+    "url": "https://www.nature.com/articles/s41586-026-10688-0.pdf",
+    "checked_at_local": "2026-09-09 15:47:10",
+    "http_status": 200,
+    "resolved_url": "https://www.nature.com/articles/s41586-026-10688-0.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A02",
+    "url": "https://www.nature.com/articles/s41551-025-01468-8.pdf",
+    "checked_at_local": "2026-09-09 15:47:10",
+    "http_status": 200,
+    "resolved_url": "https://www.nature.com/articles/s41551-025-01468-8",
+    "content_type": "text/html; charset=utf-8",
+    "pdf_magic": false,
+    "status": "BROWSER_CHECK_REQUIRED"
+  },
+  {
+    "id": "A03",
+    "url": "https://arxiv.org/pdf/2505.10496",
+    "checked_at_local": "2026-09-09 15:47:10",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2505.10496",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A04",
+    "url": "https://arxiv.org/pdf/2609.03615",
+    "checked_at_local": "2026-09-09 15:47:10",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2609.03615",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A05",
+    "url": "https://pure-oai.bham.ac.uk/ws/portalfiles/portal/304478106/BaiL2026Membership.pdf",
+    "checked_at_local": "2026-09-09 15:47:10",
+    "http_status": 200,
+    "resolved_url": "https://pure-oai.bham.ac.uk/ws/portalfiles/portal/304478106/BaiL2026Membership.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A06",
+    "url": "https://www.usenix.org/system/files/usenixsecurity23-chen-min.pdf",
+    "checked_at_local": "2026-09-09 15:47:10",
+    "http_status": 200,
+    "resolved_url": "https://www.usenix.org/system/files/usenixsecurity23-chen-min.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A07",
+    "url": "https://arxiv.org/pdf/2203.02077",
+    "checked_at_local": "2026-09-09 15:47:10",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2203.02077",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A08",
+    "url": "https://arxiv.org/pdf/2608.22824",
+    "checked_at_local": "2026-09-09 15:47:11",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2608.22824",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A09",
+    "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/tang24g/tang24g.pdf",
+    "checked_at_local": "2026-09-09 15:47:11",
+    "http_status": 200,
+    "resolved_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/tang24g/tang24g.pdf",
+    "content_type": "application/octet-stream",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A10",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/ff73af253974e6144c4eddf896d3095a-Paper-Conference.pdf",
+    "checked_at_local": "2026-09-09 15:47:11",
+    "http_status": 200,
+    "resolved_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/ff73af253974e6144c4eddf896d3095a-Paper-Conference.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A11",
+    "url": "https://proceedings.mlr.press/v202/duan23b/duan23b.pdf",
+    "checked_at_local": "2026-09-09 15:47:11",
+    "http_status": 200,
+    "resolved_url": "https://proceedings.mlr.press/v202/duan23b/duan23b.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A12",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/874411a224a1934b80d499068384808b-Paper-Conference.pdf",
+    "checked_at_local": "2026-09-09 15:47:12",
+    "http_status": 200,
+    "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/874411a224a1934b80d499068384808b-Paper-Conference.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A13",
+    "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/li25k/li25k.pdf",
+    "checked_at_local": "2026-09-09 15:47:12",
+    "http_status": 200,
+    "resolved_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/li25k/li25k.pdf",
+    "content_type": "application/octet-stream",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A14",
+    "url": "https://www.usenix.org/system/files/usenixsecurity23-carlini.pdf",
+    "checked_at_local": "2026-09-09 15:47:12",
+    "http_status": 200,
+    "resolved_url": "https://www.usenix.org/system/files/usenixsecurity23-carlini.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A15",
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:12",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A16",
+    "url": "https://arxiv.org/pdf/2103.08562",
+    "checked_at_local": "2026-09-09 15:47:13",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2103.08562",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A17",
+    "url": "https://arxiv.org/pdf/2502.07516",
+    "checked_at_local": "2026-09-09 15:47:13",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2502.07516",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A18",
+    "url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ma_An_Inversion-based_Measure_of_Memorization_for_Diffusion_Models_ICCV_2025_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:13",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ma_An_Inversion-based_Measure_of_Memorization_for_Diffusion_Models_ICCV_2025_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A19",
+    "url": "https://raw.githubusercontent.com/mlresearch/v301/main/assets/dombrowski26a/dombrowski26a.pdf",
+    "checked_at_local": "2026-09-09 15:47:13",
+    "http_status": 200,
+    "resolved_url": "https://raw.githubusercontent.com/mlresearch/v301/main/assets/dombrowski26a/dombrowski26a.pdf",
+    "content_type": "application/octet-stream",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A20",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/pdf/nihms-2153980.pdf",
+    "checked_at_local": "2026-09-09 15:47:13",
+    "http_status": 200,
+    "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/pdf/nihms-2153980.pdf",
+    "content_type": "text/html; charset=utf-8",
+    "pdf_magic": false,
+    "status": "BROWSER_CHECK_REQUIRED"
+  },
+  {
+    "id": "A21",
+    "url": "https://openreview.net/pdf?id=x83b7ybcB1",
+    "checked_at_local": "2026-09-09 15:47:13",
+    "http_status": 403,
+    "resolved_url": "https://openreview.net/pdf?id=x83b7ybcB1",
+    "content_type": "text/html",
+    "pdf_magic": false,
+    "status": "BROWSER_CHECK_REQUIRED"
+  },
+  {
+    "id": "A22",
+    "url": "https://raw.githubusercontent.com/mlresearch/v317/main/assets/akhter26a/akhter26a.pdf",
+    "checked_at_local": "2026-09-09 15:47:14",
+    "http_status": 200,
+    "resolved_url": "https://raw.githubusercontent.com/mlresearch/v317/main/assets/akhter26a/akhter26a.pdf",
+    "content_type": "application/octet-stream",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A23",
+    "url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:14",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A24",
+    "url": "https://arxiv.org/pdf/2211.01323",
+    "checked_at_local": "2026-09-09 15:47:14",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2211.01323",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A25",
+    "url": "https://openaccess.thecvf.com/content/WACV2025/papers/Dutt_MemControl_Mitigating_Memorization_in_Diffusion_Models_via_Automated_Parameter_Selection_WACV_2025_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:14",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/WACV2025/papers/Dutt_MemControl_Mitigating_Memorization_in_Diffusion_Models_via_Automated_Parameter_Selection_WACV_2025_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "A26",
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Enhancing_Privacy-Utility_Trade-offs_to_Mitigate_Memorization_in_Diffusion_Models_CVPR_2025_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:14",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Enhancing_Privacy-Utility_Trade-offs_to_Mitigate_Memorization_in_Diffusion_Models_CVPR_2025_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B01",
+    "url": "https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf",
+    "checked_at_local": "2026-09-09 15:47:14",
+    "http_status": 200,
+    "resolved_url": "https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B02",
+    "url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:15",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B03",
+    "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:15",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B04",
+    "url": "https://arxiv.org/pdf/2407.07737",
+    "checked_at_local": "2026-09-09 15:47:15",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2407.07737",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B05",
+    "url": "https://arxiv.org/pdf/2406.14322",
+    "checked_at_local": "2026-09-09 15:47:15",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2406.14322",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B06",
+    "url": "https://arxiv.org/pdf/2401.10294",
+    "checked_at_local": "2026-09-09 15:47:15",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2401.10294",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B07",
+    "url": "https://arxiv.org/pdf/2206.03617",
+    "checked_at_local": "2026-09-09 15:47:15",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2206.03617",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B08",
+    "url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:16",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B09",
+    "url": "https://arxiv.org/pdf/2210.09929",
+    "checked_at_local": "2026-09-09 15:47:16",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2210.09929",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B10",
+    "url": "https://arxiv.org/pdf/2305.15759",
+    "checked_at_local": "2026-09-09 15:47:16",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2305.15759",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B11",
+    "url": "https://www.usenix.org/system/files/usenixsecurity24-li-kecen.pdf",
+    "checked_at_local": "2026-09-09 15:47:16",
+    "http_status": 200,
+    "resolved_url": "https://www.usenix.org/system/files/usenixsecurity24-li-kecen.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B12",
+    "url": "https://www.usenix.org/system/files/usenixsecurity24-wang-haichen.pdf",
+    "checked_at_local": "2026-09-09 15:47:16",
+    "http_status": 200,
+    "resolved_url": "https://www.usenix.org/system/files/usenixsecurity24-wang-haichen.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B13",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/5a04615295b7512ad3ce691400e26bc7-Paper-Conference.pdf",
+    "checked_at_local": "2026-09-09 15:47:16",
+    "http_status": 200,
+    "resolved_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/5a04615295b7512ad3ce691400e26bc7-Paper-Conference.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B14",
+    "url": "https://arxiv.org/pdf/2407.16405",
+    "checked_at_local": "2026-09-09 15:47:16",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2407.16405",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B15",
+    "url": "https://arxiv.org/pdf/2302.13861",
+    "checked_at_local": "2026-09-09 15:47:17",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2302.13861",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B16",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/38380a17248c4dfc4f48fc4d836d9b62-Paper-Conference.pdf",
+    "checked_at_local": "2026-09-09 15:47:17",
+    "http_status": 200,
+    "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/38380a17248c4dfc4f48fc4d836d9b62-Paper-Conference.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B17",
+    "url": "https://ojs.aaai.org/index.php/AAAI/article/download/38016/41978",
+    "checked_at_local": "2026-09-09 15:47:17",
+    "http_status": 200,
+    "resolved_url": "https://ojs.aaai.org/index.php/AAAI/article/download/38016/41978",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "B18",
+    "url": "https://arxiv.org/pdf/2512.03238",
+    "checked_at_local": "2026-09-09 15:47:17",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2512.03238",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "C01",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:17",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "C02",
+    "url": "https://openreview.net/pdf?id=SBHfiFsWRV",
+    "checked_at_local": "2026-09-09 15:47:17",
+    "http_status": 403,
+    "resolved_url": "https://openreview.net/pdf?id=SBHfiFsWRV",
+    "content_type": "text/html",
+    "pdf_magic": false,
+    "status": "BROWSER_CHECK_REQUIRED"
+  },
+  {
+    "id": "C03",
+    "url": "https://arxiv.org/pdf/2506.12303",
+    "checked_at_local": "2026-09-09 15:47:17",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2506.12303",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "C04",
+    "url": "https://arxiv.org/pdf/2607.16300",
+    "checked_at_local": "2026-09-09 15:47:17",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2607.16300",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D01",
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_Adaptive_Non-Uniform_Timestep_Sampling_for_Accelerating_Diffusion_Model_Training_CVPR_2025_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:18",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_Adaptive_Non-Uniform_Timestep_Sampling_for_Accelerating_Diffusion_Model_Training_CVPR_2025_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D02",
+    "url": "https://arxiv.org/pdf/2107.00630",
+    "checked_at_local": "2026-09-09 15:47:18",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2107.00630",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D03",
+    "url": "https://arxiv.org/pdf/2402.04930",
+    "checked_at_local": "2026-09-09 15:47:18",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2402.04930",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D04",
+    "url": "https://arxiv.org/pdf/2506.06185",
+    "checked_at_local": "2026-09-09 15:47:18",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2506.06185",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D05",
+    "url": "https://arxiv.org/pdf/2412.03439",
+    "checked_at_local": "2026-09-09 15:47:18",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2412.03439",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D06",
+    "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/crowson24a/crowson24a.pdf",
+    "checked_at_local": "2026-09-09 15:47:18",
+    "http_status": 200,
+    "resolved_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/crowson24a/crowson24a.pdf",
+    "content_type": "application/octet-stream",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D07",
+    "url": "https://arxiv.org/pdf/2404.03109",
+    "checked_at_local": "2026-09-09 15:47:18",
+    "http_status": 200,
+    "resolved_url": "https://arxiv.org/pdf/2404.03109",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D08",
+    "url": "https://raw.githubusercontent.com/mlresearch/v287/main/assets/kyung25a/kyung25a.pdf",
+    "checked_at_local": "2026-09-09 15:47:18",
+    "http_status": 200,
+    "resolved_url": "https://raw.githubusercontent.com/mlresearch/v287/main/assets/kyung25a/kyung25a.pdf",
+    "content_type": "application/octet-stream",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D09",
+    "url": "https://papers.neurips.cc/paper_files/paper/2024/file/3310034c97fab48fdbcba18f90fd5364-Paper-Conference.pdf",
+    "checked_at_local": "2026-09-09 15:47:19",
+    "http_status": 200,
+    "resolved_url": "https://papers.neurips.cc/paper_files/paper/2024/file/3310034c97fab48fdbcba18f90fd5364-Paper-Conference.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D10",
+    "url": "https://papers.miccai.org/miccai-2025/paper/2656_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:19",
+    "http_status": 200,
+    "resolved_url": "https://papers.miccai.org/miccai-2025/paper/2656_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D11",
+    "url": "https://papers.miccai.org/miccai-2024/paper/1964_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:19",
+    "http_status": 200,
+    "resolved_url": "https://papers.miccai.org/miccai-2024/paper/1964_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D12",
+    "url": "https://papers.miccai.org/miccai-2024/paper/0511_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:19",
+    "http_status": 200,
+    "resolved_url": "https://papers.miccai.org/miccai-2024/paper/0511_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D13",
+    "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:19",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D14",
+    "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Huang_EpiDiff_Enhancing_Multi-View_Synthesis_via_Localized_Epipolar-Constrained_Diffusion_CVPR_2024_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:20",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Huang_EpiDiff_Enhancing_Multi-View_Synthesis_via_Localized_Epipolar-Constrained_Diffusion_CVPR_2024_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D15",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kwon_Correspondence-Attention_Alignment_for_Multi-View_Diffusion_Models_CVPR_2026_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:20",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kwon_Correspondence-Attention_Alignment_for_Multi-View_Diffusion_Models_CVPR_2026_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "D16",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Align_Images_Before_You_Generate_CVPR_2026_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:20",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Align_Images_Before_You_Generate_CVPR_2026_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "E01",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/113ae3a9762ca2168f860a8501d6ae25-Paper-Conference.pdf",
+    "checked_at_local": "2026-09-09 15:47:20",
+    "http_status": 200,
+    "resolved_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/113ae3a9762ca2168f860a8501d6ae25-Paper-Conference.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "E02",
+    "url": "https://petsymposium.org/popets/2026/popets-2026-0070.pdf",
+    "checked_at_local": "2026-09-09 15:47:20",
+    "http_status": 200,
+    "resolved_url": "https://petsymposium.org/popets/2026/popets-2026-0070.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "E03",
+    "url": "https://papers.miccai.org/miccai-2025/paper/0428_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:20",
+    "http_status": 200,
+    "resolved_url": "https://papers.miccai.org/miccai-2025/paper/0428_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "F01",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Paper-Conference.pdf",
+    "checked_at_local": "2026-09-09 15:47:21",
+    "http_status": 200,
+    "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Paper-Conference.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "F02",
+    "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhao25aa/zhao25aa.pdf",
+    "checked_at_local": "2026-09-09 15:47:21",
+    "http_status": 200,
+    "resolved_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhao25aa/zhao25aa.pdf",
+    "content_type": "application/octet-stream",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "F03",
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Yang_Distraction_is_All_You_Need_for_Multimodal_Large_Language_Model_CVPR_2025_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:21",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Yang_Distraction_is_All_You_Need_for_Multimodal_Large_Language_Model_CVPR_2025_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  },
+  {
+    "id": "F04",
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Ghosal_Immune_Improving_Safety_Against_Jailbreaks_in_Multi-modal_LLMs_via_Inference-Time_CVPR_2025_paper.pdf",
+    "checked_at_local": "2026-09-09 15:47:21",
+    "http_status": 200,
+    "resolved_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Ghosal_Immune_Improving_Safety_Against_Jailbreaks_in_Multi-modal_LLMs_via_Inference-Time_CVPR_2025_paper.pdf",
+    "content_type": "application/pdf",
+    "pdf_magic": true,
+    "status": "PDF_HEADER_OK"
+  }
+]

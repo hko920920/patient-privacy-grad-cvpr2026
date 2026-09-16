@@ -1,0 +1,73 @@
+{
+  "schema": "cdi-eu-reporting-protocol/v1",
+  "created_utc": "2026-09-15T05:25:22.367660+00:00",
+  "renderer_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\render_cdi_eu_results.py",
+  "renderer_sha256": "48efa260994d8eceff96486835f79a915aa7a54e474cf6da44ea0ec601a926e5",
+  "input_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\verification.json": "f0fff36d66fa4425335d70e76e3f496060333b5ce6fd4a169e30f977558dcfe7",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\provenance.json": "15bdd57bb633bce40e548d9f9dce8a8b6a24447a2e28db0ea4f736b0641f2ec8",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\protocol.json": "3134be87b5e9d3c264dcc813c18afad094aede9e1154efc1953476b1d7bf5310",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\contract_copy.json": "bc2497d17b3110ec8b994eaa541d4eda00891ff5d30215a9aff26b7aa5f1db43",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\analysis.json": "44977ce1ad5224348ff59d6e2fe92cf7aa0e243582dea0842b22a21d2a71fffd",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\predictions.json": "ef51609d4f6b79bf5aa7bf0cf215d8e1bf8b353c0581660e2e4988b6829c4e57",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\fit_predictions.json": "ea9687435d79df85a2e40fecaacc8f3f0067fc8f4d3c376564bcd8250483fb50",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\fit_parameters.json": "3be038e4945c5da467db228d0d2166ca3b35be313950ec14362f7f86278dbf3a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\cv_results.json": "b1a3098a32c7934be65934712d6991ca21a901f2ce67909d7fef996de45c84d8",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\bootstrap_resamples.json": "4aaaaa39df1470377338bf5b194c616432c6def89e57832d6b485b12f65641fe",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\cdi_eu_analysis_contract_20260915.json": "bc2497d17b3110ec8b994eaa541d4eda00891ff5d30215a9aff26b7aa5f1db43",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\cdi_u_analysis_contract.json": "6f0afa62cf2bbf26790370965c4716f3afc927e0ab2412f8c4e6befbe02efca3",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\verify_cdi_eu_analysis.py": "ee7466ae1fa7cc4d6a5dff9f954b527b65e363ea6be9099b597d5a59e13de020"
+  },
+  "output_dir": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\cdi_eu_results_artifacts\\v1",
+  "markdown_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\CDI_EU_COMPARISON_RESULTS.md",
+  "methods": [
+    "cdi_image_mean_fixed",
+    "cdi_image_mean_tuned",
+    "cdi_image_max_fixed",
+    "cdi_image_max_tuned",
+    "patient_mean26_fixed",
+    "patient_mean26_tuned",
+    "patient_meanmax52_fixed",
+    "patient_meanmax52_tuned",
+    "dl_mean",
+    "dl_max",
+    "secmi_mean",
+    "secmi_max",
+    "pia_mean",
+    "pia_max",
+    "pian_mean",
+    "pian_max",
+    "patient_meanmax54_noobjective_fixed",
+    "patient_meanmax54_noobjective_tuned"
+  ],
+  "cells": [
+    {
+      "fit_scenario": "E",
+      "evaluation_scenario": "E"
+    },
+    {
+      "fit_scenario": "E",
+      "evaluation_scenario": "U"
+    },
+    {
+      "fit_scenario": "U",
+      "evaluation_scenario": "E"
+    },
+    {
+      "fit_scenario": "U",
+      "evaluation_scenario": "U"
+    }
+  ],
+  "models": [
+    "model_1",
+    "model_2"
+  ],
+  "figure_color_limits": [
+    0,
+    1
+  ],
+  "new_statistics": false,
+  "fitting": false,
+  "GPU_calls": 0,
+  "best_method_selection": false
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "file": "influence_distribution_meeus2025.pdf",
+    "url": "https://arxiv.org/pdf/2506.20481v1",
+    "bytes": 2985147,
+    "sha256": "ccac0e84b7384b9645c80b0b6343d8a1d35827bd740cdc823af915df8606dfc2",
+    "downloaded_utc": "2026-09-15T11:36:28.112251+00:00"
+  },
+  {
+    "file": "counterfactual_memorization_zhang2023.pdf",
+    "url": "https://arxiv.org/pdf/2112.12938v2",
+    "bytes": 9379683,
+    "sha256": "e799e3920513788ac2ca7a5d5d00eeb614ae29deae35d0321916a652ced22a6e",
+    "downloaded_utc": "2026-09-15T11:36:33.107057+00:00"
+  },
+  {
+    "file": "rapid_difficulty_calibration.pdf",
+    "url": "https://arxiv.org/pdf/2409.00426v2",
+    "bytes": 2720650,
+    "sha256": "a79c45f388c22617c39eb317279c05b3a55c8bd869a13c17792db22187440189",
+    "downloaded_utc": "2026-09-15T11:36:35.257102+00:00"
+  }
+]

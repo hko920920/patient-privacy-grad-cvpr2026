@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "checks": {
+    "frozen_protocol_and_code_bindings": 2,
+    "track1_cost_and_mse_rows": 161,
+    "finite_clipping_counterexample": {
+      "p": 0.1,
+      "L": 3.0,
+      "R1": 0.1,
+      "R2": 0.18500000000000003
+    },
+    "track2_independent_trace_cost_and_final_risk_records": 768,
+    "track2_independent_replayed_actions": 61852,
+    "track2_distinct_seed_streams": 128,
+    "limits": [
+      "Saved-output arithmetic and final-decision check; not a new policy experiment.",
+      "No medical data, added DP noise, model training or whole-paper novelty proof.",
+      "Same seed streams reused across methods/conditions; 768 runs are not independent population trials."
+    ]
+  },
+  "script_sha256": "fb66e0f30e9b8387be9ae4d527dded6156f5a5086fb69db43c0f38904b1cb667"
+}

@@ -1,0 +1,5645 @@
+{
+  "execution": {
+    "status": "PASS_PREDECLARED_SYNTHETIC_MC_COMPLETE",
+    "seconds": 8.041419800021686,
+    "families": 7,
+    "rows": 161,
+    "paired_comparisons": 42,
+    "binding": {
+      "protocol_sha256": "935799dee23d4437de332955688adf07916f512fdc0df918050141939866293a",
+      "script_sha256": "b0483194534336899c01736d3fbe2a1f5f916a170527f11c528cb5ab42b33cd1",
+      "python": "3.11.5",
+      "numpy": "1.26.4",
+      "execution_start_unix": 1789531720.1002693,
+      "all_policy_choices_frozen_before_results": true
+    },
+    "preclip_unbiasedness": "E[mean of fresh R(P) iid final draws | pilot P]=mu exactly; clipping is nonlinear and need not be unbiased.",
+    "break_even": {
+      "model": "a_i/r_i, continuous oracle, no caps/minimums; p pilot cost",
+      "ratio_to_fixed": "B/(B-p)/(1+CV(sqrt(a))^2)",
+      "necessary_strict_improvement": "CV(sqrt(a))^2 > p/(B-p)",
+      "B4_p2_required_CV": 1.0,
+      "B8_p2_required_CV": 0.5773502691896257
+    },
+    "limitations": [
+      "Synthetic gradients only",
+      "No added DP Gaussian noise",
+      "No AdamW update or model quality",
+      "Oracle uses known distribution types and separate calibration risk curves",
+      "95% intervals are Monte Carlo simulation error"
+    ]
+  },
+  "rows": [
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R1",
+      "budget": null,
+      "clipped_mse": 0.001247661122155325,
+      "mc_se": 1.6941175956635883e-21,
+      "actual_mean_cost": 1.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 1,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00249532224431065
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R2",
+      "budget": null,
+      "clipped_mse": 0.0006381469850867691,
+      "mc_se": 4.872541388472324e-06,
+      "actual_mean_cost": 2.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 2,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0012762939701735383
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R4",
+      "budget": null,
+      "clipped_mse": 0.0003144388925812908,
+      "mc_se": 2.9932027507234716e-06,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0006288777851625816
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R8",
+      "budget": null,
+      "clipped_mse": 0.0001552108918312495,
+      "mc_se": 1.6076923752941045e-06,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.000310421783662499
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R16",
+      "budget": null,
+      "clipped_mse": 7.817890229258782e-05,
+      "mc_se": 8.265259989574831e-07,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00015635780458517565
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.001247661122155325,
+      "mc_se": 1.6941175956635883e-21,
+      "actual_mean_cost": 3.761810302734375,
+      "cost_mc_se": 0.005858827279641952,
+      "calibration_mean_cost": 3.76300048828125,
+      "R_frequencies_by_type": [
+        [
+          0.49212646484375,
+          0.0,
+          0.50787353515625,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00249532224431065
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.0003522592823745514,
+      "mc_se": 3.3747328119717435e-06,
+      "actual_mean_cost": 3.76483154296875,
+      "cost_mc_se": 0.003543773754598367,
+      "calibration_mean_cost": 3.76300048828125,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.115966796875,
+          0.884033203125,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.11920166015625,
+          0.88079833984375,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0007045185647491028
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.0007785655078633845,
+      "mc_se": 4.221304065512952e-06,
+      "actual_mean_cost": 3.753662109375,
+      "cost_mc_se": 0.0058594839703790215,
+      "calibration_mean_cost": 3.74725341796875,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.49755859375,
+          0.0,
+          0.50244140625,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.001557131015726769
+      ],
+      "guard_fraction_by_type": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.0003530387887441739,
+      "mc_se": 3.3848300989035083e-06,
+      "actual_mean_cost": 3.7459716796875,
+      "cost_mc_se": 0.0036990317598732743,
+      "calibration_mean_cost": 3.74725341796875,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.12872314453125,
+          0.87127685546875,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.12530517578125,
+          0.87469482421875,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0007060775774883478
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_free_B4",
+      "budget": 4,
+      "clipped_mse": 0.00019694910839886576,
+      "mc_se": 2.136941768276914e-06,
+      "actual_mean_cost": 3.9962158203125,
+      "cost_mc_se": 0.006783013293849543,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.25189208984375,
+          0.74810791015625,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0003938982167977315
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_charged_B4",
+      "budget": 4,
+      "clipped_mse": 0.00047881428332427494,
+      "mc_se": 4.24756986325913e-06,
+      "actual_mean_cost": 3.99755859375,
+      "cost_mc_se": 0.003906322646919347,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.50244140625,
+          0.49755859375,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0009576285666485499
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.0007785655078633845,
+      "mc_se": 4.221304065512952e-06,
+      "actual_mean_cost": 7.562713623046875,
+      "cost_mc_se": 0.029862034002451462,
+      "calibration_mean_cost": 7.562255859375,
+      "R_frequencies_by_type": [
+        [
+          0.49212646484375,
+          0.0,
+          0.0,
+          0.0,
+          0.50787353515625
+        ],
+        [
+          0.49755859375,
+          0.0,
+          0.50244140625,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.001557131015726769
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.00017180484432077837,
+      "mc_se": 1.8479672632852765e-06,
+      "actual_mean_cost": 7.5626220703125,
+      "cost_mc_se": 0.006915725830605316,
+      "calibration_mean_cost": 7.562255859375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.108154296875,
+          0.891845703125,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.11053466796875,
+          0.88946533203125,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00034360968864155674
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.0006603593138979461,
+      "mc_se": 4.6048236323192955e-06,
+      "actual_mean_cost": 6.768310546875,
+      "cost_mc_se": 0.029297419851895108,
+      "calibration_mean_cost": 6.73626708984375,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.49755859375,
+          0.0,
+          0.0,
+          0.0,
+          0.50244140625
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0013207186277958921
+      ],
+      "guard_fraction_by_type": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.00020617511865019049,
+      "mc_se": 2.225471327220977e-06,
+      "actual_mean_cost": 6.7347412109375,
+      "cost_mc_se": 0.010259882678032729,
+      "calibration_mean_cost": 6.73626708984375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.31719970703125,
+          0.68280029296875,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.3154296875,
+          0.6845703125,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00041235023730038097
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_free_B8",
+      "budget": 8,
+      "clipped_mse": 8.771420503556929e-05,
+      "mc_se": 9.674406558991223e-07,
+      "actual_mean_cost": 8.013671875,
+      "cost_mc_se": 0.010212888220798971,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.12158203125,
+          0.87841796875
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00017542841007113857
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_charged_B8",
+      "budget": 8,
+      "clipped_mse": 0.00012581892471629158,
+      "mc_se": 1.4010931303695095e-06,
+      "actual_mean_cost": 7.9833984375,
+      "cost_mc_se": 0.015095219202695444,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.629150390625,
+          0.370849609375
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00025163784943258317
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.0006603593138979461,
+      "mc_se": 4.6048236323192955e-06,
+      "actual_mean_cost": 10.577362060546875,
+      "cost_mc_se": 0.04138587576133602,
+      "calibration_mean_cost": 10.55126953125,
+      "R_frequencies_by_type": [
+        [
+          0.49212646484375,
+          0.0,
+          0.0,
+          0.0,
+          0.50787353515625
+        ],
+        [
+          0.49755859375,
+          0.0,
+          0.0,
+          0.0,
+          0.50244140625
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0013207186277958921
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.00013121469154360623,
+      "mc_se": 1.4345278091349626e-06,
+      "actual_mean_cost": 10.569091796875,
+      "cost_mc_se": 0.020648002408531204,
+      "calibration_mean_cost": 10.55126953125,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.6754150390625,
+          0.3245849609375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.68231201171875,
+          0.31768798828125
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00026242938308721246
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.0006603593138979461,
+      "mc_se": 4.6048236323192955e-06,
+      "actual_mean_cost": 6.768310546875,
+      "cost_mc_se": 0.029297419851895108,
+      "calibration_mean_cost": 6.73626708984375,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.49755859375,
+          0.0,
+          0.0,
+          0.0,
+          0.50244140625
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0013207186277958921
+      ],
+      "guard_fraction_by_type": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.0002035008197195931,
+      "mc_se": 2.189775129537655e-06,
+      "actual_mean_cost": 6.7293701171875,
+      "cost_mc_se": 0.010241136404559615,
+      "calibration_mean_cost": 6.73626708984375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.3125,
+          0.6875,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.32281494140625,
+          0.67718505859375,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0004070016394391862
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_free_B16",
+      "budget": 16,
+      "clipped_mse": 7.817890229258782e-05,
+      "mc_se": 8.265259989574831e-07,
+      "actual_mean_cost": 8.5,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.5,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00015635780458517565
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_charged_B16",
+      "budget": 16,
+      "clipped_mse": 7.817890229258782e-05,
+      "mc_se": 8.265259989574831e-07,
+      "actual_mean_cost": 10.5,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 10.5,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00015635780458517565
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "fixed_R1",
+      "budget": null,
+      "clipped_mse": 0.0019580539030358366,
+      "mc_se": 7.239718448431593e-05,
+      "actual_mean_cost": 1.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 1,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.001424536688280038,
+        0.0024915711177916364
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "fixed_R2",
+      "budget": null,
+      "clipped_mse": 0.0006474061877316647,
+      "mc_se": 6.200650741371997e-06,
+      "actual_mean_cost": 2.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 2,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        4.5886199924254724e-05,
+        0.0012489261755390746
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "fixed_R4",
+      "budget": null,
+      "clipped_mse": 0.0003122728569419184,
+      "mc_se": 6.267801145536986e-07,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0006245457138838368
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "fixed_R8",
+      "budget": null,
+      "clipped_mse": 0.00015627954222090248,
+      "mc_se": 3.131852623540815e-07,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00031255908444180496
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "fixed_R16",
+      "budget": null,
+      "clipped_mse": 7.829044059835249e-05,
+      "mc_se": 1.5659228410745034e-07,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00015658088119670498
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.0015236970351428735,
+      "mc_se": 4.6236435101549844e-05,
+      "actual_mean_cost": 4.031768798828125,
+      "cost_mc_se": 0.00877474059702824,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.30010986328125,
+          0.263916015625,
+          0.31719970703125,
+          0.11669921875,
+          0.0020751953125
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0005558229524941106,
+        0.0024915711177916364
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "matched_fixed_for_raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.0003122728569419184,
+      "mc_se": 6.267801145536986e-07,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0006245457138838368
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.0015171242312571182,
+      "mc_se": 6.9388542349942e-05,
+      "actual_mean_cost": 4.044708251953125,
+      "cost_mc_se": 0.01745984184996221,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.897216796875,
+          0.00030517578125,
+          0.0008544921875,
+          0.00537109375,
+          0.09625244140625
+        ],
+        [
+          0.39483642578125,
+          0.60516357421875,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0012949201022866854,
+        0.001739328360227551
+      ],
+      "guard_fraction_by_type": [
+        0.10260009765625,
+        0.0
+      ]
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "matched_fixed_for_geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.0003122728569419184,
+      "mc_se": 6.267801145536986e-07,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0006245457138838368
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "oracle_free_B4",
+      "budget": 4,
+      "clipped_mse": 0.00025717511784883974,
+      "mc_se": 6.130484532200886e-06,
+      "actual_mean_cost": 4.00390625,
+      "cost_mc_se": 0.007812678822802363,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.498046875,
+          0.501953125,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        4.5886199924254724e-05,
+        0.0004684640357734248
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "oracle_charged_B4",
+      "budget": 4,
+      "clipped_mse": 0.0006474061877316647,
+      "mc_se": 6.200650741371997e-06,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        4.5886199924254724e-05,
+        0.0012489261755390746
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.0006111711467596507,
+      "mc_se": 2.943613721190891e-05,
+      "actual_mean_cost": 8.042449951171875,
+      "cost_mc_se": 0.022624960442044838,
+      "calibration_mean_cost": 7.99981689453125,
+      "R_frequencies_by_type": [
+        [
+          0.08203125,
+          0.07916259765625,
+          0.16180419921875,
+          0.279052734375,
+          0.39794921875
+        ],
+        [
+          6.103515625e-05,
+          0.7010498046875,
+          0.29888916015625,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.00016004772268887,
+        0.0010622945708304316
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "matched_fixed_for_raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.00015628567520247443,
+      "mc_se": 3.1318321583464347e-07,
+      "actual_mean_cost": 7.9993896484375,
+      "cost_mc_se": 0.0002729241927072645,
+      "calibration_mean_cost": 7.99981689453125,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.000244140625,
+          0.999755859375,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          6.103515625e-05,
+          0.99993896484375,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00031257135040494886
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.0007892720910700356,
+      "mc_se": 6.931850119763345e-05,
+      "actual_mean_cost": 8.014678955078125,
+      "cost_mc_se": 0.021530475980172586,
+      "calibration_mean_cost": 7.9996337890625,
+      "R_frequencies_by_type": [
+        [
+          0.89703369140625,
+          0.0001220703125,
+          0.0,
+          6.103515625e-05,
+          0.102783203125
+        ],
+        [
+          0.0,
+          0.0,
+          6.103515625e-05,
+          0.81402587890625,
+          0.1859130859375
+        ]
+      ],
+      "mse_by_type": [
+        0.0012949201022866854,
+        0.00028362407985338606
+      ],
+      "guard_fraction_by_type": [
+        0.10260009765625,
+        0.0
+      ]
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "matched_fixed_for_geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.00015629287309752718,
+      "mc_se": 3.1345413891525353e-07,
+      "actual_mean_cost": 7.9993896484375,
+      "cost_mc_se": 0.0002729241927072645,
+      "calibration_mean_cost": 7.9996337890625,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.00018310546875,
+          0.99981689453125,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0001220703125,
+          0.9998779296875,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00031258574619505436
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "oracle_free_B8",
+      "budget": 8,
+      "clipped_mse": 0.00012077468755750902,
+      "mc_se": 6.091014477575639e-06,
+      "actual_mean_cost": 8.000244140625,
+      "cost_mc_se": 0.013530958485021267,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.24993896484375,
+          0.75006103515625
+        ]
+      ],
+      "mse_by_type": [
+        4.5886199924254724e-05,
+        0.00019566317519076332
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "oracle_charged_B8",
+      "budget": 8,
+      "clipped_mse": 0.00015978403368391663,
+      "mc_se": 6.094731935794127e-06,
+      "actual_mean_cost": 7.9912109375,
+      "cost_mc_se": 0.013492182221611302,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.752197265625,
+          0.247802734375
+        ]
+      ],
+      "mse_by_type": [
+        4.5886199924254724e-05,
+        0.0002736818674435785
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.00013117701899659014,
+      "mc_se": 1.2452340005110592e-05,
+      "actual_mean_cost": 16.004150390625,
+      "cost_mc_se": 0.020986149547920944,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.017822265625,
+          0.0166015625,
+          0.03778076171875,
+          0.07037353515625,
+          0.857421875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.3094482421875,
+          0.6905517578125
+        ]
+      ],
+      "mse_by_type": [
+        5.7942258361772957e-05,
+        0.00020441177963140736
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "matched_fixed_for_raw_B16",
+      "budget": 16,
+      "clipped_mse": 7.829044059835249e-05,
+      "mc_se": 1.5659228410745034e-07,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00015658088119670498
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.000725750491741695,
+      "mc_se": 6.931908557338927e-05,
+      "actual_mean_cost": 11.272247314453125,
+      "cost_mc_se": 0.017808055350344847,
+      "calibration_mean_cost": 11.2269287109375,
+      "R_frequencies_by_type": [
+        [
+          0.89703369140625,
+          0.0,
+          0.0,
+          0.0,
+          0.10296630859375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0012949201022866854,
+        0.00015658088119670498
+      ],
+      "guard_fraction_by_type": [
+        0.10260009765625,
+        0.0
+      ]
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "matched_fixed_for_geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.0001249707196901211,
+      "mc_se": 3.9651413860793156e-07,
+      "actual_mean_cost": 11.25732421875,
+      "cost_mc_se": 0.021781504812523535,
+      "calibration_mean_cost": 11.2269287109375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.58642578125,
+          0.41357421875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.5992431640625,
+          0.4007568359375
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0002499414393802422
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "oracle_free_B16",
+      "budget": 16,
+      "clipped_mse": 7.829044059835249e-05,
+      "mc_se": 1.5659228410745034e-07,
+      "actual_mean_cost": 10.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 10.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00015658088119670498
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "oracle_charged_B16",
+      "budget": 16,
+      "clipped_mse": 7.829044059835249e-05,
+      "mc_se": 1.5659228410745034e-07,
+      "actual_mean_cost": 12.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 12.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00015658088119670498
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "fixed_R1",
+      "budget": null,
+      "clipped_mse": 0.13008581184627835,
+      "mc_se": 0.00024950606380151315,
+      "actual_mean_cost": 1.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 1,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.250136121953383,
+        0.01003550173917371
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "fixed_R2",
+      "budget": null,
+      "clipped_mse": 0.06523043489186736,
+      "mc_se": 0.00012458238791806552,
+      "actual_mean_cost": 2.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 2,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.12546036183049336,
+        0.005000507953241367
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "fixed_R4",
+      "budget": null,
+      "clipped_mse": 0.03249628584852036,
+      "mc_se": 6.163627079395806e-05,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.06249376160716115,
+        0.002498810089879556
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "fixed_R8",
+      "budget": null,
+      "clipped_mse": 0.016267390803278433,
+      "mc_se": 3.0956390968414313e-05,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.03128486957128192,
+        0.001249912035274948
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "fixed_R16",
+      "budget": null,
+      "clipped_mse": 0.008141234287737664,
+      "mc_se": 1.5555875198500355e-05,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.01565650505796057,
+        0.0006259635175147596
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.05168625880579527,
+      "mc_se": 0.0001572749485539288,
+      "actual_mean_cost": 4.00982666015625,
+      "cost_mc_se": 0.0039056147184703517,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.49017333984375,
+          0.50982666015625,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.09333701587241683,
+        0.01003550173917371
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "matched_fixed_for_raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.03249628584852036,
+      "mc_se": 6.163627079395806e-05,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.06249376160716115,
+        0.002498810089879556
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.05168625880579527,
+      "mc_se": 0.0001572749485539288,
+      "actual_mean_cost": 4.00982666015625,
+      "cost_mc_se": 0.0039056147184703517,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.49017333984375,
+          0.50982666015625,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.09333701587241683,
+        0.01003550173917371
+      ],
+      "guard_fraction_by_type": [
+        0.16375732421875,
+        0.0
+      ]
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "matched_fixed_for_geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.03249628584852036,
+      "mc_se": 6.163627079395806e-05,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.06249376160716115,
+        0.002498810089879556
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "oracle_free_B4",
+      "budget": 4,
+      "clipped_mse": 0.024543878681111013,
+      "mc_se": 6.728823889223313e-05,
+      "actual_mean_cost": 4.0025634765625,
+      "cost_mc_se": 0.00675442732371194,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.24871826171875,
+          0.75128173828125,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.039052255623048315,
+        0.01003550173917371
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "oracle_charged_B4",
+      "budget": 4,
+      "clipped_mse": 0.05191116269885648,
+      "mc_se": 0.00015782152161300744,
+      "actual_mean_cost": 4.0032958984375,
+      "cost_mc_se": 0.003906284344465187,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.4967041015625,
+          0.5032958984375,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.09378682365853924,
+        0.01003550173917371
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.016170937413655335,
+      "mc_se": 3.886400446748434e-05,
+      "actual_mean_cost": 8.009063720703125,
+      "cost_mc_se": 0.013569643211230779,
+      "calibration_mean_cost": 7.9998779296875,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.7481689453125,
+          0.2518310546875
+        ],
+        [
+          0.00482177734375,
+          0.99102783203125,
+          0.004150390625,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.027328550882317386,
+        0.005013323944993284
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "matched_fixed_for_raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.016267390803278433,
+      "mc_se": 3.0956390968414313e-05,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 7.9998779296875,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.03128486957128192,
+        0.001249912035274948
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.016170937413655335,
+      "mc_se": 3.886400446748434e-05,
+      "actual_mean_cost": 8.009063720703125,
+      "cost_mc_se": 0.013569643211230779,
+      "calibration_mean_cost": 7.9998779296875,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.7481689453125,
+          0.2518310546875
+        ],
+        [
+          0.00482177734375,
+          0.99102783203125,
+          0.004150390625,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.027328550882317386,
+        0.005013323944993284
+      ],
+      "guard_fraction_by_type": [
+        0.16375732421875,
+        0.0
+      ]
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "matched_fixed_for_geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.016267412567031674,
+      "mc_se": 3.095617238274697e-05,
+      "actual_mean_cost": 7.9998779296875,
+      "cost_mc_se": 0.0001220703125,
+      "calibration_mean_cost": 7.9998779296875,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          6.103515625e-05,
+          0.99993896484375,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.03128486957128192,
+        0.0012499555627814274
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "oracle_free_B8",
+      "budget": 8,
+      "clipped_mse": 0.01230137662430441,
+      "mc_se": 3.3994778497285395e-05,
+      "actual_mean_cost": 7.9912109375,
+      "cost_mc_se": 0.013571472996263496,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.252197265625,
+          0.747802734375
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.01960224529536745,
+        0.005000507953241367
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "oracle_charged_B8",
+      "budget": 8,
+      "clipped_mse": 0.016183180821710292,
+      "mc_se": 3.861958814029785e-05,
+      "actual_mean_cost": 7.99951171875,
+      "cost_mc_se": 0.01352985670534904,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.7501220703125,
+          0.2498779296875
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.027365853690179215,
+        0.005000507953241367
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.008297027997524168,
+      "mc_se": 1.56359596297916e-05,
+      "actual_mean_cost": 16.00390625,
+      "cost_mc_se": 0.01562544705572684,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.4990234375,
+          0.5009765625
+        ]
+      ],
+      "mse_by_type": [
+        0.01565650505796057,
+        0.000937550937087763
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "matched_fixed_for_raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.008141234287737664,
+      "mc_se": 1.5555875198500355e-05,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.01565650505796057,
+        0.0006259635175147596
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.008297027997524168,
+      "mc_se": 1.56359596297916e-05,
+      "actual_mean_cost": 16.00390625,
+      "cost_mc_se": 0.01562544705572684,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.4990234375,
+          0.5009765625
+        ]
+      ],
+      "mse_by_type": [
+        0.01565650505796057,
+        0.000937550937087763
+      ],
+      "guard_fraction_by_type": [
+        0.16375732421875,
+        0.0
+      ]
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "matched_fixed_for_geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.008141234287737664,
+      "mc_se": 1.5555875198500355e-05,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.01565650505796057,
+        0.0006259635175147596
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "oracle_free_B16",
+      "budget": 16,
+      "clipped_mse": 0.008141234287737664,
+      "mc_se": 1.5555875198500355e-05,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.01565650505796057,
+        0.0006259635175147596
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "oracle_charged_B16",
+      "budget": 16,
+      "clipped_mse": 0.008298886539512268,
+      "mc_se": 1.5622388746795938e-05,
+      "actual_mean_cost": 15.9716796875,
+      "cost_mc_se": 0.015623910248074944,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.507080078125,
+          0.492919921875
+        ]
+      ],
+      "mse_by_type": [
+        0.01565650505796057,
+        0.0009412680210639673
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "fixed_R1",
+      "budget": null,
+      "clipped_mse": 0.0665513005713118,
+      "mc_se": 0.0010545051916045181,
+      "actual_mean_cost": 1.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 1,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.12321616183842102,
+        0.009886439304202573
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "fixed_R2",
+      "budget": null,
+      "clipped_mse": 0.0336455731619017,
+      "mc_se": 0.0005413502750530573,
+      "actual_mean_cost": 2.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 2,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.06231897863226811,
+        0.004972167691535285
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "fixed_R4",
+      "budget": null,
+      "clipped_mse": 0.016771728680895392,
+      "mc_se": 0.0002654928729315031,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.031051169676537257,
+        0.0024922876852535307
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "fixed_R8",
+      "budget": null,
+      "clipped_mse": 0.00842212173845953,
+      "mc_se": 0.00013629932914809402,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.015596214349125895,
+        0.0012480291277931672
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "fixed_R16",
+      "budget": null,
+      "clipped_mse": 0.004186776406419266,
+      "mc_se": 6.747975400808619e-05,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.007749844325087524,
+        0.0006237084877510079
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.03798904100508277,
+      "mc_se": 0.0006938188270798696,
+      "actual_mean_cost": 4.008544921875,
+      "cost_mc_se": 0.00869210949045342,
+      "calibration_mean_cost": 3.99981689453125,
+      "R_frequencies_by_type": [
+        [
+          0.313232421875,
+          0.2564697265625,
+          0.31689453125,
+          0.11138916015625,
+          0.00201416015625
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.06609164270596299,
+        0.009886439304202573
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "matched_fixed_for_raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.01677113278145259,
+      "mc_se": 0.0002654942148930816,
+      "actual_mean_cost": 3.9998779296875,
+      "cost_mc_se": 8.631411137129126e-05,
+      "calibration_mean_cost": 3.99981689453125,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          6.103515625e-05,
+          0.99993896484375,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.103515625e-05,
+          0.99993896484375,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.031049856540789386,
+        0.0024924090221157946
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.03973156115219379,
+      "mc_se": 0.0007282515196938334,
+      "actual_mean_cost": 4.01361083984375,
+      "cost_mc_se": 0.009348126785587337,
+      "calibration_mean_cost": 3.99993896484375,
+      "R_frequencies_by_type": [
+        [
+          0.3746337890625,
+          0.1993408203125,
+          0.294921875,
+          0.1279296875,
+          0.003173828125
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.069576683000185,
+        0.009886439304202573
+      ],
+      "guard_fraction_by_type": [
+        0.6080322265625,
+        1.0
+      ]
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "matched_fixed_for_geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.016771728680895392,
+      "mc_se": 0.0002654928729315031,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 3.99993896484375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.031051169676537257,
+        0.0024922876852535307
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "oracle_free_B4",
+      "budget": 4,
+      "clipped_mse": 0.014237160625094693,
+      "mc_se": 0.0002121958507651149,
+      "actual_mean_cost": 4.0067138671875,
+      "cost_mc_se": 0.007812562343961275,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.49664306640625,
+          0.50335693359375,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0235021535586541,
+        0.004972167691535285
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "oracle_charged_B4",
+      "budget": 4,
+      "clipped_mse": 0.028738361403281277,
+      "mc_se": 0.00044095646213519074,
+      "actual_mean_cost": 3.99932861328125,
+      "cost_mc_se": 0.003906365693074249,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.50067138671875,
+          0.49932861328125,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.047590283502359984,
+        0.009886439304202573
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.016038539049220455,
+      "mc_se": 0.0003959016834609015,
+      "actual_mean_cost": 8.0079345703125,
+      "cost_mc_se": 0.02279517903949843,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.08685302734375,
+          0.08319091796875,
+          0.16387939453125,
+          0.26806640625,
+          0.39801025390625
+        ],
+        [
+          6.103515625e-05,
+          0.70269775390625,
+          0.2972412109375,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.02784380504620835,
+        0.004233273052232556
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "matched_fixed_for_raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.00842212173845953,
+      "mc_se": 0.00013629932914809402,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.015596214349125895,
+        0.0012480291277931672
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.02232456555219293,
+      "mc_se": 0.0005728880119667178,
+      "actual_mean_cost": 8.018310546875,
+      "cost_mc_se": 0.025091449689162593,
+      "calibration_mean_cost": 7.99993896484375,
+      "R_frequencies_by_type": [
+        [
+          0.23724365234375,
+          0.043212890625,
+          0.10198974609375,
+          0.20379638671875,
+          0.41375732421875
+        ],
+        [
+          6.103515625e-05,
+          0.47265625,
+          0.52728271484375,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.040977607638220365,
+        0.003671523466165498
+      ],
+      "guard_fraction_by_type": [
+        0.6080322265625,
+        1.0
+      ]
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "matched_fixed_for_geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.008422156811069946,
+      "mc_se": 0.00013629923812424503,
+      "actual_mean_cost": 7.9998779296875,
+      "cost_mc_se": 0.0001220703125,
+      "calibration_mean_cost": 7.99993896484375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          6.103515625e-05,
+          0.99993896484375,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.015596214349125895,
+        0.0012480992730139972
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "oracle_free_B8",
+      "budget": 8,
+      "clipped_mse": 0.007070201062920571,
+      "mc_se": 0.00010744666915977333,
+      "actual_mean_cost": 7.997314453125,
+      "cost_mc_se": 0.015625462772296997,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.50067138671875,
+          0.49932861328125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.011648114440587611,
+        0.0024922876852535307
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "oracle_charged_B8",
+      "budget": 8,
+      "clipped_mse": 0.009044251017189713,
+      "mc_se": 0.00013632634718193956,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.015596214349125895,
+        0.0024922876852535307
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.006661392521400354,
+      "mc_se": 0.00019817090486595008,
+      "actual_mean_cost": 15.953857421875,
+      "cost_mc_se": 0.021305602182598582,
+      "calibration_mean_cost": 15.9996337890625,
+      "R_frequencies_by_type": [
+        [
+          0.02001953125,
+          0.01953125,
+          0.037841796875,
+          0.0716552734375,
+          0.8509521484375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.3114013671875,
+          0.6885986328125
+        ]
+      ],
+      "mse_by_type": [
+        0.012505187972795328,
+        0.0008175970700053778
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "matched_fixed_for_raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.004186781510908383,
+      "mc_se": 6.747978780364919e-05,
+      "actual_mean_cost": 15.999755859375,
+      "cost_mc_se": 0.000244140625,
+      "calibration_mean_cost": 15.9996337890625,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          6.103515625e-05,
+          0.99993896484375
+        ]
+      ],
+      "mse_by_type": [
+        0.007749844325087524,
+        0.0006237186967292422
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.016208636491954302,
+      "mc_se": 0.000517126551114204,
+      "actual_mean_cost": 15.977020263671875,
+      "cost_mc_se": 0.025326251599200926,
+      "calibration_mean_cost": 15.99993896484375,
+      "R_frequencies_by_type": [
+        [
+          0.20306396484375,
+          0.00830078125,
+          0.017578125,
+          0.03399658203125,
+          0.737060546875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.05010986328125,
+          0.94989013671875
+        ]
+      ],
+      "mse_by_type": [
+        0.03176251648249978,
+        0.0006547565014088263
+      ],
+      "guard_fraction_by_type": [
+        0.6080322265625,
+        1.0
+      ]
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "matched_fixed_for_geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.004186819180071662,
+      "mc_se": 6.748128943433872e-05,
+      "actual_mean_cost": 15.999755859375,
+      "cost_mc_se": 0.000244140625,
+      "calibration_mean_cost": 15.99993896484375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          6.103515625e-05,
+          0.99993896484375
+        ]
+      ],
+      "mse_by_type": [
+        0.007749844325087524,
+        0.0006237940350557994
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "oracle_free_B16",
+      "budget": 16,
+      "clipped_mse": 0.004186776406419266,
+      "mc_se": 6.747975400808619e-05,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.007749844325087524,
+        0.0006237084877510079
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "oracle_charged_B16",
+      "budget": 16,
+      "clipped_mse": 0.00434427521249905,
+      "mc_se": 6.748000076018973e-05,
+      "actual_mean_cost": 15.970703125,
+      "cost_mc_se": 0.015623800337251,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.50732421875,
+          0.49267578125
+        ]
+      ],
+      "mse_by_type": [
+        0.007749844325087524,
+        0.0009387060999105766
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "fixed_R1",
+      "budget": null,
+      "clipped_mse": 0.022288043310007423,
+      "mc_se": 3.331124711642112e-05,
+      "actual_mean_cost": 1.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 1,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.022286153215250584,
+        0.02228993340476427
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "fixed_R2",
+      "budget": null,
+      "clipped_mse": 0.011205031525245806,
+      "mc_se": 1.6186192718605685e-05,
+      "actual_mean_cost": 2.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 2,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.01122646247040296,
+        0.011183600580088653
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "fixed_R4",
+      "budget": null,
+      "clipped_mse": 0.005623422674293072,
+      "mc_se": 7.950832451607772e-06,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.005622882371231923,
+        0.005623962977354222
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "fixed_R8",
+      "budget": null,
+      "clipped_mse": 0.0028138338941357264,
+      "mc_se": 3.979127453665524e-06,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0028153333097169953,
+        0.002812334478554458
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "fixed_R16",
+      "budget": null,
+      "clipped_mse": 0.0014046039520590305,
+      "mc_se": 1.9895508925421783e-06,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.001406669851889647,
+        0.0014025380522284137
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.011249692102770988,
+      "mc_se": 1.7159261665089603e-05,
+      "actual_mean_cost": 4.003265380859375,
+      "cost_mc_se": 0.0008698049377050526,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0062255859375,
+          0.98876953125,
+          0.0050048828125,
+          0.0,
+          0.0
+        ],
+        [
+          0.00628662109375,
+          0.98919677734375,
+          0.0045166015625,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.01126951079698448,
+        0.011229873408557498
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "matched_fixed_for_raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.005623422674293072,
+      "mc_se": 7.950832451607772e-06,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.005622882371231923,
+        0.005623962977354222
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.011234261076112657,
+      "mc_se": 1.6912323467645705e-05,
+      "actual_mean_cost": 4.002960205078125,
+      "cost_mc_se": 0.0007878421172856186,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.00457763671875,
+          0.991943359375,
+          0.00347900390625,
+          0.0,
+          0.0
+        ],
+        [
+          0.0050048828125,
+          0.99072265625,
+          0.0042724609375,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.011256644507619346,
+        0.011211877644605964
+      ],
+      "guard_fraction_by_type": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "matched_fixed_for_geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.005623422674293072,
+      "mc_se": 7.950832451607772e-06,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.005622882371231923,
+        0.005623962977354222
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "oracle_free_B4",
+      "budget": 4,
+      "clipped_mse": 0.005623422674293072,
+      "mc_se": 7.950832451607772e-06,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.005622882371231923,
+        0.005623962977354222
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "oracle_charged_B4",
+      "budget": 4,
+      "clipped_mse": 0.011205031525245806,
+      "mc_se": 1.6186192718605685e-05,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.01122646247040296,
+        0.011183600580088653
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.004233283498614678,
+      "mc_se": 9.876107104086618e-06,
+      "actual_mean_cost": 7.9737548828125,
+      "cost_mc_se": 0.010947379374866187,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.50396728515625,
+          0.49603271484375,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.5091552734375,
+          0.4908447265625,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.00422717161714958,
+        0.004239395380079777
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "matched_fixed_for_raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.0028138338941357264,
+      "mc_se": 3.979127453665524e-06,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0028153333097169953,
+        0.002812334478554458
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.004222640450243767,
+      "mc_se": 9.890057949420932e-06,
+      "actual_mean_cost": 7.9967041015625,
+      "cost_mc_se": 0.01097645566217299,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.49884033203125,
+          0.50115966796875,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.5028076171875,
+          0.4971923828125,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.004216948722028579,
+        0.004228332178458956
+      ],
+      "guard_fraction_by_type": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "matched_fixed_for_geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.0028138338941357264,
+      "mc_se": 3.979127453665524e-06,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0028153333097169953,
+        0.002812334478554458
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "oracle_free_B8",
+      "budget": 8,
+      "clipped_mse": 0.0028138338941357264,
+      "mc_se": 3.979127453665524e-06,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0028153333097169953,
+        0.002812334478554458
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "oracle_charged_B8",
+      "budget": 8,
+      "clipped_mse": 0.004219648143535608,
+      "mc_se": 6.316374850054418e-06,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0028153333097169953,
+        0.005623962977354222
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.0017623643555473166,
+      "mc_se": 4.2469883339273834e-06,
+      "actual_mean_cost": 15.96142578125,
+      "cost_mc_se": 0.01915041903952701,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.251708984375,
+          0.748291015625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.2579345703125,
+          0.7420654296875
+        ]
+      ],
+      "mse_by_type": [
+        0.0017590075699763,
+        0.0017657211411183328
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "matched_fixed_for_raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.0014046039520590305,
+      "mc_se": 1.9895508925421783e-06,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.001406669851889647,
+        0.0014025380522284137
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.0017509509490429872,
+      "mc_se": 4.205127977455308e-06,
+      "actual_mean_cost": 16.015625,
+      "cost_mc_se": 0.019036897289865583,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.24603271484375,
+          0.75396728515625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.25006103515625,
+          0.74993896484375
+        ]
+      ],
+      "mse_by_type": [
+        0.0017503621135727498,
+        0.001751539784513225
+      ],
+      "guard_fraction_by_type": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "matched_fixed_for_geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.0014046039520590305,
+      "mc_se": 1.9895508925421783e-06,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.001406669851889647,
+        0.0014025380522284137
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "oracle_free_B16",
+      "budget": 16,
+      "clipped_mse": 0.0014046039520590305,
+      "mc_se": 1.9895508925421783e-06,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.001406669851889647,
+        0.0014025380522284137
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "oracle_charged_B16",
+      "budget": 16,
+      "clipped_mse": 0.0017549551792817057,
+      "mc_se": 3.7895888832828575e-06,
+      "actual_mean_cost": 16.00634765625,
+      "cost_mc_se": 0.015625398159629697,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.4984130859375,
+          0.5015869140625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0021073723063349983,
+        0.0014025380522284137
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "fixed_R1",
+      "budget": null,
+      "clipped_mse": 0.03103764215387434,
+      "mc_se": 0.00030613411668154236,
+      "actual_mean_cost": 1.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 1,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.00506610531817514,
+        0.05700917898957354
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "fixed_R2",
+      "budget": null,
+      "clipped_mse": 0.01553541872546559,
+      "mc_se": 0.0001561606865615456,
+      "actual_mean_cost": 2.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 2,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.001661724717487819,
+        0.029409112733443363
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "fixed_R4",
+      "budget": null,
+      "clipped_mse": 0.007947387917059557,
+      "mc_se": 8.092349534097334e-05,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0007121429206795552,
+        0.01518263291343956
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "fixed_R8",
+      "budget": null,
+      "clipped_mse": 0.004057796297699049,
+      "mc_se": 4.2638060592523126e-05,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.00033412007935500947,
+        0.007781472516043089
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "fixed_R16",
+      "budget": null,
+      "clipped_mse": 0.0020524821087191105,
+      "mc_se": 2.139899522749029e-05,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0001617265768370767,
+        0.003943237640601144
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.02101319988568235,
+      "mc_se": 0.00023723067718608653,
+      "actual_mean_cost": 4.012847900390625,
+      "cost_mc_se": 0.007302294448611022,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.4661865234375,
+          0.3189697265625,
+          0.20111083984375,
+          0.01373291015625,
+          0.0
+        ],
+        [
+          0.46514892578125,
+          0.32415771484375,
+          0.19793701171875,
+          0.01275634765625,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0029698009393684054,
+        0.039056598831996296
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "matched_fixed_for_raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.007947387917059557,
+      "mc_se": 8.092349534097334e-05,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0007121429206795552,
+        0.01518263291343956
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.021553049083902747,
+      "mc_se": 0.00024426827286687283,
+      "actual_mean_cost": 4.047149658203125,
+      "cost_mc_se": 0.013729710911302173,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.89300537109375,
+          0.00341796875,
+          0.0177001953125,
+          0.06964111328125,
+          0.0162353515625
+        ],
+        [
+          0.462158203125,
+          0.31805419921875,
+          0.1759033203125,
+          0.024658203125,
+          0.01922607421875
+        ]
+      ],
+      "mse_by_type": [
+        0.004504187207169103,
+        0.03860191096063639
+      ],
+      "guard_fraction_by_type": [
+        0.10784912109375,
+        0.04388427734375
+      ]
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "matched_fixed_for_geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.007947387917059557,
+      "mc_se": 8.092349534097334e-05,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0007121429206795552,
+        0.01518263291343956
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "oracle_free_B4",
+      "budget": 4,
+      "clipped_mse": 0.006597011728261245,
+      "mc_se": 6.870504166284373e-05,
+      "actual_mean_cost": 3.9833984375,
+      "cost_mc_se": 0.007811661713546299,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.50830078125,
+          0.49169921875,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.001661724717487819,
+        0.011532298739034674
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "oracle_charged_B4",
+      "budget": 4,
+      "clipped_mse": 0.013777518592108799,
+      "mc_se": 0.0001563319004433737,
+      "actual_mean_cost": 4.00299072265625,
+      "cost_mc_se": 0.003906299333692205,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.49700927734375,
+          0.50299072265625,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.00506610531817514,
+        0.022488931866042457
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.010229363699833623,
+      "mc_se": 0.00015040079478676694,
+      "actual_mean_cost": 7.981597900390625,
+      "cost_mc_se": 0.024859809246854908,
+      "calibration_mean_cost": 7.999755859375,
+      "R_frequencies_by_type": [
+        [
+          0.14141845703125,
+          0.15771484375,
+          0.2611083984375,
+          0.3204345703125,
+          0.11932373046875
+        ],
+        [
+          0.1358642578125,
+          0.15789794921875,
+          0.2655029296875,
+          0.322021484375,
+          0.11871337890625
+        ]
+      ],
+      "mse_by_type": [
+        0.001229482310123291,
+        0.019229245089543958
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "matched_fixed_for_raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.004057795383069254,
+      "mc_se": 4.263806407938304e-05,
+      "actual_mean_cost": 7.9998779296875,
+      "cost_mc_se": 0.0001220703125,
+      "calibration_mean_cost": 7.999755859375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          6.103515625e-05,
+          0.99993896484375,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.00033411825009541877,
+        0.007781472516043089
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.008652857823087737,
+      "mc_se": 0.00013925663698264462,
+      "actual_mean_cost": 8.065093994140625,
+      "cost_mc_se": 0.028244238483407683,
+      "calibration_mean_cost": 7.99993896484375,
+      "R_frequencies_by_type": [
+        [
+          0.4422607421875,
+          0.2874755859375,
+          0.15814208984375,
+          0.007080078125,
+          0.10504150390625
+        ],
+        [
+          0.09735107421875,
+          0.09716796875,
+          0.17474365234375,
+          0.29241943359375,
+          0.33831787109375
+        ]
+      ],
+      "mse_by_type": [
+        0.002765915475546445,
+        0.01453980017062903
+      ],
+      "guard_fraction_by_type": [
+        0.10784912109375,
+        0.04388427734375
+      ]
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "matched_fixed_for_geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.004057795950035544,
+      "mc_se": 4.263806027039585e-05,
+      "actual_mean_cost": 7.9998779296875,
+      "cost_mc_se": 0.0001220703125,
+      "calibration_mean_cost": 7.99993896484375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          6.103515625e-05,
+          0.99993896484375,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0003341193840279978,
+        0.007781472516043089
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "oracle_free_B8",
+      "budget": 8,
+      "clipped_mse": 0.003254938514709202,
+      "mc_se": 3.331481194286302e-05,
+      "actual_mean_cost": 7.998779296875,
+      "cost_mc_se": 0.01353756163625773,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.25030517578125,
+          0.74969482421875
+        ]
+      ],
+      "mse_by_type": [
+        0.001661724717487819,
+        0.004848152311930585
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "oracle_charged_B8",
+      "budget": 8,
+      "clipped_mse": 0.004244315659991418,
+      "mc_se": 4.327378515228661e-05,
+      "actual_mean_cost": 8.004150390625,
+      "cost_mc_se": 0.013550729289167656,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.74896240234375,
+          0.25103759765625
+        ]
+      ],
+      "mse_by_type": [
+        0.001661724717487819,
+        0.006826906602495016
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.0030925657712860145,
+      "mc_se": 5.1109558691136724e-05,
+      "actual_mean_cost": 15.951568603515625,
+      "cost_mc_se": 0.02313768558441251,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.00640869140625,
+          0.02008056640625,
+          0.0594482421875,
+          0.12127685546875,
+          0.79278564453125
+        ],
+        [
+          0.0068359375,
+          0.01910400390625,
+          0.0601806640625,
+          0.11798095703125,
+          0.7958984375
+        ]
+      ],
+      "mse_by_type": [
+        0.0002845497346314084,
+        0.005900581807940621
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "matched_fixed_for_raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.0020524821087191105,
+      "mc_se": 2.139899522749029e-05,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0001617265768370767,
+        0.003943237640601144
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.0026640737633254682,
+      "mc_se": 4.3966785820720065e-05,
+      "actual_mean_cost": 16.014434814453125,
+      "cost_mc_se": 0.022796557376287913,
+      "calibration_mean_cost": 15.99957275390625,
+      "R_frequencies_by_type": [
+        [
+          0.03839111328125,
+          0.0391845703125,
+          0.08154296875,
+          0.14727783203125,
+          0.693603515625
+        ],
+        [
+          0.0089111328125,
+          0.00750732421875,
+          0.0169677734375,
+          0.03094482421875,
+          0.9356689453125
+        ]
+      ],
+      "mse_by_type": [
+        0.00045014016961721103,
+        0.004878007357033726
+      ],
+      "guard_fraction_by_type": [
+        0.10784912109375,
+        0.04388427734375
+      ]
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "matched_fixed_for_geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.00205260417895978,
+      "mc_se": 2.1399494746606032e-05,
+      "actual_mean_cost": 15.999755859375,
+      "cost_mc_se": 0.000244140625,
+      "calibration_mean_cost": 15.99957275390625,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          6.103515625e-05,
+          0.99993896484375
+        ]
+      ],
+      "mse_by_type": [
+        0.0001617265768370767,
+        0.003943481781082483
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "oracle_free_B16",
+      "budget": 16,
+      "clipped_mse": 0.0020524821087191105,
+      "mc_se": 2.139899522749029e-05,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0001617265768370767,
+        0.003943237640601144
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "oracle_charged_B16",
+      "budget": 16,
+      "clipped_mse": 0.00209678044147226,
+      "mc_se": 2.1452224398277006e-05,
+      "actual_mean_cost": 15.97314453125,
+      "cost_mc_se": 0.015624068127100398,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.5067138671875,
+          0.4932861328125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.00025032324234337594,
+        0.003943237640601144
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "fixed_R1",
+      "budget": null,
+      "clipped_mse": 1.1080102943343104,
+      "mc_se": 0.0007438178026001619,
+      "actual_mean_cost": 1.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 1,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        1.1075069007513956,
+        1.1085136879172257
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "fixed_R2",
+      "budget": null,
+      "clipped_mse": 0.845649659909746,
+      "mc_se": 0.0006016185784289501,
+      "actual_mean_cost": 2.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 2,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.8447550782949922,
+        0.8465442415244998
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "fixed_R4",
+      "budget": null,
+      "clipped_mse": 0.5853274726884831,
+      "mc_se": 0.00042458102813520987,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.5848843826340652,
+        0.5857705627429011
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "fixed_R8",
+      "budget": null,
+      "clipped_mse": 0.36607520627945395,
+      "mc_se": 0.0002659124464976678,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.3659095626726786,
+        0.3662408498862293
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "fixed_R16",
+      "budget": null,
+      "clipped_mse": 0.2100739698780964,
+      "mc_se": 0.00015192355279070762,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.20976465441863784,
+        0.21038328533755493
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.8455448520281599,
+      "mc_se": 0.0006023180161604321,
+      "actual_mean_cost": 4.0008544921875,
+      "cost_mc_se": 0.00022828201778419733,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.99951171875,
+          0.00048828125,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9996337890625,
+          0.0003662109375,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.8446515308934748,
+        0.8464381731628451
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "matched_fixed_for_raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.5853274726884831,
+      "mc_se": 0.00042458102813520987,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.5848843826340652,
+        0.5857705627429011
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.8455448520281599,
+      "mc_se": 0.0006023180161604321,
+      "actual_mean_cost": 4.0008544921875,
+      "cost_mc_se": 0.00022828201778419733,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.99951171875,
+          0.00048828125,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9996337890625,
+          0.0003662109375,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.8446515308934748,
+        0.8464381731628451
+      ],
+      "guard_fraction_by_type": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "matched_fixed_for_geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.5853274726884831,
+      "mc_se": 0.00042458102813520987,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.5848843826340652,
+        0.5857705627429011
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "oracle_free_B4",
+      "budget": 4,
+      "clipped_mse": 0.5853274726884831,
+      "mc_se": 0.00042458102813520987,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.5848843826340652,
+        0.5857705627429011
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "oracle_charged_B4",
+      "budget": 4,
+      "clipped_mse": 0.845649659909746,
+      "mc_se": 0.0006016185784289501,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.8447550782949922,
+        0.8465442415244998
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.4784269056892254,
+      "mc_se": 0.0006990223259187622,
+      "actual_mean_cost": 7.9481201171875,
+      "cost_mc_se": 0.011047515316316477,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.5115966796875,
+          0.4884033203125,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.51434326171875,
+          0.48565673828125,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.47790029274785306,
+        0.47895351863059776
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "matched_fixed_for_raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.36607520627945395,
+      "mc_se": 0.0002659124464976678,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.3659095626726786,
+        0.3662408498862293
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.4784269056892254,
+      "mc_se": 0.0006990223259187622,
+      "actual_mean_cost": 7.9481201171875,
+      "cost_mc_se": 0.011047515316316477,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.5115966796875,
+          0.4884033203125,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.51434326171875,
+          0.48565673828125,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.47790029274785306,
+        0.47895351863059776
+      ],
+      "guard_fraction_by_type": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "matched_fixed_for_geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.36607520627945395,
+      "mc_se": 0.0002659124464976678,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.3659095626726786,
+        0.3662408498862293
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "oracle_free_B8",
+      "budget": 8,
+      "clipped_mse": 0.36607520627945395,
+      "mc_se": 0.0002659124464976678,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.3659095626726786,
+        0.3662408498862293
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "oracle_charged_B8",
+      "budget": 8,
+      "clipped_mse": 0.4758400627077898,
+      "mc_se": 0.0003545766046179092,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.3659095626726786,
+        0.5857705627429011
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.25007668080728473,
+      "mc_se": 0.00042059214971290214,
+      "actual_mean_cost": 15.946533203125,
+      "cost_mc_se": 0.019355681119583436,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.25494384765625,
+          0.74505615234375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.2584228515625,
+          0.7415771484375
+        ]
+      ],
+      "mse_by_type": [
+        0.24960726703097164,
+        0.25054609458359783
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "matched_fixed_for_raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.2100739698780964,
+      "mc_se": 0.00015192355279070762,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.20976465441863784,
+        0.21038328533755493
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.25007668080728473,
+      "mc_se": 0.00042059214971290214,
+      "actual_mean_cost": 15.946533203125,
+      "cost_mc_se": 0.019355681119583436,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.25494384765625,
+          0.74505615234375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.2584228515625,
+          0.7415771484375
+        ]
+      ],
+      "mse_by_type": [
+        0.24960726703097164,
+        0.25054609458359783
+      ],
+      "guard_fraction_by_type": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "matched_fixed_for_geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.2100739698780964,
+      "mc_se": 0.00015192355279070762,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.20976465441863784,
+        0.21038328533755493
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "oracle_free_B16",
+      "budget": 16,
+      "clipped_mse": 0.2100739698780964,
+      "mc_se": 0.00015192355279070762,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.20976465441863784,
+        0.21038328533755493
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "oracle_charged_B16",
+      "budget": 16,
+      "clipped_mse": 0.2492832059235206,
+      "mc_se": 0.00035669251591053617,
+      "actual_mean_cost": 15.985595703125,
+      "cost_mc_se": 0.01562507159962898,
+      "calibration_mean_cost": 16.0,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.50360107421875,
+          0.49639892578125
+        ]
+      ],
+      "mse_by_type": [
+        0.20976465441863784,
+        0.28880175742840336
+      ],
+      "guard_fraction_by_type": null
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.0008954018397807738,
+      "mc_95_interval": [
+        0.0008887873634693092,
+        0.0009020163160922384
+      ],
+      "test_cost_difference": -0.003021240234375,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00042552671911921087,
+      "mc_95_interval": [
+        0.0004166158723734488,
+        0.0004344375658649729
+      ],
+      "test_cost_difference": 0.0076904296875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.0006067606635426064,
+      "mc_95_interval": [
+        0.000598373604786786,
+        0.0006151477222984268
+      ],
+      "test_cost_difference": 9.1552734375e-05,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00045418419524775573,
+      "mc_95_interval": [
+        0.0004442756052421389,
+        0.00046409278525337257
+      ],
+      "test_cost_difference": 0.0335693359375,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00052914462235434,
+      "mc_95_interval": [
+        0.0005198348150722756,
+        0.0005384544296364044
+      ],
+      "test_cost_difference": 0.008270263671875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00045685849417835306,
+      "mc_95_interval": [
+        0.00044701040369104334,
+        0.0004667065846656628
+      ],
+      "test_cost_difference": 0.0389404296875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "raw_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.001211424178200955,
+      "mc_95_interval": [
+        0.0011208224264285774,
+        0.0013020259299733328
+      ],
+      "test_cost_difference": 0.031768798828125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "geometry_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.0012048513743151998,
+      "mc_95_interval": [
+        0.0010688651425026507,
+        0.0013408376061277488
+      ],
+      "test_cost_difference": 0.044708251953125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "raw_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00045488547155717637,
+      "mc_95_interval": [
+        0.0003971970700921719,
+        0.0005125738730221808
+      ],
+      "test_cost_difference": 0.043060302734375,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "geometry_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.0006329792179725084,
+      "mc_95_interval": [
+        0.0004971141031174394,
+        0.0007688443328275774
+      ],
+      "test_cost_difference": 0.015289306640625,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "raw_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 5.2886578398237666e-05,
+      "mc_95_interval": [
+        2.8482194025194795e-05,
+        7.729096277128053e-05
+      ],
+      "test_cost_difference": 0.004150390625,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F2_gaussian_outside_heterogeneous",
+      "method": "geometry_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.000600779772051574,
+      "mc_95_interval": [
+        0.00046491333639854635,
+        0.0007366462077046017
+      ],
+      "test_cost_difference": 0.014923095703125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "raw_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.01918997295727492,
+      "mc_95_interval": [
+        0.018906584921719583,
+        0.019473360992830254
+      ],
+      "test_cost_difference": 0.00982666015625,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "geometry_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.01918997295727492,
+      "mc_95_interval": [
+        0.018906584921719583,
+        0.019473360992830254
+      ],
+      "test_cost_difference": 0.00982666015625,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "raw_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": -9.645338962309866e-05,
+      "mc_95_interval": [
+        -0.0001554333377312584,
+        -3.747344151493891e-05
+      ],
+      "test_cost_difference": 0.009063720703125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "geometry_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": -9.647515337633838e-05,
+      "mc_95_interval": [
+        -0.00015545526541069194,
+        -3.749504134198481e-05
+      ],
+      "test_cost_difference": 0.009185791015625,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "raw_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00015579370978650165,
+      "mc_95_interval": [
+        0.0001529770943347875,
+        0.00015861032523821578
+      ],
+      "test_cost_difference": 0.00390625,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F3_inside_heterogeneous",
+      "method": "geometry_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00015579370978650165,
+      "mc_95_interval": [
+        0.0001529770943347875,
+        0.00015861032523821578
+      ],
+      "test_cost_difference": 0.00390625,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "raw_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.021217908223630188,
+      "mc_95_interval": [
+        0.019998101413337976,
+        0.0224377150339224
+      ],
+      "test_cost_difference": 0.0086669921875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "geometry_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.022959832471298396,
+      "mc_95_interval": [
+        0.021667205566236962,
+        0.02425245937635983
+      ],
+      "test_cost_difference": 0.01361083984375,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "raw_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.007616417310760923,
+      "mc_95_interval": [
+        0.006877366401010167,
+        0.00835546822051168
+      ],
+      "test_cost_difference": 0.0079345703125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "geometry_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.013902408741122984,
+      "mc_95_interval": [
+        0.012810100892503447,
+        0.01499471658974252
+      ],
+      "test_cost_difference": 0.0184326171875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "raw_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00247461101049197,
+      "mc_95_interval": [
+        0.002114009899076436,
+        0.0028352121219075038
+      ],
+      "test_cost_difference": -0.0458984375,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F4_boundary_heterogeneous",
+      "method": "geometry_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.012021817311882638,
+      "mc_95_interval": [
+        0.011022473860217017,
+        0.01302116076354826
+      ],
+      "test_cost_difference": -0.022735595703125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "raw_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.005626269428477917,
+      "mc_95_interval": [
+        0.0055967990549261526,
+        0.005655739802029681
+      ],
+      "test_cost_difference": 0.003265380859375,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "geometry_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.005610838401819584,
+      "mc_95_interval": [
+        0.005581911776913903,
+        0.005639765026725264
+      ],
+      "test_cost_difference": 0.002960205078125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "raw_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.0014194496044789523,
+      "mc_95_interval": [
+        0.0014016238515751093,
+        0.0014372753573827952
+      ],
+      "test_cost_difference": -0.0262451171875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "geometry_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.0014088065561080412,
+      "mc_95_interval": [
+        0.0013909287824915215,
+        0.001426684329724561
+      ],
+      "test_cost_difference": -0.0032958984375,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "raw_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.000357760403488286,
+      "mc_95_interval": [
+        0.00035038570950469224,
+        0.0003651350974718798
+      ],
+      "test_cost_difference": -0.03857421875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F5_outside_homogeneous",
+      "method": "geometry_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00034634699698395696,
+      "mc_95_interval": [
+        0.00033905145250469093,
+        0.000353642541463223
+      ],
+      "test_cost_difference": 0.015625,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "raw_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.01306581196862279,
+      "mc_95_interval": [
+        0.012624417420691904,
+        0.013507206516553676
+      ],
+      "test_cost_difference": 0.012847900390625,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "geometry_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.01360566116684319,
+      "mc_95_interval": [
+        0.013149037400224318,
+        0.014062284933462062
+      ],
+      "test_cost_difference": 0.047149658203125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "raw_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.006171568316764372,
+      "mc_95_interval": [
+        0.005885770257898368,
+        0.006457366375630377
+      ],
+      "test_cost_difference": -0.018280029296875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "geometry_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.004595061873052194,
+      "mc_95_interval": [
+        0.004327800501911052,
+        0.004862323244193336
+      ],
+      "test_cost_difference": 0.065216064453125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "raw_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.0010400836625669041,
+      "mc_95_interval": [
+        0.0009488578726531802,
+        0.001131309452480628
+      ],
+      "test_cost_difference": -0.048431396484375,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F6_correlated_plane_outside",
+      "method": "geometry_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.0006114695843656886,
+      "mc_95_interval": [
+        0.0005352696690057641,
+        0.000687669499725613
+      ],
+      "test_cost_difference": 0.014678955078125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "raw_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.2602173793396768,
+      "mc_95_interval": [
+        0.25931736815849343,
+        0.2611173905208602
+      ],
+      "test_cost_difference": 0.0008544921875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "geometry_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.2602173793396768,
+      "mc_95_interval": [
+        0.25931736815849343,
+        0.2611173905208602
+      ],
+      "test_cost_difference": 0.0008544921875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "raw_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.11235169940977147,
+      "mc_95_interval": [
+        0.11107845626421457,
+        0.11362494255532836
+      ],
+      "test_cost_difference": -0.0518798828125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "geometry_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.11235169940977147,
+      "mc_95_interval": [
+        0.11107845626421457,
+        0.11362494255532836
+      ],
+      "test_cost_difference": -0.0518798828125,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "raw_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.04000271092918835,
+      "mc_95_interval": [
+        0.039233396627329956,
+        0.04077202523104674
+      ],
+      "test_cost_difference": -0.053466796875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "method": "geometry_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.04000271092918835,
+      "mc_95_interval": [
+        0.039233396627329956,
+        0.04077202523104674
+      ],
+      "test_cost_difference": -0.053466796875,
+      "not_medical_or_patient_inference": true
+    }
+  ],
+  "family_files": [
+    "F1_exact_discrete_outside.json",
+    "F2_gaussian_outside_heterogeneous.json",
+    "F3_inside_heterogeneous.json",
+    "F4_boundary_heterogeneous.json",
+    "F5_outside_homogeneous.json",
+    "F6_correlated_plane_outside.json",
+    "F7_large_noise_high_dimension.json"
+  ]
+}

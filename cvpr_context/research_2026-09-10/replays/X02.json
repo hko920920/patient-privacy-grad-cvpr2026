@@ -1,0 +1,71 @@
+{
+  "id": "X02",
+  "mode": "official_feature_packet_linear_probe_replay",
+  "zip_sha256": "62e9ae3833bcc0f102612d05898262eea2b6025fe8949a72c3f055a8534c7b41",
+  "torch_version": "2.6.0+cu124",
+  "device": "cpu",
+  "source_shapes": {
+    "('train', 'member')": [
+      1000,
+      3000
+    ],
+    "('train', 'external')": [
+      1000,
+      3000
+    ],
+    "('eval', 'member')": [
+      1000,
+      3000
+    ],
+    "('eval', 'external')": [
+      1000,
+      3000
+    ]
+  },
+  "variants": [
+    {
+      "member_positive_auc": 0.733127,
+      "member_tpr_at_fpr_le_0.01": 0.065,
+      "member_tpr_at_fpr_le_0.001": 0.026,
+      "members": 1000,
+      "nonmembers": 1000,
+      "threshold_type": "descriptive_test_ROC_not_frozen_deployment_threshold",
+      "variant": "loss_full",
+      "features": 1000,
+      "epochs": 100,
+      "seed": 0,
+      "seconds": 5.797000000005937,
+      "member_positive_asr": 0.681
+    },
+    {
+      "member_positive_auc": 0.8158259999999998,
+      "member_tpr_at_fpr_le_0.01": 0.134,
+      "member_tpr_at_fpr_le_0.001": 0.038,
+      "members": 1000,
+      "nonmembers": 1000,
+      "threshold_type": "descriptive_test_ROC_not_frozen_deployment_threshold",
+      "variant": "all_step3",
+      "features": 1002,
+      "epochs": 100,
+      "seed": 0,
+      "seconds": 4.0460000000020955,
+      "member_positive_asr": 0.7375
+    },
+    {
+      "member_positive_auc": 0.833055,
+      "member_tpr_at_fpr_le_0.01": 0.168,
+      "member_tpr_at_fpr_le_0.001": 0.032,
+      "members": 1000,
+      "nonmembers": 1000,
+      "threshold_type": "descriptive_test_ROC_not_frozen_deployment_threshold",
+      "variant": "all_full",
+      "features": 3000,
+      "epochs": 100,
+      "seed": 0,
+      "seconds": 4.73399999999674,
+      "member_positive_asr": 0.748
+    }
+  ],
+  "image_feature_extraction_reproduced": false,
+  "medical_patient_attack": false
+}

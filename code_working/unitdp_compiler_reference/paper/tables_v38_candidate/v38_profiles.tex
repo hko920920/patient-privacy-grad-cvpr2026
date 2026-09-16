@@ -1,0 +1,29 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lllrrrr@{}}
+\toprule
+Dataset & Route & Adjacency / participation law & $T$ & $k$ or $m$ & $\sigma$ & $D$ \\
+\midrule
+UCI HAR & P & add/remove; Bernoulli $q=0.380952$ & 15 & -- & 1.269710 & 8 \\
+ & F & replace-one; SRSWOR $m/N=8/21$ & 15 & $m=8$ & 3.806632 & 8 \\
+ & A & add/remove; uniform $k$-of-$T$ allocation & 15 & $k=6$ & 1.229575 & 8 \\
+\addlinespace[1pt]
+WISDM & P & add/remove; Bernoulli $q=0.320000$ & 20 & -- & 1.251026 & 8 \\
+ & F & replace-one; SRSWOR $m/N=8/25$ & 20 & $m=8$ & 3.838696 & 8 \\
+ & A & add/remove; uniform $k$-of-$T$ allocation & 20 & $k=6$ & 1.090646 & 8 \\
+\addlinespace[1pt]
+Sepsis & P & add/remove; Bernoulli $q=0.100000$ & 50 & -- & 0.857344 & 32 \\
+ & F & replace-one; SRSWOR $m/N=32/312$ & 50 & $m=32$ & 2.380381 & 32 \\
+ & A & add/remove; uniform $k$-of-$T$ allocation & 50 & $k=5$ & 0.776173 & 32 \\
+\bottomrule
+\end{tabular}
+\caption{Registered research profiles; all target
+$(\varepsilon,\delta)=(8,10^{-5})$.  P samples each owner independently at
+each step; F samples exactly $m$ distinct positions per step; A assigns each
+owner independently to exactly $k$ distinct steps.  F uses replace-one
+sensitivity $2C$; P and A use add/remove sensitivity $C$.  Route mechanisms
+and accountants are prior work, not contributions of this paper.}
+\label{tab:v38-profiles}
+\end{table*}

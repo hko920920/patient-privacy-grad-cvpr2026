@@ -1,0 +1,112 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CDI_KERNEL_RESULTS.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>2번 — CDI 26개 특징의 실제 모델 계산·검산</h1>
+<p>완료: 2026-09-15 00:08 KST. 연구의 <a href="research_framework.html">고정 네 단계</a> 중 <strong>2번의 구현·비용 확인</strong>이다. 한 환자 자료로 기존 방법의 성능이나 실패 원인을 확정하지 않았다. 현재 다음 작업은 <a href="patient_baseline_spec.html">U 전체 비교 준비</a>다.</p>
+<h2>실제 완료한 범위</h2>
+<p>기존 fit14393의 E2/U2, 고정 model1 step1000에서 CDI 공개 코드의 26개 특징을 모두 계산했다. E는 각4회 학습 노출, U는0회임을 checkpoint exposure와 학습 목록으로 확인했다. P256 mode latent·generic hidden cache를 FP32로 올리고, 모델 가중치를 동결한 채 GM/NO 입력 미분만 사용했다.</p>
+<p>소스와 현재 모델을 연결한 방식은 6개 extractor, General wrapper의 noise/use_grad 분기, SecMI·DL·PIA scalar의 원본 AST를 재사용한 것이다. class-conditioned CompVis 전체 재현, 원형 CDI의 집합별 reference 검정, 환자 scorer fitting과 구별한다.</p>
+<table>
+<thead>
+<tr>
+<th>영상 역할</th>
+<th style="text-align: right;">UNet F</th>
+<th style="text-align: right;">입력 B</th>
+<th style="text-align: right;">계산 시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E 첫 영상</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">8.116초</td>
+</tr>
+<tr>
+<td>E 둘째 영상</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">5.588초</td>
+</tr>
+<tr>
+<td>U 첫 영상</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">5.715초</td>
+</tr>
+<tr>
+<td>U 둘째 영상</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">5.790초</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td style="text-align: right;"><strong>232</strong></td>
+<td style="text-align: right;"><strong>68</strong></td>
+<td style="text-align: right;"><strong>측정 구간25.238초</strong></td>
+</tr>
+</tbody>
+</table>
+<p>전체 실행기29.724초, peak CUDA allocated 4,096,370,688 bytes, reserved 4,596,957,184 bytes. 장비 RTX3070 8GB. 첫 영상에는 cold-start 비용이 포함돼 있다. 이후 영상 실측5.6–5.8초는 이번 한 환자의 범위이며 다른 환자의 NO line search 횟수·입출력 비용이 달라질 수 있다.</p>
+<p>VAE/text encoder 호출은0이다. 이는 기존 입력 cache를 재사용했기 때문이며 독립 공격의 encoding 비용이 공짜라는 뜻이 아니다. 현재 설치된 diffusers의 checkpoint 재계산 분기는 training일 때 작동하고, 이번 eval 경로에서는 사용되지 않았다.</p>
+<h2>독립 검산 결과</h2>
+<ul>
+<li>4×26=104개 특징을 저장된 원시 예측·noise·mask·delta에서 CPU float64로 별도 재계산했다. 최대 절대차이2.97065e−6, 상대차이1.68013e−7.</li>
+<li>기존 SecMI 실행의 같은 네 영상 z_det/z_recon이 <strong>모두 정확히 일치</strong>했다.</li>
+<li>CPU noise32개를 고정 image/module/stream seed에서 독립 재생성하여 값·hash를 확인했다.</li>
+<li>GM의 top20% gradient mask와 clean-latent 교체, NO의 objective 좌표와 최종 추가 noising을 각각 확인했다.</li>
+<li>동결 파일40개 hash가 일치했고, producer의 모델 parameter version·weight gradient 부재와 LoRA tensor의 실행 전후 동일성 기록을 확인했다.</li>
+<li>독립 검산 내부 CPU 시간1.169초. 저장된 UNet 입력 gradient의 전체 Jacobian을 새 GPU에서 다시 계산한 것은 아니다.</li>
+</ul>
+<p>검산기의 NO 비영점 요구는 일반적인 공격 성능 판정 기준이 아니다. 이번 입력의 gradient는 실제 비영점이라 이 범위 차이가 결과에 영향을 주지 않았다.</p>
+<h2>NO에서 구분해야 할 두 값</h2>
+<table>
+<thead>
+<tr>
+<th>영상 역할</th>
+<th style="text-align: right;">초기 objective</th>
+<th style="text-align: right;">최종 objective</th>
+<th style="text-align: right;">공개 코드가 내보낸 final feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E 첫 영상</td>
+<td style="text-align: right;">37.03</td>
+<td style="text-align: right;">19.24</td>
+<td style="text-align: right;">36.05</td>
+</tr>
+<tr>
+<td>E 둘째 영상</td>
+<td style="text-align: right;">35.66</td>
+<td style="text-align: right;">20.20</td>
+<td style="text-align: right;">35.34</td>
+</tr>
+<tr>
+<td>U 첫 영상</td>
+<td style="text-align: right;">36.32</td>
+<td style="text-align: right;">19.02</td>
+<td style="text-align: right;">35.85</td>
+</tr>
+<tr>
+<td>U 둘째 영상</td>
+<td style="text-align: right;">36.40</td>
+<td style="text-align: right;">18.31</td>
+<td style="text-align: right;">34.43</td>
+</tr>
+</tbody>
+</table>
+<p>공개 코드의 최종 feature는 최적화 입력에 다시 noise를 적용해 평가하므로 최적화 objective와 다르다. 실제 네 장에서도 이 차이가 나타났다. 이것이 membership 성능을 악화시킨다는 증거는 아직 아니다. 이후 강한 대조에 objective endpoint 정보를 추가한 표준 결합 변형을 따로 두어 이 설명을 확인한다. 작은 구현 수정 효과를 새 공격 기여라고 하지 않는다.</p>
+<p>NO는 모두 설정된5 iterations에 도달해 status1/success=False로 끝났다. 목적값은 감소했지만 수렴 성공을 뜻하지 않는다. 실제 objective 호출은8/6/7/7회였다. 앞선 합성 CPU 검사에서는 SciPy nfev43 대 실제42처럼 MemoizeJac 캐시 차이도 확인했다. 비용의 q는 실제 계산 횟수이며 nfev를 그대로 forward로 세지 않는다.</p>
+<h2>다음 비교와 시간</h2>
+<p><strong>U fit80+selection40, 두 target, 환자당2장 =480개 image-target records.</strong> 기존 kernel의 model1 U2개는 같은 입력·코드·noise가 확인되므로 재사용하고478개를 새로 계산한다. 학습형 CDI 점수와 표준 환자 집계를 같은 fit 정보로 비교하고, 이미 관측된 selection의 개발 결과로 보고한다. calibration/test는 사용하지 않는다.</p>
+<p>현재 실측을 단순 적용하면 새 추출 약45–55분이다. 새 실행기·고정된 분석 계약·검산·분석까지 추가60–75분으로 안내했다. 실제 NO 횟수와 시간에 따라 갱신한다. 이 비교에서도 약한 결과만으로 연구 불가능이나 2번 완료를 선언하지 않는다.</p>
+<h2>원시 기록과 코드</h2>
+<ul>
+<li><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/cdi_kernel_contract_v1.json">실행 계약</a></li>
+<li><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/cdi_kernel_v1/execution.json">실행 결과</a></li>
+<li><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/cdi_kernel_v1/results.json">104개 특징과 모듈별 기록</a></li>
+<li><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/cdi_kernel_v1/verification.json">독립 검산</a></li>
+<li><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/cdi_kernel_v1/raw.pt">원시 tensor packet</a></li>
+<li><a href="../../code_working/u_patient_audit/cdi_adapter.py">source adapter</a>, <a href="../../code_working/u_patient_audit/run_cdi_kernel.py">실행기</a>, <a href="../../code_working/u_patient_audit/verify_cdi_kernel.py">독립 검산기</a></li>
+</ul>
+<p>adapter SHA256 70d91b15397394d1405c8e930d2ec94ff4dcb0d3bbddd7ace6c8bdd58b0da8ce. 독립 검산기 SHA256 57b7719c54fee4c32c2d92e29535ce44aceb5b784669b4be2fff43aa6dd7d342. 실행 당시 코드·입력은 이후 작업에서도 보존한다.</p></main></body></html>

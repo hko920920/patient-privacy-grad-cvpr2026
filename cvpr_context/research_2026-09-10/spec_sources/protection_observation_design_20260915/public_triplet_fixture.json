@@ -1,0 +1,226 @@
+{
+  "status": "Prepared metadata-only fixture, not an executed experiment or complete frozen execution contract",
+  "scope": "Public development triplets; exclude every patient from existing CVPR training/auxiliary/evaluation manifests",
+  "selection_seed": "cvpr-protection-observation-public-triplets-v1-20260915",
+  "source": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\derived\\nih_cxr14_pa_target_enriched_v1\\k10_private.csv",
+  "source_sha256": "2d749fb7b70823114a69fd55921277b0d0ff2f9aec8fecd239159c553f3a0c06",
+  "excluded_manifest_bindings": [
+    {
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\cohort\\model_1_train.csv",
+      "sha256": "68742d1f4909f6b5411fa041473bd6808ba8982893f5219ec754b6d09264043b"
+    },
+    {
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\cohort\\model_2_train.csv",
+      "sha256": "a3cea7645d25f2d5c60e9eada23676fac3da37904a0fc2281aaaa772ee03c1a1"
+    },
+    {
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\cohort\\evaluation_images.csv",
+      "sha256": "08efab0eafeeca7cb6b8ff191c2eca2954e092a9c282a69785ac84a1cac35a7e"
+    },
+    {
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\cohort\\auxiliary_images.csv",
+      "sha256": "4ae1c513099d28b142eef6d9d805eadb529fb05b9895301497393d93d9b14fe2"
+    }
+  ],
+  "all_public_patients": 1816,
+  "all_public_images": 4831,
+  "public_patients_at_least_three_images": 596,
+  "eligible_after_exclusions": 50,
+  "selected_patients": 8,
+  "selected_images": 24,
+  "records": [
+    {
+      "patient_id": "19787",
+      "image_id": "00019787_002.png",
+      "role": "E_local_1",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00019787_002.png",
+      "sha256": "bd1c1a966b4692d24dd5aeea34150fc71d23b3005d4c2cfa7e19bd16b0627ee0",
+      "cap_rank": "1"
+    },
+    {
+      "patient_id": "19787",
+      "image_id": "00019787_001.png",
+      "role": "E_local_2",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00019787_001.png",
+      "sha256": "6e5e5dd35beb19b2b0c0d2157c867c94a3a4c1758cee2a09982afa54dcc88027",
+      "cap_rank": "2"
+    },
+    {
+      "patient_id": "19787",
+      "image_id": "00019787_000.png",
+      "role": "U_local",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00019787_000.png",
+      "sha256": "565bea198db354ac27a986e55f913aa496fe835df0738afce105085efdbfe510",
+      "cap_rank": "3"
+    },
+    {
+      "patient_id": "21195",
+      "image_id": "00021195_000.png",
+      "role": "E_local_1",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00021195_000.png",
+      "sha256": "cba5d9420b934cf58ec5a0296a2240c01f7ec43154d76c0786d7d3c901d2e819",
+      "cap_rank": "1"
+    },
+    {
+      "patient_id": "21195",
+      "image_id": "00021195_001.png",
+      "role": "E_local_2",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00021195_001.png",
+      "sha256": "be1da5e66d3d8d950578a0357761bebd90203025c85819a286e5dc8991698a1c",
+      "cap_rank": "2"
+    },
+    {
+      "patient_id": "21195",
+      "image_id": "00021195_002.png",
+      "role": "U_local",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00021195_002.png",
+      "sha256": "167644b9d0a8fef5e16142d42ee082a808bd44bf7ad3afded751f22d5057ab25",
+      "cap_rank": "3"
+    },
+    {
+      "patient_id": "19093",
+      "image_id": "00019093_000.png",
+      "role": "E_local_1",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00019093_000.png",
+      "sha256": "8acca0c1fe3ff192dc88af7b664309c84615dfc1ad00f5ac5c4ab51c3fcd4dd6",
+      "cap_rank": "1"
+    },
+    {
+      "patient_id": "19093",
+      "image_id": "00019093_002.png",
+      "role": "E_local_2",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00019093_002.png",
+      "sha256": "44d3ca8083be6769aaf55e6a91bcf4d279f378469b6caecb6c8cd425f2a784d7",
+      "cap_rank": "2"
+    },
+    {
+      "patient_id": "19093",
+      "image_id": "00019093_001.png",
+      "role": "U_local",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00019093_001.png",
+      "sha256": "eb3eb3e5dc711b4a2f3ff5a4b4a40f6f901d5045bd8976dc962be0b7edfd13aa",
+      "cap_rank": "3"
+    },
+    {
+      "patient_id": "26282",
+      "image_id": "00026282_001.png",
+      "role": "E_local_1",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00026282_001.png",
+      "sha256": "e1ff27c05d109617257a512843ee43af313b7132436fde6f365edca9d0731121",
+      "cap_rank": "1"
+    },
+    {
+      "patient_id": "26282",
+      "image_id": "00026282_002.png",
+      "role": "E_local_2",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00026282_002.png",
+      "sha256": "432733ea3bf606a7bb6986a143b9419bc7a1bda258af57e9ad1f509030dbaf80",
+      "cap_rank": "2"
+    },
+    {
+      "patient_id": "26282",
+      "image_id": "00026282_000.png",
+      "role": "U_local",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00026282_000.png",
+      "sha256": "c062899f6585130cef3d8da09dad52baf2431b67e1e50c0a1399695804a28e26",
+      "cap_rank": "3"
+    },
+    {
+      "patient_id": "28849",
+      "image_id": "00028849_002.png",
+      "role": "E_local_1",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00028849_002.png",
+      "sha256": "a51239ff6dfcd6352fd9da5ff4e817a323b4a317cba3b95d2fd7edf1a20355f7",
+      "cap_rank": "1"
+    },
+    {
+      "patient_id": "28849",
+      "image_id": "00028849_001.png",
+      "role": "E_local_2",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00028849_001.png",
+      "sha256": "4dd506e5d91b7f32e9b4d0e2fc078c9ee58d88069e9c0ecd0bab92e7ac571a8d",
+      "cap_rank": "2"
+    },
+    {
+      "patient_id": "28849",
+      "image_id": "00028849_000.png",
+      "role": "U_local",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00028849_000.png",
+      "sha256": "3c857b893ef9673e362101ef43aa19be6457f6456e55812d489bb89221f2c2f0",
+      "cap_rank": "3"
+    },
+    {
+      "patient_id": "25264",
+      "image_id": "00025264_000.png",
+      "role": "E_local_1",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00025264_000.png",
+      "sha256": "ec422af699e2354deb2db992c3a2dcb47af0187276d8bc010ee427a99fb2dcdd",
+      "cap_rank": "1"
+    },
+    {
+      "patient_id": "25264",
+      "image_id": "00025264_002.png",
+      "role": "E_local_2",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00025264_002.png",
+      "sha256": "02764b21b4635f8021b629e5357fb98504fb3882eb43b5bfca563e7d6f3e7845",
+      "cap_rank": "2"
+    },
+    {
+      "patient_id": "25264",
+      "image_id": "00025264_001.png",
+      "role": "U_local",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00025264_001.png",
+      "sha256": "3e760a8be7ed08c8b588340df469d882228f8f585a1fb39cbc43978d65183f9f",
+      "cap_rank": "3"
+    },
+    {
+      "patient_id": "688",
+      "image_id": "00000688_000.png",
+      "role": "E_local_1",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00000688_000.png",
+      "sha256": "06db63215a19586368899a82b879c6f08a83c2df4c12bf9925daf622c51a1311",
+      "cap_rank": "1"
+    },
+    {
+      "patient_id": "688",
+      "image_id": "00000688_001.png",
+      "role": "E_local_2",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00000688_001.png",
+      "sha256": "74bcb88bf17be85072aba60aa8915ef16c5d9662314e5582ce4283d1a9f38f21",
+      "cap_rank": "2"
+    },
+    {
+      "patient_id": "688",
+      "image_id": "00000688_002.png",
+      "role": "U_local",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00000688_002.png",
+      "sha256": "3c678894d448003afffa15731169076b2e3ef9d5049a11db0b01bab077a5f631",
+      "cap_rank": "3"
+    },
+    {
+      "patient_id": "15254",
+      "image_id": "00015254_000.png",
+      "role": "E_local_1",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00015254_000.png",
+      "sha256": "d570c9e8ba700be82100c7576567a09f057740abf6e533983cb465697316333b",
+      "cap_rank": "1"
+    },
+    {
+      "patient_id": "15254",
+      "image_id": "00015254_001.png",
+      "role": "E_local_2",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00015254_001.png",
+      "sha256": "560669d58bb50f516ea788deff086cb8ae65328e15a6288e872bea21d2d6e6d7",
+      "cap_rank": "2"
+    },
+    {
+      "patient_id": "15254",
+      "image_id": "00015254_002.png",
+      "role": "U_local",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_data\\raw\\nih_cxr14_pa_k10_plus_census_v1\\images\\00015254_002.png",
+      "sha256": "e103d3f417e290d219dc7e6cd6c086969a27c6547bbc945c6876a2e5be7f688b",
+      "cap_rank": "3"
+    }
+  ],
+  "role_semantics": "E/U denote used/unused roles in a proposed local update. No membership-performance result; base pretraining membership remains unknown."
+}

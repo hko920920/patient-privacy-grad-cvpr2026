@@ -1,0 +1,1126 @@
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage[submission]{aaai2027} % DO NOT CHANGE THIS
+\usepackage[hyphens]{url} % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm} % DO NOT CHANGE THIS
+\usepackage{natbib} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{seqsplit}
+\frenchspacing % DO NOT CHANGE THIS
+
+\newcommand{\Direct}{\textsc{Direct}}
+\newcommand{\Convert}{\textsc{Convert}}
+\newcommand{\Group}{\textsc{Group}}
+\newcommand{\Under}{\textsc{Underspecified}}
+\newcommand{\Allowed}{\textsc{Allowed}}
+\newcommand{\Blocked}{\textsc{Blocked}}
+\newcommand{\ke}{\kappa_{\mathrm{event}}}
+\newcommand{\ko}{\kappa_{\mathrm{owner}}}
+\newcommand{\epsK}{\varepsilon_K}
+\newcommand{\delK}{\delta_K}
+\input{supplement_v5_generated/v5_macros.tex}
+
+\pdfinfo{
+/TemplateVersion (2027.1)
+/Title (Supplementary Material: Post-Execution Evidence-Bound Validation of Privacy-Unit Claims in Windowed DP-SGD)
+}
+
+\setcounter{secnumdepth}{2}
+
+\title{Supplementary Material: Post-Execution Evidence-Bound Validation of Privacy-Unit Claims in Windowed DP-SGD}
+
+\author{Anonymous Submission}
+\affiliations{}
+
+\begin{document}
+
+\maketitle
+
+\section{Scope, Authority, and Reading Guide}
+\label{sec:supp-scope}
+
+This supplementary material supports the main paper without expanding its claim authority.
+Here DP denotes differential privacy and DP-SGD denotes differentially private
+stochastic gradient descent.
+The main paper contains the contribution, essential proposition, primary
+results, limitations, and closest-work boundary.  This document gives
+the longer proof, executable contract, complete coverage/operator matrices
+with machine-readable case lineage, retrospective lineage, both executed
+routes, all mapping policies, and the exact reproduction surface.  A number appearing here is a
+privacy result only when an executed mechanism, runtime, registered
+accountant, transformation proof, and requested wording are all bound.  The
+Sepsis and Backblaze sections intentionally stop at mapping diagnostics.
+
+The primary object is the post-execution decision
+$V_{\mathcal R}(E,q)$: whether frozen evidence $E$ licenses the requested
+sentence $q$ under finite registered semantics $\mathcal R$.  The group
+conversion is one rule inside that decision, not a new theorem; the output is
+neither a new accountant, a design-time mechanism compiler, nor a proof of
+arbitrary source code.  Lemma~1 and five fixed deletion witnesses establish
+only query and information necessity on this restricted contract; they do not
+establish universal minimality or that prior audit engines cannot host the
+same rules.
+
+The implementation calls its JavaScript Object Notation (JSON) and Markdown
+outputs ``certificates'' in a
+few historical filenames.  Scientifically, the public object is a
+\emph{non-cryptographic claim-validation report}: hashes expose accidental
+inconsistency and staleness, but they do not prove that an evidence producer
+disclosed every dependency or executed the described code.
+
+For direct navigation from the main paper,
+Section~\ref{sec:supp-formal} gives the detailed formal development;
+Section~\ref{sec:supp-validator} specifies the typed contract, decision
+procedure, and non-attestation boundary; and
+Section~\ref{sec:supp-evaluation} expands every evaluation family.
+Section~\ref{sec:supp-repro} gives the environment, artifact surface, and exact
+commands.  Section~\ref{sec:supp-closest-work} contains the full closest-work
+dimension matrix, while the generated one-column tables in
+Section~\ref{sec:supp-complete-tables} provide the complete case, operator,
+policy, truth-table, and provenance records.  The final
+Section~\ref{sec:supp-limitations} restates the authority limits.  Generated
+tables come directly from frozen JSON, comma-separated values (CSV), and
+normative Markdown sources; a
+provenance manifest hashes both their inputs and outputs.
+
+\section{Formal Model and Detailed Proof}
+\label{sec:supp-formal}
+
+\subsection{Raw and Generated Adjacency}
+
+Let $\mathcal{D}_R$ be the raw-data domain and let $d_R$ be the shortest-path
+metric induced by the requested raw adjacency.  A raw neighboring pair
+satisfies $d_R(D,D')=1$.  Let a deterministic transformation
+$T:\mathcal{D}_R\rightarrow\mathcal{D}_G$ construct the generated records
+consumed by a randomized mechanism $\mathcal{M}$.  The generated metric $d_G$
+is likewise the shortest-path metric induced by the accountant adjacency.
+For example, an add/remove accountant has distance one when one generated
+record is inserted or deleted.
+
+For a generated record $w$, the exported mapping gives its stable identity,
+raw-event support $S(w)$, and owner-attribution set $A(w)$.  On a selected
+mapping, define
+\[
+\begin{aligned}
+  n_e(e)&=\left|\{w:e\in S(w)\}\right|,
+  &\ke&=\max_e n_e(e),\\
+  n_o(u)&=\left|\{w:u\in A(w)\}\right|,
+  &\ko&=\max_u n_o(u).
+\end{aligned}
+\]
+They summarize one materialized mapping.  A valid stability value instead
+upper-bounds
+\[
+  K^\star=\sup_{d_R(D,D')=1}d_G\!\left(T(D),T(D')\right).
+\]
+Equality between an observed incidence and $K^\star$ requires a registered
+argument covering identities, selection, preprocessing, population,
+schedule, and every private branch.  The validator never infers that equality
+from the scalar incidence alone.
+
+\subsection{Contract-Relative Consequence}
+
+\paragraph{Proposition 1 (expanded).}
+Fix a requested raw unit, $d_R$, and a positive integer $K$.  Assume:
+\begin{enumerate}
+\item the supplied evidence faithfully describes a deterministic
+  transformation $T$ and the executed randomized mechanism $\mathcal{M}$;
+\item a registered checker establishes
+  $d_G(T(D),T(D'))\leq K$ for every pair with $d_R(D,D')=1$; and
+\item a registered accountant establishes that the bound execution of
+  $\mathcal{M}$ is $(\varepsilon,\delta)$-DP for generated distance one under
+  $d_G$.
+\end{enumerate}
+Then $\mathcal{M}\circ T$ is $(\epsK,\delK)$-DP for the requested raw
+adjacency, where
+\begin{equation}
+  \epsK=K\varepsilon,\qquad
+  \delK=\delta\sum_{i=0}^{K-1}\exp(i\varepsilon).
+  \label{eq:supp-group}
+\end{equation}
+If $K=1$ and the requested and accounted unit, adjacency, and mechanism metric
+coincide, the base pair may be reported on the \Direct{} path.
+
+\paragraph{Proof.}
+Take arbitrary $D,D'$ with $d_R(D,D')=1$.  By assumption 2 and the definition
+of a shortest-path metric, there is a sequence
+\[
+  G_0=T(D),G_1,\ldots,G_m=T(D'),\qquad m\leq K,
+\]
+where every consecutive pair is generated-adjacent.  For a measurable output
+event $\mathcal{O}$, apply assumption 3 repeatedly:
+\begin{align*}
+\Pr[\mathcal{M}(G_0)\in\mathcal{O}]
+&\leq e^\varepsilon\Pr[\mathcal{M}(G_1)\in\mathcal{O}]+\delta\\
+&\leq e^{2\varepsilon}\Pr[\mathcal{M}(G_2)\in\mathcal{O}]
+      +\delta(1+e^\varepsilon)\\
+&\ \ \vdots\\
+&\leq e^{m\varepsilon}\Pr[\mathcal{M}(G_m)\in\mathcal{O}]
+      +\delta\sum_{i=0}^{m-1}e^{i\varepsilon}.
+\end{align*}
+Both terms are monotone in $m$ for $\varepsilon,\delta\geq0$, so replacing
+$m$ by $K$ yields Equation~\eqref{eq:supp-group}.  Repeating the argument in
+the reverse direction gives the symmetric neighboring relation required by
+DP.  Finally, assumption 1 identifies the released random variable with
+$\mathcal{M}(T(D))$. \hfill$\square$
+
+The proposition is deliberately conditional.  It is the standard group
+consequence of a verified path, not a new group-privacy theorem and not proof
+that evidence bytes are truthful.  The validator's contribution is deciding
+whether a concrete bundle establishes all three premises for one requested
+sentence.
+
+\subsection{Query Separation}
+
+\paragraph{Lemma 1 (expanded).}
+Fix registry $\mathcal R$ and evidence $E$.  If
+\[
+V_{\mathcal R}(E,q_1)\ne V_{\mathcal R}(E,q_2),
+\]
+then no query-oblivious map $A(E)$ is exact and query-responsive on both
+requests.
+
+\paragraph{Proof.}
+Because the evidence input to $A$ is identical for $q_1$ and $q_2$, a
+deterministic $A$ returns one common tuple.  That tuple cannot equal two
+distinct licensed results.  For randomized $A$, exactness requires its output
+law to be a point mass at each licensed result, but the query-oblivious input
+induces the same law for both requests; two distinct point masses cannot be
+equal.  A common positive tuple is therefore wrong for at least one query,
+while common abstention loses any allowed query. \hfill$\square$
+
+The lemma does not say that a generic audit or policy engine cannot accept
+$q$.  Such an engine can implement $V_{\mathcal R}$.  It says that $q$ cannot
+be removed from an exact interface when the requested adjacency changes the
+licensed tuple.  The fixed Wireless Sensor Data Mining (WISDM) evidence
+provides a concrete witness:
+window yields \Direct{}/\Allowed{}/$K=1$, event yields
+\Convert{}/\Allowed{}/$K=4$, and owner yields
+\Group{}/\textsc{Blocked-Vacuous}/$K=600$.
+
+\subsection{Why Fixed-Slot Replacement Costs a Factor of Two}
+
+\paragraph{Corollary 1 (replacement to add/remove).}
+Suppose the raw adjacency replaces the value in one fixed event slot, the
+generated record identities are fixed independently of that value, and the
+registered local transformation checker establishes that at most $\ke$
+generated slots can change.  If $d_G$ is generated-record add/remove distance,
+then
+\[
+  d_G(T(D),T(D'))\leq 2\ke.
+\]
+Thus $K=2\ke$ is a valid candidate bound under these premises.
+
+\paragraph{Proof.}
+For every affected stable identity, changing the generated record value is a
+replacement in the generated multiset.  A replacement can be realized by
+removing the old record and adding the new record, hence has add/remove
+distance at most two.  At most $\ke$ identities are affected, so concatenating
+these paths costs at most $2\ke$. \hfill$\square$
+
+The result explains the central non-overlap pitfall: $\ke=1$ implies candidate
+$K=2$, not \Direct{}, for the stated replace-one/add-remove metric pair.
+Non-overlap removes repeated incidence but does not align the two adjacency
+metrics.  A same-number event statement would require an exactly matched
+metric, a native event mechanism, or another registered derivation.
+
+The premises are as important as the arithmetic.  If labels choose which
+windows survive, global normalization changes every record, validation loss
+changes the schedule, or a replacement changes record identities, observed
+$\ke$ does not bound the resulting transformation.  Such a bundle is blocked
+before numerical conversion.
+
+\subsection{Owner Routes Are Adjacency-Specific}
+
+For a fixed owner-partitioned mapping and raw \emph{owner add/remove}
+adjacency, removing one owner deletes at most $\ko$ generated records, so the
+candidate generated add/remove distance is $K=\ko$.  This is the WISDM owner
+route.  It is distinct from fixed-slot event replace-one, where the factor two
+applies.  If the owner query itself is replace-one, if records have multiple
+owners, or if removing one owner changes other owners' selected records, the
+built-in owner-partition checker is inapplicable; a registered relational
+analysis is required.
+
+\subsection{Stable Numerics and the Vacuity Gate}
+
+For $\varepsilon>0$, Equation~\eqref{eq:supp-group} can be written as
+\[
+  \delK
+  =\delta\frac{\exp(K\varepsilon)-1}{\exp(\varepsilon)-1}.
+\]
+Direct evaluation overflows for large $K$.  The implementation therefore
+computes
+\[
+  \log\delK
+  =\log\delta+
+   \operatorname{logexpm1}(K\varepsilon)
+   -\operatorname{logexpm1}(\varepsilon),
+  \label{eq:supp-logdelta}
+\]
+with the exact $\varepsilon=0$ limit $\delK=K\delta$.  A converted pair is
+public only when both values are finite, $\epsK\geq0$, and
+$0<\delK<1$.  If $\delK\geq1$, the route and diagnostic may be retained
+internally but the release status is \textsc{Blocked-Vacuous}, the public
+epsilon/delta fields are absent, and no positive sentence is emitted.
+
+For the WISDM owner query, observed incidence 565 only verifies compliance
+with the precommitted public cap $K=600$.  The conversion therefore gives
+diagnostic $\epsK=322.096434700$ and
+$\log_{10}\delK=134.033097$.  This is far beyond the reportable domain.
+Clamping the displayed delta to one is not a privacy result; it is only a
+serialization guard accompanying a blocked decision.
+
+\section{Evidence-Bound Validator}
+\label{sec:supp-validator}
+
+\subsection{Typed Input and Output Contract}
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.15\textwidth}p{0.38\textwidth}p{0.39\textwidth}}
+\toprule
+Component & Required evidence & Why it is decision-relevant \\
+\midrule
+Query contract &
+Claimed raw unit, raw adjacency, requested assurance, conversion id, and
+candidate public wording &
+Determines the statement being licensed; a model has no context-free epsilon.\\
+Actual mapping &
+Scenario, stable generated id and unit, half-open support, complete owner
+attribution, full-file hash, canonical selected hash &
+Recomputes counts and incidence and prevents a summary from standing in for
+the consumed records.\\
+Pipeline manifest &
+Dataset/split, identity policy, preprocessing, contribution and population
+rules, schedule, model selection, influence completeness, code and parameter
+digests &
+Exposes dependencies that can change more records than the observed support
+suggests.\\
+Mechanism declaration &
+Sampling, clipping, noising and accounting units; sampler law, sample rate,
+steps, noise, clipping, adjacency, mechanism/accountant ids and versions &
+Defines the base DP statement that may be transported.\\
+Runtime trace &
+Observed mechanism fields, selected mapping and pipeline digests, update and
+batch trace, released-model digest, secure-mode and randomness evidence &
+Checks equality between the declaration and the concrete run.\\
+Public report &
+Path, release and assurance status, validated $K$, base/reported pair,
+assumptions, issues, supported sentence, forbidden wording, recertification
+triggers &
+Separates diagnostics from copy-ready wording and makes abstention explicit.\\
+\bottomrule
+\end{tabular}
+\caption{Contract surfaces checked together.  Populating one component cannot
+repair a contradiction in another.}
+\label{tab:supp-contract-fields}
+\end{table*}
+
+The mapping uses stable generated identities and a declared generated unit.
+For interval supports, the current registered representation is half-open
+integer intervals.  Attribution arity is checked explicitly.  A canonical
+selected hash normalizes owner sets and row order for semantic comparison,
+while the full-file hash detects every byte change.  These hashes serve
+different purposes and neither proves execution.
+
+\subsection{Decision Procedure}
+
+\begin{algorithm}[t]
+\caption{Evidence-to-wording validation for one query}
+\label{alg:supp-validator}
+\begin{algorithmic}[1]
+\REQUIRE report $R$, audit row $A$, mapping file $M$, query $Q$
+\STATE Parse with JSON Schema and stricter domain checks.
+\IF{types, finite-value domains, units, or required fields are invalid}
+  \RETURN \textsc{Blocked-Invalid} without positive wording
+\ENDIF
+\STATE Reopen $M$; recompute full/selected hashes, row count, unit,
+identities, intervals, attribution, $\ke$, and $\ko$.
+\STATE Compare recomputed values with $A$, $R$, and all bound artifacts.
+\STATE Validate influence completeness, identity, preprocessing, population,
+contribution, schedule, selection, and model-selection declarations.
+\STATE Match the runtime trace to mapping/pipeline digests and every executed
+sampler, clipping, noise, unit, accountant, and secure-mode field.
+\STATE Resolve mechanism and accountant ids in the versioned registry;
+recompute the base pair.
+\STATE Resolve the requested unit route and registered stability method;
+derive $K$ in the accountant metric.
+\STATE Recompute $(\epsK,\delK)$ when conversion is required.
+\STATE Apply issue precedence, assurance rules, and the vacuity gate.
+\STATE Redact operational metadata without changing the decision.
+\RETURN typed public report; emit supported wording iff release is
+\textsc{Allowed}.
+\end{algorithmic}
+\end{algorithm}
+
+Schema validation is necessary but insufficient.  The implementation rejects
+Boolean values in integer fields, non-finite JSON numbers, probabilities
+outside their domains, and strings that pass a loose structural schema but
+not a registered semantic domain.  It then reopens the mapping rather than
+trusting $\ke$, $\ko$, counts, or digests copied into the report.
+
+Private dependencies are fail-closed.  Record-local preprocessing with public
+parameters is compatible with the built-in path.  Private global statistics,
+label-dependent selection, adaptive schedules, and uncovered model selection
+must be public, separately accounted through a registered graph, or covered by
+a registered worst-case bound.  An observed branch or a user-supplied
+``union'' label is not such a bound.
+
+The positive-path registry shared by the complete routes contains Opacus
+1.6.0 R\'enyi differential privacy (RDP) semantics with Poisson add/remove
+adjacency and the exact
+\path{secure_systemrandom_dpsgd@2.0.0} mechanism.  It binds rational
+Bernoulli sampling, the \path{python.secrets.SystemRandom} backend,
+discarded-first four-draw Gaussian generation, clipped-gradient sum plus
+noise, and a public constant optimizer step with no dataset-size denominator.
+The pipeline source and dependency-light accountant checker are separately
+hash-bound.  This configuration is labeled
+\texttt{known\_attack\_hardened\_secure}: it mitigates a named
+floating-point reconstruction class but does not prove
+side-channel resistance or faithful execution.  Unknown adapters are
+default-deny, and missing runtime observation is
+\textsc{Blocked-Unverified} for a concrete-run claim.  A research pseudorandom
+number generator (PRNG) preserves numerical diagnostics but produces
+\textsc{Research-Only}.
+
+\subsection{Status Product and Precedence}
+
+The result is a product rather than one Boolean:
+\[
+  (\text{unit path},\text{release},\text{assurance},
+    K,\varepsilon',\delta',\text{issues},\text{wording}).
+\]
+The unit path is \Direct{}, \Convert{}, \Group{}, or \Under{}.  The release
+status is \Allowed{}, \textsc{Blocked-Invalid},
+\textsc{Blocked-Unverified}, \textsc{Blocked-Vacuous}, or
+\textsc{Research-Only}.  Assurance is exactly
+\texttt{EVIDENCE\_VALIDATED}, \texttt{EXTERNAL\_UNVERIFIED}, or
+\texttt{DIAGNOSTIC\_ONLY}.  The first means that every observable registered
+obligation, including a content-bound runtime trace, passes; it remains
+conditional on evidence fidelity and is not an attestation label.
+
+When several issues apply, the implemented precedence is
+\[
+\begin{array}{c}
+\textsc{Blocked-Invalid}>\textsc{Blocked-Unverified}\\
+{}>\textsc{Blocked-Vacuous}>\textsc{Research-Only}>\textsc{Allowed}.
+\end{array}
+\]
+An external attachment cannot override an unrelated runtime or mapping
+failure.  A blocked internal result may retain diagnostics, but the public
+view has an empty supported sentence and an explicit ``do not say'' field.
+Redaction can remove private provenance; it cannot improve release or
+assurance status.
+
+\subsection{Artifact Invalidation and Complexity}
+
+Changing any decision-relevant edge invalidates the old report.  Triggers
+include mapping bytes or scenario, selected identities, preprocessing,
+population or schedule, contribution policy, mechanism or accountant version,
+runtime parameters, requested unit or adjacency, and conversion method.  A
+fresh public view is produced from the same internal decision; it is not
+independently editable.
+
+Let $B$ be mapping bytes, $R$ all rows, $S$ selected rows, $A$ all
+owner-attribution entries, and $P\leq2A$ interval endpoints.  The materializing
+implementation hashes in $O(B)$, parses and validates in $O(R+A)$,
+canonicalizes the selected mapping in $O(S\log S)$, computes owner incidence
+in $O(A)$, and computes exact event incidence by per-owner endpoint sweeps in
+$O(P\log P)$ worst case.  Memory is $O(R+A)$.  Registered accountant cost is
+additional.  The Backblaze artifact uses a specialized aggregate rescan and
+is never passed off as a FULL validation report.
+
+\subsection{Threat Model and Bundle-Only Limit}
+
+The validator targets an honest-but-fallible producer: stale exports,
+accidental omissions, mismatched configurations, unjustified unit
+restatement, and copy errors.
+
+\paragraph{Proposition 2 (unauthenticated bundle indistinguishability).}
+Let $A$ be any deterministic or randomized validator whose entire observation
+is a self-reported evidence bundle $E$, query $q$, and registry $\mathcal R$.
+Let $w_f$ be a world in which $E$ faithfully describes the transformation and
+execution, and let $w_c$ be a world in which a producer copies the same
+observable tuple $(E,q,\mathcal R)$ but executes different code, executes
+nothing, or hides a dependency.  Then
+\[
+  \mathsf{Law}\!\left(A(E,q,\mathcal R)\mid w_f\right)
+  =
+  \mathsf{Law}\!\left(A(E,q,\mathcal R)\mid w_c\right).
+\]
+Consequently, no bundle-only validator can establish evidence fidelity or
+distinguish these two worlds.
+
+\paragraph{Proof.}
+Conditioned on either world, $A$ receives the same bit strings and registry.
+A deterministic $A$ therefore returns the same value.  For randomized $A$,
+couple its internal coins identically; its outputs are equal for every coin
+sequence, hence their distributions are equal. \hfill$\square$
+
+Proposition~2 is a boundary result, not a claimed cryptographic contribution.
+The implementation can expose inconsistent, incomplete, or stale artifacts,
+but a mutually consistent fabrication remains outside its threat model.
+Accordingly, \texttt{EVIDENCE\_VALIDATED} denotes observable-contract
+validation conditional on faithful evidence, never execution attestation.
+Authenticated runtime observation, trusted hardware, formal program
+verification, or cryptographic execution proofs add information that breaks
+the proposition's identical-observation premise and address stronger threats
+\citep{zhang2017lightdp,wang2019shadowdp,wang2020checkdp,shamsabadi2024confidential}.
+
+\section{Evaluation Protocol and Expanded Results}
+\label{sec:supp-evaluation}
+
+\subsection{Frozen Oracle and Shared Inputs}
+
+The designed conformance study contains 100 allowed and 100 paired non-allow
+cases.  Allowed cases cross five registered path strata, five boundary/scale
+levels, and four mapping-evidence contexts.  The contexts use canonical or
+irregular half-open supports, add non-selected decoy rows, or permute file
+order while preserving selected semantics.  Twenty-five frozen semantic
+mutation operators each consume four distinct allowed parents, so every
+allowed parent is used once.  Expected tuples come from the frozen operator
+catalog and 37-row normative table rather than FULL output.  Every case stores
+its path, release/assurance statuses, primary issue, numerical rule, direct
+mutation, derived rebinding, and parent.  This localizes omitted obligations;
+it does not estimate the frequency of mistakes in published work.
+
+Within each case, every controlled probe receives the same report, audit row,
+mapping, and requested claim.  A \emph{non-allow positive} is \Allowed{} on one of the 100 non-allow
+cases.  \emph{Valid exact} requires the correct path and numerical pair on an
+allowed case.  \emph{Exact tuple} additionally requires assurance, blocked
+subtype, and the correct presence or absence of numbers.  \emph{Wrong
+same-number} records a converted allowed case that incorrectly reuses the base
+pair.  Main-table fractions divide these counts by 100 allowed, 100 non-allow,
+or all 200 cases as appropriate; they are deterministic coverage outcomes,
+not statistical estimates.
+
+The probes are required-field presence (B0), JSON Schema (B1),
+multiplicity-only (B2), mapping-hash binding (B3), registered base-accountant
+recomputation (B4), runtime evidence assumed matched to the current static
+report (A1), FULL without the vacuity gate (A2), and FULL.  A1 does not repair
+mapping, schema, mechanism, accountant, or other static premises.  These are
+nested obligation probes, not claims that any one scalar check was designed
+as a complete validator.  They are information/capability projections, not
+implementations or approximations of National Institute of Standards and
+Technology (NIST) validation, estimate-verify-release (EVR), Audit-as-Code, or
+public-audit federated learning (FL).
+
+\subsection{Fixed Information-Necessity Witnesses}
+
+Aggregate ablation scores are accompanied by five witnesses fixed before
+construction.  Each compares authenticated inputs while deleting one
+information edge or release obligation.
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.08\textwidth}p{0.25\textwidth}p{0.27\textwidth}p{0.30\textwidth}}
+\toprule
+ID & Fixed comparison & Deleted or hidden edge & Required distinction \\
+\midrule
+W1 & \texttt{P01} vs.\ \texttt{F02} & Actual mapping bytes; report, audit row, and $q$ equal & \Allowed{} vs.\ \textsc{Blocked-Invalid} \\
+W2 & \texttt{P02} vs.\ \texttt{F16} & Stability status; all other fixed view fields equal & \Convert{}/\Allowed{} vs.\ \textsc{Blocked-Unverified} \\
+W3 & \texttt{P01} vs.\ \texttt{F05} & Runtime noise and trace equality & \Direct{}/\Allowed{} vs.\ \textsc{Blocked-Invalid} \\
+W4 & \texttt{F01}, A2 vs.\ FULL & Vacuity/reportability gate & Unsafe owner positive vs.\ typed vacuous block \\
+W5 & WISDM event certificate & Exact licensed sentence replaced by valid window sentence & Independent wording verifier rejects \\
+\bottomrule
+\end{tabular}
+\caption{Fixed edge-deletion witnesses.  Equalities and decisions are
+recomputed from source artifacts; these are restricted necessity witnesses,
+not predecessor replicas or real-world error rates.}
+\label{tab:supp-necessity-witnesses}
+\end{table*}
+
+The retained builder authenticates the legacy 31-case oracle, predictions,
+WISDM certificates, protocols, and verifiers used by the fixed witnesses.  A separate
+implementation imports neither the production validator nor witness builder
+and recomputes all fixed equalities, numerical rules, three same-$E$ tuples,
+and W5 mutation.  It passes 10/10 checks; two tamper regressions reject a
+changed witness total and a sentence substitution.  The result establishes
+that these projections lose distinctions required on the fixed contract and
+inputs.  It does not prove that every possible validator needs the same file
+layout, that the obligation set is universally minimal, or that failures are
+prevalent.
+
+\subsection{Retrospective Development-Failure Lineage}
+
+Before construction, a hash-frozen protocol fixed the inclusion rule and ten
+root causes.  An incident had to predate the protocol, affect claim-bearing
+output, remain byte-observable in a preserved source/report/archive, and have
+a pre-protocol discovery record; newly authored mutations were ineligible.
+For each incident the lineage binds the historical source or ZIP member,
+discovery anchor, consequence, repaired-control source, and current status.
+A production-import-free verifier reopens every file and archive member,
+authenticates all discovery anchors and 16 repaired controls, and passes
+\AuditRetrospectiveCheckCount/\AuditRetrospectiveCheckCount{} checks.  Three
+tamper tests accept the frozen lineage and reject an omitted incident and a
+forged archive identity.
+
+This evidence addresses dependence on newly authored mutations by adding
+actual preserved failures, but only from this system's development lineage.
+It is not an independently sampled paper corpus, does not estimate
+prevalence, and does not establish that the ten categories are complete.
+
+\subsection{External Scalar-Statement Scope Comparison}
+
+B5 executes TensorFlow Privacy 0.9.0's official
+\path{compute_dp_sgd_privacy_statement} implementation
+\citep{tensorflowprivacystatement}.  The environment pins
+\texttt{dp-accounting==0.4.3} \citep{dpaccounting043} and hashes the loaded official module.  The
+function correctly generates a conditional statement from caller-supplied
+scalars; it does not authenticate an arbitrary mapping, pipeline, or runtime.
+Accordingly, ``unvalidated positive'' means only that substituting this scalar
+statement generator for the evidence validator leaves an external-bundle
+contradiction undetected.
+
+This 23-case scalar-compatible comparison is separate from the 200-case
+controlled-probe table.  It has a different input contract and numerical
+convention, so it is not assigned an exact-tuple rank against FULL; its
+15/16 ``unvalidated positive'' count is not an error rate.
+
+The comparison preserves the official function's own numerical convention.
+For group statements it can solve for a smaller example-level delta and
+freshly target user-level delta.  Those values are not required to equal
+Equation~\eqref{eq:supp-group} applied to the fixed base pair.  In the frozen
+owner-vacuity case, this yields a finite conditional alternative; FULL would
+need a registered, execution-bound adapter for that alternative before
+licensing it.
+
+\subsection{Complete WISDM Execution}
+
+The WISDM pipeline uses the public WISDM v1.1 raw accelerometer file
+\citep{kwapisz2011activity}.  A public sorted-owner split assigns owners
+1--25 to training and 26--36 to testing.  It creates length-200 windows at
+stride 100, yielding 7,304 training and 3,506 test records.  All transforms
+are record-local with public parameters: sensor values are clipped to
+$[-20,20]$ and scaled, each axis and magnitude receive mean, standard
+deviation, minimum, and maximum features, and the label is the within-window
+majority activity with a lexical tie break.  The split, activity map, feature
+list, schedule, mapping, and code parameters are digest-bound.
+
+The public parser reads 1,098,210 physical lines and defines the neighbor
+domain as its 1,086,465 canonical valid events; 11,744 lines have an invalid
+column count and one fails numeric parsing.  Owner identity, owner-local event
+slot, and event presence are fixed, while only the event payload is
+replaceable.  A public deterministic owner-prefix policy caps generated
+training records at 600; the observed maximum after enforcement is 565.
+
+The model is a softmax-regression integration baseline.  Training uses exact
+Poisson sampling probability $q=1/50$, 100 updates, window clipping norm
+$1$, Gaussian noise multiplier $2$, and private sampling/noise draws from
+\texttt{secrets.SystemRandom}.  Gaussian generation discards the first full
+draw and sums four subsequent draws divided by two.  The noisy clipped-gradient
+sum is multiplied by public optimizer step $1/150$; there is no private
+dataset-size or realized-batch denominator.  The runtime trace records exactly
+100 updates, code and checker hashes, batch-trace and released-model hashes,
+all mechanism parameters, selected mapping and pipeline hashes, and the
+randomness backend.  Registered Opacus 1.6.0 RDP semantics
+\citep{yousefpour2021opacus}
+at $\delta=10^{-6}$ give base
+$\varepsilon=0.5368273911667286$.  Test accuracy $0.667427$ and macro-F1
+$0.404258$ are integration diagnostics, not competitive utility claims.
+
+All three queries reopen the same mapping.  The window claim aligns unit and
+add/remove adjacency, so $K=1$ and the base pair is \Direct{}.  The event
+mapping has $\ke=2$; fixed-slot raw replace-one against generated add/remove
+gives $K=4$, hence
+$(2.1473095646669145,1.0641849375406323\times10^{-5})$ through
+\Convert{}.  The owner add/remove query has observed $\ko=565$ but uses the
+public stability cap $K=600$ and is blocked as vacuous.  The selected-mapping
+and pipeline hashes are identical across the three requests, which isolates
+query semantics from execution variation.
+
+\subsection{Fresh-Randomness Robustness and Measured Cost}
+
+A protocol was hash-frozen before five confirmatory executions; an earlier
+feasibility pilot was explicitly excluded.  Every run used the same public
+configuration with fresh \texttt{SystemRandom} draws, and no run was selected
+or replaced by utility.  All five pass 38/38 production-import-free checks with raw-input
+reconstruction, yield five distinct released-model digests, and preserve the
+window \Direct{}/\Allowed{}/$K=1$, event
+\Convert{}/\Allowed{}/$K=4$, and owner
+\Group{}/\textsc{Blocked-Vacuous}/$K=600$ outcomes.  Test accuracy is
+$0.655619\pm0.008026$ (range $0.644039$--$0.661723$), macro-F1 is
+$0.392189\pm0.003320$ (range $0.387416$--$0.394987$), and train accuracy is
+$0.728122\pm0.002157$ (mean $\pm$ sample standard deviation (SD)).  This tests stochastic
+robustness of one registered route, not cross-dataset generality.
+
+On the environment below, the complete pipeline---raw parsing, mapping,
+training, report construction, and certificates---takes
+$16.743\pm1.191$ seconds over the five runs.  The separate verifier with raw
+reconstruction takes $6.480\pm0.428$ seconds.  Five additional, predeclared
+portable invocations take $1.577\pm0.125$ seconds and pass 35/35 each; they
+omit only the three raw-input reconstruction checks.  A complete generated
+run directory averages 0.996\,MB.  The portable verifier consumes 11
+per-run JSON/CSV inputs totaling 0.863\,MB plus four shared
+schema/registry/source/checker files totaling 64.8\,kB.  The separately
+downloaded 50.326\,MB raw file is needed only for the full route.  Timings are
+descriptive and include new-process startup; the complete-pipeline number is
+not isolated validator overhead.
+
+\subsection{Complete Human-Activity Recognition Execution}
+
+The second route consumes the published subject-partitioned train/test feature
+matrices from the University of California, Irvine (UCI) Human Activity
+Recognition Using Smartphones (HAR) dataset
+\citep{anguita2013har,ucihar2013dataset}: 7,352 training windows,
+2,947 test windows, 561 features, six activities, 21 training owners, and
+nine test owners.  The published feature vectors are already in
+$[-1,1]$; the route applies no additional fitted normalization.  It registers
+a separate pipeline source and exact mechanism entry, then binds all eight
+input files, the regenerated train mapping, exact-rational $q=1/50$, 100
+updates, clipping norm 1, noise multiplier 2, the discarded plus four-draw
+\texttt{SystemRandom} construction, public optimizer step $1/200$, runtime
+trace, batch trace, released model, report, and public/internal certificates.
+Separate \texttt{dp-accounting} recomputation \citep{dpaccounting} gives
+$(0.536827391167,10^{-6})$ for one published generated window under
+add/remove adjacency.
+
+The source release does not provide an exact raw-session-to-published-window
+support relation suitable for the requested event replacement, and the route
+registers no public owner contribution cap.  It therefore licenses
+\Direct{} window wording at $K=1$ while event and owner requests remain
+\textsc{Blocked-Unverified}/\Under{} with no positive sentence.
+
+\input{supplement_v5_generated/uci_decisions.tex}
+
+One complete development pilot is disclosed and chronologically excluded.
+After pipeline, registry, verifier, and protocol freeze, exactly five
+fresh-randomness confirmatory executions were run in fixed order and all were
+retained.  Each passes \AuditUciFullCheckCount/\AuditUciFullCheckCount{}
+full checks that reopen all eight UCI files and
+\AuditUciPortableCheckCount/\AuditUciPortableCheckCount{} portable checks;
+all five model hashes differ and the decision tuple is invariant.
+
+\input{supplement_v5_generated/uci_confirmatory_runs.tex}
+
+Across the five runs, test accuracy is
+$\AuditUciAccuracyMean\pm\AuditUciAccuracySD$, macro-F1 is
+$\AuditUciMacroFOneMean\pm\AuditUciMacroFOneSD$, and complete pipeline time
+is $\AuditUciPipelineMean\pm\AuditUciPipelineSD$ seconds (mean $\pm$ sample
+SD).  These are descriptive integration diagnostics.  The second dataset
+reduces WISDM concentration, but the route uses the same
+Poisson--Gaussian accountant/mechanism family and does not establish
+cross-mechanism generality.
+
+\subsection{Sepsis Mapping Diagnostic}
+
+The Sepsis artifact opens and hashes 5,000 PhysioNet/CinC 2019 patient files,
+containing 192,206 hourly rows
+\citep{reyna2020sepsis,physionet2019sepsis,pollard2026physionet,goldberger2000physionet}.  Six-, twelve-, and
+twenty-four-hour policies cover dense, half-stride, and non-overlap schedules.
+Public owner-local prefix caps of 1, 4, 8, and 16 are included.  Three
+label-balanced caps are negative controls: they can reproduce the same
+observed counts as public prefix caps while selecting identities using private
+labels.
+
+For fixed positional and public prefix policies, the table reports candidate
+event stability $K_e=2\ke$ under fixed-slot raw replace-one and generated
+add/remove distance.  Label-balanced rows deliberately have no licensed
+$K_e$.  The production-import-free verifier reconstructs every mapping row from
+the hashed inputs.  No executed DP mechanism, runtime, or registered
+accountant is attached, so no policy contains epsilon, delta, or a privacy
+verdict.
+
+\subsection{Backblaze Mapping Diagnostic}
+
+The Backblaze artifact rescans the public Q1 2025 drive-statistics archive
+\citep{backblaze_drivestats}: 90 daily files, 27,799,986 rows, 27,799,986
+unique serial/date events, 318,426 drives, and no duplicate serial/date pair.
+The study distinguishes \emph{ordered-snapshot} windows, which advance over
+available observations and compress calendar gaps, from
+\emph{calendar-contiguous} windows, which restart after a missing day.  It
+also evaluates public owner-prefix caps.
+
+The distinction changes selected identities and counts even when displayed
+incidence matches.  For example, dense seven-day policies yield 25,904,370
+ordered-snapshot windows and 25,867,949 calendar-contiguous windows, a
+difference of 36,421.  Candidate event distance is again $2\ke$ under the
+stated fixed-slot/add-remove metric pair.  As with Sepsis, the absence of a
+bound mechanism and accountant makes all 22 rows mapping-only diagnostics.
+
+\subsection{Externally Authored ExtraSensory Intake and Execution}
+
+The executable intake fixes the public
+\texttt{jatanloya/extrasensory-dp} repository at commit
+\texttt{\seqsplit{167e0a899cb73c6e20398e8af886517cc9357c3e}} and tree
+\texttt{\seqsplit{1106aa01d2f8806e72d4f99f5fc60814b3fdc9c7}}
+\citep{extrasensorydp,vaizman2017extrasensory}.  The source, model, five epochs, split, target labels,
+target $(0.125,10^{-5})$, clipping norm, and batch size were frozen before
+execution; derived configs change only the output directory.  The source
+declares \texttt{secure\_rng=False}.  In Table~\ref{tab:supp-external-intake},
+CRLF denotes carriage-return/line-feed, DLL denotes dynamic-link library, and
+UUID denotes universally unique identifier.
+
+\begin{center}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{clrr}
+\toprule
+Record & Terminal point & Files & Time (s) \\
+\midrule
+V12-1 & Repository-local import failure & 0 & 4.036 \\
+V12-2 & CRLF UUID path failure & 0 & 6.006 \\
+V13-1 & Cache write exhausts disk & 1 & 27.634 \\
+V14-1 & Parent DLL/page-file load failure & 0 & -- \\
+V15-1 & Seaborn--Pandas plot failure & 6 & 168.385 \\
+V16-1 & Both five-epoch phases complete & 17 & 4293.397 \\
+\bottomrule
+\end{tabular}
+\captionof{table}{All six terminal records are retained; ``Files'' counts
+source-output artifacts.  V14 fails before source invocation, and V16 is the
+only complete execution.}
+\label{tab:supp-external-intake}
+\end{center}
+
+V12-1 exposes a launch-shim path defect before data or training.  V12-2 then
+reads 48 training and 12 test UUID entries but retains CR in the first gzip
+path.  V13 reaches preprocessing before disk exhaustion leaves a partial
+cache; V14 fails in the parent Python loader before invoking external source.
+V15 completes preprocessing and all five nonprivate epochs, then fails because
+Seaborn 0.12.2 calls a Pandas option removed in 3.0.3.  Every failure and
+partial output remains byte-preserved.
+
+For V16, the target prepends an isolated Pandas 2.2.3 overlay whose exact wheel
+and 1,558-file inventory are hash-bound; it neither edits the external source
+nor mutates the shared environment.  Python 3.11.5, PyTorch 2.6.0+cu124,
+Opacus 1.6.0, NumPy 1.26.4, and an RTX 3070 execute the exact fixed source.
+The public requirements instead pin PyTorch 2.7.0 and Opacus 1.4.0 while
+leaving Pandas and Seaborn unpinned, so these deviations are disclosed rather
+than treated as exact-environment reproduction.  V16 completes preprocessing,
+five nonprivate epochs, five private epochs, evaluation, loss extraction, and
+all 17 expected output files.
+
+\begin{center}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+Route & Train loss & Train acc. & Test loss & Test acc. \\
+\midrule
+Nonprivate & 0.268047 & 0.764274 & 0.397087 & 0.647613 \\
+Private & 0.469477 & 0.662852 & 0.525199 & 0.630119 \\
+\bottomrule
+\end{tabular}
+\captionof{table}{Final V16 source-reported diagnostics.  They establish
+execution completeness, not comparative utility or privacy.}
+\label{tab:supp-external-v16-diagnostics}
+\end{center}
+
+The reconstructed arrays have 250,906 training and 52,817 test rows with 115
+features and three labels; all values and all five-entry metric series are
+finite.  Expected loss-array counts and receiver-operating-characteristic
+(ROC) endpoints are checked.  Poisson
+sampling yields 251,616 private training-loss observations, so equality to the
+dataset row count is neither asserted nor required.
+
+Training-independent reconstruction separately hashes 60 raw files
+(225,325,871 bytes) and maps 250,906 selected training examples across 47
+nonempty owners, with maximum owner contribution 9,404.  This mapping fact
+is logically separate from the successful execution.  Its retraining-free
+verifier recomputes commit/tree, bound hashes, inventory, mapping digest, owner
+counts, and the source randomness fact, passing 18/18 checks and rejecting a
+positive-claim forgery.  A separately implemented V16 verifier passes 30/30
+execution checks; a tampered copy that adds registered-claim and positive-DP
+flags is rejected without changing the live result.  A sanitized portable
+record passes 19/19 checks while excluding raw/processed data, per-sample
+arrays, checkpoints, unsanitized logs, and absolute paths.
+
+This is one author-operated execution of externally authored source, not an
+independent operator result, a registered Audit claim, or validation of the
+repository's privacy statement.  The source fixes
+\texttt{secure\_rng=False} and prints the configured target epsilon rather
+than an accountant-derived achieved epsilon.  Accordingly the terminal
+decision is execution-complete/claim-unverified and positive DP wording is
+empty.
+
+\subsection{Separately Implemented Verification}
+
+Each result family has a separate verifier that does more than check process
+exit.  It reopens inputs, recomputes hashes and exact rows, checks decision
+flags and numerical tolerances, and confirms that blocked public outputs have
+no positive sentence.  The designed conformance surface passes
+20,909/20,909 checks; its standard-library verifier owns the five-stratum and
+25-operator oracle and closes registry links to the registered pipeline and
+accountant checker.  The legacy 31-case regression remains 394/394.  Other
+verified surfaces are 10/10 for necessity witnesses, 176/176 for the
+retrospective lineage, 18/18 for the external mapping intake, 30/30 for the
+V16 execution record, 19/19 for its portable form, 79/79 for TensorFlow
+Privacy, 38/38 for the WISDM reference and every confirmatory run, 49/49 for
+each UCI run, 128/128 for Sepsis, and 86/86 for Backblaze.  The expanded
+contract regression is \AuditContractTestCount/\AuditContractTestCount.
+These counts enumerate deterministic assertions; they are not confidence
+intervals.  Separate implementations establish software separation from the
+production path, not independent case sourcing, human replication, or
+execution attestation.
+
+\input{supplement_v14_generated/verification_surface_summary.tex}
+
+\section{Reproducibility and Submission Artifact Surface}
+\label{sec:supp-repro}
+
+\subsection{Environment}
+
+The reference core run used CPython 3.11.5 on 64-bit Windows 10 Pro
+(10.0.19045), an Intel Core i7-11700 (8 cores, 16 logical processors),
+31.7\,GiB random-access memory (RAM), \texttt{torch==2.6.0},
+\texttt{jsonschema==4.25.1}, \texttt{numpy==1.26.4},
+\texttt{opacus==1.6.0}, and \texttt{dp-accounting==0.6.0}.  The core
+requirement file pins these Python dependencies.  The separate
+TensorFlow Privacy environment pins \texttt{tensorflow-privacy==0.9.0},
+\texttt{dp-accounting==0.4.3}, \texttt{numpy==1.26.4}, and
+\texttt{scipy==1.11.4}; the setup script installs the official wheel without
+ unrelated training dependencies and prints the loaded module hash.  The
+ portable verification surface below requires no graphics processing unit
+ (GPU).  The separate V16
+ external-source execution used the disclosed RTX 3070.
+
+\subsection{Fast Verification of Frozen Bundles}
+
+From the artifact root, use the following platform-neutral commands:
+\begingroup
+\scriptsize
+\begin{verbatim}
+python -m pip install -r requirements-core.txt
+python scripts/verify_package_manifest_v14.py
+python scripts/verify_frozen_artifacts_v2.py
+\end{verbatim}
+\endgroup
+The portable entry point preserves frozen inputs and writes fresh results to
+\path{reproduced_verification/}.  It runs the 91-test package regression
+(including the \AuditContractTestCount-test contract suite), the legacy and
+designed conformance verifiers, 10 necessity-witness checks, the 156-check
+package-safe retrospective route, the portable external-intake and V16
+execution checks, 35 WISDM checks, 38 checks on every UCI run plus the
+five-run aggregate, all 16 Sepsis mappings, all 22 Backblaze policies, and
+byte-identical v2/v5/v14 table regeneration.  The frozen 176/176 retrospective record
+also checks two non-redistributed source anchors; the package-safe 156-check
+route still reopens every distributed historical and repaired code source.
+Raw-source rescans whose separately downloaded inputs are absent
+are likewise omitted.  Frozen full-rescan outputs and source manifests remain
+included.
+
+\subsection{Regeneration Commands}
+
+The following platform-neutral commands rebuild the smaller result families
+into new output directories; output paths should not overwrite frozen bundles:
+\begingroup
+\scriptsize
+\begin{verbatim}
+python scripts/rebuild_audit_small_results_v2.py
+python scripts/summarize_uci_har_v5_multirun.py
+python scripts/build_audit_v5_tables.py
+\end{verbatim}
+\endgroup
+The 200-case supplementary tables are regenerated with \texttt{python}
+\path{scripts/build_validator_ablation_v3_1_supplement_tables.py}.
+The necessity-witness and external-intake directories each include a
+retraining-free verifier and exact reproduction lock; fresh verifier output
+must be directed to \path{reproduced_verification/}, not over frozen records.
+The WISDM execution uses fresh private randomness, so model and batch-trace
+hashes and utility can differ; the verifier checks internal consistency and
+the declared decision pattern rather than demanding identical random draws.
+The frozen reference bundle is used for exact base-number verification.
+The separately frozen five-run protocol uses the same single configuration
+and reports every execution; no hyperparameter sweep or utility-driven model
+selection contributes to the claims.
+
+The TensorFlow Privacy scope-comparison environment is isolated:
+\begingroup
+\scriptsize
+\begin{verbatim}
+python scripts/setup_tfprivacy_baseline.py
+python scripts/verify_frozen_artifacts_v2.py
+\end{verbatim}
+\endgroup
+Pass \texttt{--include-tfprivacy} to the second command to execute the official
+wheel comparison; the setup and verification scripts contain interpreter
+detection branches for Windows, Linux, and macOS.
+
+\subsection{What Is and Is Not Needed}
+
+The designed and legacy conformance oracles, necessity witnesses,
+retrospective lineage, controlled-probe and scope-comparison predictions, both
+executed route bundles, retained external-intake records, sanitized V16
+execution evidence, Sepsis and Backblaze summaries, separately implemented
+verifiers, schemas, requirements, and scripts are included in the anonymous code-and-data
+supplement.  Large public raw datasets and raw-derived V16 arrays, checkpoints,
+and unsanitized logs are not redistributed.  \path{DATA_AND_AUTHORITY.md}
+records authoritative acquisition URLs, hashes, and source-terms boundaries;
+\path{NOTICE.md} separates project-authored material, dependencies, and
+datasets without inventing a project license.  Frozen-number verification
+requires neither retraining nor raw downloads; recomputing the external
+mapping or execution requires the separately licensed ExtraSensory files.
+
+No nondeterministic outcome is silently dropped.  Missing runtime evidence,
+research randomness, unregistered adapters, private-dependent selection, and
+vacuous conversions remain typed negative results.  This is necessary to
+reproduce the distinction between evidence validation and scalar statement
+formatting.
+
+\paragraph{Version labels.}
+Suffixes such as \texttt{v2.0} and \texttt{\_v2} identify the frozen evidence
+contract, schema, registry, and compatible scripts.  They are protocol
+versions, not claims that the bundled results or manuscript are stale; a later
+submission-package revision deliberately retains these immutable identifiers.
+
+\subsection{Reproducibility-Criterion Notes}
+
+\begin{itemize}
+\item The paper and this supplementary material provide the conceptual algorithm,
+  Proposition~1, proof, factor-two corollary, complexity, assumptions, and
+  threat model.
+\item Source, schemas, configuration-bearing reports, exact commands, pinned
+  dependencies, and frozen outputs are included.  No external anonymous
+  repository is required for review.
+\item Every reported table row is machine-readable.  Generated supplementary
+  tables are rebuilt from those sources and carry an input/output provenance
+  manifest.
+\item The 100 allowed and 100 paired non-allow conformance records are
+  machine-readable; the complete coverage and operator--parent matrices
+  enumerate their predeclared roles.  All ten retrospective incidents retain
+  their distinct sampling authority.  Metrics, tolerances, localization, and
+  comparison scope are specified.
+\item WISDM and UCI HAR split, preprocessing, model role, hyperparameters,
+  sampling, clipping, noising, accountant, randomness assurance, run count,
+  and utility diagnostics are stated.  One complete author-operated
+  ExtraSensory source execution after five failures is separated from
+  registered-claim evidence; Sepsis and Backblaze remain mapping-only.
+\item Separate verifiers check exact rows, hashes, outputs, and forbidden
+  positive wording.  The code-and-data package gate also scans for absolute
+  paths, author identifiers, stale v1 artifacts, and unsafe legacy claims.
+\end{itemize}
+
+\onecolumn
+\section{Closest-Work Dimension Matrix}
+\label{sec:supp-closest-work}
+
+Table~\ref{tab:supp-closest-work} expands the operational comparison in the
+main paper.  The dimensions are: D1, frozen completed-run evidence; D2,
+heterogeneous artifact binding; D3, a caller-requested privacy-unit sentence
+$q$; D4, a checked mapping--mechanism--accountant consequence; D5, an explicit gate;
+D6, exact licensed requested-unit wording; D7, localized failure; and D8, an
+explicit assurance boundary.  Y denotes direct coverage, P a close analog
+without the completed-run or requested-sentence condition, and N no coverage
+for that dimension.  The coding concerns research objects and assurances, not
+overall system quality.
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lcccccccc}
+\hline
+System & D1 & D2 & D3 & D4 & D5 & D6 & D7 & D8 \\
+\hline
+NIST Technical Note 2151 validation \citep{ridgeway2021challenge} & P & Y & N & P & Y & N & P & Y \\
+EVR \citep{wang2023randomized} & N & P & N & P & Y & N & N & Y \\
+Adaptive Fuzz \citep{winogradcort2017adaptive} & N & P & N & P & Y & N & P & Y \\
+VeriDP \citep{narayan2015verifiable} & P & P & N & P & Y & N & P & Y \\
+PriAgent \citep{zhang2026priagent} & P & P & P & N & P & N & Y & P \\
+AudAgent \citep{zheng2026audagent} & P & P & P & N & Y & N & Y & P \\
+Audit-as-Code \citep{muhammad2026audit} & P & Y & P & N & Y & N & Y & Y \\
+Assurance Case Management Environment (ACME) \citep{wei2024assurance} & N & P & P & N & P & N & Y & Y \\
+Public-audit FL \citep{aljabbari2026public} & Y & Y & N & P & Y & N & P & Y \\
+Apple framework audit \citep{chourasia2026apple} & Y & Y & P & P & P & N & Y & Y \\
+Present restricted interface & Y & Y & Y & Y & Y & Y & Y & Y \\
+\hline
+\end{tabular}
+\caption{Full D1--D8 comparison. Each general architectural component shown has
+a strong predecessor. The scientific center is D4 together with the D1/D3/D6
+interaction: the same run can license different wording for different
+requested units.  Lemma~1 and Table~\ref{tab:supp-necessity-witnesses} support
+that restricted interaction, not architectural novelty.}
+\label{tab:supp-closest-work}
+\end{table}
+
+\section{Complete Evidence Tables}
+\label{sec:supp-complete-tables}
+
+The remainder is one-column to keep machine labels and full policy grids
+legible.  These tables are generated; their source of truth is the accompanying
+JSON, CSV, and Markdown plus
+\texttt{supplement\_v2\_generated/provenance.json},
+\texttt{supplement\_v5\_generated/provenance.json}, and
+\texttt{supplement\_v14\_generated/provenance.json}.
+
+\input{supplement_v5_generated/retrospective_incidents.tex}
+
+\input{supplement_v14_generated/verification_surface_detailed.tex}
+
+\input{supplement_v14_generated/ablation_metrics.tex}
+
+\input{supplement_v14_generated/allowed_grid.tex}
+
+\input{supplement_v14_generated/operator_matrix.tex}
+
+\input{supplement_v14_generated/artifact_inputs.tex}
+
+\input{supplement_v2_generated/tfprivacy_families.tex}
+
+\input{supplement_v2_generated/wisdm_claims.tex}
+
+\input{supplement_v2_generated/sepsis_policies.tex}
+
+\input{supplement_v2_generated/backblaze_policies.tex}
+
+\input{supplement_v2_generated/truth_table.tex}
+
+\input{supplement_v2_generated/artifact_inputs.tex}
+
+\section{Validated Scope and Extension Boundary}
+\label{sec:supp-limitations}
+
+Within the declared finite registry, the validator makes exact decisions for
+faithful evidence and registered semantics.  Proposition~2 isolates the
+remaining trust boundary: authenticated observation or execution proofs are
+needed when deliberately hidden dependencies or a mismatch between artifacts
+and execution are in scope.  The evaluated adapters cover the reported
+accountant/mechanism family.  Target-delta, RDP,
+privacy-loss-distribution (PLD), structured-sampler, and native-unit routes
+extend the same decision interface once their derivations and execution
+bindings are registered.
+
+The evaluation gives complete deterministic results for the 200 designed
+conformance cases, the ten preserved development incidents, and five WISDM
+plus five UCI HAR confirmatory executions.  It therefore supports the reported
+decision patterns across two datasets and the declared mutation operators.
+These deterministic results cover named universes: C3/C4 are metamorphic
+representations (so the 100 allowed triples yield 50 selected-semantic
+digests), each mutation operator has four parents, and the grid starts from one
+registered mechanism/pipeline/accountant base.  Population estimates and
+cross-mechanism generalization require additional independent submissions and
+mechanism families.
+
+The complete six-record ExtraSensory history culminates in one
+author-operated execution and exercises source intake, terminal localization,
+and read-only mapping reconstruction.  Its exact authority is documented
+above: the source declares \texttt{secure\_rng=False}, exports a configured
+target epsilon, and has no registered achieved-pair adapter; consequently it
+contributes source-path integration and mapping evidence.  Sepsis and
+Backblaze independently validate transformation facts under the stated
+fixed-slot semantics.  Together these studies broaden source and mapping
+coverage while preserving their registered authority.  The conservative
+release rule authorizes public wording only when its proof path is registered;
+an execution supported only by an unregistered argument remains blocked.
+
+\paragraph{Generative-AI disclosure.}
+Generative AI assisted language and code editing; the authors verified all
+content and remain responsible.
+
+\bibliography{references_v11,references_v6_candidate}
+
+\end{document}

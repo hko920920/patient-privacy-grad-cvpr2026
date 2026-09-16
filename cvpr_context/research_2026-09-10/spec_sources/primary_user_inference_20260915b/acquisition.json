@@ -1,0 +1,19 @@
+{
+  "acquired_utc": "2026-09-15T09:05:31.606501+00:00",
+  "sources": [
+    {
+      "file": "user_inference_emnlp2024.pdf",
+      "url": "https://aclanthology.org/2024.emnlp-main.1014.pdf",
+      "bytes": 974989,
+      "sha256": "f05957d2b529e1e2bd693685b00590564d341a4253bafa48dfbaefd5298474d0"
+    },
+    {
+      "file": "distribution_inference_satml2023.pdf",
+      "url": "https://arxiv.org/pdf/2209.08541",
+      "bytes": 517131,
+      "sha256": "853b442d0ccb44bc4f28c2b0e96ed6fcfebdd97b1d421ca92e3acfb4b8c2d061"
+    }
+  ],
+  "reading_scope": "Selected sections documented separately; not entire paper reading",
+  "registry_79_unchanged": true
+}

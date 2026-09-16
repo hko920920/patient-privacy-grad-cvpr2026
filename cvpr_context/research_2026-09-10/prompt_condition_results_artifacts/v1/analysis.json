@@ -1,0 +1,870 @@
+{
+  "status": "PASS_SCALAR_ANALYSIS_WITH_TWO_ARITHMETIC_PATHS",
+  "policy": {
+    "stage": 2,
+    "scope": "t140 conditioning diagnostic; no optimization",
+    "prompts": [
+      "null",
+      "generic",
+      "weak_label"
+    ],
+    "models": [
+      "model_1",
+      "model_2"
+    ],
+    "scenarios": [
+      "E",
+      "U"
+    ],
+    "image_pool": "mean of exactly2 losses",
+    "scores": [
+      "negative_target_loss",
+      "base_minus_target_loss"
+    ],
+    "direction": "high membership; -target loss or base loss minus target loss",
+    "primary_role": "selection",
+    "fit_role": "descriptive only; no selection or fitting",
+    "target_AUC_count": 24,
+    "base_A_assignment_AUC_count": 6,
+    "prompt_contrasts": [
+      [
+        "weak_label",
+        "null"
+      ],
+      [
+        "generic",
+        "null"
+      ],
+      [
+        "weak_label",
+        "generic"
+      ]
+    ],
+    "prompt_difference_CIs": 24,
+    "bootstrap": {
+      "seed": 260914,
+      "resamples": 2000,
+      "stratified": "20A20B patients"
+    },
+    "test_calibration_used": false,
+    "new_fitting": false,
+    "limitations": [
+      "one fixed noise per image and one timestep",
+      "cached FP16 posterior mode promoted to FP32",
+      "MoFit uses fresh posterior samples, so this is not its complete score",
+      "U weak-label is a hypothetical training template, not an actually used training prompt",
+      "base AUC labels are assignment A/B, not base membership",
+      "target-minus-base includes domain-wide adaptation; not individual training influence",
+      "shared training initialization, reused development patients and unadjusted conditional intervals",
+      "lower loss under a prompt is not by itself evidence of membership",
+      "null dropout zero does not imply unconditional output is unaffected by training"
+    ],
+    "overall_stage2_gate": null
+  },
+  "metrics": [
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "prompt": "null",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.37,
+      "CI95": [
+        0.21,
+        0.55
+      ],
+      "fit_AUC_descriptive_only": 0.514375,
+      "fp64_saved_prediction_residual_AUC": 0.37,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "prompt": "null",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.5125,
+      "CI95": [
+        0.3325,
+        0.695
+      ],
+      "fit_AUC_descriptive_only": 0.47812499999999997,
+      "fp64_saved_prediction_residual_AUC": 0.5125,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "prompt": "generic",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.385,
+      "CI95": [
+        0.2175,
+        0.5725
+      ],
+      "fit_AUC_descriptive_only": 0.5318750000000001,
+      "fp64_saved_prediction_residual_AUC": 0.385,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "prompt": "generic",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.5175,
+      "CI95": [
+        0.3375,
+        0.6975
+      ],
+      "fit_AUC_descriptive_only": 0.511875,
+      "fp64_saved_prediction_residual_AUC": 0.5175,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "prompt": "weak_label",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.3825,
+      "CI95": [
+        0.2175,
+        0.5675624999999996
+      ],
+      "fit_AUC_descriptive_only": 0.5331250000000001,
+      "fp64_saved_prediction_residual_AUC": 0.3825,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "prompt": "weak_label",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.535,
+      "CI95": [
+        0.3525,
+        0.7175624999999997
+      ],
+      "fit_AUC_descriptive_only": 0.515625,
+      "fp64_saved_prediction_residual_AUC": 0.535,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "prompt": "null",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.635,
+      "CI95": [
+        0.4574375,
+        0.795
+      ],
+      "fit_AUC_descriptive_only": 0.48875,
+      "fp64_saved_prediction_residual_AUC": 0.635,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "prompt": "null",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.4825,
+      "CI95": [
+        0.3,
+        0.6625
+      ],
+      "fit_AUC_descriptive_only": 0.5275,
+      "fp64_saved_prediction_residual_AUC": 0.4825,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "prompt": "generic",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.62,
+      "CI95": [
+        0.435,
+        0.7825624999999996
+      ],
+      "fit_AUC_descriptive_only": 0.48125000000000007,
+      "fp64_saved_prediction_residual_AUC": 0.62,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "prompt": "generic",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.495,
+      "CI95": [
+        0.31,
+        0.6750624999999997
+      ],
+      "fit_AUC_descriptive_only": 0.50625,
+      "fp64_saved_prediction_residual_AUC": 0.495,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "prompt": "weak_label",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.62,
+      "CI95": [
+        0.435,
+        0.785
+      ],
+      "fit_AUC_descriptive_only": 0.48125,
+      "fp64_saved_prediction_residual_AUC": 0.62,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "prompt": "weak_label",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.49,
+      "CI95": [
+        0.3075,
+        0.67
+      ],
+      "fit_AUC_descriptive_only": 0.496875,
+      "fp64_saved_prediction_residual_AUC": 0.49,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "E",
+      "model": "base",
+      "prompt": "null",
+      "score_type": "negative_base_loss_A_assignment",
+      "selection_AUC": 0.3975,
+      "CI95": [
+        0.225,
+        0.575
+      ],
+      "fit_AUC_descriptive_only": 0.519375,
+      "fp64_saved_prediction_residual_AUC": 0.3975,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": true
+    },
+    {
+      "scenario": "E",
+      "model": "base",
+      "prompt": "generic",
+      "score_type": "negative_base_loss_A_assignment",
+      "selection_AUC": 0.395,
+      "CI95": [
+        0.22,
+        0.5825
+      ],
+      "fit_AUC_descriptive_only": 0.52125,
+      "fp64_saved_prediction_residual_AUC": 0.395,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": true
+    },
+    {
+      "scenario": "E",
+      "model": "base",
+      "prompt": "weak_label",
+      "score_type": "negative_base_loss_A_assignment",
+      "selection_AUC": 0.3975,
+      "CI95": [
+        0.2249375,
+        0.5825
+      ],
+      "fit_AUC_descriptive_only": 0.518125,
+      "fp64_saved_prediction_residual_AUC": 0.3975,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": true
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "prompt": "null",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.46,
+      "CI95": [
+        0.28,
+        0.6325624999999996
+      ],
+      "fit_AUC_descriptive_only": 0.5493750000000001,
+      "fp64_saved_prediction_residual_AUC": 0.46,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "prompt": "null",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.48,
+      "CI95": [
+        0.3,
+        0.6725
+      ],
+      "fit_AUC_descriptive_only": 0.47125000000000006,
+      "fp64_saved_prediction_residual_AUC": 0.48,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "prompt": "generic",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.4725,
+      "CI95": [
+        0.2925,
+        0.65
+      ],
+      "fit_AUC_descriptive_only": 0.54875,
+      "fp64_saved_prediction_residual_AUC": 0.4725,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "prompt": "generic",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.4925,
+      "CI95": [
+        0.3,
+        0.685
+      ],
+      "fit_AUC_descriptive_only": 0.45125000000000004,
+      "fp64_saved_prediction_residual_AUC": 0.4925,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "prompt": "weak_label",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.48,
+      "CI95": [
+        0.29993749999999997,
+        0.6575624999999996
+      ],
+      "fit_AUC_descriptive_only": 0.545625,
+      "fp64_saved_prediction_residual_AUC": 0.48,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "prompt": "weak_label",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.51,
+      "CI95": [
+        0.3224375,
+        0.6975624999999996
+      ],
+      "fit_AUC_descriptive_only": 0.428125,
+      "fp64_saved_prediction_residual_AUC": 0.51,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "prompt": "null",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.5425,
+      "CI95": [
+        0.3725,
+        0.72
+      ],
+      "fit_AUC_descriptive_only": 0.45437500000000003,
+      "fp64_saved_prediction_residual_AUC": 0.5425,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "prompt": "null",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.535,
+      "CI95": [
+        0.3399375,
+        0.7175
+      ],
+      "fit_AUC_descriptive_only": 0.526875,
+      "fp64_saved_prediction_residual_AUC": 0.535,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "prompt": "generic",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.54,
+      "CI95": [
+        0.36493749999999997,
+        0.7225624999999997
+      ],
+      "fit_AUC_descriptive_only": 0.459375,
+      "fp64_saved_prediction_residual_AUC": 0.54,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "prompt": "generic",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.525,
+      "CI95": [
+        0.3375,
+        0.71
+      ],
+      "fit_AUC_descriptive_only": 0.558125,
+      "fp64_saved_prediction_residual_AUC": 0.525,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "prompt": "weak_label",
+      "score_type": "negative_target_loss",
+      "selection_AUC": 0.5375,
+      "CI95": [
+        0.35993749999999997,
+        0.7175
+      ],
+      "fit_AUC_descriptive_only": 0.464375,
+      "fp64_saved_prediction_residual_AUC": 0.5375,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "prompt": "weak_label",
+      "score_type": "base_minus_target_loss",
+      "selection_AUC": 0.51,
+      "CI95": [
+        0.32,
+        0.7000624999999996
+      ],
+      "fit_AUC_descriptive_only": 0.585625,
+      "fp64_saved_prediction_residual_AUC": 0.51,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": false
+    },
+    {
+      "scenario": "U",
+      "model": "base",
+      "prompt": "null",
+      "score_type": "negative_base_loss_A_assignment",
+      "selection_AUC": 0.5,
+      "CI95": [
+        0.315,
+        0.6775624999999996
+      ],
+      "fit_AUC_descriptive_only": 0.5487500000000001,
+      "fp64_saved_prediction_residual_AUC": 0.5,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": true
+    },
+    {
+      "scenario": "U",
+      "model": "base",
+      "prompt": "generic",
+      "score_type": "negative_base_loss_A_assignment",
+      "selection_AUC": 0.4875,
+      "CI95": [
+        0.3075,
+        0.6675
+      ],
+      "fit_AUC_descriptive_only": 0.548125,
+      "fp64_saved_prediction_residual_AUC": 0.4875,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": true
+    },
+    {
+      "scenario": "U",
+      "model": "base",
+      "prompt": "weak_label",
+      "score_type": "negative_base_loss_A_assignment",
+      "selection_AUC": 0.48,
+      "CI95": [
+        0.3,
+        0.655
+      ],
+      "fit_AUC_descriptive_only": 0.5493750000000001,
+      "fp64_saved_prediction_residual_AUC": 0.48,
+      "GPU_MSE_vs_FP64_residual_AUC_delta": 0.0,
+      "GPU_MSE_vs_FP64_residual_pair_credit_mismatches": 0,
+      "selection_statistical_units": 40,
+      "base_assignment_only": true
+    }
+  ],
+  "prompt_contrasts": [
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "score_type": "negative_target_loss",
+      "a": "weak_label",
+      "b": "null",
+      "delta_AUC": 0.012500000000000011,
+      "paired_CI95": [
+        -0.030062500000000023,
+        0.05499999999999999
+      ]
+    },
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "score_type": "negative_target_loss",
+      "a": "generic",
+      "b": "null",
+      "delta_AUC": 0.015000000000000013,
+      "paired_CI95": [
+        -0.027499999999999997,
+        0.057499999999999996
+      ]
+    },
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "score_type": "negative_target_loss",
+      "a": "weak_label",
+      "b": "generic",
+      "delta_AUC": -0.0025000000000000022,
+      "paired_CI95": [
+        -0.017500000000000016,
+        0.010000000000000009
+      ]
+    },
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "score_type": "base_minus_target_loss",
+      "a": "weak_label",
+      "b": "null",
+      "delta_AUC": 0.022500000000000075,
+      "paired_CI95": [
+        -0.07506250000000006,
+        0.11756249999999971
+      ]
+    },
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "score_type": "base_minus_target_loss",
+      "a": "generic",
+      "b": "null",
+      "delta_AUC": 0.0050000000000000044,
+      "paired_CI95": [
+        -0.08500000000000002,
+        0.09000000000000002
+      ]
+    },
+    {
+      "scenario": "E",
+      "model": "model_1",
+      "score_type": "base_minus_target_loss",
+      "a": "weak_label",
+      "b": "generic",
+      "delta_AUC": 0.01750000000000007,
+      "paired_CI95": [
+        -0.025000000000000022,
+        0.0625
+      ]
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "score_type": "negative_target_loss",
+      "a": "weak_label",
+      "b": "null",
+      "delta_AUC": -0.015000000000000013,
+      "paired_CI95": [
+        -0.06500000000000006,
+        0.03749999999999998
+      ]
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "score_type": "negative_target_loss",
+      "a": "generic",
+      "b": "null",
+      "delta_AUC": -0.015000000000000013,
+      "paired_CI95": [
+        -0.06499999999999995,
+        0.03499999999999992
+      ]
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "score_type": "negative_target_loss",
+      "a": "weak_label",
+      "b": "generic",
+      "delta_AUC": 0.0,
+      "paired_CI95": [
+        -0.010000000000000009,
+        0.014999999999999902
+      ]
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "score_type": "base_minus_target_loss",
+      "a": "weak_label",
+      "b": "null",
+      "delta_AUC": 0.007500000000000007,
+      "paired_CI95": [
+        -0.08250000000000002,
+        0.1050624999999997
+      ]
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "score_type": "base_minus_target_loss",
+      "a": "generic",
+      "b": "null",
+      "delta_AUC": 0.012500000000000011,
+      "paired_CI95": [
+        -0.07999999999999996,
+        0.1100624999999997
+      ]
+    },
+    {
+      "scenario": "E",
+      "model": "model_2",
+      "score_type": "base_minus_target_loss",
+      "a": "weak_label",
+      "b": "generic",
+      "delta_AUC": -0.0050000000000000044,
+      "paired_CI95": [
+        -0.040000000000000036,
+        0.02749999999999997
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "score_type": "negative_target_loss",
+      "a": "weak_label",
+      "b": "null",
+      "delta_AUC": 0.019999999999999962,
+      "paired_CI95": [
+        -0.027500000000000024,
+        0.07250000000000001
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "score_type": "negative_target_loss",
+      "a": "generic",
+      "b": "null",
+      "delta_AUC": 0.012499999999999956,
+      "paired_CI95": [
+        -0.030000000000000027,
+        0.0625
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "score_type": "negative_target_loss",
+      "a": "weak_label",
+      "b": "generic",
+      "delta_AUC": 0.007500000000000007,
+      "paired_CI95": [
+        -0.015000000000000013,
+        0.03249999999999997
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "score_type": "base_minus_target_loss",
+      "a": "weak_label",
+      "b": "null",
+      "delta_AUC": 0.030000000000000027,
+      "paired_CI95": [
+        -0.06999999999999995,
+        0.12750000000000006
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "score_type": "base_minus_target_loss",
+      "a": "generic",
+      "b": "null",
+      "delta_AUC": 0.012500000000000011,
+      "paired_CI95": [
+        -0.07250000000000001,
+        0.10249999999999998
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_1",
+      "score_type": "base_minus_target_loss",
+      "a": "weak_label",
+      "b": "generic",
+      "delta_AUC": 0.017500000000000016,
+      "paired_CI95": [
+        -0.03750000000000003,
+        0.07250000000000001
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "score_type": "negative_target_loss",
+      "a": "weak_label",
+      "b": "null",
+      "delta_AUC": -0.0050000000000000044,
+      "paired_CI95": [
+        -0.05499999999999994,
+        0.03999999999999998
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "score_type": "negative_target_loss",
+      "a": "generic",
+      "b": "null",
+      "delta_AUC": -0.0024999999999999467,
+      "paired_CI95": [
+        -0.04999999999999993,
+        0.03750000000000003
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "score_type": "negative_target_loss",
+      "a": "weak_label",
+      "b": "generic",
+      "delta_AUC": -0.0025000000000000577,
+      "paired_CI95": [
+        -0.022500000000000075,
+        0.015000000000000013
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "score_type": "base_minus_target_loss",
+      "a": "weak_label",
+      "b": "null",
+      "delta_AUC": -0.025000000000000022,
+      "paired_CI95": [
+        -0.12,
+        0.07999999999999996
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "score_type": "base_minus_target_loss",
+      "a": "generic",
+      "b": "null",
+      "delta_AUC": -0.010000000000000009,
+      "paired_CI95": [
+        -0.09999999999999998,
+        0.08256249999999973
+      ]
+    },
+    {
+      "scenario": "U",
+      "model": "model_2",
+      "score_type": "base_minus_target_loss",
+      "a": "weak_label",
+      "b": "generic",
+      "delta_AUC": -0.015000000000000013,
+      "paired_CI95": [
+        -0.07249999999999995,
+        0.03249999999999997
+      ]
+    }
+  ],
+  "new_fitting": false,
+  "new_GPU_calls": 0,
+  "overall_stage2_gate": null,
+  "seconds_cpu": 0.3733279000152834
+}

@@ -1,0 +1,52 @@
+% Dissertation-wide terminology and notation.
+% The source papers use several identical symbols for different objects.
+% These macros reserve unambiguous dissertation forms without changing the
+% scientific meaning of the source results.
+
+% Dissertation-level concepts.
+\newcommand{\ClaimAlignedAssurance}{Claim-Aligned Assurance}
+\newcommand{\AuditablePrivacy}{Auditable Privacy}
+\newcommand{\SecurePublicVerification}{Secure Public Verification}
+\newcommand{\PPMark}{PP-Mark}
+\newcommand{\ClaimSymbol}{\ensuremath{c_{\mathrm{clm}}}}
+
+% Chapter 2: post-execution evidence-bound validation.
+\newcommand{\ClaimQuery}{\ensuremath{q_{\mathrm{clm}}}}
+\newcommand{\EvidenceBundle}{\ensuremath{\mathcal{E}}}
+\newcommand{\ValidationRegistry}{\ensuremath{\mathcal{R}_{\mathrm{val}}}}
+\newcommand{\ClaimValidator}{\ensuremath{V_{\ValidationRegistry}}}
+\newcommand{\RawDataset}{\ensuremath{\mathcal{D}}}
+\newcommand{\GeneratedDataset}{\ensuremath{\mathcal{G}}}
+\newcommand{\DataTransform}{\ensuremath{\mathcal{T}}}
+\newcommand{\DPMechanism}{\ensuremath{\mathcal{M}}}
+\newcommand{\EventSupport}[1]{\ensuremath{\operatorname{supp}_{\mathrm{evt}}(#1)}}
+\newcommand{\OwnerAttribution}[1]{\ensuremath{a_{\mathrm{own}}(#1)}}
+\newcommand{\RawAdjacencyMetric}{\ensuremath{d_{\mathrm{raw}}}}
+\newcommand{\GeneratedAdjacencyMetric}{\ensuremath{d_{\mathrm{gen}}}}
+\newcommand{\EventIncidence}{\ensuremath{\kappa_{\mathrm{event}}}}
+\newcommand{\OwnerIncidence}{\ensuremath{\kappa_{\mathrm{owner}}}}
+\newcommand{\PrivacyDistanceBound}{\ensuremath{K}}
+\newcommand{\ConvertedEpsilon}{\ensuremath{\varepsilon_{K}}}
+\newcommand{\ConvertedDelta}{\ensuremath{\delta_{K}}}
+\newcommand{\IssueSet}{\ensuremath{\mathcal{I}}}
+
+% PP-Mark public provenance verification.
+\newcommand{\PPSecretKey}{\ensuremath{k_{\mathrm{sec}}}}
+\newcommand{\PPModelID}{\ensuremath{m_{\mathrm{id}}}}
+\newcommand{\PPContextHash}{\ensuremath{h_{\mathrm{ctx}}}}
+\newcommand{\PPImageHash}{\ensuremath{h_{\mathrm{img}}}}
+\newcommand{\PPBinding}{\ensuremath{b}}
+\newcommand{\PPPayload}{\ensuremath{m_{\mathrm{pl}}}}
+\newcommand{\PPCodeword}{\ensuremath{c_{\mathrm{RS}}}}
+\newcommand{\PPSampleSet}{\ensuremath{\mathcal{S}}}
+\newcommand{\PPOpeningSet}{\ensuremath{\mathcal{O}}}
+\newcommand{\PPSampleCount}{\ensuremath{N_{\mathrm{tr}}}}
+\newcommand{\PPOpeningCount}{\ensuremath{k_{\mathrm{open}}}}
+\newcommand{\PPTrace}{\ensuremath{\mathcal{T}_{\mathrm{tr}}}}
+\newcommand{\PPReceipt}{\ensuremath{\pi}}
+\newcommand{\PPPublicStatement}{\ensuremath{x_{\mathrm{pub}}}}
+\newcommand{\PPPrivateWitness}{\ensuremath{\omega_{\mathrm{priv}}}}
+\newcommand{\PPDetectionScore}{\ensuremath{S_{\mathrm{det}}}}
+\newcommand{\PPThreshold}{\ensuremath{\tau}}
+\newcommand{\PPBadPositions}{\ensuremath{q_{\mathrm{bad}}}}
+\newcommand{\PPLegitimateSet}{\ensuremath{\mathcal{G}_{\mathrm{legit}}}}

@@ -1,0 +1,56 @@
+cargo-features = ["edition2024"]
+
+[package]
+name = "halo2_prover"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = []
+ecgpu = ["dep:ec-gpu-gen", "dep:once_cell", "cuda", "halo2_backend/ecgpu", "halo2curves/ecgpu", "halo2_proofs/ecgpu"]
+cuda = ["ec-gpu-gen/cuda", "ec-gpu-gen/rust-gpu-tools"]
+icicle = []
+
+[[test]]
+name = "kzg_integration"
+path = "tests/kzg_integration.rs"
+required-features = ["icicle"]
+
+[dependencies]
+# PSE Halo2 stack (local checkout with ec-gpu enabled)
+halo2_proofs = { path = "/tmp/pse_halo2/halo2_proofs", default-features = true, features = ["ecgpu"] }
+# Poseidon gadget (separate repo); patched to use the same PSE halo2 stack via [patch] below.
+halo2_poseidon = { path = "/tmp/poseidon-gadget" }
+halo2_frontend = { path = "/tmp/pse_halo2/halo2_frontend" }
+halo2_backend = { path = "/tmp/pse_halo2/halo2_backend" }
+poseidon-primitives = "0.2.0"
+halo2curves = { path = "/tmp/pse_halo2/halo2curves", features = ["ecgpu"] }
+ff = "0.13"
+group = "0.13"
+rand = "0.8"
+hex = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+num-bigint = "0.4"
+num-traits = "0.2"
+once_cell = { version = "1", optional = true }
+ec-gpu-gen = { version = "0.7.1", default-features = false, features = ["cuda", "rust-gpu-tools"], optional = true }
+
+[build-dependencies]
+ec-gpu-gen = { version = "0.7.1", default-features = false, features = ["cuda", "rust-gpu-tools"] }
+halo2curves = { path = "/tmp/pse_halo2/halo2curves", features = ["ecgpu"] }
+
+[patch.crates-io]
+halo2_proofs = { path = "/tmp/pse_halo2/halo2_proofs" }
+halo2_backend = { path = "/tmp/pse_halo2/halo2_backend" }
+halo2_frontend = { path = "/tmp/pse_halo2/halo2_frontend" }
+halo2curves = { path = "/tmp/pse_halo2/halo2curves" }
+
+[patch."https://github.com/privacy-scaling-explorations/halo2curves"]
+halo2curves = { path = "/tmp/pse_halo2/halo2curves" }
+
+[patch."https://github.com/privacy-scaling-explorations/halo2"]
+halo2_proofs = { path = "/tmp/pse_halo2/halo2_proofs" }
+halo2_backend = { path = "/tmp/pse_halo2/halo2_backend" }
+halo2_frontend = { path = "/tmp/pse_halo2/halo2_frontend" }
+halo2curves = { path = "/tmp/pse_halo2/halo2curves" }

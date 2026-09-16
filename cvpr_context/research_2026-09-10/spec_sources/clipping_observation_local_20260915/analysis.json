@@ -1,0 +1,47 @@
+{
+  "primary_inactive_conditions": 16,
+  "primary_E_gradient_norm_min": 0.05169392298140058,
+  "primary_E_gradient_norm_max": 0.17182698531387286,
+  "activation_opposite_conditions": 3,
+  "activation_opposite_unique_patients": 2,
+  "cases": [
+    {
+      "patient_id": "19787",
+      "step": 250,
+      "E": -1.5883578238995745e-05,
+      "U": 5.629895400261315e-07,
+      "E_linear": -1.5921507547612166e-05,
+      "U_linear": 7.005392431792556e-07
+    },
+    {
+      "patient_id": "19787",
+      "step": 1000,
+      "E": -1.2980372147159114e-05,
+      "U": 1.089345436372716e-06,
+      "E_linear": -1.2734685243432789e-05,
+      "U_linear": 1.0821330607823462e-06
+    },
+    {
+      "patient_id": "21195",
+      "step": 1000,
+      "E": -1.5599882668044965e-05,
+      "U": 1.7647905617251688e-06,
+      "E_linear": -1.545015023607193e-05,
+      "U_linear": 1.7422267713008507e-06
+    }
+  ],
+  "linear_sign_agreement": 47,
+  "linear_image_conditions": 48,
+  "linear_global_relative_l2": 0.035135311316117135,
+  "linear_median_relative_error": 0.014728183815503358,
+  "linear_max_abs_error": 2.7083763150156294e-06,
+  "activation_Emean_sign_agreement": 16,
+  "activation_U_sign_agreement": 15,
+  "total_forward": 280,
+  "total_backward": 52,
+  "gpu_runner_seconds": 76.98327329999302,
+  "scope": "descriptive local responses, no independent-patient sample of16, no MIA success threshold",
+  "primary_C": 0.28448700606156724,
+  "activation_C": 0.01,
+  "activation_posthoc": true
+}

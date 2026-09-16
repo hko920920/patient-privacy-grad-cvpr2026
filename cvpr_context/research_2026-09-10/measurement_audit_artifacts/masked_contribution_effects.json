@@ -1,0 +1,13 @@
+{
+  "source": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\masked_slot_endpoints_v2\\analysis_v1\\analysis.json",
+  "source_sha256": "3cb9a3dd03b4c15247b33d413e9f9a85a9963fed8550bc58ce15c8153f093d16",
+  "verification_sha256": "3cac782fb83fb97edd60446eb0a3d81a6b709f343a0602acedc80ed1d6e8eb58",
+  "code_sha256": "27fdaf6626364900d534f3f906c8ae224066692571576bf9e285e4b75cdae76b",
+  "rows": 164,
+  "outputs": {
+    "masked_contribution_effects.png": "f86716b435456fafe38b716c51d7f4f07d0f36bc55d4d22be38b65fec1070909",
+    "masked_contribution_effects.svg": "856a4c9e63e8c47a3c9d912fa549e1c7b1331586782b4de02c63364588258554",
+    "masked_contribution_effects.csv": "ac73922242117d8409c5a7b87e8918319949243ab73d274458aa3c283a4736bb"
+  },
+  "visual_y_jitter": "Deterministic patient-id order for visibility only; no analysis operation"
+}

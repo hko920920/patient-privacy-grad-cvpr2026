@@ -1,0 +1,60 @@
+{
+  "schema": "mofit-public-scalar-replay/v1",
+  "research_stage": 2,
+  "question": "Can the public scalar score/evaluation path be reproduced, and how does its ROC convention differ?",
+  "repository": "https://github.com/JoonsungJeon/MoFit",
+  "commit": "91e4b5edc153bac84b0b4209f70d1b2b94e653b2",
+  "original_functions_compiled_unchanged": [
+    "get_ori_data",
+    "get_l_clidavg_last3",
+    "deal_data_weight_avg",
+    "get_th"
+  ],
+  "input_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X12\\Results\\COCO\\COCO_emb_500images_train_t_[140].txt": "8252bdacc461d6daebabe7549c522e4c0e9fa384aea1cd3a5f0574e4879405d4",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X12\\Results\\COCO\\COCO_emb_500images_test_t_[140].txt": "6263c7d84d328b140d27dbdeff1e26b471a0d32d786228d3a54337212fe68b85",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X12\\Results\\COCO\\COCO_blip_500images_train_t_[140].txt": "957a4d00c82d2b06566b06f87dffb69393be979ed25c1ff3d5c6c59cee54eee5",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X12\\Results\\COCO\\COCO_blip_500images_test_t_[140].txt": "5a28de5f8fa243dcbd5a2ee4727fe202dc2ef6223f8edd204e78df33bf16bd18",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X12\\Eval\\mia_th_COCO.py": "60d5d9634f0e5ce772c51300dead4f8d137f9944ed30a9989682c7d79b7b11f2",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X12\\Eval\\calculate_pred.py": "4d5d7591dc508491dfefe50fb3b68325e92627f352ca757afb8b525382166076"
+  },
+  "script_sha256": "2c6a685035b76432fb9d1d353a99324a76220b6cad31933d1dba7ac07f115b4d",
+  "gamma_grid": [
+    0.0,
+    0.05,
+    0.1,
+    0.15000000000000002,
+    0.2,
+    0.25,
+    0.30000000000000004,
+    0.35000000000000003,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6000000000000001,
+    0.65,
+    0.7000000000000001,
+    0.75,
+    0.8,
+    0.8500000000000001,
+    0.9,
+    0.9500000000000001,
+    1.0
+  ],
+  "threshold_grid_points_requested": 2000,
+  "source_member_direction": "source score lower means member; get_th counts member<=threshold",
+  "source_selection": "maximize ASR over thresholds for each gamma; then maximize ASR, tie-break by grid AUC, first gamma on exact tie",
+  "source_scaling": "RobustScaler fitted to the complete public member+nonmember fixture, separately for the two features",
+  "no_separate_fixture_test_split": true,
+  "patient_data_access": false,
+  "GPU_forward": 0,
+  "backward": 0,
+  "actual_model_inference": false,
+  "patient_baseline_success_claimed": false,
+  "environment": {
+    "python": "3.11.5",
+    "numpy": "1.26.4",
+    "sklearn": "1.3.0"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "patient-audit-design-feasibility/v0.1",
+  "date": "2026-09-10",
+  "scope": "AGGREGATE_METADATA_AND_PROPOSED_COST_ARITHMETIC_ONLY",
+  "source_relative_to_thesis": "code_working/_data/derived/nih_cxr14_pa_target_enriched_v1/patients_private.csv",
+  "source_sha256": "46c564fbd76c5189b23ac687e3171903f7854d53dcc3e0b5a038ca5e26c4f0f0",
+  "patient_identifiers_emitted": false,
+  "image_files_opened": false,
+  "training_or_membership_experiment_run": false,
+  "partitions": {
+    "final_test": {
+      "patients": 1818,
+      "manifest_pa_images_before_cap": 9913,
+      "at_least_images": {
+        "1": 1818,
+        "2": 1019,
+        "4": 720,
+        "5": 620,
+        "7": 487,
+        "10": 319,
+        "12": 252
+      }
+    },
+    "privacy_attack_holdout": {
+      "patients": 1816,
+      "manifest_pa_images_before_cap": 5038,
+      "at_least_images": {
+        "1": 1816,
+        "2": 865,
+        "4": 424,
+        "5": 304,
+        "7": 174,
+        "10": 84,
+        "12": 52
+      }
+    },
+    "private_train": {
+      "patients": 8476,
+      "manifest_pa_images_before_cap": 23641,
+      "at_least_images": {
+        "1": 8476,
+        "2": 3991,
+        "4": 1893,
+        "5": 1392,
+        "7": 811,
+        "10": 368,
+        "12": 254
+      }
+    },
+    "public_development": {
+      "patients": 1816,
+      "manifest_pa_images_before_cap": 5206,
+      "at_least_images": {
+        "1": 1816,
+        "2": 886,
+        "4": 425,
+        "5": 308,
+        "7": 190,
+        "10": 97,
+        "12": 50
+      }
+    }
+  },
+  "uncached_cost_per_observed_image": {
+    "forward": 156,
+    "backward": 36
+  },
+  "uncached_cost_by_m": {
+    "2": {
+      "forward": 312,
+      "backward": 72
+    },
+    "5": {
+      "forward": 780,
+      "backward": 180
+    }
+  },
+  "limitations": [
+    "Metadata counts precede file-access, duplicate and scenario-eligibility checks.",
+    "No patient split was selected or changed.",
+    "Cost is model-example evaluations, not batched API calls or elapsed time.",
+    "No medical attack performance or novelty validated."
+  ]
+}

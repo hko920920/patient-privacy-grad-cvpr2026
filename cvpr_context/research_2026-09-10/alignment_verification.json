@@ -1,0 +1,9 @@
+{
+  "scope": "static_links_and_ledger_only",
+  "result": {
+    "rows": 79,
+    "checked_local_links": 530,
+    "checked_pdf_page_anchors": 201,
+    "broken_links": []
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "status": "PASS_SAVED_COST_MSE_BINDINGS_AND_ANALYTIC_CHECKS",
+  "rows": 161,
+  "paired_rows": 42,
+  "input_hashes": {
+    "protocol.json": "935799dee23d4437de332955688adf07916f512fdc0df918050141939866293a",
+    "run_cpu_allocation.py": "b0483194534336899c01736d3fbe2a1f5f916a170527f11c528cb5ab42b33cd1",
+    "results.json": "ba170e19bf353e7f26b6a0b7ec0b3729da67452a786f974739402a33bfdac4ae",
+    "manifest.json": "e82d61e4cf5f11094a928f0a931a440e63b26072cafc64fba71e2eda4f90f3fc"
+  },
+  "audit_code_sha256": "a5b166dee79cad91c05f3f872e3520c7cd555a3b05136fca1d55629c65d5b50d",
+  "max_cost_reconstruction_error": 0.0,
+  "max_type_mean_mse_reconstruction_error": 2.220446049250313e-16,
+  "exact_F1_fixed_binomial": [
+    {
+      "R": 1,
+      "exact_population_mse": 0.0012476611221553524,
+      "observed": 0.001247661122155325,
+      "MC_z": null
+    },
+    {
+      "R": 2,
+      "exact_population_mse": 0.0006238305610776762,
+      "observed": 0.0006381469850867691,
+      "MC_z": 2.938184176939647
+    },
+    {
+      "R": 4,
+      "exact_population_mse": 0.00031213443620813075,
+      "observed": 0.0003144388925812908,
+      "MC_z": 0.7698965172349358
+    },
+    {
+      "R": 8,
+      "exact_population_mse": 0.00015614940150559305,
+      "observed": 0.0001552108918312495,
+      "MC_z": -0.5837619738489244
+    },
+    {
+      "R": 16,
+      "exact_population_mse": 7.809869429637733e-05,
+      "observed": 7.817890229258782e-05,
+      "MC_z": 0.09704231483541913
+    }
+  ],
+  "F2_radial_exact_mse_by_R": {
+    "1": 0.001442181353804585,
+    "2": 4.7852757577580626e-05,
+    "4": 1.9313800646862173e-07,
+    "8": 1.3126934915312453e-11,
+    "16": 2.824228823700851e-19
+  },
+  "F2_geometry_B8_radial_mse_from_recorded_R_frequencies": 0.0012936911048824625,
+  "F2_geometry_B8_observed_radial_mse": 0.0012949201022866854,
+  "constant_true_a_correlation_caveat": [
+    {
+      "family": "F5_outside_homogeneous",
+      "correct_interpretation": "proxy-vs-true-a correlation undefined because true a has zero population variance",
+      "saved_numeric_diagnostic": {
+        "raw": 2.6814693102740474e-16,
+        "geometry": -3.9475908648585955e-16,
+        "note": "Across independent pilot realizations and known synthetic types; equal a or boundary -> undefined."
+      },
+      "source_results_preserved": true
+    },
+    {
+      "family": "F7_large_noise_high_dimension",
+      "correct_interpretation": "proxy-vs-true-a correlation undefined because true a has zero population variance",
+      "saved_numeric_diagnostic": {
+        "raw": null,
+        "geometry": null,
+        "note": "Across independent pilot realizations and known synthetic types; equal a or boundary -> undefined."
+      },
+      "source_results_preserved": true
+    }
+  ],
+  "scope": "Independent saved arithmetic and exact special-case expectations, not a second full MC rerun or neural verification.",
+  "seconds": 0.03100389998871833
+}

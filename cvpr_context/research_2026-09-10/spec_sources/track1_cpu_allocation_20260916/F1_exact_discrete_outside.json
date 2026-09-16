@@ -1,0 +1,1965 @@
+{
+  "family": {
+    "id": "F1_exact_discrete_outside",
+    "dimension": 2,
+    "types": [
+      {
+        "name": "radial",
+        "mean_norm": 2,
+        "kind": "rademacher_plane",
+        "radial_sd": 0.5,
+        "tangent_sd": 0,
+        "rho": 0
+      },
+      {
+        "name": "tangent",
+        "mean_norm": 2,
+        "kind": "rademacher_plane",
+        "radial_sd": 0,
+        "tangent_sd": 0.1,
+        "rho": 0
+      }
+    ],
+    "prediction": "Pilot two equal discrete samples produce zero variance half the time; diagnostic of v0 blindness, not selected after results."
+  },
+  "calibration": {
+    "radial": {
+      "true_delta_method_a": 0.0,
+      "raw_proxy_mean": 0.25433349609375,
+      "geometry_proxy_mean": 0.0,
+      "guard_fraction": 0.0,
+      "zero_raw_fraction": 0.4913330078125,
+      "zero_geometry_fraction": 1.0,
+      "fixed_r_mse": {
+        "1": 0.0,
+        "2": 0.0,
+        "4": 0.0,
+        "8": 0.0,
+        "16": 0.0
+      }
+    },
+    "tangent": {
+      "true_delta_method_a": 0.0025000000000000005,
+      "raw_proxy_mean": 0.009963378906250002,
+      "geometry_proxy_mean": 0.0024908447265625006,
+      "guard_fraction": 0.0,
+      "zero_raw_fraction": 0.5018310546875,
+      "zero_geometry_fraction": 0.5018310546875,
+      "fixed_r_mse": {
+        "1": 0.00249532224431086,
+        "2": 0.001265937408124471,
+        "4": 0.0006334837016401394,
+        "8": 0.0003179717297410545,
+        "16": 0.00015688419663585152
+      }
+    },
+    "proxy_true_a_correlations": {
+      "raw": -0.5683345764899556,
+      "geometry": 0.5759407205310236,
+      "note": "Across independent pilot realizations and known synthetic types; equal a or boundary -> undefined."
+    }
+  },
+  "policies": [
+    {
+      "name": "fixed_R1",
+      "kind": "fixed",
+      "R": 1,
+      "overhead": 0,
+      "budget": null
+    },
+    {
+      "name": "fixed_R2",
+      "kind": "fixed",
+      "R": 2,
+      "overhead": 0,
+      "budget": null
+    },
+    {
+      "name": "fixed_R4",
+      "kind": "fixed",
+      "R": 4,
+      "overhead": 0,
+      "budget": null
+    },
+    {
+      "name": "fixed_R8",
+      "kind": "fixed",
+      "R": 8,
+      "overhead": 0,
+      "budget": null
+    },
+    {
+      "name": "fixed_R16",
+      "kind": "fixed",
+      "R": 16,
+      "overhead": 0,
+      "budget": null
+    },
+    {
+      "name": "raw_B4",
+      "kind": "raw",
+      "lambda": 0.031249999999999997,
+      "overhead": 2,
+      "budget": 4,
+      "calibration_cost": 3.76300048828125
+    },
+    {
+      "name": "matched_fixed_for_raw_B4",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 0.118499755859375,
+            "R_by_type": [
+              2,
+              2
+            ]
+          },
+          {
+            "probability": 0.881500244140625,
+            "R_by_type": [
+              4,
+              4
+            ]
+          }
+        ],
+        "overhead": 0,
+        "calibration_cost": 3.76300048828125,
+        "calibration_mse": 0.0003542146557254448
+      },
+      "budget": 4,
+      "matched_to": "raw_B4",
+      "overhead": 0
+    },
+    {
+      "name": "geometry_B4",
+      "kind": "geometry",
+      "lambda": 0.0003125000000000001,
+      "overhead": 2,
+      "budget": 4,
+      "calibration_cost": 3.74725341796875
+    },
+    {
+      "name": "matched_fixed_for_geometry_B4",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 0.126373291015625,
+            "R_by_type": [
+              2,
+              2
+            ]
+          },
+          {
+            "probability": 0.873626708984375,
+            "R_by_type": [
+              4,
+              4
+            ]
+          }
+        ],
+        "overhead": 0,
+        "calibration_cost": 3.74725341796875,
+        "calibration_mse": 0.00035670447897179723
+      },
+      "budget": 4,
+      "matched_to": "geometry_B4",
+      "overhead": 0
+    },
+    {
+      "name": "oracle_free_B4",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 0.25,
+            "R_by_type": [
+              1,
+              4
+            ]
+          },
+          {
+            "probability": 0.75,
+            "R_by_type": [
+              1,
+              8
+            ]
+          }
+        ],
+        "overhead": 0,
+        "calibration_cost": 4.0,
+        "calibration_mse": 0.00019842486135791286
+      },
+      "budget": 4,
+      "overhead": 0,
+      "diagnostic_oracle": true
+    },
+    {
+      "name": "oracle_charged_B4",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 0.5,
+            "R_by_type": [
+              1,
+              2
+            ]
+          },
+          {
+            "probability": 0.5,
+            "R_by_type": [
+              1,
+              4
+            ]
+          }
+        ],
+        "overhead": 2,
+        "calibration_cost": 4.0,
+        "calibration_mse": 0.0004748552774411526
+      },
+      "budget": 4,
+      "overhead": 2,
+      "diagnostic_oracle": true
+    },
+    {
+      "name": "raw_B8",
+      "kind": "raw",
+      "lambda": 0.0012500000000000007,
+      "overhead": 2,
+      "budget": 8,
+      "calibration_cost": 7.562255859375
+    },
+    {
+      "name": "matched_fixed_for_raw_B8",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 0.10943603515625,
+            "R_by_type": [
+              4,
+              4
+            ]
+          },
+          {
+            "probability": 0.89056396484375,
+            "R_by_type": [
+              8,
+              8
+            ]
+          }
+        ],
+        "overhead": 0,
+        "calibration_cost": 7.562255859375,
+        "calibration_mse": 0.00017625005449501026
+      },
+      "budget": 8,
+      "matched_to": "raw_B8",
+      "overhead": 0
+    },
+    {
+      "name": "geometry_B8",
+      "kind": "geometry",
+      "lambda": 0.0,
+      "overhead": 2,
+      "budget": 8,
+      "calibration_cost": 6.73626708984375
+    },
+    {
+      "name": "matched_fixed_for_geometry_B8",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 0.3159332275390625,
+            "R_by_type": [
+              4,
+              4
+            ]
+          },
+          {
+            "probability": 0.6840667724609375,
+            "R_by_type": [
+              8,
+              8
+            ]
+          }
+        ],
+        "overhead": 0,
+        "calibration_cost": 6.73626708984375,
+        "calibration_mse": 0.00020882622267517318
+      },
+      "budget": 8,
+      "matched_to": "geometry_B8",
+      "overhead": 0
+    },
+    {
+      "name": "oracle_free_B8",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 0.125,
+            "R_by_type": [
+              1,
+              8
+            ]
+          },
+          {
+            "probability": 0.875,
+            "R_by_type": [
+              1,
+              16
+            ]
+          }
+        ],
+        "overhead": 0,
+        "calibration_cost": 8.0,
+        "calibration_mse": 8.851006913700094e-05
+      },
+      "budget": 8,
+      "overhead": 0,
+      "diagnostic_oracle": true
+    },
+    {
+      "name": "oracle_charged_B8",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 0.625,
+            "R_by_type": [
+              1,
+              8
+            ]
+          },
+          {
+            "probability": 0.375,
+            "R_by_type": [
+              1,
+              16
+            ]
+          }
+        ],
+        "overhead": 2,
+        "calibration_cost": 8.0,
+        "calibration_mse": 0.0001287819524133017
+      },
+      "budget": 8,
+      "overhead": 2,
+      "diagnostic_oracle": true
+    },
+    {
+      "name": "raw_B16",
+      "kind": "raw",
+      "lambda": 0.0,
+      "overhead": 2,
+      "budget": 16,
+      "calibration_cost": 10.55126953125
+    },
+    {
+      "name": "matched_fixed_for_raw_B16",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 0.68109130859375,
+            "R_by_type": [
+              8,
+              8
+            ]
+          },
+          {
+            "probability": 0.31890869140625,
+            "R_by_type": [
+              16,
+              16
+            ]
+          }
+        ],
+        "overhead": 0,
+        "calibration_cost": 10.55126953125,
+        "calibration_mse": 0.00013329975767830662
+      },
+      "budget": 16,
+      "matched_to": "raw_B16",
+      "overhead": 0
+    },
+    {
+      "name": "geometry_B16",
+      "kind": "geometry",
+      "lambda": 0.0,
+      "overhead": 2,
+      "budget": 16,
+      "calibration_cost": 6.73626708984375
+    },
+    {
+      "name": "matched_fixed_for_geometry_B16",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 0.3159332275390625,
+            "R_by_type": [
+              4,
+              4
+            ]
+          },
+          {
+            "probability": 0.6840667724609375,
+            "R_by_type": [
+              8,
+              8
+            ]
+          }
+        ],
+        "overhead": 0,
+        "calibration_cost": 6.73626708984375,
+        "calibration_mse": 0.00020882622267517318
+      },
+      "budget": 16,
+      "matched_to": "geometry_B16",
+      "overhead": 0
+    },
+    {
+      "name": "oracle_free_B16",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 1.0,
+            "R_by_type": [
+              1,
+              16
+            ]
+          }
+        ],
+        "overhead": 0,
+        "calibration_cost": 8.5,
+        "calibration_mse": 7.844209831792576e-05
+      },
+      "budget": 16,
+      "overhead": 0,
+      "diagnostic_oracle": true
+    },
+    {
+      "name": "oracle_charged_B16",
+      "kind": "policy",
+      "policy": {
+        "actions": [
+          {
+            "probability": 1.0,
+            "R_by_type": [
+              1,
+              16
+            ]
+          }
+        ],
+        "overhead": 2,
+        "calibration_cost": 10.5,
+        "calibration_mse": 7.844209831792576e-05
+      },
+      "budget": 16,
+      "overhead": 2,
+      "diagnostic_oracle": true
+    }
+  ],
+  "rows": [
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R1",
+      "budget": null,
+      "clipped_mse": 0.001247661122155325,
+      "mc_se": 1.6941175956635883e-21,
+      "actual_mean_cost": 1.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 1,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00249532224431065
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R2",
+      "budget": null,
+      "clipped_mse": 0.0006381469850867691,
+      "mc_se": 4.872541388472324e-06,
+      "actual_mean_cost": 2.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 2,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0012762939701735383
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R4",
+      "budget": null,
+      "clipped_mse": 0.0003144388925812908,
+      "mc_se": 2.9932027507234716e-06,
+      "actual_mean_cost": 4.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 4,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0006288777851625816
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R8",
+      "budget": null,
+      "clipped_mse": 0.0001552108918312495,
+      "mc_se": 1.6076923752941045e-06,
+      "actual_mean_cost": 8.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.000310421783662499
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R16",
+      "budget": null,
+      "clipped_mse": 7.817890229258782e-05,
+      "mc_se": 8.265259989574831e-07,
+      "actual_mean_cost": 16.0,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 16,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00015635780458517565
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.001247661122155325,
+      "mc_se": 1.6941175956635883e-21,
+      "actual_mean_cost": 3.761810302734375,
+      "cost_mc_se": 0.005858827279641952,
+      "calibration_mean_cost": 3.76300048828125,
+      "R_frequencies_by_type": [
+        [
+          0.49212646484375,
+          0.0,
+          0.50787353515625,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00249532224431065
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_raw_B4",
+      "budget": 4,
+      "clipped_mse": 0.0003522592823745514,
+      "mc_se": 3.3747328119717435e-06,
+      "actual_mean_cost": 3.76483154296875,
+      "cost_mc_se": 0.003543773754598367,
+      "calibration_mean_cost": 3.76300048828125,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.115966796875,
+          0.884033203125,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.11920166015625,
+          0.88079833984375,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0007045185647491028
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.0007785655078633845,
+      "mc_se": 4.221304065512952e-06,
+      "actual_mean_cost": 3.753662109375,
+      "cost_mc_se": 0.0058594839703790215,
+      "calibration_mean_cost": 3.74725341796875,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.49755859375,
+          0.0,
+          0.50244140625,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.001557131015726769
+      ],
+      "guard_fraction_by_type": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_geometry_B4",
+      "budget": 4,
+      "clipped_mse": 0.0003530387887441739,
+      "mc_se": 3.3848300989035083e-06,
+      "actual_mean_cost": 3.7459716796875,
+      "cost_mc_se": 0.0036990317598732743,
+      "calibration_mean_cost": 3.74725341796875,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.12872314453125,
+          0.87127685546875,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.12530517578125,
+          0.87469482421875,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0007060775774883478
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_free_B4",
+      "budget": 4,
+      "clipped_mse": 0.00019694910839886576,
+      "mc_se": 2.136941768276914e-06,
+      "actual_mean_cost": 3.9962158203125,
+      "cost_mc_se": 0.006783013293849543,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.25189208984375,
+          0.74810791015625,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0003938982167977315
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_charged_B4",
+      "budget": 4,
+      "clipped_mse": 0.00047881428332427494,
+      "mc_se": 4.24756986325913e-06,
+      "actual_mean_cost": 3.99755859375,
+      "cost_mc_se": 0.003906322646919347,
+      "calibration_mean_cost": 4.0,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.50244140625,
+          0.49755859375,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0009576285666485499
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.0007785655078633845,
+      "mc_se": 4.221304065512952e-06,
+      "actual_mean_cost": 7.562713623046875,
+      "cost_mc_se": 0.029862034002451462,
+      "calibration_mean_cost": 7.562255859375,
+      "R_frequencies_by_type": [
+        [
+          0.49212646484375,
+          0.0,
+          0.0,
+          0.0,
+          0.50787353515625
+        ],
+        [
+          0.49755859375,
+          0.0,
+          0.50244140625,
+          0.0,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.001557131015726769
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_raw_B8",
+      "budget": 8,
+      "clipped_mse": 0.00017180484432077837,
+      "mc_se": 1.8479672632852765e-06,
+      "actual_mean_cost": 7.5626220703125,
+      "cost_mc_se": 0.006915725830605316,
+      "calibration_mean_cost": 7.562255859375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.108154296875,
+          0.891845703125,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.11053466796875,
+          0.88946533203125,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00034360968864155674
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.0006603593138979461,
+      "mc_se": 4.6048236323192955e-06,
+      "actual_mean_cost": 6.768310546875,
+      "cost_mc_se": 0.029297419851895108,
+      "calibration_mean_cost": 6.73626708984375,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.49755859375,
+          0.0,
+          0.0,
+          0.0,
+          0.50244140625
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0013207186277958921
+      ],
+      "guard_fraction_by_type": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_geometry_B8",
+      "budget": 8,
+      "clipped_mse": 0.00020617511865019049,
+      "mc_se": 2.225471327220977e-06,
+      "actual_mean_cost": 6.7347412109375,
+      "cost_mc_se": 0.010259882678032729,
+      "calibration_mean_cost": 6.73626708984375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.31719970703125,
+          0.68280029296875,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.3154296875,
+          0.6845703125,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00041235023730038097
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_free_B8",
+      "budget": 8,
+      "clipped_mse": 8.771420503556929e-05,
+      "mc_se": 9.674406558991223e-07,
+      "actual_mean_cost": 8.013671875,
+      "cost_mc_se": 0.010212888220798971,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.12158203125,
+          0.87841796875
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00017542841007113857
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_charged_B8",
+      "budget": 8,
+      "clipped_mse": 0.00012581892471629158,
+      "mc_se": 1.4010931303695095e-06,
+      "actual_mean_cost": 7.9833984375,
+      "cost_mc_se": 0.015095219202695444,
+      "calibration_mean_cost": 8.0,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.629150390625,
+          0.370849609375
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00025163784943258317
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.0006603593138979461,
+      "mc_se": 4.6048236323192955e-06,
+      "actual_mean_cost": 10.577362060546875,
+      "cost_mc_se": 0.04138587576133602,
+      "calibration_mean_cost": 10.55126953125,
+      "R_frequencies_by_type": [
+        [
+          0.49212646484375,
+          0.0,
+          0.0,
+          0.0,
+          0.50787353515625
+        ],
+        [
+          0.49755859375,
+          0.0,
+          0.0,
+          0.0,
+          0.50244140625
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0013207186277958921
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_raw_B16",
+      "budget": 16,
+      "clipped_mse": 0.00013121469154360623,
+      "mc_se": 1.4345278091349626e-06,
+      "actual_mean_cost": 10.569091796875,
+      "cost_mc_se": 0.020648002408531204,
+      "calibration_mean_cost": 10.55126953125,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.6754150390625,
+          0.3245849609375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.68231201171875,
+          0.31768798828125
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00026242938308721246
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.0006603593138979461,
+      "mc_se": 4.6048236323192955e-06,
+      "actual_mean_cost": 6.768310546875,
+      "cost_mc_se": 0.029297419851895108,
+      "calibration_mean_cost": 6.73626708984375,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.49755859375,
+          0.0,
+          0.0,
+          0.0,
+          0.50244140625
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0013207186277958921
+      ],
+      "guard_fraction_by_type": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_geometry_B16",
+      "budget": 16,
+      "clipped_mse": 0.0002035008197195931,
+      "mc_se": 2.189775129537655e-06,
+      "actual_mean_cost": 6.7293701171875,
+      "cost_mc_se": 0.010241136404559615,
+      "calibration_mean_cost": 6.73626708984375,
+      "R_frequencies_by_type": [
+        [
+          0.0,
+          0.0,
+          0.3125,
+          0.6875,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.32281494140625,
+          0.67718505859375,
+          0.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.0004070016394391862
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_free_B16",
+      "budget": 16,
+      "clipped_mse": 7.817890229258782e-05,
+      "mc_se": 8.265259989574831e-07,
+      "actual_mean_cost": 8.5,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 8.5,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00015635780458517565
+      ],
+      "guard_fraction_by_type": null
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_charged_B16",
+      "budget": 16,
+      "clipped_mse": 7.817890229258782e-05,
+      "mc_se": 8.265259989574831e-07,
+      "actual_mean_cost": 10.5,
+      "cost_mc_se": 0.0,
+      "calibration_mean_cost": 10.5,
+      "R_frequencies_by_type": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mse_by_type": [
+        0.0,
+        0.00015635780458517565
+      ],
+      "guard_fraction_by_type": null
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.0008954018397807738,
+      "mc_95_interval": [
+        0.0008887873634693092,
+        0.0009020163160922384
+      ],
+      "test_cost_difference": -0.003021240234375,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B4",
+      "budget": 4,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00042552671911921087,
+      "mc_95_interval": [
+        0.0004166158723734488,
+        0.0004344375658649729
+      ],
+      "test_cost_difference": 0.0076904296875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.0006067606635426064,
+      "mc_95_interval": [
+        0.000598373604786786,
+        0.0006151477222984268
+      ],
+      "test_cost_difference": 9.1552734375e-05,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B8",
+      "budget": 8,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00045418419524775573,
+      "mc_95_interval": [
+        0.0004442756052421389,
+        0.00046409278525337257
+      ],
+      "test_cost_difference": 0.0335693359375,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00052914462235434,
+      "mc_95_interval": [
+        0.0005198348150722756,
+        0.0005384544296364044
+      ],
+      "test_cost_difference": 0.008270263671875,
+      "not_medical_or_patient_inference": true
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B16",
+      "budget": 16,
+      "comparison": "adaptive minus independent-calibration selected matched-cost fixed mixture",
+      "delta_mse": 0.00045685849417835306,
+      "mc_95_interval": [
+        0.00044701040369104334,
+        0.0004667065846656628
+      ],
+      "test_cost_difference": 0.0389404296875,
+      "not_medical_or_patient_inference": true
+    }
+  ],
+  "preclip_checks": [
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R1",
+      "mean_error_vector_by_type": [
+        [
+          0.00421142578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0016357421875000003
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0039062306447234445,
+          0.0
+        ],
+        [
+          0.0,
+          0.000781169315091176
+        ]
+      ],
+      "max_absolute_coordinate_z": 2.093966257890046,
+      "mean_error_norm_by_type": [
+        0.00421142578125,
+        0.0016357421875000003
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R2",
+      "mean_error_vector_by_type": [
+        [
+          0.001129150390625,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00107421875
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.00277146319942248,
+          0.0
+        ],
+        [
+          0.0,
+          0.0005586841205183741
+        ]
+      ],
+      "max_absolute_coordinate_z": 1.9227658538125052,
+      "mean_error_norm_by_type": [
+        0.001129150390625,
+        0.00107421875
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R4",
+      "mean_error_vector_by_type": [
+        [
+          -0.0001678466796875,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0003753662109375002
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.001974231069181234,
+          0.0
+        ],
+        [
+          0.0,
+          0.0003920657765649413
+        ]
+      ],
+      "max_absolute_coordinate_z": 0.9574062144016924,
+      "mean_error_norm_by_type": [
+        0.0001678466796875,
+        0.0003753662109375002
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R8",
+      "mean_error_vector_by_type": [
+        [
+          -0.00115203857421875,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00015716552734375
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0013811018268342712,
+          0.0
+        ],
+        [
+          0.0,
+          0.0002753877087360942
+        ]
+      ],
+      "max_absolute_coordinate_z": 0.8341445589565437,
+      "mean_error_norm_by_type": [
+        0.00115203857421875,
+        0.00015716552734375
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "fixed_R16",
+      "mean_error_vector_by_type": [
+        [
+          -0.00101470947265625,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00011062622070312522
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0009763365688778,
+          0.0
+        ],
+        [
+          0.0,
+          0.00019541636475596075
+        ]
+      ],
+      "max_absolute_coordinate_z": 1.0393029463421162,
+      "mean_error_norm_by_type": [
+        0.00101470947265625,
+        0.00011062622070312522
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B4",
+      "mean_error_vector_by_type": [
+        [
+          0.00225830078125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0016357421875000003
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0030851882267066504,
+          0.0
+        ],
+        [
+          0.0,
+          0.000781169315091176
+        ]
+      ],
+      "max_absolute_coordinate_z": 2.093966257890046,
+      "mean_error_norm_by_type": [
+        0.00225830078125,
+        0.0016357421875000003
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_raw_B4",
+      "mean_error_vector_by_type": [
+        [
+          -0.0003814697265625,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0003326416015624998
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0020857208707455244,
+          0.0
+        ],
+        [
+          0.0,
+          0.00041500993053167893
+        ]
+      ],
+      "max_absolute_coordinate_z": 0.8015268481319107,
+      "mean_error_norm_by_type": [
+        0.0003814697265625,
+        0.0003326416015624998
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B4",
+      "mean_error_vector_by_type": [
+        [
+          0.00421142578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0015869140625000002
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0039062306447234445,
+          0.0
+        ],
+        [
+          0.0,
+          0.0006169986478643432
+        ]
+      ],
+      "max_absolute_coordinate_z": 2.5719895302735054,
+      "mean_error_norm_by_type": [
+        0.00421142578125,
+        0.0015869140625000002
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_geometry_B4",
+      "mean_error_vector_by_type": [
+        [
+          -0.0006103515625,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00023803710937500018
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.002087558759523142,
+          0.0
+        ],
+        [
+          0.0,
+          0.0004154737096578472
+        ]
+      ],
+      "max_absolute_coordinate_z": 0.5729294148865149,
+      "mean_error_norm_by_type": [
+        0.0006103515625,
+        0.00023803710937500018
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_free_B4",
+      "mean_error_vector_by_type": [
+        [
+          0.00421142578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0004013061523437501
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0039062306447234445,
+          0.0
+        ],
+        [
+          0.0,
+          0.00031023524083798775
+        ]
+      ],
+      "max_absolute_coordinate_z": 1.2935543726746432,
+      "mean_error_norm_by_type": [
+        0.00421142578125,
+        0.0004013061523437501
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_charged_B4",
+      "mean_error_vector_by_type": [
+        [
+          0.00421142578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0008453369140625001
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0039062306447234445,
+          0.0
+        ],
+        [
+          0.0,
+          0.0004838922788060251
+        ]
+      ],
+      "max_absolute_coordinate_z": 1.746952681593345,
+      "mean_error_norm_by_type": [
+        0.00421142578125,
+        0.0008453369140625001
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B8",
+      "mean_error_vector_by_type": [
+        [
+          0.00226593017578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0015869140625000002
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.00282694030092858,
+          0.0
+        ],
+        [
+          0.0,
+          0.0006169986478643432
+        ]
+      ],
+      "max_absolute_coordinate_z": 2.5719895302735054,
+      "mean_error_norm_by_type": [
+        0.00226593017578125,
+        0.0015869140625000002
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_raw_B8",
+      "mean_error_vector_by_type": [
+        [
+          -0.00154876708984375,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00018463134765625
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.001459603447923417,
+          0.0
+        ],
+        [
+          0.0,
+          0.0002897495276349677
+        ]
+      ],
+      "max_absolute_coordinate_z": 1.0610875796759638,
+      "mean_error_norm_by_type": [
+        0.00154876708984375,
+        0.00018463134765625
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B8",
+      "mean_error_vector_by_type": [
+        [
+          0.00421142578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0014915466308593759
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0039062306447234445,
+          0.0
+        ],
+        [
+          0.0,
+          0.0005682427033198883
+        ]
+      ],
+      "max_absolute_coordinate_z": 2.624840798034357,
+      "mean_error_norm_by_type": [
+        0.00421142578125,
+        0.0014915466308593759
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_geometry_B8",
+      "mean_error_vector_by_type": [
+        [
+          -0.00189208984375,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00014801025390625015
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0016078477329112795,
+          0.0
+        ],
+        [
+          0.0,
+          0.0003174380740871138
+        ]
+      ],
+      "max_absolute_coordinate_z": 1.1767842221751013,
+      "mean_error_norm_by_type": [
+        0.00189208984375,
+        0.00014801025390625015
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_free_B8",
+      "mean_error_vector_by_type": [
+        [
+          0.00421142578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00017623901367187504
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0039062306447234445,
+          0.0
+        ],
+        [
+          0.0,
+          0.00020699467751410502
+        ]
+      ],
+      "max_absolute_coordinate_z": 1.078130342082799,
+      "mean_error_norm_by_type": [
+        0.00421142578125,
+        0.00017623901367187504
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_charged_B8",
+      "mean_error_vector_by_type": [
+        [
+          0.00421142578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00018692016601562495
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0039062306447234445,
+          0.0
+        ],
+        [
+          0.0,
+          0.0002479351119414186
+        ]
+      ],
+      "max_absolute_coordinate_z": 1.078130342082799,
+      "mean_error_norm_by_type": [
+        0.00421142578125,
+        0.00018692016601562495
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "raw_B16",
+      "mean_error_vector_by_type": [
+        [
+          0.00226593017578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0014915466308593759
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.00282694030092858,
+          0.0
+        ],
+        [
+          0.0,
+          0.0005682427033198883
+        ]
+      ],
+      "max_absolute_coordinate_z": 2.624840798034357,
+      "mean_error_norm_by_type": [
+        0.00226593017578125,
+        0.0014915466308593759
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_raw_B16",
+      "mean_error_vector_by_type": [
+        [
+          -0.0010986328125,
+          0.0
+        ],
+        [
+          0.0,
+          -7.095336914062509e-05
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0012664545859591544,
+          0.0
+        ],
+        [
+          0.0,
+          0.0002532007367171892
+        ]
+      ],
+      "max_absolute_coordinate_z": 0.8674869392714513,
+      "mean_error_norm_by_type": [
+        0.0010986328125,
+        7.095336914062509e-05
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "geometry_B16",
+      "mean_error_vector_by_type": [
+        [
+          0.00421142578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0014915466308593759
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0039062306447234445,
+          0.0
+        ],
+        [
+          0.0,
+          0.0005682427033198883
+        ]
+      ],
+      "max_absolute_coordinate_z": 2.624840798034357,
+      "mean_error_norm_by_type": [
+        0.00421142578125,
+        0.0014915466308593759
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "matched_fixed_for_geometry_B16",
+      "mean_error_vector_by_type": [
+        [
+          -0.00058746337890625,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00034637451171875015
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0015906380306041747,
+          0.0
+        ],
+        [
+          0.0,
+          0.00031536067734510236
+        ]
+      ],
+      "max_absolute_coordinate_z": 1.0983440124328152,
+      "mean_error_norm_by_type": [
+        0.00058746337890625,
+        0.00034637451171875015
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_free_B16",
+      "mean_error_vector_by_type": [
+        [
+          0.00421142578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00011062622070312522
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0039062306447234445,
+          0.0
+        ],
+        [
+          0.0,
+          0.00019541636475596075
+        ]
+      ],
+      "max_absolute_coordinate_z": 1.078130342082799,
+      "mean_error_norm_by_type": [
+        0.00421142578125,
+        0.00011062622070312522
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    },
+    {
+      "family": "F1_exact_discrete_outside",
+      "method": "oracle_charged_B16",
+      "mean_error_vector_by_type": [
+        [
+          0.00421142578125,
+          0.0
+        ],
+        [
+          0.0,
+          -0.00011062622070312522
+        ]
+      ],
+      "coordinate_mc_se_by_type": [
+        [
+          0.0039062306447234445,
+          0.0
+        ],
+        [
+          0.0,
+          0.00019541636475596075
+        ]
+      ],
+      "max_absolute_coordinate_z": 1.078130342082799,
+      "mean_error_norm_by_type": [
+        0.00421142578125,
+        0.00011062622070312522
+      ],
+      "claim": "Finite-MC check only; exact conditional expectation follows independent fresh draws. No global hypothesis-test gate."
+    }
+  ]
+}

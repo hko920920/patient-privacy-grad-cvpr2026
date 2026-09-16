@@ -1,0 +1,115 @@
+{
+  "schema": "prompt-loss-t140-result/v1",
+  "status": "COMPLETE_RAW_PENDING_INDEPENDENT_VERIFICATION",
+  "complete": true,
+  "current_step": 2,
+  "records": 1440,
+  "cells": 4320,
+  "unique_images": 480,
+  "unique_patients": 120,
+  "fit_patients": 80,
+  "selection_patients": 40,
+  "forward": 4320,
+  "backward": 0,
+  "vae_forward": 0,
+  "text_encoder_forward": 0,
+  "model_reports": [
+    {
+      "model": "base",
+      "records": 480,
+      "forward": 1440,
+      "backward": 0,
+      "initial_state": {
+        "sha256": "d8d04b1a1a0c62bd9aac4d7c9fba9370156690954a5fa5a0378f9b95aa714469",
+        "state_tensors": 686,
+        "artifact_tensors_exactly_checked": 686
+      },
+      "final_state": {
+        "sha256": "d8d04b1a1a0c62bd9aac4d7c9fba9370156690954a5fa5a0378f9b95aa714469",
+        "state_tensors": 686,
+        "artifact_tensors_exactly_checked": 0
+      },
+      "state_values_exactly_unchanged": true,
+      "parameter_versions_checked": 686,
+      "parameter_versions_and_no_gradients": true,
+      "all_parameters_frozen": true,
+      "unet_training": false,
+      "gradient_checkpointing_enabled": false,
+      "no_lora_modules": true,
+      "adapter_matches_checkpoint": null,
+      "cuda_event_forward_ms_total": 90781.81478881836,
+      "seconds": 117.42365360003896,
+      "peak_cuda_allocated_bytes": 3875401216
+    },
+    {
+      "model": "model_1",
+      "records": 480,
+      "forward": 1440,
+      "backward": 0,
+      "initial_state": {
+        "sha256": "c02172cf38eabd3d5cd63456eed48e3f2b992207afaedad69024b7391a517e77",
+        "state_tensors": 942,
+        "artifact_tensors_exactly_checked": 0
+      },
+      "final_state": {
+        "sha256": "c02172cf38eabd3d5cd63456eed48e3f2b992207afaedad69024b7391a517e77",
+        "state_tensors": 942,
+        "artifact_tensors_exactly_checked": 0
+      },
+      "state_values_exactly_unchanged": true,
+      "parameter_versions_checked": 942,
+      "parameter_versions_and_no_gradients": true,
+      "all_parameters_frozen": true,
+      "unet_training": false,
+      "gradient_checkpointing_enabled": false,
+      "no_lora_modules": false,
+      "adapter_matches_checkpoint": true,
+      "cuda_event_forward_ms_total": 108879.35981750488,
+      "seconds": 134.14896880002925,
+      "peak_cuda_allocated_bytes": 3896335872
+    },
+    {
+      "model": "model_2",
+      "records": 480,
+      "forward": 1440,
+      "backward": 0,
+      "initial_state": {
+        "sha256": "8fcd699af963d8c457ab112239c4736a58255e30a40b83dcb1a2c490e6238001",
+        "state_tensors": 942,
+        "artifact_tensors_exactly_checked": 0
+      },
+      "final_state": {
+        "sha256": "8fcd699af963d8c457ab112239c4736a58255e30a40b83dcb1a2c490e6238001",
+        "state_tensors": 942,
+        "artifact_tensors_exactly_checked": 0
+      },
+      "state_values_exactly_unchanged": true,
+      "parameter_versions_checked": 942,
+      "parameter_versions_and_no_gradients": true,
+      "all_parameters_frozen": true,
+      "unet_training": false,
+      "gradient_checkpointing_enabled": false,
+      "no_lora_modules": false,
+      "adapter_matches_checkpoint": true,
+      "cuda_event_forward_ms_total": 106094.25392150879,
+      "seconds": 131.4522527999943,
+      "peak_cuda_allocated_bytes": 3896466944
+    }
+  ],
+  "checkpoint_sha256": {
+    "model_1": "ae789c32ce9ebaca3eb568fda968c28d5b9cbdf39682d7a498615b26cbb08435",
+    "model_2": "ec54c5c405de03f2ba4daa361436ab1248acb541303e99291ab32ce3a7d63962"
+  },
+  "base_weight_sha256": "28ec9cf3b239c0751c201b1f6fb46b551df5862731b30a37aa1360101cb3fbab",
+  "contract_sha256": "c582c12ef8ed58ecd820def8e377a94d02e715cfdea6e259fd2e3342de571869",
+  "protocol_sha256": "7ca46636977be8f95e47133eaaa81fee3711f6aa175d4604ea8d998a97ee9a23",
+  "results_sha256": "bfa9f88b9e811f4de3e2adb2fcf58bf69a33b45e749d4331acdb90e412781ec7",
+  "cells_sha256": "b8196429b22a045f3b934bbb654ec0b58ce283ba08064c92f11bcf5a78b3dfdc",
+  "frozen_files_unchanged": true,
+  "performance_analysis": false,
+  "attack_fitting": false,
+  "new_target_training": false,
+  "pretrained_membership": "unknown",
+  "seconds": 400.4874908000347,
+  "completed_utc": "2026-09-15T05:30:28.896321+00:00"
+}

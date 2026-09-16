@@ -1,0 +1,48 @@
+{
+  "schema": "prompt-condition-results-artifact/v1",
+  "created_utc": "2026-09-15T05:39:07.620658+00:00",
+  "source_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\prompt_loss_t140_v1",
+  "source_hashes": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\prompt_loss_t140_v1\\analysis_v1\\analysis.json": "8a181659760bb8d32a34651635bee33c93cf33e8e6aa6967202cc8910ed1fefa",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\prompt_loss_t140_v1\\verification.json": "8219ad0f762b6eab14e1f06f09019c600e67b3cefd8d9ee431e561ce4e97d080",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\prompt_loss_t140_v1\\analysis_v1\\protocol.json": "3b81f69157db3ecfbc2c4c2c5543bef2f595844f4f9e379b5ea2c94a9b67da62",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\prompt_loss_t140_v1\\analysis_v1\\provenance.json": "572e02a52e79d9c07ac3df45cd7f6a71ed9aace4b19e881313322163889c812c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\prompt_loss_t140_v1\\execution.json": "5abd3f5aa066c4b2e8aee7e9c73d859c925b3612be4c08f2577ab7080df2abeb",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\prompt_loss_t140_v1\\protocol.json": "7ca46636977be8f95e47133eaaa81fee3711f6aa175d4604ea8d998a97ee9a23"
+  },
+  "code_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\run_prompt_loss_t140.py": "f1e2653b36684f7f25cb5d86325778ba6573f6b4d6dad2c2fda7615c081d621a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\models.py": "cd1a0b0eca3f4460eadc247d62960eb50f60d09cc4c39c2ed279e5a3afb2fd91",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\common.py": "22ff06578ab7431ff9ac670eaef112371c800b13e9a3a4bf9cc3a5ba11b768d7",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\run_cdi_base_selection.py": "8b2b6ef331f2caa58e5728388d1dcd573da5798e5a9983c57a0b918818b0557b",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\cdi_adapter.py": "70d91b15397394d1405c8e930d2ec94ff4dcb0d3bbddd7ace6c8bdd58b0da8ce",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\build_cache.py": "043dd5d6e9ba2319a1749445c93224551e6fec28e9cad9e15d3ac131bdf8fc7a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\train_coverage.py": "22cbaa71264e69752ef33e7cf8f98ac759206452617f66cd1897dabc03f7bcbe",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\dp_protocol\\calibrate_xray_public_clip_norms.py": "12cebf40876aace8d52c813749d43f4a67a0f60c689f0e8314c8594a87528a81",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\analyze_verify_prompt_loss.py": "7cf4b95d46636369dd0c0a63629e7cc3436bf1fda332567a75985342b7d18b63"
+  },
+  "source_analysis_sha256": "8a181659760bb8d32a34651635bee33c93cf33e8e6aa6967202cc8910ed1fefa",
+  "source_verification_sha256": "8219ad0f762b6eab14e1f06f09019c600e67b3cefd8d9ee431e561ce4e97d080",
+  "extraction_contract_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\prompt_loss_t140_contract_20260915.json",
+  "extraction_contract_sha256": "c582c12ef8ed58ecd820def8e377a94d02e715cfdea6e259fd2e3342de571869",
+  "scope": "faithful copies and CSV exports of completed fixed conditioning diagnostic; no new inference, fitting or statistics",
+  "counts": {
+    "metrics": 30,
+    "target_membership_metrics": 24,
+    "base_assignment_metrics": 6,
+    "prompt_contrasts": 24,
+    "all_prompt_CIs_contain_zero": true,
+    "GPU_MSE_vs_FP64_pair_rank_mismatches": 0
+  },
+  "artifact_sha256": {
+    "analysis.json": "8a181659760bb8d32a34651635bee33c93cf33e8e6aa6967202cc8910ed1fefa",
+    "analysis_protocol.json": "3b81f69157db3ecfbc2c4c2c5543bef2f595844f4f9e379b5ea2c94a9b67da62",
+    "analysis_provenance.json": "572e02a52e79d9c07ac3df45cd7f6a71ed9aace4b19e881313322163889c812c",
+    "extraction_execution.json": "5abd3f5aa066c4b2e8aee7e9c73d859c925b3612be4c08f2577ab7080df2abeb",
+    "extraction_protocol.json": "7ca46636977be8f95e47133eaaa81fee3711f6aa175d4604ea8d998a97ee9a23",
+    "metrics_30.csv": "2bf93f62d25417d7c2dc655e157b57dcc1ebee70e96acc0e5d3fe74e06a9b863",
+    "prompt_contrasts_24.csv": "c3f2bc32b69d5ab73350cf01572e5e6ceedefbeb078cde7ebde3713dc40332fb",
+    "raw_verification.json": "8219ad0f762b6eab14e1f06f09019c600e67b3cefd8d9ee431e561ce4e97d080"
+  },
+  "originals_unchanged": true
+}

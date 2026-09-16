@@ -1,0 +1,279 @@
+\chapter{Conclusion}
+\label{ch:conclusion}
+
+% 독립 연구의 결론을 반복하지 않고, 두 연구축이 하나의 Claim-Aligned
+% Assurance 논문을 이루는 이유와 각 보증의 중단 경계를 중심으로 정리합니다.
+\section{Summary}
+\label{sec:ch5-summary}
+
+Trust claims about artificial intelligence systems are often communicated through
+compact labels, parameters, or acceptance decisions.
+
+These outputs can hide the premises that give a claim its meaning.  A differential privacy parameter is
+incomplete without its protected unit, adjacency, transformation, mechanism, and
+accountant; a watermark score is not by itself evidence that embedding occurred
+under a declared generation context.  This dissertation addressed the gap between
+such public statements and the mechanisms and evidence that warrant them.
+
+The resulting perspective is \ClaimAlignedAssurance{}.  A positive statement is
+released only when its target, operative mechanism, verification interface, and
+evidence refer to the same protected or verified object.  An incomplete chain
+yields a narrower qualified statement or an explicit block.  The framework is
+instantiated in two technically distinct settings: evidence-bound auditing of a
+completed privacy execution and proof-bound public verification of generative-image
+provenance.
+
+Chapter~\ref{ch:post-execution-validation} treated a reported privacy sentence as
+a query over frozen evidence rather than as a synonym for an accountant output.
+The validator reopens the raw-to-generated mapping, checks pipeline and runtime
+relations, recomputes the registered accountant, resolves the requested unit and
+adjacency, and releases only the exact native or converted wording licensed by the
+result.  The complete contract returned the expected tuple for all 100 allowed and
+100 paired non-allow cases.  Fixed necessity witnesses and preserved development
+failures exposed why mapping, stability, runtime, vacuity, and exact wording cannot
+be collapsed into one scalar check.  WISDM and UCI HAR executions demonstrated
+query-dependent authorization, while Sepsis and Backblaze rescans showed that
+window policy can substantially change raw-to-generated influence without itself
+constituting a DP certificate.
+
+Chapter~\ref{ch:pp-mark} changed the assurance object to generative image
+provenance.  PP-Mark binds a latent watermark to generation context, commits a
+sampled embedding trace, and verifies an image-bound opening through an SP1
+receipt.  PP-Mark(score) provides transformation tolerant statistical screening;
+PP-Mark(accept) requires both the calibrated score and a valid receipt for the same
+context and exact image.  A 10,000-binding search and white-box optimization
+exposed score-only acceptance, whereas the evaluated forgery conditions produced
+no full acceptances.  Score-mode true positive rates were 0.74--1.00 over the
+reported individual transformations and 0.98 after regeneration.  These are
+observed results under the evaluated protocols, not a universal zero forgery
+claim.
+
+The two studies are not one algorithm.  The privacy audit limits what may be said
+about an existing execution, whereas PP-Mark changes the evidence required by a
+public provenance predicate.  Their common result is that a defensible claim must
+name its object, bind the operative mechanism, expose an interface with fixed
+semantics, and carry the evidence required by those semantics.
+
+
+\section{Integrated Discussion and Contributions}
+\label{sec:ch5-integrated-discussion}
+
+\subsection{Auditable Privacy: Evidence-Relative Post-Execution Audit}
+\label{subsec:ch5-auditable-privacy}
+
+The privacy contribution begins from a practical condition: training has already
+finished and the available evidence is fixed.  Different stakeholders may still
+ask whether the same model supports a generated-window, raw-event, patient, owner,
+or device-level sentence.  Those requests are different mathematical claims even
+when they display the same base epsilon.  The query must therefore be a scientific
+input to the audit rather than a label selected after one evidence-only verdict.
+
+The validator connects the requested sentence through a chain of raw adjacency,
+stable transformation, executed mechanism, accountant, and exact wording.  It
+separates the derivation path, public release state, assurance authority, numerical
+consequence, and issue set.  This distinction permits one frozen execution to
+license a native claim, license a weaker converted claim, and block a stronger
+claim.  A blocked result does not prove that the stronger privacy property is
+false; it states that the supplied evidence and registered procedure do not
+license that sentence.
+
+The experimental contribution is correspondingly about decision validity and
+authority.  The 200-case oracle tests controlled conformance rather than estimating
+error prevalence.  WISDM supplies a complete three-query execution; UCI HAR shows
+that missing raw support and owner bounds correctly stop the conclusion at the
+published-window unit.  Sepsis and Backblaze expose mapping differences at medical
+and operational scale, while intentionally withholding privacy wording because no
+executed mechanism and accountant are attached.  Separate verifiers establish
+software and artifact separation from the production path, not execution
+attestation.
+
+This produces a concrete reuse boundary.  If an existing model's frozen evidence
+licenses the requested unit, the model can be reused with the exact supported
+wording.  If a registered conversion produces a nonvacuous pair, only that weaker
+pair may be stated.  If the requested patient or owner claim is blocked, the base
+window pair cannot be relabeled; a mechanism and execution native to the stronger
+unit may be required.  Determining the cost and utility of that alternative is a
+future experiment, not a result silently inferred from the audit.
+
+\subsection{Secure Public Verification}
+\label{subsec:ch5-secure-public-verification}
+
+The provenance study exposed a tension between independent verification and
+attack surface.  A private detector requires trust in its operator; a public
+detector enables independent screening but exposes a queryable or differentiable
+decision surface.  PP-Mark therefore does not claim to make the score invulnerable.
+It changes the stronger acceptance rule so that optimizing the public statistic is
+insufficient without a valid context-, image-, and trace-bound receipt.
+
+The score and receipt establish different facts.  The score supplies image-side
+evidence that can survive selected lossy transformations.  The receipt supplies
+process-side evidence for the registered binding, trace commitment, sampled
+embedding relation, and exact-image predicate.  Full acceptance requires both,
+allowing third-party verification without a private API or disclosure of the
+producer secret.  This construction is not a replacement for a conventional
+signature when exact integrity alone is required; its added value is verification
+of the embedding relation together with a durable in-image signal.
+
+The interface deliberately has three outcomes rather than an implicit fallback.
+An exact image with a valid receipt can receive PP-Mark(accept).  A transformed
+copy may retain PP-Mark(score) but does not inherit exact-image acceptance.  If the
+public binding or receipt cannot be resolved, the result is unverified rather than
+negative evidence that an image is not AI-generated.  PP-Mark is therefore a
+positive provenance system for participating pipelines, not a universal synthetic-
+image classifier.
+
+\subsection{Claim-Aligned Assurance Design Principles}
+\label{subsec:ch5-caa-principles}
+
+The integrated analysis supports four dissertation-wide principles.
+
+\begin{enumerate}
+    \item \textbf{Claim specification.}  A positive statement identifies its
+    target and semantics: the privacy unit, adjacency, and wording, or the exact
+    image, generation context, and verification mode.
+
+    \item \textbf{Mechanism binding.}  The statement is connected to the mechanism
+    that gives it meaning.  Privacy binds transformation, sampling, clipping,
+    noise, accounting, and runtime evidence; provenance binds payload, latent
+    embedding, trace commitment, image-bound challenge, and proof predicate.
+
+    \item \textbf{Evidence-bound decision.}  An output does not inherit the
+    authority of missing evidence.  Positive privacy wording requires its mapping,
+    runtime, and accounting relations; full provenance acceptance requires both
+    image-side detection and process-side receipt verification.
+
+    \item \textbf{Fail-closed assurance.}  A missing, inconsistent, invalid,
+    unregistered, or vacuous premise blocks the stronger interpretation.  Blocking
+    does not prove the broader property false; it states that the requested
+    conclusion is not licensed by the declared procedure.
+\end{enumerate}
+
+The verification interface operationalizes all four principles.  Query separation
+prevents a window result from becoming a patient answer, while separate score and
+acceptance modes prevent statistical detection from becoming process-bound
+provenance.  The reusable design question is consequently narrow: which observed
+or proven relations license the exact positive sentence being released?
+
+
+\section{Limitations, Broader Impact, and Future Work}
+\label{sec:ch5-limits-impact-future}
+
+\subsection{Limitations and Assurance Boundaries}
+\label{subsec:ch5-limitations}
+
+The dissertation covers two assurance domains and two principal systems.  It does
+not establish a complete framework for all trustworthy-AI claims.  Fairness,
+safety, factuality, utility, and governance can require different objects and
+evidence.  The four principles are a design abstraction grounded in the evaluated
+settings, not a universal certification standard.
+
+The privacy result remains evidence-relative and finite.  It assumes a fallible
+but nonmalicious producer, registered transformations and accountant adapters, and
+faithful disclosure of the observable bundle.  A malicious producer can fabricate
+a mutually consistent bundle after executing another procedure.  The validator
+cannot distinguish those worlds without authenticated observation, and therefore
+does not attest execution, prove arbitrary program semantics, or replace the
+underlying DP proof.  The controlled oracle establishes exact behavior on its
+authored 200 cases but does not estimate how often published systems contain such
+errors.  Sepsis and Backblaze are mapping diagnostics only, not trained DP models
+or patient-level certificates.
+
+PP-Mark is conditional on hash resistance, proof-system soundness, producer-key
+control, inversion behavior, the composite predicate, and the partial-opening
+bound.  It is evaluated on Stable Diffusion 2.1 and SDXL, two latent-diffusion
+models that share a compatible embedding and inversion interface.  The submitted
+SP1 v5 implementation requires about 48.6 seconds and produces a 40.68 MB receipt
+at 1,000 sampled positions.  A post-submission SP1 v6.3.1 port reduced the measured
+values to 17.0 seconds and 2.81 MB, but this update does not eliminate proof cost or
+establish a universal deployment profile.  Exact-image acceptance is invalidated
+by pixel edits, the public binding and receipt must remain retrievable, and key
+rotation, revocation, geometric synchronization, and broader model families remain
+open.
+
+Claim alignment can prevent a system from saying more than its evidence supports,
+but it cannot repair false source evidence, a compromised key, or facts outside a
+proof circuit.  It narrows the statement and makes the stopping boundary visible;
+it does not eliminate every trust assumption.
+
+\subsection{Broader Impact}
+\label{subsec:ch5-broader-impact}
+
+Auditable Privacy applies to sequential learning with medical sensor data,
+clinical records, activity data, and operational logs.  Several privacy units can
+be plausible in each setting.
+
+Explicit units, transformations, runtime relations, and evidence can
+help developers and auditors avoid presenting generated record accounting as a
+stronger patient-, user-, or device-level promise.  It can also clarify whether an
+existing model is reusable under narrower wording or whether a new native unit
+execution is required.  This remains an audit of claim support, not clinical
+certification.
+
+Secure Public Verification can support creators, platforms, archives, and
+reviewers that verify declared provenance without one private verification API.
+Its separated modes clarify that a transformed image can retain a detectable
+signal while requiring a new receipt for exact acceptance.  Provenance evidence
+nevertheless does not prove factual accuracy, human authorship, social legitimacy,
+or legal ownership.
+
+Fail-closed systems also impose costs.  Unavailable evidence may withhold a
+legitimate claim, proof expense may exclude producers, and key ownership may
+centralize control.  Deployment therefore requires accessible verification,
+transparent key governance, clear communication of unverified outcomes, and an
+appeal or re-issuance process.
+
+\subsection{Future Experimental Validation}
+\label{subsec:ch5-future-validation}
+
+The first future study will quantify the boundary between reuse through post-hoc
+conversion and retraining with native patient-level DP.  The study will use the
+5,000-patient PhysioNet/CinC 2019 Sepsis subset already audited in
+Chapter~\ref{ch:post-execution-validation}, containing 370 sepsis-positive and
+4,630 control patients.  A source- and label-stratified patient split will allocate
+3,500 patients to training (259 positive, 3,241 control), 750 to validation (55
+positive, 695 control), and 750 to testing (56 positive, 694 control), with no
+patient crossing a split.
+
+Three training conditions will be compared on the same patient partitions: a
+nonprivate reference, window-level DP-SGD followed by the evidence-bound audit,
+and native patient-level DP-SGD.  The native condition will sample patients,
+aggregate each selected patient's window gradients, clip once per patient, add
+Gaussian noise, and account at patient adjacency.  Target patient-level epsilon
+values of 2, 4, and 8, public window-contribution caps of 1, 4, 8, and 16, and five
+fixed seeds will define the comparison grid.  Evaluation will report AUPRC,
+calibration and utility, the licensed or blocked post-hoc privacy statement,
+membership-inference exposure, training time, and peak memory.  The intended output
+is a measured rule for when an existing window-private model remains reusable and
+when a native patient-private execution is necessary.
+
+The second future study will make PP-Mark proof artifacts discoverable after
+distribution.  A C2PA-compatible external manifest repository and resolver will
+store or reference the public binding \(\PPBinding\), PP-Mark public statement,
+SP1 receipt, producer signature, model and inversion configuration, and revocation
+metadata.  C2PA is used here as a signed transport and discovery layer; the design
+does not assume that C2PA provides one universal central registry or proves the
+PP-Mark embedding relation.
+
+An exact image will first use a manifest identifier, URI, or hard binding to
+retrieve its proof package.  When embedded metadata has been stripped, a soft
+fingerprint resolver will return candidate manifests for cryptographic and
+statistical verification rather than directly declaring provenance.  Experiments
+will include metadata stripping, JPEG compression, crop--resize, manifest
+substitution, cross-image receipt replay, missing records, and key revocation.
+Metrics will include retrieval Recall@\(k\), false-acceptance and true-positive
+rates, p95 lookup and verification latency, registry storage, and stale-record
+rejection.  The decision policy remains explicit: an exact image with a valid
+score and proof receives \textsf{Accept}; a transformed image may receive
+\textsf{Score}; and an unresolved artifact returns \textsf{Unverified}.
+
+Both future studies close concrete gaps exposed by the completed work.  The first
+tests the cost of moving from an audited converted claim to a native protected unit.
+The second tests how proof-bound public verification survives real distribution
+when metadata and sidecars may be removed.  Neither result is claimed as completed
+in this dissertation.
+
+Within the scope evaluated here, the dissertation reaches a narrower conclusion.
+Privacy and provenance claims become defensible not when a system exposes the
+largest number of metrics, but when each positive statement is limited to the
+object, mechanism, interface, and evidence that jointly support it.  That is the
+role of Claim-Aligned Assurance in trustworthy AI.

@@ -1,0 +1,15 @@
+{
+  "stage": 2,
+  "created_utc": "2026-09-15T04:54:00Z",
+  "created_time_precision": "approximate minute",
+  "analyzer_sha256": "271061072d98e736a34030533ca00d22b40055045327563c83720418c56e08bc",
+  "verifier_sha256": "ee7466ae1fa7cc4d6a5dff9f954b527b65e363ea6be9099b597d5a59e13de020",
+  "analysis_contract_sha256": "bc2497d17b3110ec8b994eaa541d4eda00891ff5d30215a9aff26b7aa5f1db43",
+  "raw_E_verifier_sha256": "66c8f4621d1a4f55357a9dace42d6a4ea33403ffcfd94864a9fc53d053ee9f52",
+  "synthetic_checks": "PASS before reading actual E/U performance",
+  "verification_scope": "11520 saved predictions; E all-fit20 and CV250 fresh refits; U exact preservation;144 AUC;156 paired differences; independently regenerated weighted-count bootstrap",
+  "new_GPU_verification": false,
+  "performance_inspected": false,
+  "raw_E_extraction": "running; independently verify before analysis",
+  "causal_failure_established": false
+}

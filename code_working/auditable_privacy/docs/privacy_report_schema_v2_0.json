@@ -1,0 +1,843 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/unit-aware-privacy-report-v2.0.schema.json",
+  "title": "Unit-Aware Privacy Report v2.0 (hardened contract)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "scenario",
+    "mechanism",
+    "privacy",
+    "pipeline",
+    "runtime_trace",
+    "rng_assurance",
+    "noise_seed_policy",
+    "public_certificate",
+    "claim_contracts"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "scenario": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mechanism": {
+      "$ref": "#/$defs/mechanism"
+    },
+    "privacy": {
+      "$ref": "#/$defs/privacy"
+    },
+    "pipeline": {
+      "$ref": "#/$defs/pipeline"
+    },
+    "runtime_trace": {
+      "$ref": "#/$defs/runtime_trace"
+    },
+    "rng_assurance": {
+      "description": "release_grade_secure is retained only as a legacy/adversarial token and is always rejected by semantic validation; the strongest registered positive class is known_attack_hardened_secure.",
+      "enum": [
+        "release_grade_secure",
+        "known_attack_hardened_secure",
+        "research_prng",
+        "unknown"
+      ]
+    },
+    "noise_seed_policy": {
+      "enum": [
+        "secure_private_unrecorded",
+        "secure_private_internal",
+        "public_deterministic",
+        "unknown"
+      ]
+    },
+    "public_certificate": {
+      "type": "object",
+      "required": [
+        "metadata_classification"
+      ],
+      "properties": {
+        "metadata_classification": {
+          "enum": [
+            "public_benchmark",
+            "controller_approved",
+            "dp_released",
+            "private_internal"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "claim_contracts": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/claim_contract"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{64}$"
+    },
+    "unit": {
+      "enum": [
+        "window",
+        "event",
+        "owner",
+        "user",
+        "patient",
+        "series",
+        "subject",
+        "client"
+      ]
+    },
+    "adjacency": {
+      "enum": [
+        "add_remove",
+        "replace_one",
+        "fixed_owner_slot_payload_replace_one_v1",
+        "owner_add_remove",
+        "owner_replace_one"
+      ]
+    },
+    "sampler": {
+      "enum": [
+        "poisson",
+        "shuffle",
+        "fixed_without_replacement",
+        "full_batch",
+        "custom_registered"
+      ]
+    },
+    "parameter_block": {
+      "type": "object",
+      "required": [
+        "id",
+        "classification",
+        "parameters",
+        "parameters_sha256"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "classification": {
+          "enum": [
+            "public_fixed",
+            "public",
+            "record_local",
+            "owner_local",
+            "separately_dp",
+            "not_applicable",
+            "private_global",
+            "private_adaptive",
+            "unknown"
+          ]
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "parameters_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "additionalProperties": true
+    },
+    "mechanism": {
+      "type": "object",
+      "required": [
+        "mechanism_id",
+        "mechanism_version",
+        "accountant_id",
+        "accountant_version",
+        "accounting_unit",
+        "accountant_adjacency",
+        "sampling_unit",
+        "sampler_law",
+        "accountant_sampler_law",
+        "sample_rate",
+        "sample_rate_numerator",
+        "sample_rate_denominator",
+        "sampling_implementation",
+        "steps",
+        "noise_multiplier",
+        "secure_mode",
+        "secure_rng_backend",
+        "noise_generation",
+        "noise_hardening",
+        "clipping_unit",
+        "clipping_norm",
+        "noising_unit",
+        "privacy_convention",
+        "gradient_aggregation",
+        "update_normalization",
+        "optimizer_step_size",
+        "adapter_registry_entry_sha256"
+      ],
+      "properties": {
+        "mechanism_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mechanism_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accountant_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accountant_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accounting_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "accountant_adjacency": {
+          "$ref": "#/$defs/adjacency"
+        },
+        "sampling_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "sampler_law": {
+          "$ref": "#/$defs/sampler"
+        },
+        "accountant_sampler_law": {
+          "$ref": "#/$defs/sampler"
+        },
+        "sample_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "sample_rate_numerator": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sample_rate_denominator": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sampling_implementation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "steps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "noise_multiplier": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "secure_mode": {
+          "type": "boolean"
+        },
+        "secure_rng_backend": {
+          "type": "string",
+          "minLength": 1
+        },
+        "noise_generation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "noise_hardening": {
+          "type": "string",
+          "minLength": 1
+        },
+        "clipping_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "clipping_norm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "noising_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "privacy_convention": {
+          "enum": [
+            "approx_dp",
+            "rdp_converted",
+            "pld_converted"
+          ]
+        },
+        "gradient_aggregation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "update_normalization": {
+          "type": "string",
+          "minLength": 1
+        },
+        "optimizer_step_size": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "adapter_registry_entry_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "additionalProperties": true
+    },
+    "privacy": {
+      "type": "object",
+      "required": [
+        "epsilon",
+        "delta",
+        "delta_convention"
+      ],
+      "properties": {
+        "epsilon": {
+          "type": "number",
+          "minimum": 0
+        },
+        "delta": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 1
+        },
+        "delta_convention": {
+          "enum": [
+            "accountant_delta_only",
+            "delta_augmented_with_bound_failure",
+            "conditional_on_bound_event"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "influence_support": {
+      "type": "object",
+      "required": [
+        "status",
+        "components"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "complete",
+            "incomplete",
+            "unknown"
+          ]
+        },
+        "components": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "features",
+              "labels",
+              "weights",
+              "selection",
+              "preprocessing"
+            ]
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "schedule_manifest": {
+      "type": "object",
+      "required": [
+        "id",
+        "mode",
+        "evidence_status",
+        "parameters",
+        "parameters_sha256"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mode": {
+          "const": "fixed_mapping"
+        },
+        "evidence_status": {
+          "const": "validated"
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "parameters_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "additionalProperties": true
+    },
+    "pipeline_manifest": {
+      "type": "object",
+      "required": [
+        "dataset_id",
+        "split_id",
+        "code_version",
+        "code_artifact_id",
+        "code_sha256",
+        "accountant_checker_artifact_id",
+        "accountant_checker_sha256",
+        "support_convention",
+        "record_identity_policy",
+        "generated_record_unit",
+        "mapping_file_sha256",
+        "selected_mapping_sha256",
+        "selected_record_count",
+        "mechanism_sha256",
+        "influence_support",
+        "owner_attribution_status",
+        "preprocessing",
+        "raw_domain",
+        "contribution_policy",
+        "schedule",
+        "population_definition",
+        "population_size_policy",
+        "model_selection_status",
+        "released_model_sha256",
+        "batch_trace_sha256"
+      ],
+      "properties": {
+        "dataset_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "split_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "code_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "code_artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "code_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "accountant_checker_artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accountant_checker_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "support_convention": {
+          "const": "half_open_integer_intervals"
+        },
+        "record_identity_policy": {
+          "enum": [
+            "generated_identity",
+            "public_fixed_ids",
+            "owner_partition_ids"
+          ]
+        },
+        "generated_record_unit": {
+          "enum": [
+            "window",
+            "event",
+            "owner"
+          ]
+        },
+        "cross_owner_dependency": {
+          "enum": [
+            "none",
+            "present",
+            "unknown"
+          ]
+        },
+        "mapping_file_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "selected_mapping_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "selected_record_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "mechanism_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "influence_support": {
+          "$ref": "#/$defs/influence_support"
+        },
+        "owner_attribution_status": {
+          "enum": [
+            "complete",
+            "incomplete",
+            "unknown"
+          ]
+        },
+        "preprocessing": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/parameter_block"
+          }
+        },
+        "raw_domain": {
+          "$ref": "#/$defs/parameter_block"
+        },
+        "contribution_policy": {
+          "$ref": "#/$defs/parameter_block"
+        },
+        "schedule": {
+          "$ref": "#/$defs/schedule_manifest"
+        },
+        "population_definition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "population_size_policy": {
+          "description": "accountant_covered, private_dynamic, and unknown are retained as negative/diagnostic tokens; the built-in positive path accepts only public_fixed or not_used_in_release_mechanism.",
+          "enum": [
+            "public_fixed",
+            "not_used_in_release_mechanism",
+            "accountant_covered",
+            "private_dynamic",
+            "unknown"
+          ]
+        },
+        "model_selection_status": {
+          "enum": [
+            "public",
+            "public_validation",
+            "accounted",
+            "not_applicable",
+            "not_covered",
+            "unknown"
+          ]
+        },
+        "released_model_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "batch_trace_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "additionalProperties": true
+    },
+    "pipeline": {
+      "type": "object",
+      "required": [
+        "mapping_file_sha256",
+        "selected_mapping_sha256",
+        "pipeline_sha256",
+        "manifest"
+      ],
+      "properties": {
+        "mapping_file_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "selected_mapping_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "pipeline_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "manifest": {
+          "$ref": "#/$defs/pipeline_manifest"
+        }
+      },
+      "additionalProperties": true
+    },
+    "runtime_trace": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "matched",
+            "missing",
+            "mismatched",
+            "not_applicable"
+          ]
+        },
+        "trace_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "mechanism_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mechanism_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accountant_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accountant_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accounting_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "accountant_adjacency": {
+          "$ref": "#/$defs/adjacency"
+        },
+        "sampling_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "sampler_law": {
+          "$ref": "#/$defs/sampler"
+        },
+        "accountant_sampler_law": {
+          "$ref": "#/$defs/sampler"
+        },
+        "sample_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "sample_rate_numerator": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sample_rate_denominator": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sampling_implementation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "steps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "noise_multiplier": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "secure_mode": {
+          "type": "boolean"
+        },
+        "secure_rng_backend": {
+          "type": "string",
+          "minLength": 1
+        },
+        "noise_generation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "noise_hardening": {
+          "type": "string",
+          "minLength": 1
+        },
+        "clipping_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "clipping_norm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "noising_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "privacy_convention": {
+          "enum": [
+            "approx_dp",
+            "rdp_converted",
+            "pld_converted"
+          ]
+        },
+        "gradient_aggregation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "update_normalization": {
+          "type": "string",
+          "minLength": 1
+        },
+        "optimizer_step_size": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "adapter_registry_entry_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "code_artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "code_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "accountant_checker_artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accountant_checker_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "selected_mapping_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "pipeline_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "epsilon": {
+          "type": "number",
+          "minimum": 0
+        },
+        "delta": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 1
+        },
+        "delta_convention": {
+          "enum": [
+            "accountant_delta_only",
+            "delta_augmented_with_bound_failure",
+            "conditional_on_bound_event"
+          ]
+        },
+        "runtime_evidence_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "evidence": {
+          "type": "object"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "matched"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "trace_hash",
+              "mechanism_id",
+              "mechanism_version",
+              "accountant_id",
+              "accountant_version",
+              "accounting_unit",
+              "accountant_adjacency",
+              "sampling_unit",
+              "sampler_law",
+              "accountant_sampler_law",
+              "sample_rate",
+              "sample_rate_numerator",
+              "sample_rate_denominator",
+              "sampling_implementation",
+              "steps",
+              "noise_multiplier",
+              "secure_mode",
+              "secure_rng_backend",
+              "noise_generation",
+              "noise_hardening",
+              "clipping_unit",
+              "clipping_norm",
+              "noising_unit",
+              "privacy_convention",
+              "gradient_aggregation",
+              "update_normalization",
+              "optimizer_step_size",
+              "adapter_registry_entry_sha256",
+              "code_artifact_id",
+              "code_sha256",
+              "accountant_checker_artifact_id",
+              "accountant_checker_sha256",
+              "selected_mapping_sha256",
+              "pipeline_sha256",
+              "epsilon",
+              "delta",
+              "delta_convention",
+              "runtime_evidence_sha256",
+              "evidence"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    "claim_contract": {
+      "type": "object",
+      "required": [
+        "claimed_unit",
+        "raw_adjacency",
+        "stability_status",
+        "stability_method",
+        "stability_bound",
+        "support_status",
+        "schedule_mode",
+        "schedule_evidence_status",
+        "conversion_method"
+      ],
+      "properties": {
+        "claimed_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "raw_adjacency": {
+          "$ref": "#/$defs/adjacency"
+        },
+        "raw_domain_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raw_domain_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "stability_status": {
+          "enum": [
+            "validated",
+            "unverified"
+          ]
+        },
+        "stability_method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stability_bound": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "support_status": {
+          "enum": [
+            "complete",
+            "incomplete",
+            "unknown"
+          ]
+        },
+        "schedule_mode": {
+          "enum": [
+            "fixed_mapping",
+            "union",
+            "stochastic_bound",
+            "adaptive_private"
+          ]
+        },
+        "schedule_evidence_status": {
+          "enum": [
+            "validated",
+            "unverified"
+          ]
+        },
+        "conversion_method": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "files_sha256": {
+    "execution_protocol.json": "34941d27ce7032f70ba94f4eb3bd18c55a1b81dc967b33da64a50179652c2ed1",
+    "F1_exact_discrete_outside.json": "2e1f71a5f0533b7792b4a29bdef4cf68ac64fb7cce070c8e222322070c405c45",
+    "F2_gaussian_outside_heterogeneous.json": "741e9cd78a2a3bf70f5e155be9cd72a39bd313a0304a073c578cde7e4199564c",
+    "F3_inside_heterogeneous.json": "cd102c5b24944499d8fc429adc4173ce83ff10ba9242bcef8b7131f919d05d3b",
+    "F4_boundary_heterogeneous.json": "4e9650dc41cda5a1959e887561f4ec6ff2fa31a4fdd5947dba0a45317eb8cbd5",
+    "F5_outside_homogeneous.json": "0c0a58fc8d62f8a9524787f05fdf7621748756f1c866d2841ffa217b6901f11d",
+    "F6_correlated_plane_outside.json": "21e4f385aaaf38300eba7dd8aa6f47e9f934b0f477b375373b4279ee36e88722",
+    "F7_large_noise_high_dimension.json": "3c917f2729362859d1458cbf0530469067f49aeca68ff0734f780ffa283d7077",
+    "paired_comparisons.csv": "1e99ddc82c7016b7ecb1b08bd0ae50c6b2615846012271412737b33d1a331dd4",
+    "protocol.json": "935799dee23d4437de332955688adf07916f512fdc0df918050141939866293a",
+    "results.csv": "4f4e5921fd5201a08c95a64d35c23747223b3183d9a7610f7a12f35e55ef7b40",
+    "results.json": "ba170e19bf353e7f26b6a0b7ec0b3729da67452a786f974739402a33bfdac4ae",
+    "run_cpu_allocation.py": "b0483194534336899c01736d3fbe2a1f5f916a170527f11c528cb5ab42b33cd1"
+  },
+  "status": "PASS_PREDECLARED_SYNTHETIC_MC_COMPLETE",
+  "no_gpu_or_training": true,
+  "elapsed_seconds": 8.041419800021686
+}

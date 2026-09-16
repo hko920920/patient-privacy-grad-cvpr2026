@@ -1,0 +1,807 @@
+% File: main_aaai27_v43_candidate.tex
+% Current AAAI-27 main manuscript, synchronized with the active supplement.
+\documentclass[letterpaper]{article}
+\usepackage[submission]{aaai2027}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\urlstyle{rm}
+\def\UrlFont{\rm}
+\usepackage{natbib}
+\usepackage{caption}
+\frenchspacing
+
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\pdfinfo{
+/TemplateVersion (2027.1)
+}
+
+\setcounter{secnumdepth}{0}
+
+\title{Evidence-Sealed Registration of Owner-Sampled DP-SGD Routes}
+
+\author{
+Anonymous Submission
+}
+\affiliations{
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+A completed training run does not support a reported owner-level privacy claim
+when valid components from incompatible differentially private stochastic
+gradient descent (DP-SGD) routes share one label.  We call
+this joint predicate route-label registration consistency.  In private
+artificial intelligence (AI) training over owner-attributed records, one route
+must jointly own adjacency, sampler, sensitivity/noise geometry, accountant,
+executor, transformation, and evidence.  An evidence-sealed judgment enforces
+it.  Each route implementation (handler) registers a complete core of nominal
+semantics, exact types and callables, a route-local registry, and seven
+source-resolved obligations.  Before dispatch, registration recomputes this
+core and requires exact report, schema, and digest equality.
+
+We instantiate Bernoulli/add-remove (P), fixed-size/replace-one (F), and
+per-epoch random allocation/add-remove (A).  Across three route pairs, weak callable/type and
+source-bound checks accept, respectively, 378 and 42 of 378 prespecified
+non-original handler splices; the complete-core seal accepts none, while all
+six original endpoints pass.  On frozen P-lifecycle evidence, strict
+contract-only parsing rejects
+36/52 targeted mutations and 5/8 reproduced failures, versus 52/52 and 8/8 for
+the full lifecycle.  Adding A through branch-free handler dispatch leaves six
+frozen P/F contracts and public plans exactly unchanged, and all nine
+dataset--route profiles compile.  The mechanisms and accountants are prior work.
+These are bounded honest-source conformance results, not a privacy proof,
+formal refinement, safety for arbitrary plugins, or cryptographic attestation.
+\end{abstract}
+
+\section{Introduction}
+
+Differentially private stochastic gradient descent (DP-SGD) trains AI models by
+clipping contributions, adding Gaussian noise, and accounting for repeated
+access \citep{abadi2016deep,dwork2014foundations,mironov2017renyi}.  A
+differential privacy (DP) statement is meaningful only after specifying
+adjacency, the unit that may change; National Institute of Standards and
+Technology (NIST) guidance treats the privacy unit as core to a DP guarantee
+\citep{near2025nist}.  Sequential preprocessing often turns each person's
+stream into many windows.  Training and utility evaluation may still complete
+although example-level accounting does not support the reported owner claim.
+
+Owner-level sampling and clipping are established
+\citep{chua2024mind,ponomareva2023dpfy}.  Opacus supplies a core Poisson
+training stack \citep{yousefpour2021opacus}; Wang and Birrell analyze
+fixed-size sampling \citep{wang2019subsampled,birrell2024fixed}; random
+allocation and Balanced Iteration Subsampling (BIS) supply $k$-out-of-$T$
+participation and stronger accountants
+\citep{shenfeld2025randomallocation,feldman2026efficientallocation,
+dong2026lessrandom}.  Typed DP systems, implementation tests, and execution
+attestation address broader or different questions
+\citep{hay2020opendp,zhang2020dpcheck,kong2024dpauditorium,
+abdolmaleki2026veridp}.  We study a private-AI integration boundary when these
+route-specific components share one extensible training interface:
+
+\begin{quote}
+What must a route registration bind so that mixing components from two
+registered owner-DP-SGD routes cannot retain either route label?
+\end{quote}
+
+We call this property \emph{route-label registration consistency}: one exact
+route must jointly own its adjacency, owner sampler, sensitivity/noise geometry,
+accountant, executor, mapping/preprocessor, and evidence chain.  We test three
+prior-work endpoints: Bernoulli/add-remove (P), fixed-size/replace-one (F), and
+per-epoch random allocation/add-remove (A).  A preserved historical failure
+used an epoch-shuffle/drop-last loader but described it by a per-step
+fixed-population Hypergeometric accounting model without established exact law
+correspondence.  We therefore classify the exact
+accounting claim as unsupported; this classification does not by itself
+establish a privacy violation.
+
+A route is not a sampler name.  We model it nominally, with an exact route
+identity, as
+\[
+ \rho=(\mathord{\sim},\mathcal S,\Delta,\nu,\mathcal A,\mathcal E),
+\]
+where the entries are adjacency, owner sampler, sum sensitivity, Gaussian
+scale, accountant, and executor.  Each registered route implementation is a
+handler.  Our registration judgment makes a route-local passing report commit
+to the complete core.  The generic dispatcher contains no route-name or
+route-type branch: it validates the selected handler, invokes its exact
+parser/compiler, and checks the returned type and postcompile integrity method.
+We test extensibility by adding A, then checking exact preservation of the old
+P/F objects and all prespecified nonendpoint splices among the three route pairs.
+
+Exact route-specific parsing is necessary but insufficient.  In our ablation,
+a generic map checking only callable and type compatibility accepts every one
+of 378 pairwise mixed, non-original
+(\emph{nonendpoint}) handler splices.  A source-bound pre-seal that also
+resolves callable source files still accepts 42.  The surviving cases splice a
+valid parser, compiler, or
+accountant/cross-check pair while keeping individually valid source witnesses.
+This ablation isolates the \emph{complete core} from another field-level check.
+The contribution is the route-label predicate and its measured counterfactual,
+not a one-route wrapper or a hashing technique.
+SHA-256 is only the deterministic commitment used to enforce the predicate.
+Software-supply-chain provenance can host this check, and reproducible builds
+can strengthen its artifact chain; neither defines the DP predicate by itself.
+We claim neither authenticated provenance nor independently reproducible
+builds \citep{torresarias2019intoto,lamb2022reproducible}.
+
+Two simpler explanations require separate controls.  First, perhaps strict
+contract parsing already explains the lifecycle.  On 52 targeted P mutations
+and eight reproduced historical failures fixed before stage attribution, a
+strong contract-only boundary catches 36 and five; mapping, execution,
+integrity, and artifact boundaries catch the remaining 16 and three.  Second,
+perhaps multiple routes are only closed branches.  A matched P/F experiment
+holds 38 scientific-configuration fields fixed and rejects all 48 prespecified
+bidirectional obligation substitutions; branch-free addition of A then leaves
+the six frozen P/F outputs exact.  These are finite controls, not completeness
+or arbitrary-route guarantees.
+
+Our contributions are:
+\begin{itemize}
+    \item a route-label registration-consistency criterion, enforced by a
+    complete-core judgment that binds nominal semantics, exact types and
+    callables, a route-local registry, seven source-resolved obligations, and
+    one passing report before dispatch;
+    \item a counterfactual ladder against simpler boundaries: contract-only
+    parsing leaves 16/52 targeted and 3/8 historical cases to downstream
+    lifecycle gates, while weak and source-bound handler boundaries accept 378
+    and 42 splices and the complete-core seal accepts none; and
+    \item bounded route-separation and extension tests: with 38 P/F scientific
+    configuration fields fixed, all 48 obligation substitutions fail, while
+    branch-free addition of A preserves six exact P/F contract/plan outputs,
+    with nine compilations, 2,286/2,286 prespecified contract-splice rejections,
+    and independent execution replays.
+\end{itemize}
+
+\paragraph{Claim and phase boundary.}
+We propose no new sampler, accountant, amplification theorem, owner mechanism,
+general DP compiler or type system, privacy tester, or attestation protocol.
+In particular, prior random-allocation/BIS work owns Route A and tighter
+accounting.  Our object is the finite three-route registration boundary.
+Concurrent work maps frozen run artifacts to the privacy-unit wording they
+authorize
+\citep{anonymous2026audit}.  Our phase instead fixes and executes a registered
+route before training and performs no post-hoc privacy-unit conversion.  The
+evidence model is honest execution, not arbitrary-code proof.  The studies
+reuse public rows and subject attribution from the Human Activity Recognition
+(HAR) dataset hosted by the University of California, Irvine (UCI) Machine
+Learning Repository, not exact mechanism plans, numerical results, or evidence
+chains.
+
+\section{Setting and Registered Routes}
+
+\paragraph{Owners and generated examples.}
+Let a dataset be $\mathcal D=(D_u)_{u\in U}$, where $D_u$ is the collection
+owned by person, patient, subject, device, or sequence $u$.  Preparation
+produces records $w$ and an attribution map $\alpha(w)$.  Every registered route
+requires
+$\alpha(w)=\{u\}$: every generated record has exactly one owner.  Multi-owner
+records need another analysis \citep{ganesh2025multiattribution} and are
+rejected.
+
+A contribution-policy rule is fixed before training and acts separately
+within each owner.  It may inspect that owner's records under fixed public caps
+on retention and per-step selection; it must not couple one owner's vector to
+another owner's raw data.  A preprocessing transform is fixed as public side
+information and is never fit inside the executor on protected input.
+
+\paragraph{Common clipped update.}
+For participating owner $u$ at step $s$, the executor applies the owner-local
+rule, computes a mean-loss gradient $g_{u,s}$, and forms
+\[
+ \bar g_{u,s}=g_{u,s}\min\left\{1,
+       \frac{C}{\lVert g_{u,s}\rVert_2}\right\}.
+\]
+Let $\theta_s$ be the model parameters at step
+$s\in\{0,\ldots,T-1\}$, $B_s$ the participating-owner set, $\eta$ the
+learning rate, $C$ the clipping threshold, $\sigma$ the noise multiplier, and
+$I$ the identity matrix.
+All routes execute the fixed schedule
+\begin{equation}
+\theta_{s+1}=\theta_s-\frac{\eta}{D}
+\left(\sum_{u\in B_s}\bar g_{u,s}+Z_s\right),\quad
+Z_s\sim\mathcal N(0,\sigma^2C^2 I).
+\label{eq:update}
+\end{equation}
+$D$ is fixed post-processing, never the realized sample size.
+
+\paragraph{Route P: Bernoulli/add-remove.}
+The public plan fixes $q,T,C,\sigma,D$.  Every present owner is independently
+included with probability $q$.  Adding one owner changes the clipped sum by at
+most $C$.  When $B_s=\varnothing$, the sum is zero but noise is still sampled
+and the optimizer advances.
+
+\paragraph{Route F: fixed-size/replace-one.}
+The public plan fixes a population of $N$ owner positions and
+$m,T,C,\sigma,D=m$.  At every step it uses simple random sampling without
+replacement (SRSWOR), drawing a uniform size-$m$ subset; the sampled positions
+are distinct and $m>0$.  Replacing one
+owner changes the clipped sum by at most
+$\lVert\bar g-\bar g'\rVert_2\leq 2C$.  Thus noise standard deviation
+$\sigma C$ corresponds to normalized Gaussian noise $\sigma/2$ for its
+SRSWOR accountant.  This route does not inherit Route P's adjacency or
+accountant.
+
+\paragraph{Route A: random allocation/add-remove.}
+For each of $E$ epochs, every owner independently draws a uniform $k$-subset
+of $t$ candidate steps and participates exactly at those steps, giving total
+schedule length $T=Et$.  Thus one owner's
+participation is coupled across steps, unlike P, while the number active at a
+step is not fixed, unlike F.  Every step adds noise and advances the optimizer,
+including an empty step.  The sum has add/remove sensitivity $C$.  This is the
+established random-allocation/BIS mechanism
+\citep{shenfeld2025randomallocation,dong2026lessrandom}.  We retain a
+conservative direct bound with a separately structured high-precision
+implementation; tighter privacy-loss distribution (PLD) accounting is prior
+work \citep{feldman2026efficientallocation}.
+
+\paragraph{Public-plan invariance.}
+For Route P, $q,T,D$ do not derive from the observed retained-owner count, so
+add/remove-adjacent inputs retain the same public mechanism.  For Route F,
+$N,m,T,D$ define a fixed-population replace-one domain and are public constants,
+not observed batch statistics.  For A, $t,k,E,D$ are public;
+assignments and realized participation remain private.  The present research
+profiles bind exact public benchmark fixtures; this restriction matters for
+the conditional privacy boundary below.
+
+\section{Evidence-Sealed Route-Label Consistency}
+
+Route-label registration consistency is joint: a serialized contract can be
+strict while its installed handler is internally mixed.
+Table~\ref{tab:contract-surface} summarizes the shared contract surface.  We
+therefore validate the handler before it may parse a contract.  ``Fixed'' below
+means registered before protected execution, not estimated from realized
+batches.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{0.19\columnwidth}p{0.73\columnwidth}@{}}
+\toprule
+Layer & Required binding and rejection behavior \\
+\midrule
+Privacy & owner unit; exact adjacency; fixed $(\varepsilon,\delta)$ \\
+Mechanism & sampler; $q$, $(N,m)$, or $(t,k,E)$; $T,C,\sigma,D$; sensitivity; empty-step rule \\
+Data & single attribution; owner-local policy; exact mapping; public-fixed transform \\
+Program & model, loss, optimizer, route executor, accountant, source bundle \\
+Artifacts & typed public-plan digest; private mapping binding; model--run--summary--collection links \\
+\bottomrule
+\end{tabular}
+\caption{Contract surface shared structurally but instantiated nominally by
+each route.  An unsupported value or route mixture produces a named error.}
+\label{tab:contract-surface}
+\end{table}
+
+\paragraph{Complete registration core.}
+A handler $h$ contains route and schema identifiers, nominal tuple $\rho$,
+exact contract type $\tau_c$ and compiled-plan type $\tau_P$, strict parser
+$p$, compiler $c$,
+route-specific registry object $r_h$, and witness map $W$.  Its complete core
+is canonically serialized as
+\[
+ K(h)=\mathsf{canon}(\mathit{id},\mathit{schema},\rho,
+ \tau_c,\tau_P,p,c,r_h,W).
+\]
+The seven required keys of $W$ are strict parser, strict compiler, accountant,
+numeric cross-check, executor, postcompile integrity, and source binding; let
+$\mathcal O$ denote exactly this key set.
+Each witness names a callable, its repository path, and the exact file digest.
+The evidence-report path and digest are outside $K(h)$ to avoid a circular
+commitment; the handler binds them separately.
+
+\paragraph{Registration judgment.}
+Let $e$ be the route-local evidence report and write $\mathsf{SHA256}$ for
+SHA-256.  We accept
+$e\vdash h\ \mathsf{registered}$ only if
+\begin{equation}
+\begin{split}
+\operatorname{dom}(W)&=\mathcal O,\quad\mathsf{Consistent}(h,W),\\
+e.\mathit{status}&=\mathsf{PASS},\\
+e.\mathit{id}&=h.\mathit{id},\quad
+e.\mathit{schema}=h.\mathit{schema},\\
+\mathsf{SHA256}(e.K)&=e.K_{\rm hash}=\mathsf{SHA256}(K(h)),
+\end{split}
+\label{eq:registration}
+\end{equation}
+and the separately bound report digest, report-payload digest, every live
+source digest, and every callable/source resolution match.  Consistency also
+requires the route-local registry's nominal fields and validated-executor
+status, exact callable witnesses for parser/compiler/executor/integrity, and
+distinct obligation keys.  This is a machine-checked registration predicate,
+not a proof of privacy or arbitrary-code behavior.  Full route semantics and
+obligations appear in Supplementary Material Secs.~2--3.
+
+Figure~\ref{fig:v42-method-splice} summarizes the registered compilation path
+and the handler-splice counterfactual evaluated below.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/figure7.png}
+\caption{Sealed compilation path and handler-splice counterfactual.  The top
+lane shows exact-key handler selection, joint-core binding, branch-free generic
+compilation/execution, and bound outputs.  The bottom lane reports accepted
+nonendpoint splices exhaustively within the prespecified seven-surface binary
+lattices; each of
+P/F, P/A, and F/A has $2^7-2=126$ distinct hybrids, and all six unmodified
+endpoint checks pass.  H is a separately registered external-accountant
+stress test whose privacy-loss distribution implementation operates over A's
+unchanged mechanism and executor; it is not a fourth mechanism.  Rejection
+means only that a hybrid cannot retain either endpoint's registered label.}
+\label{fig:v42-method-splice}
+\end{figure*}
+
+\paragraph{Generic parse and compile judgment.}
+Let $R$ be an immutable map from exact route identifiers to registered
+handlers, $x$ a serialized contract, $m$ a generated-record mapping, and $a$
+a fixed preprocessor.  The generic judgment
+\[
+ R\vdash(x,m,a)\Downarrow(P_\rho,B_{\rm priv})
+\]
+first selects $h=R[x.\mathit{id}]$ and rechecks
+Eq.~\eqref{eq:registration}.  It then requires exact schema, invokes $h.p$,
+checks the exact returned contract type and nominal identity, invokes $h.c$,
+checks the exact plan type and unchanged contract, and calls the registered
+integrity method.  The dispatcher has no P/F/A identifier or type branch.
+Route-specific compilation additionally checks the benchmark profile,
+mapping/attribution, owner-local policy, fixed preprocessor, accounting, and
+executor/source resolution.  The public plan $P_\rho$ omits realized owner
+identities and sample counts; $B_{\rm priv}$ binds mappings and in-memory
+preprocessor state.
+
+\paragraph{Lemma 1 (handler-local conservative extension).}
+Let $R'=R\uplus\{j\mapsto h_j\}$, where $j\notin\operatorname{dom}(R)$ and
+$h_j$ passes registration.  If an old handler, its sources, and compilation
+inputs are unchanged, then every terminating exact contract $x$ with
+$x.\mathit{id}\in\operatorname{dom}(R)$ has the same parse and compilation
+output under $R$ and $R'$.  Exact-key lookup selects the same immutable
+handler, and every subsequent operation is handler-local and deterministic.
+This syntactic property says nothing about privacy or the semantic correctness
+of the newly added handler.  Evaluation checks exact objects and digests for
+all six old P/F profile contracts.
+
+\paragraph{Execution and artifact judgment.}
+Execution is a second partial judgment,
+\[
+ (P_\rho,B_{\rm priv});\mathcal D \Downarrow
+ (\theta_T,E_{\rm pub},E_{\rm priv}),
+\]
+which exists only if the compiled object passes before and after training, its
+route loop completes, and the output verifier reconstructs artifact links.
+Here $\theta_T$ is the final parameter vector, and $E_{\rm pub}$ and
+$E_{\rm priv}$ are the public and private evidence artifacts.
+
+Table~\ref{tab:judgment-evidence} summarizes where each lifecycle boundary is
+enforced and what evidence persists.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{0.17\columnwidth}p{0.32\columnwidth}p{0.41\columnwidth}@{}}
+\toprule
+Boundary & Enforced at & Persisted evidence \\
+\midrule
+registration & registry & core, report, and seven source witnesses \\
+contract & parser/compiler & route, contract, and profile digests \\
+data & compiler/executor & private map, policy, and transform bindings \\
+accounting & compiler/verifier & two values and theorem/config identity \\
+loop & executor/tests & declarations, diagnostics, and reference replay \\
+links & serializer/verifier & model, execution, bundle, summary, collection \\
+\bottomrule
+\end{tabular}
+\caption{Operational predicates and evidence boundaries.  Public artifacts
+omit data-dependent identities and sampling diagnostics.}
+\label{tab:judgment-evidence}
+\end{table}
+
+\paragraph{Strict data and executable binding.}
+Structured contract files use duplicate-key detection, exact types, and no
+extra fields.
+Dataset contracts equal a versioned benchmark profile for every
+profile-controlled field.  Compilation checks contiguous unique row indices,
+unique generated-record identifiers, nonempty labels, exactly one owner per
+record, and a full mapping digest.  The wrapper binds exact transformed
+features, labels, and mapping before compilation and every run.  The affine
+preprocessor checks dimensions and finite scales, declares no protected-data
+fit, and is applied inside the executor.
+
+Opacus already wraps core private-training objects
+\citep{yousefpour2021opacus}.  Route P uses a custom owner executor and claims
+only arithmetic compatibility: fixed-order R\'enyi differential privacy (RDP)
+is recomputed through an Opacus-compatible calculation and
+\texttt{dp-accounting} \citep{dpaccounting},
+not executor equivalence.  Route F compares the Wang-style library result with
+a direct implementation, using normalized noise $\sigma/2$
+\citep{wang2019subsampled}.  Route A compares a floating-point direct
+random-allocation calculation with a separately structured high-precision
+implementation \citep{shenfeld2025randomallocation}.  The conservative
+$\varepsilon$ must meet the target, the two route-internal values must agree
+within the route tolerance, and the compiler binds the typed executor and
+route-specific source bundle.  Agreement is implementation evidence; both
+paths can share a mistaken theorem premise.
+
+\paragraph{Execution, outputs, and threat model.}
+Four domain-separated random streams cover initialization, owner sampling,
+within-owner selection, and Gaussian noise.  The current backend uses NumPy's
+PCG64 pseudorandom generator for reproducible research and records
+\texttt{secure\_rng=false}.
+Random coins, owner identities, mapping commitments, and realized sample
+statistics remain private.  Public artifacts contain the fixed route,
+accountant results, source manifest, public-benchmark metrics, and exact
+float32 non-pickle model serialization.
+
+The method targets accidental drift, stale results, misconfiguration, and
+ordinary substitutions visible in checked inputs, source, or outputs.  It
+assumes SHA-256 collision resistance and honest source, executor, evidence
+builder, and verifier.  A malicious component can fabricate hashes, choose
+weak noise, or exfiltrate private diagnostics.  Rejections and exceptions are
+local controls, not DP outputs; exposing them can leak input-dependent
+behavior.  Timing, hardware, and operating-system side channels are outside
+scope.
+
+\section{Conditional Privacy Scope}
+
+\paragraph{Route-conditional statement.}
+Assume a release procedure is total over its declared adjacent domain,
+completes its fixed schedule without a data-dependent abort, keeps validation
+outputs internal, fixes preprocessing and the owner-local rule independently
+of protected input, contributes at most one vector of norm $C$ per
+participating owner, and adds independent Gaussian noise at every step.  If P
+uses its registered Bernoulli/add-remove accountant, F uses its registered
+SRSWOR/replace-one bound with sensitivity $2C$, or A uses its registered
+per-epoch uniform $k$-of-$t$ allocation/add-remove bound, then the applicable prior
+analysis yields owner-level $(\varepsilon,\delta)$-DP for the final model under
+that route's adjacency
+\citep{wang2019subsampled,shenfeld2025randomallocation,
+dong2026lessrandom}.  Fixed division, optimizer updates, and model release are
+post-processing.  This restates the premises of existing analyses; the
+registration judgment does not prove that an executor satisfies them.
+
+\paragraph{What this statement does not establish.}
+The present benchmark compilers require exact public-fixture mappings and can
+reject changed inputs; they are not a total release algorithm over a private
+adjacency domain.  All reported runs are therefore labeled
+\texttt{research\_non\_release}, and accountant values are not release claims.
+A deployment must replace PCG64 with audited secure randomness, make
+compilation/failure behavior safe and total (or data-independently aborting),
+and validate composition and the complete release procedure.  Hash equality
+does not prove hidden random coins correct, and multiple releases require
+composition.
+
+\section{Evaluation}
+\label{sec:evaluation}
+
+We ask: (Q1) Do lifecycle bindings reject fixed failures beyond strong
+contract-only parsing? (Q2) Does the complete-core seal reject splices accepted
+by simpler registration boundaries? (Q3) Can it add a structurally different
+route without changing old outputs, while separating controlled route and
+contract surfaces? (Q4) Do route-specific accountants, executors, and artifact
+checks support the registered endpoints?
+
+\paragraph{Failure-oriented design.}
+For Q1, contract-only means duplicate-key-safe loading plus exact parsing of
+the registered contract; it excludes mapping/preprocessor compilation,
+backend approval, data/execution binding, compiled integrity, and public
+artifact redaction.  Each already-frozen case is assigned to its earliest
+rejecting boundary.  For Q2, we compare three nested boundaries on the same
+handler objects.  The weak boundary checks only a generic callable/type
+interface.  The pre-seal boundary additionally checks nominal fields,
+obligations, callable resolution, and source digests, but has no report
+committing to the complete core.  The proposed boundary adds
+Eq.~\eqref{eq:registration}.  Rejection means that a splice cannot retain
+either endpoint's registered label; it does not declare the alternative
+nonprivate.
+
+\paragraph{Benchmarks and protocol.}
+We use the UCI HAR dataset
+\citep{anguita2013har,ucihar2013dataset}, the Wireless Sensor Data Mining (WISDM)
+activity-recognition dataset
+\citep{kwapisz2011activity}, and PhysioNet 2019 sepsis
+\citep{physionet2019sepsis,reyna2020sepsis,pollard2026physionet,goldberger2000physionet}.  Their public owner-disjoint
+protocols contain 21/9, 25/11, and 312/78 nominal train/test owners and
+7,352/2,947, 7,049/3,331, and 1,601/398 generated train/test records.
+Registered affine transforms produce 561, 24, and 240 features.  We use linear
+classifiers and five fixed seeds per dataset and route.  All profiles target
+$(\varepsilon,\delta)=(8,10^{-5})$; Table~\ref{tab:v38-profiles} gives the
+nine public route profiles.  UCI HAR is a shared public substrate with the
+concurrent study \citep{anonymous2026audit}: both studies
+use its 7,352/2,947 rows, 561 features, 21/9 subject split, row order, labels,
+and subject attribution.  Serialized mappings, route contracts, registered
+sampling/accounting configurations, target pairs, models, results, and
+artifact chains are separate.  Here UCI feeds owner-sampled P/F/A at
+$(8,10^{-5})$; the concurrent work separately runs window-Poisson DP-SGD at
+$(0.536827,10^{-6})$ and allows or blocks requested window/event/owner wording.
+WISDM/sepsis mapping/evidence artifacts are likewise separate.  All results
+reported here come from this paper's separately built pre-execution package.
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lllrrrr@{}}
+\toprule
+Dataset & Route & Adjacency / participation law & $T$ & $k$ or $m$ & $\sigma$ & $D$ \\
+\midrule
+UCI HAR & P & add/remove; Bernoulli $q=0.380952$ & 15 & -- & 1.269710 & 8 \\
+ & F & replace-one; SRSWOR $m/N=8/21$ & 15 & $m=8$ & 3.806632 & 8 \\
+ & A & add/remove; uniform $k$-of-$T$ allocation & 15 & $k=6$ & 1.229575 & 8 \\
+\addlinespace[1pt]
+WISDM & P & add/remove; Bernoulli $q=0.320000$ & 20 & -- & 1.251026 & 8 \\
+ & F & replace-one; SRSWOR $m/N=8/25$ & 20 & $m=8$ & 3.838696 & 8 \\
+ & A & add/remove; uniform $k$-of-$T$ allocation & 20 & $k=6$ & 1.090646 & 8 \\
+\addlinespace[1pt]
+Sepsis & P & add/remove; Bernoulli $q=0.100000$ & 50 & -- & 0.857344 & 32 \\
+ & F & replace-one; SRSWOR $m/N=32/312$ & 50 & $m=32$ & 2.380381 & 32 \\
+ & A & add/remove; uniform $k$-of-$T$ allocation & 50 & $k=5$ & 0.776173 & 32 \\
+\bottomrule
+\end{tabular}
+\caption{Registered research profiles; all target
+$(\varepsilon,\delta)=(8,10^{-5})$.  P samples each owner independently at
+each step; F samples exactly $m$ distinct positions per step; A assigns each
+owner independently to exactly $k$ distinct steps.  Every displayed A profile
+uses one epoch, so $T=t$.  F uses replace-one
+sensitivity $2C$; P and A use add/remove sensitivity $C$.  Route mechanisms
+and accountants are prior work, not contributions of this paper.}
+\label{tab:v38-profiles}
+\end{table*}
+
+\paragraph{Q1: strict-contract lifecycle counterfactual.}
+The frozen P lineage contains 52 targeted mutations and eight reproduced
+historical failures.  Contract-only rejects 36/52 and 5/8.  For the targeted
+set, mapping/preprocessor compilation adds ten rejections, backend approval
+adds one, and compiled integrity adds five.  For the historical set, exact
+data/execution binding catches two stale mappings and the public-artifact
+boundary catches one leaking certificate.  The full lifecycle therefore
+reaches 52/52 and 8/8.  These retrospectively selected historical cases and the
+fixed targeted corpus provide stage attribution, not held-out performance,
+arbitrary-input recall, or a competitor benchmark.
+
+\paragraph{Q2: discriminating registration ablation.}
+We partition each handler into seven prespecified surfaces: identity/report,
+contract and plan types, parser, compiler, route-local registry,
+accountant/cross-check, and executor/integrity/source.  For each of P/F, P/A,
+and F/A, all $2^7-2=126$ nonendpoint binary combinations are distinct.  As
+Figure~\ref{fig:v42-method-splice} shows, weak validation accepts 378/378
+and pre-seal validation accepts 42/378 (14 in every pair).  The complete-core
+seal rejects 378/378, while all six endpoint checks across the three pairs pass.
+A separately
+implemented verifier that does not import the report builder reconstructs
+every combination and decision.  Eight registration mutations, including
+missing/duplicate obligations, changed source or report digests, spliced
+parser/type, unvalidated executor, and duplicate route, also fail.
+Thus the result is exhaustive conformance only over the declared
+$3(2^7-2)=378$ author-specified nonendpoints, not a prevalence or open-world
+sample.
+
+\paragraph{Q3: route separation and bounded extension.}
+We first control the scientific configuration rather than count
+implementations.  In each P/F dataset pair, 38 fields, dataset and split,
+privacy target, schedule,
+clipping, contribution cap, model, optimizer, loss, and fixed preprocessor,
+are exact matches.  Eight prespecified obligation families (route, schema,
+adjacency, sampler, accountant/theorem, executor, noise, and the full
+mechanism/accountant surface) are substituted in both directions over three
+datasets.  All 48/48 nonvacuous substitutions fail: 12 at exact dispatch and
+36 at the selected route's strict contract.  Thus the routes differ under a
+matched shell, but this causal attribution covers only the 48 author-specified
+substitutions and 38/38 fixed fields; this finite test is not semantic
+completeness.
+
+The generic parser/compiler contains none of the three route identifiers,
+contract types, or an \texttt{if route\_id ==} branch; source inspection
+confirms that it calls handlers.  All nine dataset--route contracts compile.
+Adding A to the P/F registry leaves each of the six parsed contracts and
+public plans structurally equal and preserves their exact digests, including
+equality to the frozen predecessor outputs.
+
+As a separate external-handler stress test, we register H, whose externally
+maintained PLD implementation supplies a pessimistic bound for A's unchanged
+mechanism and executor \citep{feldman2026efficientallocation}.  All four
+handler endpoints validate, all nine old P/F/A contract--plan pairs remain
+byte-exact,
+and the complete-core seal rejects 756/756 nonendpoint hybrids over six
+handler pairs.  This is one external accountant overlay, not arbitrary
+third-party support.
+
+We then partition every paired serialized contract into eight disjoint
+surfaces: identity, execution, privacy/accounting, data lineage, schedule,
+noise geometry, update contribution, and optimizer/sampler.  Across three
+route pairs and three datasets, both endpoints parse and all
+$9(2^8-2)=2{,}286$ nonendpoints fail.  Strict route parsers explain much of
+this result, so it supports route separation rather than the central novelty.
+The older P add/remove test also holds $q,T,D$ and both accountant values fixed
+while changing only the private mapping commitment.
+Full counterfactual constructions and tables appear in Supplementary Material
+Sec.~4.
+
+\paragraph{Q4: accountant, execution, and artifact correspondence.}
+For A, the production direct calculation and a separately structured
+high-precision implementation agree for all three profiles, both add/remove
+privacy directions, and every registered order; six mutations to the bound
+accountant-query identity and thirteen invalid inputs are exercised.  In the
+frozen A gate, external PLD
+values are recorded only as non-authorizing comparisons; H is the separately
+registered external-accountant stress test.  A reference executor that imports
+no production implementation then matches 15/15 runs, 425/425 steps,
+9,180/9,180 owner vectors, and 30/30
+final tensors.  A separate fixture contains a true empty step and confirms
+that Gaussian noise is generated for both model tensors and the optimizer
+advances.  P/F
+retain their 30/30 exact run replays.  The A public archive rebuilds
+deterministically and contains no checked private assignment/identity fields.
+Together the 15 A and 30 P/F runs complete a 45/45 fixed-seed integration grid.
+It tests compilation/execution correspondence, not an outcome distribution;
+different adjacency and calibration preclude utility or inferential comparison.
+Accountant and executor details appear in Supplementary Material Sec.~6.
+
+\paragraph{Evidence authority.}
+Lifecycle counts are retrospective attribution; lattice counts are exhaustive
+only within named author-specified finite universes; 48/48 is matched-shell
+ablation; and 45/45 is fixed-seed integration, not a utility or population
+sample.  Full-universe deterministic predicates have no sampling error, so
+significance tests do not apply.  Table~\ref{tab:v38-conformance} binds every
+result to an artifact, verifier, and exact denominator.
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}p{0.68\textwidth}r@{}}
+\toprule
+Evidence role, bound artifact; verifier/comparator & Exact result \\
+\midrule
+Endpoint conformance, route reports; registration verifier &
+3/3; 7/7 per handler \\
+Lifecycle attribution, frozen P manifest; stage verifier &
+36/52 vs. 52/52; 5/8 vs. 8/8 \\
+Matched-shell ablation, P/F substitution report; separate verifier &
+48/48; 38/38 fixed \\
+Compilation/extension, contracts, plans, and frozen P/F/H outputs;
+compiler/digest verifiers & 9/9; 6/6; H 4/4, 9/9 \\
+Finite-lattice conformance, three-, six-, and nine-pair reports; separate
+verifier & 378/378; 756/756; 2,286/2,286 \\
+A integration, trace bundle and empty-step fixture; reference
+executor/comparator & 15/15; 425/425; 9,180/9,180; 30/30; 1/1 \\
+P/F integration, trace bundles; reference executor &
+30/30; 850/850; 60/60 \\
+Regression conformance, focused/full logs; test runner &
+44/44; 154/154 run; 7/161 skip \\
+\bottomrule
+\end{tabular}
+\caption{Artifacts, verifiers, and exact denominators.  ``Exhaustive'' means
+only the named lattice; 45 fixed-seed runs test integration, not utility or a
+population.  No result proves privacy, arbitrary-input refinement, or
+adversarial attestation.}
+\label{tab:v38-conformance}
+\end{table*}
+
+\paragraph{Reproducibility controls.}
+Table generators reject duplicate serialization keys and recompute displayed
+aggregates.  Separate verifiers reclassify all 60 contract-only cases,
+reconstruct the 48 matched-shell substitutions, handler and contract lattices,
+conservative-extension rows, route evidence, private diagnostics, source
+links, and registered executor traces.  Focused route-accounting, compilation,
+execution, registration, and lattice tests pass 44/44; the full frozen
+regression collects 161 tests: all 154/154 executed tests pass, and 7/161
+raw-data-scoped cases skip.
+Two optional pandas dependency-version warnings are separate from those skips.
+
+\section{Related Work}
+
+Table~\ref{tab:v40-ownership} summarizes the closest-work boundary;
+Supplementary Material Sec.~5 gives the citation-level comparison.
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.18\textwidth}p{0.78\textwidth}@{}}
+\toprule
+Prior-work family & Established scope; boundary evaluated here \\
+\midrule
+Sampling/accounting &
+Units and P/F/A laws/accounting; here: finite registration across established
+endpoints. \\
+Formal/typed DP &
+Semantic types, proofs, and refutations; here: finite route registration
+without refinement. \\
+Testing/verification &
+Falsification and plan equivalence; here: pre-execution splice conformance. \\
+Provenance/builds &
+Signed layouts and reproducible builds; here: route-label commitment and the
+378/42/0 ablation. \\
+Attestation/integrity &
+Adversarial execution evidence; here: an honest-source registration seal. \\
+\bottomrule
+\end{tabular}
+\caption{Closest-work scope and evaluated boundary: complete-core registration and
+the 42-to-0 handler counterfactual.}
+\label{tab:v40-ownership}
+\end{table*}
+
+\paragraph{Privacy units, sampling, and accounting.}
+User-level grouping and bounding are prior \citep{chua2024mind}; so are RDP
+composition and P/F sampling analyses
+\citep{mironov2017renyi,wang2019subsampled,birrell2024fixed}.  Random allocation,
+its PLD accounting, and BIS's exactly-$k$ participation law are also prior
+\citep{shenfeld2025randomallocation,feldman2026efficientallocation,
+dong2026lessrandom}.  Add/remove and replace-one adjacency protect different
+facts \citep{pradhan2026beyond}, while multi-attribution needs another analysis
+\citep{ganesh2025multiattribution}.  We therefore use P/F/A only as
+heterogeneous endpoints, claiming no mechanism or accountant novelty.
+
+\paragraph{Formal DP frameworks and implementation guidance.}
+Formal analyzers provide DP types, proofs, or refutations
+\citep{zhang2017lightdp,wang2020checkdp,near2019duetfull,
+haselwarter2026modularfull}; OpenDP supplies stronger domains, metrics, and
+stability/privacy maps \citep{hay2020opendp}.  Modular implementation review is
+prior \citep{kifer2020guidelines}, as is P's Opacus stack
+\citep{yousefpour2021opacus}.  We claim none of those semantics.  Our finite
+object instead binds the generated-record map, application profile, handlers,
+source, and lifecycle, then measures splice rejection and old-route
+preservation without a refinement proof.
+
+\paragraph{Software provenance and reproducible builds.}
+in-toto authenticates signed layouts, links, and artifact flow
+\citep{torresarias2019intoto}; reproducible builds seek bit-identical rebuilds
+\citep{lamb2022reproducible}.  Either can strengthen our chain, but neither alone
+rejects a mixed route.  Our residual is the DP route-label predicate and
+378/42/0 counterfactual, not authentication, generic provenance, or
+source-to-binary reproducibility.
+
+\paragraph{Testing, training verification, and attestation.}
+Sampler/accountant mismatches can materially weaken implementations
+\citep{chua2024private}.  DPCheck, DP-Auditorium, and Re:cord-play test or
+falsify implementations
+\citep{zhang2020dpcheck,kong2024dpauditorium,cebere2026recordplay}; TrainCheck
+detects runtime violations and TrainVerify proves plan equivalence
+\citep{jiang2025training,lu2025trainverify}.  VeriDP and the integrity SoK cover
+attestation and broader evidence models
+\citep{abdolmaleki2026veridp,rizzini2026integrity}.  We instead evaluate finite
+pre-execution registration and extension, claiming no detection, proof, or
+attestation.
+
+\paragraph{Concurrent phase boundary.}
+The concurrent validator decides wording from frozen runs
+\citep{anonymous2026audit}.  We instead consume a pre-execution contract and
+emit a plan, model, and run chain; neither pipeline consumes the other's
+outputs, and we emit no post-hoc report.
+
+\section{Limitations}
+
+Our evidence supports a finite, author-constructed, honest-execution
+registration boundary, not a general DP compiler.  The 378/756 handler
+splices and 2,286 contract nonendpoints exhaust only their prespecified
+universes; the 60-case P lifecycle and 48 matched-shell substitutions are fixed
+controls, not arbitrary-input recall estimates.  Unmodeled obligations, new
+adjacencies, mechanisms, models, or handlers require new analyses, executors,
+and evidence.  Within this scope, the controls separate the roles of strict
+parsing, source binding, and complete-core sealing.
+
+SHA-256 commits declared artifacts but attests neither runtime behavior nor
+random coins; deployment needs secure randomness, safe failure handling, and
+stronger provenance or independent-rebuild guarantees.  Linear-model, five-seed
+replays test compilation/execution correspondence, not scalability, leading
+utility, or comparisons among P/F/A laws.  H tests one external accountant over
+A; its environment is bound but neither redistributed nor rerun.  Full profiles,
+evidence identifiers, commands, and further limitations are in Supplementary
+Material Secs.~7--10.
+
+\section{Conclusion}
+
+Complete-core registration is one route-installation judgment.  Lifecycle checks
+catch 16 targeted and three historical cases; the matched shell rejects 48
+substitutions.  The seal closes 42 splices, rejects 378 nonendpoints, and preserves
+six outputs after adding A.  Execution cannot establish owner-level DP; these
+tests prove neither privacy nor a general verifier.  \textbf{AI disclosure:}
+Generative-AI tools assisted editing; authors verified all content and remain
+responsible.
+
+\bibliography{references_v28_candidate,references_v30_additions,references_v33_additions,references_v35_additions,references_v37_additions}
+
+\end{document}

@@ -1,0 +1,82 @@
+schema_version: unitdp.owner_random_allocation_external_pld_contract.v36
+route_id: owa_owner_random_allocation_external_pld_add_remove_v36
+execution:
+  profile: research_benchmark
+  rng_backend: research_default
+  implementation_id: unitdp.owner_external_pld_v36.train_owner_external_pld_fixed_v36
+  random_coins_public: false
+privacy:
+  unit: owner
+  adjacency: add_remove_one_owner
+  target_epsilon: 8.0
+  delta: 1.0e-05
+mechanism:
+  sampler: independent_uniform_k_subset_of_steps_per_owner
+  sampling_unit: owner
+  accounting_unit: owner
+  parameter_source: registered_benchmark_profile
+  source_dataset_size: 25
+  num_steps: 20
+  num_selected_steps_per_owner: 6
+  num_epochs: 1
+  total_steps: 20
+  assignment_schedule: fresh_independent_uniform_k_subset_per_owner_per_epoch
+  clipping_unit: owner
+  noising_unit: owner_sum
+  clip_norm: 1.0
+  noise_multiplier: 1.090645987511382
+  update_denominator: 8.0
+  empty_step_behavior: apply_gaussian_update_with_zero_owner_sum
+  per_owner_contribution: one_clipped_vector_per_assigned_step
+  owner_aggregation: mean_over_selected_windows_then_clip
+accountant:
+  id: random_allocation_gaussian_external_pld_v36
+  package: PLD_accounting
+  package_version: 0.5.0
+  declared_transitive_package: random-allocation
+  declared_transitive_version: 1.0.5
+  theorem_id: shenfeld_2026_efficient_pld_random_allocation
+  direction_policy: joint_add_remove_dominating_pld
+  backend_mode: isolated_subprocess_site
+  l2_sensitivity_multiplier: 1.0
+  loss_discretization: 0.005
+  tail_truncation: 1.0e-12
+  convolution_method: GEOM
+  accepted_bound_type: DOMINATES
+  crosscheck_bound_type: IS_DOMINATED
+contribution_policy:
+  type: support_balanced_cap
+  max_windows_per_owner: 16
+  windows_per_owner_per_step: 8
+  scope: compile_time_public_policy
+optimization:
+  optimizer: sgd
+  learning_rate: 0.05
+  loss: cross_entropy
+  model_id: linear_24x6
+  class_weights: null
+data:
+  benchmark_profile_id: wisdm_random_allocation_aaai27_v4
+  benchmark_profile_sha256: c2e9981887f573022358c028cc611445b0a3750d8d95b8eb654b3f8b01d3b2d0
+  base_data_profile_id: wisdm_aaai27_v1
+  base_data_profile_sha256: caa4d24930cf9a68c09ecc0ce355b1118e3c963dbe46cea097f59a4b3cfdb67a
+  dataset_id: wisdm_v1_1_stats24_v1
+  input_dim: 24
+  num_classes: 6
+  preprocessing:
+    scope: public_fixed
+    schema: unitdp.fixed_affine_preprocessor.v1
+    artifact_id: wisdm_v1_1_train_owners_1_25_stats24_standard_scaler_v1
+    artifact_sha256: 707ee3abf755a9601263d16e5f1ce8e5e9096f956f42da4d42cf57e29e6bf32f
+    source_reference_sha256: 9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e
+    input_dim: 24
+    transform: standard_scaler
+    fit_on_protected_data: false
+  public_protocol:
+    protocol_id: wisdm_v1_1_stats24_public_split_v1
+    data_preparation_implementation_id: unitdp.benchmark_data_v2.prepare_wisdm_v2
+    source_reference_sha256: 9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e
+    train_owners: 25
+    test_owners: 11
+    evaluation_scope: public_benchmark
+    full_data_conformance_sha256: b97d240f4ae397c4784efa6e41d3d1e05a57fcc54ba9bb676b0edcd580a4cc26

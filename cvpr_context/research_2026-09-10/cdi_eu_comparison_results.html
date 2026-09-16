@@ -1,0 +1,389 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CDI_EU_COMPARISON_RESULTS.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>CDI E/U 환자 비교 결과 — 판별기의 학습 사진 조건에 따른 변화</h1>
+<p><strong>기존 환자 집계법도 판별기를 E로 학습하느냐 U로 학습하느냐에 따라 U에서의 순위가 크게 달라졌다.</strong> 다만 E 자체의 검출도 아직 강하지 않아, “학습 사진에서는 잘 되는데 같은 환자의 다른 사진만 실패한다”는 설명을 확정하지 못했다. 현재는 <strong>2번: 가까운 기존 방법의 실패 조건·원인 확인</strong>이며, 새 공격 설계의 근거를 확보했다고 선언하지 않는다.</p>
+<h2>이번에 확인한 사실과 남은 원인</h2>
+<ol>
+<li><strong>표준 mean+max 집계의 U 결과는 판별기 학습 조건에 민감했다.</strong> 같은 U40명에서 고정 C=1의 AUC가 E-fit일 때 모델1/2 .4175/.3600이고, U-fit일 때 .6325/.6700이었다. U 조건에 맞춰 기존 방법을 학습하는 강한 대안을 빼고 새 방법의 이득을 주장하면 안 된다.</li>
+<li><strong>모델2의 U 재학습 이득은 관측상 컸다.</strong> fixed의 ΔAUC +.3100, paired 95% CI [.0624,.5475], tuned의 +.2350 [.0099,.4576]이다. 모델1은 fixed +.2150 [−.0550,.4625], tuned +.1000 [−.1526,.3300]로 구간이0을 포함한다. 반복 사용한 개발40명·상관된 두 target·여러 대조의 조건부 결과이며 두 독립 재현으로 세지 않는다.</li>
+<li><strong>E에서의 강한 정상 검출은 여전히 미확보다.</strong> E-fit→E에서 18개 방법의 각 AUC 구간은 두 target 모두 .5를 포함했다. 예를 들어 CDI image mean은 fixed .5700/.6150, tuned .6125/.5600이었다. 이것은 E에서도 신호가 없다는 증명이 아니며, E 성공을 U 성공의 논리적 필요조건으로 만들지도 않는다.</li>
+<li><strong>특징 스케일만 바꿔서는 관측된 회복을 설명하지 못했다.</strong> 아래 사후 분해에서 E-fit 가중치를 유지하고 U-fit scaler만 적용하면 mean+max52의 U AUC는 모델1/2 fixed .3850/.3400이었다. 반대로 E-fit scaler를 유지하고 U-fit 가중치를 적용하면 .5700/.6450이었다. 가중치 교체의 역할을 확인했지만, 왜 그 가중치가 달라졌는지와 실제 개인 참여에 특이적인지는 아직 미확인이다.</li>
+</ol>
+<p>원형26D 기반16개 방법×두 target의 E→U 변화32개는 모두 차이 구간이0을 포함한다. NO27 추가 진단의 모델2 fixed만 −.3450 [−.5875,−.0925]로 예외이며, 이 비원형 진단 하나를 원형 CDI26의 일반적 전이 실패로 확대하지 않는다. <strong>U-fit 회복의 관측과 E→U 하락의 입증은 서로 다른 대조다.</strong></p>
+<p>이 결과가 요구하는 다음 검토는 <strong>허용된 보조 정보 안에서 기존 방법의 U 적응을 제공한 뒤에도 남는 구체적 한계</strong>다. U-fit은 참여 정답을 아는 보조 환자의 U 사진이 필요하다. 그것이 없는 환자 측 조건에 그대로 제공할 수 있다고 가정하지 않는다. 반대로 현재처럼 보조 정보를 허용한 조건에서는 이 강한 대안을 빼면 안 된다. 관측 사진이 다르다는 설정이나 여러 장을 묶는 것만으로 새 기여가 성립하지 않는다. 단순 base 편향이라는 원인을 이미 확정한 것도 아니다.</p>
+<h2>정보 조건과 실행 범위</h2>
+<p>fit80에서 학습한 scorer를 동일 selection40 환자(각 target의 member20/nonmember20)에 적용했다. 각 환자는 조건별 두 장이다. E는 해당 target에 환자가 참여하면 실제 추가학습에 노출된 영상이고, U는 두 target의 추가학습에 쓰이지 않은 같은 환자의 다른 영상이다. 기존 U-fit scorer·C·예측은 그대로 복원했다.</p>
+<p>현재 비교는 <strong>white-box 의료 SD2.1 LoRA와 후보 환자 그룹·공개 base</strong>, 학습형 공격에는 <strong>참여 정답을 아는 보조 fit80명</strong>을 허용한 개발 조건이다. 일반 생성 API나 보조 참여 정답이 없는 환자 단독 검증의 성능으로 표시하지 않는다. base의 사전학습 참여는 unknown이며, 정답은 이번 NIH 추가학습 참여다.</p>
+<p>E 추출은480건 중신규478건,3,066.060초(51분6초),전체28,064F/8,384B였다. 기존 U480건을 다시 계산하지 않았다. E 원시 검산73.701초에서12,480개 특징·192개과거SecMI일치를 확인했다. 네 셀 분석1.897초,별도통계검산1.245초이며,E scorer20개·CV250회재학습,11,520예측,144AUC,156paired차이를 대조했다. 이 검산은 새로운 GPU 역전파 재현이나 인과효과 검증이 아니다.</p>
+<p>표의 값은 AUC [조건부 95% CI]이다. 모든 18개 방법을 사전 계약 순서로 표시한다. CI는 동일 2,000회 환자 bootstrap이며, selection 자료 재사용 및 다중 대조를 보정한 확증적 구간이 아니다. scalar 방법은 fitting이 없으므로 같은 평가 조건의 fit 방향 두 표기가 반복된다.</p>
+<p><img alt="두 target의 네 셀 AUC" src="cdi_eu_results_artifacts/v1/patient_auc_four_cells.png"/></p>
+<p><a href="cdi_eu_results_artifacts/v1/auc_all.csv">AUC·CI 전체 144행 CSV</a> · <a href="cdi_eu_results_artifacts/v1/contrasts_all.csv">차이·paired CI 전체 156행 CSV</a> · <a href="cdi_eu_results_artifacts/v1/patient_auc_four_cells.svg">SVG</a> · <a href="cdi_eu_results_artifacts/v1/manifest.json">해시 manifest</a></p>
+<h2>model_1</h2>
+<table>
+<thead>
+<tr>
+<th>사전 지정 방법</th>
+<th style="text-align: right;">E-fit → E-eval</th>
+<th style="text-align: right;">E-fit → U-eval</th>
+<th style="text-align: right;">U-fit → E-eval</th>
+<th style="text-align: right;">U-fit → U-eval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CDI image score, mean (C=1)</td>
+<td style="text-align: right;">0.5700 [0.3849, 0.7475]</td>
+<td style="text-align: right;">0.5325 [0.3600, 0.7100]</td>
+<td style="text-align: right;">0.5875 [0.3999, 0.7625]</td>
+<td style="text-align: right;">0.4475 [0.2749, 0.6250]</td>
+</tr>
+<tr>
+<td>CDI image score, mean (tuned C)</td>
+<td style="text-align: right;">0.6125 [0.4250, 0.7900]</td>
+<td style="text-align: right;">0.4225 [0.2550, 0.6025]</td>
+<td style="text-align: right;">0.5575 [0.3725, 0.7426]</td>
+<td style="text-align: right;">0.4350 [0.2625, 0.6101]</td>
+</tr>
+<tr>
+<td>CDI image score, max (C=1)</td>
+<td style="text-align: right;">0.5375 [0.3474, 0.7150]</td>
+<td style="text-align: right;">0.5400 [0.3650, 0.7175]</td>
+<td style="text-align: right;">0.5800 [0.3900, 0.7525]</td>
+<td style="text-align: right;">0.4200 [0.2500, 0.6025]</td>
+</tr>
+<tr>
+<td>CDI image score, max (tuned C)</td>
+<td style="text-align: right;">0.6000 [0.4124, 0.7800]</td>
+<td style="text-align: right;">0.4750 [0.3025, 0.6526]</td>
+<td style="text-align: right;">0.5500 [0.3624, 0.7251]</td>
+<td style="text-align: right;">0.4300 [0.2575, 0.6076]</td>
+</tr>
+<tr>
+<td>Patient mean26 LR (C=1)</td>
+<td style="text-align: right;">0.5075 [0.3100, 0.6900]</td>
+<td style="text-align: right;">0.4775 [0.3000, 0.6626]</td>
+<td style="text-align: right;">0.6175 [0.4299, 0.7950]</td>
+<td style="text-align: right;">0.4275 [0.2550, 0.6075]</td>
+</tr>
+<tr>
+<td>Patient mean26 LR (tuned C)</td>
+<td style="text-align: right;">0.5725 [0.3849, 0.7525]</td>
+<td style="text-align: right;">0.3875 [0.2150, 0.5700]</td>
+<td style="text-align: right;">0.5275 [0.3400, 0.7075]</td>
+<td style="text-align: right;">0.4150 [0.2425, 0.5875]</td>
+</tr>
+<tr>
+<td>Patient mean+max52 LR (C=1)</td>
+<td style="text-align: right;">0.4775 [0.2949, 0.6600]</td>
+<td style="text-align: right;">0.4175 [0.2550, 0.6075]</td>
+<td style="text-align: right;">0.5050 [0.3175, 0.6800]</td>
+<td style="text-align: right;">0.6325 [0.4600, 0.7925]</td>
+</tr>
+<tr>
+<td>Patient mean+max52 LR (tuned C)</td>
+<td style="text-align: right;">0.5175 [0.3375, 0.6975]</td>
+<td style="text-align: right;">0.4175 [0.2475, 0.6000]</td>
+<td style="text-align: right;">0.5600 [0.3725, 0.7375]</td>
+<td style="text-align: right;">0.5175 [0.3275, 0.7000]</td>
+</tr>
+<tr>
+<td>Denoising loss, mean</td>
+<td style="text-align: right;">0.4375 [0.2700, 0.6250]</td>
+<td style="text-align: right;">0.4900 [0.3049, 0.6700]</td>
+<td style="text-align: right;">0.4375 [0.2700, 0.6250]</td>
+<td style="text-align: right;">0.4900 [0.3049, 0.6700]</td>
+</tr>
+<tr>
+<td>Denoising loss, max</td>
+<td style="text-align: right;">0.4450 [0.2675, 0.6276]</td>
+<td style="text-align: right;">0.5475 [0.3600, 0.7226]</td>
+<td style="text-align: right;">0.4450 [0.2675, 0.6276]</td>
+<td style="text-align: right;">0.5475 [0.3600, 0.7226]</td>
+</tr>
+<tr>
+<td>SecMI, mean</td>
+<td style="text-align: right;">0.5225 [0.3350, 0.7150]</td>
+<td style="text-align: right;">0.4300 [0.2500, 0.6150]</td>
+<td style="text-align: right;">0.5225 [0.3350, 0.7150]</td>
+<td style="text-align: right;">0.4300 [0.2500, 0.6150]</td>
+</tr>
+<tr>
+<td>SecMI, max</td>
+<td style="text-align: right;">0.5375 [0.3674, 0.7325]</td>
+<td style="text-align: right;">0.5075 [0.3200, 0.6900]</td>
+<td style="text-align: right;">0.5375 [0.3674, 0.7325]</td>
+<td style="text-align: right;">0.5075 [0.3200, 0.6900]</td>
+</tr>
+<tr>
+<td>PIA, mean</td>
+<td style="text-align: right;">0.4500 [0.2675, 0.6350]</td>
+<td style="text-align: right;">0.4850 [0.3099, 0.6675]</td>
+<td style="text-align: right;">0.4500 [0.2675, 0.6350]</td>
+<td style="text-align: right;">0.4850 [0.3099, 0.6675]</td>
+</tr>
+<tr>
+<td>PIA, max</td>
+<td style="text-align: right;">0.5150 [0.3300, 0.6925]</td>
+<td style="text-align: right;">0.5150 [0.3274, 0.6975]</td>
+<td style="text-align: right;">0.5150 [0.3300, 0.6925]</td>
+<td style="text-align: right;">0.5150 [0.3274, 0.6975]</td>
+</tr>
+<tr>
+<td>PIAN, mean</td>
+<td style="text-align: right;">0.5300 [0.3449, 0.7125]</td>
+<td style="text-align: right;">0.4500 [0.2700, 0.6325]</td>
+<td style="text-align: right;">0.5300 [0.3449, 0.7125]</td>
+<td style="text-align: right;">0.4500 [0.2700, 0.6325]</td>
+</tr>
+<tr>
+<td>PIAN, max</td>
+<td style="text-align: right;">0.5825 [0.4099, 0.7550]</td>
+<td style="text-align: right;">0.4675 [0.2775, 0.6525]</td>
+<td style="text-align: right;">0.5825 [0.4099, 0.7550]</td>
+<td style="text-align: right;">0.4675 [0.2775, 0.6525]</td>
+</tr>
+<tr>
+<td>NO27 diagnostic: mean+max54 (C=1)</td>
+<td style="text-align: right;">0.5625 [0.3774, 0.7326]</td>
+<td style="text-align: right;">0.3625 [0.1975, 0.5400]</td>
+<td style="text-align: right;">0.5050 [0.3200, 0.6800]</td>
+<td style="text-align: right;">0.6150 [0.4400, 0.7800]</td>
+</tr>
+<tr>
+<td>NO27 diagnostic: mean+max54 (tuned C)</td>
+<td style="text-align: right;">0.5075 [0.3250, 0.6851]</td>
+<td style="text-align: right;">0.3675 [0.2100, 0.5475]</td>
+<td style="text-align: right;">0.5625 [0.3800, 0.7425]</td>
+<td style="text-align: right;">0.5150 [0.3274, 0.6951]</td>
+</tr>
+</tbody>
+</table>
+<h2>model_2</h2>
+<table>
+<thead>
+<tr>
+<th>사전 지정 방법</th>
+<th style="text-align: right;">E-fit → E-eval</th>
+<th style="text-align: right;">E-fit → U-eval</th>
+<th style="text-align: right;">U-fit → E-eval</th>
+<th style="text-align: right;">U-fit → U-eval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CDI image score, mean (C=1)</td>
+<td style="text-align: right;">0.6150 [0.4350, 0.7876]</td>
+<td style="text-align: right;">0.4850 [0.3125, 0.6625]</td>
+<td style="text-align: right;">0.4900 [0.3100, 0.6776]</td>
+<td style="text-align: right;">0.5475 [0.3650, 0.7225]</td>
+</tr>
+<tr>
+<td>CDI image score, mean (tuned C)</td>
+<td style="text-align: right;">0.5600 [0.3775, 0.7600]</td>
+<td style="text-align: right;">0.4250 [0.2450, 0.6051]</td>
+<td style="text-align: right;">0.4900 [0.3100, 0.6776]</td>
+<td style="text-align: right;">0.5475 [0.3650, 0.7225]</td>
+</tr>
+<tr>
+<td>CDI image score, max (C=1)</td>
+<td style="text-align: right;">0.6300 [0.4450, 0.7950]</td>
+<td style="text-align: right;">0.4550 [0.2825, 0.6450]</td>
+<td style="text-align: right;">0.5475 [0.3700, 0.7376]</td>
+<td style="text-align: right;">0.5400 [0.3525, 0.7125]</td>
+</tr>
+<tr>
+<td>CDI image score, max (tuned C)</td>
+<td style="text-align: right;">0.6525 [0.4775, 0.8225]</td>
+<td style="text-align: right;">0.4125 [0.2300, 0.5876]</td>
+<td style="text-align: right;">0.5200 [0.3375, 0.7125]</td>
+<td style="text-align: right;">0.4975 [0.3125, 0.6775]</td>
+</tr>
+<tr>
+<td>Patient mean26 LR (C=1)</td>
+<td style="text-align: right;">0.5950 [0.4075, 0.7725]</td>
+<td style="text-align: right;">0.5100 [0.3300, 0.7025]</td>
+<td style="text-align: right;">0.5275 [0.3500, 0.7100]</td>
+<td style="text-align: right;">0.5825 [0.4000, 0.7576]</td>
+</tr>
+<tr>
+<td>Patient mean26 LR (tuned C)</td>
+<td style="text-align: right;">0.5700 [0.3875, 0.7575]</td>
+<td style="text-align: right;">0.4425 [0.2600, 0.6276]</td>
+<td style="text-align: right;">0.4750 [0.2925, 0.6575]</td>
+<td style="text-align: right;">0.5175 [0.3325, 0.6950]</td>
+</tr>
+<tr>
+<td>Patient mean+max52 LR (C=1)</td>
+<td style="text-align: right;">0.6025 [0.4200, 0.7800]</td>
+<td style="text-align: right;">0.3600 [0.1950, 0.5450]</td>
+<td style="text-align: right;">0.5075 [0.3250, 0.6950]</td>
+<td style="text-align: right;">0.6700 [0.4950, 0.8301]</td>
+</tr>
+<tr>
+<td>Patient mean+max52 LR (tuned C)</td>
+<td style="text-align: right;">0.5425 [0.3575, 0.7300]</td>
+<td style="text-align: right;">0.3700 [0.2000, 0.5525]</td>
+<td style="text-align: right;">0.4950 [0.3249, 0.6776]</td>
+<td style="text-align: right;">0.6050 [0.4200, 0.7875]</td>
+</tr>
+<tr>
+<td>Denoising loss, mean</td>
+<td style="text-align: right;">0.5675 [0.3824, 0.7375]</td>
+<td style="text-align: right;">0.5150 [0.3349, 0.7050]</td>
+<td style="text-align: right;">0.5675 [0.3824, 0.7375]</td>
+<td style="text-align: right;">0.5150 [0.3349, 0.7050]</td>
+</tr>
+<tr>
+<td>Denoising loss, max</td>
+<td style="text-align: right;">0.5600 [0.3750, 0.7375]</td>
+<td style="text-align: right;">0.4550 [0.2775, 0.6425]</td>
+<td style="text-align: right;">0.5600 [0.3750, 0.7375]</td>
+<td style="text-align: right;">0.4550 [0.2775, 0.6425]</td>
+</tr>
+<tr>
+<td>SecMI, mean</td>
+<td style="text-align: right;">0.5000 [0.3024, 0.6850]</td>
+<td style="text-align: right;">0.5600 [0.3850, 0.7375]</td>
+<td style="text-align: right;">0.5000 [0.3024, 0.6850]</td>
+<td style="text-align: right;">0.5600 [0.3850, 0.7375]</td>
+</tr>
+<tr>
+<td>SecMI, max</td>
+<td style="text-align: right;">0.4550 [0.2799, 0.6325]</td>
+<td style="text-align: right;">0.5275 [0.3500, 0.7176]</td>
+<td style="text-align: right;">0.4550 [0.2799, 0.6325]</td>
+<td style="text-align: right;">0.5275 [0.3500, 0.7176]</td>
+</tr>
+<tr>
+<td>PIA, mean</td>
+<td style="text-align: right;">0.5625 [0.3750, 0.7425]</td>
+<td style="text-align: right;">0.5325 [0.3450, 0.7125]</td>
+<td style="text-align: right;">0.5625 [0.3750, 0.7425]</td>
+<td style="text-align: right;">0.5325 [0.3450, 0.7125]</td>
+</tr>
+<tr>
+<td>PIA, max</td>
+<td style="text-align: right;">0.4975 [0.3175, 0.6825]</td>
+<td style="text-align: right;">0.4950 [0.3175, 0.6801]</td>
+<td style="text-align: right;">0.4975 [0.3175, 0.6825]</td>
+<td style="text-align: right;">0.4950 [0.3175, 0.6801]</td>
+</tr>
+<tr>
+<td>PIAN, mean</td>
+<td style="text-align: right;">0.4675 [0.2875, 0.6575]</td>
+<td style="text-align: right;">0.5425 [0.3625, 0.7225]</td>
+<td style="text-align: right;">0.4675 [0.2875, 0.6575]</td>
+<td style="text-align: right;">0.5425 [0.3625, 0.7225]</td>
+</tr>
+<tr>
+<td>PIAN, max</td>
+<td style="text-align: right;">0.3825 [0.2075, 0.5650]</td>
+<td style="text-align: right;">0.5150 [0.3350, 0.7076]</td>
+<td style="text-align: right;">0.3825 [0.2075, 0.5650]</td>
+<td style="text-align: right;">0.5150 [0.3350, 0.7076]</td>
+</tr>
+<tr>
+<td>NO27 diagnostic: mean+max54 (C=1)</td>
+<td style="text-align: right;">0.6600 [0.4849, 0.8226]</td>
+<td style="text-align: right;">0.3150 [0.1599, 0.4925]</td>
+<td style="text-align: right;">0.5325 [0.3500, 0.7126]</td>
+<td style="text-align: right;">0.6950 [0.5250, 0.8550]</td>
+</tr>
+<tr>
+<td>NO27 diagnostic: mean+max54 (tuned C)</td>
+<td style="text-align: right;">0.5300 [0.3450, 0.7175]</td>
+<td style="text-align: right;">0.4025 [0.2250, 0.5850]</td>
+<td style="text-align: right;">0.4850 [0.3149, 0.6750]</td>
+<td style="text-align: right;">0.6475 [0.4624, 0.8250]</td>
+</tr>
+</tbody>
+</table>
+<h2>CDI reference-set 검정의 환자 단위 확장</h2>
+<p>같은 입력에서 고정 C=1 CDI image mean 하나를 사전에 지정하고, fit80과 환자가 겹치지 않는 selection의 <strong>참여20명 대 비참여 reference20명</strong>을 비교했다. 두 장을 먼저 평균해 환자당1표본으로 세었다. 이 검정은 환자 한 명의 사진 두 장만으로 판단하는 절차나 원형5fold/1000subset전체실험의 재현이 아니다.</p>
+<p>원문은 단측 Welch를 명세하지만 공개 <code>get_p_value</code>는 양측p와 방향bool을 반환한다. 두 결과를 모두 저장했고, 원함수AST·SciPy단측검정·별도 t/df/sf 계산을 대조했다. 8개검정 모두 산술검산을 통과했고 퇴화 사례는0이었다.</p>
+<table>
+<thead>
+<tr>
+<th>판별기 fit→평가</th>
+<th style="text-align: right;">모델1 단측p / 원형함수 양측p</th>
+<th style="text-align: right;">모델2 단측p / 원형함수 양측p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E→E</td>
+<td style="text-align: right;">.1973 / .3946</td>
+<td style="text-align: right;">.1110 / .2220</td>
+</tr>
+<tr>
+<td>E→U</td>
+<td style="text-align: right;">.4431 / .8862</td>
+<td style="text-align: right;">.6158 / .7685</td>
+</tr>
+<tr>
+<td>U→E</td>
+<td style="text-align: right;">.2760 / .5520</td>
+<td style="text-align: right;">.6166 / .7669</td>
+</tr>
+<tr>
+<td>U→U</td>
+<td style="text-align: right;">.6910 / .6179</td>
+<td style="text-align: right;">.3648 / .7295</td>
+</tr>
+</tbody>
+</table>
+<p>이 값은 특정 환자의 membership 확률이나 측정된 patient-FPR가 아니다. 개발자료 재사용과8개상관검정을보정한확증결과도 아니다. 비참여 U reference는 <strong>비참여 환자의 U 영상</strong>이며, 참여 환자의 미학습 U 영상을 privacy-negative reference로 쓰지 않았다. 같은 분포·환자 간 독립성 가정은 표본 수가 같다는 이유로 증명되지 않는다.</p>
+<p><a href="spec_sources/cdi_reference_test_audit_20260915.md">원문·공개 함수 대조</a> · <a href="spec_sources/cdi_reference_set_test_contract_20260915.json">집합 검정 사전 계약</a></p>
+<h2>특징 스케일과 학습된 가중치의 분리</h2>
+<p>네 셀 결과를 본 뒤 수행한 <strong>사후 계산 진단</strong>이다. 기존 mean26/mean+max52의 fixed/tuned 네 scorer에서 E/U 학습 scaler와 E/U 학습 가중치를 교차 적용했다. 새 학습과 GPU 계산은0이다. 아래는 같은 selection U40명에 대한 mean+max52 AUC다.</p>
+<table>
+<thead>
+<tr>
+<th>target·방법</th>
+<th style="text-align: right;">E 가중치/E scaler</th>
+<th style="text-align: right;">E 가중치/U scaler</th>
+<th style="text-align: right;">U 가중치/E scaler</th>
+<th style="text-align: right;">U 가중치/U scaler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>모델1 fixed</td>
+<td style="text-align: right;">.4175</td>
+<td style="text-align: right;">.3850</td>
+<td style="text-align: right;">.5700</td>
+<td style="text-align: right;">.6325</td>
+</tr>
+<tr>
+<td>모델2 fixed</td>
+<td style="text-align: right;">.3600</td>
+<td style="text-align: right;">.3400</td>
+<td style="text-align: right;">.6450</td>
+<td style="text-align: right;">.6700</td>
+</tr>
+<tr>
+<td>모델1 tuned</td>
+<td style="text-align: right;">.4175</td>
+<td style="text-align: right;">.3925</td>
+<td style="text-align: right;">.5225</td>
+<td style="text-align: right;">.5175</td>
+</tr>
+<tr>
+<td>모델2 tuned</td>
+<td style="text-align: right;">.3700</td>
+<td style="text-align: right;">.3725</td>
+<td style="text-align: right;">.5900</td>
+<td style="text-align: right;">.6050</td>
+</tr>
+</tbody>
+</table>
+<p>E 가중치를 둔 채 scaler만 교체한 경로에서는 회복되지 않았다. 모델2 fixed에서 E scaler를 둔 가중치 교체는 +.2850 [.0175,.5376], U scaler를 둔 교체는 +.3300 [.0824,.5550]이었다. 그렇다고 스케일 효과가0은 아니다. 모델1 fixed에서 U 가중치를 둔 scaler 교체는 +.0625 [.0125,.1225]였다. 이 표의 순서는 변수 교체 경로이며 유일한 인과적 기여 분해가 아니다.</p>
+<p>환자 LR의 centering과 intercept는 환자 공통 상수이므로 순위를 바꾸지 않는다. 표준편차와 가중치는 순위를 바꿀 수 있다. 원형 E/E·U/U 대각 조건32개의 예측과 순위를 그대로 복원했고, 총64 AUC·80 paired 구간·2,560 환자 점수를 두 산술 경로로 대조했다. <strong>같은 모듈의 별도 산술 경로 검산</strong>이며 별도 독립 검산기를 실행했다고 부르지 않는다.</p>
+<p><a href="spec_sources/cdi_eu_scaling_audit_contract_20260915.json">사후 진단 계약</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/cdi_e_cohort_v1/eu_analysis_v1/scaling_coefficient_audit_v1/analysis.json">64 AUC·80 차이 원자료</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/cdi_e_cohort_v1/eu_analysis_v1/scaling_coefficient_audit_v1/verification.json">검산 범위</a></p>
+<h2>범위와 후속 해석</h2>
+<ul>
+<li>E→U 차이는 같은 scorer의 영상 조건 전이이며, U-fit 회복은 fit 환자 자료에서의 scorer 적응을 포함한다.</li>
+<li>검산 PASS는 저장 특징·예측·통계의 정합성이다. 참여 효과의 인과적 확인이나 새 공격의 기여를 뜻하지 않는다.</li>
+<li>CDI reference-set의 위 환자군 확장은 완료했다. 원형의 전체 실험 재현, 실제 MoFit 환자 성능 비교와 남는 실패 원인 설명은 구별한다.</li>
+<li><a href="prompt_condition_results.html">학습조건별 loss 대조</a>는 실제4,320F 계산과 원시 검산까지 완료했다. 세 prompt의24개 차이 구간은 모두0을 포함해, 이 고정 조건에서 prompt mismatch가 약한 판별을 설명한다는 근거는 확보하지 못했다.</li>
+<li><a href="mofit_medical_results.html">MoFit 의료 실행</a>은 의료 BLIP 입력·미분·메모리 점검과 같은 환자 E2/U2 × 두 모델의 전체 1,000+300회를 완료하고 검산했다. 네 고정 점수의 mean/max를 모두 대조했다. U max가 한 사진의 모델 차이를 버리는 사례는 표준 평균으로 결과가 달라지므로 새 방법의 필요성으로 삼지 않는다. 한 환자 집계와 환자군 성능 비교를 구별한다.</li>
+</ul></main></body></html>

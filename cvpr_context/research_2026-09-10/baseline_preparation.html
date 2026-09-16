@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BASELINE_PREPARATION.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>비교 구현 준비 상태</h1>
+<p>2026-09-10. 이 문서는 문헌 대조 후의 구현 연결표다. 코드 다운로드와 실제 실행을 구분한다. 정확한 성공/실패 및 commit은 <a href="code_acquisition.json">코드 장부</a>에 있다.</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>확인한 공식 진입점/자료</th>
+<th>지금 된 것</th>
+<th>의료 환자 비교까지 남은 작업</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CDI</td>
+<td><code>main.py</code>, <code>src/attacks/features_extraction</code>, <code>src/evaluation</code></td>
+<td>source 확보, feature/score/evaluation 단계 분리 확인</td>
+<td>SD2.1 wrapper와 bag split, reference null 반복 평가</td>
+</tr>
+<tr>
+<td>CLiD</td>
+<td>NeurIPS supplement <code>CLID_MIA</code>, <code>cal_clid_th.py</code></td>
+<td>COCO 공개 점수 재계산, 양성 방향/첫 행 차이 확인</td>
+<td>짧은 NIH class prompt 변형과 feature 추출 adapter</td>
+</tr>
+<tr>
+<td>Tracing</td>
+<td>NeurIPS supplement <code>train.py</code>, <code>eval.py</code>, <code>utils.py</code></td>
+<td>공개 CIFAR feature linear probe 3설정 재계산</td>
+<td>LoRA gradient feature 추출 및 module/timestep 고정</td>
+</tr>
+<tr>
+<td>GSA</td>
+<td><code>DDPM/gen_l2_gradients_ddpm.py</code>, <code>Imagen/gen_l2_gradients_imagen.py</code>, <code>test_attack_accuracy.py</code></td>
+<td>공식 source 및 1/2 variant 진입점 확인</td>
+<td>SD2.1 LoRA gradient 연결, shadow 예산 통제</td>
+</tr>
+<tr>
+<td>DP-LoRA</td>
+<td><code>main.py</code>, <code>ldm/models/diffusion/ddpm.py</code></td>
+<td>config 기반 LoRA 및 Opacus 연결 확인</td>
+<td>현재 sampler와 patient 평균·clipping 회계 검증</td>
+</tr>
+<tr>
+<td>RAPID</td>
+<td><code>main.py</code>, <code>train_feature_extractor.py</code>, <code>conditional_sampling.py</code></td>
+<td>공개 KB/feature extractor/private sampler 연결 확인</td>
+<td>domain-matched public KB와 private endpoint patient bound</td>
+</tr>
+<tr>
+<td>DPImageBench</td>
+<td><code>run.py</code>, <code>eval.py</code>, <code>models</code></td>
+<td>저자 repository source 확보</td>
+<td>공통 backbone/validation 조건을 로컬 contract에 대조</td>
+</tr>
+<tr>
+<td>DP-FETA</td>
+<td><a href="https://github.com/SunnierLee/DP-FETA">저자 코드</a></td>
+<td>source 확보</td>
+<td>prototype release와 patient gradient 양쪽 비용</td>
+</tr>
+<tr>
+<td>FETA-Pro</td>
+<td><a href="https://github.com/2019ChenGong/Feta-Pro">저자 코드</a></td>
+<td>source 수집·무결성 대조 상태는 장부 참조</td>
+<td>random feature query·central query·fine-tuning 합성</td>
+</tr>
+<tr>
+<td>PFAMI</td>
+<td><a href="https://github.com/wjfu99/MIA-Gen">저자 코드</a></td>
+<td>source 확보</td>
+<td>gray-box query wrapper, 동일 crop·MC 수·score 부호</td>
+</tr>
+<tr>
+<td>MoFit</td>
+<td><a href="https://github.com/JoonsungJeon/MoFit">저자 코드</a>, <code>COCO/MoFit_COCO.py</code>, <code>Eval</code></td>
+<td>공식 repo와 pipeline 구조 확인; 수집 상태는 장부 참조</td>
+<td>별도 embedding 최적화 환경, 시간 예산과 독립 calibration</td>
+</tr>
+</tbody>
+</table>
+<p>DP-LoRA <code>ddpm.py</code>의 LoRA 설정은 <code>r</code>, target modules, <code>bias='lora_only'</code>를 사용한다. 이름이 같은 LoRA라도 로컬 구현에서 bias 및 conditioning module이 다르면 parameter 예산이 달라진다. 또한 DP-LoRA/RAPID는 <code>make_private</code>에 넘긴 loader와 실제 <code>main.py</code>에서 재구성한 loader의 일치를 점검해야 한다고 source 주석이 설명한다. noise multiplier만 복사해서 patient DP가 됐다고 하지 않는다.</p>
+<p>미확보 공식 구현은 재현 완료로 표시하지 않는다. Quantile, DIME, SD-MIA 및 NDSS/ReDiffuse의 이식은 문헌·공식 공개 상태에 따라 별도 작업이다. 코드가 없거나 접근 조건이 다르면 그 사실과 재구현 여부를 비교표에 명시한다. 모든 소스의 의존성을 한 환경에 설치하지 않았고 대형 checkpoint 학습도 실행하지 않았다.</p>
+<p>공통 평가 도구는 다음처럼 호출한다. 아래 CSV는 사용자가 직접 제공해야 한다는 뜻이 아니라 공식/로컬 feature 추출기가 출력할 공통 규격이다.</p>
+<pre><code class="language-text">python evaluate_patient_scores.py scores.csv --score-direction high --aggregation mean --alpha 0.01 --out evaluation.json
+</code></pre>
+<p>CSV columns: <code>patient_id,image_id,split,member,score</code>. 하나의 고정 model/attack 파일에서 환자 전체가 한 split에만 속해야 한다. <code>split</code>은 <code>development</code>, <code>calibration</code>, <code>test</code>; <code>member=1</code>이 학습 포함 환자다. score 방향을 바꾸는 기준은 개발자료에서 고정하며 test AUC를 보고 뒤집지 않는다. 동일 환자의 알려진 training 사진 공격과 학습에 없던 다른 사진 공격은 별도 시나리오 파일로 만든다.</p>
+<p>평가기는 표준 집계/보정을 구현한 <strong>기준선 도구</strong>다. 신규 공격 기여로 세지 않는다. 서로 다른 bag 크기의 marginal calibration과 각 크기의 conditional calibration도 같은 보장이 아니므로 subgroup 결과를 함께 출력한다. Bootstrap/기관별 strata/feature extraction adapter는 아직 구현하지 않았다. <a href="report.html">전체 기여도 판정</a></p></main></body></html>

@@ -1,0 +1,52 @@
+__pycache__/
+*.py[cod]
+*.pyo
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+.env
+.env.*
+.venv/
+venv/
+
+_data/
+_reports/
+_diagnostics/
+_restricted_generation/
+reports/
+artifacts/
+outputs/
+browser_check_profile/
+
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+
+*.zip
+*.7z
+*.tar
+*.tar.gz
+
+node_modules/
+dist/
+build/
+
+# PP-Mark run scripts can contain local run secrets or secret.json paths.
+code_working/ppmark/scripts/
+
+# Third-party source snapshots are referenced by notes but are not part of this
+# curated public context bundle.
+code_working/ppmark/external/
+**/third_party/
+**/vendor/
+code_working/ppmark/halo2_prover/halo2curves/
+
+# Generated source-probing logs can contain empty API-key query parameters.
+cvpr_context/reading_list_2026-09-09/source_checks.json

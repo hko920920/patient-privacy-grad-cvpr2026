@@ -1,0 +1,19 @@
+{
+  "schema": "mofit-one-patient-display-artifacts/v1",
+  "renderer_sha256": "2fa011f84e2030586b18f1d26f6eb1bfc9bceb39250923fbb85af89a100808f1",
+  "source_analysis_sha256": "c8eea65f76ed20b290a09498eda101cc227e84dbc2c02b38b2a3e83552f60357",
+  "files": {
+    "aggregates.csv": "6742fe08fc6eb8f90facb46ffa36dcc8b6ee0d9503bc5fda487c2528b71b9489",
+    "analysis.json": "c8eea65f76ed20b290a09498eda101cc227e84dbc2c02b38b2a3e83552f60357",
+    "comparison_section.md": "78de0a33e967e81d17eeede9a4c4283c0688a02d170b14ba08caf1d1263da99b",
+    "image_scores.csv": "5ddb631ac70fabfd1235764158b3146d78d563d31c51c86f21694f5c8d3b73a8",
+    "protocol.json": "ad376b68360804fe9e1dcb9099d01a86ebc93a8542242e7dad3e54d1a39cefda",
+    "provenance.json": "768be5d082d79fc8e1fe9cb154c3beacc712c99f353fac7a6f98f552e81ffa82",
+    "target_differences.csv": "537fad4c217297b5a1d6e9aed1fd6b820e285b5dff7f4801fc98a50af63eb0aa"
+  },
+  "score_naming_clarification_source": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\mofit_score_naming_clarification_20260915.md",
+  "score_naming_clarification_sha256": "bedf90daa4ae5cafea386cdd75f58c14cb87321ecb5969924dd937c1f29948d0",
+  "records": 8,
+  "independent_patients": 1,
+  "new_score_selection": false
+}

@@ -1,0 +1,359 @@
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage[submission]{aaai2027}  % DO NOT CHANGE THIS
+\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm}  % DO NOT CHANGE THIS
+\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{amsmath}
+\usepackage{booktabs}
+\frenchspacing  % DO NOT CHANGE THIS
+
+\newcommand{\Direct}{\textsc{Direct}}
+\newcommand{\Convert}{\textsc{Convert}}
+\newcommand{\Group}{\textsc{Group}}
+\newcommand{\Under}{\textsc{Underspecified}}
+\newcommand{\Allowed}{\textsc{Allowed}}
+\newcommand{\Blocked}{\textsc{Blocked}}
+\newcommand{\ke}{\kappa_{\mathrm{event}}}
+\newcommand{\ko}{\kappa_{\mathrm{owner}}}
+% Frozen generated values are inlined so the submission source is a single
+% TeX file, as required by the AAAI-27 Author Kit.
+\newcommand{\AuditContractTestCount}{83}
+\newcommand{\AuditRetrospectiveIncidentCount}{10}
+\newcommand{\AuditRetrospectiveCheckCount}{176}
+\newcommand{\AuditUciRunCount}{5}
+\newcommand{\AuditUciFullCheckCount}{49}
+\newcommand{\AuditUciPortableCheckCount}{38}
+\newcommand{\AuditUciAggregateCheckCount}{31}
+\newcommand{\AuditUciAccuracyMean}{0.8049}
+\newcommand{\AuditUciAccuracySD}{0.0315}
+\newcommand{\AuditUciMacroFOneMean}{0.7795}
+\newcommand{\AuditUciMacroFOneSD}{0.0504}
+\newcommand{\AuditUciPipelineMean}{11.291}
+\newcommand{\AuditUciPipelineSD}{0.222}
+
+\pdfinfo{
+/TemplateVersion (2027.1)
+}
+
+\setcounter{secnumdepth}{0}
+
+\title{Post-Execution Evidence-Bound Validation of Privacy-Unit Claims in Windowed DP-SGD}
+
+\author{
+Anonymous Submission
+}
+\affiliations{
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Privacy reports attached to trained machine-learning systems can silently restate a differentially private stochastic gradient descent (DP-SGD) $(\varepsilon,\delta)$ pair for events, patients, or users although the accountant protects generated records under another adjacency. Given frozen evidence $E$ from a completed windowed DP-SGD run and requested sentence $q$ naming its privacy unit and adjacency, we formalize a finite-registry decision $V_{\mathcal R}(E,q)$: do the raw-adjacency, transformation, executed-mechanism, and accountant premises entail exactly $q$? The validator reopens mapping evidence and binds preprocessing, schedule, source, runtime, mechanism, and accountant; it emits exact licensed wording or no positive claim plus localized issues. Under generated add/remove accounting, fixed-slot replacement has candidate distance twice the maximum event-to-window incidence, not the incidence itself. On a designed suite of 100 allowed and 100 paired non-allow cases, all allowed tuples are exact and no positive claim is emitted on any non-allow case; five fixed deletion witnesses show that hiding mapping, stability, runtime, vacuity, or exact wording erases a required distinction. For the same activity-data evidence $E$, a window $q$ receives the base pair, an event $q$ a converted $K=4$ pair, and an owner $q$ is blocked because its converted $\delta$ is at least one; five runs on each of two activity datasets preserve their respective decision patterns.
+\end{abstract}
+
+\section{Introduction}
+
+Privacy labels, registries, and deployment reports attach numerical claims to trained systems \citep{nist2025registry,nanayakkara2025registry,dibia2026standard}. Differential privacy (DP), however, is a property of a randomized mechanism under a neighboring relation, not of an isolated $\varepsilon$. Differentially private stochastic gradient descent (DP-SGD) samples records, clips gradients, adds noise, and composes privacy loss \citep{abadi2016deep}; guidance therefore requires the privacy unit, adjacency, sampler, and accountant \citep{ponomareva2023dpfy,kifer2020guidelines,nist2025evaluation}. Sequential pipelines may train on generated windows while reporting protection for raw events, patients, users, or sequences.
+
+Human multi-artifact DP review, numeric or program-level accept/reject, policy-to-code/runtime auditing, and heterogeneous evidence gates are established \citep{ridgeway2021challenge,wang2023randomized,winogradcort2017adaptive,zhang2026priagent,muhammad2026audit}. The scope here is the DP-specific consequence for a completed run, not a generic gate. $E$ is frozen evidence for one completed or externally reported windowed DP-SGD execution; $q$ is one public sentence naming a privacy unit, adjacency, and numbers. $V_{\mathcal R}(E,q)$ returns exact licensed wording and assurance or blocks positive wording and localizes unsupported premises under finite registry $\mathcal R$.
+
+A tempting shortcut counts selected windows containing one event. Suppose raw adjacency replaces a slot, each slot enters one non-overlapping window, and the accountant protects add/remove-one generated record. Replacing that window is one removal plus one addition, so observed $\ke=1$ induces candidate $K=2$, not same-number event privacy; add/remove accounting likewise need not license substitute-adjacency wording \citep{pradhan2026beyond}. Data-dependent preprocessing, selection, or schedules can enlarge the distance. No schema, hash, or accountant alone establishes this implication.
+
+The scientific center is the query-dependent DP consequence. With $E$ fixed, a window $q$ can retain the base pair, an event $q$ can require a weaker converted pair, and an owner $q$ can be blocked as vacuous. We operationalize the registered chain raw adjacency $\rightarrow$ stable transformation $\rightarrow$ executed mechanism $\rightarrow$ accountant $\rightarrow q$ for this interface. Hashes expose inconsistency and staleness but do not attest against a malicious producer; the work supplies no new accountant, group theorem, or arbitrary-code proof.
+
+Our contributions are:
+\begin{itemize}
+\item We formalize the restricted object $V_{\mathcal R}(E,q)$, its contract-relative consequence, query-separation necessity, factor-two corollary, and non-attestation limit.
+\item We instantiate it as a finite-registry validator that reopens mapping and execution evidence and returns exact wording or a typed block.
+\item FULL matches all 200 designed tuples under controlled information/obligation projections; five fixed deletion witnesses isolate necessary distinctions, and a separate lineage binds ten internal defects without treating any set as prevalence.
+\item Five prespecified runs on each of two separately bound datasets preserve same-$E$/different-$q$ decisions; scalar-statement and mapping-only studies retain separate authority.
+\end{itemize}
+
+\section{Restricted Post-Execution Wording Decision}
+
+\paragraph{Units and evidence.}
+Let $T(D)=G$ map raw data to generated training records. Record $g$ has event support $M(g)$ and owner attribution $A(g)$; a frozen export yields
+\begin{align}
+\ke &= \max_e |\{g\in G:e\in M(g)\}|,\\
+\ko &= \max_u |\{g\in G:u\in A(g)\}|.
+\end{align}
+These are incidences, not privacy parameters or neighboring-dataset bounds.
+
+Let $d_R$ be the declared raw adjacency metric and $d_G$ the generated metric for which the mechanism is accounted. The relevant quantity is a stability bound
+\begin{equation}
+K \ \geq\ \sup_{d_R(D,D')\leq 1} d_G(T(D),T(D')).
+\label{eq:stability}
+\end{equation}
+The bound covers identities, inclusion, values, preprocessing, selection, and schedules; it equals incidence only after an argument connecting both metrics.
+
+\begin{table*}[t]
+\centering
+\begin{tabular}{p{0.21\textwidth}p{0.25\textwidth}p{0.19\textwidth}p{0.25\textwidth}}
+\hline
+Declared raw change & Effect on each incident generated record & Base accountant metric & Candidate distance or validator action \\
+\hline
+Fixed-slot replacement & Generated-record replacement & replace-one & $K=\kappa$ after complete-support validation \\
+Fixed-slot replacement & Generated-record replacement & add/remove & $K=2\kappa$ (one removal plus one addition) \\
+Insertion/deletion with fixed support & Generated-record addition/removal & add/remove & $K=\kappa$ after fixed-support validation \\
+Insertion/deletion that shifts, reselects, or adaptively creates windows & Potentially many identity and value changes & either & Prove a bound over all branches; otherwise block \\
+\hline
+\end{tabular}
+\caption{Adjacency determines how observed incidence $\kappa$ can bound generated distance $K$; $\kappa$ alone does not.}
+\label{tab:adjacency}
+\end{table*}
+
+\paragraph{Claim consequence.}
+If Equation~\eqref{eq:stability} holds and bound execution evidence establishes $(\varepsilon,\delta)$-DP at generated distance one, standard group privacy gives
+\begin{equation}
+\varepsilon_K=K\varepsilon,\qquad
+\delta_K=\delta\sum_{i=0}^{K-1}e^{i\varepsilon}.
+\label{eq:group}
+\end{equation}
+This registered rule is standard, not a new theorem \citep{dwork2014foundations}. Log-domain numerics with $\delta_K\geq1$, non-finite output, or an unregistered derivation are not released.
+
+\paragraph{Proposition 1 (contract-relative consequence).}
+Suppose (i) evidence describes $T$ and executed mechanism $\mathcal M$; (ii) a registered checker establishes $d_G(T(D),T(D'))\leq K$ for every $d_R$-adjacent pair; and (iii) a registered accountant establishes $(\varepsilon,\delta)$-DP for the bound execution at generated distance one. Then $\mathcal M\!\circ T$ satisfies Equation~\eqref{eq:group} for the requested raw adjacency. If $K=1$ and unit and metrics coincide, the base pair takes the \Direct{} path.
+
+\emph{Justification.}
+Connect the raw pair by a generated-metric path of length at most $K$ and apply the distance-one inequality successively. The validator checks rather than infers the three premises; the result is contract-relative, not attestation.
+Detailed metric-specific statements and stable-numeric derivations are in Supplementary Material Sec.~2.
+
+\paragraph{The factor-two corollary.}
+With public fixed identities, one raw replacement changes at most $\ke$ generated records. Each replacement costs two add/remove edits, so this registered metric pair licenses $K=2\ke$; a generated replace-one accountant instead uses $K=\ke$. Thus even non-overlap does not select a public number without both adjacencies.
+
+\paragraph{Decision object.}
+\Direct{}, \Convert{}, \Group{}, and \Under{} distinguish aligned, event-converted, owner/group, and absent paths; only \Allowed{} is public wording. Missing, mismatched, unregistered, or vacuous premises block.
+
+For evidence bundle $E$, requested statement query $q$, and finite registry
+$\mathcal R$, the paper's primary object is
+\[
+V_{\mathcal R}(E,q)=(\text{path},\text{release},\text{assurance},
+K,\widehat\varepsilon,\widehat\delta,\mathcal{I}),
+\]
+where $\mathcal I$ localizes failures. \Allowed{} requires a registered path, matched execution, finite nonvacuous numbers, and unit/adjacency wording. Invalid, unverified, vacuous, and research-only states take precedence; blocked public reports contain no copy-ready positive sentence.
+
+\paragraph{Lemma 1 (query separation).}
+If $V_{\mathcal R}(E,q_1)\ne V_{\mathcal R}(E,q_2)$ for fixed $E$, no query-oblivious $A(E)$ is exact on both: identical input yields one output law, which cannot be a point mass at two distinct results. A common positive is wrong for one request; abstention loses any licensed request. A generic engine may accept $q$; the lemma makes $q$ necessary scientific input.
+
+\paragraph{Private dependencies.}
+Apparently fixed identities may depend on private labels, normalization, model state, or earlier outcomes. Such preprocessing and selection must be local/public, accounted, or bounded over every private branch.
+
+\section{Evidence-Bound Validator}
+
+\paragraph{Inputs.}
+The validator implements $V_{\mathcal R}$ for a finite registry, not arbitrary programs. Its internal record binds the selected mapping and identities; support and attribution; preprocessing, population, contribution, and schedule policies; mechanism, runtime, and accountant versions; base privacy numbers; and the requested-unit contract. The public view redacts private provenance while retaining the decision, hashes, result, assumptions, forbidden wording, and recertification triggers.
+
+\paragraph{Fail-closed procedure.}
+Six ordered checks instantiate the evidence-bound chain summarized in Figure~\ref{fig:claim-flow}. (1) Exact types and domains reject Boolean integers, non-finite privacy values, and invalid probabilities. (2) Reopening the mapping recomputes its digests, identities, intervals, attribution, $\ke$, and $\ko$. (3) Registered stability checks cover identity, influence, preprocessing, population, contribution, schedule, and selection. (4) Runtime fields must match sampler, rate, steps, noise, clipping, accounting unit, mapping, pipeline, and secure mode. (5) A versioned registry recomputes the base accountant and default-denies unknown adapters or attachments. (6) The requested-unit path, Equation~\eqref{eq:group}, and vacuity gate determine whether exact public wording is emitted.
+The full typed contract and decision procedure are in Supplementary Material Secs.~3.1--3.2, Table~1, and Algorithm~1.
+
+The positive path registers the Opacus 1.6.0 R\'enyi differential privacy (RDP) accountant \citep{yousefpour2021opacus} under Poisson add/remove semantics and exact adapter \texttt{secure\_\allowbreak systemrandom\_\allowbreak dpsgd@\allowbreak2.0.0}. It binds Bernoulli sampler \texttt{SystemRandom.\allowbreak randrange(50)<1}, four-draw Gaussian noise with the first draw discarded, clipped-gradient summation/noising, and public step $1/150$ without a dataset-size denominator. Hash-bound source and a dependency-light checker connect the accountant to runtime evidence. The multiple draws address one finite-precision noise-reconstruction attack class \citep{holohan2021secure}; other floating-point and timing attacks motivate a narrow assurance label \citep{jin2022timing}. This is neither universal side-channel nor faithful-execution proof; absent runtime observation blocks concrete-run wording.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/figure10.png}
+\caption{Evidence-bound validation and query separation for one frozen Wireless Sensor Data Mining (WISDM) execution. The same $E$ licenses the base window claim, converts the event claim with $K=4$, and blocks the owner claim as vacuous. Hashes bind consistency, not truth; \texttt{EVIDENCE\_VALIDATED} is not execution attestation.}
+\label{fig:claim-flow}
+\end{figure*}
+
+\paragraph{Binding and lifecycle.}
+The full-file digest detects byte changes; a canonical selected digest binds normalized semantic records; pipeline and runtime digests bind transformation parameters and observed mechanism fields. Equal report strings cannot replace reopening files, and equal mapping bytes do not prove sampler use. Changing a bound mapping, policy, mechanism, accountant, claim unit, or adjacency triggers validation again. Redaction is a view of the same decision, not a second claim.
+
+\paragraph{Validation cost.}
+For mapping bytes $B$, rows $R$, selected rows $S$, attribution entries $A$, and interval endpoints $P\leq2A$, validation costs $O(B+R+A+S\log S+P\log P)$ time and $O(R+A)$ memory, plus registered-accountant work. The complete six-check validator is FULL; Backblaze's specialized aggregate rescan is not a FULL certificate.
+
+\paragraph{Proposition 2 (bundle-only non-attestation).}
+Let a validator observe only an unauthenticated self-reported tuple $(E,q,\mathcal R)$. If a faithful world and a world that copies the same tuple while executing different code or hiding a dependency are observationally identical, every deterministic or randomized validator has the same output distribution in both. Thus the assurance label \texttt{EVIDENCE\_VALIDATED} means only that the observable registered obligations pass; it cannot mean execution fidelity. This follows immediately because the validator receives identical inputs (formal statement and proof: Supplementary Material Sec.~3.5). Our threat model is therefore an honest-but-fallible producer, stale exports, omissions, inconsistent configuration, or unjustified unit restatement, not a malicious fabricator; stronger claims require authenticated observation or execution proof.
+
+\section{Evaluation}
+
+We ask three questions. \textbf{Q1:} Which decision distinctions disappear under fixed information projections or after removing runtime or vacuity obligations? \textbf{Q2:} For each frozen $E$, do different $q$ yield distinct decisions, and does that within-run pattern recur across fresh executions? \textbf{Q3:} Do authenticated internal repairs and externally authored or public-data intakes localize failed premises without upgrading their evidence authority?
+
+\paragraph{Frozen conformance cases.}
+We systematically specified 100 allowed and 100 paired non-allow tuples. Allowed cases cross five registered path strata (direct window/event/owner, converted event, and grouped owner), five boundary/scale levels, and four mapping contexts: canonical, irregular supports, non-selected decoy rows, and permuted file order. Twenty-five frozen one-premise mutation operators each act on four distinct parents, consuming every allowed parent once; they span adjacency, mapping, runtime/accountant drift, private dependencies, schedules, influence, selection, conversion/vacuity, randomness, source, Gaussian semantics, observed-$K$ substitution, and artifacts. The complete case matrices and linked 37-row normative table are Supplementary Material Tables~12, 13, and~19. This authored deterministic coverage suite is neither prevalence evidence nor an independently sampled corpus.
+
+\paragraph{Oracle and metrics.}
+The manifest, not FULL output, declares expected path, release/assurance, issue, and numerical rule. Every method receives the same report, audit row, and mapping; most negatives change one premise. A separate verifier reopens inputs, digests, localization, flags, and aggregates. A \emph{non-allow positive} is \Allowed{} on a non-allow case; \emph{valid exact} also requires the correct path and pair, and \emph{exact tuple} adds assurance, block subtype, and numerical presence. A \emph{wrong same-number} result reuses the base pair for conversion, separating numerical correctness from safe abstention.
+
+\paragraph{Controlled probes and separate scope comparison.}
+On the shared 200-case suite, B0--B4 retain only field presence, JavaScript Object Notation (JSON) Schema, multiplicity, mapping-hash binding, or base-accountant recomputation. A1 assumes runtime evidence matches the current static report without repairing mapping, schema, mechanism, or accountant premises; A2 removes the vacuity gate from FULL. These are projections/ablations, not prior-system implementations or error rates. Separately, on the original 23-case scalar-compatible subset, we execute TensorFlow Privacy 0.9.0's official statement function with caller-supplied scalars and a group bound \citep{tensorflowprivacystatement}. It is outside the exact-tuple table because it generates conditional statements and freshly targets $\delta$, rather than authenticating an external pipeline.
+
+\begin{table*}[t]
+\centering
+% AAAI-27 permits 9-point table text when needed.  Scope \small to the
+% dense Table 2 tabular only so its caption remains the required 10 point.
+{\small
+\begin{tabular}{@{}p{0.18\textwidth}p{0.105\textwidth}p{0.105\textwidth}p{0.105\textwidth}p{0.31\textwidth}@{}}
+\hline
+Probe / full contract & Unsafe-positive frac. & Valid-exact frac. & Exact-tuple frac. & Principal evidence not checked \\
+\hline
+B0 Field presence & 1.00 & 0.60 & 0.00 & types, semantics, files, execution, accounting \\
+B1 JSON Schema & 0.96 & 0.60 & 0.00 & cross-field and execution semantics \\
+B2 Multiplicity only & 1.00 & 0.80 & 0.00 & stability/adjacency, staleness, mechanism \\
+B3 Hash only & 0.96 & 0.60 & 0.00 & consistently wrong semantics or mechanism \\
+B4 Accountant only & 0.88 & 0.60 & 0.00 & mapping, claimed unit, dependencies, runtime \\
+A1 Runtime assumed matched & 0.12 & 1.00 & 0.94 & independent runtime/artifact equality \\
+A2 FULL minus vacuity & 0.04 & 1.00 & 0.98 & reportability of converted numerics \\
+FULL & \textbf{0.00} & \textbf{1.00} & \textbf{1.00} & registered-contract assurance boundary \\
+\hline
+\end{tabular}
+}
+\caption{Fixed designed suite: 100 allowed and 100 paired non-allow cases. Fractions are deterministic coverage outcomes, not statistical estimates; B0--B4 are information projections and A1--A2 obligation ablations, not competitors.}
+\label{tab:obligation-probes}
+\end{table*}
+
+\paragraph{Q1: controlled obligation failures.}
+FULL has unsafe-positive, valid-exact, and exact-tuple fractions $0.00/1.00/1.00$ (respectively $0/100$, $100/100$, and $200/200$). A standard-library verifier independently encodes the grid/operator oracle and passes 20,909/20,909 checks; the expanded contract suite passes \AuditContractTestCount/\AuditContractTestCount. B0, B1, B3, and B4 reuse the base number in 40 allowed converted/group cases, while B2 does so in four. A1 leaves 12 unsafe positives, four each from the missing-trace, runtime-noise, and runtime-artifact operators, while retaining all allowed cases; A2 leaves four vacuous owner positives.
+
+The scalar generator retains finite conditional statements for 7/7 valid cases and produces them for 15/16 non-allow bundles; it rejects the Boolean-step input, while 79/79 checks re-execute and hash the official module and setup. In the fixed-base-vacuity case it solves for a smaller example-level $\delta$ and freshly targets user-level $\delta$: a useful alternative accountant, not Equation~\eqref{eq:group} on the supplied pair. Because it receives scalars whereas FULL reopens pipeline evidence, 15/16 is neither an error rate nor a quality ranking.
+
+\paragraph{Fixed necessity witnesses.}
+Five predeclared deletions hide, respectively, reopened mapping bytes (W1), stability status (W2), runtime noise/trace equality (W3), the vacuity gate (W4), or exact event rather than window wording (W5). Each erases its paired valid/block distinction; independent recomputation passes 10/10 plus tamper tests. Definitions and paired outcomes are in Supplementary Material Sec.~4.2 and Table~2. This is fixed-contract necessity, not universal minimality, predecessor error, or prevalence.
+
+\paragraph{Q2: complete first activity-data path.}
+We construct 7,304 length-200 training windows at stride 100 from the public Wireless Sensor Data Mining (WISDM) accelerometer data, with owner-partitioned identities and record-local feature and label transforms \citep{kwapisz2011activity}. The raw domain is the 1,086,465 canonical valid events produced by a public parser from 1,098,210 physical lines; owner identity and slot presence are fixed and only the payload is replaceable. A public prefix policy caps generated training records at 600 per owner before training. The bound run uses exact window Poisson sampling $1/50$, 100 steps, noise multiplier 2, window clipping/noising, discarded-first four-draw Gaussian generation from \texttt{secrets.SystemRandom}, and public optimizer step $1/150$ without a dataset-size denominator. Source code, accountant checker, runtime, batch trace, model, mapping, and report are digest-bound. Registered RDP recomputation gives $(0.536827391167,10^{-6})$; utility (accuracy 0.6674, macro-averaged F1 0.4043) is an integration diagnostic, not a state-of-the-art claim.
+
+\begin{table*}[t]
+\centering
+\begin{tabular}{@{}llll@{}}
+\hline
+Claim & obs./$K$ & Path/status & Reported pair or action \\
+\hline
+Window & -- / 1 & \Direct/\Allowed & $(0.53683,10^{-6})$ \\
+Raw event & 2 / 4 & \Convert/\Allowed & $(2.14731,1.0642{\times}10^{-5})$ \\
+Owner & 565 / 600 & \Group/\Blocked & vacuous: $\delta_K\geq1$ \\
+\hline
+\end{tabular}
+\caption{The WISDM route exercises all decision paths. Raw event adjacency is fixed-owner-slot payload replace-one and the base metric is generated add/remove, hence $K=2\ke=4$. Owner conversion uses public cap $K=600$, not observed 565, and is blocked as vacuous.}
+\label{tab:wisdm}
+\end{table*}
+
+\paragraph{Same-$E$, different-$q$ trace.}
+All requests reopen the same 7,304-row mapping and bind the same mapping/pipeline digests. Window alignment gives $K=1$. For events, the sweep recomputes $\ke=2$ and fixed-identity replacement costs two add/remove edits, so Equation~\eqref{eq:group} at $K=4$ changes both parameters; reusing $0.53683$ would name the wrong unit. Observed owner contribution 565 checks the public cap 600, but conversion uses $K=600$, giving diagnostic $\varepsilon_K=322.096$ and $\log_{10}\delta_K=134.033097$; positive wording is suppressed. These tuples instantiate Lemma~1: one execution licenses two different pairs and blocks a third sentence.
+
+Five post-freeze confirmatory runs (excluding a feasibility pilot) pass the 38-check raw-input verifier, have distinct model digests, and preserve all paths and privacy values. Test accuracy is $0.6556\pm0.0080$ and macro-F1 $0.3922\pm0.0033$ (mean $\pm$ sample standard deviation (SD); all runs), as integration diagnostics. Full run, cost, and portable-verifier results are in Supplementary Material Secs.~4.5--4.6; the environment and commands are in Sec.~5.
+
+\paragraph{Second separately bound activity-data route.}
+The second entry consumes 7,352 training and 2,947 test windows with 561 features from the University of California, Irvine (UCI) Human Activity Recognition Using Smartphones (HAR) dataset, without private fitted normalization \citep{anguita2013har,ucihar2013dataset}. It shares the mechanism family but separately binds source, dataset, mapping, runtime, model, and certificates. Each of \AuditUciRunCount{} post-freeze runs passes \AuditUciFullCheckCount/\AuditUciFullCheckCount{} raw-source and \AuditUciPortableCheckCount/\AuditUciPortableCheckCount{} portable checks with a distinct digest. Each licenses only \Direct{} window add/remove wording at $(0.536827,10^{-6})$; absent event support and owner contract block those requests. Accuracy is $\AuditUciAccuracyMean\pm\AuditUciAccuracySD$ and macro-F1 $\AuditUciMacroFOneMean\pm\AuditUciMacroFOneSD$ (mean $\pm$ sample SD). Complete decisions and run-level results are in Supplementary Material Sec.~4.7 and Tables~3--4. This reduces dataset, not mechanism, concentration.
+
+\paragraph{Q3: authenticated repairs and separate mapping rescans.}
+A frozen lineage protocol includes every distinct root cause with a byte-preserved claim artifact and pre-protocol discovery record. The \AuditRetrospectiveIncidentCount{} incidents span missing gates/runtime, unvalidated conversion, private preprocessing, overstated Gaussian assurance, observed-owner-$K$ substitution, underspecified adjacency, declaration-only registration, and inexact sampling. A separate verifier without production imports authenticates the history and 16 repairs in \AuditRetrospectiveCheckCount/\AuditRetrospectiveCheckCount{} checks; three tamper tests reject omission/forgery. The full lineage is in Supplementary Material Sec.~4.3 and Table~9. These development failures are separate from the 200 designed probes and are not an external sample or prevalence estimate.
+
+\paragraph{Externally authored source intake.}
+At one public ExtraSensory commit, six terminal records retain five failures, import, carriage-return/line-feed (CRLF) parsing, disk, parent environment, and unpinned Seaborn--Pandas, and one author-operated completion after a frozen Pandas repair \citep{extrasensorydp,vaizman2017extrasensory}. It completes both five-epoch phases and 17 outputs; a verifier passes 30/30 and rejects forged wording. An earlier intake remaps 250,906 examples and passes 18/18. The intake and execution diagnostics are in Supplementary Material Sec.~4.10 and Tables~5--6. This is bounded source-path execution, not independent operation, privacy validation, or a DP guarantee: \texttt{secure\_rng=False}, epsilon is configured, and positive wording remains empty.
+
+\paragraph{Public-data mapping rescans without production imports.}
+We next test transformation premises without attaching privacy numbers. For the PhysioNet/Computing in Cardiology 2019 Sepsis data, 5,000 patient files are opened and hashed; 16 mappings reproduce dense, non-overlap, and public cap policies \citep{reyna2020sepsis,physionet2019sepsis,pollard2026physionet,goldberger2000physionet}. For the Backblaze first-quarter 2025 archive, a verifier that does not import production modules rescans 1.02\,GB: 90 daily files, 27,799,986 drive-day rows, and 318,426 drives \citep{backblaze_drivestats}. It distinguishes windows over ordered available snapshots, which compress calendar gaps, from calendar-contiguous windows.
+
+\begin{table*}[t]
+\centering
+\begin{tabular}{llrrrr}
+\hline
+Dataset & Mapping policy & Generated records & obs. $\ke$ & candidate event $K$ & obs. $\ko$ \\
+\hline
+Sepsis & 6h dense & 167,206 & 6 & 12 & 331 \\
+Sepsis & 6h non-overlap & 29,958 & 1 & 2 & 56 \\
+Sepsis & public owner cap 1 & 5,000 & 1 & 2 & 1 \\
+Backblaze & 7d dense, ordered snapshots & 25,904,370 & 7 & 14 & 84 \\
+Backblaze & 7d dense, calendar-contiguous & 25,867,949 & 7 & 14 & 84 \\
+Backblaze & 7d non-overlap, ordered & 3,709,484 & 1 & 2 & 12 \\
+Backblaze & 7d non-overlap, calendar & 3,707,669 & 1 & 2 & 12 \\
+Backblaze & 60d non-overlap, ordered & 304,906 & 1 & 2 & 1 \\
+Backblaze & 60d non-overlap, calendar & 302,760 & 1 & 2 & 1 \\
+\hline
+\end{tabular}
+\caption{Mapping-only diagnostics under fixed-slot raw replace-one and candidate generated add/remove distance $K=2\ke$. No row is an epsilon/delta certificate or a \Direct{} verdict. Separate verifier checks pass 128/128 for Sepsis and 86/86 for Backblaze.}
+\label{tab:mapping}
+\end{table*}
+
+The scans expose three premise risks: non-overlap $\ke=1$ still gives candidate $K=2$; Backblaze ordered/calendar semantics differ by 36,421 dense 7-day windows despite equal incidence; and Sepsis label-balanced selection can match public-cap counts while privately changing identities. Verifiers reconstruct every row/policy, but neither bundle binds a mechanism, runtime, or accountant; both test only Proposition~1's transformation side and emit no privacy pair or \Direct{} verdict. Complete policies are in Supplementary Material Secs.~4.8--4.9 and Tables~17--18.
+
+\section{Reproducibility and Audit Surface}
+
+Hash-indexed bundles contain machine-readable inputs, outputs, and verifier results. Pass counts are designed conformance 20,909/20,909 (with the legacy 31-case regression retained at 394/394), witnesses 10/10, lineage 176/176, external mapping/execution/portable checks 18/18, 30/30, and 19/19, TensorFlow Privacy 79/79, each WISDM/UCI run 38/38 and 49/49, Sepsis/Backblaze 128/128 and 86/86, and expanded regression \AuditContractTestCount/\AuditContractTestCount. Counts are checked predicates, not statistical confidence. Verifiers reopen sources, hashes, and numerics and require forbidden positives to stay absent. Bundles preserve blocked/research-only outcomes and disclose excluded pilots; only WISDM/UCI bind complete run evidence, whereas Sepsis/Backblaze bind mapping rescans. The complete verification index and exact commands are in Supplementary Material Secs.~4.11 and~5 and Tables~7, 10, 14, and~20.
+
+\section{Discussion}
+
+\paragraph{Acceptance is query-specific.}
+Exact wording is mathematical: $q$'s unit and adjacency can change $K$, the pair, or reportability. FULL asks whether $E$ licenses $q$, not whether the model is private in the abstract. Thus one WISDM execution licenses base window wording, weaker event wording, and no meaningful owner wording. Conversely, a block does not prove the mechanism non-private; it marks the registered implication as contradictory, incomplete, research-only, or vacuous. A narrower $q$ may succeed without retraining, whereas a stronger one may need new evidence or a different mechanism.
+
+\paragraph{Blocks are actionable, not interchangeable.}
+\textsc{Blocked-Invalid} marks contradiction; \textsc{Blocked-Unverified}, an unchecked implication; \textsc{Blocked-Vacuous}, an unreportable $\delta$; and \textsc{Research-Only}, diagnostics under observed randomness. Repairs require, respectively, regenerated evidence, a registered premise or runtime trace, tighter or native-unit accounting, or justified randomness. The localized issue and ``do not say'' field keep diagnostics from becoming claims.
+
+\paragraph{Reviewer-facing report surface.}
+An allowed report retains units, adjacencies, path, $K$, base/reported pairs, assurance, digests, assumptions, and exact wording; the internal view adds provenance, invariants, runtime, and issues. A blocked view explains the decision without copy-ready wording. Changed evidence invalidates this noncryptographic report, while consistent fabrication remains outside the threat model.
+
+\paragraph{Implications for pipeline design.}
+Non-overlap removes repeated incidence but does not align raw replace-one with generated add/remove accounting; direct event wording needs an aligned metric, native mechanism, or registered derivation. Large owner contribution can make conversion vacuous; a public cap or native owner sampling can change that premise, whereas a private-label cap is not free. The validator decides supplied-execution wording; compilation, program verification, privacy attacks, and execution proofs remain complementary.
+
+\section{Related Work}
+
+Table~\ref{tab:closest-work} gives the compact object-level map; Supplementary Material Sec.~6 and Table~8 give the per-system D1--D8 coding. Both compare research objects and assurance boundaries, not overall quality. The supplement names every compared system and exposes each dimension assignment.
+
+\begin{table*}[t]
+\centering
+% Scope the dense closest-work comparison to the AuthorKit-permitted 9-point
+% table size.  The group ends before the required 10-point caption.
+{\small
+% The Author Kit recommends booktabs for readable tables. Explicit struts keep
+% the first baselines aligned; booktabs supplies its standard rule spacing.
+\begin{tabular}{@{}p{.30\textwidth}p{.28\textwidth}p{.34\textwidth}@{}}
+\toprule
+\raggedright\strut Representative family
+& \raggedright\strut Primary object / output
+& \raggedright\strut Joint object instantiated here \tabularnewline
+\midrule
+\raggedright\strut Review/registry (NIST challenge; DP Registry) \citep{ridgeway2021challenge,nist2025registry}
+& \raggedright\strut Submission/deployment artifacts $\rightarrow$ expert or editorial judgment
+& \raggedright\strut Requested $q$ $\rightarrow$ checked mapping--accountant consequence $\rightarrow$ exact wording \tabularnewline
+\midrule
+\raggedright\strut Numeric/program verification (EVR; VeriDP) \citep{wang2023randomized,narayan2015verifiable}
+& \raggedright\strut Prescribed mechanism/program $\rightarrow$ Boolean, numeric, or proved result
+& \raggedright\strut Frozen external-run provenance $+$ raw-unit mapping $+$ sentence output \tabularnewline
+\midrule
+\raggedright\strut Policy/evidence/integrity audit (Audit-as-Code; public-audit FL) \citep{muhammad2026audit,aljabbari2026public}
+& \raggedright\strut Artifacts/runtime $\rightarrow$ gate or integrity judgment
+& \raggedright\strut Same run $+$ different $q$ $\rightarrow$ DP consequence under non-attestation \tabularnewline
+\midrule
+\raggedright\strut Present restricted interface
+& \raggedright\strut Completed-run $E$ $+$ requested $q$ $\rightarrow$ finite-registry allow/block, wording, and issues
+& \raggedright\strut Raw adjacency $\rightarrow$ mapping $\rightarrow$ mechanism/accountant $\rightarrow q$ \tabularnewline
+\bottomrule
+\end{tabular}
+}
+\caption{Object-level positioning; the last column isolates the joint object, not component novelty or overall quality.}
+\label{tab:closest-work}
+\end{table*}
+
+\paragraph{DP validation, verification, and disclosure.}
+Multi-artifact DP review and gates predate this interface. The National Institute of Standards and Technology (NIST) challenge inspects code, documentation, specifications, and proofs before panel judgment; its registry checks assertion completeness, consistency, provenance, and plausibility while excluding deep correctness review \citep{ridgeway2021challenge,nist2025registry}. Estimate-verify-release (EVR) verifies a mechanism/numeric claim, while Adaptive Fuzz and VeriDP decide prescribed programs or queries \citep{wang2023randomized,winogradcort2017adaptive,narayan2015verifiable}. Their objects are a submission, mechanism, or restricted program, not frozen external-run $E$ plus requested wording $q$.
+
+\paragraph{Policy, evidence, and implementation audits.}
+PriAgent connects policy to code and AudAgent to runtime blocking \citep{zhang2026priagent,zheng2026audagent}. Audit-as-Code, the Assurance Case Management Environment (ACME), and public-audit federated learning map heterogeneous/post-run evidence through checks \citep{muhammad2026audit,wei2024assurance,aljabbari2026public}. A verifiable-federated-learning SoK binds specifications, transcripts, claim predicates, evidence, and verifier classes, but not caller-selected privacy-unit wording or raw-window-to-accountant consequence \citep{rizzini2026sok}. A generic engine could host $V_{\mathcal R}$; we claim no new gate architecture. The narrower object is the DP-specific consequence for requested wording, query separation, and fixed deletion witnesses; Supplementary Material Sec.~6 and Table~8 give the full dimension-level comparison.
+
+\paragraph{Falsification and assurance boundary.}
+Implementation audits expose sampler, sensitivity, adjacency, and deployed-mechanism failures, but finding none is not positive proof \citep{tramer2022debugging,chua2024private,wang2026rethinking,cebere2026recordplay,pradhan2026beyond,chourasia2026apple}. Cryptographic systems provide stronger execution integrity \citep{shamsabadi2024confidential,abdolmaleki2026veridp}; native-unit mechanisms and design-time compilation align routes before execution \citep{chua2024mind,charles2025userlevel,schuchardt2025structured,anonymous2026compiler}. Here an allowed result remains finite-registry and evidence-relative: failed premises yield no positive wording, and hashes are not attestation.
+
+\section{Limitations and Scope}
+
+The validator makes evidence-relative decisions within finite registry $\mathcal R$: whether supplied artifacts entail requested wording $q$. It neither attests execution nor replaces an arbitrary-code DP proof; omissions and consistent fabrication remain outside the threat model. Absent runtime evidence or a registered route, it blocks rather than extrapolates. Group conversion can be loose; broader accountants, structured samplers, and native-unit routes require tested adapters.
+
+The evaluation establishes conformance and integration, not prevalence or competitive utility. The 200 paired cases and ten authenticated development incidents are controlled coverage rather than independent submissions. WISDM/UCI runs share one mechanism/accountant family; ExtraSensory is author-operated intake, whereas Sepsis/Backblaze isolate mapping checks. Thus the results support the reported decision patterns, not cross-mechanism or population-level generalization.
+
+Independent submissions, additional mechanisms and accountants, mapping semantics, and adversarial producers would broaden external validity; the present claim remains a checked consequence for frozen $E$ and $q$ under the registered contract.
+
+\section{Conclusion}
+
+Within finite registry $\mathcal R$, we formalize whether frozen $E$ from a completed windowed DP-SGD run entails privacy-unit wording $q$. Query separation and fixed deletion witnesses show why $q$ and each checked edge matter on this contract: the same run can retain a base pair, require conversion, or block unsupported or vacuous wording. The validator returns exact wording or a localized block under a non-attestation boundary, not an accountant, gate architecture, group theorem, or arbitrary-code proof.
+
+\noindent\textbf{Tool disclosure.}
+Generative artificial intelligence systems assisted language editing; the authors verified all content and remain responsible.
+
+\bibliography{references_v12,references_v6_candidate}
+
+\end{document}

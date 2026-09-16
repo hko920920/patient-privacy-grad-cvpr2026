@@ -1,0 +1,77 @@
+schema_version: unitdp.owner_random_allocation_contract.v4
+route_id: owa_owner_random_allocation_direct_add_remove_v4
+execution:
+  profile: research_benchmark
+  rng_backend: research_default
+  implementation_id: unitdp.owner_random_allocation_v4.train_owner_random_allocation_fixed_v4
+  random_coins_public: false
+privacy:
+  unit: owner
+  adjacency: add_remove_one_owner
+  target_epsilon: 8.0
+  delta: 1.0e-05
+mechanism:
+  sampler: independent_uniform_k_subset_of_steps_per_owner
+  sampling_unit: owner
+  accounting_unit: owner
+  parameter_source: registered_benchmark_profile
+  source_dataset_size: 312
+  num_steps: 50
+  num_selected_steps_per_owner: 5
+  num_epochs: 1
+  total_steps: 50
+  assignment_schedule: fresh_independent_uniform_k_subset_per_owner_per_epoch
+  clipping_unit: owner
+  noising_unit: owner_sum
+  clip_norm: 1.0
+  noise_multiplier: 0.776172784941656
+  update_denominator: 32.0
+  empty_step_behavior: apply_gaussian_update_with_zero_owner_sum
+  per_owner_contribution: one_clipped_vector_per_assigned_step
+  owner_aggregation: mean_over_selected_windows_then_clip
+accountant:
+  id: random_allocation_gaussian_direct_bidir_v4
+  rdp_orders_id: unitdp_random_allocation_integer_orders_v4
+  sensitivity_multiplier: 1.0
+  theorem_id: feldman_shenfeld_2025_direct_random_allocation
+  oracle_implementation_id: unitdp_spec_oracle.random_allocation_oracle_v4.account_random_allocation_oracle_v4
+  reduction_id: k_out_of_t_to_k_composed_one_out_of_floor_t_over_k
+  direction_policy: max_add_remove
+contribution_policy:
+  type: support_balanced_cap
+  max_windows_per_owner: 8
+  windows_per_owner_per_step: 8
+  scope: compile_time_public_policy
+optimization:
+  optimizer: sgd
+  learning_rate: 0.03
+  loss: cross_entropy
+  model_id: linear_240x2
+  class_weights:
+    - 0.5125850340136054
+    - 20.364864864864863
+data:
+  benchmark_profile_id: sepsis_random_allocation_aaai27_v4
+  benchmark_profile_sha256: 5244849ed202394aec5810a658a2c8ba46569fb77c53c0a73dd94929d741c614
+  base_data_profile_id: sepsis_aaai27_v1
+  base_data_profile_sha256: 5b171a7ce3f24d9d55f5b46d232e20af01ec7fb68671263a5d7942a4f658d7c6
+  dataset_id: physionet2019_setA_first400_basic12x6_v1
+  input_dim: 240
+  num_classes: 2
+  preprocessing:
+    scope: public_fixed
+    schema: unitdp.fixed_affine_preprocessor.v1
+    artifact_id: physionet2019_setA_first400_basic12x6_public_scaler_v1
+    artifact_sha256: e2ddd1cbb651e5ef5629bdb3ba0b885e5c9cead7c6b8afd9d5d9490e463b210b
+    source_reference_sha256: b73db6944d7ab58d5f716f714564df9c7613e0eac02cea2f6964dd698ccc27ae
+    input_dim: 240
+    transform: standard_scaler
+    fit_on_protected_data: false
+  public_protocol:
+    protocol_id: physionet2019_setA_first400_basic12x6_v1
+    data_preparation_implementation_id: unitdp.benchmark_data_v2.prepare_sepsis_v2
+    source_reference_sha256: b73db6944d7ab58d5f716f714564df9c7613e0eac02cea2f6964dd698ccc27ae
+    train_owners: 312
+    test_owners: 78
+    evaluation_scope: public_benchmark
+    full_data_conformance_sha256: 36248d4877f9efa257cf90a088b4642a993fcff6a43f44da390bb00e3c72fef8

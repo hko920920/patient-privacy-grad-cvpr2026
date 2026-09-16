@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-09",
+  "scope": "현재 18번 후보: 환자 집합의 diffusion membership/exposure 보정 감사와 patient-unit DP 비교",
+  "qualification": "35는 기존 18번의 URL 인용에서 추출한 관련 문헌 수다. 아래 등급은 그 안에서 기여 중복을 대조하기 위해 선별한 기록이며, 최신 본학회 SOTA 비교군 전체나 선행 부재 증명이 아니다. 읽기 우선순위 15편과도 다른 분류다. 후속 확인에서 CVPR 2025 CDI와 NeurIPS 2025 Tracing the Roots의 직접 대조 누락이 드러났다. 발표 형식과 비교 범위는 22번 정정을 우선한다.",
+  "labels": {"1":"핵심 주장·방법 대조", "2":"직접 방법·평가 비교군", "3":"기반·확장 관련 문헌"},
+  "tiers": {
+    "1": ["A01","B01","A03","A06","A07","A09"],
+    "2": ["A02","A04","A05","A08","A10","A11","A12","A13","A14","A15","A18","B08","B14"],
+    "3": ["A19","A20","A21","A22","A23","A25","A26","B02","B03","B04","B09","B10","B11","B12","B13","C01"]
+  },
+  "core_comparisons": {
+    "A01": {"overlap":"평균 지표가 가리는 환자별 membership 위험과 여러 기록을 가진 환자의 감사", "difference":"의료 분류모델 대상. 현재 후보는 의료 diffusion의 환자 집합 감사·보정."},
+    "B01": {"overlap":"환자마다 다른 기록 수를 고려한 의료 user-level DP와 record-DP 변환의 비교", "difference":"CheXpert 분류의 DP 학습. 현재 후보의 새 생성모델 감사법 자체를 제시한 것은 아님."},
+    "A03": {"overlap":"합성 흉부 X-ray의 프라이버시·품질·효용 통합 평가", "difference":"기존 기록의 대조상 training-image 중심 평가. 환자 집합의 membership 보정과 같은 patient budget의 DP 비교는 별도 검증 대상."},
+    "A06": {"overlap":"한 사람의 이미지들이 학습에 쓰였는지 query set으로 감사", "difference":"few-shot 얼굴인식 대상. 의료 diffusion과 보장 단위가 같은 실험은 아님."},
+    "A07": {"overlap":"정확한 훈련 이미지가 없어도 개인 단위 membership을 추론", "difference":"metric embedding·인물 재식별 대상. 의료 생성모델의 위험 보정은 별도."},
+    "A09": {"overlap":"비회원 reconstruction-loss 분포를 학습해 diffusion MIA의 표본별 임계값을 보정", "difference":"개별 표본 검정. 환자 내 기록 수·상관을 고려한 집합 검정과 구분해야 함."}
+  }
+}

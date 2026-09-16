@@ -1,0 +1,24 @@
+{
+  "checked_utc": "2026-09-16T03:22:42.551482+00:00",
+  "static": {
+    "rows": 79,
+    "checked_local_links": 972,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_experiments": 0,
+  "arithmetic": {
+    "radial_example_mse": 0.0,
+    "tangential_one_draw_mse": 0.002495322244310705,
+    "tangential_two_draw_mse": 0.0012476611221553524,
+    "zero_fp_n70_one_sided_95_upper": 0.041893344066888605,
+    "zero_fp_n_for_one_percent": 299
+  },
+  "design_artifacts": {
+    "TWO_TRACK_PAPER_DESIGNS_20260916.md": "b1f7aa2b88e243035369dc995b4865977134626c1c902d3e0cd7ad76b69911ad",
+    "two_track_paper_designs.html": "b6e3861bcdf2bfc2b8d306c5ed368af3054d59c8610eb38608ecd9a3c024a542",
+    "spec_sources/track1_protection_efficiency_design_20260916.md": "524efd2f5926b3faf6095dae2009902dc8acbe5460303d65284cb55f98b3a8ef",
+    "spec_sources/track2_protection_evaluation_design_20260916.md": "3efc5f041fd9f3bb8c6f4045142b43ec7c07929f86a589cea2a05b8b2d8f2053",
+    "spec_sources/two_track_novelty_crosscheck_20260916.md": "8275a693de5f107f1ceae3c65cf7dcc450f304bf6f7893b9ef29e65a4cc9720d"
+  }
+}

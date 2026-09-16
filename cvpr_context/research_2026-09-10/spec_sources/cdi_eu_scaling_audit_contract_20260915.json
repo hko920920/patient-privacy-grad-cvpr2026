@@ -1,0 +1,136 @@
+{
+  "schema": "cdi-eu-scaling-coefficient-audit-contract/v1",
+  "created_utc": "2026-09-15T05:34:20.709183+00:00",
+  "research_stage": 2,
+  "posthoc": true,
+  "motivated_by_verified_EU_comparison": true,
+  "purpose": "Distinguish saved scaler changes from saved standardized coefficient changes in existing patient LR scorers",
+  "methods": [
+    "patient_mean26_fixed",
+    "patient_mean26_tuned",
+    "patient_meanmax52_fixed",
+    "patient_meanmax52_tuned"
+  ],
+  "models": [
+    "model_1",
+    "model_2"
+  ],
+  "evaluation_scenarios": [
+    "E",
+    "U"
+  ],
+  "combinations": [
+    {
+      "coefficient_source": "E",
+      "scale_source": "E"
+    },
+    {
+      "coefficient_source": "E",
+      "scale_source": "U"
+    },
+    {
+      "coefficient_source": "U",
+      "scale_source": "E"
+    },
+    {
+      "coefficient_source": "U",
+      "scale_source": "U"
+    }
+  ],
+  "formula": "logit=((x-mu_scale_source)/sigma_scale_source) dot coef_coefficient_source + intercept_coefficient_source",
+  "raw_linear_weight": "coef_coefficient_source/sigma_scale_source",
+  "bias": "intercept_coefficient_source - sum(raw_linear_weight * mu_scale_source); constant across patients",
+  "primary_metric": "AUC of logits; original diagonal probability/rank/AUC agreement must be verified",
+  "contrasts": [
+    {
+      "id": "rescale_E_coefficients",
+      "a": [
+        "E",
+        "U"
+      ],
+      "b": [
+        "E",
+        "E"
+      ]
+    },
+    {
+      "id": "change_coefficients_at_U_scale",
+      "a": [
+        "U",
+        "U"
+      ],
+      "b": [
+        "E",
+        "U"
+      ]
+    },
+    {
+      "id": "change_coefficients_at_E_scale",
+      "a": [
+        "U",
+        "E"
+      ],
+      "b": [
+        "E",
+        "E"
+      ]
+    },
+    {
+      "id": "rescale_U_coefficients",
+      "a": [
+        "U",
+        "U"
+      ],
+      "b": [
+        "U",
+        "E"
+      ]
+    },
+    {
+      "id": "full_E_to_U_scorer_change",
+      "a": [
+        "U",
+        "U"
+      ],
+      "b": [
+        "E",
+        "E"
+      ]
+    }
+  ],
+  "expected_AUC": 64,
+  "expected_contrasts": 80,
+  "selection_patients": 40,
+  "fit_patients_per_saved_scorer": 80,
+  "bootstrap": "Exact saved 2000 A20/B20 patient draws, conditional on saved scorers, shared for every combination",
+  "descriptive_parameters": "All feature sigma_U/sigma_E and sqrt(var_U)/sqrt(var_E) ratios, standardized/effective coefficient cosines and norms",
+  "input_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\contract_copy.json": "bc2497d17b3110ec8b994eaa541d4eda00891ff5d30215a9aff26b7aa5f1db43",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\analysis.json": "44977ce1ad5224348ff59d6e2fe92cf7aa0e243582dea0842b22a21d2a71fffd",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\verification.json": "f0fff36d66fa4425335d70e76e3f496060333b5ce6fd4a169e30f977558dcfe7",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\provenance.json": "15bdd57bb633bce40e548d9f9dce8a8b6a24447a2e28db0ea4f736b0641f2ec8",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\protocol.json": "3134be87b5e9d3c264dcc813c18afad094aede9e1154efc1953476b1d7bf5310",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\fit_parameters.json": "3be038e4945c5da467db228d0d2166ca3b35be313950ec14362f7f86278dbf3a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\predictions.json": "ef51609d4f6b79bf5aa7bf0cf215d8e1bf8b353c0581660e2e4988b6829c4e57",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\bootstrap_resamples.json": "4aaaaa39df1470377338bf5b194c616432c6def89e57832d6b485b12f65641fe",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\results.json": "a4d9441aed70e96b77fd494b7c0103b43a774f70b6556b60fd7db36a97097aa6",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\verification.json": "2d08f35355eddccc7996ab2b317ed1c1e6537bf894e2ed38689f499433e16c19",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\results.json": "4f9556a381a337104aa9b0efa66f9daafb4ef171b12940e766454e84112af921",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\verification.json": "8e0cf8ff81a38ee9951a7058154be15865db56ba8b69d5f8faad1be9f6ef7a1c"
+  },
+  "source_sha256": "162612826ac6e391b6939a379fd70f14060159ee9b229e316fd14dac2ebdac72",
+  "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\scaling_coefficient_audit_v1",
+  "constraints": [
+    "No new fitting, hyperparameter choice, sign tuning, threshold selection, test/calibration data, or GPU",
+    "All four preselected patient-LR methods and all four coefficient/scaler combinations are reported",
+    "A scalar threshold shift cannot change AUC ranks; centering/intercept are constant for a fixed patient LR scorer",
+    "Hybrid weights are diagnostic off-training-combination interventions, not causal patient participation interventions",
+    "U scaler and coefficient estimates retain existing U fit80 auxiliary data/labels; no guarantee of realistic label-free adaptation",
+    "Coefficient-source change includes all fitted effects, including the preselected C choice for tuned methods",
+    "Same selection40 has been reused; intervals are exploratory, not multiplicity adjusted and omit fitting uncertainty",
+    "The decomposition is path dependent; neither path supplies a unique causal attribution or novel attack contribution"
+  ],
+  "new_fitting": false,
+  "new_GPU_calls": 0,
+  "stage2_complete": false
+}

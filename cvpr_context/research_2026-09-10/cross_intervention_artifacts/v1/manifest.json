@@ -1,0 +1,20 @@
+{
+  "schema": "cross-intervention-display-artifacts/v1",
+  "source_code_sha256": "597b9b19d5a8cd0364142b1221001210f98bb84043eae3217d09abf6b5bd3f7a",
+  "source_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_cross_patient_intervention_v1\\existing_scorer_analysis_v2\\analysis.json": "7f5b1e3004dc7129f7ca77938cd1f7741f80cc60f17066e4d2419c531dc8f8a3",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_cross_patient_intervention_v1\\existing_scorer_analysis_v2\\patient_scores.json": "0be04c3614315c8f65edb6ccbf883d521492f8ddaf87c5d1d2de45fc5eda208b",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_cross_patient_intervention_v1\\existing_scorer_analysis_v2\\cross_contrasts.json": "4532a98ba5b8907058690b15722cb8b4a82160121dcb50da0157c970f0c22c52",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_cross_patient_intervention_v1\\existing_scorer_analysis_v2\\patient_contexts.json": "c0c3a702c51f00fc16dadfc3a9d3423ad494bdcd9ab77b2443ae379a48e06ca5",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_cross_patient_intervention_v1\\existing_scorer_analysis_v2\\independent_fixed_scorer_audit_v1\\verification.json": "9b81bbd3151dfa3c0e967db63ed864e78a4c32a324ce712799ef9405cec7f491"
+  },
+  "output_sha256": {
+    "all_existing_contrasts.csv": "a37f1dbe25634a8f45b38160a16717bbc2d8cda6556bfd4ee1d9196923885c83",
+    "primary_U_response_points.csv": "c4c980e47909c5478ed6163e785a9fed42097dfc273764b366bc926ddb63ab19",
+    "primary_U_response_scatter.png": "bace345e099a7c2c124b6b5e9b4e997cb2db43a2097d27c4f92986ac9becc742",
+    "primary_U_response_scatter.svg": "b7ebb11441935f8a58e11546f7e12463c921ba4fb99b87f7cf3f844c33304f3f",
+    "verified_results_fragment.md": "feb32f7e7f27d0cb293300a9845a8cf0b299d478e6b71e0da6117af20d328ae9"
+  },
+  "new_analysis_choices": false,
+  "new_fitting": false
+}

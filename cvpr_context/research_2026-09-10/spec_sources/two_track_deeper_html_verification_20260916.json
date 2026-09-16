@@ -1,0 +1,12 @@
+{
+  "rows": 79,
+  "checked_local_links": 1000,
+  "checked_pdf_page_anchors": 221,
+  "broken_links": [],
+  "files_sha256": {
+    "TWO_TRACK_DEEPER_CHECK_20260916.md": "3997e1ceee255949c4326766a7d61987359fa2ae27a4ebe48de78800d78067ed",
+    "two_track_deeper_check.html": "dfb78791a5c9d640d8a59540de163c791b7558643d07ca7fcbbe2cfc6b6a6c6d",
+    "spec_sources/two_track_deeper_novelty_20260916.md": "61098ffa5cf07239cf48c2782c6475fba285d18df9e41e11007af49d040abf46",
+    "spec_sources/two_track_deeper_independent_verification_20260916.json": "d27aa69e77dc556d45fa072241925a502422b6a12bc9b64c24bb41cb4bf16537"
+  }
+}

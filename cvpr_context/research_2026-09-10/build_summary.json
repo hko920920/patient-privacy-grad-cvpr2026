@@ -1,0 +1,21 @@
+{
+  "records": 79,
+  "local_pdfs": 75,
+  "statuses": {
+    "selected": 75,
+    "partial": 3,
+    "abstract": 1
+  },
+  "roles": {
+    "medical": 20,
+    "attack": 13,
+    "unit": 7,
+    "training": 13,
+    "background": 3,
+    "federated": 4,
+    "alternative": 16,
+    "thesis": 3
+  },
+  "comparison_rows": 33,
+  "public_packet_replays": 2
+}

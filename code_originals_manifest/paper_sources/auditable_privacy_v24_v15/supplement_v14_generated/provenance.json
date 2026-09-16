@@ -1,0 +1,101 @@
+{
+  "counts": {
+    "allowed_cases": 100,
+    "artifact_index_files": 627,
+    "full_mapping_hashes": 100,
+    "independent_checks": 20909,
+    "non_allow_cases": 100,
+    "operators": 25,
+    "raw_case_input_files": 600,
+    "selected_semantic_mapping_hashes": 50
+  },
+  "generator": {
+    "path": "scripts/build_validator_ablation_v3_1_supplement_tables.py",
+    "sha256": "e5903e6475430712d30e6b6925675f2de419d3430856ceb4796fcf34f5b66169"
+  },
+  "inputs": {
+    "aggregate metrics": {
+      "bytes": 976,
+      "path": "reports/validator_ablation_v3_1_200_001/aggregate_metrics.csv",
+      "sha256": "bb05963431ee5fbfeba232316c8b9e2759df192d954f87c7866c7ff58010964a"
+    },
+    "artifact index": {
+      "bytes": 137307,
+      "path": "reports/validator_ablation_v3_1_200_001/artifact_index.json",
+      "sha256": "c96ea897a9ce012488998910fb6259e4aee64cc4f14370f716ddf42107a0ad38"
+    },
+    "cases": {
+      "bytes": 423780,
+      "path": "reports/validator_ablation_v3_1_200_001/cases.json",
+      "sha256": "b6ceaeeb2b73f6b9eb569f8c10793bc7be634e04e060d1eff8dee4e36874a5c0"
+    },
+    "execution status": {
+      "bytes": 219,
+      "path": "reports/validator_ablation_v3_1_200_001/execution_status.json",
+      "sha256": "c5d87d76505821bc36ea457e003fe17483655726a61d5346701d62182bb37861"
+    },
+    "frozen protocol": {
+      "bytes": 15107,
+      "path": "paper_notes/AAAI27_AUDIT_V19_CONFORMANCE_200_PROTOCOL_V1_2026-07-28.md",
+      "sha256": "57b747f147f16569a43d8a4d361c0090cf99d1fab8f48a614dce7a7618abe811"
+    },
+    "independent verification": {
+      "bytes": 2839151,
+      "path": "reports/validator_ablation_v3_1_200_001/independent_verification.json",
+      "sha256": "8565bb94f32052b642a1238d17239d47d1c1ba3495a61ca8c5ad1085fd71a7b6"
+    },
+    "input lineage": {
+      "bytes": 80153,
+      "path": "reports/validator_ablation_v3_1_200_001/v3_input_lineage_equivalence.json",
+      "sha256": "7413243ce0bfcdc6a832afe844357167689b56c2350c9221547efe3633ab965b"
+    },
+    "runner": {
+      "bytes": 28408,
+      "path": "scripts/run_validator_ablation_v3_1.py",
+      "sha256": "8171cb1804786c20898ccf31f497da71da6c5139aac58809beba7333b9648f84"
+    },
+    "verification index": {
+      "bytes": 686,
+      "path": "reports/validator_ablation_v3_1_200_001/verification_index.json",
+      "sha256": "e1f9cf8881e56672799e601994fc7e876bbc7a8a71c4cb011bcb5f18c1f00182"
+    },
+    "verifier": {
+      "bytes": 60623,
+      "path": "scripts/verify_validator_ablation_v3_2.py",
+      "sha256": "4f824e358eea87c6ab4b3326cb6e92fcfdf02273d74ecd5b3a11d4e26aab5dee"
+    }
+  },
+  "outputs": {
+    "ablation_metrics.tex": {
+      "bytes": 1813,
+      "path": "supplement_v14_generated/ablation_metrics.tex",
+      "sha256": "075c073a1df7fc6e85aa3594d0f0452807054187a3400b67d401f961a6cf8108"
+    },
+    "allowed_grid.tex": {
+      "bytes": 8888,
+      "path": "supplement_v14_generated/allowed_grid.tex",
+      "sha256": "9e55d0c03853476cf3d60ec5d8382d9fafe666c46fd58670f5bc69eb436eaeaa"
+    },
+    "artifact_inputs.tex": {
+      "bytes": 2438,
+      "path": "supplement_v14_generated/artifact_inputs.tex",
+      "sha256": "06178c2fc1ce848ab332e1b60a81c8b8427dde75bd23bf2285a7eac5599bd692"
+    },
+    "operator_matrix.tex": {
+      "bytes": 11411,
+      "path": "supplement_v14_generated/operator_matrix.tex",
+      "sha256": "a2affd1de4152d0a9c7500e8315f34520a508f2e7661594a65176360cd945b9f"
+    },
+    "verification_surface_detailed.tex": {
+      "bytes": 1310,
+      "path": "supplement_v14_generated/verification_surface_detailed.tex",
+      "sha256": "5090c315aee2d35764dc6fe75ae9524406be1cb49c6e2c8c22765064d5fb5d1b"
+    },
+    "verification_surface_summary.tex": {
+      "bytes": 760,
+      "path": "supplement_v14_generated/verification_surface_summary.tex",
+      "sha256": "236e53e0c03a034489b38517fa63583187a83f7d15c7c9e19756bbac92dfa535"
+    }
+  },
+  "schema_version": "audit_validator_ablation_v3_1_supplement_tables_v1.0"
+}

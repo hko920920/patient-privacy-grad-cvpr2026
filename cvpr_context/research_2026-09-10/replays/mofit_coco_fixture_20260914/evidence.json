@@ -1,0 +1,97 @@
+{
+  "files": [
+    {
+      "kind": "embedding_member",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X12\\Results\\COCO\\COCO_emb_500images_train_t_[140].txt",
+      "rows": 500,
+      "columns": 3,
+      "dtype": "float64",
+      "header": "{'__module__': '__main__', '__dict__': <attribute '__dict__' of 'Flag' objects>, '__weakref__': <attribute '__weakref__' of 'Flag' objects>, '__doc__': None, 'diff_path': '/mnt/nas5/joonsung/SD_finetuned/sd-COCO-checkpoint-3', 'anchor': 14, 'dataset_train_name': 'members', 'dataset_test_name': 'nonmembers', 'attack': 'clid_clip', 'T': 1000, 'even_num': 10, 'max_n_samples': 1, 'max_clid_samples': 1, 'trials_eacht': 1, 'train_batch_size': 8, 'dataloader_num_workers': 0, 'resolution': 512, 'image_column': 'image', 'caption_column': 'text', 't_sec': 100, 'timestep': 10, 'stpsnumi': 1, 'outdir': '/home/test/MoFit/Results/COCO', 'dataset_config_name': None, 'cache_dir': None, 'train_data_dir': None, 'ver': 10, 'info': 'Uncond_anchor14_init_blip2_OptimIter1000_iters1000', 'eps': 0.3, 'lr': 0.06}\t/mnt/nas5/joonsung/SD_finetuned/sd-COCO-checkpoint-3\t",
+      "embedded_patient_or_image_ids": false,
+      "last_minus_first_vs_penultimate_max_abs": 1.0000000000010001e-05
+    },
+    {
+      "kind": "embedding_nonmember",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X12\\Results\\COCO\\COCO_emb_500images_test_t_[140].txt",
+      "rows": 500,
+      "columns": 3,
+      "dtype": "float64",
+      "header": "{'__module__': '__main__', '__dict__': <attribute '__dict__' of 'Flag' objects>, '__weakref__': <attribute '__weakref__' of 'Flag' objects>, '__doc__': None, 'diff_path': '/mnt/nas5/joonsung/SD_finetuned/sd-COCO-checkpoint-3', 'anchor': 14, 'dataset_train_name': 'members', 'dataset_test_name': 'nonmembers', 'attack': 'clid_clip', 'T': 1000, 'even_num': 10, 'max_n_samples': 1, 'max_clid_samples': 1, 'trials_eacht': 1, 'train_batch_size': 8, 'dataloader_num_workers': 0, 'resolution': 512, 'image_column': 'image', 'caption_column': 'text', 't_sec': 100, 'timestep': 10, 'stpsnumi': 1, 'outdir': '/home/test/MoFit/Results/COCO', 'dataset_config_name': None, 'cache_dir': None, 'train_data_dir': None, 'ver': 10, 'info': 'Uncond_anchor14_init_blip2_OptimIter1000_iters1000', 'eps': 0.3, 'lr': 0.06}\t/mnt/nas5/joonsung/SD_finetuned/sd-COCO-checkpoint-3\t",
+      "embedded_patient_or_image_ids": false,
+      "last_minus_first_vs_penultimate_max_abs": 1.0000000000034287e-05
+    },
+    {
+      "kind": "vlm_member",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X12\\Results\\COCO\\COCO_blip_500images_train_t_[140].txt",
+      "rows": 500,
+      "columns": 6,
+      "dtype": "float64",
+      "header": "{'__module__': '__main__', '__dict__': <attribute '__dict__' of 'Flag' objects>, '__weakref__': <attribute '__weakref__' of 'Flag' objects>, '__doc__': None, 'diff_path': '/mnt/nas5/joonsung/SD_finetuned/sd-COCO-checkpoint-3', 'anchor': 0, 'dataset_train_name': 'members', 'dataset_test_name': 'nonmembers', 'attack': 'MoFit', 'T': 1000, 'even_num': 10, 'max_n_samples': 1, 'max_clid_samples': 1, 'trials_eacht': 1, 'train_batch_size': 8, 'dataloader_num_workers': 0, 'resolution': 512, 'image_column': 'image', 'caption_column': 'text', 't_sec': 100, 'timestep': 10, 'stpsnumi': 1, 'outdir': 'path/to/../MoFit/Results/COCO', 'dataset_config_name': None, 'cache_dir': None, 'train_data_dir': None}\t/mnt/nas5/joonsung/SD_finetuned/sd-COCO-checkpoint-3\t",
+      "embedded_patient_or_image_ids": false,
+      "last_minus_first_vs_penultimate_max_abs": 9.400000000005758e-06
+    },
+    {
+      "kind": "vlm_nonmember",
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X12\\Results\\COCO\\COCO_blip_500images_test_t_[140].txt",
+      "rows": 500,
+      "columns": 6,
+      "dtype": "float64",
+      "header": "{'__module__': '__main__', '__dict__': <attribute '__dict__' of 'Flag' objects>, '__weakref__': <attribute '__weakref__' of 'Flag' objects>, '__doc__': None, 'diff_path': '/mnt/nas5/joonsung/SD_finetuned/sd-COCO-checkpoint-3', 'anchor': 0, 'dataset_train_name': 'members', 'dataset_test_name': 'nonmembers', 'attack': 'MoFit', 'T': 1000, 'even_num': 10, 'max_n_samples': 1, 'max_clid_samples': 1, 'trials_eacht': 1, 'train_batch_size': 8, 'dataloader_num_workers': 0, 'resolution': 512, 'image_column': 'image', 'caption_column': 'text', 't_sec': 100, 'timestep': 10, 'stpsnumi': 1, 'outdir': 'path/to/../MoFit/Results/COCO', 'dataset_config_name': None, 'cache_dir': None, 'train_data_dir': None}\t/mnt/nas5/joonsung/SD_finetuned/sd-COCO-checkpoint-3\t",
+      "embedded_patient_or_image_ids": false,
+      "last_minus_first_vs_penultimate_max_abs": 9.99999999995449e-06
+    }
+  ],
+  "feature_columns": {
+    "embedding": "column -2 = unconditional - fitted conditional = -h",
+    "vlm": "negative of column -2 = VLM conditional - unconditional = v",
+    "combined_source_score": "gamma*R(-h)+(1-gamma)*R(v); lower=member"
+  },
+  "scaler_embedding": {
+    "center": [
+      -0.0256895
+    ],
+    "scale": [
+      0.022184000000000002
+    ]
+  },
+  "scaler_vlm": {
+    "center": [
+      0.0052674
+    ],
+    "scale": [
+      0.0140479
+    ]
+  },
+  "original_runtime_warnings": [
+    "Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)"
+  ],
+  "fpr_boundary_synthetic": {
+    "literal": {
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 667,
+      "first_fpr_ge_01_actual_fpr": 0.02,
+      "first_fpr_ge_01_tpr": 0.7,
+      "grid_first_roc": [
+        0.0,
+        0.3
+      ],
+      "grid_last_roc": [
+        0.02,
+        1.0
+      ]
+    },
+    "proper": {
+      "rank_auc": 0.99,
+      "sklearn_auc": 0.99,
+      "max_empirical_tpr_at_fpr_le_01": 0.3,
+      "actual_fpr_at_that_point": 0.0,
+      "threshold_at_that_point": -1.0,
+      "exact_threshold_best_asr": 0.99,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation"
+    }
+  },
+  "header_iteration_discrepancy": "Embedding headers say OptimIter1000_iters1000; paper COCO default and shell say 1000+300; exact inference provenance not established.",
+  "alignment_limitation": "No sample IDs in these scalar rows; preserve released row ordering, cannot independently prove cross-file identity alignment.",
+  "noise_scope": "Released evaluator embedding path uses fixed rnd_noise_1.npy; VLM path uses separate global Noise. No inference/noise generation is performed here."
+}

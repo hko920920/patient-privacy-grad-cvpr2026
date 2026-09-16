@@ -1,0 +1,2913 @@
+[
+  {
+    "sources": [
+      21
+    ],
+    "group": "A",
+    "alias": "Knolle / Disparate privacy risks",
+    "venue": "Nature 2026",
+    "priority": 1,
+    "role": "평균 공격성능 뒤에 숨는 환자별 극단 위험. 환자 tail 발견 자체의 선행 경계.",
+    "id": "A01",
+    "title": "Disparate privacy risks from medical AI",
+    "source_url": "https://www.nature.com/articles/s41586-026-10688-0",
+    "pdf_url": "https://www.nature.com/articles/s41586-026-10688-0.pdf",
+    "occurrences": [
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 162,
+        "context": "- DP-LoRA, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html\n- DPDM, TMLR 2023: https://research.nvidia.com/labs/toronto-ai/DPDM/\n- *Disparate privacy risks from medical AI*, Nature 2026: https://www.nature.com/articles/s41586-026-10688-0\n- *How to DP-fy Your Data*, JAIR 2026: https://arxiv.org/abs/2512.03238"
+      },
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 234,
+        "context": "  https://arxiv.org/abs/2407.16405\n- Disparate privacy risks from medical AI, Nature 2026:\n  https://www.nature.com/articles/s41586-026-10688-0\n- Medical LDM memorization:"
+      },
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 95,
+        "context": "중심 질문으로 삼지는 않는다. 이 두 경계 사이가 현재의 가장 좁은 가능성이다.\n\n- Nature patient audit: https://www.nature.com/articles/s41586-026-10688-0\n- CheXGenBench: https://arxiv.org/abs/2505.10496"
+      },
+      {
+        "file": "17_탈옥트렌드_팩트검증과_현1순위_신규성경계_2026-09-08.md",
+        "line": 114,
+        "context": "- CVPR 2025 multimodal attack: https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Distraction_is_All_You_Need_for_Multimodal_Large_Language_Model_CVPR_2025_paper.html\n- CVPR 2025 multimodal defense: https://openaccess.thecvf.com/content/CVPR2025/papers/Ghosal_Immune_Improving_Safety_Against_Jailbreaks_in_Multi-modal_LLMs_via_Inference-Time_CVPR_2025_paper.pdf\n- Nature 2026 patient-level audit: https://www.nature.com/articles/s41586-026-10688-0\n- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 360,
+        "context": "### 의료 생성 privacy와 환자 tail\n\n- Disparate privacy risks, Nature 2026: https://www.nature.com/articles/s41586-026-10688-0\n- Medical LDM memorization, Nature Biomedical Engineering: https://www.nature.com/articles/s41551-025-01468-8"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "1",
+    "cvpr_relation": "핵심 주장·방법 대조",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A01",
+      "url": "https://www.nature.com/articles/s41586-026-10688-0.pdf",
+      "checked_at_local": "2026-09-09 15:47:10",
+      "http_status": 200,
+      "resolved_url": "https://www.nature.com/articles/s41586-026-10688-0.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      9,
+      23
+    ],
+    "group": "A",
+    "alias": "Dar / Medical LDM memorization",
+    "venue": "Nature Biomedical Engineering 2025",
+    "priority": 12,
+    "role": "의료 LDM의 환자 영상 암기·복제. 실제 노출 동기와 탐지기 비교.",
+    "id": "A02",
+    "title": "Unconditional latent diffusion models memorize patient imaging data",
+    "source_url": "https://www.nature.com/articles/s41551-025-01468-8",
+    "pdf_url": "https://www.nature.com/articles/s41551-025-01468-8.pdf",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 124,
+        "context": "formal patient privacy를 함께 평가할 필요를 직접 뒷받침한다.\n\n- https://www.nature.com/articles/s41551-025-01468-8\n"
+      },
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 164,
+        "context": "- *Disparate privacy risks from medical AI*, Nature 2026: https://www.nature.com/articles/s41586-026-10688-0\n- *How to DP-fy Your Data*, JAIR 2026: https://arxiv.org/abs/2512.03238\n- Medical diffusion memorization: https://pubmed.ncbi.nlm.nih.gov/40790276/\n- MIDL 2026 privacy/fairness study: https://proceedings.mlr.press/v301/dombrowski26a.html"
+      },
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 236,
+        "context": "  https://www.nature.com/articles/s41586-026-10688-0\n- Medical LDM memorization:\n  https://www.nature.com/articles/s41551-025-01468-8\n- Adaptive non-uniform timestep sampling, CVPR 2025:"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 361,
+        "context": "\n- Disparate privacy risks, Nature 2026: https://www.nature.com/articles/s41586-026-10688-0\n- Medical LDM memorization, Nature Biomedical Engineering: https://www.nature.com/articles/s41551-025-01468-8\n- CheXGenBench, TMLR 2026: https://arxiv.org/html/2505.10496v4"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A02",
+      "url": "https://www.nature.com/articles/s41551-025-01468-8.pdf",
+      "checked_at_local": "2026-09-09 15:47:10",
+      "http_status": 200,
+      "resolved_url": "https://www.nature.com/articles/s41551-025-01468-8",
+      "content_type": "text/html; charset=utf-8",
+      "pdf_magic": false,
+      "status": "BROWSER_CHECK_REQUIRED"
+    },
+    "link_status": "브라우저 확인 필요"
+  },
+  {
+    "sources": [
+      65,
+      80
+    ],
+    "group": "A",
+    "alias": "CheXGenBench",
+    "venue": "TMLR 2026 / arXiv 공개본",
+    "priority": 3,
+    "role": "CXR 생성의 fidelity·privacy·utility 통합 평가. 단순 벤치마크 결합과의 차이 확인.",
+    "id": "A03",
+    "title": "CheXGenBench: A Unified Benchmark For Fidelity, Privacy and Utility of Synthetic Chest Radiographs",
+    "source_url": "https://arxiv.org/abs/2505.10496",
+    "pdf_url": "https://arxiv.org/pdf/2505.10496",
+    "occurrences": [
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 96,
+        "context": "\n- Nature patient audit: https://www.nature.com/articles/s41586-026-10688-0\n- CheXGenBench: https://arxiv.org/abs/2505.10496\n- CXR biometric ReID: https://arxiv.org/abs/2103.08562"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 362,
+        "context": "- Disparate privacy risks, Nature 2026: https://www.nature.com/articles/s41586-026-10688-0\n- Medical LDM memorization, Nature Biomedical Engineering: https://www.nature.com/articles/s41551-025-01468-8\n- CheXGenBench, TMLR 2026: https://arxiv.org/html/2505.10496v4\n- DeepSSIM++: https://arxiv.org/abs/2609.03615"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "1",
+    "cvpr_relation": "핵심 주장·방법 대조",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A03",
+      "url": "https://arxiv.org/pdf/2505.10496",
+      "checked_at_local": "2026-09-09 15:47:10",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2505.10496",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      81
+    ],
+    "group": "A",
+    "alias": "DeepSSIM++",
+    "venue": "arXiv 2026-09",
+    "priority": 4,
+    "role": "의료 생성물 near-copy 감사. 새 감사법의 독립 비교 대상.",
+    "id": "A04",
+    "title": "Auditing Patient Privacy in Medical Generative Models: Scalable Memorization Detection with DeepSSIM++",
+    "source_url": "https://arxiv.org/abs/2609.03615",
+    "pdf_url": "https://arxiv.org/pdf/2609.03615",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 363,
+        "context": "- Medical LDM memorization, Nature Biomedical Engineering: https://www.nature.com/articles/s41551-025-01468-8\n- CheXGenBench, TMLR 2026: https://arxiv.org/html/2505.10496v4\n- DeepSSIM++: https://arxiv.org/abs/2609.03615\n- Medical diffusion privacy/fairness, MIDL 2026: https://proceedings.mlr.press/v301/dombrowski26a.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A04",
+      "url": "https://arxiv.org/pdf/2609.03615",
+      "checked_at_local": "2026-09-09 15:47:10",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2609.03615",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      82
+    ],
+    "group": "A",
+    "alias": "Medical MIA split bias",
+    "venue": "MIE / Studies in Health Technology and Informatics 2026",
+    "priority": 5,
+    "role": "분할 편향을 실제 membership 신호로 오인하는 문제. member-only 대조의 근거.",
+    "title": "Membership Inference or Data Split Bias? Identifying False Positives in Synthetic Medical Image Privacy Audits",
+    "pdf_url": "https://pure-oai.bham.ac.uk/ws/portalfiles/portal/304478106/BaiL2026Membership.pdf",
+    "extra_source_url": "https://research.birmingham.ac.uk/en/publications/membership-inference-or-data-split-bias-identifying-false-positiv/",
+    "id": "A05",
+    "source_url": "https://journals.sagepub.com/doi/10.3233/SHTI260258",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 368,
+        "context": "- PrivDiff-Net: https://proceedings.mlr.press/v317/akhter26a.html\n- Privacy-preserving medical LDM filtering, IEEE TMI 2026: https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/\n- Medical MIA split-bias control: https://journals.sagepub.com/doi/10.3233/SHTI260258\n"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A05",
+      "url": "https://pure-oai.bham.ac.uk/ws/portalfiles/portal/304478106/BaiL2026Membership.pdf",
+      "checked_at_local": "2026-09-09 15:47:10",
+      "http_status": 200,
+      "resolved_url": "https://pure-oai.bham.ac.uk/ws/portalfiles/portal/304478106/BaiL2026Membership.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      91
+    ],
+    "group": "A",
+    "alias": "FACE-AUDITOR",
+    "venue": "USENIX Security 2023",
+    "priority": 6,
+    "role": "개인 단위 데이터 감사. 환자별 여러 기록을 합친 공격 자체의 선행 경계.",
+    "id": "A06",
+    "title": "FACE-AUDITOR: Data Auditing in Facial Recognition Systems",
+    "source_url": "https://www.usenix.org/conference/usenixsecurity23/presentation/chen-min",
+    "pdf_url": "https://www.usenix.org/system/files/usenixsecurity23-chen-min.pdf",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 380,
+        "context": "- DIME, 2026-08-24: https://arxiv.org/abs/2608.22824\n- User-level embedding MIA, ICLR 2022 workshop: https://iclr.cc/virtual/2022/7498\n- FACE-AUDITOR, USENIX Security 2023: https://www.usenix.org/conference/usenixsecurity23/presentation/chen-min"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "1",
+    "cvpr_relation": "핵심 주장·방법 대조",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A06",
+      "url": "https://www.usenix.org/system/files/usenixsecurity23-chen-min.pdf",
+      "checked_at_local": "2026-09-09 15:47:10",
+      "http_status": 200,
+      "resolved_url": "https://www.usenix.org/system/files/usenixsecurity23-chen-min.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      90
+    ],
+    "group": "A",
+    "alias": "User-level embedding MIA",
+    "venue": "ICLR 2022 PAIR²Struct workshop",
+    "priority": 7,
+    "role": "정확한 훈련 이미지 없이도 사용자 membership을 추론하는 선행.",
+    "title": "User-Level Membership Inference Attack against Metric Embedding Learning",
+    "pdf_url": "https://arxiv.org/pdf/2203.02077",
+    "extra_source_url": "https://arxiv.org/abs/2203.02077",
+    "id": "A07",
+    "source_url": "https://iclr.cc/virtual/2022/7498",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 379,
+        "context": "- Black-box diffusion MIA, ICML 2025: https://proceedings.mlr.press/v267/li25k.html\n- DIME, 2026-08-24: https://arxiv.org/abs/2608.22824\n- User-level embedding MIA, ICLR 2022 workshop: https://iclr.cc/virtual/2022/7498\n- FACE-AUDITOR, USENIX Security 2023: https://www.usenix.org/conference/usenixsecurity23/presentation/chen-min"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "1",
+    "cvpr_relation": "핵심 주장·방법 대조",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A07",
+      "url": "https://arxiv.org/pdf/2203.02077",
+      "checked_at_local": "2026-09-09 15:47:10",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2203.02077",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      89
+    ],
+    "group": "A",
+    "alias": "DIME",
+    "venue": "arXiv 2026-08",
+    "priority": 8,
+    "role": "최근 diffusion MIA 기준선. 위협모델·질의 예산을 맞춰 비교해야 함.",
+    "id": "A08",
+    "title": "DIME: Query-Efficient Framework for Membership Inference on Diffusion Models",
+    "source_url": "https://arxiv.org/abs/2608.22824",
+    "pdf_url": "https://arxiv.org/pdf/2608.22824",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 378,
+        "context": "- CLiD, NeurIPS 2024: https://proceedings.neurips.cc/paper_files/paper/2024/hash/874411a224a1934b80d499068384808b-Abstract-Conference.html\n- Black-box diffusion MIA, ICML 2025: https://proceedings.mlr.press/v267/li25k.html\n- DIME, 2026-08-24: https://arxiv.org/abs/2608.22824\n- User-level embedding MIA, ICLR 2022 workshop: https://iclr.cc/virtual/2022/7498"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A08",
+      "url": "https://arxiv.org/pdf/2608.22824",
+      "checked_at_local": "2026-09-09 15:47:11",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2608.22824",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      86
+    ],
+    "group": "A",
+    "alias": "Quantile-regression MIA",
+    "venue": "ICML 2024",
+    "priority": 9,
+    "role": "개별 표본의 공격 점수 보정. 환자 집합 보정과의 차이를 확인.",
+    "id": "A09",
+    "title": "Membership Inference Attacks on Diffusion Models via Quantile Regression",
+    "source_url": "https://proceedings.mlr.press/v235/tang24g.html",
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/tang24g/tang24g.pdf",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 375,
+        "context": "- SecMI, ICML 2023: https://proceedings.mlr.press/v202/duan23b.html\n- PIA/PIAN, ICLR 2024: https://proceedings.iclr.cc/paper_files/paper/2024/file/ff73af253974e6144c4eddf896d3095a-Paper-Conference.pdf\n- Quantile-regression MIA, ICML 2024: https://proceedings.mlr.press/v235/tang24g.html\n- CLiD, NeurIPS 2024: https://proceedings.neurips.cc/paper_files/paper/2024/hash/874411a224a1934b80d499068384808b-Abstract-Conference.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "1",
+    "cvpr_relation": "핵심 주장·방법 대조",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A09",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/tang24g/tang24g.pdf",
+      "checked_at_local": "2026-09-09 15:47:11",
+      "http_status": 200,
+      "resolved_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/tang24g/tang24g.pdf",
+      "content_type": "application/octet-stream",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      85
+    ],
+    "group": "A",
+    "alias": "PIA / PIAN",
+    "venue": "ICLR 2024",
+    "priority": 10,
+    "role": "효율적인 diffusion membership 공격. 환자 집합 감사에 들어갈 이미지 단위 근거.",
+    "title": "An Efficient Membership Inference Attack for the Diffusion Model by Proximal Initialization",
+    "id": "A10",
+    "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/ff73af253974e6144c4eddf896d3095a-Paper-Conference.pdf",
+    "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/ff73af253974e6144c4eddf896d3095a-Paper-Conference.pdf",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 374,
+        "context": "- Training-data extraction, USENIX Security 2023: https://www.usenix.org/conference/usenixsecurity23/presentation/carlini\n- SecMI, ICML 2023: https://proceedings.mlr.press/v202/duan23b.html\n- PIA/PIAN, ICLR 2024: https://proceedings.iclr.cc/paper_files/paper/2024/file/ff73af253974e6144c4eddf896d3095a-Paper-Conference.pdf\n- Quantile-regression MIA, ICML 2024: https://proceedings.mlr.press/v235/tang24g.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A10",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/ff73af253974e6144c4eddf896d3095a-Paper-Conference.pdf",
+      "checked_at_local": "2026-09-09 15:47:11",
+      "http_status": 200,
+      "resolved_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/ff73af253974e6144c4eddf896d3095a-Paper-Conference.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      84
+    ],
+    "group": "A",
+    "alias": "SecMI",
+    "venue": "ICML 2023",
+    "role": "diffusion membership inference의 기초 공격 비교군.",
+    "id": "A11",
+    "title": "Are Diffusion Models Vulnerable to Membership Inference Attacks?",
+    "source_url": "https://proceedings.mlr.press/v202/duan23b.html",
+    "pdf_url": "https://proceedings.mlr.press/v202/duan23b/duan23b.pdf",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 373,
+        "context": "\n- Training-data extraction, USENIX Security 2023: https://www.usenix.org/conference/usenixsecurity23/presentation/carlini\n- SecMI, ICML 2023: https://proceedings.mlr.press/v202/duan23b.html\n- PIA/PIAN, ICLR 2024: https://proceedings.iclr.cc/paper_files/paper/2024/file/ff73af253974e6144c4eddf896d3095a-Paper-Conference.pdf"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A11",
+      "url": "https://proceedings.mlr.press/v202/duan23b/duan23b.pdf",
+      "checked_at_local": "2026-09-09 15:47:11",
+      "http_status": 200,
+      "resolved_url": "https://proceedings.mlr.press/v202/duan23b/duan23b.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      87
+    ],
+    "group": "A",
+    "alias": "CLiD",
+    "venue": "NeurIPS 2024",
+    "role": "조건부 likelihood 차이를 이용한 text-to-image MIA. 조건 접근권이 같은 경우 비교.",
+    "id": "A12",
+    "title": "Membership Inference on Text-to-Image Diffusion Models via Conditional Likelihood Discrepancy",
+    "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/874411a224a1934b80d499068384808b-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/874411a224a1934b80d499068384808b-Paper-Conference.pdf",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 376,
+        "context": "- PIA/PIAN, ICLR 2024: https://proceedings.iclr.cc/paper_files/paper/2024/file/ff73af253974e6144c4eddf896d3095a-Paper-Conference.pdf\n- Quantile-regression MIA, ICML 2024: https://proceedings.mlr.press/v235/tang24g.html\n- CLiD, NeurIPS 2024: https://proceedings.neurips.cc/paper_files/paper/2024/hash/874411a224a1934b80d499068384808b-Abstract-Conference.html\n- Black-box diffusion MIA, ICML 2025: https://proceedings.mlr.press/v267/li25k.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A12",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/874411a224a1934b80d499068384808b-Paper-Conference.pdf",
+      "checked_at_local": "2026-09-09 15:47:12",
+      "http_status": 200,
+      "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/874411a224a1934b80d499068384808b-Paper-Conference.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      88
+    ],
+    "group": "A",
+    "alias": "Black-box diffusion MIA",
+    "venue": "ICML 2025",
+    "role": "black-box 접근조건의 공격 비교군. white-box 결과와 구분.",
+    "id": "A13",
+    "title": "Towards Black-Box Membership Inference Attack for Diffusion Models",
+    "source_url": "https://proceedings.mlr.press/v267/li25k.html",
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/li25k/li25k.pdf",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 377,
+        "context": "- Quantile-regression MIA, ICML 2024: https://proceedings.mlr.press/v235/tang24g.html\n- CLiD, NeurIPS 2024: https://proceedings.neurips.cc/paper_files/paper/2024/hash/874411a224a1934b80d499068384808b-Abstract-Conference.html\n- Black-box diffusion MIA, ICML 2025: https://proceedings.mlr.press/v267/li25k.html\n- DIME, 2026-08-24: https://arxiv.org/abs/2608.22824"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A13",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/li25k/li25k.pdf",
+      "checked_at_local": "2026-09-09 15:47:12",
+      "http_status": 200,
+      "resolved_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/li25k/li25k.pdf",
+      "content_type": "application/octet-stream",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      83
+    ],
+    "group": "A",
+    "alias": "Carlini / Training-data extraction",
+    "venue": "USENIX Security 2023",
+    "role": "훈련 이미지 추출. membership 추론·유사도·실제 복제의 차이 확인.",
+    "id": "A14",
+    "title": "Extracting Training Data from Diffusion Models",
+    "source_url": "https://www.usenix.org/conference/usenixsecurity23/presentation/carlini",
+    "pdf_url": "https://www.usenix.org/system/files/usenixsecurity23-carlini.pdf",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 372,
+        "context": "### diffusion·user-level attacks\n\n- Training-data extraction, USENIX Security 2023: https://www.usenix.org/conference/usenixsecurity23/presentation/carlini\n- SecMI, ICML 2023: https://proceedings.mlr.press/v202/duan23b.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A14",
+      "url": "https://www.usenix.org/system/files/usenixsecurity23-carlini.pdf",
+      "checked_at_local": "2026-09-09 15:47:12",
+      "http_status": 200,
+      "resolved_url": "https://www.usenix.org/system/files/usenixsecurity23-carlini.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      56
+    ],
+    "group": "A",
+    "alias": "MaMI / All-in-One MedReID",
+    "venue": "CVPR 2025",
+    "priority": 15,
+    "role": "의료영상 재식별. 환자 identity 신호와 평가 encoder의 직접 선행.",
+    "id": "A15",
+    "title": "Towards All-in-One Medical Image Re-Identification",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.pdf",
+    "occurrences": [
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 71,
+        "context": "| [M2M diffusion](https://arxiv.org/abs/2404.03109), ViewDiff·MultiDiff 등 | 서로 연결된 여러 이미지의 joint/autoregressive diffusion | 최초 multi-image diffusion·최초 set attention | patient adjacency, formal DP, medical set semantics |\n| [EHRXDiff](https://arxiv.org/abs/2409.07012), [MICCAI longitudinal CLDM](https://papers.miccai.org/miccai-2025/0164-Paper2656.html) | real prior scan/EHR로 future image·embedding·report 예측 | 최초 longitudinal CXR diffusion | real patient conditioning 없이 새 synthetic patient bundle 생성 + formal patient DP |\n| [MedReID, CVPR 2025](https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html) | 의료영상의 반복-record identity/re-identification | 환자 시각 신호 발견 자체 | privacy risk/evaluator로 사용하고, set utility와 linkage risk를 함께 측정 |\n| [FedDP-PALD](https://arxiv.org/abs/2607.16300) | federated multimodal latent synthesis, DP class-level prototype aggregation | 최초 federated medical DP synthesis | full image-set output과 patient add/remove adjacency |"
+      },
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 44,
+        "context": "- PrivDiff-Net: https://proceedings.mlr.press/v317/akhter26a.html\n- Semantic versus Identity: https://openaccess.thecvf.com/content/ICCV2025/html/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.html\n- All-in-One MedReID: https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html\n- Patient-level diffusion unlearning: https://openreview.net/pdf?id=x83b7ybcB1"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 341,
+        "context": "- DP-FedEmb, CVPR 2023: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.html\n- DP-LoRA, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html\n- MaMI/All-in-One MedReID, CVPR 2025: https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html\n- Semantic versus Identity, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A15",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:12",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      66
+    ],
+    "group": "A",
+    "alias": "Packhäuser / CXR biometric ReID",
+    "venue": "arXiv 2021 공개본",
+    "role": "흉부 X-ray의 생체 식별 신호. 반복 환자 기록 감사의 배경.",
+    "id": "A16",
+    "title": "Deep Learning-based Patient Re-identification Is able to Exploit the Biometric Nature of Medical Chest X-ray Data",
+    "source_url": "https://arxiv.org/abs/2103.08562",
+    "pdf_url": "https://arxiv.org/pdf/2103.08562",
+    "occurrences": [
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 97,
+        "context": "- Nature patient audit: https://www.nature.com/articles/s41586-026-10688-0\n- CheXGenBench: https://arxiv.org/abs/2505.10496\n- CXR biometric ReID: https://arxiv.org/abs/2103.08562\n- prompt-driven memorization: https://arxiv.org/abs/2502.07516"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A16",
+      "url": "https://arxiv.org/pdf/2103.08562",
+      "checked_at_local": "2026-09-09 15:47:13",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2103.08562",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      67
+    ],
+    "group": "A",
+    "alias": "The Devil is in the Prompts",
+    "venue": "arXiv 2025 공개본",
+    "role": "비식별화 문구와 prompt가 CXR 암기 위험에 미치는 영향.",
+    "id": "A17",
+    "title": "The Devil is in the Prompts: De-Identification Traces Enhance Memorization Risks in Synthetic Chest X-Ray Generation",
+    "source_url": "https://arxiv.org/abs/2502.07516",
+    "pdf_url": "https://arxiv.org/pdf/2502.07516",
+    "occurrences": [
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 98,
+        "context": "- CheXGenBench: https://arxiv.org/abs/2505.10496\n- CXR biometric ReID: https://arxiv.org/abs/2103.08562\n- prompt-driven memorization: https://arxiv.org/abs/2502.07516\n- 원 출발점 PFDM: https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A17",
+      "url": "https://arxiv.org/pdf/2502.07516",
+      "checked_at_local": "2026-09-09 15:47:13",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2502.07516",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      75
+    ],
+    "group": "A",
+    "alias": "InvMM",
+    "venue": "ICCV 2025",
+    "role": "inversion 기반 diffusion memorization 척도. 별도 관점의 감사 비교.",
+    "id": "A18",
+    "title": "An Inversion-based Measure of Memorization for Diffusion Models",
+    "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Ma_An_Inversion-based_Measure_of_Memorization_for_Diffusion_Models_ICCV_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ma_An_Inversion-based_Measure_of_Memorization_for_Diffusion_Models_ICCV_2025_paper.pdf",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 343,
+        "context": "- MaMI/All-in-One MedReID, CVPR 2025: https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html\n- Semantic versus Identity, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.html\n- InvMM, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Ma_An_Inversion-based_Measure_of_Memorization_for_Diffusion_Models_ICCV_2025_paper.html\n- MemControl, WACV 2025: https://openaccess.thecvf.com/content/WACV2025/html/Dutt_MemControl_Mitigating_Memorization_in_Diffusion_Models_via_Automated_Parameter_Selection_WACV_2025_paper.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A18",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ma_An_Inversion-based_Measure_of_Memorization_for_Diffusion_Models_ICCV_2025_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:13",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ma_An_Inversion-based_Measure_of_Memorization_for_Diffusion_Models_ICCV_2025_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      24
+    ],
+    "group": "A",
+    "alias": "Dombrowski / Privacy and fairness",
+    "venue": "MIDL 2026",
+    "role": "의료 합성 데이터의 일반화·프라이버시·공정성 평가.",
+    "id": "A19",
+    "title": "Can Diffusion Models Generalize? Privacy and Fairness Trade-offs for Medical Data Sharing.",
+    "source_url": "https://proceedings.mlr.press/v301/dombrowski26a.html",
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v301/main/assets/dombrowski26a/dombrowski26a.pdf",
+    "occurrences": [
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 165,
+        "context": "- *How to DP-fy Your Data*, JAIR 2026: https://arxiv.org/abs/2512.03238\n- Medical diffusion memorization: https://pubmed.ncbi.nlm.nih.gov/40790276/\n- MIDL 2026 privacy/fairness study: https://proceedings.mlr.press/v301/dombrowski26a.html\n- Privacy-Preserving Latent Diffusion-Based Synthetic Medical Image Generation, IEEE TMI 2026: https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 364,
+        "context": "- CheXGenBench, TMLR 2026: https://arxiv.org/html/2505.10496v4\n- DeepSSIM++: https://arxiv.org/abs/2609.03615\n- Medical diffusion privacy/fairness, MIDL 2026: https://proceedings.mlr.press/v301/dombrowski26a.html\n- Patient-level diffusion unlearning, MIDL 2026: https://openreview.net/pdf?id=x83b7ybcB1"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A19",
+      "url": "https://raw.githubusercontent.com/mlresearch/v301/main/assets/dombrowski26a/dombrowski26a.pdf",
+      "checked_at_local": "2026-09-09 15:47:13",
+      "http_status": 200,
+      "resolved_url": "https://raw.githubusercontent.com/mlresearch/v301/main/assets/dombrowski26a/dombrowski26a.pdf",
+      "content_type": "application/octet-stream",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      25
+    ],
+    "group": "A",
+    "alias": "Medical LDM filtering",
+    "venue": "IEEE Transactions on Medical Imaging 2026",
+    "role": "유사 생성물 filtering 기반 safeguard. formal DP와 구분.",
+    "id": "A20",
+    "title": "Privacy-Preserving Latent Diffusion-Based Synthetic Medical Image Generation",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/",
+    "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/pdf/nihms-2153980.pdf",
+    "occurrences": [
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 166,
+        "context": "- Medical diffusion memorization: https://pubmed.ncbi.nlm.nih.gov/40790276/\n- MIDL 2026 privacy/fairness study: https://proceedings.mlr.press/v301/dombrowski26a.html\n- Privacy-Preserving Latent Diffusion-Based Synthetic Medical Image Generation, IEEE TMI 2026: https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/\n- Tight group DP for DP-SGD: https://arxiv.org/abs/2401.10294"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 367,
+        "context": "- Patient-level diffusion unlearning, MIDL 2026: https://openreview.net/pdf?id=x83b7ybcB1\n- PrivDiff-Net: https://proceedings.mlr.press/v317/akhter26a.html\n- Privacy-preserving medical LDM filtering, IEEE TMI 2026: https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/\n- Medical MIA split-bias control: https://journals.sagepub.com/doi/10.3233/SHTI260258"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A20",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/pdf/nihms-2153980.pdf",
+      "checked_at_local": "2026-09-09 15:47:13",
+      "http_status": 200,
+      "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/pdf/nihms-2153980.pdf",
+      "content_type": "text/html; charset=utf-8",
+      "pdf_magic": false,
+      "status": "BROWSER_CHECK_REQUIRED"
+    },
+    "link_status": "브라우저 확인 필요"
+  },
+  {
+    "sources": [
+      61
+    ],
+    "group": "A",
+    "alias": "Patient-level diffusion unlearning",
+    "venue": "MIDL 2026 Short Paper Track",
+    "role": "환자 단위 unlearning과 privacy·utility의 한계. 환자 영향 제거 자체의 선행.",
+    "title": "Patient-level Machine Unlearning in Latent Diffusion Models: On the Limits of the Privacy-Utility Trade-off",
+    "pdf_url": "https://openreview.net/pdf?id=x83b7ybcB1",
+    "metadata_note": "제목·short-paper 표기는 공개 PDF의 검색 인덱스로 확인; 직접 HTTP 요청은 403.",
+    "id": "A21",
+    "source_url": "https://openreview.net/pdf?id=x83b7ybcB1",
+    "occurrences": [
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 45,
+        "context": "- Semantic versus Identity: https://openaccess.thecvf.com/content/ICCV2025/html/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.html\n- All-in-One MedReID: https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html\n- Patient-level diffusion unlearning: https://openreview.net/pdf?id=x83b7ybcB1\n- Anonymous CXR synthesis: https://arxiv.org/abs/2211.01323"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 365,
+        "context": "- DeepSSIM++: https://arxiv.org/abs/2609.03615\n- Medical diffusion privacy/fairness, MIDL 2026: https://proceedings.mlr.press/v301/dombrowski26a.html\n- Patient-level diffusion unlearning, MIDL 2026: https://openreview.net/pdf?id=x83b7ybcB1\n- PrivDiff-Net: https://proceedings.mlr.press/v317/akhter26a.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A21",
+      "url": "https://openreview.net/pdf?id=x83b7ybcB1",
+      "checked_at_local": "2026-09-09 15:47:13",
+      "http_status": 403,
+      "resolved_url": "https://openreview.net/pdf?id=x83b7ybcB1",
+      "content_type": "text/html",
+      "pdf_magic": false,
+      "status": "BROWSER_CHECK_REQUIRED"
+    },
+    "link_status": "브라우저 확인 필요"
+  },
+  {
+    "sources": [
+      59
+    ],
+    "group": "A",
+    "alias": "PrivDiff-Net",
+    "venue": "PMLR 317 / 2026",
+    "role": "identity 억제와 pathology 보존. 생체신호 제거 방법의 직접 선행.",
+    "id": "A22",
+    "title": "Hide Identity, Preserve Pathology: Diffusion-Based Anonymization for Chest X-rays",
+    "source_url": "https://proceedings.mlr.press/v317/akhter26a.html",
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v317/main/assets/akhter26a/akhter26a.pdf",
+    "occurrences": [
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 42,
+        "context": "주요 출처:\n\n- PrivDiff-Net: https://proceedings.mlr.press/v317/akhter26a.html\n- Semantic versus Identity: https://openaccess.thecvf.com/content/ICCV2025/html/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.html"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 366,
+        "context": "- Medical diffusion privacy/fairness, MIDL 2026: https://proceedings.mlr.press/v301/dombrowski26a.html\n- Patient-level diffusion unlearning, MIDL 2026: https://openreview.net/pdf?id=x83b7ybcB1\n- PrivDiff-Net: https://proceedings.mlr.press/v317/akhter26a.html\n- Privacy-preserving medical LDM filtering, IEEE TMI 2026: https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A22",
+      "url": "https://raw.githubusercontent.com/mlresearch/v317/main/assets/akhter26a/akhter26a.pdf",
+      "checked_at_local": "2026-09-09 15:47:14",
+      "http_status": 200,
+      "resolved_url": "https://raw.githubusercontent.com/mlresearch/v317/main/assets/akhter26a/akhter26a.pdf",
+      "content_type": "application/octet-stream",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      60
+    ],
+    "group": "A",
+    "alias": "Semantic versus Identity",
+    "venue": "ICCV 2025",
+    "role": "의료 identity·semantic 분해 및 조절 가능한 비식별화.",
+    "id": "A23",
+    "title": "Semantic versus Identity: A Divide-and-Conquer Approach towards Adjustable Medical Image De-Identification",
+    "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.pdf",
+    "occurrences": [
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 43,
+        "context": "\n- PrivDiff-Net: https://proceedings.mlr.press/v317/akhter26a.html\n- Semantic versus Identity: https://openaccess.thecvf.com/content/ICCV2025/html/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.html\n- All-in-One MedReID: https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 342,
+        "context": "- DP-LoRA, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html\n- MaMI/All-in-One MedReID, CVPR 2025: https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html\n- Semantic versus Identity, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.html\n- InvMM, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Ma_An_Inversion-based_Measure_of_Memorization_for_Diffusion_Models_ICCV_2025_paper.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A23",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:14",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      62
+    ],
+    "group": "A",
+    "alias": "Anonymous CXR synthesis",
+    "venue": "arXiv 2022 공개본",
+    "role": "익명 CXR 합성과 재식별 억제. 비-DP 방어와 formal DP의 차이.",
+    "id": "A24",
+    "title": "Generation of Anonymous Chest Radiographs Using Latent Diffusion Models for Training Thoracic Abnormality Classification Systems",
+    "source_url": "https://arxiv.org/abs/2211.01323",
+    "pdf_url": "https://arxiv.org/pdf/2211.01323",
+    "occurrences": [
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 46,
+        "context": "- All-in-One MedReID: https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html\n- Patient-level diffusion unlearning: https://openreview.net/pdf?id=x83b7ybcB1\n- Anonymous CXR synthesis: https://arxiv.org/abs/2211.01323\n"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A24",
+      "url": "https://arxiv.org/pdf/2211.01323",
+      "checked_at_local": "2026-09-09 15:47:14",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2211.01323",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      76
+    ],
+    "group": "A",
+    "alias": "MemControl",
+    "venue": "WACV 2025",
+    "role": "학습 파라미터 선택을 통한 암기 완화. 단순 선택적 fine-tuning의 선행 경계.",
+    "id": "A25",
+    "title": "MemControl: Mitigating Memorization in Diffusion Models via Automated Parameter Selection",
+    "source_url": "https://openaccess.thecvf.com/content/WACV2025/html/Dutt_MemControl_Mitigating_Memorization_in_Diffusion_Models_via_Automated_Parameter_Selection_WACV_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/WACV2025/papers/Dutt_MemControl_Mitigating_Memorization_in_Diffusion_Models_via_Automated_Parameter_Selection_WACV_2025_paper.pdf",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 344,
+        "context": "- Semantic versus Identity, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tian_Semantic_versus_Identity_A_Divide-and-Conquer_Approach_towards_Adjustable_Medical_Image_ICCV_2025_paper.html\n- InvMM, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Ma_An_Inversion-based_Measure_of_Memorization_for_Diffusion_Models_ICCV_2025_paper.html\n- MemControl, WACV 2025: https://openaccess.thecvf.com/content/WACV2025/html/Dutt_MemControl_Mitigating_Memorization_in_Diffusion_Models_via_Automated_Parameter_Selection_WACV_2025_paper.html\n- Privacy-utility mitigation, CVPR 2025: https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Enhancing_Privacy-Utility_Trade-offs_to_Mitigate_Memorization_in_Diffusion_Models_CVPR_2025_paper.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A25",
+      "url": "https://openaccess.thecvf.com/content/WACV2025/papers/Dutt_MemControl_Mitigating_Memorization_in_Diffusion_Models_via_Automated_Parameter_Selection_WACV_2025_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:14",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/WACV2025/papers/Dutt_MemControl_Mitigating_Memorization_in_Diffusion_Models_via_Automated_Parameter_Selection_WACV_2025_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      77
+    ],
+    "group": "A",
+    "alias": "Privacy-utility memorization mitigation",
+    "venue": "CVPR 2025",
+    "role": "diffusion 암기 완화와 privacy·utility trade-off의 인접 방법.",
+    "id": "A26",
+    "title": "Enhancing Privacy-Utility Trade-offs to Mitigate Memorization in Diffusion Models",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Enhancing_Privacy-Utility_Trade-offs_to_Mitigate_Memorization_in_Diffusion_Models_CVPR_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Enhancing_Privacy-Utility_Trade-offs_to_Mitigate_Memorization_in_Diffusion_Models_CVPR_2025_paper.pdf",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 345,
+        "context": "- InvMM, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Ma_An_Inversion-based_Measure_of_Memorization_for_Diffusion_Models_ICCV_2025_paper.html\n- MemControl, WACV 2025: https://openaccess.thecvf.com/content/WACV2025/html/Dutt_MemControl_Mitigating_Memorization_in_Diffusion_Models_via_Automated_Parameter_Selection_WACV_2025_paper.html\n- Privacy-utility mitigation, CVPR 2025: https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Enhancing_Privacy-Utility_Trade-offs_to_Mitigate_Memorization_in_Diffusion_Models_CVPR_2025_paper.html\n"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자 위험·의료 생성 감사·공격·재식별",
+    "pdf_check": {
+      "id": "A26",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Enhancing_Privacy-Utility_Trade-offs_to_Mitigate_Memorization_in_Diffusion_Models_CVPR_2025_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:14",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Enhancing_Privacy-Utility_Trade-offs_to_Mitigate_Memorization_in_Diffusion_Models_CVPR_2025_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      64
+    ],
+    "group": "B",
+    "alias": "Kaiser / Medical user-level DP",
+    "venue": "TPDP 2025",
+    "priority": 2,
+    "role": "가변 records/patient의 sampling·clipping 조절. G8/P8 비교에 추가할 가장 직접적인 기준선.",
+    "title": "User-Level Differential Privacy in Medical Machine Learning",
+    "id": "B01",
+    "source_url": "https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf",
+    "pdf_url": "https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf",
+    "occurrences": [
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 72,
+        "context": "- P3SGD: https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n- DP-FedEmb: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.html\n- Medical ULDP: https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf\n- Fixed-compute ELS/ULS: https://arxiv.org/abs/2407.07737"
+      },
+      {
+        "file": "17_탈옥트렌드_팩트검증과_현1순위_신규성경계_2026-09-08.md",
+        "line": 117,
+        "context": "- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf\n- DP-FedEmb, CVPR 2023: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.html\n- Medical user-level DP, TPDP 2025: https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf\n"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 355,
+        "context": "- RAPID, ICLR 2025: https://proceedings.iclr.cc/paper_files/paper/2025/hash/5a04615295b7512ad3ce691400e26bc7-Abstract-Conference.html\n- Private 3D medical LDM, DGM4MICCAI 2024: https://arxiv.org/abs/2407.16405\n- Kaiser medical ULDP, TPDP 2025: https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf\n- User-level DP fixed compute: https://arxiv.org/abs/2407.07737"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "1",
+    "cvpr_relation": "핵심 주장·방법 대조",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B01",
+      "url": "https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf",
+      "checked_at_local": "2026-09-09 15:47:14",
+      "http_status": 200,
+      "resolved_url": "https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      2,
+      73
+    ],
+    "group": "B",
+    "alias": "P3SGD",
+    "venue": "CVPR 2019",
+    "priority": 14,
+    "role": "환자 단위 SGD·privacy의 선행. patient clipping 자체를 새 기여로 셀 수 없음.",
+    "id": "B02",
+    "title": "P3SGD: Patient Privacy Preserving SGD for Regularizing Deep CNNs in Pathological Image Classification",
+    "source_url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 54,
+        "context": "본 연구는 patient aggregation 자체를 최초라고 주장하지 않는다.\n\n- https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n"
+      },
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 159,
+        "context": "- PFDM, CVPR 2026: https://openaccess.thecvf.com/content/CVPR2026/papers/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.pdf\n- Daum et al., medical DP latent diffusion, 2024: https://arxiv.org/abs/2407.16405\n- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n- DP-LoRA, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html"
+      },
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 208,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2026/papers/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.pdf\n- P3SGD, CVPR 2019:\n  https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n- HiGradAvgDP:"
+      },
+      {
+        "file": "06_ISIC_실제_gradient_진단과_현재_방법판정_2026-09-02.md",
+        "line": 212,
+        "context": "  https://arxiv.org/abs/2407.07737\n- P3SGD, CVPR 2019:\n  https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n"
+      },
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 68,
+        "context": "| [DPDM](https://arxiv.org/abs/2210.09929), [DP-LoRA](https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html), [PrivImage](https://arxiv.org/abs/2311.12850) | sample/image-level DP diffusion, noise multiplicity, LoRA, public pretraining | 최초 DP diffusion·최초 DP-LoRA·최초 multiplicity | patient-set adjacency와 joint set output |\n| [3D medical DP-LDM](https://arxiv.org/abs/2407.16405) | DP fine-tuned controllable medical LDM | 최초 의료 DP diffusion | 반복 2D record set과 patient-set utility |\n| [P3SGD](https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html), [user-level DP](https://arxiv.org/abs/2407.07737) | 여러 record를 user/patient gradient로 평균한 뒤 한 번 clip·noise | 최초 patient gradient·최초 user-level DP | set-valued diffusion architecture·generation·evaluation |\n| [M2M diffusion](https://arxiv.org/abs/2404.03109), ViewDiff·MultiDiff 등 | 서로 연결된 여러 이미지의 joint/autoregressive diffusion | 최초 multi-image diffusion·최초 set attention | patient adjacency, formal DP, medical set semantics |"
+      },
+      {
+        "file": "14_SetAdapter_context_반증과_주제재판정_2026-09-03.md",
+        "line": 235,
+        "context": "  https://papers.miccai.org/miccai-2024/paper/0511_paper.pdf\n- P3SGD, CVPR 2019:\n  https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n- SPAD, CVPR 2024:"
+      },
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 70,
+        "context": "주요 출처:\n\n- P3SGD: https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n- DP-FedEmb: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.html"
+      },
+      {
+        "file": "17_탈옥트렌드_팩트검증과_현1순위_신규성경계_2026-09-08.md",
+        "line": 115,
+        "context": "- CVPR 2025 multimodal defense: https://openaccess.thecvf.com/content/CVPR2025/papers/Ghosal_Immune_Improving_Safety_Against_Jailbreaks_in_Multi-modal_LLMs_via_Inference-Time_CVPR_2025_paper.pdf\n- Nature 2026 patient-level audit: https://www.nature.com/articles/s41586-026-10688-0\n- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf\n- DP-FedEmb, CVPR 2023: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.html"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 338,
+        "context": "- CVPR 2027 CFP: https://cvpr.thecvf.com/Conferences/2027/CallForPapers\n- PFDM, CVPR 2026: https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html\n- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf\n- DP-FedEmb, CVPR 2023: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B02",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:15",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      27,
+      63
+    ],
+    "group": "B",
+    "alias": "DP-FedEmb",
+    "venue": "CVPR 2023",
+    "role": "여러 이미지를 가진 사용자 단위 DP vision embedding 학습.",
+    "id": "B03",
+    "title": "Learning To Generate Image Embeddings With User-Level Differential Privacy",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.pdf",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 212,
+        "context": "  https://arxiv.org/abs/2206.03617\n- DP-FedEmb, CVPR 2023:\n  https://openaccess.thecvf.com/content/CVPR2023/papers/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.pdf\n- Mind the Privacy Unit, COLM 2024:"
+      },
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 71,
+        "context": "\n- P3SGD: https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n- DP-FedEmb: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.html\n- Medical ULDP: https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf"
+      },
+      {
+        "file": "17_탈옥트렌드_팩트검증과_현1순위_신규성경계_2026-09-08.md",
+        "line": 116,
+        "context": "- Nature 2026 patient-level audit: https://www.nature.com/articles/s41586-026-10688-0\n- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf\n- DP-FedEmb, CVPR 2023: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.html\n- Medical user-level DP, TPDP 2025: https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 339,
+        "context": "- PFDM, CVPR 2026: https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html\n- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf\n- DP-FedEmb, CVPR 2023: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.html\n- DP-LoRA, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B03",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:15",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      28
+    ],
+    "group": "B",
+    "alias": "Charles / Fixed-compute ELS vs ULS",
+    "venue": "arXiv 2024 공개본; fixed-compute 제목은 저자 2025 설명 참조",
+    "role": "같은 계산예산에서 example/user sampling 비교와 tight accounting.",
+    "metadata_note": "기존 기록의 Learning with User-Level Differential Privacy Under Fixed Compute Budgets와 연결된 arXiv 제목은 Fine-Tuning Large Language Models with User-Level Differential Privacy. 제목을 임의로 일치시키지 않음.",
+    "extra_source_url": "https://research.google/blog/fine-tuning-llms-with-user-level-differential-privacy/",
+    "id": "B04",
+    "title": "Fine-Tuning Large Language Models with User-Level Differential Privacy",
+    "source_url": "https://arxiv.org/abs/2407.07737",
+    "pdf_url": "https://arxiv.org/pdf/2407.07737",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 216,
+        "context": "  https://arxiv.org/abs/2406.14322\n- Learning with User-Level DP under Fixed Compute Budgets:\n  https://arxiv.org/abs/2407.07737\n- Tight group privacy for DP-SGD:"
+      },
+      {
+        "file": "06_ISIC_실제_gradient_진단과_현재_방법판정_2026-09-02.md",
+        "line": 210,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2025/html/Kim_Adaptive_Non-Uniform_Timestep_Sampling_for_Accelerating_Diffusion_Model_Training_CVPR_2025_paper.html\n- Learning with User-Level DP under Fixed Compute Budgets:\n  https://arxiv.org/abs/2407.07737\n- P3SGD, CVPR 2019:"
+      },
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 68,
+        "context": "| [DPDM](https://arxiv.org/abs/2210.09929), [DP-LoRA](https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html), [PrivImage](https://arxiv.org/abs/2311.12850) | sample/image-level DP diffusion, noise multiplicity, LoRA, public pretraining | 최초 DP diffusion·최초 DP-LoRA·최초 multiplicity | patient-set adjacency와 joint set output |\n| [3D medical DP-LDM](https://arxiv.org/abs/2407.16405) | DP fine-tuned controllable medical LDM | 최초 의료 DP diffusion | 반복 2D record set과 patient-set utility |\n| [P3SGD](https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html), [user-level DP](https://arxiv.org/abs/2407.07737) | 여러 record를 user/patient gradient로 평균한 뒤 한 번 clip·noise | 최초 patient gradient·최초 user-level DP | set-valued diffusion architecture·generation·evaluation |\n| [M2M diffusion](https://arxiv.org/abs/2404.03109), ViewDiff·MultiDiff 등 | 서로 연결된 여러 이미지의 joint/autoregressive diffusion | 최초 multi-image diffusion·최초 set attention | patient adjacency, formal DP, medical set semantics |"
+      },
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 73,
+        "context": "- DP-FedEmb: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.html\n- Medical ULDP: https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf\n- Fixed-compute ELS/ULS: https://arxiv.org/abs/2407.07737\n- DP 3D medical latent diffusion: https://arxiv.org/abs/2407.16405"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 356,
+        "context": "- Private 3D medical LDM, DGM4MICCAI 2024: https://arxiv.org/abs/2407.16405\n- Kaiser medical ULDP, TPDP 2025: https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf\n- User-level DP fixed compute: https://arxiv.org/abs/2407.07737\n"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B04",
+      "url": "https://arxiv.org/pdf/2407.07737",
+      "checked_at_local": "2026-09-09 15:47:15",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2407.07737",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      3
+    ],
+    "group": "B",
+    "alias": "Mind the Privacy Unit!",
+    "venue": "COLM 2024 / arXiv 공개본",
+    "role": "사용자 단위와 example 단위 보호의 차이. 의료만의 새 문제라는 주장 제한.",
+    "id": "B05",
+    "title": "Mind the Privacy Unit! User-Level Differential Privacy for Language Model Fine-Tuning",
+    "source_url": "https://arxiv.org/abs/2406.14322",
+    "pdf_url": "https://arxiv.org/pdf/2406.14322",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 59,
+        "context": "generation과 환자 단위 release claim은 다루지 않는다.\n\n- https://arxiv.org/abs/2406.14322\n- https://arxiv.org/abs/2401.10294"
+      },
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 168,
+        "context": "- Privacy-Preserving Latent Diffusion-Based Synthetic Medical Image Generation, IEEE TMI 2026: https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/\n- Tight group DP for DP-SGD: https://arxiv.org/abs/2401.10294\n- *Mind the Privacy Unit!*, COLM 2024: https://arxiv.org/abs/2406.14322\n"
+      },
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 214,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2023/papers/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.pdf\n- Mind the Privacy Unit, COLM 2024:\n  https://arxiv.org/abs/2406.14322\n- Learning with User-Level DP under Fixed Compute Budgets:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B05",
+      "url": "https://arxiv.org/pdf/2406.14322",
+      "checked_at_local": "2026-09-09 15:47:15",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2406.14322",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      4
+    ],
+    "group": "B",
+    "alias": "Ganesh / Tight group privacy",
+    "venue": "arXiv 2024 공개본",
+    "role": "DP-SGD의 구조를 이용한 tight group accounting. generic group bound의 대조.",
+    "id": "B06",
+    "title": "Tight Group-Level DP Guarantees for DP-SGD with Sampling via Mixture of Gaussians Mechanisms",
+    "source_url": "https://arxiv.org/abs/2401.10294",
+    "pdf_url": "https://arxiv.org/pdf/2401.10294",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 60,
+        "context": "\n- https://arxiv.org/abs/2406.14322\n- https://arxiv.org/abs/2401.10294\n"
+      },
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 167,
+        "context": "- MIDL 2026 privacy/fairness study: https://proceedings.mlr.press/v301/dombrowski26a.html\n- Privacy-Preserving Latent Diffusion-Based Synthetic Medical Image Generation, IEEE TMI 2026: https://pmc.ncbi.nlm.nih.gov/articles/PMC13034593/\n- Tight group DP for DP-SGD: https://arxiv.org/abs/2401.10294\n- *Mind the Privacy Unit!*, COLM 2024: https://arxiv.org/abs/2406.14322"
+      },
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 218,
+        "context": "  https://arxiv.org/abs/2407.07737\n- Tight group privacy for DP-SGD:\n  https://arxiv.org/abs/2401.10294\n- DPDM, TMLR 2023:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B06",
+      "url": "https://arxiv.org/pdf/2401.10294",
+      "checked_at_local": "2026-09-09 15:47:15",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2401.10294",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      26
+    ],
+    "group": "B",
+    "alias": "HiGradAvgDP",
+    "venue": "arXiv 2022 공개본",
+    "role": "subject granular DP와 계층적 gradient 집계의 선행.",
+    "id": "B07",
+    "title": "Subject Granular Differential Privacy in Federated Learning",
+    "source_url": "https://arxiv.org/abs/2206.03617",
+    "pdf_url": "https://arxiv.org/pdf/2206.03617",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 210,
+        "context": "  https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n- HiGradAvgDP:\n  https://arxiv.org/abs/2206.03617\n- DP-FedEmb, CVPR 2023:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B07",
+      "url": "https://arxiv.org/pdf/2206.03617",
+      "checked_at_local": "2026-09-09 15:47:15",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2206.03617",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      10,
+      30
+    ],
+    "group": "B",
+    "alias": "DP-LoRA",
+    "venue": "ICCV 2025",
+    "priority": 11,
+    "role": "현재 LoRA DP diffusion 학습의 직접 기준선. rank·학습 모듈·multiplicity 조건 대조.",
+    "id": "B08",
+    "title": "Differentially Private Fine-Tuning of Diffusion Models",
+    "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.pdf",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 152,
+        "context": "4. M2의 알고리즘 선행선으로 P3SGD, user-wise DP-SGD와 DP-FedAvg를 명시한다.\n5. image-DP 구현의 직접 baseline으로 DP-LoRA를 포함한다.\n   - https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html\n6. B0와 pretraining-overlap audit를 유지하고, 해소되지 않으면 incremental fine-tuning"
+      },
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 160,
+        "context": "- Daum et al., medical DP latent diffusion, 2024: https://arxiv.org/abs/2407.16405\n- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n- DP-LoRA, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html\n- DPDM, TMLR 2023: https://research.nvidia.com/labs/toronto-ai/DPDM/"
+      },
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 222,
+        "context": "  https://arxiv.org/abs/2210.09929\n- DP-LoRA, ICCV 2025:\n  https://openaccess.thecvf.com/content/ICCV2025/papers/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.pdf\n- PrivImage, USENIX Security 2024:"
+      },
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 66,
+        "context": "| 연구군 | 이미 점유한 것 | 이번 연구가 가져가면 안 되는 claim | 남는 차이 |\n|---|---|---|---|\n| [DPDM](https://arxiv.org/abs/2210.09929), [DP-LoRA](https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html), [PrivImage](https://arxiv.org/abs/2311.12850) | sample/image-level DP diffusion, noise multiplicity, LoRA, public pretraining | 최초 DP diffusion·최초 DP-LoRA·최초 multiplicity | patient-set adjacency와 joint set output |\n| [3D medical DP-LDM](https://arxiv.org/abs/2407.16405) | DP fine-tuned controllable medical LDM | 최초 의료 DP diffusion | 반복 2D record set과 patient-set utility |"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 340,
+        "context": "- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf\n- DP-FedEmb, CVPR 2023: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Learning_To_Generate_Image_Embeddings_With_User-Level_Differential_Privacy_CVPR_2023_paper.html\n- DP-LoRA, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html\n- MaMI/All-in-One MedReID, CVPR 2025: https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B08",
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:16",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      29,
+      1,
+      20,
+      38
+    ],
+    "group": "B",
+    "alias": "DPDM",
+    "venue": "TMLR 2023 / arXiv 공개본",
+    "role": "DP diffusion과 noise multiplicity의 기초. 단순 DP diffusion은 이미 존재.",
+    "id": "B09",
+    "title": "Differentially Private Diffusion Models",
+    "source_url": "https://arxiv.org/abs/2210.09929",
+    "pdf_url": "https://arxiv.org/pdf/2210.09929",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 49,
+        "context": "group privacy 연구를 후속 과제로 남겼다.\n\n- https://openreview.net/forum?id=ZPpQk7FJXF\n"
+      },
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 161,
+        "context": "- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n- DP-LoRA, ICCV 2025: https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html\n- DPDM, TMLR 2023: https://research.nvidia.com/labs/toronto-ai/DPDM/\n- *Disparate privacy risks from medical AI*, Nature 2026: https://www.nature.com/articles/s41586-026-10688-0"
+      },
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 220,
+        "context": "  https://arxiv.org/abs/2401.10294\n- DPDM, TMLR 2023:\n  https://arxiv.org/abs/2210.09929\n- DP-LoRA, ICCV 2025:"
+      },
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 304,
+        "context": "  https://github.com/ermongroup/ddim/blob/main/runners/diffusion.py\n- DPDM full text:\n  https://arxiv.org/html/2210.09929v3\n- DP diffusion augmentation/timestep multiplicity:"
+      },
+      {
+        "file": "06_ISIC_실제_gradient_진단과_현재_방법판정_2026-09-02.md",
+        "line": 200,
+        "context": "  https://github.com/ermongroup/ddim/blob/main/runners/diffusion.py\n- DPDM:\n  https://arxiv.org/html/2210.09929v3\n- Differentially Private Diffusion Models Generate Useful Synthetic Images:"
+      },
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 66,
+        "context": "| 연구군 | 이미 점유한 것 | 이번 연구가 가져가면 안 되는 claim | 남는 차이 |\n|---|---|---|---|\n| [DPDM](https://arxiv.org/abs/2210.09929), [DP-LoRA](https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html), [PrivImage](https://arxiv.org/abs/2311.12850) | sample/image-level DP diffusion, noise multiplicity, LoRA, public pretraining | 최초 DP diffusion·최초 DP-LoRA·최초 multiplicity | patient-set adjacency와 joint set output |\n| [3D medical DP-LDM](https://arxiv.org/abs/2407.16405) | DP fine-tuned controllable medical LDM | 최초 의료 DP diffusion | 반복 2D record set과 patient-set utility |"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 349,
+        "context": "### DP diffusion\n\n- DPDM, TMLR 2023: https://research.nvidia.com/labs/toronto-ai/DPDM/\n- DP-LDM, TMLR 2024: https://openreview.net/pdf?id=AkdQ266kHj"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B09",
+      "url": "https://arxiv.org/pdf/2210.09929",
+      "checked_at_local": "2026-09-09 15:47:16",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2210.09929",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      78
+    ],
+    "group": "B",
+    "alias": "DP-LDM",
+    "venue": "TMLR 2024 / arXiv 공개본",
+    "role": "latent diffusion의 선택적 DP fine-tuning. DP-LoRA 이전 직접 선행.",
+    "title": "Differentially Private Latent Diffusion Models",
+    "pdf_url": "https://arxiv.org/pdf/2305.15759",
+    "extra_source_url": "https://arxiv.org/abs/2305.15759",
+    "id": "B10",
+    "source_url": "https://openreview.net/pdf?id=AkdQ266kHj",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 350,
+        "context": "\n- DPDM, TMLR 2023: https://research.nvidia.com/labs/toronto-ai/DPDM/\n- DP-LDM, TMLR 2024: https://openreview.net/pdf?id=AkdQ266kHj\n- PrivImage, USENIX Security 2024: https://www.usenix.org/conference/usenixsecurity24/presentation/li-kecen"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B10",
+      "url": "https://arxiv.org/pdf/2305.15759",
+      "checked_at_local": "2026-09-09 15:47:16",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2305.15759",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      31,
+      53
+    ],
+    "group": "B",
+    "alias": "PrivImage",
+    "venue": "USENIX Security 2024",
+    "role": "semantic-aware public pretraining을 이용한 DP image synthesis.",
+    "id": "B11",
+    "title": "PrivImage: Differentially Private Synthetic Image Generation using Diffusion Models with Semantic-Aware Pretraining",
+    "source_url": "https://www.usenix.org/conference/usenixsecurity24/presentation/li-kecen",
+    "pdf_url": "https://www.usenix.org/system/files/usenixsecurity24-li-kecen.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 224,
+        "context": "  https://openaccess.thecvf.com/content/ICCV2025/papers/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.pdf\n- PrivImage, USENIX Security 2024:\n  https://www.usenix.org/conference/usenixsecurity24/presentation/li-kecen\n- dp-promise, USENIX Security 2024:"
+      },
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 66,
+        "context": "| 연구군 | 이미 점유한 것 | 이번 연구가 가져가면 안 되는 claim | 남는 차이 |\n|---|---|---|---|\n| [DPDM](https://arxiv.org/abs/2210.09929), [DP-LoRA](https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html), [PrivImage](https://arxiv.org/abs/2311.12850) | sample/image-level DP diffusion, noise multiplicity, LoRA, public pretraining | 최초 DP diffusion·최초 DP-LoRA·최초 multiplicity | patient-set adjacency와 joint set output |\n| [3D medical DP-LDM](https://arxiv.org/abs/2407.16405) | DP fine-tuned controllable medical LDM | 최초 의료 DP diffusion | 반복 2D record set과 patient-set utility |"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 351,
+        "context": "- DPDM, TMLR 2023: https://research.nvidia.com/labs/toronto-ai/DPDM/\n- DP-LDM, TMLR 2024: https://openreview.net/pdf?id=AkdQ266kHj\n- PrivImage, USENIX Security 2024: https://www.usenix.org/conference/usenixsecurity24/presentation/li-kecen\n- dp-promise, USENIX Security 2024: https://www.usenix.org/conference/usenixsecurity24/presentation/wang-haichen"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B11",
+      "url": "https://www.usenix.org/system/files/usenixsecurity24-li-kecen.pdf",
+      "checked_at_local": "2026-09-09 15:47:16",
+      "http_status": 200,
+      "resolved_url": "https://www.usenix.org/system/files/usenixsecurity24-li-kecen.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      32
+    ],
+    "group": "B",
+    "alias": "dp-promise",
+    "venue": "USENIX Security 2024",
+    "role": "DP diffusion image synthesis의 강한 기존 방법.",
+    "id": "B12",
+    "title": "dp-promise: Differentially Private Diffusion Probabilistic Models for Image Synthesis",
+    "source_url": "https://www.usenix.org/conference/usenixsecurity24/presentation/wang-haichen",
+    "pdf_url": "https://www.usenix.org/system/files/usenixsecurity24-wang-haichen.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 226,
+        "context": "  https://www.usenix.org/conference/usenixsecurity24/presentation/li-kecen\n- dp-promise, USENIX Security 2024:\n  https://www.usenix.org/conference/usenixsecurity24/presentation/wang-haichen\n- SPTI, NeurIPS 2025:"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 352,
+        "context": "- DP-LDM, TMLR 2024: https://openreview.net/pdf?id=AkdQ266kHj\n- PrivImage, USENIX Security 2024: https://www.usenix.org/conference/usenixsecurity24/presentation/li-kecen\n- dp-promise, USENIX Security 2024: https://www.usenix.org/conference/usenixsecurity24/presentation/wang-haichen\n- RAPID, ICLR 2025: https://proceedings.iclr.cc/paper_files/paper/2025/hash/5a04615295b7512ad3ce691400e26bc7-Abstract-Conference.html"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B12",
+      "url": "https://www.usenix.org/system/files/usenixsecurity24-wang-haichen.pdf",
+      "checked_at_local": "2026-09-09 15:47:16",
+      "http_status": 200,
+      "resolved_url": "https://www.usenix.org/system/files/usenixsecurity24-wang-haichen.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      79
+    ],
+    "group": "B",
+    "alias": "RAPID",
+    "venue": "ICLR 2025",
+    "role": "retrieval을 활용한 DP diffusion 학습. public-data 활용 조건을 맞춰 비교.",
+    "id": "B13",
+    "title": "RAPID: Retrieval Augmented Training of Differentially Private Diffusion Models",
+    "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/5a04615295b7512ad3ce691400e26bc7-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/5a04615295b7512ad3ce691400e26bc7-Paper-Conference.pdf",
+    "occurrences": [
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 353,
+        "context": "- PrivImage, USENIX Security 2024: https://www.usenix.org/conference/usenixsecurity24/presentation/li-kecen\n- dp-promise, USENIX Security 2024: https://www.usenix.org/conference/usenixsecurity24/presentation/wang-haichen\n- RAPID, ICLR 2025: https://proceedings.iclr.cc/paper_files/paper/2025/hash/5a04615295b7512ad3ce691400e26bc7-Abstract-Conference.html\n- Private 3D medical LDM, DGM4MICCAI 2024: https://arxiv.org/abs/2407.16405"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B13",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/5a04615295b7512ad3ce691400e26bc7-Paper-Conference.pdf",
+      "checked_at_local": "2026-09-09 15:47:16",
+      "http_status": 200,
+      "resolved_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/5a04615295b7512ad3ce691400e26bc7-Paper-Conference.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      19
+    ],
+    "group": "B",
+    "alias": "Daum / Private 3D medical LDM",
+    "venue": "DGM4MICCAI 2024 / arXiv 공개본",
+    "role": "의료 DP latent diffusion은 이미 존재. 반복 2D 환자 기록과의 문제 차이.",
+    "id": "B14",
+    "title": "On Differentially Private 3D Medical Image Synthesis with Controllable Latent Diffusion Models",
+    "source_url": "https://arxiv.org/abs/2407.16405",
+    "pdf_url": "https://arxiv.org/pdf/2407.16405",
+    "occurrences": [
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 158,
+        "context": "\n- PFDM, CVPR 2026: https://openaccess.thecvf.com/content/CVPR2026/papers/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.pdf\n- Daum et al., medical DP latent diffusion, 2024: https://arxiv.org/abs/2407.16405\n- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html"
+      },
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 232,
+        "context": "  https://ojs.aaai.org/index.php/AAAI/article/view/38016\n- Medical DP latent diffusion:\n  https://arxiv.org/abs/2407.16405\n- Disparate privacy risks from medical AI, Nature 2026:"
+      },
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 67,
+        "context": "|---|---|---|---|\n| [DPDM](https://arxiv.org/abs/2210.09929), [DP-LoRA](https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html), [PrivImage](https://arxiv.org/abs/2311.12850) | sample/image-level DP diffusion, noise multiplicity, LoRA, public pretraining | 최초 DP diffusion·최초 DP-LoRA·최초 multiplicity | patient-set adjacency와 joint set output |\n| [3D medical DP-LDM](https://arxiv.org/abs/2407.16405) | DP fine-tuned controllable medical LDM | 최초 의료 DP diffusion | 반복 2D record set과 patient-set utility |\n| [P3SGD](https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html), [user-level DP](https://arxiv.org/abs/2407.07737) | 여러 record를 user/patient gradient로 평균한 뒤 한 번 clip·noise | 최초 patient gradient·최초 user-level DP | set-valued diffusion architecture·generation·evaluation |"
+      },
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 74,
+        "context": "- Medical ULDP: https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf\n- Fixed-compute ELS/ULS: https://arxiv.org/abs/2407.07737\n- DP 3D medical latent diffusion: https://arxiv.org/abs/2407.16405\n"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 354,
+        "context": "- dp-promise, USENIX Security 2024: https://www.usenix.org/conference/usenixsecurity24/presentation/wang-haichen\n- RAPID, ICLR 2025: https://proceedings.iclr.cc/paper_files/paper/2025/hash/5a04615295b7512ad3ce691400e26bc7-Abstract-Conference.html\n- Private 3D medical LDM, DGM4MICCAI 2024: https://arxiv.org/abs/2407.16405\n- Kaiser medical ULDP, TPDP 2025: https://tpdp.journalprivacyconfidentiality.org/2025/pdf/kaiser.pdf"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "2",
+    "cvpr_relation": "직접 방법·평가 비교군",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B14",
+      "url": "https://arxiv.org/pdf/2407.16405",
+      "checked_at_local": "2026-09-09 15:47:16",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2407.16405",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      39
+    ],
+    "group": "B",
+    "alias": "DP diffusion useful synthetic images",
+    "venue": "arXiv 2023 공개본",
+    "role": "public pretraining과 DP synthetic image utility의 선행.",
+    "id": "B15",
+    "title": "Differentially Private Diffusion Models Generate Useful Synthetic Images",
+    "source_url": "https://arxiv.org/html/2302.13861",
+    "pdf_url": "https://arxiv.org/pdf/2302.13861",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 306,
+        "context": "  https://arxiv.org/html/2210.09929v3\n- DP diffusion augmentation/timestep multiplicity:\n  https://arxiv.org/html/2302.13861\n- CleanDIFT:"
+      },
+      {
+        "file": "06_ISIC_실제_gradient_진단과_현재_방법판정_2026-09-02.md",
+        "line": 202,
+        "context": "  https://arxiv.org/html/2210.09929v3\n- Differentially Private Diffusion Models Generate Useful Synthetic Images:\n  https://arxiv.org/html/2302.13861\n- CleanDIFT, CVPR 2025:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B15",
+      "url": "https://arxiv.org/pdf/2302.13861",
+      "checked_at_local": "2026-09-09 15:47:17",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2302.13861",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      33
+    ],
+    "group": "B",
+    "alias": "SPTI",
+    "venue": "NeurIPS 2025",
+    "role": "private textual intermediary를 이용한 고해상도 DP 합성.",
+    "id": "B16",
+    "title": "Synthesize Privacy-Preserving High-Resolution Images via Private Textual Intermediaries",
+    "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/38380a17248c4dfc4f48fc4d836d9b62-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/38380a17248c4dfc4f48fc4d836d9b62-Paper-Conference.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 228,
+        "context": "  https://www.usenix.org/conference/usenixsecurity24/presentation/wang-haichen\n- SPTI, NeurIPS 2025:\n  https://proceedings.neurips.cc/paper_files/paper/2025/hash/38380a17248c4dfc4f48fc4d836d9b62-Abstract-Conference.html\n- RPGen, AAAI 2026:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B16",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/38380a17248c4dfc4f48fc4d836d9b62-Paper-Conference.pdf",
+      "checked_at_local": "2026-09-09 15:47:17",
+      "http_status": 200,
+      "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/38380a17248c4dfc4f48fc4d836d9b62-Paper-Conference.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      34
+    ],
+    "group": "B",
+    "alias": "RPGen",
+    "venue": "AAAI 2026",
+    "role": "강건한 DP synthetic image generation의 인접 비교.",
+    "id": "B17",
+    "title": "RPGen: Robust and Differentially Private Synthetic Image Generation",
+    "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/38016",
+    "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/38016/41978",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 230,
+        "context": "  https://proceedings.neurips.cc/paper_files/paper/2025/hash/38380a17248c4dfc4f48fc4d836d9b62-Abstract-Conference.html\n- RPGen, AAAI 2026:\n  https://ojs.aaai.org/index.php/AAAI/article/view/38016\n- Medical DP latent diffusion:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B17",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/download/38016/41978",
+      "checked_at_local": "2026-09-09 15:47:17",
+      "http_status": 200,
+      "resolved_url": "https://ojs.aaai.org/index.php/AAAI/article/download/38016/41978",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      22
+    ],
+    "group": "B",
+    "alias": "How to DP-fy Your Data",
+    "venue": "JAIR 2026 / arXiv 공개본",
+    "role": "DP 합성데이터의 실무적 단위·평가·비교 지침.",
+    "id": "B18",
+    "title": "How to DP-fy Your Data: A Practical Guide to Generating Synthetic Data With Differential Privacy",
+    "source_url": "https://arxiv.org/abs/2512.03238",
+    "pdf_url": "https://arxiv.org/pdf/2512.03238",
+    "occurrences": [
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 163,
+        "context": "- DPDM, TMLR 2023: https://research.nvidia.com/labs/toronto-ai/DPDM/\n- *Disparate privacy risks from medical AI*, Nature 2026: https://www.nature.com/articles/s41586-026-10688-0\n- *How to DP-fy Your Data*, JAIR 2026: https://arxiv.org/abs/2512.03238\n- Medical diffusion memorization: https://pubmed.ncbi.nlm.nih.gov/40790276/"
+      },
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 240,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2025/html/Kim_Adaptive_Non-Uniform_Timestep_Sampling_for_Accelerating_Diffusion_Model_Training_CVPR_2025_paper.html\n- How to DP-fy Your Data, JAIR 2026:\n  https://arxiv.org/abs/2512.03238\n"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "환자·사용자 DP와 DP diffusion 학습",
+    "pdf_check": {
+      "id": "B18",
+      "url": "https://arxiv.org/pdf/2512.03238",
+      "checked_at_local": "2026-09-09 15:47:17",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2512.03238",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      5,
+      18,
+      68
+    ],
+    "group": "C",
+    "alias": "PFDM",
+    "venue": "CVPR 2026",
+    "priority": 13,
+    "role": "처음 출발한 personalized federated diffusion. hospital/client와 내부 patient 단위를 구분.",
+    "id": "C01",
+    "title": "Personalized Federated Training of Diffusion Models with Privacy Guarantees",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.pdf",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 104,
+        "context": "refinement를 사용한다.\n\n- https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html\n"
+      },
+      {
+        "file": "03_근접연구_재검증과_1순위_최종판단_2026-09-02.md",
+        "line": 157,
+        "context": "## 8. 주요 근거 문헌\n\n- PFDM, CVPR 2026: https://openaccess.thecvf.com/content/CVPR2026/papers/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.pdf\n- Daum et al., medical DP latent diffusion, 2024: https://arxiv.org/abs/2407.16405"
+      },
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 206,
+        "context": "\n- PFDM, CVPR 2026:\n  https://openaccess.thecvf.com/content/CVPR2026/papers/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.pdf\n- P3SGD, CVPR 2019:"
+      },
+      {
+        "file": "06_ISIC_실제_gradient_진단과_현재_방법판정_2026-09-02.md",
+        "line": 192,
+        "context": "\n- PFDM, CVPR 2026:\n  https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html\n- VDM, NeurIPS 2021:"
+      },
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 40,
+        "context": "## 3. PFDM과의 정확한 관계\n\n[PFDM (CVPR 2026)](https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html)은\nclient별 local denoiser와 server global denoiser를 결합하고, forward-noised 개별 영상을 서버에"
+      },
+      {
+        "file": "14_SetAdapter_context_반증과_주제재판정_2026-09-03.md",
+        "line": 223,
+        "context": "\n- CVPR 2026 PFDM:\n  https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html\n- EHRXDiff, CHIL 2025:"
+      },
+      {
+        "file": "16_biometric_선행충돌과_patient_exposure_tail_결과_2026-09-03.md",
+        "line": 99,
+        "context": "- CXR biometric ReID: https://arxiv.org/abs/2103.08562\n- prompt-driven memorization: https://arxiv.org/abs/2502.07516\n- 원 출발점 PFDM: https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html\n"
+      },
+      {
+        "file": "17_탈옥트렌드_팩트검증과_현1순위_신규성경계_2026-09-08.md",
+        "line": 109,
+        "context": "## 8. 확인한 1차 출처\n\n- CVPR 2026 PFDM: https://arxiv.org/abs/2504.00952\n- NeurIPS 2025 Best-of-N Jailbreaking: https://proceedings.neurips.cc/paper_files/paper/2025/hash/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Abstract-Conference.html"
+      },
+      {
+        "file": "18_CVPR_SOTA_전수대조와_투고가능성_판정_2026-09-08.md",
+        "line": 337,
+        "context": "\n- CVPR 2027 CFP: https://cvpr.thecvf.com/Conferences/2027/CallForPapers\n- PFDM, CVPR 2026: https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html\n- P3SGD, CVPR 2019: https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.pdf"
+      }
+    ],
+    "latest18": true,
+    "cvpr_tier": "3",
+    "cvpr_relation": "기반·확장 관련 문헌",
+    "group_label": "출발점인 federated diffusion과 인접 확장",
+    "pdf_check": {
+      "id": "C01",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:17",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      6
+    ],
+    "group": "C",
+    "alias": "PF-LDM",
+    "venue": "ICML 2026 FoGen workshop 관련 공개 예비 원고",
+    "role": "PFDM의 latent extension과 직접 충돌하는 선행.",
+    "title": "Personalized Federated Training of Latent Diffusion Models with Privacy Guarantees",
+    "pdf_url": "https://openreview.net/pdf?id=SBHfiFsWRV",
+    "metadata_note": "연결된 익명 PDF는 under-review 표기; main-track 채택 논문으로 표시하지 않음.",
+    "id": "C02",
+    "source_url": "https://openreview.net/pdf?id=SBHfiFsWRV",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 110,
+        "context": "diffusion과 DP prototype aggregation을 제안했다.\n\n- https://openreview.net/pdf?id=SBHfiFsWRV\n- https://virtual.aistats.org/virtual/2026/poster/13457"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "출발점인 federated diffusion과 인접 확장",
+    "pdf_check": {
+      "id": "C02",
+      "url": "https://openreview.net/pdf?id=SBHfiFsWRV",
+      "checked_at_local": "2026-09-09 15:47:17",
+      "http_status": 403,
+      "resolved_url": "https://openreview.net/pdf?id=SBHfiFsWRV",
+      "content_type": "text/html",
+      "pdf_magic": false,
+      "status": "BROWSER_CHECK_REQUIRED"
+    },
+    "link_status": "브라우저 확인 필요"
+  },
+  {
+    "sources": [
+      7
+    ],
+    "group": "C",
+    "alias": "SPIRE",
+    "venue": "AISTATS 2026 / arXiv 공개본",
+    "role": "공유 backbone과 가벼운 client personalization의 선행.",
+    "title": "SPIRE: Conditional Personalization for Federated Diffusion Generative Models",
+    "pdf_url": "https://arxiv.org/pdf/2506.12303",
+    "extra_source_url": "https://arxiv.org/abs/2506.12303",
+    "id": "C03",
+    "source_url": "https://virtual.aistats.org/virtual/2026/poster/13457",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 111,
+        "context": "\n- https://openreview.net/pdf?id=SBHfiFsWRV\n- https://virtual.aistats.org/virtual/2026/poster/13457\n- https://arxiv.org/abs/2607.16300"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "출발점인 federated diffusion과 인접 확장",
+    "pdf_check": {
+      "id": "C03",
+      "url": "https://arxiv.org/pdf/2506.12303",
+      "checked_at_local": "2026-09-09 15:47:17",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2506.12303",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      8
+    ],
+    "group": "C",
+    "alias": "FedDP-PALD",
+    "venue": "arXiv 2026-07",
+    "role": "의료 federated latent synthesis와 DP prototype aggregation. federation 확장 시 대조.",
+    "id": "C04",
+    "title": "FedDP-PALD: A Privacy-Preserving Federated Latent Diffusion Framework with Prototype Aggregation for Medical Data Synthesis",
+    "source_url": "https://arxiv.org/abs/2607.16300",
+    "pdf_url": "https://arxiv.org/pdf/2607.16300",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 112,
+        "context": "- https://openreview.net/pdf?id=SBHfiFsWRV\n- https://virtual.aistats.org/virtual/2026/poster/13457\n- https://arxiv.org/abs/2607.16300\n"
+      },
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 72,
+        "context": "| [EHRXDiff](https://arxiv.org/abs/2409.07012), [MICCAI longitudinal CLDM](https://papers.miccai.org/miccai-2025/0164-Paper2656.html) | real prior scan/EHR로 future image·embedding·report 예측 | 최초 longitudinal CXR diffusion | real patient conditioning 없이 새 synthetic patient bundle 생성 + formal patient DP |\n| [MedReID, CVPR 2025](https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html) | 의료영상의 반복-record identity/re-identification | 환자 시각 신호 발견 자체 | privacy risk/evaluator로 사용하고, set utility와 linkage risk를 함께 측정 |\n| [FedDP-PALD](https://arxiv.org/abs/2607.16300) | federated multimodal latent synthesis, DP class-level prototype aggregation | 최초 federated medical DP synthesis | full image-set output과 patient add/remove adjacency |\n| medical anonymization·privacy-enhancing sampling | 개별 영상 identity 억제, pathology 보존 | 최초 pathology-preserving anonymization | 모델 전체의 patient DP와 synthetic set distribution |"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "출발점인 federated diffusion과 인접 확장",
+    "pdf_check": {
+      "id": "C04",
+      "url": "https://arxiv.org/pdf/2607.16300",
+      "checked_at_local": "2026-09-09 15:47:17",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2607.16300",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      35
+    ],
+    "group": "D",
+    "alias": "Adaptive non-uniform timestep sampling",
+    "venue": "CVPR 2025",
+    "role": "이전 PCM·timestep 분배 후보의 신규성 대조.",
+    "id": "D01",
+    "title": "Adaptive Non-Uniform Timestep Sampling for Accelerating Diffusion Model Training",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Kim_Adaptive_Non-Uniform_Timestep_Sampling_for_Accelerating_Diffusion_Model_Training_CVPR_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_Adaptive_Non-Uniform_Timestep_Sampling_for_Accelerating_Diffusion_Model_Training_CVPR_2025_paper.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 238,
+        "context": "  https://www.nature.com/articles/s41551-025-01468-8\n- Adaptive non-uniform timestep sampling, CVPR 2025:\n  https://openaccess.thecvf.com/content/CVPR2025/html/Kim_Adaptive_Non-Uniform_Timestep_Sampling_for_Accelerating_Diffusion_Model_Training_CVPR_2025_paper.html\n- How to DP-fy Your Data, JAIR 2026:"
+      },
+      {
+        "file": "06_ISIC_실제_gradient_진단과_현재_방법판정_2026-09-02.md",
+        "line": 208,
+        "context": "  https://proceedings.mlr.press/v235/crowson24a.html\n- Adaptive non-uniform timestep sampling, CVPR 2025:\n  https://openaccess.thecvf.com/content/CVPR2025/html/Kim_Adaptive_Non-Uniform_Timestep_Sampling_for_Accelerating_Diffusion_Model_Training_CVPR_2025_paper.html\n- Learning with User-Level DP under Fixed Compute Budgets:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D01",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_Adaptive_Non-Uniform_Timestep_Sampling_for_Accelerating_Diffusion_Model_Training_CVPR_2025_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:18",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_Adaptive_Non-Uniform_Timestep_Sampling_for_Accelerating_Diffusion_Model_Training_CVPR_2025_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      52
+    ],
+    "group": "D",
+    "alias": "VDM",
+    "venue": "NeurIPS 2021",
+    "role": "노이즈 스케줄·시간 표본화의 기초. antithetic time만으로 새 방법이 아님.",
+    "pdf_url": "https://arxiv.org/pdf/2107.00630",
+    "extra_source_url": "https://arxiv.org/abs/2107.00630",
+    "id": "D02",
+    "title": "Variational Diffusion Models",
+    "source_url": "https://research.google/pubs/variational-diffusion-models/",
+    "occurrences": [
+      {
+        "file": "06_ISIC_실제_gradient_진단과_현재_방법판정_2026-09-02.md",
+        "line": 194,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html\n- VDM, NeurIPS 2021:\n  https://research.google/pubs/variational-diffusion-models/\n- VDM official antithetic implementation:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D02",
+      "url": "https://arxiv.org/pdf/2107.00630",
+      "checked_at_local": "2026-09-09 15:47:18",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2107.00630",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      57
+    ],
+    "group": "D",
+    "alias": "Blue noise",
+    "venue": "arXiv 2024 공개본",
+    "role": "noise correlation·noise-image 배치의 선행.",
+    "id": "D03",
+    "title": "Blue noise for diffusion models",
+    "source_url": "https://arxiv.org/abs/2402.04930",
+    "pdf_url": "https://arxiv.org/pdf/2402.04930",
+    "occurrences": [
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 78,
+        "context": "### 이번 reset에서 추가로 닫힌 선행 경계\n\n- [Blue Noise for Diffusion Models](https://arxiv.org/abs/2402.04930)은 training noise의 spatial\n  correlation과 mini-batch 안 noise-image rectified mapping을 이미 다룬다."
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D03",
+      "url": "https://arxiv.org/pdf/2402.04930",
+      "checked_at_local": "2026-09-09 15:47:18",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2402.04930",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      58
+    ],
+    "group": "D",
+    "alias": "Antithetic Noise",
+    "venue": "arXiv 2025 공개본",
+    "role": "z와 -z를 이용한 diffusion sampling의 선행.",
+    "id": "D04",
+    "title": "Antithetic Noise in Diffusion Models",
+    "source_url": "https://arxiv.org/abs/2506.06185",
+    "pdf_url": "https://arxiv.org/pdf/2506.06185",
+    "occurrences": [
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 80,
+        "context": "- [Blue Noise for Diffusion Models](https://arxiv.org/abs/2402.04930)은 training noise의 spatial\n  correlation과 mini-batch 안 noise-image rectified mapping을 이미 다룬다.\n- [Antithetic Noise in Diffusion Models](https://arxiv.org/abs/2506.06185)은 generation-time initial\n  noise `z,-z`를 이미 다룬다."
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D04",
+      "url": "https://arxiv.org/pdf/2506.06185",
+      "checked_at_local": "2026-09-09 15:47:18",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2506.06185",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      40
+    ],
+    "group": "D",
+    "alias": "CleanDIFT",
+    "venue": "arXiv 2024 공개본",
+    "role": "diffusion feature와 timestep 처리의 인접 연구.",
+    "id": "D05",
+    "title": "CleanDIFT: Diffusion Features without Noise",
+    "source_url": "https://arxiv.org/abs/2412.03439",
+    "pdf_url": "https://arxiv.org/pdf/2412.03439",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 308,
+        "context": "  https://arxiv.org/html/2302.13861\n- CleanDIFT:\n  https://arxiv.org/abs/2412.03439\n- HDiT:"
+      },
+      {
+        "file": "06_ISIC_실제_gradient_진단과_현재_방법판정_2026-09-02.md",
+        "line": 204,
+        "context": "  https://arxiv.org/html/2302.13861\n- CleanDIFT, CVPR 2025:\n  https://arxiv.org/abs/2412.03439\n- HDiT, ICML 2024:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D05",
+      "url": "https://arxiv.org/pdf/2412.03439",
+      "checked_at_local": "2026-09-09 15:47:18",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2412.03439",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      41
+    ],
+    "group": "D",
+    "alias": "HDiT",
+    "venue": "ICML 2024",
+    "role": "고해상도 diffusion의 구조·계산 효율 비교.",
+    "id": "D06",
+    "title": "Scalable High-Resolution Pixel-Space Image Synthesis with Hourglass Diffusion Transformers",
+    "source_url": "https://proceedings.mlr.press/v235/crowson24a.html",
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/crowson24a/crowson24a.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 310,
+        "context": "  https://arxiv.org/abs/2412.03439\n- HDiT:\n  https://proceedings.mlr.press/v235/crowson24a.html\n"
+      },
+      {
+        "file": "06_ISIC_실제_gradient_진단과_현재_방법판정_2026-09-02.md",
+        "line": 206,
+        "context": "  https://arxiv.org/abs/2412.03439\n- HDiT, ICML 2024:\n  https://proceedings.mlr.press/v235/crowson24a.html\n- Adaptive non-uniform timestep sampling, CVPR 2025:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D06",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/crowson24a/crowson24a.pdf",
+      "checked_at_local": "2026-09-09 15:47:18",
+      "http_status": 200,
+      "resolved_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/crowson24a/crowson24a.pdf",
+      "content_type": "application/octet-stream",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      54
+    ],
+    "group": "D",
+    "alias": "M2M diffusion",
+    "venue": "arXiv 2024 공개본",
+    "role": "여러 이미지의 autoregressive 생성. set output 자체의 선행.",
+    "id": "D07",
+    "title": "Many-to-many Image Generation with Auto-regressive Diffusion Models",
+    "source_url": "https://arxiv.org/abs/2404.03109",
+    "pdf_url": "https://arxiv.org/pdf/2404.03109",
+    "occurrences": [
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 69,
+        "context": "| [3D medical DP-LDM](https://arxiv.org/abs/2407.16405) | DP fine-tuned controllable medical LDM | 최초 의료 DP diffusion | 반복 2D record set과 patient-set utility |\n| [P3SGD](https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html), [user-level DP](https://arxiv.org/abs/2407.07737) | 여러 record를 user/patient gradient로 평균한 뒤 한 번 clip·noise | 최초 patient gradient·최초 user-level DP | set-valued diffusion architecture·generation·evaluation |\n| [M2M diffusion](https://arxiv.org/abs/2404.03109), ViewDiff·MultiDiff 등 | 서로 연결된 여러 이미지의 joint/autoregressive diffusion | 최초 multi-image diffusion·최초 set attention | patient adjacency, formal DP, medical set semantics |\n| [EHRXDiff](https://arxiv.org/abs/2409.07012), [MICCAI longitudinal CLDM](https://papers.miccai.org/miccai-2025/0164-Paper2656.html) | real prior scan/EHR로 future image·embedding·report 예측 | 최초 longitudinal CXR diffusion | real patient conditioning 없이 새 synthetic patient bundle 생성 + formal patient DP |"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D07",
+      "url": "https://arxiv.org/pdf/2404.03109",
+      "checked_at_local": "2026-09-09 15:47:18",
+      "http_status": 200,
+      "resolved_url": "https://arxiv.org/pdf/2404.03109",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      42,
+      55
+    ],
+    "group": "D",
+    "alias": "EHRXDiff",
+    "venue": "MIDL 2025",
+    "role": "EHR를 이용한 환자 CXR 시간 변화 예측. 종단영상 후보의 직접 선행.",
+    "id": "D08",
+    "title": "Towards Predicting Temporal Changes in a Patient’s Chest X-ray Images based on Electronic Health Records",
+    "source_url": "https://proceedings.mlr.press/v287/kyung25a.html",
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v287/main/assets/kyung25a/kyung25a.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 507,
+        "context": "추가 1차 문헌:\n\n- EHRXDiff: https://proceedings.mlr.press/v287/kyung25a.html\n- DDL-CXR: https://papers.neurips.cc/paper_files/paper/2024/file/3310034c97fab48fdbcba18f90fd5364-Paper-Conference.pdf"
+      },
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 70,
+        "context": "| [P3SGD](https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html), [user-level DP](https://arxiv.org/abs/2407.07737) | 여러 record를 user/patient gradient로 평균한 뒤 한 번 clip·noise | 최초 patient gradient·최초 user-level DP | set-valued diffusion architecture·generation·evaluation |\n| [M2M diffusion](https://arxiv.org/abs/2404.03109), ViewDiff·MultiDiff 등 | 서로 연결된 여러 이미지의 joint/autoregressive diffusion | 최초 multi-image diffusion·최초 set attention | patient adjacency, formal DP, medical set semantics |\n| [EHRXDiff](https://arxiv.org/abs/2409.07012), [MICCAI longitudinal CLDM](https://papers.miccai.org/miccai-2025/0164-Paper2656.html) | real prior scan/EHR로 future image·embedding·report 예측 | 최초 longitudinal CXR diffusion | real patient conditioning 없이 새 synthetic patient bundle 생성 + formal patient DP |\n| [MedReID, CVPR 2025](https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html) | 의료영상의 반복-record identity/re-identification | 환자 시각 신호 발견 자체 | privacy risk/evaluator로 사용하고, set utility와 linkage risk를 함께 측정 |"
+      },
+      {
+        "file": "14_SetAdapter_context_반증과_주제재판정_2026-09-03.md",
+        "line": 225,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2026/html/Patel_Personalized_Federated_Training_of_Diffusion_Models_with_Privacy_Guarantees_CVPR_2026_paper.html\n- EHRXDiff, CHIL 2025:\n  https://proceedings.mlr.press/v287/kyung25a.html\n- DDL-CXR, NeurIPS 2024:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D08",
+      "url": "https://raw.githubusercontent.com/mlresearch/v287/main/assets/kyung25a/kyung25a.pdf",
+      "checked_at_local": "2026-09-09 15:47:18",
+      "http_status": 200,
+      "resolved_url": "https://raw.githubusercontent.com/mlresearch/v287/main/assets/kyung25a/kyung25a.pdf",
+      "content_type": "application/octet-stream",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      43
+    ],
+    "group": "D",
+    "alias": "DDL-CXR",
+    "venue": "NeurIPS 2024",
+    "role": "이전 CXR와 EHR로 환자별 표현을 생성하는 비동기 multimodal fusion.",
+    "title": "Addressing Asynchronicity in Clinical Multimodal Fusion via Individualized Chest X-ray Generation",
+    "id": "D09",
+    "source_url": "https://papers.neurips.cc/paper_files/paper/2024/file/3310034c97fab48fdbcba18f90fd5364-Paper-Conference.pdf",
+    "pdf_url": "https://papers.neurips.cc/paper_files/paper/2024/file/3310034c97fab48fdbcba18f90fd5364-Paper-Conference.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 508,
+        "context": "\n- EHRXDiff: https://proceedings.mlr.press/v287/kyung25a.html\n- DDL-CXR: https://papers.neurips.cc/paper_files/paper/2024/file/3310034c97fab48fdbcba18f90fd5364-Paper-Conference.pdf\n- Conditional longitudinal radiology diffusion:"
+      },
+      {
+        "file": "14_SetAdapter_context_반증과_주제재판정_2026-09-03.md",
+        "line": 227,
+        "context": "  https://proceedings.mlr.press/v287/kyung25a.html\n- DDL-CXR, NeurIPS 2024:\n  https://papers.neurips.cc/paper_files/paper/2024/file/3310034c97fab48fdbcba18f90fd5364-Paper-Conference.pdf\n- Conditional longitudinal radiological diffusion, MICCAI 2025:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D09",
+      "url": "https://papers.neurips.cc/paper_files/paper/2024/file/3310034c97fab48fdbcba18f90fd5364-Paper-Conference.pdf",
+      "checked_at_local": "2026-09-09 15:47:19",
+      "http_status": 200,
+      "resolved_url": "https://papers.neurips.cc/paper_files/paper/2024/file/3310034c97fab48fdbcba18f90fd5364-Paper-Conference.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      44
+    ],
+    "group": "D",
+    "alias": "Longitudinal conditional LDM",
+    "venue": "MICCAI 2025",
+    "role": "불규칙 시간 간격의 longitudinal medical diffusion.",
+    "id": "D10",
+    "title": "Conditional Latent Diffusion Models for Irregularly Spaced Longitudinal Radiological Data",
+    "source_url": "https://papers.miccai.org/miccai-2025/0164-Paper2656.html",
+    "pdf_url": "https://papers.miccai.org/miccai-2025/paper/2656_paper.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 510,
+        "context": "- DDL-CXR: https://papers.neurips.cc/paper_files/paper/2024/file/3310034c97fab48fdbcba18f90fd5364-Paper-Conference.pdf\n- Conditional longitudinal radiology diffusion:\n  https://papers.miccai.org/miccai-2025/0164-Paper2656.html\n- LoCI-DiffCom: https://papers.miccai.org/miccai-2024/paper/1964_paper.pdf"
+      },
+      {
+        "file": "10_CVPR_reset_관련근접연구_새방향_2026-09-03.md",
+        "line": 70,
+        "context": "| [P3SGD](https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html), [user-level DP](https://arxiv.org/abs/2407.07737) | 여러 record를 user/patient gradient로 평균한 뒤 한 번 clip·noise | 최초 patient gradient·최초 user-level DP | set-valued diffusion architecture·generation·evaluation |\n| [M2M diffusion](https://arxiv.org/abs/2404.03109), ViewDiff·MultiDiff 등 | 서로 연결된 여러 이미지의 joint/autoregressive diffusion | 최초 multi-image diffusion·최초 set attention | patient adjacency, formal DP, medical set semantics |\n| [EHRXDiff](https://arxiv.org/abs/2409.07012), [MICCAI longitudinal CLDM](https://papers.miccai.org/miccai-2025/0164-Paper2656.html) | real prior scan/EHR로 future image·embedding·report 예측 | 최초 longitudinal CXR diffusion | real patient conditioning 없이 새 synthetic patient bundle 생성 + formal patient DP |\n| [MedReID, CVPR 2025](https://openaccess.thecvf.com/content/CVPR2025/html/Tian_Towards_All-in-One_Medical_Image_Re-Identification_CVPR_2025_paper.html) | 의료영상의 반복-record identity/re-identification | 환자 시각 신호 발견 자체 | privacy risk/evaluator로 사용하고, set utility와 linkage risk를 함께 측정 |"
+      },
+      {
+        "file": "14_SetAdapter_context_반증과_주제재판정_2026-09-03.md",
+        "line": 229,
+        "context": "  https://papers.neurips.cc/paper_files/paper/2024/file/3310034c97fab48fdbcba18f90fd5364-Paper-Conference.pdf\n- Conditional longitudinal radiological diffusion, MICCAI 2025:\n  https://papers.miccai.org/miccai-2025/0164-Paper2656.html\n- LoCI-DiffCom, MICCAI 2024:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D10",
+      "url": "https://papers.miccai.org/miccai-2025/paper/2656_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:19",
+      "http_status": 200,
+      "resolved_url": "https://papers.miccai.org/miccai-2025/paper/2656_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      45
+    ],
+    "group": "D",
+    "alias": "LoCI-DiffCom",
+    "venue": "MICCAI 2024",
+    "role": "종단영상 일관성을 사용한 infant MRI completion.",
+    "title": "LoCI-DiffCom: Longitudinal Consistency-Informed Diffusion Model for 3D Infant Brain Image Completion",
+    "id": "D11",
+    "source_url": "https://papers.miccai.org/miccai-2024/paper/1964_paper.pdf",
+    "pdf_url": "https://papers.miccai.org/miccai-2024/paper/1964_paper.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 511,
+        "context": "- Conditional longitudinal radiology diffusion:\n  https://papers.miccai.org/miccai-2025/0164-Paper2656.html\n- LoCI-DiffCom: https://papers.miccai.org/miccai-2024/paper/1964_paper.pdf\n- BrLP: https://papers.miccai.org/miccai-2024/paper/0511_paper.pdf"
+      },
+      {
+        "file": "14_SetAdapter_context_반증과_주제재판정_2026-09-03.md",
+        "line": 231,
+        "context": "  https://papers.miccai.org/miccai-2025/0164-Paper2656.html\n- LoCI-DiffCom, MICCAI 2024:\n  https://papers.miccai.org/miccai-2024/paper/1964_paper.pdf\n- BrLP, MICCAI 2024:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D11",
+      "url": "https://papers.miccai.org/miccai-2024/paper/1964_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:19",
+      "http_status": 200,
+      "resolved_url": "https://papers.miccai.org/miccai-2024/paper/1964_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      46
+    ],
+    "group": "D",
+    "alias": "BrLP",
+    "venue": "MICCAI 2024",
+    "role": "latent diffusion과 prior knowledge를 이용한 질병 진행 예측.",
+    "title": "Enhancing Spatiotemporal Disease Progression Models via Latent Diffusion and Prior Knowledge",
+    "id": "D12",
+    "source_url": "https://papers.miccai.org/miccai-2024/paper/0511_paper.pdf",
+    "pdf_url": "https://papers.miccai.org/miccai-2024/paper/0511_paper.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 512,
+        "context": "  https://papers.miccai.org/miccai-2025/0164-Paper2656.html\n- LoCI-DiffCom: https://papers.miccai.org/miccai-2024/paper/1964_paper.pdf\n- BrLP: https://papers.miccai.org/miccai-2024/paper/0511_paper.pdf\n- SPAD:"
+      },
+      {
+        "file": "14_SetAdapter_context_반증과_주제재판정_2026-09-03.md",
+        "line": 233,
+        "context": "  https://papers.miccai.org/miccai-2024/paper/1964_paper.pdf\n- BrLP, MICCAI 2024:\n  https://papers.miccai.org/miccai-2024/paper/0511_paper.pdf\n- P3SGD, CVPR 2019:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D12",
+      "url": "https://papers.miccai.org/miccai-2024/paper/0511_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:19",
+      "http_status": 200,
+      "resolved_url": "https://papers.miccai.org/miccai-2024/paper/0511_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      47
+    ],
+    "group": "D",
+    "alias": "SPAD",
+    "venue": "CVPR 2024",
+    "role": "공간 정보를 쓰는 multi-view diffusion. set attention 일반론의 선행.",
+    "id": "D13",
+    "title": "SPAD: Spatially Aware Multi-View Diffusers",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 514,
+        "context": "- BrLP: https://papers.miccai.org/miccai-2024/paper/0511_paper.pdf\n- SPAD:\n  https://openaccess.thecvf.com/content/CVPR2024/html/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.html\n- EpiDiff:"
+      },
+      {
+        "file": "14_SetAdapter_context_반증과_주제재판정_2026-09-03.md",
+        "line": 237,
+        "context": "  https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_P3SGD_Patient_Privacy_Preserving_SGD_for_Regularizing_Deep_CNNs_in_CVPR_2019_paper.html\n- SPAD, CVPR 2024:\n  https://openaccess.thecvf.com/content/CVPR2024/html/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.html\n- EpiDiff, CVPR 2024:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D13",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:19",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      48
+    ],
+    "group": "D",
+    "alias": "EpiDiff",
+    "venue": "CVPR 2024",
+    "role": "epipolar 제약을 이용한 multi-view diffusion.",
+    "id": "D14",
+    "title": "EpiDiff: Enhancing Multi-View Synthesis via Localized Epipolar-Constrained Diffusion",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Huang_EpiDiff_Enhancing_Multi-View_Synthesis_via_Localized_Epipolar-Constrained_Diffusion_CVPR_2024_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Huang_EpiDiff_Enhancing_Multi-View_Synthesis_via_Localized_Epipolar-Constrained_Diffusion_CVPR_2024_paper.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 516,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2024/html/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.html\n- EpiDiff:\n  https://openaccess.thecvf.com/content/CVPR2024/html/Huang_EpiDiff_Enhancing_Multi-View_Synthesis_via_Localized_Epipolar-Constrained_Diffusion_CVPR_2024_paper.html\n- CAMEO:"
+      },
+      {
+        "file": "14_SetAdapter_context_반증과_주제재판정_2026-09-03.md",
+        "line": 239,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2024/html/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.html\n- EpiDiff, CVPR 2024:\n  https://openaccess.thecvf.com/content/CVPR2024/html/Huang_EpiDiff_Enhancing_Multi-View_Synthesis_via_Localized_Epipolar-Constrained_Diffusion_CVPR_2024_paper.html\n- CAMEO, CVPR 2026:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D14",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Huang_EpiDiff_Enhancing_Multi-View_Synthesis_via_Localized_Epipolar-Constrained_Diffusion_CVPR_2024_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:20",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Huang_EpiDiff_Enhancing_Multi-View_Synthesis_via_Localized_Epipolar-Constrained_Diffusion_CVPR_2024_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      49
+    ],
+    "group": "D",
+    "alias": "Correspondence-Attention Alignment",
+    "venue": "CVPR 2026",
+    "role": "multi-view correspondence·attention 정렬. 이전 SetAdapter 구조 대조.",
+    "id": "D15",
+    "title": "Correspondence-Attention Alignment for Multi-View Diffusion Models",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kwon_Correspondence-Attention_Alignment_for_Multi-View_Diffusion_Models_CVPR_2026_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kwon_Correspondence-Attention_Alignment_for_Multi-View_Diffusion_Models_CVPR_2026_paper.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 518,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2024/html/Huang_EpiDiff_Enhancing_Multi-View_Synthesis_via_Localized_Epipolar-Constrained_Diffusion_CVPR_2024_paper.html\n- CAMEO:\n  https://openaccess.thecvf.com/content/CVPR2026/html/Kwon_Correspondence-Attention_Alignment_for_Multi-View_Diffusion_Models_CVPR_2026_paper.html\n- CorrAdapter:"
+      },
+      {
+        "file": "14_SetAdapter_context_반증과_주제재판정_2026-09-03.md",
+        "line": 241,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2024/html/Huang_EpiDiff_Enhancing_Multi-View_Synthesis_via_Localized_Epipolar-Constrained_Diffusion_CVPR_2024_paper.html\n- CAMEO, CVPR 2026:\n  https://openaccess.thecvf.com/content/CVPR2026/html/Kwon_Correspondence-Attention_Alignment_for_Multi-View_Diffusion_Models_CVPR_2026_paper.html\n- CorrAdapter, CVPR 2026:"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D15",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kwon_Correspondence-Attention_Alignment_for_Multi-View_Diffusion_Models_CVPR_2026_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:20",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kwon_Correspondence-Attention_Alignment_for_Multi-View_Diffusion_Models_CVPR_2026_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      50
+    ],
+    "group": "D",
+    "alias": "Align Images Before You Generate",
+    "venue": "CVPR 2026",
+    "role": "생성 전 image alignment의 선행. 다중영상 후보의 범위 제한.",
+    "id": "D16",
+    "title": "Align Images Before You Generate",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Align_Images_Before_You_Generate_CVPR_2026_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Align_Images_Before_You_Generate_CVPR_2026_paper.pdf",
+    "occurrences": [
+      {
+        "file": "04_관련근접연구_claim_matrix_2026-09-02.md",
+        "line": 520,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2026/html/Kwon_Correspondence-Attention_Alignment_for_Multi-View_Diffusion_Models_CVPR_2026_paper.html\n- CorrAdapter:\n  https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Align_Images_Before_You_Generate_CVPR_2026_paper.html\n"
+      },
+      {
+        "file": "14_SetAdapter_context_반증과_주제재판정_2026-09-03.md",
+        "line": 243,
+        "context": "  https://openaccess.thecvf.com/content/CVPR2026/html/Kwon_Correspondence-Attention_Alignment_for_Multi-View_Diffusion_Models_CVPR_2026_paper.html\n- CorrAdapter, CVPR 2026:\n  https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Align_Images_Before_You_Generate_CVPR_2026_paper.html"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "이전 생성방법 후보·노이즈·다중영상·종단영상",
+    "pdf_check": {
+      "id": "D16",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Align_Images_Before_You_Generate_CVPR_2026_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:20",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Align_Images_Before_You_Generate_CVPR_2026_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      11
+    ],
+    "group": "E",
+    "alias": "Confidential-DPproof",
+    "venue": "ICLR 2024",
+    "role": "DP 학습 실행의 비밀 증명. signed receipt만으로 실행을 증명했다는 주장 제한.",
+    "id": "E01",
+    "title": "Confidential-DPproof: Confidential Proof of Differentially Private Training",
+    "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/113ae3a9762ca2168f860a8501d6ae25-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/113ae3a9762ca2168f860a8501d6ae25-Paper-Conference.pdf",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 173,
+        "context": "threat model을 포함하려면 해당 계층 또는 TEE가 추가로 필요하다.\n\n- https://proceedings.iclr.cc/paper_files/paper/2024/hash/113ae3a9762ca2168f860a8501d6ae25-Abstract-Conference.html\n- https://petsymposium.org/popets/2026/popets-2026-0070.php"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "졸업논문 receipt·실행증명·의료 워터마킹",
+    "pdf_check": {
+      "id": "E01",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/113ae3a9762ca2168f860a8501d6ae25-Paper-Conference.pdf",
+      "checked_at_local": "2026-09-09 15:47:20",
+      "http_status": 200,
+      "resolved_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/113ae3a9762ca2168f860a8501d6ae25-Paper-Conference.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      12
+    ],
+    "group": "E",
+    "alias": "VeriDP",
+    "venue": "PoPETs 2026",
+    "role": "검증 가능한 DP 학습. 악의적 trainer threat model의 직접 선행.",
+    "id": "E02",
+    "title": "VeriDP: Verifiable Differentially Private Training",
+    "source_url": "https://petsymposium.org/popets/2026/popets-2026-0070.php",
+    "pdf_url": "https://petsymposium.org/popets/2026/popets-2026-0070.pdf",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 174,
+        "context": "\n- https://proceedings.iclr.cc/paper_files/paper/2024/hash/113ae3a9762ca2168f860a8501d6ae25-Abstract-Conference.html\n- https://petsymposium.org/popets/2026/popets-2026-0070.php\n"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "졸업논문 receipt·실행증명·의료 워터마킹",
+    "pdf_check": {
+      "id": "E02",
+      "url": "https://petsymposium.org/popets/2026/popets-2026-0070.pdf",
+      "checked_at_local": "2026-09-09 15:47:20",
+      "http_status": 200,
+      "resolved_url": "https://petsymposium.org/popets/2026/popets-2026-0070.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      13
+    ],
+    "group": "E",
+    "alias": "MedSign",
+    "venue": "MICCAI 2025",
+    "role": "병리를 고려한 의료 생성 watermarking. PP-Mark의 새 적용 기여와 구분.",
+    "id": "E03",
+    "title": "Pathology-Aware Adaptive Watermarking for Text-Driven Medical Image Synthesis",
+    "source_url": "https://papers.miccai.org/miccai-2025/0673-Paper0428.html",
+    "pdf_url": "https://papers.miccai.org/miccai-2025/paper/0428_paper.pdf",
+    "occurrences": [
+      {
+        "file": "01_독립_논문_방향_추천_순위와_근거_2026-09-02.md",
+        "line": 180,
+        "context": "fail-closed substitution/replay 판정으로 제한한다.\n\n- https://papers.miccai.org/miccai-2025/0673-Paper0428.html\n"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "졸업논문 receipt·실행증명·의료 워터마킹",
+    "pdf_check": {
+      "id": "E03",
+      "url": "https://papers.miccai.org/miccai-2025/paper/0428_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:20",
+      "http_status": 200,
+      "resolved_url": "https://papers.miccai.org/miccai-2025/paper/0428_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      69
+    ],
+    "group": "F",
+    "alias": "Best-of-N Jailbreaking",
+    "venue": "NeurIPS 2025",
+    "role": "17번 탈옥 트렌드 설명의 참고. 의료 DP 기여의 직접 선행은 아님.",
+    "id": "F01",
+    "title": "Best-of-N Jailbreaking",
+    "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Paper-Conference.pdf",
+    "occurrences": [
+      {
+        "file": "17_탈옥트렌드_팩트검증과_현1순위_신규성경계_2026-09-08.md",
+        "line": 110,
+        "context": "\n- CVPR 2026 PFDM: https://arxiv.org/abs/2504.00952\n- NeurIPS 2025 Best-of-N Jailbreaking: https://proceedings.neurips.cc/paper_files/paper/2025/hash/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Abstract-Conference.html\n- ICML 2025 Weak-to-Strong Jailbreaking: https://proceedings.mlr.press/v267/zhao25aa.html"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "탈옥 트렌드 참고: 현재 주제의 직접 선행과 별도",
+    "pdf_check": {
+      "id": "F01",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Paper-Conference.pdf",
+      "checked_at_local": "2026-09-09 15:47:21",
+      "http_status": 200,
+      "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Paper-Conference.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      70
+    ],
+    "group": "F",
+    "alias": "Weak-to-Strong Jailbreaking",
+    "venue": "ICML 2025",
+    "role": "17번 트렌드 팩트검증 참고.",
+    "id": "F02",
+    "title": "Weak-to-Strong Jailbreaking on Large Language Models",
+    "source_url": "https://proceedings.mlr.press/v267/zhao25aa.html",
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhao25aa/zhao25aa.pdf",
+    "occurrences": [
+      {
+        "file": "17_탈옥트렌드_팩트검증과_현1순위_신규성경계_2026-09-08.md",
+        "line": 111,
+        "context": "- CVPR 2026 PFDM: https://arxiv.org/abs/2504.00952\n- NeurIPS 2025 Best-of-N Jailbreaking: https://proceedings.neurips.cc/paper_files/paper/2025/hash/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Abstract-Conference.html\n- ICML 2025 Weak-to-Strong Jailbreaking: https://proceedings.mlr.press/v267/zhao25aa.html\n- CVPR 2025 multimodal attack: https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Distraction_is_All_You_Need_for_Multimodal_Large_Language_Model_CVPR_2025_paper.html"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "탈옥 트렌드 참고: 현재 주제의 직접 선행과 별도",
+    "pdf_check": {
+      "id": "F02",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhao25aa/zhao25aa.pdf",
+      "checked_at_local": "2026-09-09 15:47:21",
+      "http_status": 200,
+      "resolved_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhao25aa/zhao25aa.pdf",
+      "content_type": "application/octet-stream",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      71
+    ],
+    "group": "F",
+    "alias": "Distraction is All You Need",
+    "venue": "CVPR 2025",
+    "role": "17번 multimodal jailbreak 트렌드 참고.",
+    "id": "F03",
+    "title": "Distraction is All You Need for Multimodal Large Language Model Jailbreaking",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Distraction_is_All_You_Need_for_Multimodal_Large_Language_Model_CVPR_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Yang_Distraction_is_All_You_Need_for_Multimodal_Large_Language_Model_CVPR_2025_paper.pdf",
+    "occurrences": [
+      {
+        "file": "17_탈옥트렌드_팩트검증과_현1순위_신규성경계_2026-09-08.md",
+        "line": 112,
+        "context": "- NeurIPS 2025 Best-of-N Jailbreaking: https://proceedings.neurips.cc/paper_files/paper/2025/hash/69f3eb242c7c9df9ea2f2b66ea8b3c0f-Abstract-Conference.html\n- ICML 2025 Weak-to-Strong Jailbreaking: https://proceedings.mlr.press/v267/zhao25aa.html\n- CVPR 2025 multimodal attack: https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Distraction_is_All_You_Need_for_Multimodal_Large_Language_Model_CVPR_2025_paper.html\n- CVPR 2025 multimodal defense: https://openaccess.thecvf.com/content/CVPR2025/papers/Ghosal_Immune_Improving_Safety_Against_Jailbreaks_in_Multi-modal_LLMs_via_Inference-Time_CVPR_2025_paper.pdf"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "탈옥 트렌드 참고: 현재 주제의 직접 선행과 별도",
+    "pdf_check": {
+      "id": "F03",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Yang_Distraction_is_All_You_Need_for_Multimodal_Large_Language_Model_CVPR_2025_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:21",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Yang_Distraction_is_All_You_Need_for_Multimodal_Large_Language_Model_CVPR_2025_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  },
+  {
+    "sources": [
+      72
+    ],
+    "group": "F",
+    "alias": "Immune",
+    "venue": "CVPR 2025",
+    "role": "17번 multimodal jailbreak 방어 트렌드 참고.",
+    "id": "F04",
+    "title": "Immune: Improving Safety Against Jailbreaks in Multi-modal LLMs via Inference-Time Alignment",
+    "source_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Ghosal_Immune_Improving_Safety_Against_Jailbreaks_in_Multi-modal_LLMs_via_Inference-Time_CVPR_2025_paper.pdf",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Ghosal_Immune_Improving_Safety_Against_Jailbreaks_in_Multi-modal_LLMs_via_Inference-Time_CVPR_2025_paper.pdf",
+    "occurrences": [
+      {
+        "file": "17_탈옥트렌드_팩트검증과_현1순위_신규성경계_2026-09-08.md",
+        "line": 113,
+        "context": "- ICML 2025 Weak-to-Strong Jailbreaking: https://proceedings.mlr.press/v267/zhao25aa.html\n- CVPR 2025 multimodal attack: https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Distraction_is_All_You_Need_for_Multimodal_Large_Language_Model_CVPR_2025_paper.html\n- CVPR 2025 multimodal defense: https://openaccess.thecvf.com/content/CVPR2025/papers/Ghosal_Immune_Improving_Safety_Against_Jailbreaks_in_Multi-modal_LLMs_via_Inference-Time_CVPR_2025_paper.pdf\n- Nature 2026 patient-level audit: https://www.nature.com/articles/s41586-026-10688-0"
+      }
+    ],
+    "latest18": false,
+    "cvpr_tier": "",
+    "cvpr_relation": "",
+    "group_label": "탈옥 트렌드 참고: 현재 주제의 직접 선행과 별도",
+    "pdf_check": {
+      "id": "F04",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Ghosal_Immune_Improving_Safety_Against_Jailbreaks_in_Multi-modal_LLMs_via_Inference-Time_CVPR_2025_paper.pdf",
+      "checked_at_local": "2026-09-09 15:47:21",
+      "http_status": 200,
+      "resolved_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Ghosal_Immune_Improving_Safety_Against_Jailbreaks_in_Multi-modal_LLMs_via_Inference-Time_CVPR_2025_paper.pdf",
+      "content_type": "application/pdf",
+      "pdf_magic": true,
+      "status": "PDF_HEADER_OK"
+    },
+    "link_status": "PDF 응답 확인"
+  }
+]

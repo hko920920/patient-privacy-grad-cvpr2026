@@ -1,0 +1,70 @@
+schema_version: unitdp.owner_srswor_contract.v3
+route_id: owa_owner_srswor_rdp_replace_one_v3
+execution:
+  profile: research_benchmark
+  rng_backend: research_default
+  implementation_id: unitdp.owner_srswor_v3.train_owner_srswor_fixed_v3
+  random_coins_public: false
+privacy:
+  unit: owner
+  adjacency: replace_one_owner
+  target_epsilon: 8.0
+  delta: 1.0e-05
+mechanism:
+  sampler: uniform_fixed_size_without_replacement_owner
+  sampling_unit: owner
+  accounting_unit: owner
+  parameter_source: public_contract
+  source_dataset_size: 25
+  sample_size: 8
+  total_steps: 20
+  clipping_unit: owner
+  noising_unit: owner
+  clip_norm: 1.0
+  noise_multiplier: 3.8386964649452464
+  update_denominator: 8.0
+  empty_step_behavior: impossible_for_positive_fixed_sample_size
+  per_owner_contribution: one_clipped_vector_per_sampled_owner
+  owner_aggregation: mean_over_selected_windows_then_clip
+accountant:
+  id: sampled_without_replacement_gaussian_rdp_replace_one_dual_v1
+  rdp_orders_id: unitdp_srswor_integer_orders_v1
+  sensitivity_multiplier: 2.0
+  theorem_id: wang_balle_kasiviswanathan_2019_srswor_rdp
+  oracle_implementation_id: unitdp_spec_oracle.srswor_rdp_oracle_v3.fixed_size_srswor_epsilon_v3
+contribution_policy:
+  type: support_balanced_cap
+  max_windows_per_owner: 16
+  windows_per_owner_per_step: 8
+  scope: compile_time_public_policy
+optimization:
+  optimizer: sgd
+  learning_rate: 0.05
+  loss: cross_entropy
+  model_id: linear_24x6
+  class_weights: null
+data:
+  benchmark_profile_id: wisdm_srswor_aaai27_v3
+  benchmark_profile_sha256: 1197571b83960bced7d1003ce5b0a4f598e3905a196e3d34ac6b302dfb785304
+  base_data_profile_id: wisdm_aaai27_v1
+  base_data_profile_sha256: caa4d24930cf9a68c09ecc0ce355b1118e3c963dbe46cea097f59a4b3cfdb67a
+  dataset_id: wisdm_v1_1_stats24_v1
+  input_dim: 24
+  num_classes: 6
+  preprocessing:
+    scope: public_fixed
+    schema: unitdp.fixed_affine_preprocessor.v1
+    artifact_id: wisdm_v1_1_train_owners_1_25_stats24_standard_scaler_v1
+    artifact_sha256: 707ee3abf755a9601263d16e5f1ce8e5e9096f956f42da4d42cf57e29e6bf32f
+    source_reference_sha256: 9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e
+    input_dim: 24
+    transform: standard_scaler
+    fit_on_protected_data: false
+  public_protocol:
+    protocol_id: wisdm_v1_1_stats24_public_split_v1
+    data_preparation_implementation_id: unitdp.benchmark_data_v2.prepare_wisdm_v2
+    source_reference_sha256: 9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e
+    train_owners: 25
+    test_owners: 11
+    evaluation_scope: public_benchmark
+    full_data_conformance_sha256: b97d240f4ae397c4784efa6e41d3d1e05a57fcc54ba9bb676b0edcd580a4cc26

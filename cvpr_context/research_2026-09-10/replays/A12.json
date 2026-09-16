@@ -1,0 +1,50 @@
+{
+  "member_positive_auc": 0.9612773480740836,
+  "member_tpr_at_fpr_le_0.01": 0.491796718687475,
+  "member_tpr_at_fpr_le_0.001": 0.15286114445778312,
+  "members": 2499,
+  "nonmembers": 2499,
+  "threshold_type": "descriptive_test_ROC_not_frozen_deployment_threshold",
+  "id": "A12",
+  "mode": "official_scores_independent_exact_ROC_replay",
+  "alpha_from_shadow": 0.9,
+  "shadow_auc": 0.957537076455232,
+  "source_files": [
+    {
+      "name": "Atk_Impt_mydenoise_M_coco_real_split1_DATA_val17_split1_TRTE_train_MAXsmp_3_T_0506_145909.txt",
+      "sha256": "084720c663c65aa00d1eb5cb1128d29b0d83ab73e865e9ecea05138f3ea52d71",
+      "shape": [
+        2499,
+        5
+      ]
+    },
+    {
+      "name": "Atk_Impt_mydenoise_M_coco_real_split1_DATA_val17_split1__TRTE_test_MAXsmp_3_T_0506_145909.txt",
+      "sha256": "11c24e3d61d0263675100f306d69c9607d2e5e1a215ce38825c9cad1bf6bb63c",
+      "shape": [
+        2499,
+        5
+      ]
+    },
+    {
+      "name": "Atk_Impt_mydenoise_M_coco_real_ori_DATA_val17_TRTE_train_MAXsmp_3_T_0506_145842.txt",
+      "sha256": "0b349477f8152e7205e95019a29f89a85b221ca413ab5899f117799927964c58",
+      "shape": [
+        2499,
+        5
+      ]
+    },
+    {
+      "name": "Atk_Impt_mydenoise_M_coco_real_ori_DATA_val17_TRTE_test_MAXsmp_3_T_0506_145842.txt",
+      "sha256": "f4021de72034c828a120daeed541063c591bc7a61be7a4631216e3c83b4cc31c",
+      "shape": [
+        2499,
+        5
+      ]
+    }
+  ],
+  "author_helper_nonmember_positive_tpr_first_fpr_ge_0_01": 0.6754701880752301,
+  "skip_first_numeric_row_to_match_author_loader": true,
+  "image_feature_extraction_reproduced": false,
+  "medical_patient_attack": false
+}

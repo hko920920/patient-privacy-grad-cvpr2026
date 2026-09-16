@@ -1,0 +1,14 @@
+{
+  "rows": 79,
+  "checked_local_links": 1034,
+  "checked_pdf_page_anchors": 221,
+  "broken_links": [],
+  "timestamp_utc": "2026-09-16T05:19:31.322155+00:00",
+  "sha256": {
+    "TRACK1_CAPACITY_RESULTS_20260916.md": "6c449ccaa8cd58568015a44bc51f5df01315405c2d0d988ac51906577fb12f74",
+    "TRACK1_CAPACITY_PROTOCOL_20260916.md": "aa96a9e1dbe6aab399cd0e9259f9222b7101cd328546013b1f3a4d4d01d60761",
+    "track1_capacity_results.html": "cad5990ce4e417ecf1b160fcba640be5234f3b42df8c88eee060847acf555c22",
+    "research_state.json": "01e0276226ee54fca255297615050dbddcb1e7e3d469536d81792a13dd42412e",
+    "patient_baseline_spec.json": "af12b3066af1505a6a170887e0b33cc2240a820fb59417391bcc5471a1546112"
+  }
+}

@@ -1,0 +1,93 @@
+% 고한경 박사학위논문 작업본
+% 기준 양식: Technology_v1.14 / Template_Doctor_Dissertation
+\documentclass[doctor,korean]{sgmeta_report}
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{float}
+
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{assumption}{Assumption}[chapter]
+
+\input{notation}
+
+% -----------------------------------------------------------------------------
+% 제출 정보: 확정되는 즉시 자리표시자를 실제 정보로 교체합니다.
+% -----------------------------------------------------------------------------
+% 국문 제목은 현재 영문 제목의 작업 번역이며, 제출 전 공식 번역을 확정합니다.
+\title[korean]{신뢰할 수 있는 인공지능을 위한 주장 정합 보증: 감사 가능한 프라이버시와 안전한 공개 검증}
+\title[english]{Claim-Aligned Assurance for Trustworthy AI: Auditable Privacy and Secure Public Verification}
+
+\author[korean]{고 한 경}
+\author[english]{Hankyeong Ko}
+\author[nospace]{고한경}
+
+\adviser{김태훈}
+
+% 박사학위 논문 심사위원 5명
+% 실제 성명은 글자 사이를 ``~~~~~''로 구분해 입력합니다.
+\committeeChair{주~~~~~심~~~~~성~~~~~명}
+\committeeMemberOne{부~~~~~심~~~~~성~~~~~명}
+\committeeMemberTwo{부~~~~~심~~~~~성~~~~~명}
+\committeeMemberThree{부~~~~~심~~~~~성~~~~~명}
+\committeeMemberFour{부~~~~~심~~~~~성~~~~~명}
+
+\submissiondeadline{2026년 8월 27일}
+\examinationdate{2026년 8월 27일}
+\gradyear[english]{Aug 2026}
+\gradyear[korean]{2026년 8월}
+
+\begin{document}
+\renewcommand{\baselinestretch}{1.5}
+\selectfont 
+
+
+\newpage
+\makelists
+
+% 국문 초록
+\begin{abstract}
+    \par
+    \input{frontmatter/abstract_ko}
+
+    \vfill
+    \noindent
+    \begin{minipage}[t][20mm][b]{\textwidth}
+        \raggedright
+        {\bfseries 키워드}: 주장 정합 보증, 감사 가능한 프라이버시, 차분 프라이버시,
+        DP-SGD, 안전한 공개 검증, 생성형 AI 출처, 영지식 증명\par
+        % \\{\bfseries 학~~~~번}: 학번 입력
+    \end{minipage}
+\end{abstract}
+
+% 본문: 선행 연구 3편은 서론의 연구 궤적에만 포함하고,
+% 사후 프라이버시 감사와 PP-Mark를 두 핵심 연구 장으로 구성합니다.
+% 사전 route-registration 연구 원고는 작업기록 보존을 위해 파일로 남겨 두되
+% 최종 학위논문의 주장 축과 본문에는 포함하지 않습니다.
+\input{chapters/01_introduction}
+\input{chapters/02_post_execution_validation}
+\input{chapters/04_pp_mark}
+\input{chapters/05_conclusion}
+
+% 참고문헌: 본문에서 인용한 문헌만 출력합니다.
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+% 영문 초록
+\begin{summary}
+    \par
+    \input{frontmatter/abstract_en}
+
+    \vfill
+    \noindent
+    \begin{minipage}[t][20mm][b]{\textwidth}
+        {\bfseries keywords}: Claim-Aligned Assurance, Auditable Privacy,
+        Differential Privacy, DP-SGD, Secure Public Verification,
+        Generative-AI Provenance, Zero-Knowledge Proof\par
+        % \\{\bfseries student number}: Enter student number
+    \end{minipage}
+\end{summary}
+
+\end{document}

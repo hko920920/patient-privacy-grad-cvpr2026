@@ -1,0 +1,24 @@
+privacy_unit: owner
+mapping: reports/synthetic_owa_demo/synthetic_train_mapping.csv
+schedule_mode: fixed
+adjacency: replace_all_owner_contributions
+owner_policy:
+  type: support_balanced_cap
+  max_windows_per_owner: 16
+  windows_per_owner_per_step: 4
+  seed: 0
+mechanism:
+  sampling_unit: owner
+  clipping_unit: owner
+  noising_unit: owner
+accountant:
+  backend: rdp
+  unit: owner
+  target_epsilon: 8.0
+  delta: 1.0e-5
+training:
+  epochs: 20
+  owner_batch_size: 16
+  learning_rate: 0.08
+  max_grad_norm: 1.0
+

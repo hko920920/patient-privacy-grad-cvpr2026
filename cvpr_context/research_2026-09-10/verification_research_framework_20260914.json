@@ -1,0 +1,14 @@
+{
+  "static": {
+    "rows": 79,
+    "checked_local_links": 698,
+    "checked_pdf_page_anchors": 213,
+    "broken_links": []
+  },
+  "current_step": 2,
+  "goal_definition_complete": true,
+  "corrected_report_banners": 4,
+  "preserved_frozen_source_artifacts": 13,
+  "browser_rerun": false,
+  "new_research_experiments": 0
+}

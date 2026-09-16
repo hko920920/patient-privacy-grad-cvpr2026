@@ -1,0 +1,93 @@
+{
+  "schema": "patient-audit-design/v0.1",
+  "date": "2026-09-10",
+  "status": "DRAFT_NOT_EXECUTION_CONTRACT",
+  "implementation_status": "NOT_IMPLEMENTED",
+  "medical_membership_result": "NOT_RUN",
+  "novelty_status": "UNPROVEN",
+  "thesis_frozen_contract_modified": false,
+  "question": "Can cross-image transfer of fine-tuning-specific conditioning responses improve patient membership auditing and the comparison of protection, utility and cost?",
+  "access": {
+    "primary": "white-box target weights plus public pre-finetuning base",
+    "training_logs": false,
+    "candidate_patient_image_linkage": true,
+    "ground_truth_training_caption": false,
+    "prompt": "a frontal chest radiograph",
+    "scope": "incremental fine-tuning membership"
+  },
+  "units": ["patient_id", "k_train", "m_observed", "r_overlap", "realized_training_exposures"],
+  "scenarios": {
+    "E": "all observed member images in the training manifest",
+    "U": "all observed images excluded from training; other images of the patient included",
+    "P": "partial overlap, later extension"
+  },
+  "candidate": {
+    "name": "cross-image conditioning response transfer, provisional",
+    "observations_primary": 2,
+    "observations_extension": 5,
+    "folds": 2,
+    "fold_rule": "hash partition; swapped support/query; weight by query count",
+    "probe_dimension": 8,
+    "basis_seed": 260910,
+    "probe_initialization": "zero",
+    "optimization": "projected normalized gradient ascent on mean base loss minus target loss",
+    "steps": 6,
+    "normalized_step_size": 0.01,
+    "embedding_relative_frobenius_radius": 0.05,
+    "support_timesteps": [250, 500, 750],
+    "support_noise_per_timestep": 1,
+    "query_timesteps": [50, 250, 500, 750, 950],
+    "query_noise_per_timestep": 2,
+    "independent_support_query_noise": true,
+    "independent_cross_image_noise": true,
+    "paired_target_base_noise": true,
+    "matched_nonmember_controls_per_query_image": 2,
+    "control_matching": "target-independent public encoder; different patients; no membership or attack-score selection",
+    "control_bank_rule": "separate public nonmember bank, excluded from target and shadow training",
+    "score": "query held-out response gain minus matched-other-patient gain, averaged over swapped folds",
+    "prediction_type": "validate against frozen checkpoint scheduler",
+    "defaults_are_proposals": true,
+    "unresolved_before_execution": ["basis token and padding mask details", "feature adapter conformance", "cohort and control-bank digests", "exact power by m and overlap scenario"]
+  },
+  "cost_before_caching": {
+    "forward_per_observed_image": 156,
+    "backward_per_observed_image": 36,
+    "includes_public_base": true,
+    "includes_encoder_matching_auxiliary_fitting": false,
+    "is_wall_time_measurement": false
+  },
+  "minimum_method_comparisons": ["loss/SecMI patient pooling", "PFAMI", "CLiD", "CDI patient adaptation", "MoFit original and cross-image transfer", "GSA1/GSA2/Tracing under matched access", "Quantile with common patient calibration", "Deep Sets/moments/linear gradient Gram"],
+  "calibration": {
+    "unit": "patient",
+    "common_for_all_methods": true,
+    "score_fit_selection_calibration_test_patient_disjoint": true,
+    "primary_final_fpr": 0.01,
+    "pilot_fpr": 0.05,
+    "rank_formula": "(1 + count(calibration_nonmember_score >= candidate_score)) / (n_cal + 1)",
+    "assumption": "exchangeable nonmember patient bags within the declared evaluation population",
+    "thesis_extension_proposal": "hash reserve one third of the frozen nonmember cohort for CVPR calibration before outcomes; preserve original thesis primary analysis",
+    "extension_frozen": false,
+    "report": ["fixed-rule test TPR", "fixed-rule test FPR", "95% intervals", "AUC", "descriptive ROC TPR at 1% FPR", "independent model seed results"]
+  },
+  "stages": [
+    {"id":"D0","task":"design and aggregate metadata feasibility","status":"DESIGNED_AND_COUNTS_CHECKED"},
+    {"id":"D1","task":"feature adapters, probe and cost ledger implementation","status":"NOT_STARTED"},
+    {"id":"D2","task":"minimum two public-development non-DP LoRA models with controlled inclusion","steps_per_model_proposed":1000,"status":"NOT_STARTED","adjacent_single_patient_experiment":false},
+    {"id":"D3","task":"strong-baseline comparison, independent pilot testing and method freeze","status":"NOT_STARTED"},
+    {"id":"T","task":"existing thesis K5 utility feasibility and K10 matrix","status":"EXISTING_CONTRACT_UNCHANGED"},
+    {"id":"D4","task":"frozen CVPR extension on shared K10 checkpoints","status":"NOT_STARTED"},
+    {"id":"D5","task":"matched patient-budget privacy, utility, cost and reuse comparison","status":"NOT_STARTED"}
+  ],
+  "protection": {
+    "shared_models": ["B0", "M0", "M1-I8", "M1-G8", "M2-P8"],
+    "primary_budget_match": "M1-G8 versus M2-P8 under their K-specific patient accounting targets",
+    "I8_and_G8_are_distinct_trained_models": true,
+    "tighter_accounting_of_one_existing_checkpoint_requires_another_model": false,
+    "attack_failure_certifies_or_tightens_dp": false,
+    "attack_success_automatically_violates_dp": false,
+    "K5_attack_contract": "NOT_RUN; no automatic amendment",
+    "new_DP_training_algorithm_claimed": false
+  },
+  "stop_conditions": ["no additional membership signal beyond strong baselines", "same gain from MoFit transfer or standard linear/set statistics", "gain attributable to source, anatomy or uncontrolled inclusion confounds", "gain disappears under matched patient FPR and compute", "unseen-image claim unsupported by scenario U"],
+  "sources": ["https://arxiv.org/html/2602.22689v1", "https://arxiv.org/html/2411.12858v3", "https://proceedings.mlr.press/v235/tang24g.html", "https://arxiv.org/abs/2407.07737", "https://github.com/Stry233/SAMA"]
+}

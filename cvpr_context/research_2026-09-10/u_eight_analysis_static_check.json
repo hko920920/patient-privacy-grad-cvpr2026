@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-14",
+  "scope": "eight-patient diagnostic documentation; static links and displayed plot",
+  "rows": 79,
+  "checked_local_links": 589,
+  "checked_pdf_page_anchors": 201,
+  "broken_links": [],
+  "plot_visually_inspected": true,
+  "browser_interaction_retested": false
+}

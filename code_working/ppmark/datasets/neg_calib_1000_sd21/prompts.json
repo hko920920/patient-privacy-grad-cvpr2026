@@ -1,0 +1,211 @@
+{
+  "dataset_id": "Gustavosta/Stable-Diffusion-Prompts",
+  "dataset_split": "train",
+  "prompt_key": "Prompt",
+  "prompt_filter": "simple",
+  "prompts_seed": 2025,
+  "prompt_count": 50,
+  "images_per_prompt": 20,
+  "prompts": [
+    {
+      "prompt_id": 0,
+      "prompt_text": "door from lord of the rings"
+    },
+    {
+      "prompt_id": 1,
+      "prompt_text": "cats living in a cat house interior overview mapa design"
+    },
+    {
+      "prompt_id": 2,
+      "prompt_text": "barbarella as a robotic 8 0 s cat - girl"
+    },
+    {
+      "prompt_id": 3,
+      "prompt_text": "sketch portrait of slavoj zizek with a coca cola bottle"
+    },
+    {
+      "prompt_id": 4,
+      "prompt_text": "empty bowl with a few rice grains and broken chinese chopsticks"
+    },
+    {
+      "prompt_id": 5,
+      "prompt_text": "glowwave portrait of cat from borderlands 3"
+    },
+    {
+      "prompt_id": 6,
+      "prompt_text": "soft bokeh front shot photo of a mclaren steampunk concept car"
+    },
+    {
+      "prompt_id": 7,
+      "prompt_text": "girl sitting on a spaceship window"
+    },
+    {
+      "prompt_id": 8,
+      "prompt_text": "potrait of cat body made of multiple dogs"
+    },
+    {
+      "prompt_id": 9,
+      "prompt_text": "greg manchess mid century album cover featuring a man with a notebook"
+    },
+    {
+      "prompt_id": 10,
+      "prompt_text": "cat seahorse mermaid shapeshifter wearing a comfy sweater"
+    },
+    {
+      "prompt_id": 11,
+      "prompt_text": "a cat wearing a wig"
+    },
+    {
+      "prompt_id": 12,
+      "prompt_text": "a notepad as front door"
+    },
+    {
+      "prompt_id": 13,
+      "prompt_text": "a flower goddess"
+    },
+    {
+      "prompt_id": 14,
+      "prompt_text": "a woman sitting on a window sill looking out the window"
+    },
+    {
+      "prompt_id": 15,
+      "prompt_text": "futuristic city center with 8 9 0 j maglev train in background"
+    },
+    {
+      "prompt_id": 16,
+      "prompt_text": "risque tom raider serving table at a night cyberpunk club"
+    },
+    {
+      "prompt_id": 17,
+      "prompt_text": "a single colossal sloth hanging from a giant redwood tree"
+    },
+    {
+      "prompt_id": 18,
+      "prompt_text": "a picture of people in the bus in the car accident"
+    },
+    {
+      "prompt_id": 19,
+      "prompt_text": "man standing in front of an abandoned house in a forest"
+    },
+    {
+      "prompt_id": 20,
+      "prompt_text": "an majestic portrait of a man mixed with a black dog"
+    },
+    {
+      "prompt_id": 21,
+      "prompt_text": "portrait of a swat cat"
+    },
+    {
+      "prompt_id": 22,
+      "prompt_text": "a beautiful picture of a cat as a sushi roll"
+    },
+    {
+      "prompt_id": 23,
+      "prompt_text": "large scandinavian style houses with a rounded roof modern house"
+    },
+    {
+      "prompt_id": 24,
+      "prompt_text": "a cat merged with a dog"
+    },
+    {
+      "prompt_id": 25,
+      "prompt_text": "a animalistic woman with her skin covered in plant patterns"
+    },
+    {
+      "prompt_id": 26,
+      "prompt_text": "white haired woman in a skirt sitting on a window"
+    },
+    {
+      "prompt_id": 27,
+      "prompt_text": "romantic and fashion and love princess  of the flower with sheath dress"
+    },
+    {
+      "prompt_id": 28,
+      "prompt_text": "evil amber heard as a comic book super villain"
+    },
+    {
+      "prompt_id": 29,
+      "prompt_text": "a Belgian Blue mixed with a cat"
+    },
+    {
+      "prompt_id": 30,
+      "prompt_text": "A cat grim reaper"
+    },
+    {
+      "prompt_id": 31,
+      "prompt_text": "micheal myers looking through a window"
+    },
+    {
+      "prompt_id": 32,
+      "prompt_text": "portrait of the secretive vampire woman biker loner smiling at her cat"
+    },
+    {
+      "prompt_id": 33,
+      "prompt_text": "nicki minaj is walking like a dog"
+    },
+    {
+      "prompt_id": 34,
+      "prompt_text": "cartoonish leonardo di caprio drinking wine from a cup and laughing meme"
+    },
+    {
+      "prompt_id": 35,
+      "prompt_text": "a young girl wearing a cat hoodie balancing a a white fence"
+    },
+    {
+      "prompt_id": 36,
+      "prompt_text": "a white cat with blue eyes wearing a red formal overcoat"
+    },
+    {
+      "prompt_id": 37,
+      "prompt_text": "portrait an astronaut looking into a mirror made of the Cosmos"
+    },
+    {
+      "prompt_id": 38,
+      "prompt_text": "crystal tree splash cyberpunk"
+    },
+    {
+      "prompt_id": 39,
+      "prompt_text": "will ferrell becoming a bowl of chili"
+    },
+    {
+      "prompt_id": 40,
+      "prompt_text": "portrait of a dwarf Japanese chin dog"
+    },
+    {
+      "prompt_id": 41,
+      "prompt_text": "cute cat looking down on huge cyberpunk style city"
+    },
+    {
+      "prompt_id": 42,
+      "prompt_text": "a talking tree"
+    },
+    {
+      "prompt_id": 43,
+      "prompt_text": "cat seahorse shapeshifter"
+    },
+    {
+      "prompt_id": 44,
+      "prompt_text": "a fat cat surfing on a rainbow in space"
+    },
+    {
+      "prompt_id": 45,
+      "prompt_text": "the hogwarts express jacobite steam train"
+    },
+    {
+      "prompt_id": 46,
+      "prompt_text": "a squad riding to party in car"
+    },
+    {
+      "prompt_id": 47,
+      "prompt_text": "a man fights an explosion with a knife"
+    },
+    {
+      "prompt_id": 48,
+      "prompt_text": "a space realistic cat with big and cute eyes"
+    },
+    {
+      "prompt_id": 49,
+      "prompt_text": "michael jackson holding a huge bottle of beer"
+    }
+  ]
+}

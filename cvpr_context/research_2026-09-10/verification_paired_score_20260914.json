@@ -1,0 +1,12 @@
+{
+  "static": {
+    "rows": 79,
+    "checked_local_links": 686,
+    "checked_pdf_page_anchors": 213,
+    "broken_links": []
+  },
+  "figure_files_checked": 1,
+  "figure_visually_inspected": true,
+  "browser_rerun": false,
+  "scope": "Authored report/figure/links only; filtering UI unchanged."
+}

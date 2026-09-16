@@ -1,0 +1,208 @@
+{
+  "schema": "track1-synthetic-clipping-allocation/v1",
+  "created_utc": "2026-09-16T04:08:00Z",
+  "stage": "2_candidate_principle_filter",
+  "purpose": "Synthetic Monte Carlo only; no medical evidence, no DP noise, no AdamW utility inference.",
+  "master_seed": 20260916,
+  "clip_C": 1,
+  "pilot_draws": 2,
+  "guard_kappa": 1,
+  "allowed_final_R": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "total_cost_budgets": [
+    4,
+    8,
+    16
+  ],
+  "calibration_replicates_per_type": 8192,
+  "test_replicates_per_type": 16384,
+  "test_chunk_size": 256,
+  "dtype": "float64 CPU NumPy",
+  "families": [
+    {
+      "id": "F1_exact_discrete_outside",
+      "dimension": 2,
+      "types": [
+        {
+          "name": "radial",
+          "mean_norm": 2,
+          "kind": "rademacher_plane",
+          "radial_sd": 0.5,
+          "tangent_sd": 0,
+          "rho": 0
+        },
+        {
+          "name": "tangent",
+          "mean_norm": 2,
+          "kind": "rademacher_plane",
+          "radial_sd": 0,
+          "tangent_sd": 0.1,
+          "rho": 0
+        }
+      ],
+      "prediction": "Pilot two equal discrete samples produce zero variance half the time; diagnostic of v0 blindness, not selected after results."
+    },
+    {
+      "id": "F2_gaussian_outside_heterogeneous",
+      "dimension": 32,
+      "types": [
+        {
+          "name": "radial",
+          "mean_norm": 2,
+          "kind": "gaussian_radial_isotropic",
+          "radial_sd": 0.5,
+          "tangent_total_sd": 0
+        },
+        {
+          "name": "tangent",
+          "mean_norm": 2,
+          "kind": "gaussian_radial_isotropic",
+          "radial_sd": 0,
+          "tangent_total_sd": 0.1
+        }
+      ],
+      "prediction": "Directional allocation opportunity beyond budgets near four; finite pilot/floor/cap can still prevent gain."
+    },
+    {
+      "id": "F3_inside_heterogeneous",
+      "dimension": 32,
+      "types": [
+        {
+          "name": "high",
+          "mean_norm": 0.25,
+          "kind": "gaussian_radial_isotropic",
+          "radial_sd": 0,
+          "tangent_total_sd": 0.5
+        },
+        {
+          "name": "low",
+          "mean_norm": 0.25,
+          "kind": "gaussian_radial_isotropic",
+          "radial_sd": 0,
+          "tangent_total_sd": 0.1
+        }
+      ],
+      "prediction": "J identity mostly; geometry has no special advantage over raw variance."
+    },
+    {
+      "id": "F4_boundary_heterogeneous",
+      "dimension": 32,
+      "types": [
+        {
+          "name": "radial",
+          "mean_norm": 1,
+          "kind": "gaussian_radial_isotropic",
+          "radial_sd": 0.5,
+          "tangent_total_sd": 0
+        },
+        {
+          "name": "tangent",
+          "mean_norm": 1,
+          "kind": "gaussian_radial_isotropic",
+          "radial_sd": 0,
+          "tangent_total_sd": 0.1
+        }
+      ],
+      "prediction": "Boundary guard matters; Jacobian approximation is not an exact MSE model."
+    },
+    {
+      "id": "F5_outside_homogeneous",
+      "dimension": 32,
+      "types": [
+        {
+          "name": "same_a",
+          "mean_norm": 2,
+          "kind": "gaussian_radial_isotropic",
+          "radial_sd": 0.1,
+          "tangent_total_sd": 0.3
+        },
+        {
+          "name": "same_b",
+          "mean_norm": 2,
+          "kind": "gaussian_radial_isotropic",
+          "radial_sd": 0.1,
+          "tangent_total_sd": 0.3
+        }
+      ],
+      "prediction": "No population heterogeneity; pilot overhead and random R should lose to good fixed R."
+    },
+    {
+      "id": "F6_correlated_plane_outside",
+      "dimension": 32,
+      "types": [
+        {
+          "name": "radial_major",
+          "mean_norm": 2,
+          "kind": "gaussian_plane",
+          "radial_sd": 0.5,
+          "tangent_sd": 0.1,
+          "rho": 0.9
+        },
+        {
+          "name": "tangent_major",
+          "mean_norm": 2,
+          "kind": "gaussian_plane",
+          "radial_sd": 0.1,
+          "tangent_sd": 0.5,
+          "rho": 0.9
+        }
+      ],
+      "prediction": "Same total variance but different tangent variance; correlation and pilot direction error may hurt geometry."
+    },
+    {
+      "id": "F7_large_noise_high_dimension",
+      "dimension": 128,
+      "types": [
+        {
+          "name": "same_a",
+          "mean_norm": 2,
+          "kind": "gaussian_radial_isotropic",
+          "radial_sd": 0.3535533905932738,
+          "tangent_total_sd": 3.984344362627307
+        },
+        {
+          "name": "same_b",
+          "mean_norm": 2,
+          "kind": "gaussian_radial_isotropic",
+          "radial_sd": 0.3535533905932738,
+          "tangent_total_sd": 3.984344362627307
+        }
+      ],
+      "prediction": "Large perturbations invalidate small-error justification; noise-dominant refers MC noise, not added DP Gaussian noise."
+    }
+  ],
+  "type_weights": [
+    0.5,
+    0.5
+  ],
+  "allocation": {
+    "raw_proxy": "||p1-p2||^2/2",
+    "geometry_proxy": "raw if |norm(pmean)-C| <= kappa*sqrt(raw); else J at pmean, identity inside, projected C/norm outside",
+    "controller": "R=smallest allowed level >= min(16,max(1,sqrt(proxy/lambda))); zero proxy -> R=1",
+    "lambda_calibration": "Independent public synthetic calibration. Bisection selects largest expenditure not exceeding target total mean cost if attainable; report quantized slack. No test scores used.",
+    "final_draws": "Fresh independent of both pilot gradients and lambda calibration; within a test replicate common final draw bank across methods."
+  },
+  "comparators": [
+    "fixed R=1,2,4,8,16 (no pilot)",
+    "raw-variance v0 with same two pilot draws",
+    "clipping-geometry v0",
+    "public-calibration best randomized fixed-R policy matched to each adaptive calibration cost; report test realized mismatch",
+    "finite-risk oracle by known type from independent calibration MSE curves, with and without charged two-draw overhead; diagnostic only"
+  ],
+  "oracle_and_fixed_policy": "Enumerate deterministic R pair (oracle type-aware) or single fixed R. Select convex mixture of at most two policies minimizing calibration mean clipped MSE subject expected cost <= cap. Random mixture independent of all pilot/final draws and labels. No test tuning.",
+  "outputs": [
+    "per-family/method/budget clipped MSE, MC SE, actual cost, R frequency, guard rate",
+    "paired test MSE differences versus calibration-selected matched fixed mixture, with 95% MC interval (not patient or medical CI)",
+    "preclip mean error vector/norm and coordinate z diagnostics plus conditional-expectation identity",
+    "all fixed curves and oracle bounds",
+    "break-even mathematics and interpretation"
+  ],
+  "no_posthoc_rescue": "After results no changes to kappa/C/families/R/seed; preserve failures. No chosen-best medical claims.",
+  "scope": "Users are two equally weighted synthetic gradient distributions. Privacy accountant is not run. Variable compute is only an internal cost count; no walltime/privacy guarantee established.",
+  "code_binding": "Execution will hash protocol plus exact script before calculation and preserve immutable result artifacts."
+}

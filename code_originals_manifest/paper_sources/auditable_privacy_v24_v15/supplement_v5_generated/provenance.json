@@ -1,0 +1,118 @@
+{
+  "builder": {
+    "path": "scripts/build_audit_v5_tables.py",
+    "sha256": "ec8da79eb1123fd218ea73b65dd23d07986fb87f970a54160ddb36dbcd7b82b2"
+  },
+  "claims": {
+    "p0_claims": {
+      "contract_tests": 83,
+      "controlled_probe_cases": 31,
+      "controlled_probe_unsafe_positives": 0,
+      "controlled_probe_verifier_checks": 394,
+      "retrospective_incidents": 10,
+      "retrospective_verifier_checks": 176,
+      "uci_aggregate_checks": 31,
+      "uci_confirmatory_runs": 5,
+      "uci_full_checks_per_run": 49,
+      "uci_portable_checks_per_run": 38,
+      "wisdm_full_checks": 38,
+      "wisdm_portable_checks": 35
+    },
+    "retrospective_checks": 176,
+    "retrospective_incidents": 10,
+    "uci_decision_signature": [
+      [
+        "window",
+        "ALLOWED",
+        "DIRECT",
+        1,
+        true
+      ],
+      [
+        "event",
+        "BLOCKED_UNVERIFIED",
+        "UNDERSPECIFIED",
+        null,
+        false
+      ],
+      [
+        "owner",
+        "BLOCKED_UNVERIFIED",
+        "UNDERSPECIFIED",
+        null,
+        false
+      ]
+    ],
+    "uci_runs": 5,
+    "uci_statistics": {
+      "pipeline_seconds": {
+        "max": 11.621540700085461,
+        "mean": 11.290845440141856,
+        "min": 11.052159600425512,
+        "sample_sd": 0.22244389621629798,
+        "values": [
+          11.23375689983368,
+          11.052159600425512,
+          11.621540700085461,
+          11.15564370015636,
+          11.39112630020827
+        ]
+      },
+      "test_accuracy": {
+        "max": 0.848320325755005,
+        "mean": 0.8048863250763489,
+        "min": 0.7767220902612827,
+        "sample_sd": 0.03154291798333112,
+        "values": [
+          0.7869019341703427,
+          0.848320325755005,
+          0.8282999660671869,
+          0.7767220902612827,
+          0.7841873091279267
+        ]
+      },
+      "test_macro_f1": {
+        "max": 0.8409942110248653,
+        "mean": 0.7795305771324463,
+        "min": 0.7180298270845049,
+        "sample_sd": 0.05043003088249497,
+        "values": [
+          0.7688270387291246,
+          0.8409942110248653,
+          0.8198321579464135,
+          0.7180298270845049,
+          0.7499696508773237
+        ]
+      },
+      "train_accuracy": {
+        "max": 0.8550054406964092,
+        "mean": 0.8219804134929272,
+        "min": 0.7838683351468988,
+        "sample_sd": 0.027665653689887104,
+        "values": [
+          0.8408596300326442,
+          0.8550054406964092,
+          0.8208650707290533,
+          0.7838683351468988,
+          0.80930359085963
+        ]
+      }
+    }
+  },
+  "content_sha256": "ce817c661868e1413a42d19d76149d86cfdc3355afb48f68d29c2853e69dd5e2",
+  "inputs": {
+    "reports/audit_retrospective_failures_v5_001/incidents.csv": "c92e14383d78a0fa4d20023635b0392d4b13986176ad84a5219dc57bdd686dc0",
+    "reports/audit_retrospective_failures_v5_001/independent_verification.json": "fa049f7389118b1a12f9b51aa6fae104184d00e0dc376fae5ed72f854917fbd4",
+    "reports/audit_v5_p0_gate_001/gate.json": "f96796d43d35df898883c1968561150c87e83af2a0e35b2d2a42b68dbe82d1f0",
+    "reports/uci_har_v5_multirun_001/confirmatory_metrics.csv": "9523e1772a0a523b067f6c4b3903ea08c128014bebf46187702468ff528bc2c8",
+    "reports/uci_har_v5_multirun_001/confirmatory_summary.json": "e222fa63b672dc2a9810755d492ce0314668aaa758179c92e84dd5e6e95d97d8"
+  },
+  "outputs": {
+    "retrospective_incidents.tex": "a7effc73f53a3aed2b884bc081f102100ed248b862a76eaef2757fd0857877c2",
+    "uci_confirmatory_runs.tex": "259df20c4f721c5ce831f04c6ce02fafec00a29b6858c918a65f07bf0d483855",
+    "uci_decisions.tex": "77676c24a73a8a5001693d38bae514af680a052b33021832b0541338f5707516",
+    "v5_macros.tex": "9b519942b96b2b2da7e6c4a37572e429cab1b8960e74a4d3c956f54ce77011e8",
+    "verification_surface.tex": "39d63efadb3d67d41381eaac23d00d81215356a193650125015b42aa8f0d9548"
+  },
+  "schema_version": "audit_v5_generated_tables_v1"
+}

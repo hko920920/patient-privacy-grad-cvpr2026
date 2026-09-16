@@ -1,0 +1,229 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>졸논에서 CVPR까지: 목적 중심 연구 재설계</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>졸업논문에서 CVPR까지: 목적을 중심으로 다시 연결한 연구 설계</h1>
+<p><strong>후속 근거:</strong> <a href="clipping_observation_local_results.html">최소 적용 검증 결과</a>. 기존 문턱에서는 차이가 없었고, 별도 활성 작동 대조에서 E/U 관측 순서가 다른 실제 사례를 확인했다. 이는 아래 큰 보호 비교 질문을 위한 조건부 근거이며, 실용적 보호 설정·MIA·논문 기여의 입증은 남아 있다.</p>
+<p>2026-09-15. 사용자의 “큰 목표를 향해 설계하고 추론하라”는 지시에 따른 현재 연구 구조다. <strong>문제는 유지하고, 다음 작업을 고르는 기준을 개별 실험에서 논문의 주장으로 되돌린다.</strong> 기존 실험 결과·학습 계약을 변경한 기록이나 새 기여의 실증 완료 선언은 아니다.</p>
+<p><strong>후속 구체화:</strong> <a href="protection_observation_claim.html">보호 연산·E/U 관측·기존 공격의 정확한 연결과 후보 설계</a>. 아래 큰 구조를 유지하면서 clipping 순서의 조건부 영향과 실제 AdamW에서 필요한 검증을 좁혔다. 이는 원문·수식·코드 대조의 결과이며 의료 보호 비교의 실증 완료가 아니다.</p>
+<p><a href="purpose.html">원래 목적</a> · <a href="thesis_alignment.html">기존 병행 구조</a> · <a href="research_framework.html">네 단계</a> · <a href="report.html">선행 검토</a></p>
+<h2>1. 이미 있던 큰 그림과 실제로 이탈한 지점</h2>
+<p>졸업논문의 큰 주제는 <strong>의료 생성모델의 프라이버시와 생성 출처 주장을 실제 근거에 맞게 검증하는 것</strong>이다. 의료 통합안은 다음 연결을 갖고 있었다.</p>
+<table>
+<thead>
+<tr>
+<th>연결</th>
+<th>답해야 하는 질문</th>
+<th>성과의 역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>학습 실행 → 환자 보호 주장</td>
+<td>image-DP 실행 근거가 어떤 patient-level 주장을 허용하는가?</td>
+<td>보호 단위·회계·실행 조건의 타당성</td>
+</tr>
+<tr>
+<td>보호 주장 → 모델 선택</td>
+<td>기존 모델을 재사용할 수 있는가, 직접 patient-DP 재학습이 필요한가?</td>
+<td>유효한 보장 아래 의료 효용·경험적 노출·추가 비용 비교</td>
+</tr>
+<tr>
+<td>보호 근거 → 정확한 모델</td>
+<td>유효한 근거가 실제 배포 checkpoint를 가리키는가?</td>
+<td>모델과 감사 결과의 결속</td>
+</tr>
+<tr>
+<td>모델 → 생성 이미지</td>
+<td>출처 증거와 이미지·생성 문맥이 일치하는가?</td>
+<td>PP-Mark 및 증거 교체·잘못된 조합 검증</td>
+</tr>
+</tbody>
+</table>
+<p>DP와 PP가 하나의 수학적 보장으로 합쳐진다는 뜻은 아니다. 서로 다른 주장의 근거가 같은 대상에 올바르게 연결되는지가 통합 문제다.</p>
+<p>활성 서론의 RQ1–RQ3와 의료 통합안의 RQ1–RQ4는 다른 문서 상태다. 의료 통합안을 이미 완성된 본문·결과로 설명하지 않는다. 근거는 <a href="../../chapters/01_introduction.tex">활성 서론</a> 31–59, 292–305행과 <a href="../../notes/unified_private_image_assurance_gap_and_milestones_2026-08-31.md">의료 통합 전환안</a> 514–526행이다.</p>
+<p>CVPR은 이 전체 중 <strong>환자 노출을 어떻게 평가해야 보호 비교에 의미 있는 근거가 되는가</strong>를 심화할 자리였다. 그런데 18번 이후 검토에서 “새 환자 공격법”이 중심으로 올라왔고, 실제 작업은 특정 점수·환자 반응의 원인 분석으로 더 좁아졌다. 원 설계에도 있던 “보호 비교에 어떤 정보를 더하는가”가 뒤로 밀렸다. <a href="purpose.html">목적 확인</a>, <a href="design.html">기존 설계</a>, <a href="../19_졸논_CVPR_공통실험_재사용과_분기계획_2026-09-09.md">병행 계획</a>.</p>
+<p>따라서 다음 과제는 R 후보 개선이나 개입 실험 추가에서 정하지 않는다. 먼저 이 큰 주장에 필요한 빈칸을 정한다.</p>
+<h2>2. 다시 잡은 CVPR의 중심 질문</h2>
+<p><strong>감사자가 가진 영상이 실제 학습 영상과 다를 때, 환자 참여·노출을 어떻게 평가해야 의료 생성모델의 보호 방법을 타당하게 비교할 수 있는가?</strong></p>
+<p>이를 현재 가장 우선해서 구체화할 논문 방향으로 둔다. 이미 검증된 신규 기여나 투고 형식의 확정은 아니다. 연구 목표인 U를 유지하면서, 판별 성능 개선의 용도를 보호 평가에 연결한다.</p>
+<ul>
+<li>졸업논문은 <strong>정당한 환자 보호 주장과 모델 재사용·재학습 판단, 출처 근거의 연결</strong>을 완성한다.</li>
+<li>CVPR은 <strong>제한된 보유 사진으로 얻은 평가가 어떤 환자 노출을 측정하며, 보호 비교의 결론이 그 관측 조건에 얼마나 의존하는지</strong>를 밝히고 필요한 평가·방법을 제안한다.</li>
+<li>새 공격은 이 문제를 기존 방법으로 충분히 평가할 수 없을 때 만드는 수단이다. 중요한 평가 발견과 이를 다루는 설계가 성립하면 그 기여도 검토한다.</li>
+</ul>
+<p>단순히 “공격 실패가 안전을 증명하지 않는다”, “환자별로 여러 장을 보자”, “학습 사진과 보유 사진이 다르다”를 새 기여로 쓰지 않는다. <strong>특정 보호·평가 구조에서 발생하는 구체적인 잘못된 비교 또는 적용 범위 문제와, 그것을 바로잡는 설계</strong>까지 나와야 한다.</p>
+<h2>3. PP처럼 실험 전에 연결할 논리</h2>
+<p>PP에서 가져올 것은 “논리만 세우면 성공한다”는 확신이 아니다. 문제의 구조와 기존 공격이 만나는 지점을 먼저 좁히고, 제안 설계가 그 관계를 어떻게 바꾸는지 설명하는 순서다. <a href="stage2_design_gap_reset.html">실제 PP 기록을 대조한 정정</a>.</p>
+<p>현재 도메인에서는 다음과 같은 연결을 검토할 수 있다.</p>
+<table>
+<thead>
+<tr>
+<th>논리의 고리</th>
+<th>현재 근거와 설계적 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>보호의 대상</td>
+<td>patient-DP는 정의한 인접 관계 아래 환자의 전체 학습 기여를 보호한다. image-DP 환산에는 기여 상한과 회계 조건이 필요하다.</td>
+</tr>
+<tr>
+<td>공격이 실제 보는 것</td>
+<td>이미지 MIA는 주어진 이미지의 학습 포함을, 환자 확장은 주어진 후보 묶음으로 환자 참여를 판별한다. U에서는 양성 환자의 후보 이미지도 image nonmember다.</td>
+</tr>
+<tr>
+<td>자동으로 성립하지 않는 연결</td>
+<td>특정 후보 영상에서 공격이 약해졌다는 사실을 다른 영상 조건이나 환자 전체의 낮은 노출로 그대로 옮길 수는 없다. 이는 원래 이미지 MIA의 오답이 아니라 다른 질문으로 해석하는 문제다.</td>
+</tr>
+<tr>
+<td>검토할 구체적 가설</td>
+<td>학습·보호 방식이 파일 고유 흔적과 다른 동일 환자 영상으로 전달되는 흔적을 서로 다르게 바꾼다면, E에서의 보호 비교가 U에서도 같은 결론을 주리라는 보장은 없다.</td>
+</tr>
+<tr>
+<td>바꾸려는 설계</td>
+<td>보호 방식과 관측 조건을 분리해 비교하고, 각 조건의 강한 기존 공격·보조 정보·환자 보정을 맞춘 뒤 어떤 보호 판단이 지지되는지 보고한다.</td>
+</tr>
+<tr>
+<td>논문이 추가해야 할 것</td>
+<td>실제 의료 생성모델에서 반복되는 조건 의존성 또는 비교 오류를 규명하고, 표준 보정·집계로 충분한 범위와 추가 설계가 필요한 범위를 구별한다.</td>
+</tr>
+</tbody>
+</table>
+<h3>왜 이런 결과가 논리적으로 가능한가</h3>
+<p>설명용 모형에서 영상 공격의 patient-member와 patient-nonmember 점수 분포의 평균 차이를 다음처럼 나눠 볼 수 있다.</p>
+<ul>
+<li>E에서의 차이: 파일에 특이적인 성분 a + 같은 환자의 다른 영상에도 전달되는 성분 b</li>
+<li>U에서의 차이: 전달되는 성분 b</li>
+</ul>
+<p>두 보호 방식의 변화가 a와 b에 항상 같은 비율로 작용한다는 추가 가정은 없다. 예를 들어 방식 A의 (a,b)가 (0.20,0.00), 방식 B가 (0.05,0.08)이라면 E 차이는 A가 더 크지만 U 차이는 B가 더 크다. 같은 분산의 정규 점수 분포를 가정하면 같은 FPR에서의 TPR 순서도 이 차이의 순서를 따른다.</p>
+<p><strong>이는 가능한 비교 반전을 보여주는 설명용 반례이며, 측정값·새 정리·DP 메커니즘의 구성·실제 보호 방식의 성능 예측이 아니다.</strong> 실제 점수에 이런 두 성분이 식별 가능하다는 것도 아직 입증하지 않았다. 논리적으로 확보되는 것은 “E에서 얻은 상대 비교를 U에 자동 이전할 수 없다”는 범위다.</p>
+<p>다음으로 원문과 모델의 학습 구조에서 확인할 것은 <strong>어떤 보호 방식·공격 점수가 왜 이런 비대칭을 만들 것으로 예상되는가</strong>다. 이 고리를 실제 방식에 연결해야 PP와 같은 구체화가 된다. 단순한 기호 분해만으로 설계가 준비됐다고 하지 않는다. 반대로 이 연결을 검토하기 전에 모든 강한 방법의 실패를 실험으로 확정할 필요도 없다.</p>
+<h2>4. 선행은 큰 주장에 맞춰 읽고 배치한다</h2>
+<table>
+<thead>
+<tr>
+<th>가까운 연구</th>
+<th>이미 다루는 것</th>
+<th>이번 질문에서 확인할 경계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ULS/ELS·tight group accounting</td>
+<td>보호 단위, 기여 수, 직접 user-DP와 record 기반 회계·효율</td>
+<td>단순 환산·환자 clipping은 신규성이 아니다. 유효한 보장과 경험적 평가 조건을 구분한다.</td>
+</tr>
+<tr>
+<td>MoFit·CDI·Quantile MIA</td>
+<td>이미지·집합 판별, conditioning, 참조·임계값 보정</td>
+<td>해당 방법이 맞게 답하는 질문을 인정한 뒤, U 환자 목적과 보호 비교로 옮길 때의 조건을 대조한다.</td>
+</tr>
+<tr>
+<td>User Inference·FACE-AUDITOR</td>
+<td>사용자 단위 추론, 직접 학습하지 않은 동일 사용자 자료 활용</td>
+<td>U·사용자 묶음 자체의 최초성은 제외한다. 의료 생성과 보호 비교에서 추가되는 질문을 특정한다.</td>
+</tr>
+<tr>
+<td>환자 위험·counterfactual influence 연구</td>
+<td>위험의 이질성, 자기·타 자료에 대한 학습 영향</td>
+<td>꼬리 위험·환자 제거·교차 영향 행렬 자체를 새 기여로 세지 않는다.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="index.html#B04">ULS/ELS 검토</a>, <a href="index.html#B06">group 회계 검토</a>, <a href="index.html#X01">CDI 검토</a>, <a href="index.html#X12">MoFit 검토</a>, <a href="index.html#A09">Quantile 검토</a>, <a href="index.html#A01">환자 위험 검토</a>, <a href="spec_sources/primary_user_inference_20260915b/user_inference_emnlp2024.pdf">User Inference 원문</a>, <a href="stage2_design_gap_reset.html">최근 원문 대조</a>.</p>
+<p>이 표는 선행 전반의 공통 실패를 확정한 것이 아니다. <strong>서로 다른 연구가 해결한 부분을 조합할 때, 어떤 환자 보호 결론까지 정당하게 낼 수 있는지</strong>를 조사할 구조다. 관측 영상의 대표성·촬영 조건·보조 정답 유무는 이 질문의 하위 후보이지 각각 자동으로 새 연구 주제가 아니다.</p>
+<h2>5. 구체적인 설계 골격</h2>
+<p>연구자가 평가의 정답을 구성하는 권한과, 감사자가 판별에 쓰는 접근권을 분리한다. 내부자도 노출 평가에 MIA를 사용할 수 있다. 감사자의 소속보다 <strong>보유 영상과 실제 학습 기여의 불일치, 허용된 모델·보조 정보</strong>가 핵심이다.</p>
+<p>현재 구현은 denoiser/gradient에 접근하는 SD2.1 LoRA 계열이다. “전체 train manifest를 모른다”가 “출력 API만 쓸 수 있다”를 뜻하지 않는다. 현재 결과를 black-box 환자 단독 감사 성능으로 설명하지 않는다. U-fit은 보조 환자 영상·참여 정답을 사용하므로 그 정보가 있는 조건의 비교이며, 환자 본인이 자기 사진만 가진 조건과 구별한다.</p>
+<table>
+<thead>
+<tr>
+<th>고정할 항목</th>
+<th>설계 원칙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주평가</td>
+<td>U에서 환자 참여를 판별하고 보호 방식 사이의 경험적 노출을 비교한다.</td>
+</tr>
+<tr>
+<td>E의 역할</td>
+<td>참여 환자에게는 해당 학습에 쓴 사진을 제공하는 비교 조건이다. 비참여 환자의 비교 사진과 환자 제거 모델에서의 해당 사진은 그 모델의 image nonmember다. E 성공을 기다린 뒤 U를 붙이는 순서가 아니다.</td>
+</tr>
+<tr>
+<td>보호 축</td>
+<td>비DP, image-DP, 유효하게 환산한 image-DP, 직접 patient-DP의 역할을 구분한다. 같은 숫자 ε가 아니라 같은 보호 단위·허용 보장으로 비교한다.</td>
+</tr>
+<tr>
+<td>관측 축</td>
+<td>E/U를 분리한다. 부분 겹침·대표성 변화는 중심 가설에 필요한 경우만 추가한다.</td>
+</tr>
+<tr>
+<td>공정한 공격</td>
+<td>동일 접근·후보 수·보조 정답·계산 비용에서 강한 기존 점수와 환자 집계·보정을 제공한다. 공격 알고리즘을 부당하게 고정해 적응 가능한 기존 방법을 약하게 만들지 않는다.</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>환자 단위 오탐과 검출, 관측 조건에 따른 비교의 변화, 의료 효용, 학습·감사·재사용 비용을 서로 구분해 보고한다.</td>
+</tr>
+<tr>
+<td>필요한 추가 분석</td>
+<td>변화가 표준 U 적합·보정으로 해소되는지, 데이터 구성 때문인지 먼저 판단한다. 인과 기전을 주장할 때 그 주장에 필요한 개입을 설계한다.</td>
+</tr>
+</tbody>
+</table>
+<p>개발자에게 여러 모델을 만들 권한이 있다는 것과 외부 감사자가 그 제거 모델을 입력으로 갖는다는 것은 다르다. 최근 제거 실험은 연구자의 설명 자료이며, 실제 감사법의 입력으로 승격하지 않는다.</p>
+<p>공격들을 늘려도 환자 전체의 “참 위험”을 완전히 알아내거나 formal ε를 실측 인증할 수는 없다. 새 설계가 개선할 대상은 <strong>명시된 정보 조건에서 측정 가능한 노출과 보호 비교의 해석</strong>이다.</p>
+<h2>6. 어떤 결과가 논문으로 연결되는가</h2>
+<table>
+<thead>
+<tr>
+<th>실제로 확인되는 결과</th>
+<th>가능한 논문 주장과 다음 판단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기존 비교를 다른 관측 조건에 적용할 때, 정의한 평가 대상에 비추어 노출 감소를 일관되게 과대·과소평가하고 이를 구분하는 설계가 설명·판단을 개선</td>
+<td>평가·분석 기여를 중심으로 구체화한다. 단순 E/U 표만으로 충분하다고 보지 않는다.</td>
+</tr>
+<tr>
+<td>강한 기존 방법의 공정한 적응 뒤에도 특정 관측 문제가 남고, 해결 원리가 설명되는 방법이 개선</td>
+<td>새 공격/감사법을 그 문제의 해결 수단으로 추가한다. 성능·비용 기여는 해당 조건에서 비교한다.</td>
+</tr>
+<tr>
+<td>표준 U 적합·보정으로 차이가 해소되고 중요한 추가 발견이 없음</td>
+<td>기존 도구를 졸논에 사용한다. 그 사실만으로 CVPR 새 방법을 주장하지 않고, 큰 질문의 다른 구체적 가정을 재검토한다.</td>
+</tr>
+<tr>
+<td>조건을 맞추니 최초 예상한 차이가 없음</td>
+<td>선택한 가설을 수정한다. 환자 보호 연구 전체가 불가능하다거나 같은 점수 변형을 계속해야 한다는 결론은 아니다.</td>
+</tr>
+</tbody>
+</table>
+<p>CVPR은 새 공격의 무조건적 우월성이나 보호 순위 반전을 의무 결과로 삼지 않는다. 대신 기존 지식에 더하는 구체적 발견·해결책과 중요성이 필요하다.</p>
+<h2>7. 지금까지 한 실험은 어디에 쓰이는가</h2>
+<ul>
+<li>기존 공격 추출·환자 집계·E/U 분할과 비용 측정은 앞으로 재사용할 구현 기반이다.</li>
+<li>보조 U 정답을 준 기존 판별기의 회복은 접근권과 적응 조건을 비교에 포함해야 한다는 개발 근거다. 일반적인 E→U 실패를 확정한 결과는 아니다.</li>
+<li>두 환자 제거의 대응 반응은 학습 영향과 다른 환자 동반 변화를 혼동하지 않도록 하는 제한적 진단이다. 이를 계속 분해하는 일이 현재의 최우선 과제는 아니다.</li>
+<li>최근 모델은 비DP 개발 모델이다. 이 결과로 DP 보호 방식의 효용·노출·비용 비교나 의료 PP 통합을 완료했다고 할 수 없다.</li>
+<li>열어 본 development/selection 결과는 개발 자료로 남긴다. 아직 쓰지 않은 calibration/test를 설계 선택에 사용하지 않는다.</li>
+</ul>
+<p>구체 수치와 한계는 <a href="cdi_eu_comparison_results.html">E/U 결과</a>, <a href="mofit_medical_results.html">의료 MoFit</a>, <a href="stage2_cross_patient_intervention.html">두 환자 개입</a>에 보존한다. 미완료 MoFit 확대·noise 반복·추가 환자 제거를 자동 대기열에서 내리고, 선택된 주장에 필요할 때만 다시 배치한다.</p>
+<h2>8. 졸논과 CVPR의 실제 공통·분기</h2>
+<p>졸논의 full M0/K5·K10·model-bound receipt·의료 PP 통합은 여전히 남아 있다. 최근 CVPR 파일럿의 진행과 이 상태를 혼동하지 않는다. <a href="../../CURRENT_STATUS.md">현재 실행 상태</a>.</p>
+<p>NIH 원자료, 환자 mapping, 전처리, trainer/accountant와 조건이 같은 checkpoint·생성물·효용 결과는 공유한다. 다만 U에 필요한 미학습 동일 환자 영상이 남는지와 감사 분할이 맞는지는 <strong>큰 학습 전에</strong> 맞춰 볼 중요 항목이다. 기존 K5/K10을 조용히 바꾸지 않고, 일치하는 결과만 공유한다.</p>
+<p>졸논 고유 작업은 exact-model receipt와 PP-Mark 결속·통합 검증이다. CVPR 고유 작업은 위 환자 평가 질문의 독립적인 발견과 필요한 방법·분석이다. 졸논의 완료 조건에 새 공격 SOTA나 CVPR 채택을 넣지 않는다.</p>
+<p>현재 선택된 이미지 예산의 M1-I8과 환자 예산에 맞춰 더 강한 noise로 학습할 M1-G8은 다른 모델이다. 동일 checkpoint의 보장 환산과 별도 모델 재학습을 구분하며, “환산이 모델을 더 보호했다”거나 총 학습비 전체를 재사용 절감비로 세지 않는다.</p>
+<h2>9. 다음 작업을 고르는 기준과 현재 위치</h2>
+<p><strong>현재는 2번의 논문 수준 설계를 다시 연결한 상태다.</strong> 목표 고정은 유지한다. 이 문서에 후보 설계가 있다고 해서 근거 있는 최종 방법과 4번 검증이 완료된 것은 아니다.</p>
+<p>바로 다음 설계 작업은 다음 한 장을 채우는 것이다.</p>
+<ol>
+<li>보호 비교에서 바로잡으려는 구체적인 판단 한 가지.</li>
+<li>그 판단을 현재 어떤 기존 방법·가정으로 하고 있는지에 대한 원문 근거.</li>
+<li>특정 보호 방식과 U 관측 조건을 연결한 예상 반응 및 그 이유.</li>
+<li>표준 방법으로 해결 가능한 부분과 새로 추가할 부분.</li>
+<li>둘을 구별해 논문 주장에 직접 답하는 최소한의 증거.</li>
+</ol>
+<p>이 순서로 <strong>선행의 공식·설계와 실제 보호 메커니즘을 연결하는 검토</strong>를 먼저 한다. 기존 실험의 작은 미해결점 전부를 소거하는 것은 종료 조건이 아니다. 설계 검토는 약 30–60분 규모로 먼저 범위를 제한하며, 새 GPU 작업은 구체적인 연산량을 정한 뒤 별도로 시간을 산정한다. 이 시간은 연구 성공이나 전체 실험 완수 보장이 아니다.</p>
+<p>앞으로 각 작업을 시작할 때 “어느 논문 주장에 필요한가, 무엇을 판별하는가, 왜 지금 하는가, 예상 시간”을 짧게 밝힌다. 이 연결이 없는 진단을 관성으로 추가하지 않는다.</p></main></body></html>

@@ -1,0 +1,94 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>U_BASELINE_SCREEN.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>기존 SecMI 방법으로 확인한 E/U 진단</h1>
+<p>후속 실제 실행: <a href="pfami_comparison_results.html">PFAMI 고정 비교·독립 검산</a>. 아래는 앞선 SecMI 실행 이력이며, 두 고정 진단의 결과를 전체 MIA의 실패로 일반화하지 않는다.</p>
+<p>2026-09-14. 사용자의 실행 지시에 따라 기존 두 모델에서 SecMI-stat을 고정 설정으로 평가하고 독립 재검산을 완료했다. <strong>E와 핵심 U 모두 사전 진행 기준을 충족하지 못했다. 현재 후보 확대·R 튜닝·추가 target 학습은 보류한다.</strong></p>
+<h2>1. 무엇을 확인하는가</h2>
+<p>핵심 연구 질문은 <strong>관측한 사진 자체가 학습에 없어도, 같은 환자의 다른 사진이 학습에 사용됐다는 신호를 얻을 수 있는가(U)</strong>다. 학습에 사용된 사진을 관측하는 E를 함께 평가한다. 후보 R의 새 기능을 더 조정하기 전에, 기존 공격에서 이 설정의 판별 신호가 확인되는지 검사한다.</p>
+<ul>
+<li>기존 개발 환자 8명과 방법 선택 환자 40명을 사용했다. 두 집단의 결과를 합치지 않는다.</li>
+<li>환자마다 E 후보 2장, U 관측 2장이다. 모델 1/2에서 참여 그룹을 교환한다. U 영상은 어느 모델에도 학습시키지 않았다.</li>
+<li>기존 non-DP LoRA 1,000-step 체크포인트 두 개를 사용한다. 두 모델은 같은 초기화·seed와 배경 환자를 공유하고 여러 환자의 포함 여부를 함께 바꾼다. 독립 seed 반복이나 한 환자만 바꾼 DP 이웃 모델이 아니다.</li>
+<li>방법 선택 40명은 앞서 공개 encoder 대조에서 사용한 개발 자료이며, 이번에 처음 target 공격 점수를 계산했다. 최종 시험 자료로 취급하지 않는다.</li>
+</ul>
+<h2>2. 고정 방법과 판정 규칙</h2>
+<p>확보된 <strong>CDI 저자 저장소의 SecMI-stat 구현을 현재 SD2.1 의료 모델에 이식</strong>했다. 저장된 클래스의 메서드를 그대로 호출하고, 모델·cached latent·prompt를 연결하는 어댑터를 추가했다. 원 SecMI 저자 저장소의 전체 재현, 전체 CDI 방법 재현 또는 최신 SOTA 전체 비교가 아니다.</p>
+<ul>
+<li>VAE posterior-mode latent와 일반 흉부 X-ray prompt를 사용한다. 기존 FP16 cache와 모델 값을 FP32로 승격해 계산한다.</li>
+<li>deterministic 경로 0→100을 10 간격으로 진행한 뒤 100→110→100의 왕복 오차를 구한다.</li>
+<li>영상 점수는 원 구현의 <strong>음의 L2 norm</strong>이다. 값이 클수록 참여 쪽으로 판별한다.</li>
+<li>환자 점수는 두 영상 점수의 <strong>평균</strong>이 주지표다. max 점수는 보조 설명에만 쓴다.</li>
+<li>이미지당 12 forward·0 backward, 총 384건·4,608 forward다. 여기서 forward는 이미지별 denoiser 계산 횟수이며 완성 이미지 생성 API 질의와 동일하지 않다.</li>
+<li>denoiser와 모델 가중치에 접근하는 구현이다. 학습 데이터 전체를 모르는 설정과 양립하지만, 일반적인 완성 이미지 생성 API만으로 수행한 black-box 검증이라고 주장하지 않는다.</li>
+</ul>
+<p><strong>결과를 보기 전에 고정한 진행 기준:</strong> 선택 환자 40명의 평균 점수 AUC에 대해, 환자 bootstrap 95% 구간의 하한이 <strong>두 모델에서 모두 0.5를 넘어야</strong> 해당 조건의 순위 신호를 지지한다고 판정한다. E와 U를 따로 판정한다. bootstrap은 A/B 각 20명을 층화 재추출하며 seed 260914, 2,000회, 두 모델과 E/U에 같은 추출을 사용한다.</p>
+<p>이 기준은 한 설정에서 다음 실험에 투자할지 결정하는 탐색적 기준이다. 검정력으로 산정된 최종 표본 규모나 독립 반복 실험의 확증 기준이 아니다. 기존 8명, max 또는 사후 점수 반전으로 주지표의 미통과를 뒤집지 않는다.</p>
+<p><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/secmi_v1/protocol.json">실행 전 고정 프로토콜</a></p>
+<h2>3. 실제 결과와 판정</h2>
+<p>주지표는 선택 환자 40명의 평균 점수다. 각 모델은 참여 20명·비참여 20명이며 AUC 0.5는 무작위 순위의 기준이다.</p>
+<table>
+<thead>
+<tr>
+<th>관측 조건</th>
+<th>모델 1 AUC [환자 bootstrap 95%]</th>
+<th>모델 2 AUC [환자 bootstrap 95%]</th>
+<th>사전 진행 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E: 참여 환자에서 실제 학습에 들어간 영상</td>
+<td>0.5225 [0.3350, 0.7025]</td>
+<td>0.5000 [0.3125, 0.6825]</td>
+<td>미충족</td>
+</tr>
+<tr>
+<td>U: 같은 환자의 학습되지 않은 영상</td>
+<td>0.4300 [0.2625, 0.6100]</td>
+<td>0.5600 [0.3800, 0.7276]</td>
+<td>미충족</td>
+</tr>
+</tbody>
+</table>
+<p><strong>판정: 현재 후보의 확대, 후보 R 튜닝 및 추가 target 학습을 보류한다.</strong> 핵심 U에서 다음 단계로 확대할 근거를 확보하지 못했고, E에서도 이 고정 공격이 일관되게 학습 참여를 구분한다는 양성 대조를 확보하지 못했다. 약한 결과의 원인이 학습 부족인지, 공격·prompt·timestep 적합성인지 또는 현재 조건의 작은 누출인지 이 결과만으로 구분하지 못한다.</p>
+<p>기존 8명의 참고용 평균 점수 AUC는 E 0.5625/0.3750, U 0.5000/0.4375다. 이 표본과 보조 max 결과를 사용해 40명 주지표의 판정을 뒤집지 않는다.</p>
+<p><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/secmi_v1/analysis.json">전체 분석·보조 점수·bootstrap 기록</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/secmi_v1/patient_scores.json">환자별 원점수</a></p>
+<h2>4. 검증과 시간</h2>
+<ul>
+<li>원시 latent 쌍 384개의 shape·dtype·hash와 L2, 환자 집계 192개를 별도 CPU 코드로 다시 계산했다. 실행기의 FP32 L2 384개는 모두 정확히 재현됐다.</li>
+<li>원시 FP32 tensor를 CPU float64로 승격해 L2를 별도로 계산했다. 최대 절대 차이는 8.2441×10⁻⁹이고, 16개 조건별 AUC 및 E/U 진행 판정은 바뀌지 않았다. GPU 연산 경로 전체의 FP64 재실행이라는 뜻은 아니다.</li>
+<li>평균 순위 방식으로 AUC를, 재추출 횟수 가중치 방식으로 2,000회 bootstrap 구간을 독립 검산했다. 별도 sklearn 계산에서도 16개 AUC가 일치했다.</li>
+<li>환자 분할·실제 학습 노출·E/U 정답·12단계 timestep과 scheduler alpha·출처 코드·checkpoint·cache hash를 확인했다. 보호 대상 원본 11개가 유지됐다.</li>
+<li>실행 중 가중치 불변은 실행기의 parameter version/gradient 검사와 모델별 adapter tensor 256개의 전후 동일성 검사에 근거한다. CPU verifier가 GPU 메모리를 별도로 재검사했다는 뜻은 아니다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>예상 및 실측</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이식 코드·프로토콜 준비</td>
+<td>처음 약 5–10분으로 안내했으나 출처 연결·검증기 작성 때문에 더 걸렸다. 준비 점검 시작은 19:16:58 KST, GPU 시작은 약 19:31이었다.</td>
+</tr>
+<tr>
+<td>실제 모델 평가</td>
+<td>최초 GPU 예상 7–10분, 실측 <strong>368.46초 = 6분 8초</strong>. 모델 로딩·내부 저장 포함, 외부 코드 준비 제외.</td>
+</tr>
+<tr>
+<td>독립 검산</td>
+<td>검증기 구현이 GPU 종료 뒤까지 지연됐다. 완성된 주 검증기 실행은 wall 약 5.35초, 내부 CPU 계측 2.59초였다. 별도 raw scan과 sklearn 확인도 완료했다.</td>
+</tr>
+<tr>
+<td>전체 작업</td>
+<td>준비·구현·GPU·독립 검산·문서 정리를 합쳐 약 30분. GPU 시간만을 전체 소요 시간으로 보고하지 않는다.</td>
+</tr>
+</tbody>
+</table>
+<p>추가 target 학습, 후보 R의 새 환자 계산/튜닝, 보정·최종 시험 평가는 모두 0이다. 원본과 이번 결과는 별도 경로에 보존했다.</p>
+<p><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/secmi_v1/report.json">GPU 실행 기록</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/secmi_v1/verification.json">독립 검증</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/secmi_v1/independent_raw_states_check.json">원시 FP32 값의 정확 재계산</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/secmi_v1/independent_sklearn_auc_check.json">독립 sklearn 확인</a></p>
+<h2>5. 해석 범위</h2>
+<p>이 실험은 현재 체크포인트, 고정 timestep·prompt·전처리에서 기존 공격의 신호를 확인한다. 미통과는 개인정보 누출이 없거나 환자 단위 MIA가 불가능하다는 증거가 아니다. 반대로 통과해도 후보 R의 우월성, 1% 환자 오탐률에서의 검출력, DP 보호 비교 또는 CVPR 기여가 입증되지는 않는다.</p>
+<p>이전 후보 R은 기존 U 8명의 FP32 endpoint 평가에서 AUC 0.6875/0.2500으로 일관된 효과를 확인하지 못했다. 이번 진단은 후보 R을 40명에 확장하거나 튜닝하는 실행이 아니다. 장시간 추가 학습의 착수 여부도 이번 결과만으로 자동 승인하지 않는다.</p>
+<p><a href="u_verification_results.html">이전 수치 재검증 결과</a> · <a href="u_execution_status.html">전체 실행 현황</a></p></main></body></html>

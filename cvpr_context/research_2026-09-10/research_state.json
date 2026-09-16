@@ -1,0 +1,1599 @@
+{
+  "schema": "cvpr-research-state/v1",
+  "authority": "User-confirmed four-stage research framework; RESEARCH_FRAMEWORK.md",
+  "current_step": 2,
+  "steps": [
+    {
+      "number": 1,
+      "status": "complete",
+      "meaning": "User selected two research directions; original thesis goal may change; exact paper claim remains under design"
+    },
+    {
+      "number": 2,
+      "status": "in_progress",
+      "meaning": "Closest-prior analysis and concrete paper designs for protection efficiency and protection evaluation"
+    },
+    {
+      "number": 3,
+      "status": "track1_nonprivate_implementation_complete_dp_comparison_contract_in_progress",
+      "meaning": "Restricted residual family and sufficient-statistic code implemented; privacy algebra helpers alone are not a completed DP training protocol."
+    },
+    {
+      "number": 4,
+      "status": "track1_nonprivate_development_capacity_verified_full_claim_unvalidated",
+      "meaning": "40 patient-disjoint development cases support denoising adaptation; no generation quality, DP utility or final paper validation."
+    }
+  ],
+  "next_task": "Extract the fixed independent public quality32 calibration statistics, validate optimizer sufficiency, and freeze clipping/scales/PSD/optimizer/seeds before the same-head patient-DP four-cell comparison.",
+  "next_task_output": "Public calibration and frozen implementation contract; public dual-RDP precheck is distinct from DP model execution; report CPU timing before running.",
+  "step2_open_items": [
+    "Track1: equal-head DP-SGD and strong private regression comparison versus joint-statistic protection; noise dimension, Gram conditioning and clipping distortion.",
+    "Track1: actual generation utility and matched user-DP total compute versus DP-LoRA; no automatic speed or epsilon advantage.",
+    "Track2: a concrete diffusion protection-repair decision beyond SELENA, Aerni and Students Parrot; patient split or teacher/student four cells alone are known.",
+    "Both: standard components do not rule out an empirical paper, but generic one-shot, correlation or private-student leakage claims are not new."
+  ],
+  "step2_completed_diagnostics": [
+    "Core source/code premise review within documented scope",
+    "Fixed SecMI E/U diagnostic and verification",
+    "Fixed PFAMI-style comparison and verification",
+    "Stored PFAMI paired-score descriptive analysis",
+    "Fair MoFit/CDI patient adaptation and strong aggregation specification",
+    "MoFit public COCO scalar evaluator replay; not target inference reproduction",
+    "CDI literal 26-feature extraction on fit14393 E2/U2, model1 step1000: actual GPU execution and independent stored-tensor CPU verification completed; not membership performance",
+    "CDI U-fit80/selection40 extraction and learned patient comparison: 480 records, 18 predeclared methods plus reused DINO, same-fitted-scorer diagnostic and independent stored-feature/prediction/statistics verification completed; comparison only, stage 2 remains in progress",
+    "Exact common-score/target-change rank decomposition of20 fixed scorers; independent8000-pair verification",
+    "Actual pretrained base U80 extraction,20 fixed target-trained scorers, independent 2080-feature and8000-pair verification; A/B diagnostic only",
+    "Four fixed meanmax52 scorers decomposed into centered mean/half-range terms across target1,target2,base;4800-pair/36AUC/24CI independent verification completed",
+    "CDI E480 extraction, four E/U cells18methods144AUC156contrasts and independent saved arithmetic/fit/statistics verification",
+    "CDI patient-cluster reference Welch8, original two-sided and paper one-sided formulas checked",
+    "Posthoc scaler/coefficient hybrid64AUC80contrasts, two arithmetic paths in one module",
+    "Prompt null/generic/weak-label actual4320F and saved raw/metric verification; no clear contrast in this fixed diagnostic",
+    "Medical MoFit input, full source-schedule kernel and local FD convergence checks; explicit one-patient scope",
+    "Full literal CDI masked-control U82 extraction, original18 fixed scorers plus DINO and U79 auxiliary-fit exclusion: saved raw2132 features and1517 scores independently verified; one-intervention diagnostic only.",
+    "Two fixed patient interventions;90 new literal CDI records,168 reused;2340-feature raw verification and4767 branch-score/73-contrast independent arithmetic complete",
+    "Public8 x two original Adam states: primary166F52B inactive; one explicit post-hoc activation114F0B; both16-condition saved arithmetic/source/CPU Adam checks passed. Conditional local responses, not DP/MIA efficacy."
+  ],
+  "candidate_R_status": "Expansion on hold; not a reason to terminate step 2 or the research goal",
+  "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
+  "claim_not_established_is_not_disproof": true,
+  "additional_approval_required_for_every_subtask": false,
+  "step2_active_task": "Track1 non-DP capacity experiment completed and independently verified; specifying fair same-head patient-DP comparison using cached per-patient sufficient statistics.",
+  "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
+  "completed_kernel": {
+    "report": "CDI_KERNEL_RESULTS.md",
+    "patient_id": "14393",
+    "images": 4,
+    "forward": 232,
+    "backward": 68,
+    "measurement_seconds": 25.238,
+    "runner_seconds": 29.724,
+    "independent_verification": "PASS for stored 104 feature scalars, source/seed bindings and existing SecMI equality; not an independent GPU Jacobian rerun"
+  },
+  "active_execution": {
+    "status": "no_running_execution",
+    "current_step": 2,
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_capacity_20260916_v1",
+    "last_completed_report": "TRACK1_CAPACITY_RESULTS_20260916.md",
+    "additional_execution_contract_fixed": false,
+    "stage2_completion_claim": false,
+    "latest_design_review": "TWO_TRACK_OPERATION_REDESIGN_20260916.md",
+    "new_two_track_experiment_started": true,
+    "new_two_track_experiment_status": "track1_nonprivate_capacity_completed_verified_dp_comparison_not_run",
+    "latest_cpu_outputs": [
+      "spec_sources/track1_cpu_allocation_20260916",
+      "spec_sources/track2_cpu_audit_20260916"
+    ],
+    "historical_two_track_cpu_status_20260916": "two_cpu_synthetic_checks_completed_no_medical_or_gpu_execution",
+    "track1_capacity": {
+      "output_directory": "../../code_working/_reports/frozen_residual_capacity_20260916_v1",
+      "contract_sha256": "ff398ca316c80b95cf6d0b0394bba99ff8d76e0e3dc7d9c08a33c7b71b712b95",
+      "training_patients": 80,
+      "development_patients": 40,
+      "images_per_patient": 4,
+      "draws_per_image": 8,
+      "expected_records": 3840,
+      "expected_main_forward_including_warmup": 3841,
+      "backbone_backward": 0,
+      "dp_applied": false,
+      "profile_seconds_per_record": 0.08412153752578888,
+      "main_extraction_eta_minutes": [
+        6,
+        8
+      ],
+      "analysis_and_verification_pending": false,
+      "status": "completed_verified",
+      "actual_main_seconds": 314.68696409999393,
+      "actual_total_forward": 3850,
+      "independent_verification_status": "PASS_FROZEN_RESIDUAL_CAPACITY_SAVED_ARITHMETIC_AND_PROVENANCE"
+    },
+    "historical_pre_capacity_last_completed": {
+      "output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\protection_observation_20260915",
+      "report": "CLIPPING_OBSERVATION_LOCAL_RESULTS_20260915.md"
+    },
+    "historical_operation_redesign_execution_state_20260916": {
+      "new_two_track_experiment_started": false,
+      "new_two_track_experiment_status": "operation_redesign_completed_no_new_experiment"
+    },
+    "latest_comparison_plan": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md"
+  },
+  "updated_utc": "2026-09-16T05:30:09.256147+00:00",
+  "completed_u_comparison": {
+    "status": "completed_U_patient_comparison_only",
+    "started_utc": "2026-09-14T15:39:00+00:00",
+    "start_time_precision": "minute; launch reported by parent agent",
+    "models": [
+      "model_1",
+      "model_2"
+    ],
+    "checkpoint_step": 1000,
+    "scenario": "U",
+    "patients": {
+      "fit": 80,
+      "selection": 40
+    },
+    "images_per_patient": 2,
+    "expected_records": 480,
+    "reused_kernel_records": 2,
+    "new_records": 478,
+    "extraction_contract_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_contract_v1.json",
+    "extraction_contract_sha256": "a479363e9c094fbbff37af5d0d6c6e087d8dd191082baa73824318b0e164ab45",
+    "analysis_contract_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\cdi_u_analysis_contract.json",
+    "analysis_contract_sha256": "6f0afa62cf2bbf26790370965c4716f3afc927e0ab2412f8c4e6befbe02efca3",
+    "analyzer_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\analyze_cdi_u_cohort.py",
+    "analyzer_sha256": "752be6cdf1db57b2309bd897fee8f43f53f1807d23fa92cb07973b4720d14268",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1",
+    "analysis_output_subdirectory": "analysis_v1",
+    "computed_comparison_methods": 18,
+    "reused_DINO_controls": 1,
+    "analysis_status": "completed; all 18 predeclared methods plus reused DINO and same-fitted-scorer diagnostic",
+    "same_fitted_scorer_diagnostic": "Freeze each fit-target LR/scaler/C, apply to same selection patients under both target checkpoints, summarize participation-aligned score change with common patient bootstrap; analyst-only, no refit or causal individual claim",
+    "selection_is_previously_opened_development": true,
+    "calibration_test_used": false,
+    "overall_stage2_success_gate": null,
+    "stage2_completion_claim": false,
+    "records": 480,
+    "runner_seconds": 2916.393,
+    "forward": 28058,
+    "backward": 8378,
+    "new_forward": 27942,
+    "new_backward": 8344,
+    "features_verified": 12480,
+    "prior_SecMI_exact_records": 192,
+    "stored_feature_verification": "PASS_SAVED_U_COHORT_ARITHMETIC_AND_INTEGRITY",
+    "analysis_verification": "PASS_SAVED_ANALYSIS_PREDICTIONS_AND_STATISTICS",
+    "main_result_report": "CDI_U_COMPARISON_RESULTS.md",
+    "historical_extraction_estimate_minutes": [
+      45,
+      55
+    ]
+  },
+  "current_result_report": "TRACK1_CAPACITY_RESULTS_20260916.md",
+  "completed_rank_decomposition": {
+    "status": "completed_and_independently_verified",
+    "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
+    "summary_sha256": "6ee47da4410ac75c7cd38d7b7b4ecaa78429e9da68513492f9a149092a9b2019",
+    "seconds_cpu": 0.5202381999697536,
+    "seconds_independent_verification": 0.617704699980095,
+    "finding": "All four observed meanmax-vs-image-mean gains are smaller than their common-score gains; target-change contribution difference is negative at observed points; not identified nuisance or personal causal effect",
+    "new_GPU": 0,
+    "new_fitting": false
+  },
+  "completed_base_control": {
+    "status": "completed_and_independently_verified",
+    "model": "actual pretrained base without LoRA",
+    "patients": 40,
+    "unique_images": 80,
+    "scenario": "U",
+    "role": "selection",
+    "scorers": "20 existing target-trained scorers frozen; no refitting",
+    "label": "A/B assignment diagnostic; all incremental-membership labels on base are zero",
+    "estimated_total_minutes": [
+      20,
+      30
+    ],
+    "estimated_GPU_extraction_minutes": [
+      8,
+      10
+    ],
+    "new_target_training": false,
+    "stage2_completion_claim": false,
+    "started_utc": "2026-09-14T16:57:41+00:00",
+    "contract_sha256": "75f4430bd9c07d2b57c2230a5e9c0e3ecfde6cf4d69b1f4f5c49facf6de19bc9",
+    "frozen_files": 81,
+    "records": 80,
+    "runner_seconds": 420.5096552000032,
+    "forward": 4594,
+    "backward": 1314,
+    "features_verified": 2080,
+    "verifier_version": 2,
+    "verifier_sha256": "864b86c379409c135a29c90b874ed9daccca0dbe07fb004d28dee41bbb517a21",
+    "seconds_verification": 20.350480500026606,
+    "seconds_analysis": 0.4261216999730095,
+    "original_verification_failure_preserved": true,
+    "base_membership_performance_claim": false
+  },
+  "completed_meanmax_decomposition": {
+    "status": "completed_and_independently_verified",
+    "scorers": 4,
+    "feature_sources": 3,
+    "patient_records": 480,
+    "pair_records": 4800,
+    "AUC_metrics": 36,
+    "contrast_CIs": 24,
+    "seconds_cpu": 0.49849849997553974,
+    "seconds_verification": 0.8211854000110179,
+    "full_rank_mismatches": 0,
+    "new_fitting": false,
+    "new_GPU": 0,
+    "analysis_sha256": "5e6a1d0fbb245546c42d8909dc740e94d6e7a281fd3fde8163a97e5bb50dc54d",
+    "verifier_sha256": "b9799481e6813db4fb350c054a8173ca44f1968b6b8041b0a9e97f249ca84299",
+    "finding": "Within-frozen-scorer spread removal lowers observed target ranking in8 contexts; all4 own-target difference intervals include0. Spread use is an existing aggregation property; participation specificity remains unidentified",
+    "stage2_completion_claim": false
+  },
+  "user_priority_20260915": "User requested maximal concrete follow-through on remaining stage2 investigations; preserve framework and do not substitute further score decomposition for missing baseline execution",
+  "stage2_status": "in_progress",
+  "completed_eu_comparison": {
+    "status": "completed_and_independently_verified",
+    "report": "CDI_EU_COMPARISON_RESULTS.md",
+    "patients": {
+      "fit": 80,
+      "selection": 40
+    },
+    "E_records": 480,
+    "E_new_records": 478,
+    "U_records_reused": 480,
+    "E_runner_seconds": 3066.0602696,
+    "E_forward": 28064,
+    "E_backward": 8384,
+    "E_features_verified": 12480,
+    "E_prior_SecMI_exact_records": 192,
+    "four_cells": [
+      "Efit_Eeval",
+      "Efit_Ueval",
+      "Ufit_Eeval",
+      "Ufit_Ueval"
+    ],
+    "methods": 18,
+    "AUC_metrics": 144,
+    "paired_contrasts": 156,
+    "U_scorers_restored_unchanged": true,
+    "new_E_scorers": 20,
+    "reference_set_test": {
+      "status": "completed_patient_cluster_adaptation",
+      "contexts": 8,
+      "candidate_patients": 20,
+      "reference_patients": 20,
+      "source_two_sided_and_paper_one_sided_reported": true,
+      "original_full_5fold_1000subsets_reproduced": false,
+      "individual_patient_inference_or_FPR": false
+    },
+    "scaler_coefficient_audit": {
+      "status": "completed_posthoc",
+      "AUC_metrics": 64,
+      "contrasts": 80,
+      "new_fitting": false,
+      "new_GPU": 0,
+      "verification_scope": "Two arithmetic/rank/bootstrap paths in the same module; no separate verifier"
+    },
+    "interpretation": "U-fit standard scorer recovery under auxiliary U patient labels; original26D E-to-U32 contrasts all include0. Neither general transfer failure nor individual participation mechanism established.",
+    "calibration_test_used": false,
+    "stage2_complete": false
+  },
+  "completed_prompt_diagnostic": {
+    "results_sha256": "bfa9f88b9e811f4de3e2adb2fcf58bf69a33b45e749d4331acdb90e412781ec7",
+    "protocol_sha256": "7ca46636977be8f95e47133eaaa81fee3711f6aa175d4604ea8d998a97ee9a23",
+    "status": "completed_and_saved_arithmetic_verified",
+    "producer_status_as_saved": "COMPLETE_RAW_PENDING_INDEPENDENT_VERIFICATION",
+    "verification_status": "PASS_PROMPT_LOSS_RAW_ARITHMETIC_AND_COHORT",
+    "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\prompt_loss_t140_v1",
+    "verification_scope": "Saved arithmetic and provenance; not a full independent network/backward replay",
+    "report": "PROMPT_CONDITION_RESULTS.md",
+    "unique_images": 480,
+    "models": 3,
+    "conditions": [
+      "null",
+      "generic",
+      "weak_label"
+    ],
+    "forward": 4320,
+    "backward": 0,
+    "target_AUC_metrics": 24,
+    "base_assignment_AUC_metrics": 6,
+    "prompt_contrasts": 24,
+    "all_prompt_contrast_CIs_include_zero": true,
+    "scope": "One t140/noise-per-image, cached mode-latent fixed loss; not full MoFit"
+  },
+  "mofit_medical_execution": {
+    "report": "MOFIT_MEDICAL_RESULTS.md",
+    "patient_id": "14393",
+    "patient_count": 1,
+    "images_per_target": 4,
+    "steps_per_image": [
+      1000,
+      300
+    ],
+    "model1_first_EU_pair": {
+      "ended_utc": "2026-09-15T05:54:05.877956+00:00",
+      "total_seconds": 923.9816350000328,
+      "measurement_seconds": 908.0951580999536,
+      "counts": {
+        "unet_forward_calls": 4404,
+        "unet_forward_examples": 6406,
+        "unet_backward_calls": 2600,
+        "vae_forward": 2006,
+        "vae_backward": 2000
+      },
+      "results_sha256": "084f9bc4ed96834c77ec679fb42ea4d219f0f0b5477604387f0778c9c136c607",
+      "protocol_sha256": "a38469dfeb6a6e4e8a33156bb067ec1bddf321b31e6378d0deaaba683380693d",
+      "status": "completed_and_saved_arithmetic_verified",
+      "producer_status_as_saved": "PASS_KERNEL_EXECUTION_PENDING_INDEPENDENT_VERIFICATION",
+      "verification_status": "PASS_SAVED_MOFIT_ARITHMETIC_AND_PROVENANCE_FD_REVIEW_SEPARATE",
+      "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_full_v1",
+      "verification_scope": "Saved arithmetic and provenance; not a full independent network/backward replay"
+    },
+    "model2_first_EU_pair": {
+      "ended_utc": "2026-09-15T06:18:44.215598+00:00",
+      "total_seconds": 924.0527250999585,
+      "measurement_seconds": 908.0030582000036,
+      "counts": {
+        "unet_forward_calls": 4404,
+        "unet_forward_examples": 6406,
+        "unet_backward_calls": 2600,
+        "vae_forward": 2006,
+        "vae_backward": 2000
+      },
+      "results_sha256": "637ddad9ce77cbfc9b83659d3fcb344aa5d66d44fcdf13ba627dd03fe8558588",
+      "protocol_sha256": "a09fb6826a11a86c799fa3b32721b5fb7425c88f04d7bc09dcd8c78d45d9943b",
+      "status": "completed_and_saved_arithmetic_verified",
+      "producer_status_as_saved": "PASS_TARGET2_KERNEL_EXECUTION_PENDING_INDEPENDENT_VERIFICATION",
+      "verification_status": "PASS_TARGET2_SAVED_MOFIT_ARITHMETIC_AND_ACTUAL_NONMEMBERSHIP",
+      "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_target2_full_v1",
+      "verification_scope": "Saved arithmetic and provenance; not a full independent network/backward replay"
+    },
+    "remaining_E006_U004_both_targets": {
+      "ended_utc": "2026-09-15T07:08:17.348551+00:00",
+      "total_seconds": 1877.5983177999733,
+      "measurement_seconds": 1848.952663400094,
+      "counts": {
+        "unet_forward_calls": 8808,
+        "unet_forward_examples": 12812,
+        "unet_backward_calls": 5200,
+        "vae_forward": 4012,
+        "vae_backward": 4000
+      },
+      "results_sha256": "efc281234e77e83d7e7f3feaca9703668a238b087580941840d0758e4cddb241",
+      "protocol_sha256": "050087531175b40a6bdf840a0e314a0e2f816f42a19a496ebac662af7bfb7c29",
+      "status": "completed_and_saved_arithmetic_verified",
+      "producer_status_as_saved": "PASS_REMAINING_PAIR_EXECUTION_PENDING_INDEPENDENT_VERIFICATION",
+      "verification_status": "PASS_REMAINING_PAIR_SAVED_MOFIT_ARITHMETIC_AND_ACTUAL_MEMBERSHIP",
+      "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\mofit_medical_remaining_pair_v1",
+      "verification_scope": "Saved arithmetic and provenance; not a full independent network/backward replay"
+    },
+    "patient_two_image_aggregation": "completed_fixed_h_and_three_basic_scores_mean_max",
+    "medical_population_performance_comparison_complete": false,
+    "medical_fusion_parameters_established": false,
+    "individual_patient_causal_claim": false,
+    "new_target_training": false
+  },
+  "active_comparison_state_source": "active_execution",
+  "execution_history_20260915b": [
+    {
+      "status": "no_running_execution",
+      "current_step": 2,
+      "output": "mofit_medical_remaining_pair_v1",
+      "new_records": 4,
+      "new_patients": 0,
+      "initial_estimated_followup_including_preparation_minutes": [
+        35,
+        40
+      ],
+      "revised_estimated_followup_including_preparation_minutes": [
+        45,
+        50
+      ],
+      "estimate_revision_reason": "Actual pre-execution wrapper/provenance verification took about15 minutes; measured four-record GPU estimate remains about31 minutes",
+      "stage2_completion_claim": false,
+      "new_target_training": false,
+      "calibration_test_used": false
+    },
+    {
+      "status": "running_masked_control_training",
+      "current_step": 2,
+      "output": "masked_patient_training_v1",
+      "patient_id": "14393",
+      "treatment_exact_replay_steps": [
+        250,
+        1000
+      ],
+      "controlled_mask_slots": 8,
+      "scheduled_slots_per_branch": 4000,
+      "effective_exposures": {
+        "treatment": 4000,
+        "control": 3992
+      },
+      "estimated_training_minutes": [
+        16,
+        18
+      ],
+      "estimated_endpoint_minutes": 5,
+      "new_target_training": true,
+      "stage2_completion_claim": false,
+      "calibration_test_used": false
+    },
+    {
+      "recorded_utc": "2026-09-15T10:23:03.491962+00:00",
+      "historical_status": {
+        "status": "preparing_full_CDI_control_U82",
+        "current_step": 2,
+        "output": "cdi_masked_u82_v1",
+        "patients": 41,
+        "U_images": 82,
+        "new_target_training": false,
+        "original_treatment_features_reused": true,
+        "new_patient_or_E_expansion": false,
+        "estimated_total_minutes": [
+          20,
+          25
+        ],
+        "estimated_GPU_minutes": [
+          8,
+          9
+        ],
+        "original_fixed_scorer_methods": 18,
+        "extra_fitting": "U79 excluding p14393, predeclared fixed C; historical tuned C secondary only",
+        "calibration_test_used": false,
+        "stage2_completion_claim": false
+      },
+      "clarification": "Preserved pre-completion state; superseded by completed_full_cdi_masked_u82."
+    }
+  ],
+  "completed_measurement_and_intervention_20260915b": {
+    "report": "STAGE2_MEASUREMENT_AUDIT_20260915.md",
+    "current_step": 2,
+    "stage2_complete": false,
+    "repeated_noise": {
+      "new_forward": 2240,
+      "seconds": 236.27779020008165,
+      "verification": "PASS_REPEAT_NOISE_SAVED_TENSORS_AND_REUSE",
+      "independent_statistics": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\repeat_noise_t140_v1\\independent_statistical_audit_20260915b.json",
+      "U_mean1_AUC": [
+        0.4725,
+        0.54
+      ],
+      "U_mean8_AUC": [
+        0.4425,
+        0.555
+      ],
+      "all48_gain_CIs_include_zero": true
+    },
+    "optimized_probe_cross": {
+      "forward": 360,
+      "seconds": 62.64356170000974,
+      "verification": "PASS_CROSS_RESPONSE_SAVED_ARITHMETIC_SOURCE_AND_REPLAYS",
+      "one_patient": true,
+      "new_optimization": false
+    },
+    "masked_training": {
+      "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\masked_patient_training_v1",
+      "seconds": 1041.2802009000443,
+      "forward": 8000,
+      "backward": 2000,
+      "verification": "PASS_MASKED_TRAINING_SAVED_STATE_INPUTS_AND_MASK_ARITHMETIC",
+      "verification_sha256": "4aca9e6c02c1f35a2fc96fb3a9f2c8ebd0278a1e662ec3e040d5896a4e83b19b",
+      "patient_id": "14393",
+      "treatment_original_exact_steps": [
+        250,
+        1000
+      ],
+      "common_prefix_exact": 43,
+      "effective_exposures": [
+        4000,
+        3992
+      ],
+      "training_realizations": 1
+    },
+    "masked_endpoints": {
+      "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\masked_slot_endpoints_v2",
+      "seconds": 256.05670049996115,
+      "new_forward": 2260,
+      "reused_cells": 2204,
+      "verification": "PASS_MASKED_ENDPOINT_SAVED_ARITHMETIC_SOURCE_REUSE_AND_TRAINING_GATES",
+      "verification_seconds": 53.02823550009634,
+      "verification_sha256": "3cac782fb83fb97edd60446eb0a3d81a6b709f343a0602acedc80ed1d6e8eb58",
+      "finding": "The fixed patient contribution changes its own U scores, but many other patients also change in the same direction. Focal U changes are within the other-patient distribution.",
+      "population_attack_claim": false
+    },
+    "vector_decomposition": {
+      "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\masked_slot_endpoints_v2\\prediction_delta_v1",
+      "status": "PASS_SAVED_PREDICTION_MSE_IDENTITY_AND_DESCRIPTIVE_CONTEXT",
+      "paired_cells": 2232,
+      "seconds": 11.006911700009368,
+      "U_vector_RMS_reference_percentiles": [
+        0.3,
+        0.175
+      ],
+      "finding": "MSE projection and squared terms partly cancel, but vector-change magnitudes do not reveal a large focal U outlier; no new scoring rule established."
+    },
+    "full_CDI_U82": {
+      "status": "completed_and_independently_verified",
+      "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1",
+      "analysis_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\fixed_scorer_analysis_v1",
+      "patients": 41,
+      "U_images": 82,
+      "forward": 4801,
+      "backward": 1439,
+      "runner_seconds": 562.7659614000004,
+      "raw_verification_status": "PASS_MASKED_CDI_U82_SAVED_ARITHMETIC_PROVENANCE_AND_DL_REPLAY",
+      "raw_verification_seconds": 21.527728299959563,
+      "raw_verification_sha256": "9bf800bbaa03de6c83684aa7ca907c0f2c8690d757f50d9b3d3d39e4f2cd3dad",
+      "extraction_contract_sha256": "68c5593fd037fce3dd894448d1b7d9ba8b733a59a17465cf0bacb8bff738df44",
+      "results_sha256": "f79b4a6b324283e2d3ab777fa4e1bbf564a7261eea66c786d63fe0d25e689a00",
+      "analysis_status_as_saved": "PASS_MASKED_CDI_FROZEN_AND_LEAVE_PATIENT_OUT79_SCORER_ANALYSIS_PENDING_INDEPENDENT_AUDIT",
+      "analysis_sha256": "b0e98bc10e2b092bb5741f029e9cd7ba69d2ec57ed9123e238743e9e9a2845fd",
+      "independent_score_status": "PASS_INDEPENDENT_MASKED_CDI_FIT79_INPUT_SCALER_PREDICTION_AUDIT",
+      "independent_score_audit_sha256": "8e0378d39778d3e40a715ce7e06dc5c0ca45e7d44207f1e73e8846918266a82b",
+      "independent_score_seconds": 0.3782535999780521,
+      "saved_patient_scores": 1517,
+      "original_methods": 18,
+      "DINO_reused": 1,
+      "refitted_U79_scorers": 10,
+      "clean_fixed_C_primary": [
+        {
+          "method": "cdi_image_mean_fixed",
+          "delta": -0.0034239516902790923,
+          "reference_q25": -0.021841814291494788,
+          "reference_q75": 0.025962250655150745,
+          "within_reference_IQR": true
+        },
+        {
+          "method": "cdi_image_max_fixed",
+          "delta": 0.02772733932954463,
+          "reference_q25": -0.016994069324294966,
+          "reference_q75": 0.04008251772135406,
+          "within_reference_IQR": true
+        },
+        {
+          "method": "patient_mean26_fixed",
+          "delta": 0.006649255608356164,
+          "reference_q25": -0.034924824285711246,
+          "reference_q75": 0.03797947485346721,
+          "within_reference_IQR": true
+        },
+        {
+          "method": "patient_meanmax52_fixed",
+          "delta": 0.05879570427977765,
+          "reference_q25": -0.04506126659507412,
+          "reference_q75": 0.07277804309575997,
+          "within_reference_IQR": true
+        }
+      ],
+      "positive_clean_primary": 3,
+      "all_clean_primary_deltas_within_reference_IQR": true,
+      "new_target_training": false,
+      "population_MIA_or_CI_claim": false,
+      "stage2_completion_claim": false,
+      "new_design_claim": false,
+      "limits": [
+        "Original frozen fit80 scorers included the focal patient in auxiliary training.",
+        "U79 excludes focal image/label only from auxiliary coefficient/scaler fitting; target-generated features still come from the original model trained with this patient.",
+        "Historical tuned C was selected on fit80 including the focal patient, so U79 tuned-C reuse is secondary.",
+        "Some scalar alternatives exceed the other40 upper quartile; no general failure of all existing methods is established.",
+        "One fixed training intervention; two-model differences are analyst-only and not a limited-access deployment input.",
+        "Independent score audit checks saved inputs/scalers/prediction arithmetic, not a fresh independent logistic solver fit."
+      ]
+    }
+  },
+  "completed_full_cdi_masked_u82": {
+    "status": "completed_and_independently_verified",
+    "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1",
+    "analysis_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\fixed_scorer_analysis_v1",
+    "patients": 41,
+    "U_images": 82,
+    "forward": 4801,
+    "backward": 1439,
+    "runner_seconds": 562.7659614000004,
+    "raw_verification_status": "PASS_MASKED_CDI_U82_SAVED_ARITHMETIC_PROVENANCE_AND_DL_REPLAY",
+    "raw_verification_seconds": 21.527728299959563,
+    "raw_verification_sha256": "9bf800bbaa03de6c83684aa7ca907c0f2c8690d757f50d9b3d3d39e4f2cd3dad",
+    "extraction_contract_sha256": "68c5593fd037fce3dd894448d1b7d9ba8b733a59a17465cf0bacb8bff738df44",
+    "results_sha256": "f79b4a6b324283e2d3ab777fa4e1bbf564a7261eea66c786d63fe0d25e689a00",
+    "analysis_status_as_saved": "PASS_MASKED_CDI_FROZEN_AND_LEAVE_PATIENT_OUT79_SCORER_ANALYSIS_PENDING_INDEPENDENT_AUDIT",
+    "analysis_sha256": "b0e98bc10e2b092bb5741f029e9cd7ba69d2ec57ed9123e238743e9e9a2845fd",
+    "independent_score_status": "PASS_INDEPENDENT_MASKED_CDI_FIT79_INPUT_SCALER_PREDICTION_AUDIT",
+    "independent_score_audit_sha256": "8e0378d39778d3e40a715ce7e06dc5c0ca45e7d44207f1e73e8846918266a82b",
+    "independent_score_seconds": 0.3782535999780521,
+    "saved_patient_scores": 1517,
+    "original_methods": 18,
+    "DINO_reused": 1,
+    "refitted_U79_scorers": 10,
+    "clean_fixed_C_primary": [
+      {
+        "method": "cdi_image_mean_fixed",
+        "delta": -0.0034239516902790923,
+        "reference_q25": -0.021841814291494788,
+        "reference_q75": 0.025962250655150745,
+        "within_reference_IQR": true
+      },
+      {
+        "method": "cdi_image_max_fixed",
+        "delta": 0.02772733932954463,
+        "reference_q25": -0.016994069324294966,
+        "reference_q75": 0.04008251772135406,
+        "within_reference_IQR": true
+      },
+      {
+        "method": "patient_mean26_fixed",
+        "delta": 0.006649255608356164,
+        "reference_q25": -0.034924824285711246,
+        "reference_q75": 0.03797947485346721,
+        "within_reference_IQR": true
+      },
+      {
+        "method": "patient_meanmax52_fixed",
+        "delta": 0.05879570427977765,
+        "reference_q25": -0.04506126659507412,
+        "reference_q75": 0.07277804309575997,
+        "within_reference_IQR": true
+      }
+    ],
+    "positive_clean_primary": 3,
+    "all_clean_primary_deltas_within_reference_IQR": true,
+    "new_target_training": false,
+    "population_MIA_or_CI_claim": false,
+    "stage2_completion_claim": false,
+    "new_design_claim": false,
+    "limits": [
+      "Original frozen fit80 scorers included the focal patient in auxiliary training.",
+      "U79 excludes focal image/label only from auxiliary coefficient/scaler fitting; target-generated features still come from the original model trained with this patient.",
+      "Historical tuned C was selected on fit80 including the focal patient, so U79 tuned-C reuse is secondary.",
+      "Some scalar alternatives exceed the other40 upper quartile; no general failure of all existing methods is established.",
+      "One fixed training intervention; two-model differences are analyst-only and not a limited-access deployment input.",
+      "Independent score audit checks saved inputs/scalers/prediction arithmetic, not a fresh independent logistic solver fit."
+    ]
+  },
+  "finalnextquestion": "Does the observed restricted-head denoising gain survive a fair patient-DP comparison, given the full64 statistic dimension2336 versus static16 dimension200 and only0.4467% extra nonprivate MSE reduction?",
+  "completed_cross_intervention": {
+    "status": "completed_fixed_two_patient_intervention_diagnostic",
+    "current_step": 2,
+    "report": "STAGE2_CROSS_PATIENT_INTERVENTION_20260915.md",
+    "patient_ids": {
+      "p": "14393",
+      "q": "4092"
+    },
+    "U_patients": 41,
+    "E_patients": 2,
+    "common_other_patients": 39,
+    "new_feature_records": 90,
+    "reused_feature_records": 168,
+    "new_fits": 0,
+    "training_seconds": 524.9101861000527,
+    "extraction_seconds": 630.0954118999653,
+    "GPU_runner_seconds_total": 1155.005598000018,
+    "training_forward_examples": 4000,
+    "training_backward_calls": 1000,
+    "extraction_forward": 5267,
+    "extraction_backward": 1577,
+    "training_verification_status": "PASS_MASKED_PATIENT_4092_SAVED_TRAINING_AND_SOURCE_GATES",
+    "raw_verification_status": "PASS_CROSS_PATIENT_CDI_SAVED_ARITHMETIC_PROVENANCE_AND_P_DL_REPLAY",
+    "scorer_verification_status": "PASS_INDEPENDENT_CROSS_PATIENT_FIXED_SCORER_ARITHMETIC_AND_PROVENANCE",
+    "raw_verification_seconds": 53.398427900043316,
+    "scorer_analysis_seconds": 8.407166599994525,
+    "scorer_verification_seconds": 7.456247399910353,
+    "clean_primary_results": [
+      {
+        "arm": "leave_patient_out79_refit",
+        "method": "cdi_image_mean_fixed",
+        "scenario": "U",
+        "clean_fixed_C_primary": true,
+        "historical_tuned_C_selection_included_p": false,
+        "source_quirk_diagnostic": false,
+        "no_fitting_in_this_analysis": true,
+        "chosen_C": 1.0,
+        "p_in_prior_coefficient_fit": false,
+        "q_in_prior_coefficient_fit": false,
+        "unchanged_by_construction": false,
+        "matrix_rows": [
+          "p_intervention",
+          "q_intervention"
+        ],
+        "matrix_columns": [
+          "p_query",
+          "q_query"
+        ],
+        "D": [
+          [
+            -0.0034239516902790923,
+            0.08270073038070047
+          ],
+          [
+            -0.01716886464920353,
+            0.053519051162710385
+          ]
+        ],
+        "R_p": {
+          "value": 0.013744912958924438,
+          "raw_sign": 1,
+          "FP64_arithmetic_envelope": 1.0783575730199722e-12,
+          "sign_outside_arithmetic_envelope": "positive"
+        },
+        "R_q": {
+          "value": -0.029181679217990086,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 1.0545722195934684e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "K": {
+          "value": -0.015436766259065648,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 2.132929792613441e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "diagonal_mean": 0.025047549736215646,
+        "off_diagonal_mean": 0.03276593286574847,
+        "diagonal_minus_off_diagonal": -0.007718383129532824,
+        "base_cancelled_K": -0.015436766259065648,
+        "row_column_centered_D": [
+          [
+            -0.003859191564766412,
+            0.003859191564766412
+          ],
+          [
+            0.003859191564766412,
+            -0.003859191564766412
+          ]
+        ],
+        "centered_K": -0.015436766259065648,
+        "arithmetic_identity_envelope": 6.281293721233911e-14,
+        "both_own_minus_cross_positive_raw": false,
+        "both_own_minus_cross_positive_outside_arithmetic_envelope": false,
+        "K_positive_does_not_imply_both": true,
+        "patient_order": [
+          "14393",
+          "4092"
+        ],
+        "E_uses_U_fitted_scorer": false
+      },
+      {
+        "arm": "leave_patient_out79_refit",
+        "method": "cdi_image_max_fixed",
+        "scenario": "U",
+        "clean_fixed_C_primary": true,
+        "historical_tuned_C_selection_included_p": false,
+        "source_quirk_diagnostic": false,
+        "no_fitting_in_this_analysis": true,
+        "chosen_C": 1.0,
+        "p_in_prior_coefficient_fit": false,
+        "q_in_prior_coefficient_fit": false,
+        "unchanged_by_construction": false,
+        "matrix_rows": [
+          "p_intervention",
+          "q_intervention"
+        ],
+        "matrix_columns": [
+          "p_query",
+          "q_query"
+        ],
+        "D": [
+          [
+            0.02772733932954463,
+            0.10284144345663904
+          ],
+          [
+            0.0004832302005042255,
+            0.019005210057225885
+          ]
+        ],
+        "R_p": {
+          "value": 0.027244109129040406,
+          "raw_sign": 1,
+          "FP64_arithmetic_envelope": 1.0849479364908951e-12,
+          "sign_outside_arithmetic_envelope": "positive"
+        },
+        "R_q": {
+          "value": -0.08383623339941315,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 1.0611625830643914e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "K": {
+          "value": -0.056592124270372746,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 2.1461105195552863e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "diagonal_mean": 0.02336627469338526,
+        "off_diagonal_mean": 0.05166233682857163,
+        "diagonal_minus_off_diagonal": -0.028296062135186373,
+        "base_cancelled_K": -0.056592124270372746,
+        "row_column_centered_D": [
+          [
+            -0.014148031067593186,
+            0.014148031067593186
+          ],
+          [
+            0.014148031067593186,
+            -0.014148031067593186
+          ]
+        ],
+        "centered_K": -0.056592124270372746,
+        "arithmetic_identity_envelope": 6.940330068326212e-14,
+        "both_own_minus_cross_positive_raw": false,
+        "both_own_minus_cross_positive_outside_arithmetic_envelope": false,
+        "K_positive_does_not_imply_both": true,
+        "patient_order": [
+          "14393",
+          "4092"
+        ],
+        "E_uses_U_fitted_scorer": false
+      },
+      {
+        "arm": "leave_patient_out79_refit",
+        "method": "patient_mean26_fixed",
+        "scenario": "U",
+        "clean_fixed_C_primary": true,
+        "historical_tuned_C_selection_included_p": false,
+        "source_quirk_diagnostic": false,
+        "no_fitting_in_this_analysis": true,
+        "chosen_C": 1.0,
+        "p_in_prior_coefficient_fit": false,
+        "q_in_prior_coefficient_fit": false,
+        "unchanged_by_construction": false,
+        "matrix_rows": [
+          "p_intervention",
+          "q_intervention"
+        ],
+        "matrix_columns": [
+          "p_query",
+          "q_query"
+        ],
+        "D": [
+          [
+            0.006649255608356164,
+            0.08752574719600914
+          ],
+          [
+            -0.018853763050184602,
+            0.016193595159121776
+          ]
+        ],
+        "R_p": {
+          "value": 0.025503018658540766,
+          "raw_sign": 1,
+          "FP64_arithmetic_envelope": 1.1561698980815596e-12,
+          "sign_outside_arithmetic_envelope": "positive"
+        },
+        "R_q": {
+          "value": -0.07133215203688736,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 7.128638187642683e-13,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "K": {
+          "value": -0.0458291333783466,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 1.869033716845828e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "diagonal_mean": 0.01142142538373897,
+        "off_diagonal_mean": 0.03433599207291227,
+        "diagonal_minus_off_diagonal": -0.0229145666891733,
+        "base_cancelled_K": -0.0458291333783466,
+        "row_column_centered_D": [
+          [
+            -0.01145728334458665,
+            0.01145728334458665
+          ],
+          [
+            0.01145728334458665,
+            -0.01145728334458665
+          ]
+        ],
+        "centered_K": -0.0458291333783466,
+        "arithmetic_identity_envelope": 6.632689584669349e-14,
+        "both_own_minus_cross_positive_raw": false,
+        "both_own_minus_cross_positive_outside_arithmetic_envelope": false,
+        "K_positive_does_not_imply_both": true,
+        "patient_order": [
+          "14393",
+          "4092"
+        ],
+        "E_uses_U_fitted_scorer": false
+      },
+      {
+        "arm": "leave_patient_out79_refit",
+        "method": "patient_meanmax52_fixed",
+        "scenario": "U",
+        "clean_fixed_C_primary": true,
+        "historical_tuned_C_selection_included_p": false,
+        "source_quirk_diagnostic": false,
+        "no_fitting_in_this_analysis": true,
+        "chosen_C": 1.0,
+        "p_in_prior_coefficient_fit": false,
+        "q_in_prior_coefficient_fit": false,
+        "unchanged_by_construction": false,
+        "matrix_rows": [
+          "p_intervention",
+          "q_intervention"
+        ],
+        "matrix_columns": [
+          "p_query",
+          "q_query"
+        ],
+        "D": [
+          [
+            0.05879570427977765,
+            0.07370663330426519
+          ],
+          [
+            -0.11369547593233387,
+            0.10797663516047212
+          ]
+        ],
+        "R_p": {
+          "value": 0.17249118021211152,
+          "raw_sign": 1,
+          "FP64_arithmetic_envelope": 4.806699209139665e-12,
+          "sign_outside_arithmetic_envelope": "positive"
+        },
+        "R_q": {
+          "value": 0.03427000185620693,
+          "raw_sign": 1,
+          "FP64_arithmetic_envelope": 2.871822905376909e-12,
+          "sign_outside_arithmetic_envelope": "positive"
+        },
+        "K": {
+          "value": 0.20676118206831845,
+          "raw_sign": 1,
+          "FP64_arithmetic_envelope": 7.678522114516573e-12,
+          "sign_outside_arithmetic_envelope": "positive"
+        },
+        "diagonal_mean": 0.08338616972012489,
+        "off_diagonal_mean": -0.01999442131403434,
+        "diagonal_minus_off_diagonal": 0.10338059103415922,
+        "base_cancelled_K": 0.20676118206831845,
+        "row_column_centered_D": [
+          [
+            0.05169029551707961,
+            -0.05169029551707961
+          ],
+          [
+            -0.05169029551707961,
+            0.05169029551707961
+          ]
+        ],
+        "centered_K": 0.20676118206831845,
+        "arithmetic_identity_envelope": 5.2582676800815076e-14,
+        "both_own_minus_cross_positive_raw": true,
+        "both_own_minus_cross_positive_outside_arithmetic_envelope": true,
+        "K_positive_does_not_imply_both": true,
+        "patient_order": [
+          "14393",
+          "4092"
+        ],
+        "E_uses_U_fitted_scorer": false
+      },
+      {
+        "arm": "leave_patient_out79_refit",
+        "method": "cdi_image_mean_fixed",
+        "scenario": "E",
+        "clean_fixed_C_primary": true,
+        "historical_tuned_C_selection_included_p": false,
+        "source_quirk_diagnostic": false,
+        "no_fitting_in_this_analysis": true,
+        "chosen_C": 1.0,
+        "p_in_prior_coefficient_fit": false,
+        "q_in_prior_coefficient_fit": false,
+        "unchanged_by_construction": false,
+        "matrix_rows": [
+          "p_intervention",
+          "q_intervention"
+        ],
+        "matrix_columns": [
+          "p_query",
+          "q_query"
+        ],
+        "D": [
+          [
+            0.011701259953375787,
+            0.044523767089628685
+          ],
+          [
+            -0.026348608848681898,
+            -0.044726532971177346
+          ]
+        ],
+        "R_p": {
+          "value": 0.038049868802057685,
+          "raw_sign": 1,
+          "FP64_arithmetic_envelope": 1.1588050778632958e-12,
+          "sign_outside_arithmetic_envelope": "positive"
+        },
+        "R_q": {
+          "value": -0.08925030006080603,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 8.34335953821216e-13,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "K": {
+          "value": -0.05120043125874835,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 1.993141031684512e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "diagonal_mean": -0.01651263650890078,
+        "off_diagonal_mean": 0.009087579120473394,
+        "diagonal_minus_off_diagonal": -0.025600215629374173,
+        "base_cancelled_K": -0.05120043125874835,
+        "row_column_centered_D": [
+          [
+            -0.012800107814687087,
+            0.012800107814687087
+          ],
+          [
+            0.012800107814687087,
+            -0.012800107814687087
+          ]
+        ],
+        "centered_K": -0.05120043125874835,
+        "arithmetic_identity_envelope": 3.7290554978433476e-14,
+        "both_own_minus_cross_positive_raw": false,
+        "both_own_minus_cross_positive_outside_arithmetic_envelope": false,
+        "K_positive_does_not_imply_both": true,
+        "patient_order": [
+          "14393",
+          "4092"
+        ],
+        "E_uses_U_fitted_scorer": true
+      },
+      {
+        "arm": "leave_patient_out79_refit",
+        "method": "cdi_image_max_fixed",
+        "scenario": "E",
+        "clean_fixed_C_primary": true,
+        "historical_tuned_C_selection_included_p": false,
+        "source_quirk_diagnostic": false,
+        "no_fitting_in_this_analysis": true,
+        "chosen_C": 1.0,
+        "p_in_prior_coefficient_fit": false,
+        "q_in_prior_coefficient_fit": false,
+        "unchanged_by_construction": false,
+        "matrix_rows": [
+          "p_intervention",
+          "q_intervention"
+        ],
+        "matrix_columns": [
+          "p_query",
+          "q_query"
+        ],
+        "D": [
+          [
+            0.05851313110667122,
+            0.05610450165793934
+          ],
+          [
+            0.09853611961410563,
+            -0.04810393399123969
+          ]
+        ],
+        "R_p": {
+          "value": -0.04002298850743441,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 1.171718575211242e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "R_q": {
+          "value": -0.10420843564917903,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 8.472494511691622e-13,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "K": {
+          "value": -0.14423142415661344,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 2.018968026380404e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "diagonal_mean": 0.005204598557715767,
+        "off_diagonal_mean": 0.07732031063602249,
+        "diagonal_minus_off_diagonal": -0.07211571207830672,
+        "base_cancelled_K": -0.14423142415661344,
+        "row_column_centered_D": [
+          [
+            -0.03605785603915336,
+            0.03605785603915336
+          ],
+          [
+            0.03605785603915336,
+            -0.03605785603915336
+          ]
+        ],
+        "centered_K": -0.14423142415661344,
+        "arithmetic_identity_envelope": 5.0204052326379644e-14,
+        "both_own_minus_cross_positive_raw": false,
+        "both_own_minus_cross_positive_outside_arithmetic_envelope": false,
+        "K_positive_does_not_imply_both": true,
+        "patient_order": [
+          "14393",
+          "4092"
+        ],
+        "E_uses_U_fitted_scorer": true
+      },
+      {
+        "arm": "leave_patient_out79_refit",
+        "method": "patient_mean26_fixed",
+        "scenario": "E",
+        "clean_fixed_C_primary": true,
+        "historical_tuned_C_selection_included_p": false,
+        "source_quirk_diagnostic": false,
+        "no_fitting_in_this_analysis": true,
+        "chosen_C": 1.0,
+        "p_in_prior_coefficient_fit": false,
+        "q_in_prior_coefficient_fit": false,
+        "unchanged_by_construction": false,
+        "matrix_rows": [
+          "p_intervention",
+          "q_intervention"
+        ],
+        "matrix_columns": [
+          "p_query",
+          "q_query"
+        ],
+        "D": [
+          [
+            -0.002613000974690416,
+            0.0876915958093713
+          ],
+          [
+            -0.07760618248718715,
+            -0.05404448905462789
+          ]
+        ],
+        "R_p": {
+          "value": 0.07499318151249673,
+          "raw_sign": 1,
+          "FP64_arithmetic_envelope": 7.816753528703952e-13,
+          "sign_outside_arithmetic_envelope": "positive"
+        },
+        "R_q": {
+          "value": -0.1417360848639992,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 8.655806062845375e-13,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "K": {
+          "value": -0.06674290335150246,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 1.6472559591549326e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "diagonal_mean": -0.02832874501465915,
+        "off_diagonal_mean": 0.005042706661092078,
+        "diagonal_minus_off_diagonal": -0.03337145167575123,
+        "base_cancelled_K": -0.06674290335150246,
+        "row_column_centered_D": [
+          [
+            -0.016685725837875615,
+            0.016685725837875615
+          ],
+          [
+            0.016685725837875615,
+            -0.016685725837875615
+          ]
+        ],
+        "centered_K": -0.06674290335150246,
+        "arithmetic_identity_envelope": 4.0018239456555784e-14,
+        "both_own_minus_cross_positive_raw": false,
+        "both_own_minus_cross_positive_outside_arithmetic_envelope": false,
+        "K_positive_does_not_imply_both": true,
+        "patient_order": [
+          "14393",
+          "4092"
+        ],
+        "E_uses_U_fitted_scorer": true
+      },
+      {
+        "arm": "leave_patient_out79_refit",
+        "method": "patient_meanmax52_fixed",
+        "scenario": "E",
+        "clean_fixed_C_primary": true,
+        "historical_tuned_C_selection_included_p": false,
+        "source_quirk_diagnostic": false,
+        "no_fitting_in_this_analysis": true,
+        "chosen_C": 1.0,
+        "p_in_prior_coefficient_fit": false,
+        "q_in_prior_coefficient_fit": false,
+        "unchanged_by_construction": false,
+        "matrix_rows": [
+          "p_intervention",
+          "q_intervention"
+        ],
+        "matrix_columns": [
+          "p_query",
+          "q_query"
+        ],
+        "D": [
+          [
+            0.004671751394718315,
+            0.006218983318213522
+          ],
+          [
+            0.022856200203762223,
+            -0.0715509407219041
+          ]
+        ],
+        "R_p": {
+          "value": -0.018184448809043907,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 2.4069274281911366e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "R_q": {
+          "value": -0.07776992404011762,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 2.8439985400844854e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "K": {
+          "value": -0.09595437284916153,
+          "raw_sign": -1,
+          "FP64_arithmetic_envelope": 5.250925968275622e-12,
+          "sign_outside_arithmetic_envelope": "negative"
+        },
+        "diagonal_mean": -0.03343959466359289,
+        "off_diagonal_mean": 0.014537591760987872,
+        "diagonal_minus_off_diagonal": -0.047977186424580764,
+        "base_cancelled_K": -0.09595437284916153,
+        "row_column_centered_D": [
+          [
+            -0.023988593212290382,
+            0.023988593212290382
+          ],
+          [
+            0.023988593212290382,
+            -0.023988593212290382
+          ]
+        ],
+        "centered_K": -0.09595437284916153,
+        "arithmetic_identity_envelope": 6.282717413492875e-14,
+        "both_own_minus_cross_positive_raw": false,
+        "both_own_minus_cross_positive_outside_arithmetic_envelope": false,
+        "K_positive_does_not_imply_both": true,
+        "patient_order": [
+          "14393",
+          "4092"
+        ],
+        "E_uses_U_fitted_scorer": true
+      }
+    ],
+    "scope": "Fixed two-patient response contrasts; not population MIA or identified patient-specific mechanism",
+    "finding": "Existing fixed-C U79 meanmax52 has positive Rp and Rq in U; other primary3 are mixed. Secondary methods also have positive pairs. q h remains inside common39 IQR; large p contrast includes negative q cross effect.",
+    "new_method_necessity_established": false,
+    "stage2_completion_claim": false,
+    "no_additional_training_scheduled": true
+  },
+  "latest_user_clarification": {
+    "date": "2026-09-16",
+    "priority": "Paper contribution may justify changing original thesis goal",
+    "required_tracks": [
+      "Protection design and efficiency",
+      "Protection evaluation improvement"
+    ],
+    "optional_not_fixed": [
+      "E/U gap",
+      "New membership attack",
+      "Previous clipping-observation hypothesis"
+    ],
+    "current_deliverable": "TWO_TRACK_OPERATION_REDESIGN_20260916.md"
+  },
+  "prior_diagnostic_open_items_20260915": [
+    "Concretize shared design assumptions and reasoned paper candidates; no universal all-baseline-failure prerequisite",
+    "Patient-population MoFit core/fusion comparison under fixed medical score calibration and feasible cost",
+    "Distinguish focal participation effects from changes propagated to other patients under limited access; two fixed masked-patient interventions completed, generality remains unestablished.",
+    "Normal-operation and failure-condition evidence; E-to-U32 original26D contrasts remain uncertain",
+    "GM/NO paper-versus-code differences and their performance effects remain separate from literal-source arithmetic verification"
+  ],
+  "prior_diagnostic_queue_status": "Deferred from automatic execution; reactivate only if required by the paper-level claim",
+  "paper_level_redesign": {
+    "date": "2026-09-15",
+    "report": "PAPER_LEVEL_REDESIGN_20260915.md",
+    "thesis_goal": "Valid patient-privacy and reuse/retraining decisions, utility/cost, exact-model and PP evidence binding",
+    "cvpr_priority_question": "Patient exposure evaluation and protection comparison when auditor-held images differ from training images",
+    "status": "Working research structure; concrete mechanism link and independent contribution remain to be established",
+    "task_selection_basis": "Contribution to a paper claim, not the most recent diagnostic anomaly",
+    "new_attack_required": false,
+    "benchmark_format_finalized": false,
+    "representativeness_candidate_selected": false,
+    "all_strong_baselines_must_fail_first": false,
+    "new_gpu_runs": 0,
+    "frozen_thesis_contracts_changed": false
+  },
+  "protection_observation_candidate": {
+    "report": "PROTECTION_OBSERVATION_CLAIM_20260915.md",
+    "paper_purpose": "Determine when E-based protection comparisons transfer to U patient observations and improve protection-selection evidence",
+    "mechanism": "Interaction between per-image clipping factors, gradient directions and observation direction",
+    "status": "Primary C inactive in all16; one post-hoc activation control produced opposite E/U loss order in3 conditions/2 patients; DP/MIA efficacy and practical importance unverified",
+    "analytical_witness": "spec_sources/protection_observation_design_20260915/analytic_witness.json",
+    "exact_scope": "One-step bounded Gaussian release with fixed linear scores; not all attacks or AdamW-trained diffusion models",
+    "public_triplets": "spec_sources/protection_observation_design_20260915/public_triplet_fixture.json",
+    "optimizer_inventory": "spec_sources/protection_observation_design_20260915/optimizer_state_inventory.json",
+    "prepared_patients": 8,
+    "prepared_images": 24,
+    "prepared_checkpoint_steps": [
+      250,
+      1000
+    ],
+    "gradient_vectors_previously_saved": false,
+    "existing_moments_cpu_verified_nonzero": true,
+    "followup_core_forward": 144,
+    "followup_core_backward": 48,
+    "followup_execution_contract_frozen": true,
+    "followup_gpu_run": true,
+    "same_patient_sampler_bridge_is_original_ELS": false,
+    "thesis_M1_G8_is_tight_ELS_baseline": false,
+    "all_existing_methods_failure_claim": false,
+    "new_DP_method_claim": false,
+    "gradient_vectors_now_saved": true,
+    "local_result": {
+      "report": "CLIPPING_OBSERVATION_LOCAL_RESULTS_20260915.md",
+      "primary_C": 0.28448700606156724,
+      "primary_inactive_conditions": 16,
+      "activation_C": 0.01,
+      "activation_is_posthoc": true,
+      "activation_choice": "minimum pre-existing public calibration grid, once; not E/U outcome-selected",
+      "opposite_conditions": 3,
+      "opposite_unique_patients": 2,
+      "linear_sign_agreement": 47,
+      "linear_image_conditions": 48,
+      "total_forward": 280,
+      "total_backward": 52,
+      "runner_seconds": 76.98327329999302,
+      "saved_arithmetic_and_Adam_audit": "PASS both runs",
+      "DP_noise": 0,
+      "new_long_training": false,
+      "full_attack_or_DP_efficacy_claim": false
+    },
+    "current_role": "Supporting conditional local observation; not automatically the selected contribution or next work item"
+  },
+  "closest_literature_focus": [
+    "Track1: ICCV2025 DP diffusion fine-tuning, same-head user-DP-SGD, DP-MERF/MEPF/NTK, AdaSSP/IHM, DRFM, AISTATS2026 Where the Score Lives.",
+    "Track2: DistillMD/DualMD, Diffusion Soup NAF, SELENA Appendix A.3, Aerni Appendix B.3, Students Parrot Their Teachers Section3.1 AppendixD.1.",
+    "Independent direct boundaries: LoRA-Leak, two-stage adaptation auditing, SeMI, FFA/LA-LoRA, PRISM and LoRA-RITE."
+  ],
+  "evidence_distinction": "PP-Mark core validation rule can be designed/proved under stated assumptions; this training-phenomenon candidate needs empirical conditions and is not a cryptographic guarantee",
+  "latest_scope_inventory": "PATIENT_GAP_WORK_INVENTORY_20260916.md",
+  "documented_gap_candidates": {
+    "representativeness": "Recorded source assumptions and controlled-observation evaluation outline; specific consequential gap and solution incomplete",
+    "auxiliary_information": "Our CDI U-fitting result is observed; operational access and solution boundary incomplete",
+    "protection_observation": "Recorded candidate plus restricted local clipping evidence; patient MIA/protection-choice link incomplete"
+  },
+  "latest_design_report": "TWO_TRACK_OPERATION_REDESIGN_20260916.md",
+  "latest_user_scope_20260916": {
+    "thesis_goal_may_change": true,
+    "priority": "A defensible paper contribution; develop both protection-design efficiency and protection-evaluation improvement",
+    "eu_setting_required": false,
+    "new_attack_required": false,
+    "clipping_candidate_required": false,
+    "overrides": "Earlier mandatory preservation of the patient held-photo versus training-photo goal",
+    "frozen_experiments": "Preserved as historical evidence; research scope change does not rewrite protocols or outcomes"
+  },
+  "two_track_designs": {
+    "report": "TWO_TRACK_OPERATION_REDESIGN_20260916.md",
+    "status": "concrete_operation_candidates_no_efficacy_or_novelty_confirmation",
+    "priority": "Track1 frozen residual representation and patient-statistic contract; track2 decision improvement remains a separate research question.",
+    "track1": {
+      "proposal": "Spatially shared frozen-denoiser time-feature residual head fitted from jointly clipped and Gaussian-noised patient sufficient statistics.",
+      "spec": "spec_sources/track1_operation_redesign_20260916.md",
+      "confirmed_logic": "Fixed-feature quadratic finite loss depends on A/B; bounded patient statistics admit standard Gaussian protection; backbone backward is unnecessary.",
+      "strong_counterbaseline": "Same-head DP-SGD also has zero backbone backward and may reuse the same private feature bank. Separate this from full DP-LoRA comparison.",
+      "prior_boundary": "One-shot private feature generation, SSP, denoising ridge and small feature models already exist.",
+      "unverified": "Generated quality, patient-DP utility and fair same-head/strong-private-regression/DP-LoRA advantage; the initial nonprivate capacity question is now supported in one fixed development setting.",
+      "capacity_report": "TRACK1_CAPACITY_RESULTS_20260916.md",
+      "capacity_status": "patient_disjoint_development_nonprivate_MSE_gain_verified"
+    },
+    "track2": {
+      "proposal": "Identify which teacher/student data-path repair changes the actual protection-utility-cost decision in diffusion distillation.",
+      "spec": "spec_sources/track2_operation_redesign_20260916.md",
+      "confirmed_logic": "Image-out and patient-out differ; private student inputs create a separate dependence path; original NAF assumptions are not patient-DP.",
+      "prior_boundary": "SELENA/Aerni already address correlated-point and distillation leakage; Students Parrot already separates private teacher/student inputs. Four-cell audit alone is not new.",
+      "unverified": "A decision rule or important finding beyond standard splitting, known attacks and known distillation repairs."
+    },
+    "independent_prior_note": "spec_sources/operation_redesign_independent_20260916.md",
+    "new_gpu_runs": 0,
+    "new_training_runs": 0,
+    "new_attack_runs": 0,
+    "new_synthetic_efficacy_runs": 0,
+    "verification": "spec_sources/two_track_operation_verification_20260916.json"
+  },
+  "prior_closest_literature_focus_20260916": [
+    "User Inference (EMNLP2024)",
+    "FACE-AUDITOR (USENIX2023)",
+    "ELS/ULS",
+    "CDI (CVPR2025)"
+  ],
+  "historical_user_clarification_before_two_tracks": {
+    "date": "2026-09-15",
+    "report": "STAGE2_DESIGN_GAP_RESET_20260915.md",
+    "scope": "Identify common design assumptions and evaluation gaps, logically connect concrete SOTA approaches to expected weaknesses and a candidate response before experiments",
+    "all_strong_baselines_must_fail_before_design": false,
+    "complete_causal_identification_required_before_candidate": false,
+    "unevaluated_axis_alone_sufficient": false,
+    "PP_reasoning_automatic_domain_transfer": false,
+    "attack_benchmark_direction_finalized": false,
+    "candidate_axis": "Audit-image representativeness relative to patient training contexts",
+    "candidate_status": "For logical/source review only; not selected, validated or claimed novel across literature",
+    "new_GPU_runs": 0
+  },
+  "initial_two_track_designs_20260916": {
+    "report": "TWO_TRACK_PAPER_DESIGNS_20260916.md",
+    "status": "literature_grounded_proposals_not_validated_efficacy",
+    "track1": {
+      "proposal": "Within-user Monte Carlo allocation targeting error remaining after clipping",
+      "spec": "spec_sources/track1_protection_efficiency_design_20260916.md",
+      "rule": "Independent pilot; boundary-guarded clipped-error proxy; public fixed controller; fresh final estimator; fixed per-user clip",
+      "unverified": "Pilot accuracy, total-cost benefit, optimizer and utility transfer, novelty beyond close MC/clipping methods"
+    },
+    "track2": {
+      "proposal": "Cost-aware defense comparison using joint FPR/TPR uncertainty and shared feature observations",
+      "spec": "spec_sources/track2_protection_evaluation_design_20260916.md",
+      "scope": "Fixed finite fitted attack portfolio and explicit audit population, not universal privacy certification",
+      "unverified": "Allocation efficiency beyond NP-ROC plus Maximin/feedback-graph baselines; actual defense-choice benefit",
+      "rule_v0": "Leader/challenger ROC bounds; hypothetical band-width reduction per incremental shared-feature cost; explicit ties; power-of-two forced exploration; real-bound stopping only"
+    },
+    "priority": "Refine track1 first; retain track2 independently",
+    "new_gpu_runs": 0,
+    "new_training_runs": 0,
+    "new_attack_runs": 0,
+    "verification": "spec_sources/two_track_design_verification_20260916.json"
+  },
+  "deeper_two_track_designs_20260916": {
+    "report": "TWO_TRACK_DEEPER_CHECK_20260916.md",
+    "status": "initial_v0s_adverse_synthetic_results_prior_overlap_confirmed_broad_tracks_retained",
+    "track1": {
+      "proposal": "Within-user Monte Carlo allocation targeting error remaining after clipping",
+      "spec": "spec_sources/track1_protection_efficiency_design_20260916.md",
+      "rule": "Independent pilot; boundary-guarded clipped-error proxy; public fixed controller; fresh final estimator; fixed per-user clip",
+      "unverified": "New bounded learning operation beyond close priors; actual user-DP optimizer, utility and GPU cost benefit. Current v0 efficiency unsupported in the declared synthetic families.",
+      "checked": "Directional proxy and two-pilot plug-in map to Bollapragada; 20/21 geometry settings worse than matched fixed; remaining setting identical to raw variance. Pilot-zero and finite-R tail failures identified.",
+      "cpu_report": "spec_sources/track1_cpu_allocation_20260916/해석.md"
+    },
+    "track2": {
+      "proposal": "Cost-aware defense comparison using joint FPR/TPR uncertainty and shared feature observations",
+      "spec": "spec_sources/track2_protection_evaluation_design_20260916.md",
+      "scope": "Fixed finite fitted attack portfolio and explicit audit population, not universal privacy certification",
+      "unverified": "Actual protection-decision benefit beyond strong attack/calibration methods. Current v0 efficiency unsupported; exact M-LUCB/TaS-FG not reproduced.",
+      "rule_v0": "Leader/challenger ROC bounds; hypothetical band-width reduction per incremental shared-feature cost; explicit ties; power-of-two forced exploration; real-bound stopping only",
+      "checked": "4 conditions x 3 rules x 64 replicates; v0 worse than uniform in cost/abstention; valid CP/ROC decision construction and discrete-feasibility proxy failure separated.",
+      "cpu_report": "spec_sources/track2_cpu_audit_20260916/해석.md"
+    },
+    "priority": "Revisit operation-level paper design in both broad tracks; current v0 medical scaling deferred.",
+    "new_gpu_runs": 0,
+    "new_training_runs": 0,
+    "new_attack_runs": 0,
+    "verification": "spec_sources/two_track_deeper_independent_verification_20260916.json",
+    "cpu_executions": 2,
+    "cpu_compute_seconds": [
+      8.041419800021686,
+      15.610588100040331
+    ],
+    "deeper_prior_memo": "spec_sources/two_track_deeper_novelty_20260916.md"
+  },
+  "pre_operation_redesign_literature_focus_20260916": [
+    "Track1: ELS/ULS, DPDM, DP-LoRA, Bollapragada directional sampling, Xiao clipping-bias reduction, CARV, Giles-Haji-Ali nested MC",
+    "Track2: Aerni adaptive privacy evaluation, NP-ROC, Howard-Ramdas sequential quantiles, Maximin-LUCB/Racing, correlated/shared-observation prior limits"
+  ],
+  "pre_capacity_current_result_report_20260916": "STAGE2_MEASUREMENT_AUDIT_20260915.md",
+  "completed_track1_capacity_20260916": {
+    "report": "TRACK1_CAPACITY_RESULTS_20260916.md",
+    "protocol": "TRACK1_CAPACITY_PROTOCOL_20260916.md",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_capacity_20260916_v1",
+    "status": "PASS_FROZEN_RESIDUAL_CAPACITY_SAVED_ARITHMETIC_AND_PROVENANCE",
+    "train_patients": 80,
+    "development_patients": 40,
+    "images": 480,
+    "records": 3840,
+    "eval_summary": {
+      "mean_mse": {
+        "base": 0.17964495328020189,
+        "full": 0.1740069293740371,
+        "static": 0.1747876716746816,
+        "time": 0.17963452198089272
+      },
+      "paired_reductions": {
+        "base_minus_full": {
+          "mean": 0.005638023906164797,
+          "ci95": [
+            0.005444985123467965,
+            0.005841404705587231
+          ],
+          "patients": 40,
+          "positive_patients": 40,
+          "scope": "pointwise descriptive patient bootstrap on reused development cohort"
+        },
+        "static_minus_full": {
+          "mean": 0.0007807423006444637,
+          "ci95": [
+            0.0007542164630096828,
+            0.000807160614704842
+          ],
+          "patients": 40,
+          "positive_patients": 40,
+          "scope": "pointwise descriptive patient bootstrap on reused development cohort"
+        },
+        "time_minus_full": {
+          "mean": 0.005627592606855583,
+          "ci95": [
+            0.0054341938868337075,
+            0.005829564679822071
+          ],
+          "patients": 40,
+          "positive_patients": 40,
+          "scope": "pointwise descriptive patient bootstrap on reused development cohort"
+        },
+        "base_minus_static": {
+          "mean": 0.004857281605520333,
+          "ci95": [
+            0.004678543378716814,
+            0.005046630612586455
+          ],
+          "patients": 40,
+          "positive_patients": 40,
+          "scope": "pointwise descriptive patient bootstrap on reused development cohort"
+        },
+        "base_minus_time": {
+          "mean": 1.0431299309213853e-05,
+          "ci95": [
+            4.942412954364542e-06,
+            1.6393381619170357e-05
+          ],
+          "patients": 40,
+          "positive_patients": 29,
+          "scope": "pointwise descriptive patient bootstrap on reused development cohort"
+        }
+      },
+      "relative_full_reduction": 0.03138425991500493
+    },
+    "total_unet_forward_including_profile_and_warmups": 3850,
+    "unet_backward": 0,
+    "nonprivate_head_fits": 3,
+    "main_extraction_seconds": 314.68696409999393,
+    "analysis_seconds": 16.406101800035685,
+    "independent_verification_seconds": 20.174614800023846,
+    "verification_checks": 114873,
+    "dp_applied": false,
+    "generation_quality_measured": false,
+    "final_test_used": false,
+    "verifier_timing_correction": "verification_metadata_correction.json"
+  },
+  "next_task_plan_report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
+  "track1_dp_comparison_design_20260916": {
+    "status": "comparison_structure_reviewed_public_calibration_and_dp_execution_pending",
+    "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
+    "cells": [
+      "static16-SSP",
+      "static16-DP-SGD",
+      "full64-SSP",
+      "full64-DP-SGD"
+    ],
+    "adjacency": "add_remove_one_patient",
+    "fixed_public_denominator": 80,
+    "epsilon": 8.0,
+    "delta": 1e-05,
+    "public_calibration_patients": 32,
+    "public_calibration_images_per_patient": 2,
+    "public_calibration_extracted": false,
+    "sgd_q_candidate": 0.1,
+    "sgd_steps_candidate": 500,
+    "sgd_budget_final": false,
+    "final_execution_contract_frozen": false,
+    "new_dp_models_trained": 0,
+    "estimated_preparation_minutes": [
+      30,
+      60
+    ],
+    "accounting_precheck": "spec_sources/track1_dp_accounting_precheck_20260916.json",
+    "accounting_precheck_status": "PASS_PUBLIC_ACCOUNTING_ONLY"
+  },
+  "historical_open_items_closed_by_capacity_20260916": [
+    "Track1: feature API, inference-available inputs, fixed patient objective and source contract; actual nonprivate restricted-family capacity."
+  ]
+}

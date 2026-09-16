@@ -1,0 +1,183 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>U_PILOT_REVIEW.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>U 파일럿 정밀 검토 — 성능 판정 전에 빠진 검증</h1>
+<p><strong>후속 실제 검증:</strong> 아래 본문은 GPU 진단 전의 검토 이력이다. 이후 사용자 요청으로 수치 진단·기존 U8 전체 재현·E/U 대조를 실제 수행했다. 현재 판단과 실측은 <a href="u_verification_results.html">실제 재검증 결과</a>를 우선한다. 아래의 “미실행”은 이 문서 작성 시점의 상태다.</p>
+<p>2026-09-14. 기존 설계·구현·저장 결과·설치된 라이브러리를 대조하고 CPU 재계산을 수행했다. 구현/수치, 통계 해석, 자료/학습을 독립적으로 검토했다. 새 환자, 추가 GPU 질의, 학습, 점수 fitting, 설정 탐색은 수행하지 않았다.</p>
+<p><strong>최종 판정: 실행과 분할은 확인됐지만, 현재 원점수 진단만으로 후보의 성공·실패나 보정항의 결함을 판정할 수 없다. 가장 먼저 보완할 것은 입력 최적화의 수치 검증이다.</strong> 그 뒤에 기존 사진의 E/U 기본 점수로 감사가 관측할 수 있는 신호를 점검해야 한다. 16명/80명 확대 또는 보정항 수정부터 확정할 근거는 없다.</p>
+<p><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/review_20260914/review_facts.json">CPU 재계산 근거</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/review_20260914/numerical_diagnostic_plan.json">수치 진단 실행 사양 — 아직 미실행</a></p>
+<h2>1. 무엇이 실제로 확인되었는가</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>확인한 사실</th>
+<th>이 사실만으로 확인되지 않는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>환자·영상 분할</td>
+<td>U 영상 학습 노출 0, 참조·품질 환자 분리, 1,600개 평가 영상 모두 서로 다른 참조 환자 2명과 연결</td>
+<td>촬영 세션 독립성, 모든 분포 교란의 부재</td>
+</tr>
+<tr>
+<td>학습</td>
+<td>각 모델 912장 모두 4–5회 사용, 1,000 optimizer step 및 checkpoint 검증</td>
+<td>개인 암기 또는 membership 공격의 검출 가능성</td>
+</tr>
+<tr>
+<td>모델 교환</td>
+<td>두 adapter는 다르고 환자 포함 배정을 교환</td>
+<td>독립 seed 반복, 단일 환자의 인과효과 또는 DP 인접 비교</td>
+</tr>
+<tr>
+<td>도메인 적응</td>
+<td>별도 품질 환자에서 denoising loss 약 28.5% 감소, X-ray 기본 구도 생성</td>
+<td>임상 효용, 감사 prompt에서의 노출 검출력</td>
+</tr>
+<tr>
+<td>후보 계산</td>
+<td>null adapter의 차이·gradient 0, weight 불변, fold 산술과 정답·hash 일치</td>
+<td>비영점 입력 gradient의 정확도, 6회 최적화가 목적을 개선했는지</td>
+</tr>
+<tr>
+<td>현재 U 원점수</td>
+<td>양의 방향 R 단독 AUC 0.6875/0.3125, 참여 시 점수 상승 4/8</td>
+<td>개발 fitting·보정·결합을 포함한 전체 방법의 성능</td>
+</tr>
+<tr>
+<td>E 대조</td>
+<td>기존 사진 한 환자를 두 모델에서 실행</td>
+<td>모델별 E 판별력 또는 신뢰할 만한 양성 대조</td>
+</tr>
+</tbody>
+</table>
+<p>자료·수식·adapter 전환에서 결과를 무효화할 명백한 구현 오류는 발견하지 못했다. 이것은 모든 구현·수치 오류가 배제됐다는 뜻이 아니다.</p>
+<h2>2. 앞선 설명에서 정정할 부분</h2>
+<p><strong>“보정 후 퍼짐이 커졌으니 보정항이 문제다”는 결론을 철회한다.</strong> 관측 수치는 맞지만 원인 판정이 앞섰다.</p>
+<p>own gain과 reference gain을 T와 C라고 하면:</p>
+<p><code>Var(T−C) = Var(T) + Var(C) − 2 Cov(T,C)</code></p>
+<p>현재 8명의 두 모델 평균에서 own/reference 상관은 −0.14304다. 차감 후 표준편차는 <strong>1.47578배</strong>, 분산은 <strong>2.17793배</strong>다. 표준편차 증가를 membership 신호 감소로 바로 읽을 수 없다. 전체 환자 간 퍼짐에는 클래스 신호도 포함될 수 있고, 같은 환자의 두 모델 차이에는 다른 모든 환자의 학습 배정 변화도 들어 있다. 이전의 “모델 간 변화 RMS / 환자 간 SD”는 membership 신호 대 잡음비가 아니다.</p>
+<p>실제 저장값에서도 대조를 빼기 전 own gain AUC가 0.5/0.5였다. 따라서 대조항을 제거하면 문제가 해결된다는 근거도 없다. 이번 검토는 임의 숫자의 반례에서 <strong>퍼짐이 늘면서 AUC가 개선될 수 있음</strong>을 확인했다. 이는 논리적 반례이지 현재 자료로 보정법을 fitting한 결과가 아니다.</p>
+<p><strong>“여러 지표가 독립적으로 실패를 재확인했다”는 해석도 하지 않는다.</strong> 같은 환자 순위와 정확히 반전된 정답이면 두 모델 AUC의 합은 1이다. 평균 0.5와 공동 환자 제외 후 평균 0.5도 그 구조에서 나온다. 동일 순위는 중요한 단서지만, 같은 결과를 독립 증거 여러 개로 세면 안 된다. 큰 환자별 상수에 작은 참여 효과가 더해져도 순위가 같을 수 있다는 수치 반례도 확인했다. 현재 자료의 상승 4/8 자체는 별도로 일관된 양의 효과를 보여주지 못한다.</p>
+<p><strong>16명과 80명은 충분한 검정력에서 산정한 수가 아니었다.</strong> 원래 U 계획은 8–16명을 실행·시간 점검으로 명시했다. 80명은 기존 fit 역할의 크기다. 시간을 줄인다고 임의의 표본 수가 확증 규모가 되는 것은 아니다.</p>
+<h2>3. 가장 큰 공백: 최적화가 제대로 수행됐는가</h2>
+<p><a href="../../code_working/u_patient_audit/probe.py">probe.py</a>의 84–87행은 support 목적값을 버리고 gradient만 사용해 6회 조정한다. 저장물에는 마지막 계수의 크기와 최종 query 반응만 있다. 아래 값이 없다.</p>
+<ul>
+<li>시작/마지막 support 목적값과 각 step의 변화.</li>
+<li>계수 벡터, gradient 크기·방향, 실제 update와 projection 이력.</li>
+<li>비영점 adapter에서 입력 gradient와 수치 방향 미분의 대조.</li>
+<li>checkpointing 켬/끔의 입력 gradient 대조.</li>
+</ul>
+<p>따라서 현재 기록만으로는 “최적화가 원하는 목적을 키웠고 그 조정을 다른 사진에 전달했다”의 첫 부분을 직접 검증할 수 없다. weight가 그대로이고 숫자가 유한하다는 것은 별도의 확인이다. base==target일 때 0이 되는 검사는 잘못된 구현이 언제나 0을 반환하는 경우까지 통과할 수 있어 비영점 미분 검증을 대체하지 못한다.</p>
+<p><strong>빠진 검증이 있다는 사실은 확인됐지만, 실제 gradient 버그가 있다는 결론은 아니다.</strong></p>
+<p>설치된 PEFT는 adapter enable 시 parameter gradient를 다시 켤 수 있으나 현재 코드는 즉시 다시 동결한다. base/target 미분도 adapter 상태를 바꾸기 전에 각각 끝낸다. 설치된 diffusers의 해당 checkpoint 경로는 non-reentrant이고 dropout은 0이다. 이 부분을 추측만으로 오류라고 지목하지 않는다.</p>
+<h2>4. probe 설정 자체의 검증되지 않은 선택</h2>
+<p>CPU에서 실제 캐시를 읽어 다음을 확인했다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th style="text-align: right;">실제 값</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전체 embedding</td>
+<td style="text-align: right;">77×1,024</td>
+<td>padding 위치까지 norm 계산에 포함</td>
+</tr>
+<tr>
+<td>조정하는 활성 token</td>
+<td style="text-align: right;">7개, 7,168차원</td>
+<td>basis는 이 영역에만 존재</td>
+</tr>
+<tr>
+<td>전체 embedding norm</td>
+<td style="text-align: right;">291.7156</td>
+<td>현재 조정량의 배율</td>
+</tr>
+<tr>
+<td>활성 영역 norm</td>
+<td style="text-align: right;">85.0643</td>
+<td>전체 norm보다 작음</td>
+</tr>
+<tr>
+<td>계수 반경 0.05의 활성 영역 대비 크기</td>
+<td style="text-align: right;">최대 17.15%</td>
+<td>활성 영역 기준 5% 조정이 아님</td>
+</tr>
+<tr>
+<td>저장된 fold의 반경 경계 도달</td>
+<td style="text-align: right;">30/32</td>
+<td>포화 또는 최적화 궤적 확인 필요</td>
+</tr>
+<tr>
+<td>고정 random basis</td>
+<td style="text-align: right;">8차원</td>
+<td>활성 공간 차원의 약 0.112%; 정보량 비율은 아님</td>
+</tr>
+<tr>
+<td>basis 직교성 오차</td>
+<td style="text-align: right;">최대 2.38×10⁻⁷</td>
+<td>CPU 구성은 정상</td>
+</tr>
+</tbody>
+</table>
+<p>이 값은 원래 공식과 일치한다. padding norm을 썼다는 이유만으로 구현 오류라고 할 수 없고, 경계 도달도 projected optimization에서 자연스러울 수 있다. 다만 “작은 5% 조정이니 선형이고 충분하다” 또는 “이 8차원에서 안 되니 환자 신호가 없다”는 결론은 성립하지 않는다. 실제 목적값 궤적과 수치 미분을 봐야 한다.</p>
+<h2>5. 학습과 E/U 관측 가능성을 아직 분리하지 못했다</h2>
+<p>학습은 약 4–5회/영상 노출의 초기 파일럿이다. 별도 품질 손실 감소는 의료 도메인 적응의 근거다. 학습 loss 약 0.116과 별도 품질 loss 약 0.138은 timestep/noise·집계 조건이 달라 직접적인 암기 격차로 비교할 수 없다.</p>
+<p>E 실행은 1명뿐이며, 그 한 명의 참여 모델 점수가 더 높은 관측은 있었다. 그러나 두 모델 각각의 참여·미참여 E 분포를 비교하지 않았으므로 E 검출력이 확인됐다고 말할 수 없다.</p>
+<p>학습 및 품질 평가의 조건은 상세 weak-label prompt이고, 감사는 고정 generic prompt다. 이 차이는 의도된 접근 제한이며 자동으로 오류가 아니다. 다만 품질 평가가 generic audit 조건의 유효성을 검증한 것은 아니다.</p>
+<p>후속 기본 진단에서는 <strong>이미 사용한 환자와 기존 모델을 고정하고</strong>, conditioning 최적화 없이 같은 timestep/noise로 E/U의 단순 denoising 점수를 비교할 수 있다. 필요할 때 generic/matched prompt를 명시적으로 나눠 진단한다. matched prompt는 실제 감사자에게 추가 정보를 준 별도 대조다.</p>
+<ul>
+<li>E에서 단서가 있고 U에서 약하면 관측되지 않은 동일 환자 사진으로의 전이가 다음 점검 대상이다.</li>
+<li>matched E에서만 단서가 있으면 prompt 접근 제한이 의심 요인이 된다.</li>
+<li>E에서도 약하면 학습 노출 흔적과 측정 민감도를 아직 구분하지 못한 상태다. 노출 부재를 증명하지 않는다.</li>
+</ul>
+<p>이 진단 역시 작은 개발 자료의 원인 구분용이며 성능 확증이 아니다.</p>
+<h2>6. 원래 계획한 공격 평가가 아직 미완료다</h2>
+<p><a href="design.html">원 설계</a>는 개발 자료에서 R의 부호·정규화·결합을 정하고, 동일한 분류기에 기존 특징만 준 경우와 R을 더한 경우를 비교하도록 되어 있다. 지금은 양의 방향 R 하나를 원점수로 읽었으며 이 fitting과 추가 이득 비교를 하지 않았다.</p>
+<p>모델 2의 부호를 지금 8명에 맞춰 바꾸어 성능을 높게 보고해서는 안 된다. 반대로 원래 허용된 fitting을 수행하지 않은 현재 결과로 그 전체 방법까지 실패라고 할 수도 없다. 현재 결론은 <strong>“고정 양의 R 단독에서 일관된 신호를 확인하지 못함, fitted incremental comparison은 미실시”</strong>다.</p>
+<p>현재 gradient dot/cos도 후보의 정확한 1차 근사 대조가 아니다. 두 사진의 support timestep/noise gradient를 사용하며, query 조건의 reference gradient 차감과 정규화가 다르다. 후보에 맞춘 국소 선형 진단은 한 방향에서 다음과 같다.</p>
+<p><code>R_linear = a_C · [grad D_D(0; query) − mean_ref grad D_ref(0; query)]</code></p>
+<p>같은 query 조건과 실제 계수 a_C를 사용하거나, 별도의 정규화된 1-step 방법으로 명시해야 한다. 현재 저장물에는 계수 벡터와 참조 query gradient가 없어 이 값을 CPU만으로 복원할 수 없다. 기존 dot/cos를 계산했다는 사실만으로 선형 관계라는 대안 설명을 제거한 것은 아니다. 이 matched 대조의 비용이 반드시 더 싸다고 가정하지도 않는다.</p>
+<h2>7. 바로 다음 행동은 수치 진단 한 건으로 고정한다</h2>
+<p><strong>새 환자 수를 정하지 않고, 이미 쓴 입력에서 비영점 미분과 6-step 최적화의 실제 동작을 검증한다.</strong> 성능 표본 수를 한 명으로 줄여 판정한다는 뜻이 아니라 구현 검증용 입력을 고정하는 것이다.</p>
+<p>실행 사양은 별도 JSON에 준비했으며 이번에는 GPU를 실행하지 않았다.</p>
+<ol>
+<li>기존 model 1 checkpoint와 최초 U 실행의 support 입력을 고정한다. AUC나 정답에 따라 입력을 고르지 않는다.</li>
+<li>6-step의 목적값·계수·gradient·projection과 마지막 목적값을 기록한다. support noise는 그대로 둔다.</li>
+<li>기존 t=500 셀에서 checkpointing 켬/끔의 gradient를 비교한다.</li>
+<li>세 차분 간격에서 중앙 방향 미분과 autograd를 대조한다. FP16로 실제 바뀐 embedding 원소와 크기도 기록한다.</li>
+<li>양자화 때문에 불명확하면 같은 latent/noise 값을 FP32로 승격한 한 입력에서 재검사한다. FP32용 noise를 새로 뽑아 비교 조건을 바꾸지 않는다.</li>
+</ol>
+<p>초기 gradient를 재사용하면 기본 사양은 <strong>명목 56F+38B</strong>다. F는 base/target별 모델 forward, B는 입력 gradient 계산이며 checkpoint 내부 재계산은 B의 비용에 포함된다. 추가 반복·FP32 fallback·완전한 query 재평가는 별도다. 이 수만으로 정확한 벽시계 시간을 약속하지 않는다.</p>
+<p>판정은 세 가지로 나눈다.</p>
+<table>
+<thead>
+<tr>
+<th>관측</th>
+<th>처리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>안정된 차분 구간에서 AD가 일치하고 checkpointing 결과가 수치 오차 범위에서 맞음</td>
+<td>해당 입력의 미분 점검 통과; 성능 통과는 아님</td>
+</tr>
+<tr>
+<td>정밀도·차분 간격을 바꿔도 안정적인 불일치가 남음</td>
+<td>구현/수치 문제를 먼저 수정</td>
+</tr>
+<tr>
+<td>양자화·너무 작은 gradient로 안정된 비교가 안 됨</td>
+<td>판정 보류; 검증 성공으로 기록하지 않음</td>
+</tr>
+</tbody>
+</table>
+<p>gradient가 맞아도 마지막 support 목적값이 감소하면 현재 고정 최적화 규칙이 그 입력에서 실패한 것으로 기록한다. 곧바로 미분 버그로 부르지 않는다. 목적값이 증가해도 membership 판별력을 증명하지 않는다.</p>
+<p>수치 진단 이후에만 E/U 기본 관측 가능성, 원래 계획한 개발 fitting/별도 선택, 강한 비교·제거, 독립 평가·DP 비교 순서로 진행한다. 각 단계의 표본 수는 최소 유용 효과·불확실성·실측 비용과 함께 정한다. <strong>현재는 16/80명 자동 확대, 보정항 제거, 신규 학습 중 어느 것도 시작하지 않았다.</strong></p>
+<h2>8. 기록의 효력</h2>
+<p>이 검토가 앞선 “보정항이 문제이므로 고치자”는 원인 추정과 “16명 또는 80명이면 판단된다”는 인상을 정정한다. <a href="u_eight_patient_analysis.html">8명 원점수 분석</a>의 수치와 원결과는 보존한다. <a href="u_execution_status.html">전체 실행 현황</a>에는 이 검토를 최신 해석으로 연결한다.</p>
+<p>원 연구 질문인 <strong>관측 사진은 미사용이어도 같은 환자의 다른 사진이 학습됐을 수 있다는 간극과 환자 보호 평가</strong>는 유지한다. 현 후보가 그 질문에 유효한 방법인지, CVPR 기여로 남는지는 아직 검증되지 않았다.</p></main></body></html>

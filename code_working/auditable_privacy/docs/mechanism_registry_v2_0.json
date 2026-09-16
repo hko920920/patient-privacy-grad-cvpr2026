@@ -1,0 +1,39 @@
+{
+  "registry_version": "1.0",
+  "mechanisms": {
+    "secure_systemrandom_dpsgd@2.0.0": {
+      "mechanism_id": "secure_systemrandom_dpsgd",
+      "mechanism_version": "2.0.0",
+      "accountant_id": "opacus_rdp",
+      "sampler_law": "poisson",
+      "accountant_sampler_law": "poisson",
+      "sampling_implementation": "systemrandom_randrange_bernoulli_v1",
+      "secure_rng_backend": "python.secrets.SystemRandom",
+      "noise_generation": "normalvariate_discard1_sum4_div2_v1",
+      "noise_hardening": "known_fp_reconstruction_mitigation_four_draw_v1",
+      "gradient_aggregation": "clipped_sum_plus_gaussian_noise",
+      "update_normalization": "public_constant_step_no_dataset_denominator",
+      "code_artifact_id": "scripts/wisdm_v2_gold_pipeline.py",
+      "code_sha256": "be21ff288cf1e9f24966a48352cf289737301b904d3883e1edf764d44cb6526b",
+      "accountant_checker_artifact_id": "scripts/rdp_accountant_lite.py",
+      "accountant_checker_sha256": "6ee488134e9740c960a02aea94fae8c9340af2f30ee34d7ac9b728968fd763c8"
+    },
+    "secure_systemrandom_uci_har_dpsgd@1.0.0": {
+      "mechanism_id": "secure_systemrandom_uci_har_dpsgd",
+      "mechanism_version": "1.0.0",
+      "accountant_id": "opacus_rdp",
+      "sampler_law": "poisson",
+      "accountant_sampler_law": "poisson",
+      "sampling_implementation": "systemrandom_randrange_bernoulli_v1",
+      "secure_rng_backend": "python.secrets.SystemRandom",
+      "noise_generation": "normalvariate_discard1_sum4_div2_v1",
+      "noise_hardening": "known_fp_reconstruction_mitigation_four_draw_v1",
+      "gradient_aggregation": "clipped_sum_plus_gaussian_noise",
+      "update_normalization": "public_constant_step_no_dataset_denominator",
+      "code_artifact_id": "scripts/uci_har_v5_pipeline.py",
+      "code_sha256": "0c226ad3acb1d0fcc7a08904288611877269a173dfe30e6d3bcee75fa2b9d0bf",
+      "accountant_checker_artifact_id": "scripts/rdp_accountant_lite.py",
+      "accountant_checker_sha256": "6ee488134e9740c960a02aea94fae8c9340af2f30ee34d7ac9b728968fd763c8"
+    }
+  }
+}

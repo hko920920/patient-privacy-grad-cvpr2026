@@ -1,0 +1,175 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>방향1: 환자 분리 잔차층의 실제 결과</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p><h1>방향1 첫 구현·실제 결과: 작은 보정층이 적응 신호를 담는가</h1>
+<p>2026-09-16. <strong>첫 전제는 이 개발자료에서 지지됐다.</strong> 고정된 생성모델에 작은 잔차층을 붙여 학습하니, 학습에 없던 평가 환자40명의 denoising MSE가 기반 모델보다 <strong>3.1384% 감소</strong>했다. 시간 독립 단순 보정층 대비 추가 감소는 <strong>0.4467%</strong>였다. 두 비교 모두40명 전원에서 같은 방향이었다. 원시 자료·해·환자별 오차의 독립 검산을 통과했다.</p>
+<p><strong>이것은 DP를 넣기 전 제한된 보정층의 적응 능력 확인이다.</strong> 생성영상 품질·DP 적용 후 유지·기존 DP-SGD/LoRA 대비 우위·논문 신규성을 확인한 결과는 아니다. 현재2번의 후보 검토를 유지하되, 방향1은 원문·수식 단계에서 실제 구현과 첫 검증까지 진전했다.</p>
+<h2>1. 시작할 때 어디까지 되어 있었나</h2>
+<p><a href="two_track_operation_redesign.html">직전 재설계</a>에서는 공개 denoiser를 고정하고 작은 공간·시간 잔차층을 환자별 통계로 학습하는 구조를 제안했다. 이차손실의 W 의존 부분과 최적해가 A/B로 정해지고, 환자별 기여를 제한해 Gaussian 보호를 적용할 수 있다는 표준 원리를 확인했다.</p>
+<p>당시에는 실제 특징 추출·회귀·효능 검증이 없었다. One-shot 보호, 충분통계 회귀, denoising ridge의 직접 선행도 인정한 상태였다. 같은 head의 DP-SGD도 backbone 역전파가 없으므로, 그 방법과의 직접 비교가 필요하다는 점을 이미 넣었다.</p>
+<p>사용자가 현황을 먼저 보고하고 방향1을 실행하라고 요청해, 이번에는 <strong>작은 함수족이 실제 의료영상의 적응 신호를 담는가</strong>라는 첫 연결을 확인했다. 이전 배분 규칙 v0나 E/U 공격을 수정하는 작업은 하지 않았다.</p>
+<h2>2. 무엇을 어떻게 실행했나</h2>
+<ul>
+<li>기존 NIH 흉부 X-ray 개발자료의 <strong>학습80명×4장=320장, 평가40명×4장=160장</strong>을 사용했다. 환자 교집합0이다. 평가40명은 과거 연구에 쓰인 development이므로 새로운 최종 test라고 부르지 않는다.</li>
+<li>기존 E/U는 출처 주석으로만 남겼다. 현재 목적에는 사진을2장으로 제한할 이유가 없어서 환자당 기존4장을 모두 사용했다. calibration/test 각140명은 이번 실행에서 제외했다.</li>
+<li>정확한 SD2.1 기반 모델 revision을 직접 로드하고 adapter 없이 고정했다. 기존 FP16 저장값을 FP32로 올렸으며 TF32와 gradient를 껐다. 기존 full-field256 VAE mode latent와 영상별 weak-label prompt 캐시를 재사용했다.</li>
+<li>마지막 출력층 직전320채널을 고정 random projection15채널로 줄이고 상수1을 붙였다. 여기에 공개 scheduler의 log-SNR에 따른4개 시간 basis를 곱해64차원 특징을 만들었다. 출력4채널에 대한 <strong>학습 파라미터는256개</strong>다.</li>
+<li>같은 공간 특징의 시간 독립 보정층16차원과, 공간 특징을 쓰지 않는 시간별 offset4차원을 함께 비교했다. 모두 절대 ridge λ=.001로 고정했다.</li>
+<li>영상마다 시점8개와 독립 잡음을 고정해 <strong>3,840개 noisy-input 기록</strong>을 추출했다. 학습 환자만으로 A/B와 해를 계산하고, 평가 환자에서 보정 후 오차를 측정했다. 정답 epsilon이나 clean image를 보정층 특징으로 쓰지 않았다.</li>
+</ul>
+<p>전체 조건과 계산 정의는 <a href="track1_capacity_protocol.html">실행 설명</a>, 결과 전 고정한 실제 계약은 <a href="../../code_working/_reports/frozen_residual_capacity_20260916_v1/contract.json">contract.json</a>에 있다. 이번 실행에는 clipping과 DP 잡음이 없다.</p>
+<h2>3. 실제 결과</h2>
+<p>MSE는 주입한 잡음을 예측한 값의 평균 제곱오차이며 낮을수록 좋다. 픽셀·noise·이미지들을 독립 환자로 세지 않고 환자별로 평균한 뒤 집계했다.</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th style="text-align: right;">학습80명 MSE</th>
+<th style="text-align: right;">환자가 다른 개발평가40명 MSE</th>
+<th style="text-align: right;">평가에서 기반 모델 대비 감소</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기반 모델 그대로</td>
+<td style="text-align: right;">0.1812553045</td>
+<td style="text-align: right;">0.1796449533</td>
+<td style="text-align: right;">기준</td>
+</tr>
+<tr>
+<td>시간별 offset만, 4차원</td>
+<td style="text-align: right;">0.1812445631</td>
+<td style="text-align: right;">0.1796345220</td>
+<td style="text-align: right;">0.0058%</td>
+</tr>
+<tr>
+<td>시간 독립 공간 보정층, 16차원</td>
+<td style="text-align: right;">0.1761880132</td>
+<td style="text-align: right;">0.1747876717</td>
+<td style="text-align: right;">2.7038%</td>
+</tr>
+<tr>
+<td>시간·공간 보정층, 64차원</td>
+<td style="text-align: right;"><strong>0.1753694977</strong></td>
+<td style="text-align: right;"><strong>0.1740069294</strong></td>
+<td style="text-align: right;"><strong>3.1384%</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>평가40명의 paired 비교</th>
+<th style="text-align: right;">평균 MSE 감소</th>
+<th>환자 bootstrap95% 구간</th>
+<th style="text-align: right;">감소한 환자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기반 모델 − 64차원</td>
+<td style="text-align: right;">0.0056380239</td>
+<td>[0.0054449851, 0.0058414047]</td>
+<td style="text-align: right;">40/40</td>
+</tr>
+<tr>
+<td>16차원 단순층 − 64차원</td>
+<td style="text-align: right;">0.0007807423</td>
+<td>[0.0007542165, 0.0008071606]</td>
+<td style="text-align: right;">40/40</td>
+</tr>
+<tr>
+<td>시간 offset − 64차원</td>
+<td style="text-align: right;">0.0056275926</td>
+<td>[0.0054341939, 0.0058295647]</td>
+<td style="text-align: right;">40/40</td>
+</tr>
+</tbody>
+</table>
+<p>위 구간은 고정된 학습셋·projection·λ·시점/잡음 묶음에 조건부인 개발평가의 기술적 구간이다. 다른 학습 seed나 의료기관·모집단까지 포함한 일반화 구간이 아니다. ‘40/40’도 모든 시점·사진·미래 환자에서 개선된다는 뜻이 아니다.</p>
+<p>상대0.4467%는 <strong>16차원 단순층의 MSE를 분모</strong>로 한 추가 감소다. 기반 모델 대비3.1384%와 단순 합산하지 않는다. 저장 수치와 환자별 전체 결과는 <a href="../../code_working/_reports/frozen_residual_capacity_20260916_v1/analysis.json">analysis.json</a>에 있다.</p>
+<h2>4. 무엇을 확인했고 무엇은 남았나</h2>
+<p><strong>확인한 핵심:</strong> 공개 생성모델의 고정 특징에서 만든 작은 보정층도 실제 의료영상의 예측 잔차를 줄일 수 있었다. 학습에만 나타난 감소가 아니라 별도 환자 개발자료에서도 나타났다. 큰 모델의 역전파 없이 제한된 적응을 얻는 출발점에 실제 근거가 생겼다.</p>
+<p><strong>기존 단순 방법의 몫도 크다.</strong> 시간 독립16차원 보정이 기반 모델 대비 전체 감소량의 <strong>86.15%</strong>를 이미 얻었다. 시간·공간64차원의 추가 이득은 실재하지만, 시간 구조가 이득 전체를 만들었다거나 특별한 새 원리가 입증됐다고 설명하면 틀리다.64차원이16차원보다 파라미터 수도 많으므로, 시간 표현의 독자적 장점까지 분리된 결과도 아니다.</p>
+<p>보호 적용의 대가는 이제 더 구체적으로 볼 수 있다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th style="text-align: right;">공간16차원</th>
+<th style="text-align: right;">시간·공간64차원</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>head 파라미터 수</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">256</td>
+</tr>
+<tr>
+<td>A/B joint 보호 통계 좌표 수</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">2,336</td>
+</tr>
+<tr>
+<td>실제 학습 Gram에 λ=.001을 더한 조건수</td>
+<td style="text-align: right;">약352.80</td>
+<td style="text-align: right;">약1,074.06</td>
+</tr>
+</tbody>
+</table>
+<p>64차원은 단순층보다 오차가0.4467% 작지만 보호 통계 좌표는11.68배다. 조건수도 더 크다. 이 수치만으로 DP 적용 후 열세라고 판정할 수는 없지만, <strong>같은 환자 보호 수준에서 작은 추가 이득이 clipping·잡음 부담을 감당하는가</strong>가 다음 비교의 핵심임은 분명해졌다. 같은 head의 DP-SGD와 단순16차원 대안을 반드시 포함해야 한다.</p>
+<p>다음은 아직 미확인이다: 실제 생성영상의 품질, 환자 단위 DP를 넣은 뒤의 효용, 같은 head의 DP-SGD/강한 사적 회귀 대비 효율, 같은 자료·학습량의 DP-LoRA 대비 품질–비용, 새 환자·모집단의 최종 성능, 논문 차별성. 이번 개발평가를 근거로 실제 보호 예산이나 hyperparameter를 무료로 선택했다고 처리해서도 안 된다.</p>
+<h2>5. 실행시간과 검산 범위</h2>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th style="text-align: right;">실측</th>
+<th>계산량</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>짧은 속도 측정</td>
+<td style="text-align: right;">7.988초</td>
+<td>8기록+warmup1 =9F</td>
+</tr>
+<tr>
+<td>본 특징 추출</td>
+<td style="text-align: right;"><strong>314.687초, 약5분15초</strong></td>
+<td>3,840기록+warmup1 =3,841F</td>
+</tr>
+<tr>
+<td>환자 통계·3개 회귀 해·분석</td>
+<td style="text-align: right;">16.406초</td>
+<td>CPU</td>
+</tr>
+<tr>
+<td>독립 원시 산술·출처 검산</td>
+<td style="text-align: right;">20.175초</td>
+<td>CPU, 새GPU0</td>
+</tr>
+</tbody>
+</table>
+<p>총 GPU forward는3,850회, backbone backward는0회다. 최대 CUDA allocated 메모리는3,854,444,544bytes, 약3.59GiB였다. 기존 VAE/text 캐시를 재사용했다. 위 시간은 각 실행기 내부 측정값이며 Python 시작·실행 전 일부 해시 대조·문서 작업 전체 벽시계가 아니다. 타 방법과의 속도배수로 해석하지 않는다.</p>
+<p>독립 검산은 생산자 수치 함수를 import하지 않고 다음을 확인했다.</p>
+<ul>
+<li>선택480장의 실물·캐시·원래 cohort lock·모델/코드·결과 해시, 환자 분리, 시점·잡음 seed와 실제 epsilon의 재현.</li>
+<li>저장한4개 중간 특징 witness의 projection, 모든3,840기록의 시간 basis와 FP64 정답 차감.</li>
+<li>생산자의 Kronecker 계산 대신64열 특징행렬을 실제 전개한 A/B/Q 재계산, 환자별 계층 평균.</li>
+<li>별도 고유값 분해 해와 normal equation, raw 잔차로 직접 계산한 gradient·환자별 MSE,10개 paired bootstrap 요약.</li>
+</ul>
+<p>검산은 <strong>PASS</strong>,114,873개 검사다. <a href="../../code_working/_reports/frozen_residual_capacity_20260916_v1/independent_verification.json">독립 검산 결과</a>에 범위와 한계를 남겼다. 이는 전체 UNet을 다른 구현으로 다시 실행한 검증은 아니다. 검산기 소스와 허용오차는 GPU 추출 도중 최종화되어 검산 전에 결속했다. 원 JSON의 numeric_policy에 있는 GPU 전 고정 문구는 <a href="../../code_working/_reports/frozen_residual_capacity_20260916_v1/verification_metadata_correction.json">별도 메타데이터 정정</a>으로 바로잡았다. 원 소스·수치·PASS 결과는 보존하며 GPU 전 검산기 전체 동결의 근거로 인용하지 않는다.</p>
+<h2>6. 다음 한 작업</h2>
+<p>후속으로 <a href="track1_patient_dp_comparison_plan.html">환자DP 비교 조건과 남은 준비</a>를 작성했다. 같은 목적·특징 재사용, 네 비교 칸, 인접성·분모, 독립 공개32명, 회계 경로를 구체화했다. 공개 통계 추출·clip/optimizer 선택·DP 학습은 아직 미실행이다.</p>
+<p>다음은 <strong>같은 고정 특징·환자·시점/잡음 묶음에서 환자별 통계 보호와 same-head user-DP-SGD를 공정하게 비교할 명세</strong>를 고정하는 것이다. 보호 단위, ε/δ, clip 척도와 그 선택 자료, optimization 예산, 공개·사적 선택 비용을 맞춘다. 추가 이득이 작은64차원뿐 아니라 기존16차원도 함께 둔다.</p>
+<p>이번 고정 이차목적에서는 환자 gradient가 <code>2(A_u W − B_u)</code>이므로, 해당 same-head 비교는 저장한 환자 통계를 내부적으로 재사용해 계산할 수 있다. 새로운 큰 모델 역전파 없이 비교할 길이 있다. 이것은 매번 새로운 noise를 뽑는 임의의 학습법과 완전히 같은 실험이라는 뜻은 아니며, 양쪽에 동일한 고정 목적을 주는 비교다. 내부 캐시가 있다는 이유로 DP-SGD의 반복 접근 회계가 사라지는 것도 아니다.</p>
+<p>보호 회계·clip 선택·동일 head 비교 명세의 구현과 검토는 <strong>약30–60분의 작업 시간</strong>으로 예상한다. 계산은 재사용 통계에서 짧게 측정한 뒤 총시간을 고지한다. 이번의5분 추출을 수백 시간의 본학습 일정으로 자동 확대하지 않는다. 생성영상 품질 검증은 별도로 남아 있으며, 그 범위·비용도 시작 전에 정한다.</p>
+<h2>코드와 원자료</h2>
+<ul>
+<li><a href="../../code_working/frozen_residual_head/run_capacity.py">특징 추출·비보호 회귀 실행기</a></li>
+<li><a href="../../code_working/frozen_residual_head/residual_math.py">보정층·충분통계 수학 모듈</a></li>
+<li><a href="../../code_working/frozen_residual_head/verify_capacity.py">독립 검산기</a></li>
+<li><a href="../../code_working/_reports/frozen_residual_capacity_20260916_v1/execution.json">실행 기록</a></li>
+<li><a href="../../code_working/_reports/frozen_residual_capacity_20260916_v1/patient_stats.npz">환자별 통계</a> · <a href="../../code_working/_reports/frozen_residual_capacity_20260916_v1/models.npz">학습된 세 head</a></li>
+</ul>
+<p>수학 모듈에는 이후 비교를 위한 joint clipping/Gaussian 연산도 분리 구현했지만 이번 실험에서 호출하지 않았다. 해당 helper의 존재가 DP 학습·회계의 완료를 뜻하지 않는다. 과거 실험 원본과 졸논 K5/K10 계약은 변경하지 않았다.</p></main></body></html>

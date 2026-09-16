@@ -1,0 +1,596 @@
+{
+  "schema": "masked-cdi-fixed-scorer-analysis-contract/v1",
+  "current_step": 2,
+  "created_before_new_control_features_read": true,
+  "original_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1",
+  "extraction_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1",
+  "required_raw_verification_status": "PASS_MASKED_CDI_U82_SAVED_ARITHMETIC_PROVENANCE_AND_DL_REPLAY",
+  "fit_target_scorer": "model_1",
+  "patient_id": "14393",
+  "patient_rows": [
+    {
+      "patient_id": "14393",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ]
+    },
+    {
+      "patient_id": "172",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00000172_002.png",
+        "00000172_006.png"
+      ]
+    },
+    {
+      "patient_id": "359",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00000359_000.png",
+        "00000359_007.png"
+      ]
+    },
+    {
+      "patient_id": "1052",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00001052_002.png",
+        "00001052_004.png"
+      ]
+    },
+    {
+      "patient_id": "1906",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00001906_002.png",
+        "00001906_007.png"
+      ]
+    },
+    {
+      "patient_id": "2032",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00002032_007.png",
+        "00002032_010.png"
+      ]
+    },
+    {
+      "patient_id": "2247",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00002247_000.png",
+        "00002247_003.png"
+      ]
+    },
+    {
+      "patient_id": "2359",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00002359_004.png",
+        "00002359_019.png"
+      ]
+    },
+    {
+      "patient_id": "3308",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00003308_001.png",
+        "00003308_003.png"
+      ]
+    },
+    {
+      "patient_id": "3832",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00003832_002.png",
+        "00003832_004.png"
+      ]
+    },
+    {
+      "patient_id": "4092",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00004092_000.png",
+        "00004092_003.png"
+      ]
+    },
+    {
+      "patient_id": "4992",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00004992_000.png",
+        "00004992_013.png"
+      ]
+    },
+    {
+      "patient_id": "5376",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00005376_001.png",
+        "00005376_008.png"
+      ]
+    },
+    {
+      "patient_id": "5722",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00005722_001.png",
+        "00005722_018.png"
+      ]
+    },
+    {
+      "patient_id": "6881",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00006881_005.png",
+        "00006881_007.png"
+      ]
+    },
+    {
+      "patient_id": "6985",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00006985_004.png",
+        "00006985_007.png"
+      ]
+    },
+    {
+      "patient_id": "7932",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00007932_000.png",
+        "00007932_007.png"
+      ]
+    },
+    {
+      "patient_id": "8168",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00008168_001.png",
+        "00008168_012.png"
+      ]
+    },
+    {
+      "patient_id": "11436",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00011436_001.png",
+        "00011436_009.png"
+      ]
+    },
+    {
+      "patient_id": "12018",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00012018_000.png",
+        "00012018_015.png"
+      ]
+    },
+    {
+      "patient_id": "12050",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00012050_000.png",
+        "00012050_004.png"
+      ]
+    },
+    {
+      "patient_id": "12097",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00012097_010.png",
+        "00012097_011.png"
+      ]
+    },
+    {
+      "patient_id": "13567",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00013567_002.png",
+        "00013567_006.png"
+      ]
+    },
+    {
+      "patient_id": "14307",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00014307_000.png",
+        "00014307_001.png"
+      ]
+    },
+    {
+      "patient_id": "14362",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00014362_015.png",
+        "00014362_023.png"
+      ]
+    },
+    {
+      "patient_id": "15492",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00015492_000.png",
+        "00015492_001.png"
+      ]
+    },
+    {
+      "patient_id": "15594",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00015594_003.png",
+        "00015594_004.png"
+      ]
+    },
+    {
+      "patient_id": "16550",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00016550_018.png",
+        "00016550_024.png"
+      ]
+    },
+    {
+      "patient_id": "16919",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00016919_004.png",
+        "00016919_007.png"
+      ]
+    },
+    {
+      "patient_id": "17927",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00017927_003.png",
+        "00017927_004.png"
+      ]
+    },
+    {
+      "patient_id": "18224",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00018224_003.png",
+        "00018224_004.png"
+      ]
+    },
+    {
+      "patient_id": "18614",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00018614_000.png",
+        "00018614_010.png"
+      ]
+    },
+    {
+      "patient_id": "20106",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00020106_002.png",
+        "00020106_007.png"
+      ]
+    },
+    {
+      "patient_id": "21572",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00021572_000.png",
+        "00021572_015.png"
+      ]
+    },
+    {
+      "patient_id": "21970",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00021970_000.png",
+        "00021970_004.png"
+      ]
+    },
+    {
+      "patient_id": "22835",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00022835_000.png",
+        "00022835_004.png"
+      ]
+    },
+    {
+      "patient_id": "25150",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00025150_000.png",
+        "00025150_011.png"
+      ]
+    },
+    {
+      "patient_id": "25514",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00025514_003.png",
+        "00025514_008.png"
+      ]
+    },
+    {
+      "patient_id": "25680",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00025680_007.png",
+        "00025680_009.png"
+      ]
+    },
+    {
+      "patient_id": "28655",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00028655_000.png",
+        "00028655_004.png"
+      ]
+    },
+    {
+      "patient_id": "29437",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00029437_002.png",
+        "00029437_012.png"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "cdi_image_mean_fixed",
+      "kind": "logistic_regression",
+      "family": "cdi_image_mean",
+      "representation": "image26",
+      "patient_probability_pool": "mean",
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "cdi_image_mean_tuned",
+      "kind": "logistic_regression",
+      "family": "cdi_image_mean",
+      "representation": "image26",
+      "patient_probability_pool": "mean",
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "cdi_image_max_fixed",
+      "kind": "logistic_regression",
+      "family": "cdi_image_max",
+      "representation": "image26",
+      "patient_probability_pool": "max",
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "cdi_image_max_tuned",
+      "kind": "logistic_regression",
+      "family": "cdi_image_max",
+      "representation": "image26",
+      "patient_probability_pool": "max",
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_mean26_fixed",
+      "kind": "logistic_regression",
+      "family": "patient_mean26",
+      "representation": "mean26",
+      "patient_probability_pool": null,
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_mean26_tuned",
+      "kind": "logistic_regression",
+      "family": "patient_mean26",
+      "representation": "mean26",
+      "patient_probability_pool": null,
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_meanmax52_fixed",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax52",
+      "representation": "meanmax52",
+      "patient_probability_pool": null,
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_meanmax52_tuned",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax52",
+      "representation": "meanmax52",
+      "patient_probability_pool": null,
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "dl_mean",
+      "kind": "scalar",
+      "feature_index": 0,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "dl_max",
+      "kind": "scalar",
+      "feature_index": 0,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "secmi_mean",
+      "kind": "scalar",
+      "feature_index": 1,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "secmi_max",
+      "kind": "scalar",
+      "feature_index": 1,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "pia_mean",
+      "kind": "scalar",
+      "feature_index": 2,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "pia_max",
+      "kind": "scalar",
+      "feature_index": 2,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "pian_mean",
+      "kind": "scalar",
+      "feature_index": 3,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "pian_max",
+      "kind": "scalar",
+      "feature_index": 3,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "patient_meanmax54_noobjective_fixed",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax54_noobjective",
+      "representation": "meanmax54",
+      "patient_probability_pool": null,
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": true
+    },
+    {
+      "id": "patient_meanmax54_noobjective_tuned",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax54_noobjective",
+      "representation": "meanmax54",
+      "patient_probability_pool": null,
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": true
+    }
+  ],
+  "reused_control": {
+    "id": "dino_existing",
+    "scores_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\encoder_control\\scores.json",
+    "report_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\encoder_control\\report.json",
+    "refit": false
+  },
+  "computed_methods": 18,
+  "unchanged_DINO_controls": 1,
+  "new_target_scorer_fitting": false,
+  "new_scaler_fitting": false,
+  "new_C_selection": false,
+  "score_orientation": "Use historical fitted classes[0,1] member probability; scalar direction -1 before patient mean/max. No branch or label-dependent sign changes.",
+  "NOobjective": "Literal original26 retained. Historical27D variants add scipy optimizer returned objective fun, which is separate from literal exported final double-noised residual; existing54D meanmax/scaler preserved.",
+  "restoration": "Apply frozen parameters to original treatment features and require numerical reproduction of stored original predictions for all41 patients and18 methods. DINO copied unchanged on bothbranches.",
+  "change": "score(treatment originalM1) minus score(control maskedM1), same fixed scorer/C/scaler for eachmethod. No A/B alignment flip.",
+  "summary": {
+    "patient_scores": "all41 including p14393 separately; 19methods",
+    "selection_groups": [
+      "A",
+      "B",
+      "all"
+    ],
+    "statistics": [
+      "n",
+      "mean",
+      "median",
+      "sample_sd",
+      "q25",
+      "q75",
+      "min",
+      "max",
+      "positive",
+      "zero",
+      "negative"
+    ],
+    "pooling": "Use each original method representation/pool without modification",
+    "AUC": false,
+    "CI": false,
+    "method_winner_selection": false,
+    "feature_or_reference_selection": false
+  },
+  "limits": [
+    "p14393 was included in original fit80, with its original U features and participation label. Its score change is an in-sample fitted-scorer response diagnostic, not held-out patient efficacy.",
+    "Selection40 were not used to fit these original scalers/classifiers, but are already explored development context, not new independent confirmatory test patients.",
+    "One selected patient loses8 original contribution slots in a fixed training realization. The other40 patient memberships are unchanged.",
+    "Two checkpoints per comparison are analyst-only counterfactual evidence; this does not define an accessible two-model MIA.",
+    "Full26 feature extraction is the released-code CDI kernel adaptation, not the original CDI reference-set statistical test.",
+    "Fixed and tuned refer to historical C policies; no parameters are adjusted here.",
+    "DINO delta is zero by construction because the public encoder input and stored scorer are unchanged, not a new performance observation.",
+    "NO27 is the previously declared source-quirk diagnostic, not a repaired original CDI or new method."
+  ],
+  "frozen_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\protocol.json": "06a0d489b22250d4a28fd61b64aa2fe9ba5924aa71435b7e600185e6a25462c3",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\execution.json": "6b888ff99c7f465cc75a8a1f9923ba63aeb8649e12c85158d9db336350e37966",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\results.json": "4f9556a381a337104aa9b0efa66f9daafb4ef171b12940e766454e84112af921",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\verification.json": "8e0cf8ff81a38ee9951a7058154be15865db56ba8b69d5f8faad1be9f6ef7a1c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\verification_protocol.json": "e5f5eb889ff8d296b01661b638f0a5d0d333b3858c5ebe976b4dbb94a45da070",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\analysis_v1\\contract_copy.json": "6f0afa62cf2bbf26790370965c4716f3afc927e0ab2412f8c4e6befbe02efca3",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\analysis_v1\\analysis.json": "7647a80dd26c10a85bae08691edba40f14d29a98c4566ffb04c6abce49fcbdfe",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\analysis_v1\\predictions.json": "967446f8f19fe9e8f20e842376b8c4e86fb1de3e32958c145909934ff2642818",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\analysis_v1\\fit_parameters.json": "a2f27cf03e3227e1ba3b8dc63cf00c76c20f334713ffcd26dcd65b7a2e18dde5",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\analysis_v1\\cv_results.json": "935de05eecfe83c9b575d8a963b65522bc9caeef73434c3580d21cd0856c1b68",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\analysis_v1\\provenance.json": "231e85757cf2215d3559058e1943d2f597c8e4e18c5a040411c6ea537a67b63c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\encoder_control\\scores.json": "043bf03f467e3afcf5e25e45030631b1fa71acd414afb1b5f4c2cc6dac15c29e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\encoder_control\\report.json": "98a34dd4a09deb88524b3aeb7bdb3fa45205b4c7aa41a6ce1a5be3048425ff5c"
+  },
+  "independent_analysis_source_timing": "This analysis policy is fixed before GPU. Analyzer implementation is bound in its execution protocol when finalized; GPU need not wait for its source hash."
+}

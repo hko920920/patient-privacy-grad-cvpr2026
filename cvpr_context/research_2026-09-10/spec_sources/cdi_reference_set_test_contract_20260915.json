@@ -1,0 +1,758 @@
+{
+  "schema": "cdi-patient-reference-test-contract/v1",
+  "created_utc": "2026-09-15T04:49:55.651438+00:00",
+  "research_stage": 2,
+  "question": "Apply the omitted reference-set score-distribution test under patient-disjoint fit/selection, with one score per patient",
+  "source_commit": "dcd62258b0b3fde05d52aaecfade3b5f4c09507a",
+  "source_function_file": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X01\\src\\evaluation\\evaluate.py",
+  "source_functions": [
+    "asserts",
+    "get_p_value"
+  ],
+  "source_code_test": "Unmodified original get_p_value: Welch equal_var=False, two-sided default p, separate correct-order bool; members_lower=False",
+  "paper_test": "scipy.stats.ttest_ind(P,R,equal_var=False,alternative=greater), separately labelled one-sided specification",
+  "independent_check": "math.fsum sample mean/variance, Welch t and Satterthwaite df, scipy.stats.t.sf",
+  "models": [
+    "model_1",
+    "model_2"
+  ],
+  "fit_scenarios": [
+    "E",
+    "U"
+  ],
+  "evaluation_scenarios": [
+    "E",
+    "U"
+  ],
+  "method": "cdi_image_mean_fixed",
+  "method_preselection_reason": "Fixed C=1 image-level probability scorer closest to released cdi_perf.py; no selection-score winner choice",
+  "selection_patients": [
+    {
+      "patient_id": "172",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00000172_000.png",
+          "00000172_004.png"
+        ],
+        "U": [
+          "00000172_002.png",
+          "00000172_006.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "359",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00000359_002.png",
+          "00000359_010.png"
+        ],
+        "U": [
+          "00000359_000.png",
+          "00000359_007.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "1052",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00001052_001.png",
+          "00001052_003.png"
+        ],
+        "U": [
+          "00001052_002.png",
+          "00001052_004.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "1906",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00001906_006.png",
+          "00001906_008.png"
+        ],
+        "U": [
+          "00001906_002.png",
+          "00001906_007.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "2032",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00002032_008.png",
+          "00002032_012.png"
+        ],
+        "U": [
+          "00002032_007.png",
+          "00002032_010.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "2247",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00002247_001.png",
+          "00002247_002.png"
+        ],
+        "U": [
+          "00002247_000.png",
+          "00002247_003.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "2359",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00002359_002.png",
+          "00002359_009.png"
+        ],
+        "U": [
+          "00002359_004.png",
+          "00002359_019.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "3308",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00003308_000.png",
+          "00003308_002.png"
+        ],
+        "U": [
+          "00003308_001.png",
+          "00003308_003.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "3832",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00003832_001.png",
+          "00003832_003.png"
+        ],
+        "U": [
+          "00003832_002.png",
+          "00003832_004.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "4092",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00004092_001.png",
+          "00004092_002.png"
+        ],
+        "U": [
+          "00004092_000.png",
+          "00004092_003.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "4992",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00004992_002.png",
+          "00004992_011.png"
+        ],
+        "U": [
+          "00004992_000.png",
+          "00004992_013.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "5376",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00005376_003.png",
+          "00005376_005.png"
+        ],
+        "U": [
+          "00005376_001.png",
+          "00005376_008.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "5722",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00005722_004.png",
+          "00005722_012.png"
+        ],
+        "U": [
+          "00005722_001.png",
+          "00005722_018.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "6881",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00006881_002.png",
+          "00006881_009.png"
+        ],
+        "U": [
+          "00006881_005.png",
+          "00006881_007.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "6985",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00006985_010.png",
+          "00006985_012.png"
+        ],
+        "U": [
+          "00006985_004.png",
+          "00006985_007.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "7932",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00007932_001.png",
+          "00007932_004.png"
+        ],
+        "U": [
+          "00007932_000.png",
+          "00007932_007.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "8168",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00008168_002.png",
+          "00008168_003.png"
+        ],
+        "U": [
+          "00008168_001.png",
+          "00008168_012.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "11436",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00011436_002.png",
+          "00011436_006.png"
+        ],
+        "U": [
+          "00011436_001.png",
+          "00011436_009.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "12018",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00012018_017.png",
+          "00012018_018.png"
+        ],
+        "U": [
+          "00012018_000.png",
+          "00012018_015.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "12050",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00012050_001.png",
+          "00012050_003.png"
+        ],
+        "U": [
+          "00012050_000.png",
+          "00012050_004.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "12097",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00012097_002.png",
+          "00012097_009.png"
+        ],
+        "U": [
+          "00012097_010.png",
+          "00012097_011.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "13567",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00013567_003.png",
+          "00013567_009.png"
+        ],
+        "U": [
+          "00013567_002.png",
+          "00013567_006.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "14307",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00014307_004.png",
+          "00014307_011.png"
+        ],
+        "U": [
+          "00014307_000.png",
+          "00014307_001.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "14362",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00014362_002.png",
+          "00014362_021.png"
+        ],
+        "U": [
+          "00014362_015.png",
+          "00014362_023.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "15492",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00015492_002.png",
+          "00015492_003.png"
+        ],
+        "U": [
+          "00015492_000.png",
+          "00015492_001.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "15594",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00015594_000.png",
+          "00015594_002.png"
+        ],
+        "U": [
+          "00015594_003.png",
+          "00015594_004.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "16550",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00016550_000.png",
+          "00016550_001.png"
+        ],
+        "U": [
+          "00016550_018.png",
+          "00016550_024.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "16919",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00016919_000.png",
+          "00016919_002.png"
+        ],
+        "U": [
+          "00016919_004.png",
+          "00016919_007.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "17927",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00017927_005.png",
+          "00017927_006.png"
+        ],
+        "U": [
+          "00017927_003.png",
+          "00017927_004.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "18224",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00018224_000.png",
+          "00018224_005.png"
+        ],
+        "U": [
+          "00018224_003.png",
+          "00018224_004.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "18614",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00018614_007.png",
+          "00018614_008.png"
+        ],
+        "U": [
+          "00018614_000.png",
+          "00018614_010.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "20106",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00020106_000.png",
+          "00020106_006.png"
+        ],
+        "U": [
+          "00020106_002.png",
+          "00020106_007.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "21572",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00021572_001.png",
+          "00021572_022.png"
+        ],
+        "U": [
+          "00021572_000.png",
+          "00021572_015.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "21970",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00021970_005.png",
+          "00021970_006.png"
+        ],
+        "U": [
+          "00021970_000.png",
+          "00021970_004.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "22835",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00022835_005.png",
+          "00022835_006.png"
+        ],
+        "U": [
+          "00022835_000.png",
+          "00022835_004.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "25150",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00025150_002.png",
+          "00025150_006.png"
+        ],
+        "U": [
+          "00025150_000.png",
+          "00025150_011.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "25514",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00025514_000.png",
+          "00025514_009.png"
+        ],
+        "U": [
+          "00025514_003.png",
+          "00025514_008.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "25680",
+      "role": "selection",
+      "group": "B",
+      "images": {
+        "E": [
+          "00025680_008.png",
+          "00025680_010.png"
+        ],
+        "U": [
+          "00025680_007.png",
+          "00025680_009.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "28655",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00028655_002.png",
+          "00028655_005.png"
+        ],
+        "U": [
+          "00028655_000.png",
+          "00028655_004.png"
+        ]
+      }
+    },
+    {
+      "patient_id": "29437",
+      "role": "selection",
+      "group": "A",
+      "images": {
+        "E": [
+          "00029437_004.png",
+          "00029437_005.png"
+        ],
+        "U": [
+          "00029437_002.png",
+          "00029437_012.png"
+        ]
+      }
+    }
+  ],
+  "fit_patient_ids": [
+    "242",
+    "360",
+    "1101",
+    "1317",
+    "1641",
+    "2172",
+    "2386",
+    "2863",
+    "2878",
+    "2919",
+    "3355",
+    "3743",
+    "3890",
+    "5311",
+    "5682",
+    "5766",
+    "6447",
+    "7038",
+    "7125",
+    "7560",
+    "7564",
+    "8824",
+    "9119",
+    "9216",
+    "9358",
+    "9429",
+    "9604",
+    "9925",
+    "11255",
+    "11548",
+    "11632",
+    "12162",
+    "12277",
+    "12511",
+    "12520",
+    "12648",
+    "12805",
+    "13077",
+    "13526",
+    "13896",
+    "14393",
+    "14546",
+    "14584",
+    "14651",
+    "15399",
+    "15461",
+    "15556",
+    "16379",
+    "16796",
+    "17046",
+    "17123",
+    "17555",
+    "17557",
+    "17634",
+    "18472",
+    "18608",
+    "19144",
+    "19635",
+    "19690",
+    "20832",
+    "21082",
+    "21127",
+    "21455",
+    "21610",
+    "22235",
+    "22255",
+    "22454",
+    "22740",
+    "23066",
+    "23316",
+    "25303",
+    "25362",
+    "25369",
+    "25444",
+    "27514",
+    "28253",
+    "29373",
+    "29998",
+    "30026",
+    "30129"
+  ],
+  "control_split": "Fit80 only:40 positive+40 reference patients; each supplies2 images to image LR. Selection40 is patient-disjoint",
+  "test_split": "Selection20 participating patients vs20 nonparticipating reference patients per target; each patient contributes its precomputed mean of2 image probabilities",
+  "statistic_unit": "patient, not photograph; nP=nR=20",
+  "test_direction": "Participating patient cohort mean score greater than nonparticipating reference patient cohort",
+  "U_caveat": "All U query images are exact-image nonmembers; patient-positive U is not image-positive P under the original copyrighted-image null",
+  "nominal_p_cutoff": null,
+  "threshold_selection": false,
+  "repeat_or_subset_selection": false,
+  "p_value_averaging": false,
+  "expected_tests": 8,
+  "no_new_fitting": true,
+  "new_GPU_calls": 0,
+  "patient_singleton_inference": false,
+  "source_images_as_iid_test": false,
+  "posthoc_development_diagnostic": true,
+  "multiplicity_adjusted": false,
+  "eu_analysis_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1",
+  "eu_analysis_contract_sha256": "bc2497d17b3110ec8b994eaa541d4eda00891ff5d30215a9aff26b7aa5f1db43",
+  "required_verification_file": "verification.json",
+  "required_verification_status": "PASS_EU_SAVED_PREDICTIONS_FIT_AND_STATISTICS",
+  "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\eu_analysis_v1\\reference_set_test_v1",
+  "frozen_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X01\\src\\evaluation\\evaluate.py": "a19a2fd43fd3797f34db4af39604b865f1573b02253fc3fca64cae547ad15a1d",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X01\\src\\attacks\\utils.py": "c0b8bb1e37767e3773762372096012aef79a375740c7bb4b4f2eadade7f3d764",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X01\\experiments\\cdi_perf.py": "7ca9f63e5e3b7dc729862fbb47f8cf7f7c0a125735606c1d86cc493e8c1e4444",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X01\\experiments\\utils.py": "f3bb34b852a74d7000c2a9106658a49deb7bdb15223316d657fb424ed50d96e3",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\code_sources\\X01\\conf\\attack\\cdi.yaml": "e9b15e7a6297dc3dd8124d8df9fdc27d529d4773f415d0bf7b7a75b81bad8e95",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\pdfs\\X01.pdf": "09c2b2dd23162256fe720629e2f6192bf74198237257ea79f869cee9c2dc274e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\pdfs\\X01_supp.pdf": "5a1abf42594d7e4592cd4af24ecad1f222cd9a8d0f8af99e7cba47fc36535e1c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\cdi_eu_analysis_contract_20260915.json": "bc2497d17b3110ec8b994eaa541d4eda00891ff5d30215a9aff26b7aa5f1db43"
+  },
+  "scope_limits": [
+    "This is a patient-cluster and held-out-split adaptation of the reference-set test, not the complete original image-level5fold/1000subset experiment",
+    "The test is cohort-level20-vs20, not inference for a single patient with2 photos",
+    "Existing selection40 has been repeatedly inspected; eight p-values are exploratory, correlated, and unadjusted, not confirmatory error-control evidence",
+    "Reference patients are nonmembers of the additional NIH target training; original base pretraining membership is unknown",
+    "The same-distribution/independent-patient null is an assumption, not proved by equal sample counts or manifest membership",
+    "A distribution difference can reflect A/B cohort or E/U image differences; it is not a causal attribution to individual patient training",
+    "The released evaluator returns two-sided p although the paper specifies one-sided Welch; retain both without relabelling or selecting the favorable one",
+    "Do not equate t-test p or calculated test power with measured patient FPR; no false-positive benchmark is created here",
+    "A score is source predict_proba then patient image mean, not logistic decision_function; nonlinear transforms change the t-test",
+    "No new comparison method, direction, sample count, p-value threshold, or outcome-dependent stop rule is chosen"
+  ],
+  "overall_stage2_gate": null,
+  "original_outputs_unchanged": true
+}

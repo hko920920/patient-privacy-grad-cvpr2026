@@ -1,0 +1,711 @@
+{
+  "schema": "cdi-u-report-table/v1",
+  "research_stage": 2,
+  "operation": "Copy verified stored selection metrics and costs; no fitting or new statistics",
+  "method_order": [
+    "cdi_image_mean_fixed",
+    "cdi_image_mean_tuned",
+    "cdi_image_max_fixed",
+    "cdi_image_max_tuned",
+    "patient_mean26_fixed",
+    "patient_mean26_tuned",
+    "patient_meanmax52_fixed",
+    "patient_meanmax52_tuned",
+    "dl_mean",
+    "dl_max",
+    "secmi_mean",
+    "secmi_max",
+    "pia_mean",
+    "pia_max",
+    "pian_mean",
+    "pian_max",
+    "patient_meanmax54_noobjective_fixed",
+    "patient_meanmax54_noobjective_tuned",
+    "dino_existing"
+  ],
+  "rows": [
+    {
+      "method": "cdi_image_mean_fixed",
+      "method_label": "CDI image score, mean (C=1)",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.4475,
+      "CI95_lower": 0.2749375,
+      "CI95_upper": 0.625
+    },
+    {
+      "method": "cdi_image_mean_fixed",
+      "method_label": "CDI image score, mean (C=1)",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5475000000000001,
+      "CI95_lower": 0.365,
+      "CI95_upper": 0.7225
+    },
+    {
+      "method": "cdi_image_mean_tuned",
+      "method_label": "CDI image score, mean (tuned C)",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": true,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.435,
+      "CI95_lower": 0.2625,
+      "CI95_upper": 0.6100624999999996
+    },
+    {
+      "method": "cdi_image_mean_tuned",
+      "method_label": "CDI image score, mean (tuned C)",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": true,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5475000000000001,
+      "CI95_lower": 0.365,
+      "CI95_upper": 0.7225
+    },
+    {
+      "method": "cdi_image_max_fixed",
+      "method_label": "CDI image score, max (C=1)",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.42,
+      "CI95_lower": 0.25,
+      "CI95_upper": 0.6025
+    },
+    {
+      "method": "cdi_image_max_fixed",
+      "method_label": "CDI image score, max (C=1)",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.54,
+      "CI95_lower": 0.3525,
+      "CI95_upper": 0.7125
+    },
+    {
+      "method": "cdi_image_max_tuned",
+      "method_label": "CDI image score, max (tuned C)",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.43000000000000005,
+      "CI95_lower": 0.2575,
+      "CI95_upper": 0.6075624999999997
+    },
+    {
+      "method": "cdi_image_max_tuned",
+      "method_label": "CDI image score, max (tuned C)",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.4975,
+      "CI95_lower": 0.3125,
+      "CI95_upper": 0.6775
+    },
+    {
+      "method": "patient_mean26_fixed",
+      "method_label": "Patient mean26 LR (C=1)",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.42750000000000005,
+      "CI95_lower": 0.255,
+      "CI95_upper": 0.6075
+    },
+    {
+      "method": "patient_mean26_fixed",
+      "method_label": "Patient mean26 LR (C=1)",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5825,
+      "CI95_lower": 0.4,
+      "CI95_upper": 0.7575624999999996
+    },
+    {
+      "method": "patient_mean26_tuned",
+      "method_label": "Patient mean26 LR (tuned C)",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.415,
+      "CI95_lower": 0.2425,
+      "CI95_upper": 0.5875
+    },
+    {
+      "method": "patient_mean26_tuned",
+      "method_label": "Patient mean26 LR (tuned C)",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5175000000000001,
+      "CI95_lower": 0.3325,
+      "CI95_upper": 0.695
+    },
+    {
+      "method": "patient_meanmax52_fixed",
+      "method_label": "Patient mean+max52 LR (C=1)",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.6325,
+      "CI95_lower": 0.46,
+      "CI95_upper": 0.7925
+    },
+    {
+      "method": "patient_meanmax52_fixed",
+      "method_label": "Patient mean+max52 LR (C=1)",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.6699999999999999,
+      "CI95_lower": 0.495,
+      "CI95_upper": 0.8300624999999996
+    },
+    {
+      "method": "patient_meanmax52_tuned",
+      "method_label": "Patient mean+max52 LR (tuned C)",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": true,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5175000000000001,
+      "CI95_lower": 0.3275,
+      "CI95_upper": 0.7
+    },
+    {
+      "method": "patient_meanmax52_tuned",
+      "method_label": "Patient mean+max52 LR (tuned C)",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": true,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.6050000000000001,
+      "CI95_lower": 0.42,
+      "CI95_upper": 0.7875
+    },
+    {
+      "method": "dl_mean",
+      "method_label": "Denoising loss, mean",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.48999999999999994,
+      "CI95_lower": 0.3049375,
+      "CI95_upper": 0.67
+    },
+    {
+      "method": "dl_mean",
+      "method_label": "Denoising loss, mean",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.515,
+      "CI95_lower": 0.3349375,
+      "CI95_upper": 0.705
+    },
+    {
+      "method": "dl_max",
+      "method_label": "Denoising loss, max",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5475,
+      "CI95_lower": 0.36,
+      "CI95_upper": 0.7225624999999997
+    },
+    {
+      "method": "dl_max",
+      "method_label": "Denoising loss, max",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.455,
+      "CI95_lower": 0.2775,
+      "CI95_upper": 0.6425
+    },
+    {
+      "method": "secmi_mean",
+      "method_label": "SecMI, mean",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": true,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.43000000000000005,
+      "CI95_lower": 0.25,
+      "CI95_upper": 0.615
+    },
+    {
+      "method": "secmi_mean",
+      "method_label": "SecMI, mean",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": true,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5599999999999999,
+      "CI95_lower": 0.385,
+      "CI95_upper": 0.7375
+    },
+    {
+      "method": "secmi_max",
+      "method_label": "SecMI, max",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5075,
+      "CI95_lower": 0.32,
+      "CI95_upper": 0.69
+    },
+    {
+      "method": "secmi_max",
+      "method_label": "SecMI, max",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5275000000000001,
+      "CI95_lower": 0.35,
+      "CI95_upper": 0.7175624999999997
+    },
+    {
+      "method": "pia_mean",
+      "method_label": "PIA, mean",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.485,
+      "CI95_lower": 0.3099375,
+      "CI95_upper": 0.6675
+    },
+    {
+      "method": "pia_mean",
+      "method_label": "PIA, mean",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5325,
+      "CI95_lower": 0.345,
+      "CI95_upper": 0.7125
+    },
+    {
+      "method": "pia_max",
+      "method_label": "PIA, max",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.515,
+      "CI95_lower": 0.3274375,
+      "CI95_upper": 0.6975
+    },
+    {
+      "method": "pia_max",
+      "method_label": "PIA, max",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.495,
+      "CI95_lower": 0.3175,
+      "CI95_upper": 0.6800624999999997
+    },
+    {
+      "method": "pian_mean",
+      "method_label": "PIAN, mean",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.44999999999999996,
+      "CI95_lower": 0.27,
+      "CI95_upper": 0.6325
+    },
+    {
+      "method": "pian_mean",
+      "method_label": "PIAN, mean",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5425,
+      "CI95_lower": 0.3625,
+      "CI95_upper": 0.7225
+    },
+    {
+      "method": "pian_max",
+      "method_label": "PIAN, max",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.46749999999999997,
+      "CI95_lower": 0.2775,
+      "CI95_upper": 0.6525
+    },
+    {
+      "method": "pian_max",
+      "method_label": "PIAN, max",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.515,
+      "CI95_lower": 0.335,
+      "CI95_upper": 0.7075624999999997
+    },
+    {
+      "method": "patient_meanmax54_noobjective_fixed",
+      "method_label": "NO27 diagnostic: mean+max54 (C=1)",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.615,
+      "CI95_lower": 0.44,
+      "CI95_upper": 0.78
+    },
+    {
+      "method": "patient_meanmax54_noobjective_fixed",
+      "method_label": "NO27 diagnostic: mean+max54 (C=1)",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.6950000000000001,
+      "CI95_lower": 0.525,
+      "CI95_upper": 0.855
+    },
+    {
+      "method": "patient_meanmax54_noobjective_tuned",
+      "method_label": "NO27 diagnostic: mean+max54 (tuned C)",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.515,
+      "CI95_lower": 0.3274375,
+      "CI95_upper": 0.6950624999999996
+    },
+    {
+      "method": "patient_meanmax54_noobjective_tuned",
+      "method_label": "NO27 diagnostic: mean+max54 (tuned C)",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.6475000000000001,
+      "CI95_lower": 0.4624375,
+      "CI95_upper": 0.825
+    },
+    {
+      "method": "dino_existing",
+      "method_label": "DINO encoder-only (reused)",
+      "model": "model_1",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5475,
+      "CI95_lower": 0.3724375,
+      "CI95_upper": 0.7325
+    },
+    {
+      "method": "dino_existing",
+      "method_label": "DINO encoder-only (reused)",
+      "model": "model_2",
+      "in_predeclared_primary_contrast": false,
+      "selection_patients": 40,
+      "selection_members": 20,
+      "selection_nonmembers": 20,
+      "patient_AUC": 0.5475,
+      "CI95_lower": 0.3724375,
+      "CI95_upper": 0.7325
+    }
+  ],
+  "predeclared_contrasts_as_saved": [
+    {
+      "model": "model_1",
+      "id": "primary_patient_structure_vs_image_pool",
+      "a": "patient_meanmax52_tuned",
+      "b": "cdi_image_mean_tuned",
+      "role": "primary",
+      "selection_delta_AUC": 0.08250000000000007,
+      "paired_CI95": [
+        -0.012562500000000006,
+        0.18250000000000005
+      ]
+    },
+    {
+      "model": "model_1",
+      "id": "primary_cdi_vs_secmi",
+      "a": "cdi_image_mean_tuned",
+      "b": "secmi_mean",
+      "role": "primary",
+      "selection_delta_AUC": 0.004999999999999949,
+      "paired_CI95": [
+        -0.2375,
+        0.245
+      ]
+    },
+    {
+      "model": "model_1",
+      "id": "secondary_fixed_patient_structure_vs_image_pool",
+      "a": "patient_meanmax52_fixed",
+      "b": "cdi_image_mean_fixed",
+      "role": "secondary",
+      "selection_delta_AUC": 0.18499999999999994,
+      "paired_CI95": [
+        0.029937499999999975,
+        0.35250000000000004
+      ]
+    },
+    {
+      "model": "model_1",
+      "id": "secondary_fixed_cdi_vs_secmi",
+      "a": "cdi_image_mean_fixed",
+      "b": "secmi_mean",
+      "role": "secondary",
+      "selection_delta_AUC": 0.01749999999999996,
+      "paired_CI95": [
+        -0.2226875,
+        0.25506249999999964
+      ]
+    },
+    {
+      "model": "model_1",
+      "id": "diagnostic_noobjective_fixed",
+      "a": "patient_meanmax54_noobjective_fixed",
+      "b": "patient_meanmax52_fixed",
+      "role": "source_quirk_diagnostic",
+      "selection_delta_AUC": -0.01749999999999996,
+      "paired_CI95": [
+        -0.06499999999999995,
+        0.025000000000000022
+      ]
+    },
+    {
+      "model": "model_1",
+      "id": "diagnostic_noobjective_tuned",
+      "a": "patient_meanmax54_noobjective_tuned",
+      "b": "patient_meanmax52_tuned",
+      "role": "source_quirk_diagnostic",
+      "selection_delta_AUC": -0.0025000000000000577,
+      "paired_CI95": [
+        -0.034999999999999976,
+        0.030000000000000027
+      ]
+    },
+    {
+      "model": "model_2",
+      "id": "primary_patient_structure_vs_image_pool",
+      "a": "patient_meanmax52_tuned",
+      "b": "cdi_image_mean_tuned",
+      "role": "primary",
+      "selection_delta_AUC": 0.057499999999999996,
+      "paired_CI95": [
+        -0.07500000000000007,
+        0.1975
+      ]
+    },
+    {
+      "model": "model_2",
+      "id": "primary_cdi_vs_secmi",
+      "a": "cdi_image_mean_tuned",
+      "b": "secmi_mean",
+      "role": "primary",
+      "selection_delta_AUC": -0.012499999999999845,
+      "paired_CI95": [
+        -0.2725,
+        0.2250624999999997
+      ]
+    },
+    {
+      "model": "model_2",
+      "id": "secondary_fixed_patient_structure_vs_image_pool",
+      "a": "patient_meanmax52_fixed",
+      "b": "cdi_image_mean_fixed",
+      "role": "secondary",
+      "selection_delta_AUC": 0.12249999999999983,
+      "paired_CI95": [
+        0.0,
+        0.25749999999999995
+      ]
+    },
+    {
+      "model": "model_2",
+      "id": "secondary_fixed_cdi_vs_secmi",
+      "a": "cdi_image_mean_fixed",
+      "b": "secmi_mean",
+      "role": "secondary",
+      "selection_delta_AUC": -0.012499999999999845,
+      "paired_CI95": [
+        -0.2725,
+        0.2250624999999997
+      ]
+    },
+    {
+      "model": "model_2",
+      "id": "diagnostic_noobjective_fixed",
+      "a": "patient_meanmax54_noobjective_fixed",
+      "b": "patient_meanmax52_fixed",
+      "role": "source_quirk_diagnostic",
+      "selection_delta_AUC": 0.025000000000000133,
+      "paired_CI95": [
+        -0.04749999999999999,
+        0.09499999999999997
+      ]
+    },
+    {
+      "model": "model_2",
+      "id": "diagnostic_noobjective_tuned",
+      "a": "patient_meanmax54_noobjective_tuned",
+      "b": "patient_meanmax52_tuned",
+      "role": "source_quirk_diagnostic",
+      "selection_delta_AUC": 0.04249999999999998,
+      "paired_CI95": [
+        -0.015000000000000013,
+        0.11250000000000004
+      ]
+    }
+  ],
+  "extraction_costs_as_saved": {
+    "records": 480,
+    "unique_patients": 120,
+    "unique_images": 240,
+    "reused_records": 2,
+    "new_records": 478,
+    "forward": 28058,
+    "backward": 8378,
+    "reused_forward": 116,
+    "reused_backward": 34,
+    "new_forward": 27942,
+    "new_backward": 8344,
+    "current_attempt_forward": 27942,
+    "current_attempt_backward": 8344,
+    "current_attempt_new_records": 478,
+    "current_attempt_seconds": 2916.3928045000066,
+    "full_score_seconds_including_reuse": 2886.5111931996653,
+    "new_score_seconds_excluding_kernel": 2875.0061906997,
+    "NO_objective_evaluations": 3578,
+    "NO_nfev": 3578,
+    "NO_termination_status_counts": {
+      "1": 480
+    },
+    "model_reports": [
+      {
+        "model": "model_1",
+        "records": 240,
+        "resumed_records": 0,
+        "new_this_attempt": {
+          "records": 238,
+          "forward": 13919,
+          "backward": 4161,
+          "score_seconds": 1440.6548713993398
+        },
+        "current_session_adapter_values_exact_equal": true,
+        "all_records_parameter_version_guards": true,
+        "peak_cuda_allocated_bytes": 4096370688,
+        "seconds": 1457.874323200027
+      },
+      {
+        "model": "model_2",
+        "records": 240,
+        "resumed_records": 0,
+        "new_this_attempt": {
+          "records": 240,
+          "forward": 14023,
+          "backward": 4183,
+          "score_seconds": 1434.35131930036
+        },
+        "current_session_adapter_values_exact_equal": true,
+        "all_records_parameter_version_guards": true,
+        "peak_cuda_allocated_bytes": 4087547904,
+        "seconds": 1450.1450186999864
+      }
+    ],
+    "vae_forward": 0,
+    "text_encoder_forward": 0
+  },
+  "analysis_seconds_as_saved": 0.9226659000269137,
+  "analysis_warning_count_as_saved": 0,
+  "inference_scope_as_saved": {
+    "resamples": 2000,
+    "seed": 260914,
+    "rng": "numpy.random.default_rng",
+    "strata": "selection assignment A and B; sample 20 within each with replacement; concatenate A then B; same indices for all methods and both targets",
+    "ci": "percentile [2.5,97.5] using numpy quantile method=linear",
+    "auc": "member-positive ROC AUC with half credit for ties",
+    "conditional_on": "fixed fitted attack models, frozen target checkpoints and this previously opened selection cohort; fitting uncertainty not resampled"
+  },
+  "scope_limits_as_saved": [
+    "Labelled fit-patient auxiliary data required for LR variants; not a patient with only personal photos",
+    "selection40 is repeatedly used development data, not final test",
+    "two complementary target models are dependent, not two independent training replicates",
+    "no other-target scores, paired deltas, R features, calibration/test features as attack input",
+    "no threshold selection, low-FPR performance or overall stage-2 success gate",
+    "weak CI does not establish no privacy leakage or failure of all patient inference",
+    "report every method, no selection-set winner choice",
+    "NO27 is a source-quirk diagnostic, not an original CDI metric or a novel contribution",
+    "DINO reuses historical fit80 model and exact scores; no new fit and shared encoder extraction cost not zero"
+  ],
+  "overall_stage2_gate": null
+}

@@ -1,0 +1,10 @@
+{
+  "static": {
+    "rows": 79,
+    "checked_local_links": 673,
+    "checked_pdf_page_anchors": 213,
+    "broken_links": []
+  },
+  "browser_rerun": false,
+  "reason": "Only authored content and links changed; filtering UI unchanged."
+}

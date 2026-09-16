@@ -1,0 +1,72 @@
+{
+  "schema": "prompt-loss-analysis-contract/v1",
+  "created_utc": "2026-09-15T05:15:06.434185+00:00",
+  "policy": {
+    "stage": 2,
+    "scope": "t140 conditioning diagnostic; no optimization",
+    "prompts": [
+      "null",
+      "generic",
+      "weak_label"
+    ],
+    "models": [
+      "model_1",
+      "model_2"
+    ],
+    "scenarios": [
+      "E",
+      "U"
+    ],
+    "image_pool": "mean of exactly2 losses",
+    "scores": [
+      "negative_target_loss",
+      "base_minus_target_loss"
+    ],
+    "direction": "high membership; -target loss or base loss minus target loss",
+    "primary_role": "selection",
+    "fit_role": "descriptive only; no selection or fitting",
+    "target_AUC_count": 24,
+    "base_A_assignment_AUC_count": 6,
+    "prompt_contrasts": [
+      [
+        "weak_label",
+        "null"
+      ],
+      [
+        "generic",
+        "null"
+      ],
+      [
+        "weak_label",
+        "generic"
+      ]
+    ],
+    "prompt_difference_CIs": 24,
+    "bootstrap": {
+      "seed": 260914,
+      "resamples": 2000,
+      "stratified": "20A20B patients"
+    },
+    "test_calibration_used": false,
+    "new_fitting": false,
+    "limitations": [
+      "one fixed noise per image and one timestep",
+      "cached FP16 posterior mode promoted to FP32",
+      "MoFit uses fresh posterior samples, so this is not its complete score",
+      "U weak-label is a hypothetical training template, not an actually used training prompt",
+      "base AUC labels are assignment A/B, not base membership",
+      "target-minus-base includes domain-wide adaptation; not individual training influence",
+      "shared training initialization, reused development patients and unadjusted conditional intervals",
+      "lower loss under a prompt is not by itself evidence of membership",
+      "null dropout zero does not imply unconditional output is unaffected by training"
+    ],
+    "overall_stage2_gate": null
+  },
+  "source_sha256": "7cf4b95d46636369dd0c0a63629e7cc3436bf1fda332567a75985342b7d18b63",
+  "producer_sha256": "f1e2653b36684f7f25cb5d86325778ba6573f6b4d6dad2c2fda7615c081d621a",
+  "extraction_contract_sha256": "c582c12ef8ed58ecd820def8e377a94d02e715cfdea6e259fd2e3342de571869",
+  "raw_verification": "must pass before performance analysis",
+  "precision_diagnostic": "preserve GPU MSE main scores; also report rank changes from FP64 recomputation on saved predictions; no reranking chosen by outcome",
+  "performance_inspected": false,
+  "new_GPU_calls": 0
+}

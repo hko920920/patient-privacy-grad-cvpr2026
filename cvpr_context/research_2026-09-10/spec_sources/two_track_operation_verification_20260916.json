@@ -1,0 +1,35 @@
+{
+  "rows": 79,
+  "checked_local_links": 1012,
+  "checked_pdf_page_anchors": 221,
+  "broken_links": [],
+  "timestamp_utc": "2026-09-16T04:48:13.298345+00:00",
+  "new_gpu_training_attack_runs": 0,
+  "new_synthetic_efficacy_runs": 0,
+  "stage": 2,
+  "independent_review": {
+    "scope": "Primary operation note and main report checked by independent agent; no mathematical/privacy blocker found within stated assumptions.",
+    "corrections_applied": [
+      "A/B determine W-dependent loss and minimizer, not absolute loss constant.",
+      "2^(1-K) means at least one of two teachers excludes the patient, not a specified teacher."
+    ],
+    "essential_counterbaseline": "Same-head DP-SGD also removes backbone backward; separate this from full LoRA comparison.",
+    "unverified": [
+      "generation capacity",
+      "noisy Gram utility",
+      "matched total speed",
+      "new paper contribution"
+    ]
+  },
+  "sha256": {
+    "TWO_TRACK_OPERATION_REDESIGN_20260916.md": "1d17a20feb5f48ece6fb995bd5a7f100e036e74371be9299ebf0853f7a44243b",
+    "two_track_operation_redesign.html": "992a4a201b99f0aba480bfc3a466b76e26ea2b5274caf857249f4e18cfda934c",
+    "spec_sources/track1_operation_redesign_20260916.md": "9589c675cb73edbbff083a08957d4c628865158a2a211e0083c2d49a26be8bb5",
+    "spec_sources/track2_operation_redesign_20260916.md": "c0c6191f2c8253e7174b121474e710d33318ca45e76b39d5521e7103f3449b7a",
+    "spec_sources/operation_redesign_independent_20260916.md": "749396e349bf45cbd851f5e2be3b7e40a7f3545c97043d8e76f73094a13ce5d5",
+    "research_state.json": "15029bc558fbe9f29dbcc8b6f1cdf40cb1dd3bbfa660533fa71d77b74b9f70c5",
+    "patient_baseline_spec.json": "b3b4c74519328d6e981d0e7195f8c5a3d29d66294d2602b469f7758a0e7cd7f4",
+    "RESEARCH_FRAMEWORK.md": "676ca06b14c4ea56488b4607128d8236202afde1cbec866f7eba2f49c995068b"
+  },
+  "state_mirror": "PASS"
+}

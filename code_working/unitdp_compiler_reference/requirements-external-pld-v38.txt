@@ -1,0 +1,7 @@
+# Install these four packages into a separate target directory, not into the
+# caller environment. The adapter additionally requires the numerical
+# versions pinned in requirements-aaai27-v36.txt.
+PLD_accounting==0.5.0
+random-allocation==1.0.5
+numba==0.60.0
+llvmlite==0.43.0

@@ -1,0 +1,756 @@
+{
+  "schema": "mofit-public-scalar-replay-result/v1",
+  "status": "PASS_PUBLIC_SCALAR_EVALUATOR_REPLAY",
+  "research_stage": 2,
+  "protocol_sha256": "d8e7eb6a0edcfb02f7765b05832014b2d55c9203f0ab6f97221e44b82bccaf69",
+  "evidence_sha256": "bf492a86a2c9d0d554d0119d32d3f050f4a05d47d3dea0da4059567f5ec79bdb",
+  "input_files_unchanged": true,
+  "script_unchanged": true,
+  "rows_per_group": 500,
+  "conditions": 21,
+  "gamma_results": [
+    {
+      "gamma": 0.0,
+      "literal_best_threshold": -0.17164134852932644,
+      "literal_best_asr": 0.78,
+      "literal_grid_auc": 0.85427,
+      "literal_tpr_at_first_fpr_ge_01": 0.34,
+      "literal_tpr_at_first_fpr_ge_001": 0.2,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1293,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.34,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        1.0,
+        0.998
+      ],
+      "rank_auc": 0.85428,
+      "sklearn_auc": 0.8542799999999999,
+      "max_empirical_tpr_at_fpr_le_01": 0.34,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.7470511606717019,
+      "exact_threshold_best_asr": 0.781,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 1.0000000000065512e-05,
+      "proper_tpr_minus_literal_tpr": 0.0
+    },
+    {
+      "gamma": 0.05,
+      "literal_best_threshold": -0.018287078628575593,
+      "literal_best_asr": 0.784,
+      "literal_grid_auc": 0.866592,
+      "literal_tpr_at_first_fpr_ge_01": 0.372,
+      "literal_tpr_at_first_fpr_ge_001": 0.234,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1308,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.372,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        1.0,
+        0.998
+      ],
+      "rank_auc": 0.866552,
+      "sklearn_auc": 0.8665519999999999,
+      "max_empirical_tpr_at_fpr_le_01": 0.382,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.6615613436694482,
+      "exact_threshold_best_asr": 0.785,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": -4.0000000000040004e-05,
+      "proper_tpr_minus_literal_tpr": 0.010000000000000009
+    },
+    {
+      "gamma": 0.1,
+      "literal_best_threshold": -0.0074407859933067755,
+      "literal_best_asr": 0.795,
+      "literal_grid_auc": 0.8790720000000001,
+      "literal_tpr_at_first_fpr_ge_01": 0.408,
+      "literal_tpr_at_first_fpr_ge_001": 0.26,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1325,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.408,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        1.0,
+        0.998
+      ],
+      "rank_auc": 0.879036,
+      "sklearn_auc": 0.879036,
+      "max_empirical_tpr_at_fpr_le_01": 0.42,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.5983157975228524,
+      "exact_threshold_best_asr": 0.795,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": -3.6000000000036e-05,
+      "proper_tpr_minus_literal_tpr": 0.01200000000000001
+    },
+    {
+      "gamma": 0.15000000000000002,
+      "literal_best_threshold": 0.004041444333417132,
+      "literal_best_asr": 0.804,
+      "literal_grid_auc": 0.891036,
+      "literal_tpr_at_first_fpr_ge_01": 0.434,
+      "literal_tpr_at_first_fpr_ge_001": 0.268,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1337,
+      "first_fpr_ge_01_actual_fpr": 0.012,
+      "first_fpr_ge_01_tpr": 0.434,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        1.0,
+        0.998
+      ],
+      "rank_auc": 0.891004,
+      "sklearn_auc": 0.891004,
+      "max_empirical_tpr_at_fpr_le_01": 0.434,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.5747570660784765,
+      "exact_threshold_best_asr": 0.804,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": -3.2000000000032e-05,
+      "proper_tpr_minus_literal_tpr": 0.0
+    },
+    {
+      "gamma": 0.2,
+      "literal_best_threshold": -0.037156405068591525,
+      "literal_best_asr": 0.816,
+      "literal_grid_auc": 0.9027639999999999,
+      "literal_tpr_at_first_fpr_ge_01": 0.444,
+      "literal_tpr_at_first_fpr_ge_001": 0.316,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1344,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.444,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        1.0,
+        0.998
+      ],
+      "rank_auc": 0.902788,
+      "sklearn_auc": 0.9027879999999999,
+      "max_empirical_tpr_at_fpr_le_01": 0.482,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.5072860042077918,
+      "exact_threshold_best_asr": 0.8160000000000001,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 2.4000000000135024e-05,
+      "proper_tpr_minus_literal_tpr": 0.03799999999999998
+    },
+    {
+      "gamma": 0.25,
+      "literal_best_threshold": -0.07509227825156284,
+      "literal_best_asr": 0.828,
+      "literal_grid_auc": 0.9110779999999999,
+      "literal_tpr_at_first_fpr_ge_01": 0.454,
+      "literal_tpr_at_first_fpr_ge_001": 0.368,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1347,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.454,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.913068,
+      "sklearn_auc": 0.913068,
+      "max_empirical_tpr_at_fpr_le_01": 0.482,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.5082275514830489,
+      "exact_threshold_best_asr": 0.8290000000000001,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0019900000000000473,
+      "proper_tpr_minus_literal_tpr": 0.02799999999999997
+    },
+    {
+      "gamma": 0.30000000000000004,
+      "literal_best_threshold": 0.046089063024929544,
+      "literal_best_asr": 0.842,
+      "literal_grid_auc": 0.920626,
+      "literal_tpr_at_first_fpr_ge_01": 0.476,
+      "literal_tpr_at_first_fpr_ge_001": 0.384,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1343,
+      "first_fpr_ge_01_actual_fpr": 0.012,
+      "first_fpr_ge_01_tpr": 0.476,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.922652,
+      "sklearn_auc": 0.9226520000000001,
+      "max_empirical_tpr_at_fpr_le_01": 0.476,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.5200615752290074,
+      "exact_threshold_best_asr": 0.843,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0020259999999999723,
+      "proper_tpr_minus_literal_tpr": 0.0
+    },
+    {
+      "gamma": 0.35000000000000003,
+      "literal_best_threshold": -0.06063634194836265,
+      "literal_best_asr": 0.854,
+      "literal_grid_auc": 0.928212,
+      "literal_tpr_at_first_fpr_ge_01": 0.478,
+      "literal_tpr_at_first_fpr_ge_001": 0.374,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1335,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.478,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.930244,
+      "sklearn_auc": 0.930244,
+      "max_empirical_tpr_at_fpr_le_01": 0.514,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.4576793113659903,
+      "exact_threshold_best_asr": 0.8540000000000001,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0020319999999999228,
+      "proper_tpr_minus_literal_tpr": 0.03600000000000003
+    },
+    {
+      "gamma": 0.4,
+      "literal_best_threshold": -0.07445850371603768,
+      "literal_best_asr": 0.867,
+      "literal_grid_auc": 0.93476,
+      "literal_tpr_at_first_fpr_ge_01": 0.494,
+      "literal_tpr_at_first_fpr_ge_001": 0.35,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1333,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.494,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.93678,
+      "sklearn_auc": 0.93678,
+      "max_empirical_tpr_at_fpr_le_01": 0.516,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.4556462100112488,
+      "exact_threshold_best_asr": 0.867,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0020199999999999108,
+      "proper_tpr_minus_literal_tpr": 0.02200000000000002
+    },
+    {
+      "gamma": 0.45,
+      "literal_best_threshold": -0.06548137325186776,
+      "literal_best_asr": 0.873,
+      "literal_grid_auc": 0.9391059999999999,
+      "literal_tpr_at_first_fpr_ge_01": 0.502,
+      "literal_tpr_at_first_fpr_ge_001": 0.334,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1321,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.502,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.941096,
+      "sklearn_auc": 0.9410959999999999,
+      "max_empirical_tpr_at_fpr_le_01": 0.502,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.4797196532403647,
+      "exact_threshold_best_asr": 0.873,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0019900000000001583,
+      "proper_tpr_minus_literal_tpr": 0.0
+    },
+    {
+      "gamma": 0.5,
+      "literal_best_threshold": 0.036963330144952344,
+      "literal_best_asr": 0.874,
+      "literal_grid_auc": 0.94143,
+      "literal_tpr_at_first_fpr_ge_01": 0.482,
+      "literal_tpr_at_first_fpr_ge_001": 0.332,
+      "grid_points": 2001,
+      "first_fpr_ge_01_index": 1294,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.482,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.943468,
+      "sklearn_auc": 0.943468,
+      "max_empirical_tpr_at_fpr_le_01": 0.506,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.4835551582783705,
+      "exact_threshold_best_asr": 0.875,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0020379999999999843,
+      "proper_tpr_minus_literal_tpr": 0.02400000000000002
+    },
+    {
+      "gamma": 0.55,
+      "literal_best_threshold": 0.0201292120596408,
+      "literal_best_asr": 0.883,
+      "literal_grid_auc": 0.941948,
+      "literal_tpr_at_first_fpr_ge_01": 0.468,
+      "literal_tpr_at_first_fpr_ge_001": 0.328,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1288,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.468,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.94394,
+      "sklearn_auc": 0.9439400000000001,
+      "max_empirical_tpr_at_fpr_le_01": 0.488,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.5039309753157625,
+      "exact_threshold_best_asr": 0.8840000000000001,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0019919999999999938,
+      "proper_tpr_minus_literal_tpr": 0.019999999999999962
+    },
+    {
+      "gamma": 0.6000000000000001,
+      "literal_best_threshold": 0.0383578436215295,
+      "literal_best_asr": 0.878,
+      "literal_grid_auc": 0.940078,
+      "literal_tpr_at_first_fpr_ge_01": 0.45,
+      "literal_tpr_at_first_fpr_ge_001": 0.318,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1282,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.45,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.942112,
+      "sklearn_auc": 0.942112,
+      "max_empirical_tpr_at_fpr_le_01": 0.462,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.5254589937952412,
+      "exact_threshold_best_asr": 0.878,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0020339999999999803,
+      "proper_tpr_minus_literal_tpr": 0.01200000000000001
+    },
+    {
+      "gamma": 0.65,
+      "literal_best_threshold": 0.040415789635472876,
+      "literal_best_asr": 0.875,
+      "literal_grid_auc": 0.936726,
+      "literal_tpr_at_first_fpr_ge_01": 0.418,
+      "literal_tpr_at_first_fpr_ge_001": 0.314,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1263,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.418,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.938764,
+      "sklearn_auc": 0.9387639999999999,
+      "max_empirical_tpr_at_fpr_le_01": 0.442,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.555005464869967,
+      "exact_threshold_best_asr": 0.875,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0020380000000000953,
+      "proper_tpr_minus_literal_tpr": 0.02400000000000002
+    },
+    {
+      "gamma": 0.7000000000000001,
+      "literal_best_threshold": -0.001674343367490394,
+      "literal_best_asr": 0.869,
+      "literal_grid_auc": 0.9291100000000001,
+      "literal_tpr_at_first_fpr_ge_01": 0.404,
+      "literal_tpr_at_first_fpr_ge_001": 0.306,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1247,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.404,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.996,
+        1.0
+      ],
+      "rank_auc": 0.933128,
+      "sklearn_auc": 0.933128,
+      "max_empirical_tpr_at_fpr_le_01": 0.426,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.5866020492878998,
+      "exact_threshold_best_asr": 0.869,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.004017999999999855,
+      "proper_tpr_minus_literal_tpr": 0.021999999999999964
+    },
+    {
+      "gamma": 0.75,
+      "literal_best_threshold": 0.031242961894069943,
+      "literal_best_asr": 0.859,
+      "literal_grid_auc": 0.924488,
+      "literal_tpr_at_first_fpr_ge_01": 0.392,
+      "literal_tpr_at_first_fpr_ge_001": 0.3,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1217,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.392,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.92646,
+      "sklearn_auc": 0.92646,
+      "max_empirical_tpr_at_fpr_le_01": 0.408,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.6259623490139284,
+      "exact_threshold_best_asr": 0.8590000000000001,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0019719999999999738,
+      "proper_tpr_minus_literal_tpr": 0.01599999999999996
+    },
+    {
+      "gamma": 0.8,
+      "literal_best_threshold": 0.04294727980077351,
+      "literal_best_asr": 0.849,
+      "literal_grid_auc": 0.9162140000000001,
+      "literal_tpr_at_first_fpr_ge_01": 0.39,
+      "literal_tpr_at_first_fpr_ge_001": 0.3,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1186,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.39,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.918236,
+      "sklearn_auc": 0.9182359999999999,
+      "max_empirical_tpr_at_fpr_le_01": 0.39,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.6700629366424571,
+      "exact_threshold_best_asr": 0.8490000000000001,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0020219999999999683,
+      "proper_tpr_minus_literal_tpr": 0.0
+    },
+    {
+      "gamma": 0.8500000000000001,
+      "literal_best_threshold": -0.018103747362756106,
+      "literal_best_asr": 0.831,
+      "literal_grid_auc": 0.906328,
+      "literal_tpr_at_first_fpr_ge_01": 0.372,
+      "literal_tpr_at_first_fpr_ge_001": 0.29,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1160,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.372,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.908304,
+      "sklearn_auc": 0.908304,
+      "max_empirical_tpr_at_fpr_le_01": 0.388,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.6868850168299556,
+      "exact_threshold_best_asr": 0.8310000000000001,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0019759999999999778,
+      "proper_tpr_minus_literal_tpr": 0.016000000000000014
+    },
+    {
+      "gamma": 0.9,
+      "literal_best_threshold": -0.005239229839460791,
+      "literal_best_asr": 0.818,
+      "literal_grid_auc": 0.8950520000000001,
+      "literal_tpr_at_first_fpr_ge_01": 0.366,
+      "literal_tpr_at_first_fpr_ge_001": 0.27,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1171,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.366,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.89706,
+      "sklearn_auc": 0.89706,
+      "max_empirical_tpr_at_fpr_le_01": 0.378,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.7076214740130006,
+      "exact_threshold_best_asr": 0.8180000000000001,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0020079999999998988,
+      "proper_tpr_minus_literal_tpr": 0.01200000000000001
+    },
+    {
+      "gamma": 0.9500000000000001,
+      "literal_best_threshold": 0.025491612303333966,
+      "literal_best_asr": 0.801,
+      "literal_grid_auc": 0.882708,
+      "literal_tpr_at_first_fpr_ge_01": 0.362,
+      "literal_tpr_at_first_fpr_ge_001": 0.258,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1182,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.362,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.88472,
+      "sklearn_auc": 0.88472,
+      "max_empirical_tpr_at_fpr_le_01": 0.368,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.7414497541504272,
+      "exact_threshold_best_asr": 0.801,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0020119999999999028,
+      "proper_tpr_minus_literal_tpr": 0.006000000000000005
+    },
+    {
+      "gamma": 1.0,
+      "literal_best_threshold": -0.004905382258121982,
+      "literal_best_asr": 0.787,
+      "literal_grid_auc": 0.8695240000000001,
+      "literal_tpr_at_first_fpr_ge_01": 0.36,
+      "literal_tpr_at_first_fpr_ge_001": 0.24,
+      "grid_points": 2000,
+      "first_fpr_ge_01_index": 1191,
+      "first_fpr_ge_01_actual_fpr": 0.01,
+      "first_fpr_ge_01_tpr": 0.36,
+      "grid_first_roc": [
+        0.0,
+        0.002
+      ],
+      "grid_last_roc": [
+        0.998,
+        1.0
+      ],
+      "rank_auc": 0.871548,
+      "sklearn_auc": 0.8715479999999999,
+      "max_empirical_tpr_at_fpr_le_01": 0.366,
+      "actual_fpr_at_that_point": 0.01,
+      "threshold_at_that_point": -0.7686395600432744,
+      "exact_threshold_best_asr": 0.787,
+      "auc_member_high_score": "negative source score",
+      "convention": "all distinct empirical thresholds; include ties; no interpolation",
+      "rank_auc_minus_literal_grid_auc": 0.0020239999999999148,
+      "proper_tpr_minus_literal_tpr": 0.006000000000000005
+    }
+  ],
+  "literal_selected": {
+    "gamma": 0.55,
+    "literal_best_threshold": 0.0201292120596408,
+    "literal_best_asr": 0.883,
+    "literal_grid_auc": 0.941948,
+    "literal_tpr_at_first_fpr_ge_01": 0.468,
+    "literal_tpr_at_first_fpr_ge_001": 0.328,
+    "grid_points": 2000,
+    "first_fpr_ge_01_index": 1288,
+    "first_fpr_ge_01_actual_fpr": 0.01,
+    "first_fpr_ge_01_tpr": 0.468,
+    "grid_first_roc": [
+      0.0,
+      0.002
+    ],
+    "grid_last_roc": [
+      0.998,
+      1.0
+    ],
+    "rank_auc": 0.94394,
+    "sklearn_auc": 0.9439400000000001,
+    "max_empirical_tpr_at_fpr_le_01": 0.488,
+    "actual_fpr_at_that_point": 0.01,
+    "threshold_at_that_point": -0.5039309753157625,
+    "exact_threshold_best_asr": 0.8840000000000001,
+    "auc_member_high_score": "negative source score",
+    "convention": "all distinct empirical thresholds; include ties; no interpolation",
+    "rank_auc_minus_literal_grid_auc": 0.0019919999999999938,
+    "proper_tpr_minus_literal_tpr": 0.019999999999999962
+  },
+  "source_only_gamma1": {
+    "gamma": 1.0,
+    "literal_best_threshold": -0.004905382258121982,
+    "literal_best_asr": 0.787,
+    "literal_grid_auc": 0.8695240000000001,
+    "literal_tpr_at_first_fpr_ge_01": 0.36,
+    "literal_tpr_at_first_fpr_ge_001": 0.24,
+    "grid_points": 2000,
+    "first_fpr_ge_01_index": 1191,
+    "first_fpr_ge_01_actual_fpr": 0.01,
+    "first_fpr_ge_01_tpr": 0.36,
+    "grid_first_roc": [
+      0.0,
+      0.002
+    ],
+    "grid_last_roc": [
+      0.998,
+      1.0
+    ],
+    "rank_auc": 0.871548,
+    "sklearn_auc": 0.8715479999999999,
+    "max_empirical_tpr_at_fpr_le_01": 0.366,
+    "actual_fpr_at_that_point": 0.01,
+    "threshold_at_that_point": -0.7686395600432744,
+    "exact_threshold_best_asr": 0.787,
+    "auc_member_high_score": "negative source score",
+    "convention": "all distinct empirical thresholds; include ties; no interpolation",
+    "rank_auc_minus_literal_grid_auc": 0.0020239999999999148,
+    "proper_tpr_minus_literal_tpr": 0.006000000000000005
+  },
+  "aux_only_gamma0": {
+    "gamma": 0.0,
+    "literal_best_threshold": -0.17164134852932644,
+    "literal_best_asr": 0.78,
+    "literal_grid_auc": 0.85427,
+    "literal_tpr_at_first_fpr_ge_01": 0.34,
+    "literal_tpr_at_first_fpr_ge_001": 0.2,
+    "grid_points": 2000,
+    "first_fpr_ge_01_index": 1293,
+    "first_fpr_ge_01_actual_fpr": 0.01,
+    "first_fpr_ge_01_tpr": 0.34,
+    "grid_first_roc": [
+      0.0,
+      0.002
+    ],
+    "grid_last_roc": [
+      1.0,
+      0.998
+    ],
+    "rank_auc": 0.85428,
+    "sklearn_auc": 0.8542799999999999,
+    "max_empirical_tpr_at_fpr_le_01": 0.34,
+    "actual_fpr_at_that_point": 0.01,
+    "threshold_at_that_point": -0.7470511606717019,
+    "exact_threshold_best_asr": 0.781,
+    "auc_member_high_score": "negative source score",
+    "convention": "all distinct empirical thresholds; include ties; no interpolation",
+    "rank_auc_minus_literal_grid_auc": 1.0000000000065512e-05,
+    "proper_tpr_minus_literal_tpr": 0.0
+  },
+  "paper_coco_table2": {
+    "asr": 0.88,
+    "auc": 0.9417,
+    "tpr_at_01": 0.47
+  },
+  "selected_minus_paper": {
+    "asr": 0.0030000000000000027,
+    "auc": 0.000248000000000026,
+    "tpr": -0.0019999999999999463
+  },
+  "elapsed_seconds": 0.685339700023178,
+  "GPU_forward": 0,
+  "backward": 0,
+  "patient_data_access": false,
+  "inference_reproduced": false,
+  "patient_attack_success_claimed": false,
+  "limitations": [
+    "Embedding headers say OptimIter1000_iters1000; paper COCO default and shell say 1000+300; exact inference provenance not established.",
+    "No sample IDs in these scalar rows; preserve released row ordering, cannot independently prove cross-file identity alignment.",
+    "Scalers, gamma and threshold use the entire public fixture as the released evaluator; this is not a held-out performance estimate.",
+    "Proper empirical TPR<=1% on this fixture is descriptive, not an independently calibrated deployable threshold.",
+    "Replaying scalar values does not validate image/gradient/embedding kernels, memory or runtime of a new patient implementation."
+  ]
+}

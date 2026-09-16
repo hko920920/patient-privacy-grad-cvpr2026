@@ -1,0 +1,39 @@
+method,method_label,model,in_predeclared_primary_contrast,selection_patients,selection_members,selection_nonmembers,patient_AUC,CI95_lower,CI95_upper
+cdi_image_mean_fixed,"CDI image score, mean (C=1)",model_1,False,40,20,20,0.4475,0.2749375,0.625
+cdi_image_mean_fixed,"CDI image score, mean (C=1)",model_2,False,40,20,20,0.5475000000000001,0.365,0.7225
+cdi_image_mean_tuned,"CDI image score, mean (tuned C)",model_1,True,40,20,20,0.435,0.2625,0.6100624999999996
+cdi_image_mean_tuned,"CDI image score, mean (tuned C)",model_2,True,40,20,20,0.5475000000000001,0.365,0.7225
+cdi_image_max_fixed,"CDI image score, max (C=1)",model_1,False,40,20,20,0.42,0.25,0.6025
+cdi_image_max_fixed,"CDI image score, max (C=1)",model_2,False,40,20,20,0.54,0.3525,0.7125
+cdi_image_max_tuned,"CDI image score, max (tuned C)",model_1,False,40,20,20,0.43000000000000005,0.2575,0.6075624999999997
+cdi_image_max_tuned,"CDI image score, max (tuned C)",model_2,False,40,20,20,0.4975,0.3125,0.6775
+patient_mean26_fixed,Patient mean26 LR (C=1),model_1,False,40,20,20,0.42750000000000005,0.255,0.6075
+patient_mean26_fixed,Patient mean26 LR (C=1),model_2,False,40,20,20,0.5825,0.4,0.7575624999999996
+patient_mean26_tuned,Patient mean26 LR (tuned C),model_1,False,40,20,20,0.415,0.2425,0.5875
+patient_mean26_tuned,Patient mean26 LR (tuned C),model_2,False,40,20,20,0.5175000000000001,0.3325,0.695
+patient_meanmax52_fixed,Patient mean+max52 LR (C=1),model_1,False,40,20,20,0.6325,0.46,0.7925
+patient_meanmax52_fixed,Patient mean+max52 LR (C=1),model_2,False,40,20,20,0.6699999999999999,0.495,0.8300624999999996
+patient_meanmax52_tuned,Patient mean+max52 LR (tuned C),model_1,True,40,20,20,0.5175000000000001,0.3275,0.7
+patient_meanmax52_tuned,Patient mean+max52 LR (tuned C),model_2,True,40,20,20,0.6050000000000001,0.42,0.7875
+dl_mean,"Denoising loss, mean",model_1,False,40,20,20,0.48999999999999994,0.3049375,0.67
+dl_mean,"Denoising loss, mean",model_2,False,40,20,20,0.515,0.3349375,0.705
+dl_max,"Denoising loss, max",model_1,False,40,20,20,0.5475,0.36,0.7225624999999997
+dl_max,"Denoising loss, max",model_2,False,40,20,20,0.455,0.2775,0.6425
+secmi_mean,"SecMI, mean",model_1,True,40,20,20,0.43000000000000005,0.25,0.615
+secmi_mean,"SecMI, mean",model_2,True,40,20,20,0.5599999999999999,0.385,0.7375
+secmi_max,"SecMI, max",model_1,False,40,20,20,0.5075,0.32,0.69
+secmi_max,"SecMI, max",model_2,False,40,20,20,0.5275000000000001,0.35,0.7175624999999997
+pia_mean,"PIA, mean",model_1,False,40,20,20,0.485,0.3099375,0.6675
+pia_mean,"PIA, mean",model_2,False,40,20,20,0.5325,0.345,0.7125
+pia_max,"PIA, max",model_1,False,40,20,20,0.515,0.3274375,0.6975
+pia_max,"PIA, max",model_2,False,40,20,20,0.495,0.3175,0.6800624999999997
+pian_mean,"PIAN, mean",model_1,False,40,20,20,0.44999999999999996,0.27,0.6325
+pian_mean,"PIAN, mean",model_2,False,40,20,20,0.5425,0.3625,0.7225
+pian_max,"PIAN, max",model_1,False,40,20,20,0.46749999999999997,0.2775,0.6525
+pian_max,"PIAN, max",model_2,False,40,20,20,0.515,0.335,0.7075624999999997
+patient_meanmax54_noobjective_fixed,NO27 diagnostic: mean+max54 (C=1),model_1,False,40,20,20,0.615,0.44,0.78
+patient_meanmax54_noobjective_fixed,NO27 diagnostic: mean+max54 (C=1),model_2,False,40,20,20,0.6950000000000001,0.525,0.855
+patient_meanmax54_noobjective_tuned,NO27 diagnostic: mean+max54 (tuned C),model_1,False,40,20,20,0.515,0.3274375,0.6950624999999996
+patient_meanmax54_noobjective_tuned,NO27 diagnostic: mean+max54 (tuned C),model_2,False,40,20,20,0.6475000000000001,0.4624375,0.825
+dino_existing,DINO encoder-only (reused),model_1,False,40,20,20,0.5475,0.3724375,0.7325
+dino_existing,DINO encoder-only (reused),model_2,False,40,20,20,0.5475,0.3724375,0.7325

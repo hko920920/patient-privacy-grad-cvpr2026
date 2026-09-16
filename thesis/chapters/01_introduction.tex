@@ -1,0 +1,397 @@
+\chapter{Introduction}
+\label{ch:introduction}
+
+% 선행 연구 3편은 입문 본론 장으로 확장하지 않고, 본 논문의 문제의식이
+% 발전한 과정만 간결하게 설명합니다.
+\section{Research Goals and Significance}
+\label{sec:ch1-goals}
+
+Artificial-intelligence systems increasingly communicate trust through compact
+claims.  A trained model may be described as differentially private, a generated
+image may be labeled as authentic or watermarked, and a public interface may
+return an acceptance decision.  Such statements are useful only when a reader can
+determine what is protected or verified, which mechanism produced the relevant
+result, and which evidence supports the wording.  A numerical value, a route
+name, or a detector score is not by itself the guarantee that a public sentence
+appears to express.
+
+This distinction is especially important when a system crosses several semantic
+layers.  In privacy-preserving learning, raw owners, events, and sequences may be
+transformed into overlapping windows before a differentially private optimizer
+operates on them.  The reported privacy parameters are meaningful only relative
+to the privacy unit, neighboring relation, sampling rule, contribution bound, and
+accounting procedure that generated them~\cite{dwork2014algorithmic,
+kifer2020guidelines,ponomareva2023dpify,near2025guidelines}.  In generative-image
+provenance, an observable watermark score may survive common transformations,
+but the score does not alone establish which prompt, seed, model, or embedding
+trace produced the image.  Signed content credentials add an important manifest
+layer, yet their interpretation still depends on the technical relation actually
+authenticated by the credential~\cite{longpre2024provenance,c2pa2026spec}.
+
+The central goal of this dissertation is to reduce the gap between such public
+claims and the system facts that make those claims defensible.  It introduces
+\ClaimAlignedAssurance{} as a design perspective in which a positive trust claim
+is released only when four elements remain mutually consistent: the intended
+claim target, the executed or registered mechanism, the verification interface,
+and the available evidence.  The framework is instantiated in two research axes:
+\AuditablePrivacy{}, which concerns privacy claims about training, and
+\SecurePublicVerification{}, which concerns independently verifiable provenance
+for generative-AI content.
+
+The first axis addresses privacy misalignment after a training run has completed.
+A validator examines frozen evidence together with one requested privacy-unit
+sentence and determines whether the evidence licenses the native accountant pair,
+a registered converted consequence, or no positive wording.  This focus is
+practical as well as semantic: a completed model may be reusable for a narrower
+claim, may support a weaker converted statement, or may require retraining under a
+mechanism native to the requested unit.  The decision cannot repair an
+incompatible execution, but it can prevent the execution's isolated accountant
+output from being silently promoted into a stronger public guarantee.
+
+The second axis addresses a different trust object.  Public watermark detectors
+enable independent screening, but the same public decision surface can be queried
+or optimized by an adversary~\cite{jiang2023evading,muller2025blackbox,
+lin2025crack}.  A private detector reduces this exposure at the cost of renewed
+dependence on a central verifier.  This dissertation therefore studies a
+conjunctive public decision: statistical image-side evidence is combined with a
+cryptographic receipt bound to the declared generation context and committed
+embedding trace.  The stronger acceptance statement is withheld unless both
+conditions hold.
+
+The significance of the dissertation lies in this alignment discipline rather
+than in universal AI certification.  The methods do not prove correct execution,
+universal privacy, or factual truth.  They make each positive statement narrower
+and explicit about its authority.  Missing or inconsistent relations therefore
+withhold positive wording rather than promote an incomplete signal.
+
+
+\section{Research Background and Trajectory}
+\label{sec:ch1-trajectory}
+
+The present research problem developed through three preceding studies in
+anonymous digital systems, decentralized authentication, and context-sensitive
+AI generation.  These studies are not reproduced as independent technical
+chapters in this dissertation.  Their role is to explain how the research focus
+progressed from interpreting hidden structure, to reducing centralized trust, and
+then to binding AI generation to domain context.  That trajectory motivates the
+claim--mechanism--evidence question addressed in Chapters~\ref{ch:post-execution-validation}--\ref{ch:pp-mark}.
+
+\subsection{Interpreting Hidden Roles in Anonymous Web3 Systems}
+\label{subsec:ch1-trajectory-web3}
+
+The first preceding study examined Ethereum, where addresses and transactions are
+public but the service role of a smart contract and the relationship between
+accounts are not directly stated.  It represented externally owned accounts,
+contract accounts, and transactions as a heterogeneous graph and used a Graph
+Attention Network version 2 model for DApp-category classification and account
+link prediction~\cite{ko2024ethereum}.  The heterogeneous representation supplied
+role context beyond an address's isolated balance and transaction values.
+
+The antecedent for this dissertation is the separation between an observable
+record and an asserted system role.  A graph model can infer a role from public
+traces, but the inference is not an authenticated identity and remained bounded to
+the evaluated Ethereum data.  The scope, model, and evidence determine what may
+be said.  This gap between visible traces, hidden function, and warranted
+interpretation became the first step toward claim-aligned reasoning.
+
+\subsection{Reducing Centralized Trust in Metaverse Authentication}
+\label{subsec:ch1-trajectory-metaverse}
+
+The second preceding study moved from interpreting a hidden role to changing who
+controls a verification decision.  Metaverse space access based on centrally
+managed ranks or passwords leaves the service as both policy authority and point
+of failure.  The proposed approach instead allowed a user to manage an
+authentication token and used a blockchain smart contract and cosine similarity
+to evaluate access to a declared virtual space~\cite{seo2024space}.  The study
+calibrated the similarity threshold and tested feasibility in a metaverse setting.
+
+The resulting lesson is that reducing centralized trust requires alignment among
+the credential, spatial representation, policy, execution rule, and decision
+context.  A smart contract can make a rule visible and repeatable, but blockchain
+alone does not make every authentication statement trustworthy.  This work
+therefore contributed a verification structure rather than a universal trust
+claim.
+
+\subsection{Preserving Domain Context in LLM Data Augmentation}
+\label{subsec:ch1-trajectory-llm}
+
+The third preceding study considered a data problem rather than access control.
+Sensitive conversational domains can provide few authentic examples while
+depending on evolving slang, implicit cues, and role-specific behavior.  Simple
+text transformations may increase sample count without preserving this
+interactional structure.  The proposed framework therefore encoded buyer and
+seller personas, behavioral patterns, domain vocabulary, and dialogue rules in
+prompts to a large language model~\cite{jeong2025persona}.  Multi-metric and expert
+evaluation assessed whether the generated dialogues retained the intended domain
+characteristics.
+
+The antecedent is that an output-count claim is not a context-fidelity claim.  The
+target and evidence must specify the roles, behavior, language rules, and
+population being assessed.  The study remained limited to a Korean corpus
+dominated by buyer--seller dyads, with evolving slang requiring updates.  A
+favorable metric should not be detached from those conditions.
+
+Taken together, the three studies trace a progression in the research question.
+The Web3 study interpreted hidden roles from public traces; the metaverse study
+reduced reliance on a centralized authentication decision; and the LLM study
+bound generation to domain roles and linguistic behavior.  The present
+dissertation advances that progression from inference, decentralization, and
+context preservation to assurance.  It asks when a public privacy or provenance
+statement is justified by the protected object, operative mechanism, verification
+interface, and evidence that the system actually exposes.
+
+
+\section{Claim-Aligned Assurance for Trustworthy AI}
+\label{sec:ch1-caa}
+
+\subsection{Claim--Mechanism--Evidence Alignment}
+\label{subsec:ch1-alignment}
+
+For this dissertation, a \emph{claim} is a positive, externally interpretable
+statement about a defined object.  A privacy claim names a protected unit,
+neighboring relation, and privacy parameters.  A provenance claim names an image,
+generation context, and acceptance predicate.  A \emph{mechanism} is the set of
+transformations, randomized procedures, samplers, executors, and cryptographic or
+statistical operations from which the claim is derived.  A \emph{verification
+interface} defines what a third party submits, observes, and interprets.  The
+\emph{evidence} consists of the artifacts, commitments, runtime records,
+accountant outputs, proofs, and consistency relations available to support that
+interpretation.
+
+Let (c), (M), (I), and (E) denote a requested claim, mechanism description,
+verification interface, and evidence bundle, respectively.  Claim-Aligned
+Assurance is represented as a scoped decision rather than a free-standing trust
+score:
+
+\begin{equation}
+\mathsf{CAA}(c;M,I,E)
+\in
+\left\{
+    \mathsf{Release}(c),
+    \mathsf{Qualify}(c'),
+    \mathsf{Block}
+\right\},
+\qquad c' \prec c.
+\label{eq:ch1-caa-decision}
+\end{equation}
+
+The relation \(c'\prec c\) means that the evidence supports a narrower or weaker
+statement than the one requested.  For example, frozen DP-SGD evidence may
+support a generated-window statement but not an owner-level statement, or may
+support a converted event-level parameter rather than the accountant's native
+pair.  A watermark score may support statistical screening but not the stronger
+statement that a declared generation trace has been publicly verified.  In both
+cases, qualification preserves the distinction between what was observed and
+what was established.
+
+Table~\ref{tab:ch1-alignment-map} maps the common alignment elements to the two
+research axes.  It is a dissertation-level synthesis, not an additional empirical
+result.  The domains use different mechanisms and threat models, but each
+positive statement must close a chain from its declared target to its released
+decision.
+
+\begin{table}[tbp]
+    \centering
+    \caption{Dissertation-wide alignment map for the two research axes}
+    \label{tab:ch1-alignment-map}
+    \footnotesize
+    \setlength{\tabcolsep}{3.2pt}
+    \renewcommand{\arraystretch}{1.14}
+    \begin{tabular}{@{}
+        >{\raggedright\arraybackslash}p{0.17\textwidth}
+        >{\raggedright\arraybackslash}p{0.37\textwidth}
+        >{\raggedright\arraybackslash}p{0.37\textwidth}@{}}
+        \toprule
+        \textbf{Alignment element} &
+        \textbf{Auditable Privacy} &
+        \textbf{Secure Public Verification} \\
+        \midrule
+        Claim target &
+        Privacy unit, adjacency, and licensed
+        \((\varepsilon,\delta)\) wording &
+        Exact image, declared generation context, and provenance-acceptance
+        statement \\
+
+        Mechanism binding &
+        Transformation, contribution rule, sampler, clipping/noise geometry,
+        accountant, executor, and schedule &
+        Context-derived payload, latent embedding, trace commitment, image-bound
+        challenge, and proof predicate \\
+
+        Verification interface &
+        Post-execution wording query with an explicit unit and adjacency &
+        Public score mode or conjunctive score-plus-receipt acceptance mode \\
+
+        Evidence &
+        Frozen artifacts, semantic digests, source/runtime relations, recomputed
+        accounting, and registered obligations &
+        Recoverable image signal, declared metadata, Merkle commitment, opened
+        trace tuples, exact image hash, and SP1 receipt \\
+
+        Fail-closed outcome &
+        Block unsupported, unverified, invalid, or vacuous wording &
+        Withhold full acceptance when either the score or receipt condition fails
+        \\
+
+        Principal boundary &
+        Evidence-relative validation is not arbitrary-code proof or execution
+        attestation &
+        Accepted provenance evidence is not semantic truth, human authorship,
+        legal identity, or proof of the complete diffusion execution \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Across these mappings, four design principles recur.  First, \emph{claim specification}
+fixes the target, unit or context, predicate, and scope before a positive label is
+interpreted.  Second, \emph{mechanism binding} connects that specification to the
+actual route or generation process rather than to a label with a similar name.
+Third, an \emph{evidence-bound decision} requires the relations needed by the
+claim, rather than inferring the conclusion from an isolated numerical output.
+Fourth, \emph{fail-closed assurance} suppresses a positive interpretation when a
+required relation is absent, inconsistent, unregistered, or vacuous.
+
+\clearpage
+
+The framework treats the verification interface as part of the assurance object.
+An interface determines which question is being answered and how its output may
+be interpreted.  In the post-execution privacy study, the requested wording is an
+explicit input because the same frozen run can support different answers for
+window, event, and owner queries.  In PP-Mark, score mode and full acceptance are
+separate interfaces because they establish different predicates.  Interface
+separation prevents a weaker diagnostic from being silently presented as the
+stronger claim.
+
+\subsection{Assurance Boundaries and Fail-Closed Decisions}
+\label{subsec:ch1-boundaries}
+
+Claim alignment does not remove the need for a threat model.  Internally
+consistent evidence may still come from a producer that did not execute the
+reported code, and a proof establishes only the relation encoded by its circuit.
+Every positive result is therefore relative to explicit premises, evidence
+authority, and tested scope.
+
+The privacy axis addresses an honest-but-fallible development setting.  Digests,
+independent recomputation, and finite validation predicates expose registered
+inconsistencies but do not attest hidden execution or arbitrary extensions.
+The provenance axis considers adversarial signal creation, yet full acceptance
+remains conditional on its hash, proof-system, key-control, statistical,
+predicate, and partial-opening assumptions.  Its exact-image receipt must be
+reissued after an edit, and its circuit neither re-executes complete diffusion nor
+decides factual truth.
+
+Fail-closed behavior marks an evidentiary boundary, not absence of the broader
+property.  A blocked owner claim lacks licensing evidence, and a rejected PP-Mark
+submission fails the declared score-and-receipt predicate.  Neither decision alone
+proves that the broader privacy or provenance property is false.
+
+
+\section{Research Questions and Contributions}
+\label{sec:ch1-questions-contributions}
+
+The dissertation addresses three research questions.
+
+\begin{description}
+    \item[\textbf{RQ1.}] Given a completed window-based DP-SGD execution and a
+    requested privacy-unit sentence, which registered evidence obligations and
+    transformations are sufficient to release, qualify, or block that exact
+    wording?
+
+    \item[\textbf{RQ2.}] How can generative-image provenance remain publicly
+    verifiable while requiring more than an optimizable watermark score?
+
+    \item[\textbf{RQ3.}] Which design principles are shared by these privacy and
+    provenance settings, and where must their assurance conclusions explicitly
+    stop?
+\end{description}
+
+\subsection{Auditable Privacy: Post-Execution Claim Validation}
+\label{subsec:ch1-contrib-privacy}
+
+Chapter~\ref{ch:post-execution-validation} addresses RQ1 after training.  Given a
+frozen evidence bundle and wording query, it reopens the raw-to-generated mapping,
+checks mechanism and accountant relations, and returns a direct, converted,
+grouped, underspecified, or blocked path.  Its controlled conformance study, fixed
+information-necessity witnesses, protocol-frozen activity-data executions, and
+Sepsis and Backblaze mapping diagnostics test the decision rather than propose a
+new accountant.  The resulting \AuditablePrivacy{} contribution is an inspectable
+chain from a requested sentence to the observable premises that license or block
+it.  It remains evidence-relative and is not promoted into end-to-end execution
+attestation or a general proof of differential privacy.
+
+\subsection{Secure Public Verification: Detection and Verifiable Provenance}
+\label{subsec:ch1-contrib-provenance}
+
+Chapter~\ref{ch:pp-mark} addresses RQ2 through PP-Mark.  A secret-keyed generation
+binding determines the latent payload and sampled trace, which is Merkle-committed
+and partially opened through an image-bound SP1 proof.  PP-Mark(score) remains a
+statistical screen; PP-Mark(accept) requires both the calibrated score and a valid
+receipt for the same context and exact image.  Forgery, removal, transformation,
+cost, quality, and bounded model-generalization experiments evaluate the two
+interfaces without equating either with semantic truth.
+
+RQ3 is answered by the shared framework rather than by treating the two core
+studies as one algorithm.  Across them, the dissertation contributes:
+
+\begin{itemize}
+    \item a common vocabulary for specifying a trust claim by its target,
+    mechanism, verification interface, evidence, and assurance boundary;
+
+    \item a post-execution, query-dependent validator that restricts privacy
+    wording to what a frozen evidence chain licenses;
+
+    \item a public provenance construction whose stronger decision joins a
+    context-bound statistical signal with a publicly verifiable cryptographic
+    receipt; and
+
+    \item a cross-domain synthesis of claim specification, mechanism binding,
+    evidence-bound decision, and fail-closed behavior, together with explicit
+    non-claims for each instantiation.
+\end{itemize}
+
+The integrated contribution is therefore not a single privacy mechanism or a
+single watermark detector.  It is a disciplined way to determine when a specific
+trust statement remains aligned with the object, process, interface, and evidence
+that give the statement meaning, demonstrated in two technically distinct AI
+assurance domains.
+
+
+\section{Dissertation Organization}
+\label{sec:ch1-organization}
+
+The remainder of the dissertation is organized as follows.
+
+\paragraph{Chapter 2: Post-Execution Auditing of Privacy-Unit Claims.}
+Chapter~\ref{ch:post-execution-validation} introduces the background of privacy
+units and windowed DP-SGD, formalizes query-dependent evidence-bound validation,
+and develops direct, converted, grouped, and blocked claim paths.  It evaluates
+the contract through a 200-case controlled oracle, fixed necessity witnesses,
+independently checked WISDM and UCI HAR executions, and Sepsis and Backblaze
+mapping diagnostics.  The chapter also separates bundle consistency from
+execution attestation and reports the exact authority of each experimental
+surface.
+
+\paragraph{Chapter 3: Secure Public Verification of Generative-AI Provenance.}
+Chapter~\ref{ch:pp-mark} turns to the dissertation's second axis.  It describes
+context-bound latent watermarking, deterministic trace commitment, SP1 proof
+generation, and the separate score and full-acceptance interfaces of PP-Mark.  It
+then evaluates forgery, removal, regeneration, transformation, efficiency,
+quality, and bounded model-generalization conditions.  The chapter states the
+cryptographic and statistical premises under which its public provenance
+conclusion is interpreted.
+
+\paragraph{Chapter 4: Conclusion.}
+Chapter~\ref{ch:conclusion} summarizes the two core studies without repeating
+their independent conclusions.  It relates evidence-bound privacy auditing to
+secure public provenance verification and states the dissertation-wide design
+principles of Claim-Aligned Assurance.  It concludes with limitations, broader
+impact, and two concrete future validations: comparison of post-hoc conversion
+with native patient-level DP, and retrieval of PP-Mark proof artifacts through a
+C2PA-compatible public manifest repository.
+
+This organization preserves the technical independence of the privacy audit and
+PP-Mark while giving them one dissertation-level argument.  The privacy chapter
+restricts what a completed execution may claim; the provenance chapter changes the
+public acceptance predicate so that observable detection and verifiable process
+evidence must agree.  Chapter~\ref{ch:conclusion} returns to this common argument
+and states precisely what the combined evidence does and does not warrant.

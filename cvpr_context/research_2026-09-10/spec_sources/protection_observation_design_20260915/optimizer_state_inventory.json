@@ -1,0 +1,39 @@
+{
+  "scope": "CPU read-only checkpoint inventory; no optimizer steps or model forward",
+  "checkpoints": [
+    {
+      "step": 250,
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\cvpr_u_pilot_v1_001\\training_coverage_v2\\model_1\\step_0250.pt",
+      "bytes": 20254858,
+      "sha256": "9be371461e41d29fade5fcb7973c1d531d0bbd96be339629cfe9a7e5cc9278a8",
+      "optimizer_entries": 256,
+      "exp_avg": {
+        "elements": 1659904,
+        "nonzero_elements": 1659904,
+        "all_finite": true
+      },
+      "exp_avg_sq": {
+        "elements": 1659904,
+        "nonzero_elements": 1659904,
+        "all_finite": true
+      }
+    },
+    {
+      "step": 1000,
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\cvpr_u_pilot_v1_001\\training_coverage_v2\\model_1\\step_1000.pt",
+      "bytes": 20261578,
+      "sha256": "ae789c32ce9ebaca3eb568fda968c28d5b9cbdf39682d7a498615b26cbb08435",
+      "optimizer_entries": 256,
+      "exp_avg": {
+        "elements": 1659904,
+        "nonzero_elements": 1659904,
+        "all_finite": true
+      },
+      "exp_avg_sq": {
+        "elements": 1659904,
+        "nonzero_elements": 1659904,
+        "all_finite": true
+      }
+    }
+  ]
+}

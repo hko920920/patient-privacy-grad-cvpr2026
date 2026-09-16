@@ -1,0 +1,1803 @@
+{
+  "schema": "cdi-u-patient-analysis-contract/v1",
+  "created_utc": "2026-09-14T15:17:28.447917+00:00",
+  "research_stage": 2,
+  "purpose": "Exploratory comparison of CDI released-code feature adaptations and standard patient aggregation in the fixed U setting; not original CDI dataset-level hypothesis testing",
+  "models": [
+    "model_1",
+    "model_2"
+  ],
+  "scenario": "U",
+  "patient_count": {
+    "fit": 80,
+    "selection": 40
+  },
+  "images_per_patient": 2,
+  "patient_rows": [
+    {
+      "patient_id": "172",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00000172_002.png",
+        "00000172_006.png"
+      ]
+    },
+    {
+      "patient_id": "242",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00000242_000.png",
+        "00000242_004.png"
+      ]
+    },
+    {
+      "patient_id": "359",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00000359_000.png",
+        "00000359_007.png"
+      ]
+    },
+    {
+      "patient_id": "360",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00000360_005.png",
+        "00000360_007.png"
+      ]
+    },
+    {
+      "patient_id": "1052",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00001052_002.png",
+        "00001052_004.png"
+      ]
+    },
+    {
+      "patient_id": "1101",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00001101_007.png",
+        "00001101_010.png"
+      ]
+    },
+    {
+      "patient_id": "1317",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00001317_001.png",
+        "00001317_002.png"
+      ]
+    },
+    {
+      "patient_id": "1641",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00001641_002.png",
+        "00001641_004.png"
+      ]
+    },
+    {
+      "patient_id": "1906",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00001906_002.png",
+        "00001906_007.png"
+      ]
+    },
+    {
+      "patient_id": "2032",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00002032_007.png",
+        "00002032_010.png"
+      ]
+    },
+    {
+      "patient_id": "2172",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00002172_003.png",
+        "00002172_004.png"
+      ]
+    },
+    {
+      "patient_id": "2247",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00002247_000.png",
+        "00002247_003.png"
+      ]
+    },
+    {
+      "patient_id": "2359",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00002359_004.png",
+        "00002359_019.png"
+      ]
+    },
+    {
+      "patient_id": "2386",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00002386_004.png",
+        "00002386_006.png"
+      ]
+    },
+    {
+      "patient_id": "2863",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00002863_001.png",
+        "00002863_003.png"
+      ]
+    },
+    {
+      "patient_id": "2878",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00002878_017.png",
+        "00002878_019.png"
+      ]
+    },
+    {
+      "patient_id": "2919",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00002919_000.png",
+        "00002919_007.png"
+      ]
+    },
+    {
+      "patient_id": "3308",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00003308_001.png",
+        "00003308_003.png"
+      ]
+    },
+    {
+      "patient_id": "3355",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00003355_004.png",
+        "00003355_008.png"
+      ]
+    },
+    {
+      "patient_id": "3743",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00003743_001.png",
+        "00003743_004.png"
+      ]
+    },
+    {
+      "patient_id": "3832",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00003832_002.png",
+        "00003832_004.png"
+      ]
+    },
+    {
+      "patient_id": "3890",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00003890_001.png",
+        "00003890_004.png"
+      ]
+    },
+    {
+      "patient_id": "4092",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00004092_000.png",
+        "00004092_003.png"
+      ]
+    },
+    {
+      "patient_id": "4992",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00004992_000.png",
+        "00004992_013.png"
+      ]
+    },
+    {
+      "patient_id": "5311",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00005311_002.png",
+        "00005311_007.png"
+      ]
+    },
+    {
+      "patient_id": "5376",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00005376_001.png",
+        "00005376_008.png"
+      ]
+    },
+    {
+      "patient_id": "5682",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00005682_000.png",
+        "00005682_002.png"
+      ]
+    },
+    {
+      "patient_id": "5722",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00005722_001.png",
+        "00005722_018.png"
+      ]
+    },
+    {
+      "patient_id": "5766",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00005766_001.png",
+        "00005766_006.png"
+      ]
+    },
+    {
+      "patient_id": "6447",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00006447_001.png",
+        "00006447_006.png"
+      ]
+    },
+    {
+      "patient_id": "6881",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00006881_005.png",
+        "00006881_007.png"
+      ]
+    },
+    {
+      "patient_id": "6985",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00006985_004.png",
+        "00006985_007.png"
+      ]
+    },
+    {
+      "patient_id": "7038",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00007038_004.png",
+        "00007038_005.png"
+      ]
+    },
+    {
+      "patient_id": "7125",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00007125_002.png",
+        "00007125_005.png"
+      ]
+    },
+    {
+      "patient_id": "7560",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00007560_001.png",
+        "00007560_007.png"
+      ]
+    },
+    {
+      "patient_id": "7564",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00007564_002.png",
+        "00007564_003.png"
+      ]
+    },
+    {
+      "patient_id": "7932",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00007932_000.png",
+        "00007932_007.png"
+      ]
+    },
+    {
+      "patient_id": "8168",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00008168_001.png",
+        "00008168_012.png"
+      ]
+    },
+    {
+      "patient_id": "8824",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00008824_000.png",
+        "00008824_003.png"
+      ]
+    },
+    {
+      "patient_id": "9119",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00009119_002.png",
+        "00009119_003.png"
+      ]
+    },
+    {
+      "patient_id": "9216",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00009216_002.png",
+        "00009216_006.png"
+      ]
+    },
+    {
+      "patient_id": "9358",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00009358_000.png",
+        "00009358_001.png"
+      ]
+    },
+    {
+      "patient_id": "9429",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00009429_002.png",
+        "00009429_003.png"
+      ]
+    },
+    {
+      "patient_id": "9604",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00009604_003.png",
+        "00009604_007.png"
+      ]
+    },
+    {
+      "patient_id": "9925",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00009925_031.png",
+        "00009925_034.png"
+      ]
+    },
+    {
+      "patient_id": "11255",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00011255_002.png",
+        "00011255_004.png"
+      ]
+    },
+    {
+      "patient_id": "11436",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00011436_001.png",
+        "00011436_009.png"
+      ]
+    },
+    {
+      "patient_id": "11548",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00011548_020.png",
+        "00011548_022.png"
+      ]
+    },
+    {
+      "patient_id": "11632",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00011632_001.png",
+        "00011632_012.png"
+      ]
+    },
+    {
+      "patient_id": "12018",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00012018_000.png",
+        "00012018_015.png"
+      ]
+    },
+    {
+      "patient_id": "12050",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00012050_000.png",
+        "00012050_004.png"
+      ]
+    },
+    {
+      "patient_id": "12097",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00012097_010.png",
+        "00012097_011.png"
+      ]
+    },
+    {
+      "patient_id": "12162",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00012162_000.png",
+        "00012162_003.png"
+      ]
+    },
+    {
+      "patient_id": "12277",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00012277_000.png",
+        "00012277_004.png"
+      ]
+    },
+    {
+      "patient_id": "12511",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00012511_000.png",
+        "00012511_006.png"
+      ]
+    },
+    {
+      "patient_id": "12520",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00012520_004.png",
+        "00012520_006.png"
+      ]
+    },
+    {
+      "patient_id": "12648",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00012648_000.png",
+        "00012648_005.png"
+      ]
+    },
+    {
+      "patient_id": "12805",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00012805_007.png",
+        "00012805_008.png"
+      ]
+    },
+    {
+      "patient_id": "13077",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00013077_010.png",
+        "00013077_017.png"
+      ]
+    },
+    {
+      "patient_id": "13526",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00013526_000.png",
+        "00013526_001.png"
+      ]
+    },
+    {
+      "patient_id": "13567",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00013567_002.png",
+        "00013567_006.png"
+      ]
+    },
+    {
+      "patient_id": "13896",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00013896_001.png",
+        "00013896_002.png"
+      ]
+    },
+    {
+      "patient_id": "14307",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00014307_000.png",
+        "00014307_001.png"
+      ]
+    },
+    {
+      "patient_id": "14362",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00014362_015.png",
+        "00014362_023.png"
+      ]
+    },
+    {
+      "patient_id": "14393",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ]
+    },
+    {
+      "patient_id": "14546",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00014546_000.png",
+        "00014546_008.png"
+      ]
+    },
+    {
+      "patient_id": "14584",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00014584_002.png",
+        "00014584_004.png"
+      ]
+    },
+    {
+      "patient_id": "14651",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00014651_000.png",
+        "00014651_001.png"
+      ]
+    },
+    {
+      "patient_id": "15399",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00015399_000.png",
+        "00015399_005.png"
+      ]
+    },
+    {
+      "patient_id": "15461",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00015461_001.png",
+        "00015461_002.png"
+      ]
+    },
+    {
+      "patient_id": "15492",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00015492_000.png",
+        "00015492_001.png"
+      ]
+    },
+    {
+      "patient_id": "15556",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00015556_007.png",
+        "00015556_025.png"
+      ]
+    },
+    {
+      "patient_id": "15594",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00015594_003.png",
+        "00015594_004.png"
+      ]
+    },
+    {
+      "patient_id": "16379",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00016379_002.png",
+        "00016379_005.png"
+      ]
+    },
+    {
+      "patient_id": "16550",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00016550_018.png",
+        "00016550_024.png"
+      ]
+    },
+    {
+      "patient_id": "16796",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00016796_009.png",
+        "00016796_012.png"
+      ]
+    },
+    {
+      "patient_id": "16919",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00016919_004.png",
+        "00016919_007.png"
+      ]
+    },
+    {
+      "patient_id": "17046",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00017046_007.png",
+        "00017046_013.png"
+      ]
+    },
+    {
+      "patient_id": "17123",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00017123_001.png",
+        "00017123_002.png"
+      ]
+    },
+    {
+      "patient_id": "17555",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00017555_001.png",
+        "00017555_002.png"
+      ]
+    },
+    {
+      "patient_id": "17557",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00017557_000.png",
+        "00017557_001.png"
+      ]
+    },
+    {
+      "patient_id": "17634",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00017634_002.png",
+        "00017634_006.png"
+      ]
+    },
+    {
+      "patient_id": "17927",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00017927_003.png",
+        "00017927_004.png"
+      ]
+    },
+    {
+      "patient_id": "18224",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00018224_003.png",
+        "00018224_004.png"
+      ]
+    },
+    {
+      "patient_id": "18472",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00018472_000.png",
+        "00018472_011.png"
+      ]
+    },
+    {
+      "patient_id": "18608",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00018608_009.png",
+        "00018608_010.png"
+      ]
+    },
+    {
+      "patient_id": "18614",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00018614_000.png",
+        "00018614_010.png"
+      ]
+    },
+    {
+      "patient_id": "19144",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00019144_009.png",
+        "00019144_010.png"
+      ]
+    },
+    {
+      "patient_id": "19635",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00019635_001.png",
+        "00019635_003.png"
+      ]
+    },
+    {
+      "patient_id": "19690",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00019690_001.png",
+        "00019690_002.png"
+      ]
+    },
+    {
+      "patient_id": "20106",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00020106_002.png",
+        "00020106_007.png"
+      ]
+    },
+    {
+      "patient_id": "20832",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00020832_001.png",
+        "00020832_003.png"
+      ]
+    },
+    {
+      "patient_id": "21082",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00021082_000.png",
+        "00021082_001.png"
+      ]
+    },
+    {
+      "patient_id": "21127",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00021127_010.png",
+        "00021127_017.png"
+      ]
+    },
+    {
+      "patient_id": "21455",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00021455_000.png",
+        "00021455_009.png"
+      ]
+    },
+    {
+      "patient_id": "21572",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00021572_000.png",
+        "00021572_015.png"
+      ]
+    },
+    {
+      "patient_id": "21610",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00021610_010.png",
+        "00021610_022.png"
+      ]
+    },
+    {
+      "patient_id": "21970",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00021970_000.png",
+        "00021970_004.png"
+      ]
+    },
+    {
+      "patient_id": "22235",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00022235_002.png",
+        "00022235_005.png"
+      ]
+    },
+    {
+      "patient_id": "22255",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00022255_002.png",
+        "00022255_003.png"
+      ]
+    },
+    {
+      "patient_id": "22454",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00022454_006.png",
+        "00022454_009.png"
+      ]
+    },
+    {
+      "patient_id": "22740",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00022740_001.png",
+        "00022740_003.png"
+      ]
+    },
+    {
+      "patient_id": "22835",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00022835_000.png",
+        "00022835_004.png"
+      ]
+    },
+    {
+      "patient_id": "23066",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00023066_000.png",
+        "00023066_001.png"
+      ]
+    },
+    {
+      "patient_id": "23316",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00023316_002.png",
+        "00023316_004.png"
+      ]
+    },
+    {
+      "patient_id": "25150",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00025150_000.png",
+        "00025150_011.png"
+      ]
+    },
+    {
+      "patient_id": "25303",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00025303_004.png",
+        "00025303_021.png"
+      ]
+    },
+    {
+      "patient_id": "25362",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00025362_002.png",
+        "00025362_004.png"
+      ]
+    },
+    {
+      "patient_id": "25369",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00025369_001.png",
+        "00025369_002.png"
+      ]
+    },
+    {
+      "patient_id": "25444",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00025444_005.png",
+        "00025444_012.png"
+      ]
+    },
+    {
+      "patient_id": "25514",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00025514_003.png",
+        "00025514_008.png"
+      ]
+    },
+    {
+      "patient_id": "25680",
+      "role": "selection",
+      "group": "B",
+      "images": [
+        "00025680_007.png",
+        "00025680_009.png"
+      ]
+    },
+    {
+      "patient_id": "27514",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00027514_001.png",
+        "00027514_003.png"
+      ]
+    },
+    {
+      "patient_id": "28253",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00028253_004.png",
+        "00028253_006.png"
+      ]
+    },
+    {
+      "patient_id": "28655",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00028655_000.png",
+        "00028655_004.png"
+      ]
+    },
+    {
+      "patient_id": "29373",
+      "role": "fit",
+      "group": "B",
+      "images": [
+        "00029373_002.png",
+        "00029373_003.png"
+      ]
+    },
+    {
+      "patient_id": "29437",
+      "role": "selection",
+      "group": "A",
+      "images": [
+        "00029437_002.png",
+        "00029437_012.png"
+      ]
+    },
+    {
+      "patient_id": "29998",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00029998_002.png",
+        "00029998_005.png"
+      ]
+    },
+    {
+      "patient_id": "30026",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00030026_000.png",
+        "00030026_003.png"
+      ]
+    },
+    {
+      "patient_id": "30129",
+      "role": "fit",
+      "group": "A",
+      "images": [
+        "00030129_002.png",
+        "00030129_004.png"
+      ]
+    }
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "train_patient_ids": [
+        "242",
+        "360",
+        "1101",
+        "1317",
+        "1641",
+        "2386",
+        "2863",
+        "2878",
+        "3355",
+        "3743",
+        "3890",
+        "5311",
+        "5682",
+        "6447",
+        "7038",
+        "7560",
+        "7564",
+        "8824",
+        "9216",
+        "9358",
+        "9429",
+        "9604",
+        "9925",
+        "11255",
+        "11632",
+        "12162",
+        "12511",
+        "12520",
+        "12648",
+        "12805",
+        "13077",
+        "13526",
+        "13896",
+        "14393",
+        "14546",
+        "14584",
+        "15399",
+        "15461",
+        "15556",
+        "16379",
+        "16796",
+        "17046",
+        "17123",
+        "17555",
+        "17557",
+        "17634",
+        "18608",
+        "19144",
+        "19635",
+        "19690",
+        "21082",
+        "21127",
+        "21455",
+        "21610",
+        "22235",
+        "22255",
+        "22454",
+        "22740",
+        "23316",
+        "25362",
+        "25444",
+        "28253",
+        "29998",
+        "30129"
+      ],
+      "validation_patient_ids": [
+        "2172",
+        "2919",
+        "5766",
+        "7125",
+        "9119",
+        "11548",
+        "12277",
+        "14651",
+        "18472",
+        "20832",
+        "23066",
+        "25303",
+        "25369",
+        "27514",
+        "29373",
+        "30026"
+      ]
+    },
+    {
+      "fold": 1,
+      "train_patient_ids": [
+        "242",
+        "360",
+        "1101",
+        "1641",
+        "2172",
+        "2863",
+        "2919",
+        "3890",
+        "5311",
+        "5766",
+        "6447",
+        "7038",
+        "7125",
+        "7560",
+        "7564",
+        "8824",
+        "9119",
+        "9216",
+        "9358",
+        "9429",
+        "9604",
+        "9925",
+        "11255",
+        "11548",
+        "11632",
+        "12162",
+        "12277",
+        "12511",
+        "12520",
+        "12648",
+        "12805",
+        "13077",
+        "13896",
+        "14393",
+        "14546",
+        "14584",
+        "14651",
+        "15399",
+        "15461",
+        "16796",
+        "17046",
+        "17555",
+        "17557",
+        "17634",
+        "18472",
+        "18608",
+        "19635",
+        "19690",
+        "20832",
+        "21082",
+        "21127",
+        "21455",
+        "21610",
+        "22454",
+        "23066",
+        "23316",
+        "25303",
+        "25369",
+        "25444",
+        "27514",
+        "29373",
+        "29998",
+        "30026",
+        "30129"
+      ],
+      "validation_patient_ids": [
+        "1317",
+        "2386",
+        "2878",
+        "3355",
+        "3743",
+        "5682",
+        "13526",
+        "15556",
+        "16379",
+        "17123",
+        "19144",
+        "22235",
+        "22255",
+        "22740",
+        "25362",
+        "28253"
+      ]
+    },
+    {
+      "fold": 2,
+      "train_patient_ids": [
+        "242",
+        "1317",
+        "1641",
+        "2172",
+        "2386",
+        "2863",
+        "2878",
+        "2919",
+        "3355",
+        "3743",
+        "3890",
+        "5311",
+        "5682",
+        "5766",
+        "6447",
+        "7038",
+        "7125",
+        "7564",
+        "8824",
+        "9119",
+        "9358",
+        "9429",
+        "9604",
+        "9925",
+        "11548",
+        "11632",
+        "12162",
+        "12277",
+        "12511",
+        "12520",
+        "12648",
+        "12805",
+        "13077",
+        "13526",
+        "14393",
+        "14584",
+        "14651",
+        "15399",
+        "15461",
+        "15556",
+        "16379",
+        "17123",
+        "17634",
+        "18472",
+        "18608",
+        "19144",
+        "19635",
+        "20832",
+        "21082",
+        "21127",
+        "22235",
+        "22255",
+        "22740",
+        "23066",
+        "23316",
+        "25303",
+        "25362",
+        "25369",
+        "27514",
+        "28253",
+        "29373",
+        "29998",
+        "30026",
+        "30129"
+      ],
+      "validation_patient_ids": [
+        "360",
+        "1101",
+        "7560",
+        "9216",
+        "11255",
+        "13896",
+        "14546",
+        "16796",
+        "17046",
+        "17555",
+        "17557",
+        "19690",
+        "21455",
+        "21610",
+        "22454",
+        "25444"
+      ]
+    },
+    {
+      "fold": 3,
+      "train_patient_ids": [
+        "360",
+        "1101",
+        "1317",
+        "2172",
+        "2386",
+        "2878",
+        "2919",
+        "3355",
+        "3743",
+        "5682",
+        "5766",
+        "6447",
+        "7125",
+        "7560",
+        "7564",
+        "9119",
+        "9216",
+        "9358",
+        "9429",
+        "9604",
+        "11255",
+        "11548",
+        "11632",
+        "12277",
+        "12511",
+        "12520",
+        "12805",
+        "13526",
+        "13896",
+        "14393",
+        "14546",
+        "14584",
+        "14651",
+        "15556",
+        "16379",
+        "16796",
+        "17046",
+        "17123",
+        "17555",
+        "17557",
+        "18472",
+        "18608",
+        "19144",
+        "19635",
+        "19690",
+        "20832",
+        "21082",
+        "21127",
+        "21455",
+        "21610",
+        "22235",
+        "22255",
+        "22454",
+        "22740",
+        "23066",
+        "23316",
+        "25303",
+        "25362",
+        "25369",
+        "25444",
+        "27514",
+        "28253",
+        "29373",
+        "30026"
+      ],
+      "validation_patient_ids": [
+        "242",
+        "1641",
+        "2863",
+        "3890",
+        "5311",
+        "7038",
+        "8824",
+        "9925",
+        "12162",
+        "12648",
+        "13077",
+        "15399",
+        "15461",
+        "17634",
+        "29998",
+        "30129"
+      ]
+    },
+    {
+      "fold": 4,
+      "train_patient_ids": [
+        "242",
+        "360",
+        "1101",
+        "1317",
+        "1641",
+        "2172",
+        "2386",
+        "2863",
+        "2878",
+        "2919",
+        "3355",
+        "3743",
+        "3890",
+        "5311",
+        "5682",
+        "5766",
+        "7038",
+        "7125",
+        "7560",
+        "8824",
+        "9119",
+        "9216",
+        "9925",
+        "11255",
+        "11548",
+        "12162",
+        "12277",
+        "12648",
+        "13077",
+        "13526",
+        "13896",
+        "14546",
+        "14651",
+        "15399",
+        "15461",
+        "15556",
+        "16379",
+        "16796",
+        "17046",
+        "17123",
+        "17555",
+        "17557",
+        "17634",
+        "18472",
+        "19144",
+        "19690",
+        "20832",
+        "21455",
+        "21610",
+        "22235",
+        "22255",
+        "22454",
+        "22740",
+        "23066",
+        "25303",
+        "25362",
+        "25369",
+        "25444",
+        "27514",
+        "28253",
+        "29373",
+        "29998",
+        "30026",
+        "30129"
+      ],
+      "validation_patient_ids": [
+        "6447",
+        "7564",
+        "9358",
+        "9429",
+        "9604",
+        "11632",
+        "12511",
+        "12520",
+        "12805",
+        "14393",
+        "14584",
+        "18608",
+        "19635",
+        "21082",
+        "21127",
+        "23316"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "cdi_image_mean_fixed",
+      "kind": "logistic_regression",
+      "family": "cdi_image_mean",
+      "representation": "image26",
+      "patient_probability_pool": "mean",
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "cdi_image_mean_tuned",
+      "kind": "logistic_regression",
+      "family": "cdi_image_mean",
+      "representation": "image26",
+      "patient_probability_pool": "mean",
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "cdi_image_max_fixed",
+      "kind": "logistic_regression",
+      "family": "cdi_image_max",
+      "representation": "image26",
+      "patient_probability_pool": "max",
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "cdi_image_max_tuned",
+      "kind": "logistic_regression",
+      "family": "cdi_image_max",
+      "representation": "image26",
+      "patient_probability_pool": "max",
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_mean26_fixed",
+      "kind": "logistic_regression",
+      "family": "patient_mean26",
+      "representation": "mean26",
+      "patient_probability_pool": null,
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_mean26_tuned",
+      "kind": "logistic_regression",
+      "family": "patient_mean26",
+      "representation": "mean26",
+      "patient_probability_pool": null,
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_meanmax52_fixed",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax52",
+      "representation": "meanmax52",
+      "patient_probability_pool": null,
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_meanmax52_tuned",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax52",
+      "representation": "meanmax52",
+      "patient_probability_pool": null,
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "dl_mean",
+      "kind": "scalar",
+      "feature_index": 0,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "dl_max",
+      "kind": "scalar",
+      "feature_index": 0,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "secmi_mean",
+      "kind": "scalar",
+      "feature_index": 1,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "secmi_max",
+      "kind": "scalar",
+      "feature_index": 1,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "pia_mean",
+      "kind": "scalar",
+      "feature_index": 2,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "pia_max",
+      "kind": "scalar",
+      "feature_index": 2,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "pian_mean",
+      "kind": "scalar",
+      "feature_index": 3,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "pian_max",
+      "kind": "scalar",
+      "feature_index": 3,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "patient_meanmax54_noobjective_fixed",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax54_noobjective",
+      "representation": "meanmax54",
+      "patient_probability_pool": null,
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": true
+    },
+    {
+      "id": "patient_meanmax54_noobjective_tuned",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax54_noobjective",
+      "representation": "meanmax54",
+      "patient_probability_pool": null,
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": true
+    }
+  ],
+  "reused_control": {
+    "id": "dino_existing",
+    "scores_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\encoder_control\\scores.json",
+    "report_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\encoder_control\\report.json",
+    "refit": false
+  },
+  "logistic_regression": {
+    "standard_scaler": {
+      "with_mean": true,
+      "with_std": true
+    },
+    "fixed_C": 1.0,
+    "grid_C": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "solver": "liblinear",
+    "penalty": "l2",
+    "max_iter": 1000,
+    "random_state": 0,
+    "class_weight": null,
+    "tuning": "minimum arithmetic mean of five validation patient log_losses; exact tie lower C",
+    "log_loss_epsilon": "sklearn.metrics.log_loss default float64 machine epsilon",
+    "fold_seed": 260914,
+    "scaler_fitted_inside_each_training_fold": true,
+    "per_image_fit_label": "patient membership; U image membership is always zero",
+    "full_fit_refit": true
+  },
+  "no_objective_feature": {
+    "row_path": "modules.noise_optim.optimizer.fun",
+    "meaning": "optimizer-return objective at the actual evaluated float32 input coordinates, trace-bound by extraction verification; appended to literal 26D without replacing code-final feature",
+    "patient_representation": "mean27 concatenated max27",
+    "nonoriginal": true
+  },
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 260914,
+    "rng": "numpy.random.default_rng",
+    "strata": "selection assignment A and B; sample 20 within each with replacement; concatenate A then B; same indices for all methods and both targets",
+    "ci": "percentile [2.5,97.5] using numpy quantile method=linear",
+    "auc": "member-positive ROC AUC with half credit for ties",
+    "conditional_on": "fixed fitted attack models, frozen target checkpoints and this previously opened selection cohort; fitting uncertainty not resampled"
+  },
+  "contrasts": [
+    {
+      "id": "primary_patient_structure_vs_image_pool",
+      "a": "patient_meanmax52_tuned",
+      "b": "cdi_image_mean_tuned",
+      "role": "primary"
+    },
+    {
+      "id": "primary_cdi_vs_secmi",
+      "a": "cdi_image_mean_tuned",
+      "b": "secmi_mean",
+      "role": "primary"
+    },
+    {
+      "id": "secondary_fixed_patient_structure_vs_image_pool",
+      "a": "patient_meanmax52_fixed",
+      "b": "cdi_image_mean_fixed",
+      "role": "secondary"
+    },
+    {
+      "id": "secondary_fixed_cdi_vs_secmi",
+      "a": "cdi_image_mean_fixed",
+      "b": "secmi_mean",
+      "role": "secondary"
+    },
+    {
+      "id": "diagnostic_noobjective_fixed",
+      "a": "patient_meanmax54_noobjective_fixed",
+      "b": "patient_meanmax52_fixed",
+      "role": "source_quirk_diagnostic"
+    },
+    {
+      "id": "diagnostic_noobjective_tuned",
+      "a": "patient_meanmax54_noobjective_tuned",
+      "b": "patient_meanmax52_tuned",
+      "role": "source_quirk_diagnostic"
+    }
+  ],
+  "frozen_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\cohort\\evaluation_images.csv": "08efab0eafeeca7cb6b8ff191c2eca2954e092a9c282a69785ac84a1cac35a7e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\cohort\\lock.json": "187fdbcc6ea8b883e6b82d97f293d7a746df5408632e6f8824a9769866e1dfc4",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\encoder_control\\scores.json": "043bf03f467e3afcf5e25e45030631b1fa71acd414afb1b5f4c2cc6dac15c29e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\encoder_control\\report.json": "98a34dd4a09deb88524b3aeb7bdb3fa45205b4c7aa41a6ce1a5be3048425ff5c"
+  },
+  "scope_limits": [
+    "Labelled fit-patient auxiliary data required for LR variants; not a patient with only personal photos",
+    "selection40 is repeatedly used development data, not final test",
+    "two complementary target models are dependent, not two independent training replicates",
+    "no other-target scores, paired deltas, R features, calibration/test features as attack input",
+    "no threshold selection, low-FPR performance or overall stage-2 success gate",
+    "weak CI does not establish no privacy leakage or failure of all patient inference",
+    "report every method, no selection-set winner choice",
+    "NO27 is a source-quirk diagnostic, not an original CDI metric or a novel contribution",
+    "DINO reuses historical fit80 model and exact scores; no new fit and shared encoder extraction cost not zero"
+  ],
+  "same_fitted_scorer_diagnostic": {
+    "predeclared_before_full_480_features_read": true,
+    "reason": "Separately fitted target-specific classifiers may learn opposite cohort-assignment associations; improved within-target AUC alone does not establish target-induced membership signal",
+    "scope": "All 10 LR variants, separately for each of the two fit-target scorers",
+    "operation": "Freeze fit-target scaler, LR and chosen C; score the same selection patient using model_1 and model_2 features; no refitting or new attack input",
+    "delta": "score with target in which patient participates minus score with target in which patient is absent",
+    "summaries": [
+      "mean delta",
+      "positive/zero/negative count",
+      "mean delta by fixed A/B assignment group",
+      "95% percentile mean-delta CI with exactly the common selection-patient bootstrap indices"
+    ],
+    "limits": [
+      "Analyst-only paired-checkpoint diagnostic; not a two-model adversary or new attack method",
+      "Whole training-group assignment changes between target models; no individual causal effect established",
+      "No threshold/gate, sign selection, C retuning or method selection from these diagnostics"
+    ],
+    "contract_revision": "One explicit pre-analysis addition requested by root; original methods and contrasts unchanged"
+  }
+}

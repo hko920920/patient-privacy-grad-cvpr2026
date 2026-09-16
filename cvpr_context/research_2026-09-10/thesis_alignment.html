@@ -1,0 +1,99 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>THESIS_CVPR_ALIGNMENT.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>CVPR 감사법을 추진할 때의 졸업논문 방향</h1>
+<p><strong>2026-09-15 후속 재설계:</strong> <a href="paper_level_redesign.html">현재의 졸논–CVPR 주장 구조</a>. 아래 공통·분기 원칙은 유지한다. CVPR을 새 공격법으로 한정한 표는 당시 후보의 설명이며, 현재는 제한 관측에서의 환자 노출 평가와 보호 비교에 필요한 독립적인 방법·평가·발견을 검토한다.</p>
+<p>2026-09-10. 사용자 질문에 대한 <strong>권장 연구·집필 구조</strong>다. 학습 계약·활성 LaTeX·확정된 기여나 결과를 변경한 기록은 아니다.</p>
+<p><a href="design.html">새 감사법 설계</a> · <a href="purpose.html">원래 보호 목표</a> · <a href="../../CURRENT_STATUS.md">현재 실행 상태</a> · <a href="../19_졸논_CVPR_공통실험_재사용과_분기계획_2026-09-09.md">기존 병행 계획</a>.</p>
+<p><strong>권장안은 졸업논문의 기존 중심인 “프라이버시와 생성 출처 주장을 실제 메커니즘·근거에 맞게 검증한다”를 유지하고, 의료 생성모델의 통합 실증을 강화하는 것이다. CVPR은 그 안의 환자 노출 평가 문제를 새 방법과 발견으로 심화한다.</strong> 졸업논문 전체를 새 공격법 성공에 종속시키지 않는다.</p>
+<h2>두 원고가 각각 답할 질문</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>졸업논문</th>
+<th>CVPR 후보</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>중심 질문</td>
+<td>의료 생성모델의 환자 보호와 생성 출처 주장을 어떤 근거로 검증하며, 언제 재사용할 수 있는가?</td>
+<td>기존 공격이 놓치는 환자 참여 흔적을 어떻게 검출하며 보호 평가를 얼마나 개선하는가?</td>
+</tr>
+<tr>
+<td>주된 방법</td>
+<td>완료 실행의 privacy-unit 감사, 정확한 모델에 결속된 증빙, PP-Mark 공개 검증</td>
+<td>교차 사진 반응 감사 후보, 같은 정보·환자 오탐·비용의 강한 방법 비교</td>
+</tr>
+<tr>
+<td>결과의 중심</td>
+<td>보장 타당성, 유효/무효 주장 구분, 노출·효용·비용, 모델·증거 교체에 대한 통합 검증</td>
+<td>새 신호·방법의 추가 이득, 작동 조건·제거 실험, 보호 비교에서 얻는 새 발견</td>
+</tr>
+<tr>
+<td>새 감사법의 위치</td>
+<td>검증되면 의료 실증의 강화된 평가 또는 독립 심화 장</td>
+<td>현재 제안에서 주된 방법 기여 후보</td>
+</tr>
+<tr>
+<td>원고의 범위</td>
+<td>기존 Auditable Privacy와 PP-Mark의 독립 근거를 보존하고 같은 의료 모델에서 연결</td>
+<td>핵심 주장에 필요한 방법·공격 비교·보호 비교에 집중</td>
+</tr>
+</tbody>
+</table>
+<p>이 차이는 학위논문의 검증 기준을 낮추자는 뜻이 아니다. 학위논문에도 독립적인 기술 기여와 엄밀한 비교가 필요하다. 기존 도구를 연결했다는 사실만으로 통합 기여가 확보되지는 않는다. CVPR도 정확도 순위만으로 판단되는 것은 아니며, 2026 공식 지침은 신규성과 영향, 기술적 타당성을 함께 본다. 이 지침은 향후 회차의 확정 규정을 대신하지 않는다. <a href="https://cvpr.thecvf.com/Conferences/2026/ReviewerGuidelines">CVPR 2026 Reviewer Guidelines</a></p>
+<h2>졸업논문을 관통할 세 질문</h2>
+<p><strong>RQ1. 이 모델에 “환자 단위로 보호했다”는 주장을 붙일 수 있는가?</strong></p>
+<p>환자-영상 mapping, contribution cap, sampling/clipping/noise, 실제 실행 trace와 accountant를 대조한다. image-level 보장에서 patient-level 보장으로 유효하게 환산되는 경우, 직접 patient-DP인 경우, 근거·예산이 부족해 허용할 수 없는 경우를 구분한다. 공격 성능으로 epsilon을 재해석하지 않는다.</p>
+<p>기대 산출은 단위와 증거가 맞는 판정 규칙, 정확한 회계 재계산, 대응되는 허용/비허용 사례다. 환자 단위 clipping이나 image→patient 계산 자체는 기존 연구가 있으므로, 선행에 없는 판정·결속·검증상의 추가 성과를 분명히 해야 한다. <a href="https://arxiv.org/abs/2407.07737">ULS/ELS 선행</a></p>
+<p><strong>RQ2. 유효한 환자 보장 아래 어떤 선택이 의료 효용과 비용에 유리한가?</strong></p>
+<p>같은 환자 예산을 겨냥한 group-converted image-DP와 직접 patient-DP를 비교하고, 비DP와 단위 불일치 조건을 대조한다. 기존 강한 공격으로 경험적 노출을 측정하며, 새 감사법이 검증되면 같은 모델에 추가한다. 생성 품질·coverage·downstream 효용과 학습·감사·검증 비용을 함께 본다.</p>
+<p>재사용 비용 비교는 기존 image-DP checkpoint가 이미 존재하는 시점에서 시작한다. 유효한 환산과 사전 목표 예산·효용을 충족할 때 절감 비용을 주장한다. 환산이 모두 차단되면 재학습이 필요한 조건을 결과로 남기며 비용 절감 성공으로 표현하지 않는다. I8/G8은 현재 계약에서 noise가 다른 별도 학습 모델이고, 같은 checkpoint의 회계를 다시 계산하는 작업과 구분한다.</p>
+<p><strong>RQ3. 검증된 보호 근거가 실제 배포 모델과 생성 이미지까지 올바르게 연결되는가?</strong></p>
+<p>privacy 판정의 모델과 실제 사용된 base/LoRA/config를 정확히 결속하고, 그 모델의 생성 문맥과 이미지에 PP-Mark 검증을 연결한다. 이를 통해 “유효한 다른 모델의 증거를 가져왔다”, “checkpoint를 바꿨다”, “검출 점수만 높이고 유효 증빙이 없다”와 같은 주장 불일치를 검출하는지 시험한다.</p>
+<p>DP는 환자 보호의 근거이고 PP-Mark는 생성 출처·문맥 검증의 근거다. 두 근거가 같은 모델과 산출물을 가리키는지를 통합 검증한다. 워터마크나 서명이 DP 학습의 정당성·의료적 정확성·임의의 악의적 실행을 자동 증명하지는 않는다.</p>
+<h2>통합 자체의 기여를 보일 실험</h2>
+<p>서로 독립인 DP 수치 표와 워터마크 점수 표를 나열하는 데서 끝내지 않는다. 각 구성요소가 단독으로는 놓칠 수 있는 <strong>주장과 대상의 불일치</strong>를 실제로 구성하고, 결속된 판정이 이를 구별하는지 보인다.</p>
+<table>
+<thead>
+<tr>
+<th>대조</th>
+<th>확인할 차이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ε·δ 숫자만 제시 vs 단위·실행 근거 감사</td>
+<td>유효한 image 수치가 부당한 patient 문구로 사용되는 것을 구별하는가</td>
+</tr>
+<tr>
+<td>유효한 privacy 판정만 제시 vs 정확한 checkpoint 결속</td>
+<td>다른 모델에 대한 올바른 증거를 가져오는 경우를 구별하는가</td>
+</tr>
+<tr>
+<td>워터마크 점수만 사용 vs PP-Mark 전체 검증</td>
+<td>점수 상승과 유효한 생성 문맥·이미지 증빙을 구별하는가</td>
+</tr>
+<tr>
+<td>각 검증의 독립 성공 vs 동일 모델·문맥을 요구하는 통합 판정</td>
+<td>각각은 유효하지만 서로 다른 대상을 가리키는 증거 조합을 구별하는가</td>
+</tr>
+</tbody>
+</table>
+<p>이 표는 앞으로 검증할 실험이다. 현재 model-bound privacy receipt와 의료 checkpoint의 PP-Mark 통합은 미완료다. 단순 digest 확인이나 구성요소의 재현만으로 새로운 통합 기여가 입증됐다고 하지 않는다. 유효 사례의 수락, 잘못된 수락·거절, 변환 후 동작 범위와 비용을 함께 보고한다.</p>
+<h2>권장 집필 구조</h2>
+<p>활성 원고는 현재 서론, 완료 실행 감사, 증거 결속 등록, PP-Mark, 결론으로 구성돼 있다. 이를 출발점으로 기존 연구의 근거를 살리고 의료 통합 실증 장을 추가한다.</p>
+<ol>
+<li><strong>서론·공통 문제:</strong> 보호와 출처 주장이 단위·메커니즘·대상·근거와 어긋나는 문제, 통합 연구질문.</li>
+<li><strong>완료 실행의 프라이버시 주장 감사:</strong> 기존 Auditable Privacy 방법·근거·평가와 의료 patient 단위 확장.</li>
+<li><strong>모델과 근거의 결속:</strong> 기존 등록 구조와 의료 base/adapter/config·판정 receipt 연결.</li>
+<li><strong>생성 이미지의 공개 검증:</strong> 기존 PP-Mark 방법·근거와 의료 생성모델에서의 재보정.</li>
+<li><strong>의료 생성모델 통합 실증:</strong> 공통 학습 matrix, 환자 보장·노출·효용·재사용 비용, 증거 교체·통합 검증.</li>
+<li><strong>종합 논의·결론:</strong> 각 보장의 범위, 실제 지지된 통합 기여, 실패 조건과 적용 한계.</li>
+</ol>
+<p>CVPR 새 감사법의 독립 기여가 충분히 검증되면 방법 설명을 별도 장으로 분리하고 5장의 평가에 연결할 수 있다. 검증 전부터 서론·초록에 완성된 핵심 기여로 넣지는 않는다. 기존 WISDM/UCI 등 비의료 연구 결과를 삭제하고 원고 전체를 의료 공격 논문으로 다시 만드는 계획도 아니다.</p>
+<h2>공통 실험과 진행 우선순위</h2>
+<p>공통 기반은 NIH 원자료·조건이 일치하는 환자 분할·전처리·SD2.1 LoRA·DP trainer/accountant다. 최종 조건이 일치하면 같은 K10 checkpoint, 생성 표본과 의료 평가 결과를 두 원고에서 참조한다. 결과를 두 번 학습해서 만들 필요는 없다. 새 공격 개발·calibration·최종 평가의 역할 분리는 유지한다.</p>
+<p>졸업논문 고유 작업은 model-bound receipt, PP-Mark 의료 재보정, 증거 교체·통합 검증과 기존 장의 연결 집필이다. CVPR 추가 작업은 새로운 반응의 검증, 강한 공격 확장·제거 실험, 필요한 독립 모델·시나리오·데이터 확장이다. PP-Mark가 적용된 모델이나 이미지가 원래와 달라지면 같은 release의 결과로 자동 공유하지 않는다.</p>
+<p>진행은 <strong>졸논의 M0 도메인 gate → K5 feasibility → 기존 K10 실증</strong>을 유지하면서, 학습 사이에 CVPR 공개 개발 진단을 배치한다. GPU 한 대이므로 큰 GPU 작업은 순차 진행하고, 코드·CPU 평가·회계·집필을 병행한다. 현재 M0/full K5가 아직 시작되지 않았다는 사실은 유지한다. 이번 방향 정리는 장시간 실행 지시가 아니다.</p>
+<p>새 공격이 기존 방법을 넘으면 졸논 평가가 강화된다. 개선이 없으면 검증한 기존 강한 공격으로 졸논의 경험적 평가를 수행한다. <strong>졸논 완성의 필수 조건에 “CVPR 채택” 또는 “새 공격의 SOTA 달성”을 넣지 않는 것이 권장안</strong>이다. 다만 기본 생성 효용, 유효한 회계·실행 증거, 모델 결속 또는 통합 검증이 성립하지 않는다면 해당 졸논 주장을 줄이거나 재설계해야 한다. 이 전략은 학위 심사 충족이나 새로운 통합 기여를 보장하는 판정이 아니다.</p></main></body></html>

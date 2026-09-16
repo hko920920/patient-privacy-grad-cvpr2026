@@ -1,0 +1,670 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unitdp.invalid/specs/owner_poisson_v2_contract_oracle_v1.json",
+  "title": "Independent registered owner-Poisson V2 contract oracle",
+  "description": "A declarative, implementation-independent acceptance specification for the strict V2 owner-Poisson route.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "route_id",
+    "execution",
+    "privacy",
+    "mechanism",
+    "accountant",
+    "contribution_policy",
+    "optimization",
+    "data"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "unitdp.owner_poisson_contract.v2"
+    },
+    "route_id": {
+      "const": "owa_owner_poisson_rdp_add_remove_v2"
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile",
+        "rng_backend",
+        "implementation_id",
+        "random_coins_public"
+      ],
+      "properties": {
+        "profile": {
+          "enum": [
+            "research_benchmark",
+            "privacy_release"
+          ]
+        },
+        "rng_backend": {
+          "enum": [
+            "research_default",
+            "system_csprng"
+          ]
+        },
+        "implementation_id": {
+          "const": "unitdp.owa_dpsgd.train_owner_poisson_fixed_v2"
+        },
+        "random_coins_public": {
+          "const": false
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit",
+        "adjacency",
+        "target_epsilon",
+        "delta"
+      ],
+      "properties": {
+        "unit": {
+          "const": "owner"
+        },
+        "adjacency": {
+          "const": "add_remove_one_owner"
+        },
+        "target_epsilon": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "delta": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 1
+        }
+      }
+    },
+    "mechanism": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sampler",
+        "sampling_unit",
+        "accounting_unit",
+        "parameter_source",
+        "owner_sample_rate",
+        "total_steps",
+        "clipping_unit",
+        "noising_unit",
+        "clip_norm",
+        "noise_multiplier",
+        "update_denominator",
+        "empty_step_behavior",
+        "per_owner_contribution",
+        "owner_aggregation"
+      ],
+      "properties": {
+        "sampler": {
+          "const": "independent_bernoulli_owner"
+        },
+        "sampling_unit": {
+          "const": "owner"
+        },
+        "accounting_unit": {
+          "const": "owner"
+        },
+        "parameter_source": {
+          "const": "registered_benchmark_profile"
+        },
+        "owner_sample_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "total_steps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "clipping_unit": {
+          "const": "owner"
+        },
+        "noising_unit": {
+          "const": "owner_sum"
+        },
+        "clip_norm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "noise_multiplier": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "update_denominator": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "empty_step_behavior": {
+          "const": "apply_gaussian_update"
+        },
+        "per_owner_contribution": {
+          "const": "one_clipped_vector"
+        },
+        "owner_aggregation": {
+          "const": "mean"
+        }
+      }
+    },
+    "accountant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "rdp_orders_id"
+      ],
+      "properties": {
+        "id": {
+          "const": "poisson_gaussian_rdp_add_remove_dual_v1"
+        },
+        "rdp_orders_id": {
+          "const": "unitdp_integer_rdp_orders_v1"
+        }
+      }
+    },
+    "contribution_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "max_windows_per_owner",
+        "windows_per_owner_per_step",
+        "scope"
+      ],
+      "properties": {
+        "type": {
+          "const": "support_balanced_cap"
+        },
+        "max_windows_per_owner": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "windows_per_owner_per_step": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "scope": {
+          "const": "owner_local"
+        }
+      }
+    },
+    "optimization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "optimizer",
+        "learning_rate",
+        "loss",
+        "model_id",
+        "class_weights"
+      ],
+      "properties": {
+        "optimizer": {
+          "const": "sgd"
+        },
+        "learning_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "loss": {
+          "const": "cross_entropy"
+        },
+        "model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "class_weights": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            }
+          ]
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "benchmark_profile_id",
+        "benchmark_profile_sha256",
+        "dataset_id",
+        "input_dim",
+        "num_classes",
+        "preprocessing",
+        "public_protocol"
+      ],
+      "properties": {
+        "benchmark_profile_id": {
+          "enum": [
+            "uci_har_aaai27_v1",
+            "wisdm_aaai27_v1",
+            "sepsis_aaai27_v1"
+          ]
+        },
+        "benchmark_profile_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "dataset_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_dim": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "num_classes": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "preprocessing": {
+          "$ref": "#/$defs/preprocessing_binding"
+        },
+        "public_protocol": {
+          "$ref": "#/$defs/public_protocol"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "execution": {
+            "properties": {
+              "profile": {
+                "const": "privacy_release"
+              }
+            },
+            "required": [
+              "profile"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "execution": {
+            "properties": {
+              "rng_backend": {
+                "const": "system_csprng"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "preprocessing_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "schema",
+        "artifact_id",
+        "artifact_sha256",
+        "source_reference_sha256",
+        "input_dim",
+        "transform",
+        "fit_on_protected_data"
+      ],
+      "properties": {
+        "scope": {
+          "const": "public_fixed"
+        },
+        "schema": {
+          "const": "unitdp.fixed_affine_preprocessor.v1"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_reference_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "input_dim": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "transform": {
+          "const": "standard_scaler"
+        },
+        "fit_on_protected_data": {
+          "const": false
+        }
+      }
+    },
+    "public_protocol": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol_id",
+        "data_preparation_implementation_id",
+        "source_reference_sha256",
+        "train_owners",
+        "test_owners",
+        "evaluation_scope",
+        "full_data_conformance_sha256"
+      ],
+      "properties": {
+        "protocol_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "data_preparation_implementation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_reference_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "train_owners": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "test_owners": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "evaluation_scope": {
+          "const": "public_benchmark"
+        },
+        "full_data_conformance_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  },
+  "x-unitdp-oracle": {
+    "schema_version": "unitdp.owner_poisson_contract_oracle.v1",
+    "judgment": "registered_owner_poisson_research_execution_acceptance",
+    "independence_rule": "The oracle implementation must not import unitdp production modules.",
+    "rdp_orders": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    "accountant_versions": {
+      "dp-accounting": "0.6.0",
+      "opacus": "1.6.0"
+    },
+    "accounting_judgment": {
+      "event": "poisson_sampled_gaussian",
+      "neighboring_relation": "add_or_remove_one",
+      "dual_agreement_tolerance": 1e-10,
+      "target_epsilon_tolerance": 1e-10
+    },
+    "execution_source_bundle": {
+      "sha256": "e2acfccbc8eab8030121e348724ab81d47992ca6319dbdabbff3c9a52c59e1a1",
+      "files": [
+        "scripts/run_sepsis_owa.py",
+        "scripts/run_uci_owa.py",
+        "scripts/run_v2_registered_benchmarks.py",
+        "scripts/run_wisdm_owa.py",
+        "src/unitdp/accountant.py",
+        "src/unitdp/benchmark_data_v2.py",
+        "src/unitdp/benchmark_registry_v2.py",
+        "src/unitdp/compiler_v2.py",
+        "src/unitdp/execution_artifacts_v2.py",
+        "src/unitdp/mapping.py",
+        "src/unitdp/owa_dpsgd.py",
+        "src/unitdp/owner_poisson_v2.py",
+        "src/unitdp/policies.py",
+        "src/unitdp/preprocessing.py",
+        "src/unitdp/release_artifacts.py",
+        "src/unitdp/source_bundle_v2.py"
+      ]
+    },
+    "profiles": {
+      "uci_har_aaai27_v1": {
+        "public_contract_sha256": "3989ddcbc1570b63431b023e9b33304a04cd0cc68b4d1869c377397962ae2701",
+        "preprocessor_file": "configs/preprocessing/uci_har_published_train_standard_scaler_v1.json",
+        "mapping_columns": [
+          "scenario",
+          "window_id",
+          "owner_id",
+          "owner_ids",
+          "start",
+          "end",
+          "row_index",
+          "label"
+        ],
+        "mapping_label_to_index": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5
+        },
+        "public_benchmark_rows": {
+          "train": 7352,
+          "test": 2947
+        },
+        "binding": {
+          "privacy": {
+            "target_epsilon": 8.0,
+            "delta": 0.00001
+          },
+          "mechanism": {
+            "owner_sample_rate": 0.38095238095238093,
+            "total_steps": 15,
+            "clip_norm": 1.0,
+            "noise_multiplier": 1.26970999503374,
+            "update_denominator": 8.0
+          },
+          "contribution_policy": {
+            "max_windows_per_owner": 16,
+            "windows_per_owner_per_step": 8
+          },
+          "optimization": {
+            "learning_rate": 0.05,
+            "model_id": "linear_561x6",
+            "class_weights": null
+          },
+          "data": {
+            "benchmark_profile_id": "uci_har_aaai27_v1",
+            "benchmark_profile_sha256": "75626d712e5dd12fd56406fced98df9c923ac49e45655152f2fbae58a44007e4",
+            "dataset_id": "uci_har_public_561_v1",
+            "input_dim": 561,
+            "num_classes": 6,
+            "preprocessing": {
+              "scope": "public_fixed",
+              "schema": "unitdp.fixed_affine_preprocessor.v1",
+              "artifact_id": "uci_har_published_train_standard_scaler_v1",
+              "artifact_sha256": "774713e3bef48c784113f4097642a59741481e7495f858ed41cdb1788ae8fadf",
+              "source_reference_sha256": "9c1246099c8d5463779eec5a3845cc3898df9d8c715441ab2a1232d4421fc42f",
+              "input_dim": 561,
+              "transform": "standard_scaler",
+              "fit_on_protected_data": false
+            },
+            "public_protocol": {
+              "protocol_id": "uci_har_published_owner_split_v1",
+              "data_preparation_implementation_id": "unitdp.benchmark_data_v2.prepare_uci_har_v2",
+              "source_reference_sha256": "9c1246099c8d5463779eec5a3845cc3898df9d8c715441ab2a1232d4421fc42f",
+              "train_owners": 21,
+              "test_owners": 9,
+              "evaluation_scope": "public_benchmark",
+              "full_data_conformance_sha256": "31b156777bcfd1756f0b52c846d27dc202b3120c3ba72db212d2424c3e04b2da"
+            }
+          }
+        }
+      },
+      "wisdm_aaai27_v1": {
+        "public_contract_sha256": "b41b14143ed77b65aa02f7c672bf37ccd63f600fc3b00fe36e68fc7da6cd3657",
+        "preprocessor_file": "configs/preprocessing/wisdm_v1_1_train_owners_1_25_stats24_standard_scaler_v1.json",
+        "mapping_columns": [
+          "scenario",
+          "window_id",
+          "owner_id",
+          "owner_ids",
+          "start",
+          "end",
+          "row_index",
+          "label"
+        ],
+        "mapping_label_to_index": {
+          "Downstairs": 0,
+          "Jogging": 1,
+          "Sitting": 2,
+          "Standing": 3,
+          "Upstairs": 4,
+          "Walking": 5
+        },
+        "public_benchmark_rows": {
+          "train": 7049,
+          "test": 3331
+        },
+        "binding": {
+          "privacy": {
+            "target_epsilon": 8.0,
+            "delta": 0.00001
+          },
+          "mechanism": {
+            "owner_sample_rate": 0.32,
+            "total_steps": 20,
+            "clip_norm": 1.0,
+            "noise_multiplier": 1.2510256308972472,
+            "update_denominator": 8.0
+          },
+          "contribution_policy": {
+            "max_windows_per_owner": 16,
+            "windows_per_owner_per_step": 8
+          },
+          "optimization": {
+            "learning_rate": 0.05,
+            "model_id": "linear_24x6",
+            "class_weights": null
+          },
+          "data": {
+            "benchmark_profile_id": "wisdm_aaai27_v1",
+            "benchmark_profile_sha256": "caa4d24930cf9a68c09ecc0ce355b1118e3c963dbe46cea097f59a4b3cfdb67a",
+            "dataset_id": "wisdm_v1_1_stats24_v1",
+            "input_dim": 24,
+            "num_classes": 6,
+            "preprocessing": {
+              "scope": "public_fixed",
+              "schema": "unitdp.fixed_affine_preprocessor.v1",
+              "artifact_id": "wisdm_v1_1_train_owners_1_25_stats24_standard_scaler_v1",
+              "artifact_sha256": "707ee3abf755a9601263d16e5f1ce8e5e9096f956f42da4d42cf57e29e6bf32f",
+              "source_reference_sha256": "9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e",
+              "input_dim": 24,
+              "transform": "standard_scaler",
+              "fit_on_protected_data": false
+            },
+            "public_protocol": {
+              "protocol_id": "wisdm_v1_1_stats24_public_split_v1",
+              "data_preparation_implementation_id": "unitdp.benchmark_data_v2.prepare_wisdm_v2",
+              "source_reference_sha256": "9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e",
+              "train_owners": 25,
+              "test_owners": 11,
+              "evaluation_scope": "public_benchmark",
+              "full_data_conformance_sha256": "b97d240f4ae397c4784efa6e41d3d1e05a57fcc54ba9bb676b0edcd580a4cc26"
+            }
+          }
+        }
+      },
+      "sepsis_aaai27_v1": {
+        "public_contract_sha256": "5f65eedf90566781c52f32147e2bd27aa61eb2842aeb1c393a16473f2304415c",
+        "preprocessor_file": "configs/preprocessing/physionet2019_setA_first400_basic12x6_public_scaler_v1.json",
+        "mapping_columns": [
+          "scenario",
+          "window_id",
+          "owner_id",
+          "owner_ids",
+          "start",
+          "end",
+          "row_index",
+          "label",
+          "patient_file"
+        ],
+        "mapping_label_to_index": {
+          "0": 0,
+          "1": 1
+        },
+        "public_benchmark_rows": {
+          "train": 1601,
+          "test": 398
+        },
+        "binding": {
+          "privacy": {
+            "target_epsilon": 8.0,
+            "delta": 0.00001
+          },
+          "mechanism": {
+            "owner_sample_rate": 0.1,
+            "total_steps": 50,
+            "clip_norm": 1.0,
+            "noise_multiplier": 0.8573442266487843,
+            "update_denominator": 32.0
+          },
+          "contribution_policy": {
+            "max_windows_per_owner": 8,
+            "windows_per_owner_per_step": 8
+          },
+          "optimization": {
+            "learning_rate": 0.03,
+            "model_id": "linear_240x2",
+            "class_weights": [
+              0.5125850340136054,
+              20.364864864864863
+            ]
+          },
+          "data": {
+            "benchmark_profile_id": "sepsis_aaai27_v1",
+            "benchmark_profile_sha256": "5b171a7ce3f24d9d55f5b46d232e20af01ec7fb68671263a5d7942a4f658d7c6",
+            "dataset_id": "physionet2019_setA_first400_basic12x6_v1",
+            "input_dim": 240,
+            "num_classes": 2,
+            "preprocessing": {
+              "scope": "public_fixed",
+              "schema": "unitdp.fixed_affine_preprocessor.v1",
+              "artifact_id": "physionet2019_setA_first400_basic12x6_public_scaler_v1",
+              "artifact_sha256": "e2ddd1cbb651e5ef5629bdb3ba0b885e5c9cead7c6b8afd9d5d9490e463b210b",
+              "source_reference_sha256": "b73db6944d7ab58d5f716f714564df9c7613e0eac02cea2f6964dd698ccc27ae",
+              "input_dim": 240,
+              "transform": "standard_scaler",
+              "fit_on_protected_data": false
+            },
+            "public_protocol": {
+              "protocol_id": "physionet2019_setA_first400_basic12x6_v1",
+              "data_preparation_implementation_id": "unitdp.benchmark_data_v2.prepare_sepsis_v2",
+              "source_reference_sha256": "b73db6944d7ab58d5f716f714564df9c7613e0eac02cea2f6964dd698ccc27ae",
+              "train_owners": 312,
+              "test_owners": 78,
+              "evaluation_scope": "public_benchmark",
+              "full_data_conformance_sha256": "36248d4877f9efa257cf90a088b4642a993fcff6a43f44da390bb00e3c72fef8"
+            }
+          }
+        }
+      }
+    }
+  }
+}

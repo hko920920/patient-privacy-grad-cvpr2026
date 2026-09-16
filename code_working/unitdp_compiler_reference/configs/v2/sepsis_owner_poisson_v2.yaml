@@ -1,0 +1,66 @@
+schema_version: unitdp.owner_poisson_contract.v2
+route_id: owa_owner_poisson_rdp_add_remove_v2
+execution:
+  profile: research_benchmark
+  rng_backend: research_default
+  implementation_id: unitdp.owa_dpsgd.train_owner_poisson_fixed_v2
+  random_coins_public: false
+privacy:
+  unit: owner
+  adjacency: add_remove_one_owner
+  target_epsilon: 8.0
+  delta: 0.00001
+mechanism:
+  sampler: independent_bernoulli_owner
+  sampling_unit: owner
+  accounting_unit: owner
+  parameter_source: registered_benchmark_profile
+  owner_sample_rate: 0.10
+  total_steps: 50
+  clipping_unit: owner
+  noising_unit: owner_sum
+  clip_norm: 1.0
+  noise_multiplier: 0.8573442266487843
+  update_denominator: 32.0
+  empty_step_behavior: apply_gaussian_update
+  per_owner_contribution: one_clipped_vector
+  owner_aggregation: mean
+accountant:
+  id: poisson_gaussian_rdp_add_remove_dual_v1
+  rdp_orders_id: unitdp_integer_rdp_orders_v1
+contribution_policy:
+  type: support_balanced_cap
+  max_windows_per_owner: 8
+  windows_per_owner_per_step: 8
+  scope: owner_local
+optimization:
+  optimizer: sgd
+  learning_rate: 0.03
+  loss: cross_entropy
+  model_id: linear_240x2
+  class_weights:
+    - 0.5125850340136054
+    - 20.364864864864863
+data:
+  benchmark_profile_id: sepsis_aaai27_v1
+  benchmark_profile_sha256: 5b171a7ce3f24d9d55f5b46d232e20af01ec7fb68671263a5d7942a4f658d7c6
+  dataset_id: physionet2019_setA_first400_basic12x6_v1
+  input_dim: 240
+  num_classes: 2
+  preprocessing:
+    scope: public_fixed
+    schema: unitdp.fixed_affine_preprocessor.v1
+    artifact_id: physionet2019_setA_first400_basic12x6_public_scaler_v1
+    artifact_sha256: e2ddd1cbb651e5ef5629bdb3ba0b885e5c9cead7c6b8afd9d5d9490e463b210b
+    source_reference_sha256: b73db6944d7ab58d5f716f714564df9c7613e0eac02cea2f6964dd698ccc27ae
+    input_dim: 240
+    transform: standard_scaler
+    fit_on_protected_data: false
+  public_protocol:
+    protocol_id: physionet2019_setA_first400_basic12x6_v1
+    data_preparation_implementation_id: unitdp.benchmark_data_v2.prepare_sepsis_v2
+    source_reference_sha256: b73db6944d7ab58d5f716f714564df9c7613e0eac02cea2f6964dd698ccc27ae
+    train_owners: 312
+    test_owners: 78
+    evaluation_scope: public_benchmark
+    full_data_conformance_sha256: 36248d4877f9efa257cf90a088b4642a993fcff6a43f44da390bb00e3c72fef8

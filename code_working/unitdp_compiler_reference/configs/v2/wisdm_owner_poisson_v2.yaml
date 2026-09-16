@@ -1,0 +1,64 @@
+schema_version: unitdp.owner_poisson_contract.v2
+route_id: owa_owner_poisson_rdp_add_remove_v2
+execution:
+  profile: research_benchmark
+  rng_backend: research_default
+  implementation_id: unitdp.owa_dpsgd.train_owner_poisson_fixed_v2
+  random_coins_public: false
+privacy:
+  unit: owner
+  adjacency: add_remove_one_owner
+  target_epsilon: 8.0
+  delta: 0.00001
+mechanism:
+  sampler: independent_bernoulli_owner
+  sampling_unit: owner
+  accounting_unit: owner
+  parameter_source: registered_benchmark_profile
+  owner_sample_rate: 0.32
+  total_steps: 20
+  clipping_unit: owner
+  noising_unit: owner_sum
+  clip_norm: 1.0
+  noise_multiplier: 1.2510256308972472
+  update_denominator: 8.0
+  empty_step_behavior: apply_gaussian_update
+  per_owner_contribution: one_clipped_vector
+  owner_aggregation: mean
+accountant:
+  id: poisson_gaussian_rdp_add_remove_dual_v1
+  rdp_orders_id: unitdp_integer_rdp_orders_v1
+contribution_policy:
+  type: support_balanced_cap
+  max_windows_per_owner: 16
+  windows_per_owner_per_step: 8
+  scope: owner_local
+optimization:
+  optimizer: sgd
+  learning_rate: 0.05
+  loss: cross_entropy
+  model_id: linear_24x6
+  class_weights: null
+data:
+  benchmark_profile_id: wisdm_aaai27_v1
+  benchmark_profile_sha256: caa4d24930cf9a68c09ecc0ce355b1118e3c963dbe46cea097f59a4b3cfdb67a
+  dataset_id: wisdm_v1_1_stats24_v1
+  input_dim: 24
+  num_classes: 6
+  preprocessing:
+    scope: public_fixed
+    schema: unitdp.fixed_affine_preprocessor.v1
+    artifact_id: wisdm_v1_1_train_owners_1_25_stats24_standard_scaler_v1
+    artifact_sha256: 707ee3abf755a9601263d16e5f1ce8e5e9096f956f42da4d42cf57e29e6bf32f
+    source_reference_sha256: 9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e
+    input_dim: 24
+    transform: standard_scaler
+    fit_on_protected_data: false
+  public_protocol:
+    protocol_id: wisdm_v1_1_stats24_public_split_v1
+    data_preparation_implementation_id: unitdp.benchmark_data_v2.prepare_wisdm_v2
+    source_reference_sha256: 9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e
+    train_owners: 25
+    test_owners: 11
+    evaluation_scope: public_benchmark
+    full_data_conformance_sha256: b97d240f4ae397c4784efa6e41d3d1e05a57fcc54ba9bb676b0edcd580a4cc26

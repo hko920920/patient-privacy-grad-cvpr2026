@@ -1,0 +1,322 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>보호 설계와 보호 평가의 두 논문 후보</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}body{background:white;color:#222}main{max-width:1020px}h2{border-top:1px solid #ddd;padding-top:22px}th{background:#f0f0f0}code,pre{border-radius:0;background:#f4f4f4}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="research_framework.html">현재 연구틀</a></p><h1>보호 설계와 보호 평가의 두 논문 후보</h1>
+<p><strong>후속 검토 반영:</strong> <a href="two_track_deeper_check.html">선행 환원·비용·두 v0의 CPU 결과</a>가 최신 판단이다. 방향1의 핵심 proxy는 기존 directional sampling과 직접 겹치고, 두 v0 모두 사전 합성 비교에서 효율 우위를 확보하지 못했다. 아래는 최초 설계 이력이며 실제 gradient·본학습 확대 일정은 보류한다. 두 큰 연구 방향은 유지한다.</p>
+<p>두 후보의 목표는 각각 <strong>같은 환자 단위 보호 보장에서 학습 계산을 더 유효하게 쓰는 것</strong>, <strong>제한된 감사 계산으로 보호방식의 비교 결정을 더 신뢰할 수 있게 만드는 것</strong>이다. 특정 촬영 조건, 학습 사진과 감사 사진의 차이, 새로운 공격법을 필수 전제로 두지 않는다. 의료영상 생성은 기존 자료와 구현을 재사용할 수 있는 첫 적용 대상이며, 다른 시각 생성 문제로 확장할 수 있다.</p>
+<p>현재 두 후보는 구체적인 연산·비교 대상·예측을 가진 설계 초안이다. 새로운 의료 효능, 계산 절감률, 포괄적 신규성은 아직 검증되지 않았다. 선행이 해결한 구성요소와 제안에서 새로 해결해야 하는 부분을 아래에서 구분한다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>1. 보호 설계·효율</th>
+<th>2. 보호 평가 개선</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>실제 목표</td>
+<td>같은 환자 DP 보장·효용에 필요한 계산을 줄이거나, 같은 계산에서 효용을 높인다.</td>
+<td>같은 공격군·오탐 조건에서 잘못된 보호방식 선택을 줄이거나, 같은 선택 신뢰도에 필요한 감사 비용을 줄인다.</td>
+</tr>
+<tr>
+<td>구체적 문제</td>
+<td>반복 계산이 줄이는 원래 gradient의 오차와, clipping 뒤 학습에 남는 오차가 다를 수 있다.</td>
+<td>공격 성공률과 그 성공률을 비교하는 오탐 기준의 불확실성이 서로 다른 자료를 요구한다. 여러 공격이 같은 원시 계산을 공유한다.</td>
+</tr>
+<tr>
+<td>바꾸는 것</td>
+<td>환자 내부의 추가 계산량을 clipping 이후의 추정 오차에 맞춰 결정한다.</td>
+<td>회원·비회원·공유 특징 중 보호 비교의 불확실성을 가장 유효하게 줄일 다음 측정을 선택한다.</td>
+</tr>
+<tr>
+<td>유지할 기반</td>
+<td>환자별 최종 clipping, 정확한 사용자 표집·회계, 동일 목적함수</td>
+<td>기존 강한 공격, 동일 접근권, 별도 공격 적합 자료, 환자 단위 오탐 기준</td>
+</tr>
+<tr>
+<td>핵심 대가</td>
+<td>예비 계산 비용, 오차 추정의 부정확성, 동적 batching 비용</td>
+<td>통계적 보수성, 비회원 자료 요구량, 판단 보류, 고정 공격군 밖의 위험은 미포함</td>
+</tr>
+<tr>
+<td>현재 우선순위</td>
+<td>먼저 정밀화할 방법 후보. 바꾸는 학습 연산과 손실 원인의 연결이 비교적 직접적이다.</td>
+<td>독립적인 평가 후보로 유지. 통계 선행과의 중복 위험이 더 크다.</td>
+</tr>
+</tbody>
+</table>
+<h2>1. 보호 설계·효율: 실제 업데이트에 남는 오차에 계산을 배분한다</h2>
+<h3>1.1 논문 질문</h3>
+<p><strong>환자별 gradient를 여러 영상·diffusion 잡음으로 추정할 때, clipping 뒤에 남는 오차에 따라 계산을 배분하면 기존 균등 반복과 원래 분산에 따른 배분보다 같은 환자 DP 보장에서 더 효율적으로 학습할 수 있는가?</strong></p>
+<p>이 질문의 출발점은 특수한 진료 조건이 아니라 학습 알고리즘에 실제로 들어 있는 연산이다. diffusion 학습은 잡음·timestep을 표집한다. 사용자 단위 학습에서는 한 사용자의 여러 기록을 평균한다. DP 학습은 그 추정값을 clipping한다. 따라서 유한한 반복으로 생기는 오차가 최종 업데이트에 어떻게 전달되는지가 계산 배분과 직접 연결된다.</p>
+<h3>1.2 가장 가까운 선행이 이미 해결한 것</h3>
+<p>DPDM은 같은 이미지의 여러 잡음·timestep에 대한 gradient를 평균한 다음 clipping하는 noise multiplicity를 제안했다. 반복에 드는 계산과 privacy–utility 교환도 논의한다. ELS/ULS는 고정 계산량에서 사용자 수와 사용자당 기록 수를 비교한다. 따라서 여러 사진·잡음을 더 평균하거나 사용자별 보호를 적용한다는 발상은 새 기여가 아니다.<sup id="fnref:dpdm"><a class="footnote-ref" href="#fn:dpdm">1</a></sup><sup id="fnref:els"><a class="footnote-ref" href="#fn:els">2</a></sup></p>
+<p>CARV는 diffusion teacher의 중첩 Monte Carlo, 비싼 선행 계산의 재사용, timestep importance sampling과 stratification을 함께 다룬다. 일부 작업에서는 분산 감소가 효용으로 이어졌지만 single-step distillation에서는 분산을 크게 줄여도 FID가 개선되지 않았다. 따라서 중첩 배분과 계산비용 고려 자체도 새로운 주장이 아니다. CARV의 적용 대상인 frozen teacher와 여기의 private training은 구별해야 한다.<sup id="fnref:carv"><a class="footnote-ref" href="#fn:carv">3</a></sup></p>
+<p>공개 사전학습, LoRA, adaptive sampling과 clipping bias 분석도 각각 선행이다. 이들을 함께 사용한다는 사실이 아니라 <strong>기존 배분 기준이 줄이려는 오차와 최종 bounded 업데이트의 오차가 어긋나는 부분</strong>이 후보의 기술적 대상이다.<sup id="fnref:lora"><a class="footnote-ref" href="#fn:lora">4</a></sup><sup id="fnref:dpis"><a class="footnote-ref" href="#fn:dpis">5</a></sup><sup id="fnref:clip"><a class="footnote-ref" href="#fn:clip">6</a></sup></p>
+<h3>1.3 왜 기존 반복 기준과 다른 선택이 필요할 수 있는가</h3>
+<p>환자 u의 모든 기록과 학습 잡음에 대한 평균 gradient를 μᵤ, 유한 표집으로 추정한 값을 ĝᵤ라 하자. 비교 대상은 다음과 같다.</p>
+<pre><code class="language-text">이상적인 유한 환자 기여: hᵤ = clip_C(μᵤ)
+실제로 사용하는 기여:   ĥᵤ = clip_C(ĝᵤ)
+줄이려는 추정 오차:     E ||ĥᵤ − hᵤ||²
+</code></pre>
+<p>이는 clipping 자체가 만드는 μᵤ와 hᵤ의 차이를 제거한다는 목표가 아니다. <strong>유한한 표집으로 인해 이상적인 clipped 기여를 잘못 추정하는 추가 오차</strong>를 줄이는 목표다. 실제 학습 효용과도 아직 동일하지 않다.</p>
+<p>μ가 clipping 구 안쪽에 충분히 있으면 작은 오차가 거의 그대로 전달된다. 구 바깥에 충분히 있으면, v=μ/||μ||에 대해 clipping의 국소 Jacobian은 다음과 같다.</p>
+<pre><code class="language-text">J_C(μ) = (C / ||μ||) (I − vvᵀ)      [||μ|| &gt; C]
+</code></pre>
+<p>이때 길이 방향의 작은 변동은 1차에서 제거되고 방향을 흔드는 변동은 남는다. 따라서 원래 gradient의 분산 tr(Σ)가 큰 환자와 clipping 이후의 근사 오차 tr(JΣJᵀ)가 큰 환자가 같을 필요는 없다. 이것은 표준 미분에 따른 설명이며 새로운 정리로 주장하지 않는다. 경계를 넘나드는 오차에는 이 선형 근사가 충분하지 않다.<sup id="fnref2:clip"><a class="footnote-ref" href="#fn:clip">6</a></sup></p>
+<p><strong>설명용 정확한 사례:</strong> C=1, μ=(2,0)에서 A의 잡음이 ±(0.5,0), B의 잡음이 ±(0,0.1)이라고 하자. A의 원래 분산 .25는 B의 .01보다 크다. 그러나 A는 어느 평균에서도 clipping 결과가 (1,0)이므로 이 추정 오차가 0이다. B에는 방향 오차가 남고, 독립 두 번을 평균하면 그 제곱오차의 기대값은 한 번일 때의 절반이 된다. 즉 추가 계산 한 번을 A에 쓰는 것과 B에 쓰는 것의 가치가 다르다. 이 사례는 <strong>배분 기준이 달라질 수 있다는 논리적 증거</strong>이며 실제 의료 gradient의 분포나 학습 개선을 보여주는 실험은 아니다.</p>
+<h3>1.4 일부러 복잡하게 만들지 않을 부분</h3>
+<p>동일 비용·독립 표집의 단순 모형에서 서로 다른 기록 g개, 기록당 잡음 r개를 평균하면 원래 gradient 분산은 대략 다음처럼 분리된다.</p>
+<pre><code class="language-text">기록 사이 변동 / g + 기록 안 잡음 변동 / (g r)
+</code></pre>
+<p>총 반복 gr=L을 고정하면 두 번째 항은 변하지 않고 첫 번째 항은 g가 커질수록 줄어든다. 따라서 새 기록을 동일 비용으로 볼 수 있는 이 모형에서는 먼저 기록 다양성을 늘리는 것이 기본이다. 복잡한 내부 최적점을 임의로 가정하지 않는다. 기록 수 제한, 유한 모집단 보정, 실제 encoding 비용과 재사용, clipping 후 오차를 반영할 때 추가 선택이 필요하다. 이 분산 분해 자체는 기존 Monte Carlo 지식이다.<sup id="fnref2:els"><a class="footnote-ref" href="#fn:els">2</a></sup><sup id="fnref2:carv"><a class="footnote-ref" href="#fn:carv">3</a></sup></p>
+<h3>1.5 제안 알고리즘의 첫 명세</h3>
+<ol>
+<li>사용자 표집률 q, clipping C, DP 잡음 배수, 학습 step 수, 환자 가중 목적함수를 정한다. controller의 상수와 후보 계산량은 공개 자료 또는 적절히 보호된 정보로 정한다.</li>
+<li>선택된 환자마다 작은 <strong>예비 표집</strong>을 한다. 해당 환자의 평균 방향, 원래 변동, clipping 뒤 남을 오차를 추정한다. 대규모 covariance 행렬을 만드는 대신 내적과 norm, 소수의 독립 추정값을 사용한다.</li>
+<li>해당 환자 자체의 예비 표집과 고정 controller만으로 최종 계산량을 정한다. 다른 환자의 private 예비값과 예산을 경쟁하는 구조는 첫 명세에서 사용하지 않는다.</li>
+<li>예비 표집과 독립인 새 표집으로 최종 평균을 계산한다. uniform record sampling 또는 목표 평균을 보존하는 명시적인 가중치를 사용한다. 원래 평균을 바꾸어 놓고 단순 추정 효율 개선으로 부르지 않는다.</li>
+<li>환자마다 최종 평균을 동일한 C로 clipping하고, 합계에 정해진 DP 잡음을 더한다. 예비 통계·개별 반복 수를 공개 결과로 내보내지 않는다.</li>
+</ol>
+<p>첫 배분 규칙 v0는 독립 예비 gradient p₁,p₂로 μ̃=(p₁+p₂)/2, Δ=p₁−p₂, Ṽ=||Δ||²/2를 계산한다. 공개 자료로 정한 κ에 대해 <code>abs(||μ̃||−C) ≤ κ sqrt(Ṽ)</code>이면 경계 guard로 Ṽ를 사용한다. 그렇지 않으면 âᵤ=<code>||J_C(μ̃)Δ||²/2</code>를 사용한다. μ̃와 Δ가 같은 예비 표집에서 나온 plug-in 값이므로 이 오차 계수가 불편 추정량이라고 보장하지 않는다. 가능한 최종 계산량을 <code>{1,2,4,8,16}</code>으로 미리 정하고, âᵤ와 계산비용 cᵤ로 다음 값을 올림 선택한다. 비용 λ와 guard κ도 공개 자료에서 고정한다.</p>
+<pre><code class="language-text">nᵤ = bounded_round(sqrt(âᵤ / (λ cᵤ)), n_min, n_max)
+</code></pre>
+<p>이는 표준 자원 배분 형식에서 출발한 <strong>실행 가능한 규칙 초안</strong>이다. λ는 현재 private batch의 합계에서 즉석 정규화하지 않는다. Ṽ=0이나 μ̃=0의 경우에도 유한한 n_min과 명시한 guard를 사용한다. 작은 예비 표집이 경계를 잘못 판단할 수 있으므로 guard는 검증된 통계적 경계가 아닌 보수적인 heuristic이다. 공개 tuning 값과 실제 비용·오차 개선은 다음 구현 명세와 검증에서 고정한다.</p>
+<h3>1.6 보호 보장과 비용에서 확인할 부분</h3>
+<p>각 환자가 자기 기록과 고정된 공개/DP history에만 의존해 계산하고 최종 출력 norm을 C로 제한한다면, 고정된 다른 환자들의 기여를 바꾸지 않는 구조에서 add/remove 환자 하나의 합계 민감도는 C로 제한된다. replace adjacency라면 2C를 구별해야 한다. 전체 계산이 아니라 이 구조와 실제 sampler·회계의 조합으로 보장을 검토한다.<sup id="fnref3:els"><a class="footnote-ref" href="#fn:els">2</a></sup></p>
+<p>반대로 private batch 전체의 계산 예산을 맞추려고 한 환자의 상태에 따라 다른 환자들의 반복 수·포함 여부를 바꾸면 위 단순 논리가 성립하지 않는다. 반복 수가 다른 만큼 환자 가중치를 바꾸거나, 가변 batch의 실제 크기로 임의 정규화하는 것도 별도 문제다. 공개 sampler와 고정된 목표 분모를 사용하는 정확한 계약이 필요하다.<sup id="fnref:sampler"><a class="footnote-ref" href="#fn:sampler">7</a></sup></p>
+<p>독립 최종 표집은 pre-clipping 평균의 선택 편향을 피하는 데 도움이 되지만 clipping 이후 unbiasedness를 보장하지 않는다. 또한 공개하는 runtime·로그에 private 예비값이 드러난다면 그것도 출력 범위에서 검토해야 한다. 비교 비용은 예비 backward, 최종 backward, encoding, 메모리, 동적 batching을 포함한 실제 시간이다. 첫 비교는 <strong>동일한 기대 계산량과 실측 총비용</strong>이며 정확히 고정된 batch별 계산량과 혼동하지 않는다.</p>
+<h3>1.7 무엇과 비교해야 하는가</h3>
+<table>
+<thead>
+<tr>
+<th>비교군</th>
+<th>제거하려는 쉬운 설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>잘 조정한 ULS + 고정 noise multiplicity</td>
+<td>반복 수를 잘 고르면 되는 것인지</td>
+</tr>
+<tr>
+<td>타당한 tight ELS + 같은 backbone·공개 사전학습</td>
+<td>약한 group bound만 상대로 만든 이득인지</td>
+</tr>
+<tr>
+<td>원래 분산 기반의 적응 배분, 같은 예비/최종 표집 비용</td>
+<td>적응 배분 일반 효과인지, clipping 후 오차 기준의 효과인지</td>
+</tr>
+<tr>
+<td>CARV식 계산 재사용·MC 배분을 적용한 공정한 변형</td>
+<td>기존 중첩 Monte Carlo와 caching으로 설명되는지</td>
+</tr>
+<tr>
+<td>큰 반복 수의 reference</td>
+<td>추정 오차를 분석하는 진단 상한. 같은 비용의 실용 경쟁군으로 세지 않음</td>
+</tr>
+</tbody>
+</table>
+<p>같은 ULS 안에서 배분 규칙의 효과를 비교할 때는 C·사용자 표집률·학습 step·잡음 배수와 backbone·목적함수를 고정한다. <strong>ELS↔ULS 비교에서는 각 방법의 원형 clipping·sampler 차이를 유지하고</strong>, 같은 환자 ε·δ·backbone·목적·총비용을 맞춘다. 최종 효율 비교에서는 각 방법에 합당한 공개 tuning을 제공하되 그 비용도 기록한다. 같은 ε만 맞춘 채 효용·학습량이 다른 결과를 직접 우열로 해석하지 않는다.</p>
+<h3>1.8 기여가 될 조건과 잘 안 될 조건</h3>
+<p>기여 후보는 <strong>clipping 뒤 추정 오차를 기준으로 하는 환자 내부 계산 배분과, 같은 보호·품질·비용의 비교에서 그 선택이 유효한 이유</strong>다. 보호 보장 자체를 새로 정의하거나 모든 조건에서 더 강한 방어라고 주장하지 않는다.</p>
+<p>실제로는 예비 통계가 너무 부정확하거나 예비 비용이 절감분보다 클 수 있다. 대부분의 gradient가 clipping 비활성이면 제안 기준은 원래 분산 기준과 비슷해진다. DP 잡음이나 Adam의 변환이 이미 지배적인 병목이면 추정 오차 감소가 영상 품질로 이어지지 않을 수 있다. 이런 경우를 설명할 수 있어야 하며, 유리한 작은 C를 사후 선택해 사례를 만드는 방식으로 해결하지 않는다.<sup id="fnref3:carv"><a class="footnote-ref" href="#fn:carv">3</a></sup></p>
+<h2>2. 보호 평가 개선: 오탐 기준과 공격 측정의 불확실성을 함께 줄인다</h2>
+<h3>2.1 논문 질문</h3>
+<p><strong>고정된 강한 공격군으로 여러 보호방식을 비교할 때, 회원·비회원·공유 특징의 측정 비용을 함께 고려하면 같은 잘못된 선택 확률에서 더 적은 비용으로 비교 결론을 내릴 수 있는가?</strong></p>
+<p>여기서 보호방식 선택은 먼저 정한 효용과 형식적 보호 요건을 만족하는 후보들 사이의 추가적인 경험적 비교다. 통계적 공격 결과가 공식 DP 보장을 대체하지 않는다. 새 공격을 발견하는 것과, 이미 정해진 공격들을 충분히 평가해 비교 결론을 내리는 것도 구분한다.</p>
+<h3>2.2 가장 가까운 선행과 남는 기술 대상</h3>
+<p>방어에 맞추어 공격을 바꾸지 않으면 보호효과를 과대평가할 수 있다는 문제는 Aerni 등의 CCS 2024 연구가 구체적인 방어 사례에서 이미 보였다. 사용자 단위 감사, 공격 임계값 보정, 공개 인터페이스에서의 위험 차이도 기존 주제다.<sup id="fnref:aerni"><a class="footnote-ref" href="#fn:aerni">8</a></sup><sup id="fnref:quantile"><a class="footnote-ref" href="#fn:quantile">9</a></sup></p>
+<p>더 직접적으로, 보호법별 가장 큰 공격 위험의 최솟값을 고르는 구조는 Maximin Action Identification과 부호를 바꾸면 같다. 한 계산이 여러 관측을 제공하는 구조는 Pure Exploration with Feedback Graphs가 다룬다. 비회원 순서통계량으로 오탐률을 제어하고 분류기를 비교하는 방법은 NP umbrella/NP-ROC에 있다. <strong>minimax, 공유 계산, 신뢰구간, 보류를 각각 새 아이디어라고 부를 수 없다.</strong><sup id="fnref:maximin"><a class="footnote-ref" href="#fn:maximin">10</a></sup><sup id="fnref:feedback"><a class="footnote-ref" href="#fn:feedback">11</a></sup><sup id="fnref:nproc"><a class="footnote-ref" href="#fn:nproc">12</a></sup></p>
+<p>후보의 기술 대상은 이들을 현실적인 diffusion 감사의 <strong>두 점수 분포·저오탐 기준·공유 원시 연산</strong>에서 함께 다루는 관측 배분이다. 회원 점수만 더 계산해도 비회원 꼬리가 부족하면 어느 threshold가 1% FPR을 만족하는지 여전히 불확실하다. 여러 공격 점수가 하나의 고비용 특징에서 나오면 그 계산을 공격 수만큼 다시 지불할 필요도 없다. 기존 방법의 강한 확장으로 같은 결과가 나오면 방법 기여는 약해진다.</p>
+<h3>2.3 명확하게 한정한 평가 대상</h3>
+<p>각 보호모델 d마다 허용 접근권·보조자료·입력당 예산이 같은 고정 공격 점수 s[d,a]를 준비한다. 공격 적합과 하이퍼파라미터 선택은 평가 자료와 분리한다. 입력마다 최적화하는 공격은 초기화·반복 수 등 알고리즘 자체를 고정한다. 공격을 충분히 학습했는지의 불확실성을 평가 표본 신뢰구간으로 덮지 않는다.</p>
+<p>회원 환자의 점수가 threshold τ를 넘을 확률을 <code>P1[d,a](τ)</code>, 비회원은 <code>P0[d,a](τ)</code>라고 하자.</p>
+<pre><code class="language-text">R[d,a](α) = sup { P1[d,a](τ) : P0[d,a](τ) ≤ α }
+R[d](α)   = max_a R[d,a](α)
+</code></pre>
+<p>R은 <strong>정해진 점수·결정적 threshold군 안에서 가능한 공격력</strong>이다. 세상의 최강 공격, 모든 공격 최적화 결과, 환자 개별 인과효과를 뜻하지 않는다. 동률 처리와 항상 nonmember로 답하는 규칙을 포함해 정의를 고정한다. black-box와 white-box 공격군은 접근권이 다르므로 별도의 비교로 둔다.</p>
+<p>추론 범위는 고정 모델과 명시한 감사 환자 모집단 또는 유한 pool이다. 같은 환자의 여러 사진은 한 관측을 구성한다. 고정 pool을 비복원 표집한다면 그에 맞는 유한 모집단 신뢰띠를 사용해야 한다. 이미 학습에 참여한 환자들의 점수가 무조건 IID라고 가정하지 않는다. 여러 학습 seed에 걸친 보호 알고리즘 전체의 우열은 독립 학습 반복이 필요한 추가 주장이다.</p>
+<h3>2.4 비교 결론이 성급해지지 않도록 하는 연산</h3>
+<p>모든 공격·threshold·평가 시점에서 동시에 유효한 생존함수 신뢰띠 [L0,U0], [L1,U1]를 확보했다고 하자. 공격별 위험 구간은 다음과 같이 만든다.</p>
+<pre><code class="language-text">Lrisk[d,a] = sup { L1[d,a](τ) : U0[d,a](τ) ≤ α }
+Urisk[d,a] = sup { U1[d,a](τ) : L0[d,a](τ) ≤ α }
+
+Lrisk[d] = max_a Lrisk[d,a]
+Urisk[d] = max_a Urisk[d,a]
+</code></pre>
+<p>오탐 상한이 α 아래인 threshold는 확실히 허용되므로 그 TPR 하한을 위험 하한에 쓴다. 오탐 하한이 α 아래인 threshold는 아직 허용될 가능성이 있으므로 그 TPR 상한을 위험 상한에 남긴다. 공동 신뢰띠 사건에서는 이 구간이 위에서 정의한 R을 포함한다. 이는 표준 신뢰띠의 포함 관계이며 새 정리라는 주장이 아니다.</p>
+<p>후보 d의 위험 상한이 모든 다른 후보의 하한보다 작을 때만 그 공격군 안에서 더 낮은 위험이라고 결정한다. 예산이 끝나도 구간이 겹치면 보류한다. 미측정 공격은 위험 0이 아니라 미확인 범위로 남긴다. 순차적으로 반복 확인할 때는 매 시점의 보통 CI를 그대로 쓰지 않고 time-uniform 또는 사전 오류 배분을 사용해야 한다.</p>
+<h3>2.5 제안할 계산 배분</h3>
+<p>관측 행동은 공격 이름 하나가 아니라 <strong>보호모델 × 원시 특징 묶음 × 회원/비회원 × 다음 무작위 환자</strong>다. 특징이 여러 공격에 공유되면 그 점수들을 함께 갱신한다. 이미 본 동일 환자의 다른 사진을 독립 환자 표본으로 세지 않는다.</p>
+<p>배분 규칙은 먼저 경쟁하는 두 보호모델과 결론을 뒤집을 수 있는 공격·threshold를 찾는다. 그다음 위험 구간의 폭이 회원 TPR 추정, 비회원 FPR 기준, 아직 계산하지 않은 특징군 중 어디에서 생기는지 구분한다. 각 측정이 줄일 수 있는 비교 불확실성과 증분 비용을 사용해 다음 행동을 정한다. 예비 배분 뒤에도 중요한 미측정 공격을 영원히 무시하지 않는 탐색 규칙이 필요하다.</p>
+<p><strong>실행 가능한 배분 규칙 v0</strong>는 다음처럼 둔다. 모든 동률은 고정 ID 순서로 처리하며, 환자 순서는 평가 전에 무작위화한다.</p>
+<ol>
+<li>위험 상한이 가장 작은 보호법을 leader, 나머지 중 위험 하한이 가장 작은 보호법을 challenger로 둔다. 두 위험 구간의 간격 <code>G = U_leader − L_challenger</code>를 계산한다.</li>
+<li>두 보호법에서 <code>Urisk[d,a] ≥ Lrisk[d]</code>인 공격은 아직 결정에 영향을 줄 수 있는 active 공격으로 남긴다. 그 점수를 갱신할 수 있는 회원/비회원 특징 묶음을 후보 행동으로 만든다.</li>
+<li>각 행동에 대해, 새 관측으로 갱신될 점수 분포들의 현재 띠 중심을 그대로 두고 폭만 <code>sqrt((n+1)/(n+2))</code>배로 줄인 <strong>가상 띠</strong>를 만든다. n은 해당 점수·집단에서 완성된 환자 관측 수다. 새 ROC 위험 구간과 가상 G를 다시 계산한다.</li>
+<li><code>max(0, G − 가상 G) / 증분 비용</code>이 가장 큰 행동을 고른다. 동률이면 처음 관측하게 되는 active 점수 수/비용, 다음으로 전체 가상 띠 폭 감소/비용을 사용한다. n=0인 분포는 중심을 지어내지 않고 첫 관측 규칙으로 처리한다.</li>
+<li>라운드가 2의 거듭제곱일 때는 가능한 전체 보호법·특징·집단 행동을 고정 순서로 순환 탐색한다. 이는 현재 두 후보 밖의 중요한 미측정을 영구히 버리지 않기 위한 규칙이다. 비어 있거나 소진된 pool은 명시적으로 처리하고, 실제 예산을 넘으면 결정 없이 종료한다.</li>
+<li>실제 선택은 <strong>실제 신뢰띠와 정지 조건</strong>으로만 한다. 가상 띠는 계산 우선순위용 heuristic이며 증거나 실제 위험 구간으로 사용하지 않는다.</li>
+</ol>
+<p>공유 cache에서 일부 환자 점수가 먼저 완성되더라도 각 점수의 신뢰띠에는 사전 환자 순서에서 완성된 prefix만 사용한다. 특정 점수가 유리한 환자를 골라 평가하는 방식으로 바뀌지 않도록 하기 위함이다. 정확한 prefix·active set·동률 규칙은 <a href="spec_sources/track2_protection_evaluation_design_20260916.md">방향 2 명세 §10</a>에 적었다.</p>
+<p>이 규칙은 구현 가능한 초안이며 비용 최적성·실제 효율 우위가 증명된 것은 아니다. 정당한 실제 신뢰띠를 유지하면 선택 오류 통제는 이 가상 폭축소가 정확하다는 가정에 의존하지 않는다. 성능 차이는 M-LUCB와 TaS-FG에 동일한 ROC·공유정보를 제공한 비교에서 판단한다. 신뢰띠·max 연산이나 휴리스틱 배분을 작성했다는 사실만으로 새 논문 기여가 완성되지는 않는다.</p>
+<h3>2.6 왜 이 구분이 실제 비용과 연결되는가</h3>
+<p>단일 고정 threshold에서 독립 비회원 n명의 오탐이 0이면, 일측 95% 이항 상한은 <code>1 − 0.05^(1/n)</code>이다. n=70에서는 약 4.19%이고, 이 방식으로 1% 아래의 상한을 얻으려면 적어도 299명이 필요하다. 이는 표준 통계 예시이며 모든 모수적·구조적 방법에 적용되는 보편적인 최소 표본 수가 아니다. threshold 선택·다중 공격·순차 확인을 추가하면 해당 보정도 필요하다.<sup id="fnref2:nproc"><a class="footnote-ref" href="#fn:nproc">12</a></sup></p>
+<p>따라서 이미 계산한 회원 점수의 정밀도를 계속 높이는 대신, 비교를 막는 비회원 측정을 추가하는 편이 유효한 경우가 있다. 반대로 비회원 기준이 충분히 정해졌다면 회원 TPR이나 아직 미측정인 공격 특징이 병목이 된다. <strong>이런 상태에 맞추어 다음 계산을 바꾸는 것</strong>이 검증할 구체적 예측이다. 의료 모델에서 이 구조가 유의미한 절감으로 이어졌다는 결과는 아직 없다.</p>
+<h3>2.7 강한 비교군과 논문 기여 조건</h3>
+<table>
+<thead>
+<tr>
+<th>비교군</th>
+<th>동일하게 제공할 조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>균등·고정 배분</td>
+<td>같은 ROC 신뢰띠, 공격군, 특징 cache, 공격 적합 결과</td>
+</tr>
+<tr>
+<td>Maximin-LUCB / Racing의 ROC 확장</td>
+<td>같은 환자 FPR 불확실성 처리와 정지 기준</td>
+</tr>
+<tr>
+<td>TaS-FG를 이용한 공유 관측 확장</td>
+<td>같은 특징 공유 그래프와 실제 증분 비용</td>
+</tr>
+<tr>
+<td>충분히 측정한 reference 평가</td>
+<td>비교 결정의 기준. 유한 표본 기준이면 그 불확실성도 표시</td>
+</tr>
+</tbody>
+</table>
+<p>평가 지표는 <strong>동일한 오선택 제어에서 결정까지 드는 총비용</strong>, <strong>고정 예산에서 오선택률과 보류율</strong>, <strong>내린 결론의 신뢰도</strong>다. 보류를 성공한 선택으로 세지 않는다. 공격별 최적화·보조 학습·모델 로드까지 비용을 분리해 보고한다. 기존법만 특징을 중복 계산하거나 보정을 덜 해 주는 비교는 허용하지 않는다.</p>
+<p>새 방법 주장은 기존 ROC·minimax·feedback graph 조합보다 실질적인 배분·비용 이득이 있어야 한다. 그 차이가 없다면 이 조합은 연구용 평가 도구로는 유용해도 독립 알고리즘 기여가 되기 어렵다. 실제 생성모델의 중요한 보호 판단을 바꾸는 발견이 있다면 평가 연구로 별도 검토할 수 있지만, 순위 반전 사례 하나만으로 충분하다고 보지 않는다.</p>
+<h2>3. 지금까지의 자료에서 재사용할 것</h2>
+<table>
+<thead>
+<tr>
+<th>기존 자산</th>
+<th>재사용 목적</th>
+<th>대신할 수 없는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>공개 의료영상·환자 ID·latent·학습기·checkpoint</td>
+<td>1번 예비 오차 측정과 구현, 2번 공격 점수 계산</td>
+<td>새 제안의 효용·보호법 우열</td>
+</tr>
+<tr>
+<td>CDI 26차원 특징과 환자 집계</td>
+<td>2번의 공유 특징 구조·실제 계산비용·개발 replay</td>
+<td>독립 평가에서의 선택 신뢰도</td>
+</tr>
+<tr>
+<td>MoFit 제한 실행과 비용 기록</td>
+<td>고비용 특징/입력 최적화가 포함된 비교 비용 설계</td>
+<td>환자군 전체 성능</td>
+</tr>
+<tr>
+<td>기존 한-noise gradient·clipping 대조</td>
+<td>로딩·계산 검산과 적용 코드 참고</td>
+<td>반복 잡음의 covariance, 새 배분법의 효과</td>
+</tr>
+<tr>
+<td>기존 비DP 두 모델</td>
+<td>도구 개발과 점수 구조 확인</td>
+<td>서로 다른 DP 보호방법의 비교</td>
+</tr>
+</tbody>
+</table>
+<p>기존 E/U·CDI 적응·환자 제거·국소 clipping 결과를 새 후보의 효능으로 소급하지 않는다. 개발에 반복 사용한 selection 자료와 독립 평가 자료를 구분한다. 새로운 가설에 맞는 관측이 없으면 그 한계를 기록하고 필요한 관측만 정한다.<sup id="fnref:inventory"><a class="footnote-ref" href="#fn:inventory">13</a></sup></p>
+<h2>4. 가장 작은 다음 단계와 예상 시간</h2>
+<p>다음에는 먼저 1번의 controller와 비교 연산을 구체적인 명세로 닫고, 2번의 선택 규칙을 별도로 정밀화한다. 두 방향을 하나의 논문으로 합치는 것을 전제로 삼지 않는다.</p>
+<table>
+<thead>
+<tr>
+<th>순서</th>
+<th>산출물</th>
+<th>계획용 예상 시간</th>
+<th>진행·보류 판단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-A</td>
+<td>예비/최종 표집, 오차 지표, 개인정보 흐름, 비용을 고정한 배분 명세와 반례 검토</td>
+<td>30–60분</td>
+<td>원래 분산 기준과 왜 다른 선택을 하는지, 동일 목적·환자 민감도를 유지하는지 설명 가능</td>
+</tr>
+<tr>
+<td>1-B</td>
+<td>소수 공개 환자·기존 모델에서 반복 gradient reference와 같은 비용의 배분 비교</td>
+<td>구현·분석 포함 60–120분의 계획 범위. 실제 첫 kernel 시간으로 갱신</td>
+<td>예비 비용을 포함해 clipped 추정 오차를 줄이고, 실제 optimizer가 그 이득을 완전히 지우지 않는지</td>
+</tr>
+<tr>
+<td>2-A</td>
+<td>FPR/TPR 신뢰띠, 공유 행동, 정지·배분 규칙의 정확한 명세와 기존법 환원 대조</td>
+<td>45–90분</td>
+<td>기존 NP-ROC+M-LUCB/TaS-FG와 동일한 규칙인지, 추가 연산의 의미가 있는지</td>
+</tr>
+<tr>
+<td>2-B</td>
+<td>정답 분포가 알려진 CPU 비교와 기존 점수의 개발 replay</td>
+<td>구현·검토 포함 1–3시간의 계획 범위. 실행 runtime 실측값 아님</td>
+<td>같은 오류 수준에서 비용·보류의 실제 이득, coverage 오류 여부</td>
+</tr>
+</tbody>
+</table>
+<p>이 시간은 본학습이나 전체 논문 완료 시간 추정이 아니다. 현재 자료에 반복 gradient reference와 서로 다른 보호법의 완성된 점수 행렬이 없으므로 이를 이미 준비된 것처럼 계산하지 않는다. 대규모 학습 계획은 작은 검증에서 어느 연결이 지지되는지에 따라 정한다. 결과가 약하다는 이유로 반복 수·C·특수 자료 조건을 무제한 바꾸지 않고, 어느 예측이 어긋났는지를 설계 수준에서 설명한다.</p>
+<h2>5. 현재 판단</h2>
+<p><strong>1번은 ‘표준 반복이 줄이는 변동 중 일부는 clipping에서 사라지므로, 실제 남는 오차에 연산을 써야 한다’는 연산상의 연결을 갖췄다.</strong> 기존 DPDM·ELS/ULS·CARV와 비교할 구체적인 변경이 있으나, 그 변경이 예비 비용과 DP 잡음을 이기고 학습 효용으로 이어지는지는 미검증이다. clipping 기하 자체가 신규성은 아니다.</p>
+<p><strong>2번은 ‘공격 성능뿐 아니라 오탐 기준도 추정해야 하므로, 다음 계산을 회원·비회원·공유 특징 사이에서 선택해야 한다’는 평가상의 연결을 갖췄다.</strong> 위험 구간·정지·보류와 가상 폭축소를 이용한 배분 규칙 v0를 명시했다. 이 규칙의 효율 우위는 미검증이며, 기존 NP-ROC·Maximin·feedback graph를 공정하게 합친 방법과의 차이가 이 후보의 가장 큰 과제다.</p>
+<p>우선순위는 1번을 먼저 정밀화하는 것이다. 이는 성공 가능성의 수치 예측이나 채택 확정이 아니라, 현재 설명 가능한 연산 변경과 다음 검증의 직접성을 기준으로 한 판단이다. 2번도 별도 후보로 유지한다. 기존 졸논 목표나 E/U를 지키기 위해 두 후보 중 하나를 억지로 살릴 이유는 없다.</p>
+<h2>참고문헌과 확인 범위</h2>
+<p>추가 대조에서 <a href="https://arxiv.org/abs/2506.11434">FSCA</a>는 사용자 단위 diffusion 감사·사진 수에 따른 보정을 이미 다룬다. 10장·90% 정확도는 해당 평가의 직접 학습 사진 100% 조건이며, 환자 U-only 성능으로 인용하지 않는다. <a href="https://doi.org/10.1016/j.neucom.2026.132893">Ge et al., Neurocomputing 2026</a>은 형식적 DP와 black-box 관측 위험의 관계를 다룬다. 후자는 공개 초록·서론 일부 범위이며 전체 증명 검증은 미완료다. 두 논문은 넓은 문제 구호의 중복을 확인하는 문헌이고 위 두 알고리즘의 효능 근거는 아니다.</p>
+<p>상세 근접 대조와 제안 명세: <a href="spec_sources/track1_protection_efficiency_design_20260916.md">방향 1 분석</a>, <a href="spec_sources/track2_protection_evaluation_design_20260916.md">방향 2 분석</a>, <a href="spec_sources/two_track_novelty_crosscheck_20260916.md">독립 신규성 점검</a>. 기존 79편 장부와 별도로 추가한 검토 기록이며, 이번 추가 문헌이 과거 장부에 이미 포함돼 있었던 것으로 소급하지 않는다.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:dpdm">
+<p>Dockhorn, Cao, Vahdat, Kreis. <em>Differentially Private Diffusion Models</em>, TMLR 2023. <a href="https://openreview.net/pdf?id=ZPpQk7FJXF">공식 PDF</a>, §3.2, Appendix D.1–D.4·F.1. Noise multiplicity, 비용과 사용자 단위 한계에 사용. <a class="footnote-backref" href="#fnref:dpdm" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:els">
+<p>Charles et al. <em>Fine-Tuning Large Language Models with User-Level Differential Privacy</em>, <a href="https://arxiv.org/abs/2407.07737">저자 공개본</a>, 로컬 B04 v1의 Algorithms 1–2, §3, 고정 계산량 실험. 관련 최종 출판명은 <em>Learning with User-Level Differential Privacy Under Fixed Compute Budgets</em>, SaTML 2025이며 <a href="https://research.google/blog/fine-tuning-llms-with-user-level-differential-privacy/">저자 설명</a>으로 확인. 최종판 전체 증명을 재검증한 범위는 아님. <a class="footnote-backref" href="#fnref:els" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:els" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:els" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:carv">
+<p>Bettencourt et al. <em>Variance Reduction for Expectations with Diffusion Teachers</em>, arXiv:2605.21489, 2026. <a href="https://arxiv.org/abs/2605.21489">저자 공개본</a>. 계층적 MC, 계산 재사용, importance sampling, 효용으로 이어지지 않은 분산 감소와 clipping 관련 적용 경계에 사용. <a class="footnote-backref" href="#fnref:carv" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:carv" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:carv" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:lora">
+<p>Tsai et al. <em>Differentially Private Fine-Tuning of Diffusion Models</em>, ICCV 2025. <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.pdf">공식 PDF</a>. DP-LoRA와 공개 모델 기반 학습의 선행 범위에 사용. <a class="footnote-backref" href="#fnref:lora" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:dpis">
+<p><em>DPIS: An Enhanced Mechanism for Differentially Private SGD with Importance Sampling</em>, CCS 2022. <a href="https://arxiv.org/abs/2210.09634">저자 공개본</a>, 초록·방법 도입. 중요도·분산에 따른 적응 표집 자체의 선행 경계에 사용. <a class="footnote-backref" href="#fnref:dpis" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:clip">
+<p>Chen et al. <em>Understanding Gradient Clipping in Private SGD: A Geometric Perspective</em>, NeurIPS 2020. <a href="https://proceedings.neurips.cc/paper/2020/file/9ecff5455677b38d19f49ce658ef0608-Paper.pdf">공식 PDF</a>. 기하·clipping bias가 이미 연구된 주제라는 범위 확인. 본 문서의 Jacobian과 정확한 2차원 사례는 직접 제시한 표준 수학적 설명이며 해당 논문의 새 정리로 귀속하지 않음. <a class="footnote-backref" href="#fnref:clip" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:clip" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:sampler">
+<p>Chua et al. <em>How Private are DP-SGD Implementations?</em>, ICML 2024. <a href="https://proceedings.mlr.press/v235/chua24a.html">공식 페이지</a>. 실제 sampler와 회계 가정의 불일치 문제에 사용. 후속 <a href="https://arxiv.org/abs/2411.04205">Scalable DP-SGD</a>의 sampler·고정 목표 분모 설명도 대조. <a class="footnote-backref" href="#fnref:sampler" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+<li id="fn:aerni">
+<p>Aerni, Zhang, Tramèr. <em>Evaluations of Machine Learning Privacy Defenses are Misleading</em>, CCS 2024. <a href="https://arxiv.org/abs/2404.17399">최종 저자 공개본</a>, §§3–5. 적응 공격·취약 표본·강한 DP 비교 조건에 사용. <a class="footnote-backref" href="#fnref:aerni" title="Jump back to footnote 8 in the text">↩</a></p>
+</li>
+<li id="fn:quantile">
+<p>Tang et al. <em>Membership Inference Attacks on Diffusion Models via Quantile Regression</em>, ICML 2024. <a href="https://proceedings.mlr.press/v235/tang24g.html">공식 페이지</a>, §3·Algorithm 1. 이미지별 nonmember 분위수 보정의 선행 범위에 사용. <a class="footnote-backref" href="#fnref:quantile" title="Jump back to footnote 9 in the text">↩</a></p>
+</li>
+<li id="fn:maximin">
+<p>Garivier, Kaufmann, Koolen. <em>Maximin Action Identification: A New Bandit Framework for Games</em>, COLT 2016. <a href="https://proceedings.mlr.press/v49/garivier16b.pdf">공식 PDF</a>, 문제 정의·§§3–4. 비교 결정·정지와 maximin 구조의 직접 기준선에 사용. 최신 고정 예산 인접 연구 <a href="https://arxiv.org/abs/2605.11324">Li et al., 2026</a>는 초록·문제 범위까지 확인. <a class="footnote-backref" href="#fnref:maximin" title="Jump back to footnote 10 in the text">↩</a></p>
+</li>
+<li id="fn:feedback">
+<p>Russo, Song, Pacchiano. <em>Pure Exploration with Feedback Graphs</em>, 2025. <a href="https://arxiv.org/abs/2503.07824">저자 공개본</a>, §§2.2·3.2·4. 공유 관측과 TaS-FG 기준선에 사용. <a class="footnote-backref" href="#fnref:feedback" title="Jump back to footnote 11 in the text">↩</a></p>
+</li>
+<li id="fn:nproc">
+<p>Tong, Feng, Li. <em>Neyman–Pearson Classification Algorithms and NP Receiver Operating Characteristics</em>, Science Advances 2018. <a href="https://stat.arizona.edu/sites/default/files/2023-09/Journal%20Paper%20091823.pdf">대학 공개 PDF</a>, pp.2–6. 오탐 제어·NP-ROC 비교의 선행 경계에 사용. 이항 0오탐 예시는 표준 일측 상한 계산. <a class="footnote-backref" href="#fnref:nproc" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref2:nproc" title="Jump back to footnote 12 in the text">↩</a></p>
+</li>
+<li id="fn:inventory">
+<p><a href="patient_gap_work_inventory.html">기존 환자 감사 작업의 증거와 한계</a>, <a href="cdi_eu_comparison_results.html">CDI E/U 비교</a>, <a href="mofit_medical_results.html">MoFit 실행 범위</a>, <a href="clipping_observation_local_results.html">국소 clipping 결과</a>. 로컬 연구 기록이며 독립 출판 결과가 아님. <a class="footnote-backref" href="#fnref:inventory" title="Jump back to footnote 13 in the text">↩</a></p>
+</li>
+</ol>
+</div></main></body></html>

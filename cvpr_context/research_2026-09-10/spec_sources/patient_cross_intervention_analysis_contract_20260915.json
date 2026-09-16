@@ -1,0 +1,784 @@
+{
+  "schema": "patient-cross-intervention-analysis/v1",
+  "created_utc": "2026-09-15T11:33:09.241608+00:00",
+  "current_step": 2,
+  "focal_patients": {
+    "p": "14393",
+    "q": "4092"
+  },
+  "patient_rows": [
+    {
+      "patient_id": "14393",
+      "scenario": "U",
+      "images": [
+        "00014393_001.png",
+        "00014393_004.png"
+      ],
+      "role": "fit",
+      "group": "A"
+    },
+    {
+      "patient_id": "172",
+      "scenario": "U",
+      "images": [
+        "00000172_002.png",
+        "00000172_006.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "359",
+      "scenario": "U",
+      "images": [
+        "00000359_000.png",
+        "00000359_007.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "1052",
+      "scenario": "U",
+      "images": [
+        "00001052_002.png",
+        "00001052_004.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "1906",
+      "scenario": "U",
+      "images": [
+        "00001906_002.png",
+        "00001906_007.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "2032",
+      "scenario": "U",
+      "images": [
+        "00002032_007.png",
+        "00002032_010.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "2247",
+      "scenario": "U",
+      "images": [
+        "00002247_000.png",
+        "00002247_003.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "2359",
+      "scenario": "U",
+      "images": [
+        "00002359_004.png",
+        "00002359_019.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "3308",
+      "scenario": "U",
+      "images": [
+        "00003308_001.png",
+        "00003308_003.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "3832",
+      "scenario": "U",
+      "images": [
+        "00003832_002.png",
+        "00003832_004.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "4092",
+      "scenario": "U",
+      "images": [
+        "00004092_000.png",
+        "00004092_003.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "4992",
+      "scenario": "U",
+      "images": [
+        "00004992_000.png",
+        "00004992_013.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "5376",
+      "scenario": "U",
+      "images": [
+        "00005376_001.png",
+        "00005376_008.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "5722",
+      "scenario": "U",
+      "images": [
+        "00005722_001.png",
+        "00005722_018.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "6881",
+      "scenario": "U",
+      "images": [
+        "00006881_005.png",
+        "00006881_007.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "6985",
+      "scenario": "U",
+      "images": [
+        "00006985_004.png",
+        "00006985_007.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "7932",
+      "scenario": "U",
+      "images": [
+        "00007932_000.png",
+        "00007932_007.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "8168",
+      "scenario": "U",
+      "images": [
+        "00008168_001.png",
+        "00008168_012.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "11436",
+      "scenario": "U",
+      "images": [
+        "00011436_001.png",
+        "00011436_009.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "12018",
+      "scenario": "U",
+      "images": [
+        "00012018_000.png",
+        "00012018_015.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "12050",
+      "scenario": "U",
+      "images": [
+        "00012050_000.png",
+        "00012050_004.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "12097",
+      "scenario": "U",
+      "images": [
+        "00012097_010.png",
+        "00012097_011.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "13567",
+      "scenario": "U",
+      "images": [
+        "00013567_002.png",
+        "00013567_006.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "14307",
+      "scenario": "U",
+      "images": [
+        "00014307_000.png",
+        "00014307_001.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "14362",
+      "scenario": "U",
+      "images": [
+        "00014362_015.png",
+        "00014362_023.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "15492",
+      "scenario": "U",
+      "images": [
+        "00015492_000.png",
+        "00015492_001.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "15594",
+      "scenario": "U",
+      "images": [
+        "00015594_003.png",
+        "00015594_004.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "16550",
+      "scenario": "U",
+      "images": [
+        "00016550_018.png",
+        "00016550_024.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "16919",
+      "scenario": "U",
+      "images": [
+        "00016919_004.png",
+        "00016919_007.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "17927",
+      "scenario": "U",
+      "images": [
+        "00017927_003.png",
+        "00017927_004.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "18224",
+      "scenario": "U",
+      "images": [
+        "00018224_003.png",
+        "00018224_004.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "18614",
+      "scenario": "U",
+      "images": [
+        "00018614_000.png",
+        "00018614_010.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "20106",
+      "scenario": "U",
+      "images": [
+        "00020106_002.png",
+        "00020106_007.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "21572",
+      "scenario": "U",
+      "images": [
+        "00021572_000.png",
+        "00021572_015.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "21970",
+      "scenario": "U",
+      "images": [
+        "00021970_000.png",
+        "00021970_004.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "22835",
+      "scenario": "U",
+      "images": [
+        "00022835_000.png",
+        "00022835_004.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "25150",
+      "scenario": "U",
+      "images": [
+        "00025150_000.png",
+        "00025150_011.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "25514",
+      "scenario": "U",
+      "images": [
+        "00025514_003.png",
+        "00025514_008.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "25680",
+      "scenario": "U",
+      "images": [
+        "00025680_007.png",
+        "00025680_009.png"
+      ],
+      "role": "selection",
+      "group": "B"
+    },
+    {
+      "patient_id": "28655",
+      "scenario": "U",
+      "images": [
+        "00028655_000.png",
+        "00028655_004.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "29437",
+      "scenario": "U",
+      "images": [
+        "00029437_002.png",
+        "00029437_012.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    },
+    {
+      "patient_id": "14393",
+      "scenario": "E",
+      "images": [
+        "00014393_002.png",
+        "00014393_006.png"
+      ],
+      "role": "fit",
+      "group": "A"
+    },
+    {
+      "patient_id": "4092",
+      "scenario": "E",
+      "images": [
+        "00004092_001.png",
+        "00004092_002.png"
+      ],
+      "role": "selection",
+      "group": "A"
+    }
+  ],
+  "patient_order_U": [
+    "14393",
+    "172",
+    "359",
+    "1052",
+    "1906",
+    "2032",
+    "2247",
+    "2359",
+    "3308",
+    "3832",
+    "4092",
+    "4992",
+    "5376",
+    "5722",
+    "6881",
+    "6985",
+    "7932",
+    "8168",
+    "11436",
+    "12018",
+    "12050",
+    "12097",
+    "13567",
+    "14307",
+    "14362",
+    "15492",
+    "15594",
+    "16550",
+    "16919",
+    "17927",
+    "18224",
+    "18614",
+    "20106",
+    "21572",
+    "21970",
+    "22835",
+    "25150",
+    "25514",
+    "25680",
+    "28655",
+    "29437"
+  ],
+  "patient_order_E": [
+    "14393",
+    "4092"
+  ],
+  "q_selection_rule": "Numeric first selection-A patient with two E records each exposed four times in the original M1 ledger; no q-intervention scores used",
+  "selected_q_not_replaced_after_results": true,
+  "prior_p_is_already_explored_case": true,
+  "selection40_is_already_explored_development": true,
+  "original_directory_U": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1",
+  "original_directory_E": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1",
+  "p_control_U_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1",
+  "prior_scorer_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\fixed_scorer_analysis_v1",
+  "new_output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_cross_patient_intervention_v1",
+  "q_training_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\masked_patient_4092_training_v1",
+  "branches": [
+    "treatment",
+    "p_control",
+    "q_control"
+  ],
+  "new_records": {
+    "q_control_U": 82,
+    "q_control_E": 4,
+    "p_control_E": 4,
+    "total": 90
+  },
+  "reused_records": {
+    "treatment_U": 82,
+    "treatment_E": 4,
+    "p_control_U": 82,
+    "total": 168
+  },
+  "training": {
+    "source_model": "model_1",
+    "updates": 1000,
+    "initialization": "original initialization; do not resume from step43",
+    "q_first_contribution_update": 37,
+    "expected_q_masked_updates": [
+      37,
+      61,
+      271,
+      444,
+      553,
+      632,
+      837,
+      845
+    ],
+    "same_schedule_noise_optimizer_and_original_mean_denominator": true,
+    "scheduled_slots": 4000,
+    "effective_slots": 3992,
+    "p_exposures_in_q_control": 8,
+    "q_exposures_in_q_control": 0,
+    "conventional_resized_manifest_retrain": false,
+    "original_treatment_reused_after_exact_prior_verification": true
+  },
+  "methods": [
+    {
+      "id": "cdi_image_mean_fixed",
+      "kind": "logistic_regression",
+      "family": "cdi_image_mean",
+      "representation": "image26",
+      "patient_probability_pool": "mean",
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "cdi_image_mean_tuned",
+      "kind": "logistic_regression",
+      "family": "cdi_image_mean",
+      "representation": "image26",
+      "patient_probability_pool": "mean",
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "cdi_image_max_fixed",
+      "kind": "logistic_regression",
+      "family": "cdi_image_max",
+      "representation": "image26",
+      "patient_probability_pool": "max",
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "cdi_image_max_tuned",
+      "kind": "logistic_regression",
+      "family": "cdi_image_max",
+      "representation": "image26",
+      "patient_probability_pool": "max",
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_mean26_fixed",
+      "kind": "logistic_regression",
+      "family": "patient_mean26",
+      "representation": "mean26",
+      "patient_probability_pool": null,
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_mean26_tuned",
+      "kind": "logistic_regression",
+      "family": "patient_mean26",
+      "representation": "mean26",
+      "patient_probability_pool": null,
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_meanmax52_fixed",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax52",
+      "representation": "meanmax52",
+      "patient_probability_pool": null,
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "patient_meanmax52_tuned",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax52",
+      "representation": "meanmax52",
+      "patient_probability_pool": null,
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": false
+    },
+    {
+      "id": "dl_mean",
+      "kind": "scalar",
+      "feature_index": 0,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "dl_max",
+      "kind": "scalar",
+      "feature_index": 0,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "secmi_mean",
+      "kind": "scalar",
+      "feature_index": 1,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "secmi_max",
+      "kind": "scalar",
+      "feature_index": 1,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "pia_mean",
+      "kind": "scalar",
+      "feature_index": 2,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "pia_max",
+      "kind": "scalar",
+      "feature_index": 2,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "pian_mean",
+      "kind": "scalar",
+      "feature_index": 3,
+      "direction": -1,
+      "pool_after_direction": "mean"
+    },
+    {
+      "id": "pian_max",
+      "kind": "scalar",
+      "feature_index": 3,
+      "direction": -1,
+      "pool_after_direction": "max"
+    },
+    {
+      "id": "patient_meanmax54_noobjective_fixed",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax54_noobjective",
+      "representation": "meanmax54",
+      "patient_probability_pool": null,
+      "C_policy": "fixed",
+      "source_quirk_diagnostic": true
+    },
+    {
+      "id": "patient_meanmax54_noobjective_tuned",
+      "kind": "logistic_regression",
+      "family": "patient_meanmax54_noobjective",
+      "representation": "meanmax54",
+      "patient_probability_pool": null,
+      "C_policy": "tuned",
+      "source_quirk_diagnostic": true
+    }
+  ],
+  "clean_primary_methods": [
+    "cdi_image_mean_fixed",
+    "cdi_image_max_fixed",
+    "patient_mean26_fixed",
+    "patient_meanmax52_fixed"
+  ],
+  "arms": [
+    "original_fit80_frozen_patient_seen",
+    "leave_patient_out79_refit"
+  ],
+  "arm_policy": "Reuse the already fitted and independently audited coefficients/scalers/C in both arms; no new fitting",
+  "primary_arm": "leave_patient_out79_refit",
+  "original_policy_sha256": "e224582bf32a045e7d2593e7b19385cb6c1574578c6a8648f89a66f5b6465518",
+  "leave_out_addendum_sha256": "bb5147a5c40cbdb249d2e64ee5f3a942fea91962ff2d0ed975b84d6981bc16d1",
+  "DINO": "Reuse target-independent original U scores only, exact zero response; no E DINO invented",
+  "formulae": {
+    "D_p_i": "g(treatment,X_i)-g(p_control,X_i)",
+    "D_q_i": "g(treatment,X_i)-g(q_control,X_i)",
+    "h_i": "D_p_i-D_q_i",
+    "p_own_minus_cross": "h_p",
+    "q_own_minus_cross": "-h_q",
+    "K": "h_p-h_q = D_p_p+D_q_q-D_p_q-D_q_p",
+    "base_cancelled_K": "g(q_control,X_p)-g(p_control,X_p)-g(q_control,X_q)+g(p_control,X_q)"
+  },
+  "scenarios": [
+    "U",
+    "E"
+  ],
+  "E_scorer_interpretation": "Same U-fitted scorer applied to E as a response diagnostic, not an E-optimized attack efficacy test",
+  "contexts": [
+    "selection_A",
+    "selection_B",
+    "selection_all",
+    "all41",
+    "background39_A",
+    "background39_B",
+    "background39_all",
+    "p_others40",
+    "q_others40"
+  ],
+  "context_warning": "selection40 includes q; it is not forty nonfocal patients for the q intervention. Shared background39 excludes both p and q (A19/B20).",
+  "statistics": "All fixed method/scenario cells and signed own-minus-cross contrasts; descriptive distributions only",
+  "decision_policy": {
+    "no_new_efficacy_cutoff": true,
+    "no_significance_test": true,
+    "joint_positive_requires_both_own_minus_cross_positive": "K positive alone does not imply this; signs are descriptive and checked against arithmetic precision",
+    "positive_existing_U_response": "Evidence of a fixed-pair matching response already accessible to these existing scores; not new-method necessity",
+    "E_only_response": "No matching U-transfer evidence in this fixed pair/scorers; not universal U impossibility",
+    "mixed_or_negative_response": "No consistent fixed-pair support for the proposed matching-effect explanation; do not select a favorable method or alter q",
+    "all_cases": "K is an analyst-only paired intervention diagnostic, never an externally available attack score or population TPR/FPR"
+  },
+  "no_new_fitting": true,
+  "no_new_C_search": true,
+  "no_R_changes": true,
+  "no_new_AUC": true,
+  "no_CI": true,
+  "no_p_value": true,
+  "calibration_or_test_used": false,
+  "stage2_completion_claim": false,
+  "new_attack_claim": false,
+  "limits": [
+    "Two fixed patient interventions in one shared training realization; observations across other patients are not independent intervention repeats.",
+    "K removes additive intervention/query offsets but not multiplicative sensitivity, pathology/acquisition similarity, or nonlinear optimizer-path interactions.",
+    "The actual target training contains p when producing prior auxiliary79 features; direct auxiliary-fit exclusion is not global independence.",
+    "Historical tuned-C selection included p; all such results remain secondary.",
+    "Removing effective gradient contributions while retaining scheduled zero-loss inputs is the estimand; base pretraining membership remains unknown.",
+    "Influence matrices, mean/reference calibration and common-versus-individual effects have prior art; no novelty follows from this diagnostic alone."
+  ],
+  "execution_binding_policy": "Analysis policy fixed before q training/output; producer code frozen before its execution; checkpoint and completed independent training verification are bound when extraction contract is prepared; verifier code gets its own later verification protocol",
+  "frozen_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\prepare_cross_intervention_policy.py": "89af73680b4a94f9ce932685a945944ae9cc46b1af8abdc01d85a3c17aabf1a2",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\masked_cdi_fixed_scorer_analysis_contract_20260915.json": "e224582bf32a045e7d2593e7b19385cb6c1574578c6a8648f89a66f5b6465518",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\masked_cdi_leave_patient_out_addendum_20260915.json": "bb5147a5c40cbdb249d2e64ee5f3a942fea91962ff2d0ed975b84d6981bc16d1",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\cohort\\lock.json": "187fdbcc6ea8b883e6b82d97f293d7a746df5408632e6f8824a9769866e1dfc4",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\cohort\\evaluation_images.csv": "08efab0eafeeca7cb6b8ff191c2eca2954e092a9c282a69785ac84a1cac35a7e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\cohort\\model_1_train.csv": "68742d1f4909f6b5411fa041473bd6808ba8982893f5219ec754b6d09264043b",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\training_coverage_v2\\protocol.json": "ac4465d8787e4257af0a7be038f429a22064b67c11dba0f381dbe20185eb60ac",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\masked_patient_training_v1\\verification.json": "4aca9e6c02c1f35a2fc96fb3a9f2c8ebd0278a1e662ec3e040d5896a4e83b19b",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\verification.json": "9bf800bbaa03de6c83684aa7ca907c0f2c8690d757f50d9b3d3d39e4f2cd3dad",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\results.json": "f79b4a6b324283e2d3ab777fa4e1bbf564a7261eea66c786d63fe0d25e689a00",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\fixed_scorer_analysis_v1\\protocol.json": "6abce70c53b18015d06c69f9892ee4f8a6b74f5e4a3f5e08e712fb49e0f0a612",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\fixed_scorer_analysis_v1\\provenance.json": "795dedf7313cc27e850843bdbdbab7f802d6aba2b8064b24af5bf9c54e2714b7",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\fixed_scorer_analysis_v1\\analysis.json": "b0e98bc10e2b092bb5741f029e9cd7ba69d2ec57ed9123e238743e9e9a2845fd",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\fixed_scorer_analysis_v1\\patient_scores.json": "a17e3d4bc18666bfd7a80bc0fd87f80d1c9678de2909bdb3316183017c8a665d",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\fixed_scorer_analysis_v1\\original_fitted_parameters.json": "0ae77d3b771a1347bc37b80f2657f3d3d4f9f75727630a3f9db5ef56a527d529",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\fixed_scorer_analysis_v1\\leave_patient_out79_parameters.json": "2b4b3ca6de7a4e03f412c620b79605f098901a5b887e61d2b500068ebfcad542",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\fixed_scorer_analysis_v1\\leave_patient_out79_fit_inputs.json": "c8cee66e772717de6d70e077eb8cdc9f1e1a9f32623bef946d4c5a7744e7424c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260915\\cdi_masked_u82_v1\\fixed_scorer_analysis_v1\\independent_saved_scorer_audit.json": "8e0378d39778d3e40a715ce7e06dc5c0ca45e7d44207f1e73e8846918266a82b",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\results.json": "4f9556a381a337104aa9b0efa66f9daafb4ef171b12940e766454e84112af921",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_u_cohort_v1\\verification.json": "8e0cf8ff81a38ee9951a7058154be15865db56ba8b69d5f8faad1be9f6ef7a1c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\results.json": "a4d9441aed70e96b77fd494b7c0103b43a774f70b6556b60fd7db36a97097aa6",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\cvpr_u_pilot_v1_001\\baseline_screen_20260914\\cdi_e_cohort_v1\\verification.json": "2d08f35355eddccc7996ab2b317ed1c1e6537bf894e2ed38689f499433e16c19",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\cdi_adapter.py": "70d91b15397394d1405c8e930d2ec94ff4dcb0d3bbddd7ace6c8bdd58b0da8ce",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\train_coverage.py": "22cbaa71264e69752ef33e7cf8f98ac759206452617f66cd1897dabc03f7bcbe",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\train_pair.py": "e5cebe2f099af11346d0e5174e4e6d71adf09e42937955efec16490c7f3c6aba",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\run_masked_patient_training.py": "717960d8e6a4daedf6819dc100e2bcc7ce43577b1cddfedfd82d20951fdd43e8",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\u_patient_audit\\analyze_masked_cdi_fixed_scorers.py": "06eb9dab58ec19191ad111506e9b9ee5e57e6245183d7224250b3c0411b9c6f8"
+  }
+}

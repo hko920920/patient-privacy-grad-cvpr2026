@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "common",
+    "host",
+    "methods",
+    "methods/guest",
+]
+resolver = "2"

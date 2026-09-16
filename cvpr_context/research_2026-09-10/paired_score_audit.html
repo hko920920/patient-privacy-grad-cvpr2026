@@ -1,0 +1,178 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PAIRED_SCORE_AUDIT.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><div class="panel notice"><strong>단계 번호 정정: 이 보고서의 작업은 전체 계획의 2번입니다.</strong><br>사용자가 고정한 네 단계에서 1번은 문제·목표 고정으로 완료됐고, 현재는 2번의 기존 방법 실패 조건·원인 검토 중입니다. 아래 과거 원문의 “1번/1단계” 표기는 assistant의 번호 오류입니다. 부분 진단 완료를 2번 전체 완료나 방향 폐기 판단으로 읽지 않습니다. <a href="research_framework.html">고정 연구틀·완료/미완료·다음 작업</a></div><h1>두 모델에서 엇갈린 PFAMI 결과 — 공통 순위와 참여 방향 변화</h1>
+<p>2026-09-14. <strong>학습 참여를 교환한 두 모델에서도 환자 점수 순위가 거의 유지됐다.</strong> 핵심 U relative의 순위 상관은 0.99456이며, A/B 환자 400쌍 중 389쌍은 순서가 같았다. 반대 membership 라벨을 적용하면서 AUC가 0.3550/0.6575로 갈리는 구조를 저장 점수에서 확인했다. 다만 일관된 참여 방향 변화나 유용한 새 방법을 확인한 결과는 아니다.</p>
+<p>사용자 “다음” 지시에 따라 <a href="pfami_comparison_results.html">앞선 PFAMI 고정 비교</a>의 저장 결과만 재분석했다. 큰 순서의 1번 안에서 기존 점수를 이해하는 작업이다. <strong>새 GPU·학습·환자 이미지 평가·threshold fitting은 0</strong>이다. 이전 PFAMI 주비교의 실패를 다른 지표로 통과시키지 않았다.</p>
+<h2>무엇을 구분했나</h2>
+<p>동일 환자의 모델 1/2 점수를 s1, s2라 놓았다.</p>
+<ul>
+<li>공통 성분 c=(s1+s2)/2: 두 모델 사이에서 대칭인 성분.</li>
+<li>변화 성분 d=(s1−s2)/2: 두 모델 사이에서 비대칭인 성분.</li>
+<li>참여 방향 변화 Δ=s_member−s_nonmember: A 환자는 s1−s2, B 환자는 s2−s1.</li>
+</ul>
+<p>c가 순수한 환자 편향이라는 뜻도, d가 순수한 membership 효과라는 뜻도 아니다. 두 모델은 여러 환자를 함께 교환했으므로 다른 환자들의 교환·모델 적응 효과도 차이에 들어갈 수 있다.</p>
+<p><strong>이 분해는 두 모델과 정답을 가진 연구자의 진단이다.</strong> 실제 감사자에게 다른 target의 응답이나 학습 정답을 추가 입력으로 주지 않는다. Δ로 새 공격 AUC를 계산하지 않았다.</p>
+<h2>핵심 U에서 확인한 사실</h2>
+<figure><img alt="동일한 U 환자 40명의 모델별 점수와 참여 방향 변화" src="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/paired_score_audit_20260914_v1/u_relative_pair_plot.png" style="max-width:100%;height:auto"/><figcaption>왼쪽: 같은 환자의 점수는 두 모델에서 매우 비슷하다. 오른쪽: 참여 방향 변화는 양수와 음수가 섞여 있고 A/B 평균 방향도 다르다. 점수 변화의 축 범위가 왼쪽보다 작다.</figcaption></figure>
+<p><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/paired_score_audit_20260914_v1/u_relative_pair_plot.png">PNG 원본</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/paired_score_audit_20260914_v1/u_relative_pair_plot.svg">SVG 원본</a></p>
+<table>
+<thead>
+<tr>
+<th>확인 항목</th>
+<th>U relative 결과</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pearson / Spearman</td>
+<td>0.99724 / 0.99456</td>
+<td>값과 순위 모두 모델 간 매우 비슷함</td>
+</tr>
+<tr>
+<td>모든 환자 쌍의 순서</td>
+<td>762/780 동일, 18 반전, tie 0</td>
+<td>780개의 독립 환자로 세지 않음</td>
+</tr>
+<tr>
+<td>A/B 환자 쌍의 순서</td>
+<td>389/400 동일, 11 반전</td>
+<td>판별 순위에 직접 관련된 비교</td>
+</tr>
+<tr>
+<td>평균 AUC에 대한 반전 기여</td>
+<td>개선 8쌍, 악화 3쌍</td>
+<td>순위가 바뀐 효과의 순합이 작음</td>
+</tr>
+<tr>
+<td>c / d의 환자 간 표준편차</td>
+<td>0.0401297 / 0.00150114</td>
+<td>이번 저장 점수의 대칭 성분 변동이 큼</td>
+</tr>
+<tr>
+<td>공통 분산 비중</td>
+<td>99.8603%</td>
+<td>var(c)/(var(c)+var(d)); 환자 편향의 비중으로 해석하지 않음</td>
+</tr>
+<tr>
+<td>Δ 양수 / 음수</td>
+<td>23 / 17명</td>
+<td>포함된 모델에서 점수가 모두 높아지지는 않음</td>
+</tr>
+<tr>
+<td>평균 Δ</td>
+<td>+0.0006146 [−0.0003230, +0.0014663]</td>
+<td>평균 상승 구간에 0 포함</td>
+</tr>
+<tr>
+<td>A 그룹 평균 Δ / 양수</td>
+<td>−0.0004231 / <strong>20명 중 9명</strong></td>
+<td>모델 1이 member인 그룹</td>
+</tr>
+<tr>
+<td>B 그룹 평균 Δ / 양수</td>
+<td>+0.0016522 / <strong>20명 중 14명</strong></td>
+<td>모델 2가 member인 그룹</td>
+</tr>
+</tbody>
+</table>
+<p>평균 Δ가 0과 구분되지 않았다는 판단은 이 개발자료·고정 모델에서의 탐색적 구간에 제한된다. 작은 효과나 누출이 존재하지 않는다고 입증한 것은 아니다. A/B의 반대 평균 방향을 특정 모델의 학습 실패나 split bias로 확정하지 않는다.</p>
+<h2>AUC가 반대로 나오는 구조</h2>
+<p>두 모델에 동일한 공통 점수 c를 사용하면 A를 member로 보는 AUC는 <strong>0.3450</strong>, B를 member로 보는 AUC는 <strong>0.6550</strong>이다. 반대 라벨을 적용하므로 두 AUC 합은 항상 1이다. 이는 tie를 포함하는 항등식이며, 자체로 bias를 증명하는 실험 결과는 아니다.</p>
+<p>실제 점수에서는 AUC가 <strong>0.3550/0.6575</strong>가 되어 공통 점수보다 각각 <strong>+0.0100/+0.0025</strong> 바뀌었다. 두 모델 AUC 평균에서 0.5를 뺀 값은 <strong>+0.00625 [−0.00753, +0.02250]</strong>이다. 이것은 연구자의 두 모델 진단값이며 새로운 배포용 공격의 성능이 아니다.</p>
+<p>A/B 환자 쌍마다 공통 차이를 a=c_A−c_B, 변화 차이를 b=d_A−d_B로 놓으면 평균 AUC 초과분에 대한 기여는 다음과 같다.</p>
+<pre><code class="language-text">H(z) = 1 if z&gt;0, 0.5 if z=0, 0 if z&lt;0
+pair contribution = 0.5 * [H(a+b) - H(a-b)]
+</code></pre>
+<p><code>|b|&lt;|a|</code>이면 이 쌍의 순서는 바뀌지 않는다. 실제 400쌍의 기여는 양수 8개·음수 3개·0인 쌍 389개였고, 합 2.5를 400으로 나누면 0.00625가 된다. <strong>점수 변화가 있는 것과 그 변화가 환자 간 판별 순위를 개선하는 것은 서로 다른 조건</strong>임을 이번 값으로 구분했다.</p>
+<p>높은 상관·높은 공통 분산 비중만으로 변화 부재를 판정하지 않는다. 또한 위 평균 AUC 초과분을 <code>AUC(d)−0.5</code>와 동일시하지 않는다.</p>
+<h2>다른 점수와 E 결과도 함께 남긴다</h2>
+<table>
+<thead>
+<tr>
+<th>조건·점수</th>
+<th style="text-align: right;">순위 상관</th>
+<th style="text-align: right;">Δ&gt;0 환자</th>
+<th>평균 Δ [95% 구간]</th>
+<th>두 모델 AUC 평균−0.5 [95% 구간]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U · 상대 변화</td>
+<td style="text-align: right;">0.99456</td>
+<td style="text-align: right;">23/40</td>
+<td>0.0006146 [-0.0003230, 0.0014663]</td>
+<td>0.00625 [-0.00753, 0.02250]</td>
+</tr>
+<tr>
+<td>U · 손실 차이</td>
+<td style="text-align: right;">0.99531</td>
+<td style="text-align: right;">21/40</td>
+<td>0.0001097 [-0.0000403, 0.0002614]</td>
+<td>0.00750 [-0.00250, 0.02250]</td>
+</tr>
+<tr>
+<td>U · 음의 원본 손실</td>
+<td style="text-align: right;">0.99756</td>
+<td style="text-align: right;">22/40</td>
+<td>0.0000822 [-0.0000785, 0.0002495]</td>
+<td>0.00125 [-0.00750, 0.01125]</td>
+</tr>
+<tr>
+<td>U · base 상대 변화 차감</td>
+<td style="text-align: right;">0.98743</td>
+<td style="text-align: right;">23/40</td>
+<td>0.0006146 [-0.0003230, 0.0014663]</td>
+<td>0.00750 [-0.00875, 0.02375]</td>
+</tr>
+<tr>
+<td>E · 상대 변화</td>
+<td style="text-align: right;">0.99193</td>
+<td style="text-align: right;">24/40</td>
+<td>0.0003178 [-0.0005464, 0.0011866]</td>
+<td>-0.00250 [-0.02125, 0.01500]</td>
+</tr>
+<tr>
+<td>E · 손실 차이</td>
+<td style="text-align: right;">0.99118</td>
+<td style="text-align: right;">22/40</td>
+<td>0.0001097 [-0.0000577, 0.0002767]</td>
+<td>0.00375 [-0.01250, 0.02000]</td>
+</tr>
+<tr>
+<td>E · 음의 원본 손실</td>
+<td style="text-align: right;">0.99681</td>
+<td style="text-align: right;">25/40</td>
+<td>0.0001829 [0.0000148, 0.0003552]</td>
+<td>0.00375 [-0.00750, 0.01625]</td>
+</tr>
+<tr>
+<td>E · base 상대 변화 차감</td>
+<td style="text-align: right;">0.98724</td>
+<td style="text-align: right;">24/40</td>
+<td>0.0003178 [-0.0005464, 0.0011866]</td>
+<td>0.00125 [-0.01375, 0.01753]</td>
+</tr>
+</tbody>
+</table>
+<p>Δ의 단위가 점수마다 다르므로 평균 크기를 점수 간 성능 순위처럼 비교하지 않는다. E는 member 환자의 후보 영상이 해당 모델의 학습에 포함되는 진단이고, U의 관측 영상은 두 모델 모두 학습에 없다. 모든 통계의 고유 환자는 40명이다.</p>
+<p><strong>E의 음의 원본 손실에서는 평균 Δ가 +0.0001829 [0.0000148, 0.0003552]인 양의 개발 관측이 있다.</strong> 이를 숨기거나 “아무 변화도 없다”고 정리하지 않는다. 하지만 해당 점수의 E AUC는 0.4650/0.5425였으며, U의 주결론·정규화 우위·실용적인 환자 판별을 입증하지 않는다. 여러 조건 중의 보조 관측이고 사후 선택을 보정한 확증 결과가 아니다.</p>
+<h2>공개 base 차감이 실제로 바꾼 것</h2>
+<p>같은 환자의 base 점수 b0를 두 target 점수에서 빼면 c는 c−b0로 바뀌지만 <strong>d와 Δ는 대수적으로 그대로</strong>다. 원시 영상·환자 집계에서 이를 확인했으며 환자별 Δ의 최대 오차는 2.78×10⁻¹⁷, 부호 변경은 0건이었다.</p>
+<p>U에서 c의 표준편차는 0.0401297에서 0.0264798로 줄었고 d의 표준편차는 0.00150114로 그대로였다. 환자마다 다른 base 값을 빼므로 각 모델의 환자 간 순위와 AUC는 바뀔 수 있다. 실제 base-relative AUC는 0.4375/0.5775였다. <strong>모델 간 참여 방향 변화가 새로 생겼거나 순수한 membership 신호만 남았다는 뜻은 아니다.</strong></p>
+<h2>설계에 반영할 판단</h2>
+<p>이번에 좁힌 문제는 <strong>환자 간 점수 차이, 모델 간 점수 변화, 판별 순위의 개선을 분리해서 입증해야 한다</strong>는 점이다. 단순히 반응이 전달되거나 평균 값이 움직인다고 유용한 환자 판별이 따라오지는 않는다.</p>
+<p>다음 방법의 근거가 되려면, 실제 감사자에게 허용된 단일 target·공개 base·보조자료로 무엇을 제거하거나 얻을 수 있는지 설명해야 한다. 이번 c나 정답 정렬 Δ를 그대로 공격 입력으로 쓰는 것은 허용된 설정이 아니다. 공통 성분을 보정한다는 방향만으로 신규성을 주장할 수도 없으며 기존 점수 보정·특징 결합과의 대조가 남는다. <a href="method_premise_audit.html">기존 방법의 조건과 현재 R의 미확인 전제</a>를 따른다.</p>
+<p><strong>이번 결과는 현재 R을 더 튜닝하거나 target 학습을 늘려야 할 근거를 추가하지 않았다.</strong> PFAMI의 저장 점수에서 확인한 구조를 R의 확정 실패 원인으로 옮기지도 않는다. 새로운 알고리즘을 찾았다고 보고하지 않고, 이 고정된 점수 진단은 여기서 닫는다.</p>
+<h2>검산·시간·기록</h2>
+<ul>
+<li>A/B 각 20명의 라벨 교환과 실제 checkpoint의 학습 노출을 확인했다. E는 member target에만 4–5회 노출되고 U는 양쪽 0회였다.</li>
+<li>두 target의 영상×10시점×2view noise seed/hash <strong>3,200쌍</strong>이 같았다. 공통 학습 512장과 각 모델 전용 400장, 같은 초기화 seed를 확인했다. 단일 환자만 차이 나는 모델 쌍이 아니다.</li>
+<li>원 분석 소스를 import하지 않은 독립 검산기가 8조건·환자 행 320개·값 1,600개, 순위 비교 6,240건과 A/B 기여 3,200건을 대조했다. 이 비교 건수를 독립 표본 수로 쓰지 않았다.</li>
+<li>sklearn AUC 32개(기존 AUC 16개 포함), 상관 16개, 표본 빈도 가중치 방식의 bootstrap 구간 16개가 일치했다. 최대 수치 차이는 3.33×10⁻¹⁶였다.</li>
+<li>A/B 층화 bootstrap 2,000회, seed 260914, 원 PFAMI와 동일한 환자 순서·추출 hash를 사용했다. 고정 모델과 이미 관측한 개발 표본에 조건부인 사후 분석이며, 모델 학습 변동이나 이전 선택을 보정한 구간이 아니다.</li>
+<li>데이터 검산 CPU 0.498초, 분석 프로세스 약1.13초, 독립 통계 검산 CPU 0.319초(프로세스 약2.75초)였다. 새 GPU 연산은 0이다.</li>
+<li>전체 작업은 예상10–15분으로 안내했으며, 분석기·검산기 연결과 기록에 예상보다 시간이 들었다. 실제 시작은22:16 KST, 종료 시각·전체 소요는 <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/paired_score_audit_20260914_v1/final_summary.json">최종 요약</a>에 남긴다.</li>
+</ul>
+<p><a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/paired_score_audit_20260914_v1/contract.json">분석 전 고정한 범위</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/paired_score_audit_20260914_v1/protocol.json">입력·코드 결속</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/paired_score_audit_20260914_v1/analysis.json">전체 통계·환자 값·400쌍 원시 기여</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/paired_score_audit_20260914_v1/data_integrity.json">라벨·노출·noise 검산</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/paired_score_audit_20260914_v1/independent_verification.json">독립 통계 검산</a> · <a href="../../code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/paired_score_audit_20260914_v1/plot_manifest.json">그림 출처·hash</a></p>
+<p>기존 PFAMI 결과·동결 코드는 보존했다. 추가 환자 평가, R 튜닝, 보정/시험 자료 사용, target 재학습, 새 공격 성능 주장은 없다.</p></main></body></html>

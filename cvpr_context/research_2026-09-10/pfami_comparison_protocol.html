@@ -1,0 +1,26 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PFAMI_COMPARISON_PROTOCOL.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><div class="panel notice"><strong>단계 번호 정정: 이 보고서의 작업은 전체 계획의 2번입니다.</strong><br>사용자가 고정한 네 단계에서 1번은 문제·목표 고정으로 완료됐고, 현재는 2번의 기존 방법 실패 조건·원인 검토 중입니다. 아래 과거 원문의 “1번/1단계” 표기는 assistant의 번호 오류입니다. 부분 진단 완료를 2번 전체 완료나 방향 폐기 판단으로 읽지 않습니다. <a href="research_framework.html">고정 연구틀·완료/미완료·다음 작업</a></div><h1>1번 안의 PFAMI 비교 — 고정 실행 계약</h1>
+<p>2026-09-14. <strong>큰 순서의 1번, 기존 방법이 잡는 정보와 놓치는 정보를 확인하는 작업이다.</strong> 앞선 원문·코드 검토 다음에 수행하는 비교이며, 새 R 방법의 확대 단계가 아니다.</p>
+<h2>이번에 답할 질문</h2>
+<p>기존 두 의료 LoRA 모델의 U 관측 영상에서 <strong>원본/crop의 상대 손실 변화</strong>가 단순 손실 차이보다 환자 판별 정보를 더 주는가? E는 같은 실행의 진단 대조다. 이것이 SecMI가 약했던 원인을 확정하거나 R의 기여를 증명하는 실험은 아니다.</p>
+<p><a href="method_premise_audit.html">원문 대조</a>의 PFAMI를 선택했다. 원저자 통계의 loss/feature 계산을 보존하고, 256px 의료 latent diffusion에 적용한 PFAMI-style adaptation으로 명시한다. 원 논문의 SD 성능을 재현했다고 부르지 않는다.</p>
+<h2>실행 전에 고정한 선택</h2>
+<ul>
+<li>기존 selection40명, 환자당 E 2장·U 2장, model_1/model_2. fit 환자14393의 별도 실행은 전처리·시간 확인용이며 성능 표에서 제외한다.</li>
+<li>이미 공개한 일반 prompt와 실제 epsilon scheduler를 유지한다.</li>
+<li>원본은 학습 때 만든 FP16 VAE posterior-mode cache를 쓴다. crop은 canonical256px 영상의 tensor 중앙207px를 bilinear/antialias=True로256px로 되돌린 뒤 같은 FP16 VAE mode로 인코딩한다. UNet·loss는 FP32다.</li>
+<li>crop 강도는 원저자 stat의 grid index5, 73/90이다. timestep은0,50,…,450, 각원본/crop당noise1개다.</li>
+<li>원본/crop, timestep, target/base 사이에는 독립 noise를 쓴다. 두 target 모델의 동일 영상·view·시점만 noise를 공유하여 모델 비교의 Monte Carlo 변동을 줄인다.</li>
+<li>주점수: <code>mean_t[(L_crop-L_original)/L_original]</code>, 큰값=member. 그후 같은환자영상2개의 평균을 낸다.</li>
+<li>주비교: <code>mean_t[L_crop-L_original]</code>. 같은20forward를 사용하므로 정규화의 차이를 비교할 수 있다. 이는 후속SD 구현의 점수 형태를 같은입력에 적용한 대조이며 그논문전체의 재현은 아니다.</li>
+<li>음의 원본loss 평균은 부가 진단이다. 독립실행하면10forward이므로 같은비용의우위라고 말하지 않는다.</li>
+<li>base의 상대반응을 차감한 값은 부가진단이다. 공개base는 원문의 별도disjoint의료reference모델이 아니다. 보조점수로U주비교를 구제하지 않는다.</li>
+<li>분모 epsilon이나clipping을 넣지 않는다. 0·비유한loss는 실행오류로기록하고 원인을검토한다.</li>
+</ul>
+<h2>표본·분석·종료</h2>
+<p>selection40은 기존개발에서 이미 본자료이며 미개봉시험이아니다. 환자A/B각20명을층화한2,000회bootstrap을 모든점수·모델·E/U에서공유한다. AUC수준과정규화−차이의paired ΔAUC및95%구간을모델별보고한다. 시점·사진을독립환자로세지않는다.</p>
+<p>새로운 임의합격선을 만들지 않는다. 양쪽U에서상대이득이관측되더라도 개발관측으로제한하고절대판별력도함께본다. 구간이넓거나방향이다르면추가이득미확인이다. 어떤결과든이번고정측정후닫으며 부호·crop·시점수정,표본확대,R튜닝,추가target학습,calibration/test개방을자동으로진행하지않는다.</p>
+<h2>계산량과 기록</h2>
+<p>본측정은160개고유영상,320target영상평가+160base영상평가다. target6,400F+base3,200F=9,600F/0B이며 crop VAE160영상의인코딩비용은별도다. fit1벤치마크도별도계상한다. 원시20개잔차와시점별loss를보존해CPU에서손실·정규화·환자집계·통계를독립검산한다.</p>
+<p>기계실행계약: <code>code_working/_reports/cvpr_u_pilot_v1_001/baseline_screen_20260914/pfami_preparation_v1/contract.json</code>. 실제실행protocol은입력·체크포인트·계산코드hash를결속한다. 기존결과를덮어쓰지않는다.</p>
+<p>시간안내: 정의·연결검토15–25분을먼저보고했다. GPU시간은fit1실측후별도보고하며문헌query수를확정walltime으로환산하지않는다. 이문서는실행전계약이고 실제결과는후속실행기록을따른다.</p></main></body></html>

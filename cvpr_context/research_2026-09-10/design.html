@@ -1,0 +1,430 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EXPERIMENT_DESIGN.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>환자 간접 노출 감사와 DP 보호 비교 — 실제 설계 초안 v0.1</h1>
+<p><strong>2026-09-15 현재 작업 기준:</strong> <a href="paper_level_redesign.html">졸논–CVPR의 전체 주장과 설계 연결</a>을 우선한다. 아래는 교차 사진 공격 후보의 원 설계 이력이다. 현재 R의 개선이나 미시 진단을 연구 목표로 삼지 않고, 환자 노출 평가가 보호 비교에 무엇을 추가할지부터 구체화한다.</p>
+<p>2026-09-14 실제 비교 후속: <a href="pfami_comparison_results.html">1번 안의 PFAMI 고정 비교 결과</a>. 선택 40명에서 U의 정규화 추가 이득을 확인하지 못했다. 원시 잔차·통계 검산은 통과했으나 새 방법의 우위 근거는 아직 없으며 R 확대 보류를 유지한다.</p>
+<p>2026-09-14 문헌·설계 대조 후속: <a href="method_premise_audit.html">기존 방법의 작동 조건과 현재 U 후보의 근거</a>. 교차 사진 반응 자체는 관측됐으나, membership에 특이적인 추가 정보와 강한 기존 방법 대비 이득은 미확인이다. 아래는 원 설계 이력이며 현재 R의 확대 보류를 유지한다.</p>
+<p>실행 후속: 현재 구현·분할·학습·감사 실행 상태는 <a href="u_execution_status.html">U 실험 실행 기록</a>을 따른다. 이 문서와 v0.1 JSON의 초기 상태는 작성 당시 기록이다.</p>
+<p>2026-09-14 후속: 최신 실행 순서는 <a href="u_execution_plan.html">U 중심 실행 계획</a>을 따른다. U를 첫 데이터 분할·파일럿부터 주조건으로 두며, 아래 v0.1의 공통 K10 평가 경로는 실제 U 적격 수와 학습 manifest가 맞을 때만 가능하다. 아래 후보 수치는 초기 제안이며 기존 졸논 동결 계약은 별도다.</p>
+<p>2026-09-10. 상태: <strong>검증할 방법과 실험의 설계 초안. 새 공격 구현·의료 membership 결과·학습 실행 계약의 확정은 아직 아니다.</strong></p>
+<p><a href="purpose.html">연구 목적</a> · <a href="rationale.html">앞선 상세 근거</a> · <a href="baseline_preparation.html">비교군 준비</a> · <a href="experiment_design.json">설계 사양 JSON</a> · <a href="design_feasibility.json">현재 데이터 규모 확인</a> · <a href="runtime_review.html">실험별 시간 검토·Spark 4대 계산</a>.</p>
+<p>2026-09-11 후속: Spark 4대 보유 전언을 조건으로 <a href="RUNTIME_REVIEW.md">설계별 작업량·시간 검토</a>를 추가했다. 기존 3070 한 대 일정은 당시 자원 가정이며, 새 표에는 실측/가정, 모델·환자 수, baseline별 비용, U 조건의 추가 모델 필요성을 구분했다. 실제 Spark 접근·학습·공격 실행이나 동결 계약 변경은 아니다.</p>
+<p><strong>연구 질문은 “같은 환자의 여러 영상에 걸쳐 이어지는 미세조정 반응을 감사에 이용하면, 기존 평가가 놓치던 환자 노출을 측정하고 DP 보호의 효과·효용·비용을 더 엄밀하게 비교할 수 있는가?”로 둔다.</strong> 첫 방법 후보는 일부 영상에서 탐색한 conditioning 반응을 같은 환자의 나머지 영상에 적용하는 검사다. 실제 차이가 확인되면 환자 집합 감사법으로 발전시키고, 차이가 없으면 이 방법 주장을 중단한다.</p>
+<h2>1. 앞선 근거를 설계로 바꾸기</h2>
+<p>대화에서 첫째부터 여덟째까지 설명한 논거를 아래처럼 실행 질문으로 옮겼다. 상세 근거 문서의 12개 절과 번호를 일대일로 동일시하지 않는다.</p>
+<table>
+<thead>
+<tr>
+<th>근거</th>
+<th>설계에서 지킬 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>보호 대상은 한 환자</td>
+<td>판정·분할·오탐·불확실성의 단위를 환자로 통일</td>
+</tr>
+<tr>
+<td>영상별 한 숫자 집계가 정보를 버릴 수 있음</td>
+<td>영상별 점수뿐 아니라 다른 영상으로 전달되는 반응을 측정</td>
+</tr>
+<tr>
+<td>사진 상관은 교란일 수 있음</td>
+<td>다른 환자의 유사 영상, 중복·유사도 통계, 선형 gradient 관계를 대조</td>
+</tr>
+<tr>
+<td>사진 수가 오탐에 영향을 줌</td>
+<td>모든 방법에 동일한 전체 환자 단위 보정; 관측 수 m별 결과</td>
+</tr>
+<tr>
+<td>이미 강한 집합·최적화 공격이 있음</td>
+<td>CDI·MoFit·PFAMI 등 원형과 강한 환자 확장을 비교</td>
+</tr>
+<tr>
+<td>개인 특징과 학습 참여 흔적의 구분이 필요</td>
+<td>미세조정 전후 차이, 비슷한 다른 환자, 참여를 바꾼 모델을 대조</td>
+</tr>
+<tr>
+<td>계산량이 제한됨</td>
+<td>2장부터 고정 예산으로 시작; base 연산·역전파·보조 학습도 비용에 포함</td>
+</tr>
+<tr>
+<td>기존 자산으로 반증 가능해야 함</td>
+<td>공개 개발 진단 → 방법 고정 → 졸논과 공통인 최종 모델 평가 순서</td>
+</tr>
+</tbody>
+</table>
+<h2>2. 무엇을 알고 무엇을 판별하는가</h2>
+<p>주 설정은 <strong>배포된 SD2.1/LoRA와 공개 base에 접근하는 white-box 감사</strong>다. 모델 가중치를 바꾸지 않고 감사용 입력 conditioning만 최적화한다. 후보 환자의 영상 집합과 영상들이 같은 환자라는 연결은 주어지며, 환자 이름이나 학습 로그는 주어지지 않는다. 연구자가 보유한 정답 학습 manifest는 평가 label을 만드는 데만 쓴다.</p>
+<p>환자의 실제 학습 기여 수를 <code>k_train</code>, 감사자가 가진 사진 수를 <code>m</code>, 그중 실제 학습 사진 수를 <code>r_overlap</code>으로 따로 기록한다. 멤버는 해당 환자의 허용된 기록 중 하나 이상이 미세조정 training manifest에 있는 경우다. 실제 optimizer 노출 횟수도 별도로 기록하며, 유한 학습에서 아직 한 번도 뽑히지 않은 training member를 결과에 따라 제외하지 않는다.</p>
+<table>
+<thead>
+<tr>
+<th>시나리오</th>
+<th>양성 환자의 감사 사진</th>
+<th>음성 환자의 감사 사진</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E: 원래 학습 기록</td>
+<td>처음에는 모두 학습 기록, <code>r_overlap=m</code></td>
+<td>동일 모집단의 미참여 환자 기록</td>
+<td>먼저 검출할 수 있는지 확인하는 기본 실험</td>
+</tr>
+<tr>
+<td>U: 같은 환자의 다른 기록</td>
+<td>전부 실제 학습에서 제외된 기록, <code>r_overlap=0</code></td>
+<td>미참여 환자의 기록</td>
+<td>환자의 다른 촬영으로도 참여 흔적이 이어지는지 확인</td>
+</tr>
+<tr>
+<td>P: 부분 겹침, 후속</td>
+<td><code>0&lt;r_overlap&lt;m</code></td>
+<td>미참여 환자의 기록</td>
+<td>실제 감사에서 겹침 비율을 모르는 경우</td>
+</tr>
+</tbody>
+</table>
+<p>E의 성공으로 U의 성공을 주장하지 않는다. U는 사전에 남겨 둔 사진 또는 cap 밖의 실제 미사용 사진과 중복 검사가 필요하다. <code>K=5</code>를 모두 학습에 쓰고 U에서 2장을 쓰려면 원자료가 최소 7장 있어야 한다. 사진을 복제하거나 증강해 독립 촬영 수를 채우지 않는다. <code>m=1</code>은 단일영상 기준선이고, 관계 방법의 첫 조건은 <code>m=2</code>, 다음은 <code>m=5</code>다.</p>
+<p>주 감사 prompt는 공개 고정 문구 <code>a frontal chest radiograph</code>로 시작한다. 원래 training condition을 정확히 아는 조건은 별도 비교다. 의료 label·정답 caption을 우리 방법에만 주지 않는다. base의 사전학습 중복을 배제할 수 없으면 주장을 <strong>추가 미세조정 참여</strong>로 한정한다.</p>
+<h2>3. 첫 알고리즘 후보: 다른 사진에 전달되는 conditioning 반응</h2>
+<p>직관: 사진 A에 맞춰 찾은 반응을 A에서만 평가하면 단일영상 최적화 효과다. <strong>A에서 찾은 반응을 같은 환자의 B에 적용했을 때도 나타나는지</strong>를 측정한다. 이어 비슷한 다른 환자 사진에도 나타나는 반응을 빼서 환자에 특이적인 부분이 남는지 본다. 이 전이가 member에서 더 크거나 구별 가능한지는 가설이지 관측 사실이 아니다.</p>
+<p><code>L_theta(x,e;omega)</code>는 고정 전처리·scheduler에 맞는 per-image denoising MSE다. target과 base에 같은 latent, timestep, noise를 넣는다. prediction type은 실제 checkpoint 계약을 확인한다. 서로 다른 사진의 noise는 독립이며, 동일 사진의 base/target 및 paired 비교만 같은 noise를 쓴다.</p>
+<pre><code class="language-text">theta = 감사 대상 모델, theta0 = 미세조정 전 공개 base
+e0 = 고정 공개 prompt embedding
+U = 환자·모델 결과와 무관하게 고정한 8차원 직교 basis
+e(a) = e0 + ||e0||_F U a,  ||a||_2 &lt;= 0.05
+D_x(a; omega) = L_theta0(x, e(a); omega) - L_theta(x, e(a); omega)
+
+환자 사진을 고정 hash로 S와 Q 두 묶음으로 나눈다.
+a_S = support S의 평균 D_x(a)를 크게 하는 6-step projected gradient ascent
+T(S -&gt; Q) = mean_Q [D_x(a_S) - D_x(0)]
+C(S -&gt; Q) = 같은 a_S를 사전에 고른 다른 환자 대조 사진에 적용한 평균 변화
+R(S -&gt; Q) = T(S -&gt; Q) - C(S -&gt; Q)
+R_patient = Q와 S를 바꾼 두 방향 R의 query 수 가중 평균
+</code></pre>
+<p>초기 <code>a=0</code>, normalized-gradient step size <code>0.01</code>, 반경 <code>0.05</code>, 6회 고정 반복을 <strong>최초 진단 기본값</strong>으로 제안한다. 이것들은 최적값이나 확정된 실험 계약이 아니다. probe 입력 차원 8은 학습 LoRA rank 8과 별개다. 행렬 U는 text embedding 전체 공간에서 만들고 token mask·padding 처리도 고정한다. 모델 weight, VAE, text encoder는 업데이트하지 않는다.</p>
+<p>support 최적화에는 timesteps <code>[250,500,750]</code>와 각 1개 noise를, query 평가에는 <code>[50,250,500,750,950]</code>와 각 2개 새 noise를 쓴다. 사진뿐 아니라 최적화용/평가용 noise bank도 분리한다. <code>m=2</code>는 A→B와 B→A이고, <code>m=5</code>는 2장/3장 분할을 교환한다. 중복 영상이 두 묶음을 가로지르지 않게 먼저 처리한다.</p>
+<p>대조 사진은 후보 사진마다 target과 독립인 공개 encoder의 유사도로 <strong>다른 환자 2명에게서 1장씩</strong> 고른다. 대조 bank는 학습에 넣지 않은 별도 공개 자료로 고정한다. 참조 선택에 membership label·target attack score를 쓰지 않는다. bank 구축·encoder·검색·대조 사진의 모델 호출도 비용이다. target-independent matching만으로 질환·기관 교란이 완전히 제거된다고 가정하지 않는다.</p>
+<p>먼저 R 단독, 기존 강한 영상 점수 집계, 그 집계에 R만 추가한 같은 분류기를 비교한다. R의 부호·결합 가중치·정규화·threshold를 최종 시험 label로 고르지 않는다. 학습형 비교는 동일한 알려진 member/nonmember 환자 수를 갖는 별도 개발 집합에서 fitting하고, 정규화도 그 집합으로 한정한다.</p>
+<h3>이것이 왜 아직 새 방법의 기여는 아닌가</h3>
+<p>conditioning 최적화와 단일영상 반응 증폭은 <a href="https://arxiv.org/html/2602.22689v1">MoFit</a>의 직접 선행이며, 집합 feature 결합·noise 최적화는 <a href="https://arxiv.org/html/2411.12858v3">CDI</a>와 겹친다. target/base 차이·subset 집계도 이미 쓰이는 도구다. 이번 보완 검색에서 diffusion <strong>언어</strong> 모델의 <a href="https://github.com/Stry233/SAMA">SAMA 공식 초록·저자 코드</a>를 확인했으며, 이를 의료영상 patient method의 직접 재현이나 기존 79편 전문 검토에 포함시키지 않는다.</p>
+<p>따라서 기여 후보는 <strong>미세조정으로 생긴 환자 공통 반응의 교차 사진 전이를 발견하고, 강한 단일영상·표준 집합 방법이 설명하지 못하는 부분을 검출하는 것</strong>이다. “MoFit을 여러 장에 적용”한 정도로 충분하다는 근거는 없다. 작은 probe에서는 전이가 gradient 내적과 같은 선형 관계로 설명될 수 있으므로 그 기준선을 반드시 둔다. 그 정도로 차이가 사라지면 새 방법 주장을 멈춘다.</p>
+<h2>4. 반드시 이겨야 할 비교와 제거 실험</h2>
+<table>
+<thead>
+<tr>
+<th>비교군</th>
+<th>공정하게 강화할 방식</th>
+<th>분리하는 질문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>고정 denoising loss·SecMI</td>
+<td>mean/max/median/top-25% 집계와 동일 환자 보정</td>
+<td>졸논 기본 평가보다 무엇이 추가되는가</td>
+</tr>
+<tr>
+<td>CLiD·PFAMI</td>
+<td>동일 prompt 정보, timestep·변형 예산, 환자 집계</td>
+<td>기존 조건·perturbation 반응보다 유용한가</td>
+</tr>
+<tr>
+<td>MoFit</td>
+<td>공식 방법 + 동일 예산 early stopping + 영상별 결과의 강한 집계</td>
+<td>최적화를 더 많이 한 효과인가</td>
+</tr>
+<tr>
+<td>CDI</td>
+<td>원래 절차와 환자에 맞춘 feature 결합을 모두 명시</td>
+<td>기존 집합 공격으로 이미 해결되는가</td>
+</tr>
+<tr>
+<td>GSA1/2·Tracing</td>
+<td>같은 weight/gradient 접근, loss-only 대조, 전체 UNet과 LoRA-only 구별</td>
+<td>기존 gradient 정보보다 유용한가</td>
+</tr>
+<tr>
+<td>Quantile</td>
+<td>개발 nonmember fitting + 공통 환자 calibration</td>
+<td>난이도 보정이나 threshold 효과인가</td>
+</tr>
+<tr>
+<td>표준 집합 모델</td>
+<td>같은 원시 feature의 Deep Sets, moments, 선형 gradient Gram</td>
+<td>구조를 이용했다는 표현만 새로운가</td>
+</tr>
+</tbody>
+</table>
+<p>모든 방법을 처음부터 모든 설정에 전부 돌리는 계획은 아니다. 최초 feature 검증은 loss·SecMI·PFAMI, 직접 방법 판정 전에는 CDI·MoFit·CLiD 및 gradient 비교를 갖춘다. 전체 최신 비교 후보·접근 조건은 <a href="comparison_plan.json">기존 비교 계획</a>에 남아 있다. SD-MIA처럼 출력 API를 전제로 한 방법은 API 조건을 따로 맞춘 표에서 평가하며 다른 접근권한의 숫자를 한 순위표로 섞지 않는다.</p>
+<p>제거 실험은 ① 자기 사진에서 탐색·평가 ② 다른 사진으로 전이 ③ base 차이 제거 ④ 다른 환자 대조 제거 ⑤ 선형 gradient 관계만 사용 ⑥ 실제 환자 묶음을 조건을 맞춘 다른 환자 묶음으로 교체다. 마지막 분석은 membership·사진 수 등 평가 조건을 보존한 진단 대조이며, label을 몰라야 하는 실제 공격의 입력 선택에 쓰지 않는다. <strong>기존 MoFit으로 A에서 만든 conditioning을 B에 그대로 적용한 확장판</strong>도 필수다. 여기서 이득이 같으면 우리 probe 설계의 독립 기여는 약해진다.</p>
+<p>공개 encoder의 유사도·촬영 수·진단 구성 등 target과 무관한 특징만으로 membership가 구별되는지도 확인한다. 단순 base==target에서 D가 0인 것은 산술 점검일 뿐, 사전학습 오염이나 분할 교란을 배제하는 증거가 아니다. B0 자체의 기존 공격 점수도 별도로 확인한다.</p>
+<h2>5. 자료 규모, 오탐과 판정</h2>
+<p>현재 <code>patients_private.csv</code>의 환자 메타데이터를 읽어 집계한 값이다. 이미지 파일을 열거나 membership 점수를 계산한 결과가 아니다. <code>pa_image_count</code>는 cap 이전의 manifest 가용 수이며 모든 파일의 접근·중복 제거·U 시나리오 적격성까지 확인한 숫자가 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>분할</th>
+<th style="text-align: right;">전체 환자</th>
+<th style="text-align: right;">원자료 2장 이상</th>
+<th style="text-align: right;">원자료 5장 이상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public_development</td>
+<td style="text-align: right;">1,816</td>
+<td style="text-align: right;">886</td>
+<td style="text-align: right;">308</td>
+</tr>
+<tr>
+<td>private_train</td>
+<td style="text-align: right;">8,476</td>
+<td style="text-align: right;">3,991</td>
+<td style="text-align: right;">1,392</td>
+</tr>
+<tr>
+<td>privacy_attack_holdout</td>
+<td style="text-align: right;">1,816</td>
+<td style="text-align: right;">865</td>
+<td style="text-align: right;">304</td>
+</tr>
+<tr>
+<td>final_test</td>
+<td style="text-align: right;">1,818</td>
+<td style="text-align: right;">1,019</td>
+<td style="text-align: right;">620</td>
+</tr>
+</tbody>
+</table>
+<p>따라서 <strong>공개 자료의 m=2 진단 → 별도 방법 검증 → m=5 확장</strong> 순서가 맞다. m=5를 처음부터 중심으로 두면 공격 fitting·선택·보정·시험에 나눌 독립 환자가 빠르게 줄어든다. <code>final_test</code>는 기존 효용 평가 역할과 출처가 있으므로 숫자가 크다는 이유로 MIA nonmember에 자동 투입하지 않는다.</p>
+<p>개발 fitting·방법 선택·nonmember calibration·최종 시험을 환자 단위로 분리한다. public shadow 학습·대조 bank와 이 역할들의 겹침도 명세한다. 고정 score의 환자 calibration p값은 다음처럼 만들 수 있다.</p>
+<pre><code class="language-text">p(x) = [1 + calibration nonmember 중 S &gt;= S(x)인 환자 수] / (n_cal + 1)
+</code></pre>
+<p>이는 calibration과 시험의 nonmember 환자 묶음이 교환 가능한 조건의 marginal 보정이다. 임의 분포 이동이나 모든 질환·m별 조건부 오탐 보장이 아니다. 각 m를 별도 고정하거나 충분한 strata를 만들고, 소표본 strata는 탐색 결과로 표시한다. 모든 비교 방법에 똑같이 적용한다. <a href="https://proceedings.mlr.press/v235/tang24g.html">Quantile 선행</a>과 보정만으로 경쟁하지 않는다.</p>
+<p>첫 소규모 진단은 AUC와 5% 오탐 영역, 1% 오탐 결과의 불확실성을 함께 본다. 최종 방법 비교의 주 지표는 <strong>calibration에서 고정한 규칙의 실제 시험 TPR·FPR와 95% 구간</strong>, 보조 지표는 AUC와 ROC상의 TPR@1%다. <code>n_cal=199</code>면 최소 p는 0.5%지만 이는 1% 위험을 정밀하게 평가할 표본력이 있다는 뜻이 아니다. 0.1% 오탐을 중심 주장으로 삼지 않는다.</p>
+<p>K10 졸논의 기존 cohort는 M/N 각 1,816명이며 원래 기본 지표는 그대로 유지한다. CVPR 확장안은 결과를 보기 전에 nonmember cohort의 1/3을 calibration, 나머지를 test로 hash 분할하는 별도 분석 계약을 제안한다. 이 경우 전체 기준 대략 calibration 605명, 시험 nonmember 1,211명이나 m별 적격 수는 더 작다. 방법 선택에는 이 cohort를 쓰지 않는다. CVPR용 정확한 M/N matching·적격 수·power를 계산한 뒤 별도 manifest를 고정해야 하며, 이번 문서가 기존 동결 계약을 수정한 것은 아니다.</p>
+<p>불확실성은 환자를 단위로 paired resampling하고 반복 관측·사진을 독립 표본처럼 늘리지 않는다. 고정 threshold의 구간과 calibration을 다시 뽑았을 때의 불확실성을 구별한다. 독립 target seed별 결과를 함께 보고, 한 checkpoint의 환자 bootstrap을 모델 간 일반화 구간으로 해석하지 않는다.</p>
+<h2>6. 보호 방법 비교에 어떻게 연결하는가</h2>
+<p>우선 졸논의 같은 backbone·분할·전처리·최종 checkpoint를 재사용한다. 현재 K5 계약의 실제 의미는 다음과 같다. 수치는 <strong>연구용 RNG 하에서의 ideal accounting 목표</strong>이며 지금 formal release 인증이 된 결과가 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>K5 계약의 목표</th>
+<th>연구에서의 역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B0</td>
+<td>추가 의료 학습 없음</td>
+<td>공개 base·도메인 적응·오염 대조</td>
+</tr>
+<tr>
+<td>M0</td>
+<td>비DP LoRA</td>
+<td>효용과 노출의 기준</td>
+</tr>
+<tr>
+<td>M1-I8</td>
+<td>image ε=8, δ=1e-5; 현재 group 환산은 vacuous</td>
+<td>image 숫자를 patient 보장처럼 읽으면 안 되는 사례</td>
+</tr>
+<tr>
+<td>M1-G8</td>
+<td>image ε=1.6, δ≈1.327e-8 → K5 patient ε=8, δ=1e-5</td>
+<td>동일 환자 예산을 겨냥해 더 큰 noise로 학습한 image-DP</td>
+</tr>
+<tr>
+<td>M2-P8</td>
+<td>직접 patient ε=8, δ=1e-5</td>
+<td>환자 단위 sampling·평균·clipping의 비교군</td>
+</tr>
+</tbody>
+</table>
+<p><strong>M1-I8과 M1-G8은 여기서는 noise가 다른 별도 학습 모델이다.</strong> 반면 같은 완료 checkpoint에 보수적인 회계와 더 타이트한 유효 회계를 각각 적용하는 실험은 학습 모델 하나를 재분석하는 것이다. 두 경우를 혼동해 학습을 불필요하게 중복하거나, 서로 다른 모델을 같은 checkpoint라고 설명하지 않는다. K10 값은 K10 동결 회계표를 따르며 위 K5 값을 옮겨 쓰지 않는다.</p>
+<p>첫 보호 질문은 G8 대 P8처럼 <strong>같은 patient ε·δ 목표</strong>에서 새 감사까지 포함한 노출·의료 효용·총 비용이 어떻게 다른가다. I8은 같은 숫자 8이어도 보호 단위가 달라 이 공정 비교군에 넣지 않는다. 학습량·sampling·clip 구조의 차이는 기록하고 기존 no-noise mechanism control로 분리한다.</p>
+<p>효용은 기존 의료 도메인 gate, RAD-DINO fidelity/coverage, BioViL-T alignment, 후속 downstream 과제를 따른다. 비용은 generator 학습, 회계·검증, 감사 추론, 보조 학습, 생성·평가를 분리한다. 방법 효과를 위해 의료 효용을 무시하거나 noise를 공격 결과에 맞춰 바꾸지 않는다.</p>
+<p>최종 산출은 ① 기존/새 감사의 탐지력-비용 비교 ② 같은 환자 예산에서 보호 방법별 노출-효용 비교 ③ 목표 보장과 요구 효용을 만족하는 재사용/재학습 선택표다. 순위가 뒤집히는 것만 성공은 아니다. 특히 다중 촬영·미사용 촬영 조건에서 기존 결론의 적용 범위를 더 정확히 밝히는 것도 검증할 발견이다. 단순 환자 평균 DP는 <a href="https://arxiv.org/abs/2407.07737">ULS/ELS 선행</a>이 있으므로 새 보호 알고리즘이라고 주장하지 않는다.</p>
+<p>공격 실패로 ε를 줄이거나 group 환산을 승인하지 않는다. 공격이 성공해도 올바른 DP 보장의 자동 위반은 아니다. 보호 설계의 새 알고리즘까지 만들지는 이 결과를 보고 판단한다. 이미 실패 판정한 ISIC timestep/covariance allocation branch를 근거 없이 다시 채택하지 않는다.</p>
+<h2>7. 실제 순서와 졸논 공통 작업</h2>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>실제 작업·산출</th>
+<th>공통/추가 및 진행 조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D0: 설계 점검</td>
+<td>이 문서·사양·환자 수·선행 충돌·비용식</td>
+<td>이번에 수행. 공격 adapter·의료 성능 검증은 별도</td>
+</tr>
+<tr>
+<td>D1: feature 구현</td>
+<td>loss/base 차이, probe, 비용 ledger, 기존 score evaluator 연결</td>
+<td>CPU 산술·합성 자료 검증 후 공개 모델의 제한 실행; 미래 구현 작업</td>
+</tr>
+<tr>
+<td>D2: 공개 참여 진단</td>
+<td>개발 환자로 inclusion을 통제한 최소 2개 비DP LoRA, 처음 m=2</td>
+<td>CVPR 추가 작업. 1,000-step를 최초 smoke 제안으로 두되 결과는 약식 학습 진단으로 한정</td>
+</tr>
+<tr>
+<td>D3: 방법 판정</td>
+<td>강한 baseline·교차 사진·선형 관계·다른 환자 대조·별도 pilot test</td>
+<td>신호·추가 이득이 남으면 설정·방법·최종 분석 manifest 고정</td>
+</tr>
+<tr>
+<td>T: 졸논 진행</td>
+<td>동결 K5 M0 도메인 gate 및 품질 feasibility, 이후 원래 K10 matrix</td>
+<td>기존 학습·품질·회계 자산 공통. K5의 NOT_RUN 공격 계약을 자동 변경하지 않음</td>
+</tr>
+<tr>
+<td>D4: 최종 감사</td>
+<td>동결 방법을 공통 K10 checkpoint에 적용, 독립 seed 확인</td>
+<td>기존 졸논 기본 평가와 별도 CVPR 확장 결과를 함께 보관</td>
+</tr>
+<tr>
+<td>D5: 보호 비교</td>
+<td>같은 patient 예산의 노출·효용·비용 및 타이트한 유효 회계의 재사용 판단</td>
+<td>결과가 있는 조건으로 결론 제한. 타이트 회계가 현재 메커니즘에 적용되는지 별도 검산</td>
+</tr>
+</tbody>
+</table>
+<p>D2에서는 같은 source·진단·사진 수 strata 안에서 환자 포함을 무작위로 정한다. A/B cohort를 교환한 두 모델은 한 환자의 고정 영상에서 모델에 따라 점수가 달라지는지 보는 저비용 진단이다. <strong>여러 환자가 함께 바뀌므로 한 환자만 추가·제거한 인접 모델 실험도, 단일 환자 인과효과의 증명도 아니다.</strong> 강한 인과 주장에는 독립 배정 반복이나 필요한 소규모 단일 환자 포함/제외 재학습을 후속으로 설계한다. 처음부터 200개 모델 학습을 요구하지 않는다.</p>
+<p>현재 의료 M0/full K5 checkpoint가 없고, 기존 4-step dry-run은 보존된 학습 모델이 없다. 따라서 곧바로 고정 checkpoint에서 새 공격을 실행할 수 있다는 상태로 쓰지 않는다. 또한 공개 개발 모델의 성능만으로 사적 역할의 K10 모델에 일반화했다고 하지 않는다.</p>
+<p>같은 GPU에서는 D2와 졸논 학습을 동시에 돌리지 않고 순차 배치한다. 학습 중에는 논문 대조·CPU 평가기·회계 검산·문서 작업을 병행할 수 있다. 전체 학습 모델과 의료 evaluator는 공통으로 쓰되 <strong>새 공격 탐색의 추가 계산과 별도 방법 개발 cohort</strong>는 필요하다.</p>
+<h2>8. 비용과 멈출 기준</h2>
+<p>위 기본 설정은 2-fold support 전체 노출 합이 m이므로, caching 전 대략 다음 호출 수가 든다. base 호출도 포함한다.</p>
+<pre><code class="language-text">최적화: 2 models × 6 steps × 3 noise/t cells × m = 36m forward + 36m backward
+자기 환자 query: 2 models × 2 embeddings × 10 cells × m = 40m forward
+대조 2명: 80m forward
+합계: 156m forward + 36m backward
+m=2: 312 forward + 72 backward / 환자
+m=5: 780 forward + 180 backward / 환자
+</code></pre>
+<p>이는 batch API 호출 수나 초 단위 시간과 다르다. encoder, matching, baseline, 보조 fitting 비용은 별도다. base 공통 항 cache가 절약할 수 있는 실제 호출은 측정해서 기록하고 cold/warm을 구별한다. 예산 비교는 같은 m에서 동일 wall time 구간과 forward/backward 내역을 함께 제시한다. 저렴하다고 먼저 주장하지 않으며, 적응형 사진 선택·조기 종료는 초기 독립 기여에서 제외한다.</p>
+<p>진행 조건은 <strong>① membership와 연결된 전이 신호 ② 강한 영상 집계·MoFit 전이·선형 관계 대비 추가 이득 ③ 같은 환자 오탐·보조 정보·비용에서 재현되는 차이 ④ 보호 비교에 제공하는 실제 정보</strong>다. 진단의 성공은 최종 성능 기준을 이미 통과했다는 뜻이 아니다. 최소 의미 있는 개선폭은 파일럿의 분산·실제 운영 비용을 근거로 최종 시험을 열기 전에 고정한다.</p>
+<p>표준 baseline으로 이득이 같아지면 그 baseline을 보호 평가에 쓰고 새 공격 알고리즘 주장을 줄인다. 다른 환자와 바꿔도 효과가 같으면 개인 공통 반응 해석을 줄인다. E만 성공하면 U까지 확대하지 않는다. 보호 차이가 불확실하면 그 불확실성을 결론으로 남긴다. 중단된 방법을 숨기거나 다른 조건의 우연한 승리로 대체하지 않는다.</p>
+<p><strong>이번에 확정한 것은 첫 번째로 구현·반증할 구체적 설계안이다. 기여와 성능의 확정은 아니다.</strong></p>
+<h2>2026-09-11 GPU 자원 판단</h2>
+<p>사용자는 이 방향의 CVPR 연구에 더 좋은 GPU가 필요한지 물었다. <code>nvidia-smi</code>로 현재 장비가 RTX 3070, VRAM 8,192 MiB임을 확인했다. <strong>현재 장비에서 초기 구현·작은 진단을 시작하고, 본격적인 반복 학습·공격 비교에는 VRAM 24–32GB급 GPU의 사용 시간을 확보하는 것을 권장한다.</strong> 이 범위는 개발 여유를 위한 계획상 권장치이며 새 감사법을 실행해서 측정한 최소 요구량이 아니다.</p>
+<p>기존 SD2.1 rank-8 LoRA/DP 4-step 진단과 생성 경로는 8GB에서 실행됐다. 그러나 새 교차 사진 probe와 모든 비교군의 전체 GPU 메모리·처리량은 아직 측정하지 않았다. target/base 계산을 순차 수행하고 사진·noise별 gradient를 누적하는 구현을 검토하되, 동일한 점수·gradient를 유지하는지 먼저 확인한다. 여러 사진을 반드시 한 GPU batch에 동시에 올려야 하는 설계는 아니다.</p>
+<p>본실험의 부담은 전체 학습 반복과 환자 수×사진 수×공격 종류×모델 수에 따른 평가량이다. 큰 VRAM은 offload와 잦은 분할 실행을 줄일 여지를 주고, 높은 연산 처리량은 반복 시간을 줄일 수 있다. 실제 이득은 메모리·CPU·데이터 읽기·구현에 따라 달라지며 GPU 명칭이나 이론 FLOPS로 몇 배 빨라진다고 환산하지 않는다. 새 알고리즘의 수학적 설계를 큰 GPU가 대신 해결하지 않는다.</p>
+<p>공식 사양상 <a href="https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/">RTX 4090은 24GB</a>, <a href="https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/">RTX 5090은 32GB</a>다. 이는 용량 예시이며 가격·구매 적합성·현 환경 호환성을 검토한 구매 추천은 아니다. 연구실·공용 서버 또는 필요 기간의 임대로도 자원을 확보할 수 있다. 다른 GPU/서버로 옮길 때는 해당 환경에서 adapter·DP 연산·회계 및 실행 증거의 일치 여부를 다시 확인한다.</p>
+<p>권장 순서는 3070에서 환자 2장 조건의 메모리·초/환자를 측정하고, 유망한 신호와 본실험 규모를 확인한 뒤 필요한 GPU 시간을 산정하는 것이다. 개발·baseline 비용은 공통 조건으로 기록한다. 이번 질문으로 장비 구매·임대·학습 실행을 시작하지 않았다.</p>
+<h3>임대 없이 RTX 3070 한 대만 사용할 때의 일정 추정</h3>
+<p>사용자는 임대가 불가능하고 현재 장비를 계속 쓰는 조건의 기간을 물었다. 이후 자원 계획의 기본값은 <strong>RTX 3070 8GB 한 대, 외부 GPU 임대 없음</strong>이다. 아래는 GPU를 거의 매일 12–16시간 사용할 수 있고 구현·분석을 집중해서 진행한다는 가정의 계획 예산이다. 작업 시작·상시 백그라운드 실행이나 완수 시점의 보장이 아니다.</p>
+<p><strong>NIH·SD2.1 LoRA 중심의 CVPR 실험과 원고 준비는 약 10–16주, 일정은 대략 3–4개월로 잡는 것이 현실적이다.</strong> 방법 개선이 빨리 확인되면 2–3개월 안의 준비를 목표로 할 수 있지만, 큰 재설계·추가 데이터셋·무거운 baseline의 이식이 필요하면 4–6개월 이상으로 늘 수 있다. 연구 기여가 실제 성립하는 데 필요한 기간은 고정할 수 없다. 이 전체 범위는 실측 합계가 아닌 불확실성이 큰 연구 일정 판단이다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>달력 기준 계획 범위</th>
+<th>근거·조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>첫 구현·메모리/속도 측정·소규모 신호 진단</td>
+<td>1–2주</td>
+<td>새 감사는 미구현; 결과에 따라 성립 가능성 재판정</td>
+</tr>
+<tr>
+<td>공통 K5·K10 학습과 점검</td>
+<td>1–2주</td>
+<td>이전 추정 16–21 + 50–80 = 66–101 GPU시간, domain gate·중단·점검 여유 포함</td>
+</tr>
+<tr>
+<td>강한 비교군 이식·방법 수정·독립 pilot 검증</td>
+<td>2–4주</td>
+<td>8GB 실행 가능성과 동일 조건 비교를 확인해야 함</td>
+</tr>
+<tr>
+<td>주된 공격 평가·반복 모델·제거 실험</td>
+<td>3–6주</td>
+<td>환자 수·초/환자·방법 수가 결정하는 가장 큰 미측정 부분</td>
+</tr>
+<tr>
+<td>필요한 보완 검증·결과 해석·원고</td>
+<td>2–4주</td>
+<td>도표·방법·결론의 증거 대조; 일부는 다른 단계와 병행</td>
+</tr>
+</tbody>
+</table>
+<p>각 행은 중복 가능한 작업 묶음이고 단순 합이 전체 기간의 확률적 예측은 아니다. 졸논의 model-bound receipt·PP-Mark 고유 작업을 모두 포함한 별도 완수 약속도 아니다. 기존 졸논 5–9주 추정과 CVPR 추정을 독립적인 GPU 작업처럼 그대로 더하지 않는다.</p>
+<p>K5의 세 DP arm 시간은 현재 3070의 4-step 기록에서 출발했다. I8 17.562초, G8 17.411초, P8 7.945초를 4,000 steps로 선형 환산하면 순수 루프 약 4.878/4.836/2.207시간이다. K10 50–80시간은 기존 계획의 추가 대조군·생성·점검 포함 추정이며 실측이 아니다. K5+K10 66–101시간은 하루 12–16시간 가동 시 순수 예약량으로 약 4.1–8.4일이다. 새 공격 전체 시간은 이 값에 포함돼 있지 않다.</p>
+<p>평가 시간의 감도는 다음처럼 계산할 수 있다. <strong>아래 초/환자는 측정값이 아니라 가정이며, 2,000명도 확정된 적격 cohort 수가 아니다.</strong> 한 공격을 12개 모델에 적용하는 예시다. 이 시간에 각 환자의 사진·probe·대조 연산을 모두 포함한다고 가정한다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">가정한 초/환자</th>
+<th style="text-align: right;">2,000명 × 12모델의 GPU시간</th>
+<th style="text-align: right;">하루 16시간 사용</th>
+<th style="text-align: right;">하루 12시간 사용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">30초</td>
+<td style="text-align: right;">200시간</td>
+<td style="text-align: right;">12.5일</td>
+<td style="text-align: right;">16.7일</td>
+</tr>
+<tr>
+<td style="text-align: right;">60초</td>
+<td style="text-align: right;">400시간</td>
+<td style="text-align: right;">25일</td>
+<td style="text-align: right;">33.3일</td>
+</tr>
+<tr>
+<td style="text-align: right;">120초</td>
+<td style="text-align: right;">800시간</td>
+<td style="text-align: right;">50일</td>
+<td style="text-align: right;">66.7일</td>
+</tr>
+<tr>
+<td style="text-align: right;">300초</td>
+<td style="text-align: right;">2,000시간</td>
+<td style="text-align: right;">125일</td>
+<td style="text-align: right;">166.7일</td>
+</tr>
+</tbody>
+</table>
+<p>따라서 학습이 며칠에 끝나더라도 공격 비교가 수주·수개월을 차지할 수 있다. 방법별 초/환자를 실제로 측정하고, 공정한 동일 예산 비교와 핵심 조건의 충분한 평가 표본을 우선 배치한다. 비교가 오래 걸린다는 이유로 필요한 강한 baseline을 누락하거나, 소수 표본을 저오탐률의 확증 결과로 제시하지 않는다.</p>
+<p>특히 MoFit 원형은 저자 Appendix A.8/Table 8에서 단계별 약 14,799–20,667MB VRAM 사용을 보고한다. 현재 8GB에서 동일 구현이 그대로 돌아간다는 전제를 둘 수 없다. Table 9는 특정 4090/COCO 설정에서 두 최적화 단계의 early stopping을 각각 평가하므로, 표의 두 단축 시간을 단순 합한 값을 우리 의료 LoRA의 검증된 전체 시간으로 사용하지 않는다. <a href="https://arxiv.org/html/2602.22689v1#A1.SS8">MoFit Appendix A.8</a></p>
+<p>10–16주 예산은 8GB에 맞는 구현과 제한 계산량의 공정한 비교가 성립하고, 핵심 데이터·모델 범위를 유지한다는 조건이다. 모든 무거운 원형 공격을 모든 모델·사진·조건에 전수 적용하는 시간의 상한이 아니다. 해당 조건이 성립하지 않으면 시간 범위를 상향하거나 결과 확인 전 비교 범위·주장을 명시적으로 재설계해야 한다. 첫 진단의 메모리·초/환자 결과가 나오면 이 추정을 갱신한다.</p>
+<h3>API로 대체할 수 있는 범위</h3>
+<p>사용자는 이어 API 사용 가능성을 물었다. <strong>우리 코드를 실행하는 GPU API는 현재 연구의 실행 수단이 될 수 있다. 완성된 생성 이미지만 반환하는 API는 현재 white-box 방법의 대체 수단이 아니다.</strong> 이 질문은 API 방식의 가능성 검토이며 유료 외부 실행을 승인하거나 기존 임대 불가 조건을 철회한 것으로 취급하지 않는다.</p>
+<table>
+<thead>
+<tr>
+<th>API의 형태</th>
+<th>현재 연구에서의 역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>완성 이미지만 반환하는 text-to-image/image-to-image API</td>
+<td>지원 범위의 출력 기반 공격·생성 평가에 사용할 수 있으나, 현재 probe의 denoising loss·conditioning gradient를 직접 제공하지 않음</td>
+</tr>
+<tr>
+<td>정해진 메뉴의 모델 fine-tuning API</td>
+<td>환자별 sampling/clipping/noise, checkpoint·실행 trace와 회계를 필요한 수준으로 제어·확인할 수 있는지 별도 검토 필요</td>
+</tr>
+<tr>
+<td>자체 Python·컨테이너를 실행하는 serverless GPU API</td>
+<td>target/base·LoRA·DP trainer·gradient 기반 감사 코드를 원격 GPU에서 실행하는 경로로 검토 가능</td>
+</tr>
+</tbody>
+</table>
+<p>예를 들어 Modal 공식 문서는 사용자 Python 함수를 GPU에서 호출하고, 자체 모델의 학습·미세조정·배치 추론을 수행하는 serverless 실행을 설명한다. 전용 서버를 직접 계속 관리하는 부담을 줄일 수 있지만 외부 GPU 사용과 사용량 기반 비용은 남는다. 일반 inference endpoint가 모두 임의 학습 코드를 허용한다는 뜻은 아니다. <a href="https://modal.com/docs/guide">Modal 개요</a>, <a href="https://modal.com/docs/guide/functions">GPU 함수 실행</a>.</p>
+<p>현재 계획을 유지하려면 미세조정 대상과 환자 포함 여부를 통제하고, 기존 계약의 DP 메커니즘과 정확한 모델을 재현할 수 있어야 한다. 원격 실행으로 옮길 때 Windows DPAPI resume 등 현재 환경에 묶인 부분도 다시 설계·검증해야 한다. API로 보낸다는 이유로 기존 실행이 다른 플랫폼에서 그대로 검증됐다고 하지 않는다. 실제 실행시간·비용 절감은 이전·검증·전송·저장 비용까지 포함해 측정해야 한다.</p>
+<p>이미지 출력만으로 수행하는 연구 자체는 가능하다. 기존 ReDiffuse는 image-to-image variation API를 사용하는 직접 선행이다. 그 방향을 택하면 현재 gradient 기반 통계량과 비교군·정보 조건을 다시 설계해야 하며, 상용 모델의 실제 학습 명부·환자 DP 학습 조건을 알 수 있다는 전제를 둘 수 없다. 출력 기반 공격이라도 통제된 member/nonmember 평가와 보호 비교를 위한 자체 모델이 필요할 수 있다. <a href="https://proceedings.mlr.press/v267/li25k.html">ReDiffuse, ICML 2025</a>.</p>
+<p>서버 운영 때문에 임대가 어렵다면 serverless GPU 호출 방식은 검토할 대안이다. 외부 연산비를 지출할 수 없는 조건이라면 유료 GPU API가 그 제약을 자동 해결하지는 않는다. 이번에는 가격 견적·계정 생성·배포·학습·외부 데이터 전송을 수행하지 않았다.</p></main></body></html>

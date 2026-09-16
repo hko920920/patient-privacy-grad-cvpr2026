@@ -1,0 +1,127 @@
+{
+  "authority": {
+    "backblaze": "mapping_diagnostic_only",
+    "sepsis": "mapping_diagnostic_only",
+    "wisdm": "complete_execution"
+  },
+  "counts": {
+    "ablation_methods": 8,
+    "backblaze_policies": 22,
+    "conformance_cases": 31,
+    "sepsis_policies": 16,
+    "truth_rows": 37
+  },
+  "generator": {
+    "path": "scripts/build_audit_supplement_tables_v2.py",
+    "sha256": "7eb12f988f7cbd10e490becd571522fa51676a02bded2bbe27d6b23a4bbb009d"
+  },
+  "inputs": {
+    "ablation": {
+      "path": "reports/validator_ablation_hardened_002/aggregate_metrics.csv",
+      "sha256": "12202e0c36fcd05df681205c0f44e86391c114070bf447160c32d727e98c829c"
+    },
+    "backblaze": {
+      "path": "reports/backblaze_v2_mapping_evidence_q1_2025_001/policy_summary.csv",
+      "sha256": "98c125baf36c2e341533c857c541d59eb3e2de4e44d3992b67180dc41fe8a3ae"
+    },
+    "cases": {
+      "path": "reports/validator_ablation_hardened_002/cases.json",
+      "sha256": "02fde1c50e0a69e3ef023621f5b63de130bbba24380c686bb5d0ccf676d3f57f"
+    },
+    "sepsis": {
+      "path": "reports/sepsis2019_v2_mapping_evidence_5k_001/policy_summary.csv",
+      "sha256": "dec88238506050a65c6c7fe26f957f478abc0e227016282998835f33acc43c17"
+    },
+    "tfprivacy": {
+      "path": "reports/tfprivacy_statement_baseline_v2_001/aggregate_metrics.json",
+      "sha256": "360592d27584845260481ddb605953be9dda1f8d2458f4988d24daef2e6cd6f3"
+    },
+    "truth": {
+      "path": "docs/privacy_claim_truth_table_v2_0.md",
+      "sha256": "07552a3300356ef0834d95603f22d4b90e56425afffba6455354581779bbd770"
+    },
+    "verify_ablation": {
+      "path": "reports/validator_ablation_hardened_002/independent_verification.json",
+      "sha256": "6e461e08b65491f92fdf2c68b2294c46864bc158a2ca6a633347f76487354022"
+    },
+    "verify_backblaze": {
+      "path": "reports/backblaze_v2_mapping_evidence_q1_2025_001/independent_verification.json",
+      "sha256": "b09c4a4d0d42990aee795317aead5cbeb12fa1a977d292c32579f3cabc32b43c"
+    },
+    "verify_sepsis": {
+      "path": "reports/sepsis2019_v2_mapping_evidence_5k_001/independent_verification.json",
+      "sha256": "5b7c0d6b89d6e7441c777e643228f23b4c0ae976b804e4a3694d9ff2fb374024"
+    },
+    "verify_tfprivacy": {
+      "path": "reports/tfprivacy_statement_baseline_v2_001/independent_verification.json",
+      "sha256": "082d311ef69285b0ea6faae27609203d1e2efa7268a93ad07a2f1cde690aaf8f"
+    },
+    "verify_wisdm": {
+      "path": "reports/wisdm_v2_hardened_secure_002/independent_verification.json",
+      "sha256": "9cd3b9463a7d7896836ded587526868bf5de40037d58fd147ee11ef9a27266d0"
+    },
+    "wisdm_event": {
+      "path": "reports/wisdm_v2_hardened_secure_002/certificates/certificate_wisdm_v2_hardened_overlap50_event.json",
+      "sha256": "3dfa730c2c42a68ac93804464780f55dfdd7870563cf55e0d54bf6da8d8b8672"
+    },
+    "wisdm_metrics": {
+      "path": "reports/wisdm_v2_hardened_secure_002/metrics.json",
+      "sha256": "ef1f432dab20ec9ce179bf670bb2c27d232f632365f5ede2a7a0f53e13aea421"
+    },
+    "wisdm_owner": {
+      "path": "reports/wisdm_v2_hardened_secure_002/certificates/certificate_wisdm_v2_hardened_overlap50_owner.json",
+      "sha256": "e41272ce914c56f2ec33427394b353720969dacadb833b9db683ba63ecb30a66"
+    },
+    "wisdm_owner_internal": {
+      "path": "reports/wisdm_v2_hardened_secure_002/certificates/certificate_wisdm_v2_hardened_overlap50_owner_internal.json",
+      "sha256": "5de94d02aa60e043d4087f18836005abceef40e38cb70ce5767bad6bc132a733"
+    },
+    "wisdm_report": {
+      "path": "reports/wisdm_v2_hardened_secure_002/privacy_report.json",
+      "sha256": "2b1c6f3e58052791b68bd1ee1329bd54196192fcb500b8239c358b39fe9346fa"
+    },
+    "wisdm_window": {
+      "path": "reports/wisdm_v2_hardened_secure_002/certificates/certificate_wisdm_v2_hardened_overlap50_window.json",
+      "sha256": "61c57a81ba7fe4584b49a5c25fa874dafa9e7038a8adddd473e961f654d85480"
+    }
+  },
+  "outputs": {
+    "ablation_metrics.tex": {
+      "path": "supplement_v2_generated/ablation_metrics.tex",
+      "sha256": "3a7ad8e89baaa36a3f0d84f8b364824596bc07b466cfb9998909ee25d48f5fd0"
+    },
+    "artifact_inputs.tex": {
+      "path": "supplement_v2_generated/artifact_inputs.tex",
+      "sha256": "128527d6662173012d9b24b2d126b68fb7087def615f77273777af5a4f9447f0"
+    },
+    "backblaze_policies.tex": {
+      "path": "supplement_v2_generated/backblaze_policies.tex",
+      "sha256": "d7b36aff700f6ab48018551fc6c11a0dbea27e18e8bafa75dab6dd7ecb7f23c9"
+    },
+    "conformance_cases.tex": {
+      "path": "supplement_v2_generated/conformance_cases.tex",
+      "sha256": "197ea07ca62dcc4d689d740a8120891541c18e18bbbe38ade890805a0147f6fc"
+    },
+    "sepsis_policies.tex": {
+      "path": "supplement_v2_generated/sepsis_policies.tex",
+      "sha256": "ed9b69002249418ab1ca49d49603aff1c8b35855e64d5cfa7ad520c5de46939f"
+    },
+    "tfprivacy_families.tex": {
+      "path": "supplement_v2_generated/tfprivacy_families.tex",
+      "sha256": "cd928249a86fd06ec435dba7c0eedf9dbe29eb592d9416f2d3b673dd7bd3f1fa"
+    },
+    "truth_table.tex": {
+      "path": "supplement_v2_generated/truth_table.tex",
+      "sha256": "ae6b515924fde969d1d56f71a38e4023ccbfb026d0bbfbdfd8e5c94669960694"
+    },
+    "verification_surface.tex": {
+      "path": "supplement_v2_generated/verification_surface.tex",
+      "sha256": "ba4d79c7ab2a54554b2d7bd5084a3381cff15e41fe41e4c35954aae9582247d0"
+    },
+    "wisdm_claims.tex": {
+      "path": "supplement_v2_generated/wisdm_claims.tex",
+      "sha256": "d998e69bb89b6b7db493912eaac18c307be16dfef42537d4e4a45eeb05163e59"
+    }
+  },
+  "schema_version": "audit_supplement_tables_v2.0"
+}

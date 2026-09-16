@@ -1,0 +1,22 @@
+{
+  "schema": "track2-cpu-execution/v1",
+  "protocol_sha256": "0241a7f4396a0f83046da5b2fe9d7439539deb02bc75ec84c5e568c93f7d6a3f",
+  "code_sha256": "89b6b06edc75543f95e8bb343144b77cbc4d76a53c60afc2dabf3ad74e4d9388",
+  "python": "3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]",
+  "numpy": "1.26.4",
+  "scipy": "1.16.1",
+  "tail_error": 6.510416666666667e-05,
+  "self_test": {
+    "status": "PASS",
+    "checks": [
+      "scalar_vs_vector_ROC_100",
+      "CP_extreme_counts",
+      "CP_monotonicity",
+      "nested_cache_upgrade_no_doublecount",
+      "known_risk_truth"
+    ]
+  },
+  "target_calls": 0,
+  "gpu_calls": 0,
+  "training_calls": 0
+}

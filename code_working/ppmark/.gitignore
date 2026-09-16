@@ -1,0 +1,35 @@
+.venv/
+.venv*/
+__pycache__/
+*/__pycache__/
+# Build artifacts (large)
+target/
+risc0/target/
+target-h100/
+risc0/target-user/
+risc0/target-h100/
+target-cpu/
+target-sp1/
+halo2_prover/target/
+sp1/target/
+icicle/target/
+risc0/host/target/
+icicle/build/
+icicle/icicle-backend-install/
+# Outputs and experiments (large)
+outputs/
+artifacts/
+out_demo*/
+out_stub*/
+# Common generated files
+*.npy
+*.npz
+*.bin
+*.png
+*.log
+.ipynb_checkpoints/
+# Keep required binaries and receipts
+!tables/*.bin
+!samples/sp1/**/receipt.bin
+!samples/sp1/**/public_inputs.json
+!samples/sp1/**/metadata.json

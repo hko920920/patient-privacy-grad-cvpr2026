@@ -1,0 +1,15 @@
+# Lightweight, isolated dependencies for executing the official
+# tensorflow-privacy 0.9.0 privacy-statement analysis module.
+#
+# Install tensorflow-privacy itself with --no-deps, as shown in
+# scripts/setup_tfprivacy_baseline.ps1. The selected analysis module imports
+# only the packages below; installing the full TensorFlow training stack would
+# add unrelated dependencies to this reporting baseline.
+absl-py==1.4.0
+attrs==23.2.0
+dm-tree==0.1.8
+dp-accounting==0.4.3
+mpmath==1.3.0
+numpy==1.26.4
+packaging==22.0
+scipy==1.11.4

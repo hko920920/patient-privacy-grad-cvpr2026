@@ -1,0 +1,5 @@
+jsonschema==4.25.1
+numpy==1.26.4
+opacus==1.6.0
+torch==2.6.0
+dp-accounting==0.6.0

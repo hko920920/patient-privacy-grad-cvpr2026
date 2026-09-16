@@ -1,0 +1,125 @@
+{
+  "schema": "nih-cxr14-k5-private-research-dryrun-protocol/v1",
+  "status": "FROZEN_BEFORE_PRIVATE_PARTITION_OPTIMIZER_EXECUTION",
+  "scope": "FOUR_STEP_RUNTIME_CONFORMANCE_ONLY_NOT_FEASIBILITY_NOT_UTILITY_NOT_PRIVACY_EVIDENCE",
+  "upstream": {
+    "dp_attack_protocol_sha256": "F2757DC7EBC7488B6A9DD0F69227419EA16BB9A3E9BD4434514CB19AFD2B4018",
+    "executable_gate_independent_report_sha256": "EA2041E282153A547EEE89BBF1D6533315D7C071B5B712907FB2DCC5E6BE7A2C",
+    "k5_manifest_sha256": "DC49D82E497EAA6940DCF92C8F773179B8F7A838057A82AE0C26A69CA785BFC5",
+    "preprocessing_contract_sha256": "0ED9E434764BDB2D542BB16AB951F856CB5B82D4F2E6B9F25F6C554F1076669D",
+    "model_id": "Manojb/stable-diffusion-2-1-base",
+    "model_revision": "0094d483a120f3f33dafbd187ea4aa60d10de75c",
+    "unet_sha256": "28EC9CF3B239C0751C201B1F6FB46B551DF5862731B30A37AA1360101CB3FBAB",
+    "vae_sha256": "3E4C08995484EE61270175E9E7A072B66A6E4EEB5F0C266667FE1F45B90DAF9A",
+    "text_encoder_sha256": "681C555376658C81DC273F2D737A2AEB23DDB6D1D8E5B3A7064636D359A22668"
+  },
+  "data": {
+    "cap": 5,
+    "partition": "private_train",
+    "source_role": "public NIH proxy partition treated as restricted for lifecycle testing",
+    "expected_images": 18393,
+    "expected_patients": 8476,
+    "image_size": 256,
+    "image_cache": "ephemeral CPU latents for selected dry-run records only; no disk cache",
+    "private_identifiers": "permitted only in a LOCAL_RESTRICTED diagnostic excluded from any release package"
+  },
+  "runtime": {
+    "steps_per_arm": 4,
+    "arms": [
+      "M1-I8",
+      "M1-G8",
+      "M2-P8"
+    ],
+    "arm_order": [
+      "M1-I8",
+      "M1-G8",
+      "M2-P8"
+    ],
+    "fresh_identical_lora_initialization_per_arm": true,
+    "lora_initialization_seed": 260903,
+    "m1_control": "M1-I8 and M1-G8 share the same Poisson image schedule and diffusion timestep/noise draws but use independent DP Gaussian streams",
+    "m2_within_patient": "uniform without replacement up to four K5 records; use all records when fewer than four",
+    "empty_poisson_sample": "execute Gaussian-noise-only optimizer update; never condition or resample",
+    "checkpoint": "none; every dry-run model is destroyed after the fourth step"
+  },
+  "mechanisms": {
+    "M1-I8": {
+      "privacy_unit": "image",
+      "adjacency": "add_or_remove_one_image",
+      "population": 18393,
+      "expected_batch": 8,
+      "poisson_sample_rate": 0.00043494807807318,
+      "clip_norm": 0.28448700606156724,
+      "noise_multiplier": 0.4007042918650512,
+      "fixed_denominator": 8,
+      "accounting_delta": 0.00001
+    },
+    "M1-G8": {
+      "privacy_unit": "image",
+      "adjacency": "add_or_remove_one_image",
+      "population": 18393,
+      "expected_batch": 8,
+      "poisson_sample_rate": 0.00043494807807318,
+      "clip_norm": 0.28448700606156724,
+      "noise_multiplier": 0.8350657829633824,
+      "fixed_denominator": 8,
+      "accounting_delta": 1.3265396497483431e-08
+    },
+    "M2-P8": {
+      "privacy_unit": "patient",
+      "adjacency": "add_or_remove_one_patient",
+      "population": 8476,
+      "expected_batch": 4,
+      "poisson_sample_rate": 0.00047192071731949034,
+      "clip_norm": 0.1997973088974048,
+      "noise_multiplier": 0.4044571458362774,
+      "fixed_denominator": 4,
+      "accounting_delta": 0.00001
+    }
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "learning_rate": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.01,
+    "scheduler": "constant",
+    "warmup_steps": 0
+  },
+  "randomness": {
+    "classification": "RESEARCH_ONLY_NONCRYPTOGRAPHIC",
+    "master_entropy": "256 bits from the operating-system entropy pool, process-memory only",
+    "torch_streams": "domain-separated 63-bit seeds derived in process; default CPU/CUDA PyTorch generators",
+    "private_seed_serialization": "PROHIBITED",
+    "public_trace": "one completed schedule-only event per optimizer step; no selected IDs, realized counts, or seeds",
+    "release_eligible": false
+  },
+  "resource_fail_closed": {
+    "maximum_realized_image_units_per_m1_step": 32,
+    "maximum_realized_patient_units_per_m2_step": 20,
+    "maximum_realized_raw_images_per_m2_step": 64,
+    "action": "abort the complete dry-run without resampling and retain failure diagnostics"
+  },
+  "pass_criteria": [
+    "all three arms complete exactly four optimizer steps",
+    "M1 arms use identical selected image units and identical diffusion draws at each matched step",
+    "every nonempty sampled unit yields one finite fp32 full LoRA gradient and M2 averages within patient before clipping",
+    "empty samples, if realized, still yield a finite Gaussian-noise-only optimizer step",
+    "every update uses the frozen C, sigma, q, adjacency, and fixed public denominator",
+    "all adapter parameters and optimizer states remain finite and each arm changes from its common initial digest",
+    "each public runtime trace has four valid chained schedule-only events and both accountants replay exactly at four events",
+    "no model, adapter, latent, gradient bank, DP seed, or generated image is persisted",
+    "independent verification passes without importing the runner or mechanism"
+  ],
+  "prohibited_interpretations": [
+    "four steps do not establish training convergence, utility, privacy attack resistance, or a DP release",
+    "realized clipping or losses cannot change the frozen K5/K10 arm matrix, C, sigma, step count, or dataset",
+    "the public NIH proxy does not become confidential merely because its private_train role is exercised",
+    "these three benchmark models are not jointly authorized for release"
+  ],
+  "next_if_pass": "report first; then decide whether to implement the separately frozen 4000-step K5 one-seed feasibility matrix including M0",
+  "next_if_fail": "retain the failed dry-run and diagnose implementation or resource incompatibility without changing privacy parameters from observed outcomes"
+}

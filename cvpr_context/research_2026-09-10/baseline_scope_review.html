@@ -1,0 +1,117 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BASELINE_SCOPE_REVIEW.md</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a></p><h1>U 조건을 중심으로 한 비교군 범위 검토</h1>
+<p>2026-09-14. 사용자가 제시한 관련연구의 네 역할과 성능·비용 비교 원칙을 기존 검토 기록 및 원문과 대조했다. 연구 중심은 앞선 대화에서 확인한 관측 자료와 학습 자료의 간극이다. 본 문서는 비교 설계에 대한 판단이며 새 학습·공격 결과나 모든 구현 목록의 확정은 아니다.</p>
+<p><a href="design.html">기존 설계</a> · <a href="comparison_plan.json">비교 후보 목록</a> · <a href="auditor_framing_review.html">감사자 설정 검토</a>.</p>
+<p><strong>큰 원칙에 동의한다. 관련연구 전체가 직접 비교군은 아니며, 주장과 충돌하는 강한 대안을 공정하게 적용해야 한다. 다만 U를 마지막 확장으로 미루거나, 여러 사진·미사용 동일인 사진이라는 문제 정의 자체를 신규성으로 주장해서는 안 된다.</strong></p>
+<p><strong>1. 비교 전에 연구 질문을 정확히 유지</strong></p>
+<p>현재 중심 질문은 감사자가 가진 사진이 해당 미세조정에 사용되지 않았어도, 같은 환자의 다른 기록이 사용되었는지를 추론할 수 있는가이다. 일부만 겹치는 P도 다룰 수 있다. U의 양성 환자와 음성 환자 모두 관측 영상 자체는 image nonmember이지만 환자 label이 다르다.</p>
+<p>E는 학습 영상이 주어진 조건의 기준·진단이다. E의 성공 뒤에 U를 선택적 최종 확인으로 붙여 U에 대한 주장을 만들지 않는다. U의 split, 음성 환자, 보정 자료와 기준 비교는 첫 설계에 들어가야 한다. 영상 MIA가 U 관측 사진을 nonmember로 분류한 것은 원래 이미지 질문에 대한 정답일 수 있으므로, 이를 원 논문의 오류라고 표현하지 않는다. 해당 영상 점수를 patient membership 목적에 맞게 집계·평가한 결과를 구분한다.</p>
+<p>“U에서 기존 방법으로 설명되지 않는 신호가 남고 우리 방법이 개선한다”는 아직 검증 가설이다. 성공을 전제로 본실험을 배치하거나, 결과가 없는 상태에서 단정형 기여 문장으로 쓰지 않는다.</p>
+<p><strong>2. 네 가지 문헌 역할은 유용하지만 서로 배타적이지 않음</strong></p>
+<table>
+<thead>
+<tr>
+<th>역할</th>
+<th>처리 원칙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>직접 비교</td>
+<td>같은 대상 모델과 허용 정보에서 적용 가능하고 주장을 직접 시험하는 강한 방법을 우선 비교</td>
+</tr>
+<tr>
+<td>변형 비교</td>
+<td>모델·보조자료·환자 묶음에 맞춘 변경을 명시하고 원형과 변형의 결과를 구별</td>
+</tr>
+<tr>
+<td>신규성의 경계</td>
+<td>선행이 이미 다룬 발상·문제·도구를 명시. 해당 연구가 직접 비교 역할도 할 수 있음</td>
+</tr>
+<tr>
+<td>접근 조건의 대조</td>
+<td>대상 모델·출력·접근권 차이를 설명. 공정한 적용 가능성을 확인한 뒤 정량 비교 포함 여부 결정</td>
+</tr>
+</tbody>
+</table>
+<p>동일한 입출력을 낼 수 있는 모든 방법을 전수 구현할 의무가 생기는 것은 아니다. 주장에 중요한 강한 대표 방법, 필요한 변형, 혼동 요인을 분리할 대조를 선정하고 제외 근거를 남긴다. 비용만으로 가장 가까운 경쟁 방법을 약화·누락해서는 안 된다. 원형 검증 범위와 전체 공정 예산 비교를 나누거나 주장을 좁히는 선택이 필요할 수 있다.</p>
+<p>white-box가 허용된 실험에서도 더 적은 접근만 쓰는 방법은 적용 가능할 수 있다. 접근 차이만으로 자동 제외하지 않는다. 반대로 white-box 결과를 API-only 방법에 대한 같은 조건의 우월성으로 쓰지 않는다. FACE-AUDITOR의 얼굴 유사도 출력과 diffusion loss/gradient처럼 인터페이스가 본질적으로 다르면 변경을 숨기고 원형 재현으로 표시하지 않는다.</p>
+<p><strong>3. 논문별로 교정할 점</strong></p>
+<ul>
+<li><strong>FACE-AUDITOR:</strong> 단순히 “사람 단위 여러 사진”만 다룬 것이 아니다. 정확한 훈련 사진 없이 같은 사람의 다른 사진들로 사용자 참여를 감사하는 설정을 이미 명시한다. 이 사실은 기존 A06 기록에도 있었으며 이번에 공식 원문 §1.1·§4의 설명을 다시 대조했다. “미사용 동일인 영상으로 참여 추론” 자체를 최초라고 할 수 없다. 얼굴 인식기의 support/query 유사도·reference feature·학습형 감사 구조가 현 생성모델에 옮겨지는지는 검토하되, 적용 가능한 유사도·관계 대안을 실험하고 변경판임을 밝혀야 한다. <a href="https://www.usenix.org/system/files/usenixsecurity23-chen-min.pdf">FACE-AUDITOR, USENIX Security 2023</a>.</li>
+<li><strong>CDI:</strong> feature extraction, 별도 대조 집합, 점수 fitting과 집합 검정을 가진 방법이다. 평균이나 t-test 하나만 넣고 강한 CDI 전체를 재현했다고 표시하지 않는다. 원형의 집합 크기·독립성·참여 비율 가정과 환자 2장/5장의 차이를 밝히고, 환자 단위 fitting·보정의 변경을 명세한다. <a href="https://arxiv.org/abs/2411.12858">CDI</a>, <a href="index.html#X01">기존 상세 메모</a>.</li>
+<li><strong>MoFit:</strong> 주요 주장은 원래 training caption 없이 model-fitted embedding으로 공격한다는 것이다. DIME/PIA와 함께 단순 저질의 공격으로 분류하면 부정확하다. 우리 conditioning 최적화와 직접 맞닿는 비교이므로 원형, 제한 예산/early stopping, A에서 얻은 conditioning을 B에 적용하는 변형이 중요하다. <a href="https://arxiv.org/abs/2602.22689">MoFit, ICLR 2026</a>.</li>
+<li><strong>Quantile MIA:</strong> 표본별 reconstruction-loss 분위수를 예측하는 학습형 공격이다. 모든 방법의 최종 환자 threshold를 독립 calibration 환자에서 정하는 공통 절차와 동일하지 않다. Quantile 원래 score/학습과 환자 집계를 구현한 비교, 그 위의 공통 환자 보정 절차를 분리한다. 단순히 전체 방법에 환자 threshold를 주었다고 Quantile 원형을 비교한 것이 아니다. <a href="https://proceedings.mlr.press/v235/tang24g.html">Quantile MIA, ICML 2024</a>.</li>
+<li><strong>DIME/PIA:</strong> denoiser forward의 저비용 비교로 검토한다. 보정 label, timestep·perturbation 선택, target latent/prediction type을 맞춘다. DIME의 현재 확인 원문은 2026-08 preprint이며 본학회 채택을 확인한 것으로 표시하지 않는다. <a href="https://arxiv.org/abs/2608.22824">DIME</a>, <a href="index.html#A10">PIA 기존 원문 메모</a>.</li>
+<li><strong>SD-MIA:</strong> 현재 보유한 공식 PDF와 X04 기록의 방법은 프롬프트 변형으로 얻은 생성 출력과 image/text relevance를 사용하는 출력 API 공격이다. 내부 denoising loss/gradient 접근을 요구하는 공격으로 소개하지 않는다. 공개 웹 페이지 재접속은 실패하여 이번 세부 대조는 기존 로컬 원문·메모 범위다. API 출력만의 주장이나 집합화만의 신규성을 다룰 때 중요하다. <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Qi_Black-box_Membership_Inference_Attacks_on_the_Pre-training_Data_of_Image-generation_CVPR_2026_paper.pdf">공식 PDF</a>, <a href="index.html#X04">기존 상세 메모</a>.</li>
+</ul>
+<p><strong>4. 우리 주장에 필요한 비교 구조</strong></p>
+<p>아래는 필요한 비교 축이며 모든 행×모든 논문×모든 조건을 즉시 전수 실행하라는 계약이 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>비교 축</th>
+<th>우선 대조 후보·방식</th>
+<th>제거할 대안 설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기존 영상 신호</td>
+<td>loss·SecMI, CLiD·PFAMI 및 적용 가능한 gradient 공격</td>
+<td>이미 강한 한 장 공격을 약하게 구현해서 생긴 차이</td>
+</tr>
+<tr>
+<td>단순 환자 집계</td>
+<td>동일 영상 score의 mean/max/median/top-k, 필요시 diversity weighting</td>
+<td>여러 장의 단순 누적이나 중복 가중치 차이</td>
+</tr>
+<tr>
+<td>기존 집합 방법</td>
+<td>CDI의 핵심 특징과 환자 변형, 동일 feature의 Deep Sets·moments</td>
+<td>표준 집합 학습만으로 충분함</td>
+</tr>
+<tr>
+<td>최적화 반응</td>
+<td>MoFit 및 다른 사진으로 전달하는 명시적 변형</td>
+<td>기존 conditioning 최적화의 단순 재사용</td>
+</tr>
+<tr>
+<td>표준 관계</td>
+<td>공개 encoder 유사도, target/base representation, 선형 gradient 관계</td>
+<td>일반 유사도·선형 관계만으로 설명됨</td>
+</tr>
+<tr>
+<td>저비용 대안</td>
+<td>PIA/PIAN·DIME 등 적용성 검증</td>
+<td>성능 이득이 추가 계산량에서만 생김</td>
+</tr>
+<tr>
+<td>보정 방법</td>
+<td>Quantile 공격 원형의 적용과 모든 방법에 공통인 환자 보정</td>
+<td>우리만 난이도·threshold 보정을 받음</td>
+</tr>
+<tr>
+<td>혼동 요인·제거 실험</td>
+<td>encoder-only, 다른 환자로 묶기, base 변화, 구조 모듈 제거</td>
+<td>split bias, 질환·기관 특성, identity만으로 설명됨</td>
+</tr>
+</tbody>
+</table>
+<p>같은 feature로 수행하는 여러 집계는 feature를 재사용할 수 있다. 각 집계를 diffusion 전체 재실행으로 세지 않는다. 개별 방법의 timestep/noise/conditioning이 바뀌면 그에 따른 연산은 별도다.</p>
+<p>diversity weighting이나 특정 집합 모델은 해당 주장의 중요한 대안이면 포함한다. 이름만으로 모든 연구에서 필수인 것은 아니다. 우리 방법은 gradient를 이용하므로 관련 gradient 계열을 단순 cheap forward baseline으로 대체하지 않는다. 공개 encoder-only가 우연 수준이라고 모든 편향이 배제되었다고 결론 내리지 않는다.</p>
+<p><strong>5. 공정성과 지표</strong></p>
+<ul>
+<li>같은 후보 환자·관측 수 m·학습 기여 수 k·겹침 r·target checkpoint를 사용한다. U와 E/P 결과를 섞어 한 숫자로 핵심 주장을 만들지 않는다.</li>
+<li>모델·caption·공개/보조 환자·known membership label의 허용 조건을 명시한다. 같은 접근권은 모든 방법이 반드시 같은 정보를 사용해야 한다는 뜻이 아니라 추가 정보를 특정 방법에만 무료로 제공하지 않는다는 뜻이다.</li>
+<li>개발·방법 선택·보정·최종 시험을 환자 단위로 분리한다. threshold와 결합 가중치를 시험 label로 선택하지 않는다.</li>
+<li>1% patient FPR은 목표 운영점이다. 이를 설정했다고 실제 시험 FPR이 정확히 1%가 되는 것은 아니다. 고정 규칙의 실제 FPR·TPR과 95% 구간을 보고한다. 소규모 pilot은 해당 오탐률의 정밀 확증으로 표시하지 않는다.</li>
+<li>효율성은 같은 TPR와 patient FPR에서 비교하거나, 같은 비용에서 탐지력 곡선을 비교한다. forward·backward·완성 이미지 생성 1회를 동일 query 1로 취급하지 않는다. 초기화·보조 fitting·reference 구축 비용과 환자당 적용 비용을 나누고 비용을 나눠 부담하는 조건을 명시한다.</li>
+<li>주장한 범위의 재현 가능한 이득을 입증한다. 모든 모델·모든 예산에서 모든 방법을 일률적으로 이겨야 하는 것은 아니며, 유리한 점만 선택해 넓은 우월성으로 확대하지 않는다.</li>
+</ul>
+<p><strong>6. 보호 비교와 연결한 권장 가설</strong></p>
+<blockquote>
+<p>관측 영상과 학습 영상이 불일치하는 의료 생성모델의 환자 참여 추론에서, 기존 영상 공격·집합 추론·관계 특징을 공정하게 적용한 뒤에도 남는 미세조정 반응이 있는지 검증한다. 그 반응을 이용하는 후보가 동일한 환자 오탐률·정보·비용에서 추가 탐지력을 제공한다면, 이를 통해 이미지 단위와 환자 단위 DP의 노출·효용·비용 평가를 개선한다.</p>
+</blockquote>
+<p>새 방법의 성능 주장을 하려면 강한 대조에 대한 이득이 필요하다. 기존 평가의 적용 범위·오류를 밝히는 주장이라면 새 알고리즘의 일률적인 우월성 대신 해당 현상과 원인·실제 보호 평가에 주는 영향을 검증해야 한다. 어느 경우에도 사용자/환자 단위 label 차이 자체나 의료 도메인 전환만으로 신규성이 입증되었다고 하지 않는다.</p>
+<p>이 문서로 새 실험 실행, 최종 baseline 전수 목록, K5/K10 동결 계약, 신호의 존재 또는 CVPR 경쟁력이 확정된 것은 아니다.</p></main></body></html>

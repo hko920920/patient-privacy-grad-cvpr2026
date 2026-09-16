@@ -1,0 +1,11 @@
+{
+  "code_sha256": "7cf4b95d46636369dd0c0a63629e7cc3436bf1fda332567a75985342b7d18b63",
+  "output_sha256": {
+    "protocol.json": "3b81f69157db3ecfbc2c4c2c5543bef2f595844f4f9e379b5ea2c94a9b67da62",
+    "analysis.json": "8a181659760bb8d32a34651635bee33c93cf33e8e6aa6967202cc8910ed1fefa",
+    "patient_scores.json": "b93eb20a2347512ccbbe3872f61497bea66eab84587bd3942f83e0dc939db42f",
+    "bootstrap.json": "3cdc7576152c6de018887c7f370e8efb331f785c9680a96613f3b934846216d4"
+  },
+  "raw_verification_sha256": "8219ad0f762b6eab14e1f06f09019c600e67b3cefd8d9ee431e561ce4e97d080",
+  "results_sha256": "bfa9f88b9e811f4de3e2adb2fcf58bf69a33b45e749d4331acdb90e412781ec7"
+}

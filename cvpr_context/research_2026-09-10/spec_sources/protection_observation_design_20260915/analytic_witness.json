@@ -1,0 +1,185 @@
+{
+  "scope": "Exact one-step bounded patient contribution plus isotropic Gaussian release and fixed linear score; no medical model inference or training",
+  "root_gradients": [
+    [
+      4.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "clip_norm": 1.0,
+  "sigma": 1.0,
+  "fpr": 0.01,
+  "vectors": {
+    "clip_then_mean": [
+      0.5,
+      0.5
+    ],
+    "mean_then_clip": [
+      0.9701425001453319,
+      0.24253562503633297
+    ],
+    "normalized_A_auxiliary_control": [
+      0.7071067811865475,
+      0.7071067811865475
+    ]
+  },
+  "rows": [
+    {
+      "q": 1.0,
+      "method": "clip_then_mean",
+      "query": "E_mean",
+      "standardized_mean_shift": 0.6063390625908325,
+      "tpr_at_1_percent_fpr": 0.04271541995132555
+    },
+    {
+      "q": 1.0,
+      "method": "clip_then_mean",
+      "query": "U",
+      "standardized_mean_shift": 0.5,
+      "tpr_at_1_percent_fpr": 0.033898939122842864
+    },
+    {
+      "q": 1.0,
+      "method": "mean_then_clip",
+      "query": "E_mean",
+      "standardized_mean_shift": 1.0,
+      "tpr_at_1_percent_fpr": 0.09236224807369398
+    },
+    {
+      "q": 1.0,
+      "method": "mean_then_clip",
+      "query": "U",
+      "standardized_mean_shift": 0.24253562503633297,
+      "tpr_at_1_percent_fpr": 0.018588624355563355
+    },
+    {
+      "q": 1.0,
+      "method": "normalized_A_auxiliary_control",
+      "query": "E_mean",
+      "standardized_mean_shift": 0.8574929257125441,
+      "tpr_at_1_percent_fpr": 0.0709360682098732
+    },
+    {
+      "q": 1.0,
+      "method": "normalized_A_auxiliary_control",
+      "query": "U",
+      "standardized_mean_shift": 0.7071067811865475,
+      "tpr_at_1_percent_fpr": 0.05269769981102018
+    },
+    {
+      "q": 0.2,
+      "method": "clip_then_mean",
+      "query": "E_mean",
+      "standardized_mean_shift": 0.6063390625908325,
+      "tpr_at_1_percent_fpr": 0.016543083990265113
+    },
+    {
+      "q": 0.2,
+      "method": "clip_then_mean",
+      "query": "U",
+      "standardized_mean_shift": 0.5,
+      "tpr_at_1_percent_fpr": 0.014779787824568572
+    },
+    {
+      "q": 0.2,
+      "method": "mean_then_clip",
+      "query": "E_mean",
+      "standardized_mean_shift": 1.0,
+      "tpr_at_1_percent_fpr": 0.026472449614738797
+    },
+    {
+      "q": 0.2,
+      "method": "mean_then_clip",
+      "query": "U",
+      "standardized_mean_shift": 0.24253562503633297,
+      "tpr_at_1_percent_fpr": 0.01171772487111267
+    },
+    {
+      "q": 0.2,
+      "method": "normalized_A_auxiliary_control",
+      "query": "E_mean",
+      "standardized_mean_shift": 0.8574929257125441,
+      "tpr_at_1_percent_fpr": 0.022187213641974637
+    },
+    {
+      "q": 0.2,
+      "method": "normalized_A_auxiliary_control",
+      "query": "U",
+      "standardized_mean_shift": 0.7071067811865475,
+      "tpr_at_1_percent_fpr": 0.01853953996220404
+    },
+    {
+      "q": 0.0,
+      "method": "clip_then_mean",
+      "query": "E_mean",
+      "standardized_mean_shift": 0.6063390625908325,
+      "tpr_at_1_percent_fpr": 0.01
+    },
+    {
+      "q": 0.0,
+      "method": "clip_then_mean",
+      "query": "U",
+      "standardized_mean_shift": 0.5,
+      "tpr_at_1_percent_fpr": 0.01
+    },
+    {
+      "q": 0.0,
+      "method": "mean_then_clip",
+      "query": "E_mean",
+      "standardized_mean_shift": 1.0,
+      "tpr_at_1_percent_fpr": 0.01
+    },
+    {
+      "q": 0.0,
+      "method": "mean_then_clip",
+      "query": "U",
+      "standardized_mean_shift": 0.24253562503633297,
+      "tpr_at_1_percent_fpr": 0.01
+    },
+    {
+      "q": 0.0,
+      "method": "normalized_A_auxiliary_control",
+      "query": "E_mean",
+      "standardized_mean_shift": 0.8574929257125441,
+      "tpr_at_1_percent_fpr": 0.01
+    },
+    {
+      "q": 0.0,
+      "method": "normalized_A_auxiliary_control",
+      "query": "U",
+      "standardized_mean_shift": 0.7071067811865475,
+      "tpr_at_1_percent_fpr": 0.01
+    }
+  ],
+  "noise_free_zero_moment_first_Adam": {
+    "A": [
+      0.9999999800000003,
+      0.9999999800000003
+    ],
+    "B": [
+      0.999999989692236,
+      0.9999999587689454
+    ],
+    "max_difference": 2.1231054914139236e-08,
+    "interpretation": "SGD gradient-direction witness is not an automatic AdamW prediction"
+  },
+  "controls_passed": [
+    "equal_norm_no_direction_change",
+    "clipping_inactive_equality",
+    "q_zero_no_signal"
+  ],
+  "independent_cdf_check": "statistics.NormalDist vs scipy.stats.norm, tolerance 1e-13",
+  "dp_scope": "Both bounded patient contributions admit the same add/remove Gaussian upper bound under a fixed public normalizer. This does not identify equal actual leakage or the ELS accountant.",
+  "not_claimed": [
+    "new DP algorithm",
+    "new theorem over prior literature",
+    "all-attack ranking reversal",
+    "diffusion efficacy",
+    "patient-DP violation"
+  ],
+  "source_sha256": "c12ae562defc34fa70348ec97fbcdc2f8509e3fef3652697a0453eae44206370"
+}
