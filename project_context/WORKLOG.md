@@ -1,5 +1,17 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 131-PRIVATE-SIGNAL-SAVED-CPU-AUDIT — 2026-09-17
+
+- 사용자 검토를 반영해23:49:14 KST 시작, 예상20–30분의 명부/저장통계 검토를 실제 수행했다. 날짜는 실행 중자정을 넘어20260917로 식별한다. 주 명세·생산/검산 코드·metadata·기존입력hash를 계산 전에 고정했고 별도private_signal_20260917_v1에 저장했다. 기존192장결과·backbone·head·final cal/test는변경하지않았다.
+- 실제544+reference40장pixel·metadata로 질환 구성/나이/성별/view/밝기/대비/해상도를 집계했다. Private80에는폐기종11명21장·기흉17명33장, 공개보조32명에는0명0장·1명1장이었다. 나이·밝기·대비의group차이는작았으며 기관shift로해석하지않았다. Metadata는weak label이고2장/4장관측차이를명시했다.
+- Private-only·matched2images와8고정hash분할40/40의16개head를CPU로계산했다. Public과private의전체predictioncosine은.994920이나delta의93.93%가단순scalar로설명되지않았다. Delta norm은공개보정의10.72%,pooled7.59%. 기존단순배율설명을확인된원인으로사용하지않는다.
+- Private-only개발MSE.4477354797,public.4479379975,pooled.4477524809,private80×2장.4477722331.16개half모두작은MSE개선,predictiondelta cosine .5810–.7023.공통Wpublic기준이라anchor표본오차보정도같은패턴을만들수있으며안정된private고유정보나16독립재현으로주장하지않았다. 개발MSE를생성효용으로대체하지않았다.
+- 같은loss와total-W ridge에서Wpublic+Delta재표현은private-only/pooled와같은해임을계산했다. Delta-only penalty는다른prior/목적이라는식을구분했고새solver는실행하지않았다.
+- 주결과이후보조로전체14label개발손실·공개backbone640의label·미학습공개명부의자료수를집계했다. 유리한질환만선택한gate가아니며posthoc로표시했다. 공개backbone도폐기종4장/기흉5장을봤고,개발해당환자는5명/7명,현재고정공개nontrain명부의후보는3명/1명뿐이었다. 이자료를새reference로채택하거나역할을재배정하지않았다.
+- **판정: 후속근거에는제한적긍정,생성효용/DP기여는미확인.** 실제공개underrepresented condition의추가적응을검토할근거는있지만192장관문실패는유지한다. 다음은target/reference와평가가능성15–25분점검,신규GPU실행은자동포함하지않는다. 충분한평가자료없이text score나MSE만으로성공선언·solver확대금지.
+- CPU본분석20.359초,독립검산4.563초/2,819항목PASS;모든개발raw1,280건의직접prediction손실,다른solve/기하/metadata/분할규칙을확인했다. 최대차이1.73e-15. 신규해석head18개,기존3개복원,새GPU/생성/DP0. 원격main확인·push는수행하지않았다. 결과MD/HTML·두state·현재상태를갱신한다.
+- 최종문서검증PASS:기존1,145로컬링크·221PDF앵커와새12링크,111개동결source·기존계획17파일·192개기존PNG불변,원래실패adoption·두state7핵심필드일치를확인했다. 깨진링크0, spec_sources/private_signal_report_verification_20260917.json에저장. 실제23:49–00:11경KST약22분으로최초20–30분예상내완료했고현재실행중없음.
+
 ## 130-MEDICAL-BACKBONE-NONDP-HEAD — 2026-09-16
 
 - 사용자의 다음 핵심 비교 요청을 실제 실행했다. 22:29:19 KST 시작, 최초 전체 예상 45–75분. **최종 연구 판정은 혼합적이며 사적 추가 생성 효용 관문 미통과**다. E4/CFG7.5는 유지했고 새 backbone·solver·seed·correction scale 탐색은 하지 않았다.

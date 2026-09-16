@@ -1,5 +1,7 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-17 최신 CPU 검토 — 제한적으로 긍정적인 구체적 후속 근거:** [사적 자료/출력 방향 결과](TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md). Private-only의 출력 변화는 단순 scalar가 아니고 여러 private subset에서도 작은 개발MSE 개선이 남았다. Private에 더 많이 있는 폐기종·기흉 조건을 직전 생성 평가가 직접 다루지 않았다는 자료 차이도 확인했다. 다만 backbone도 해당 질환을 봤고 target reference는 부족하다. 192장 생성 효용 미통과·patient-DP 보류는 유지한다. 안정된delta·metadata차이를 privacy기여 성공조건으로 바꾸지 않는다. 다음은 실재 target/reference와 공정한 평가 가능성 확인15–25분이며 새GPU0, 큰단계2·방향1이다. 아래 최신/다음은 이전 이력이다.
+
 **2026-09-16 최신 실제 결과 — public/pooled 192장 비교 완료:** [전체 결과와 원본 대응 그림](TRACK1_MEDICAL_HEAD_RESULTS_20260916.md). **혼합적이며 사적 추가 생성 효용은 미통과다.** 새 의료 backbone의 head는 실제 생성 지표를 변화시켰고 공개전용의 조건별 KID가 7.98% 낮아졌다. 그러나 pooled는 공개전용보다 KID 0.99% 악화, precision 동일, density·coverage 낮음이었다. 해당 prompt cosine의 +0.009668은 긍정적 관측이나 질환 간 상대 구별 개선은 아니다. 전체 가림 판독도 일관된 public/pooled 우열을 확인하지 못했다. 큰단계 2·방향 1에서 이 개발 패키지는 완료했으며 DP 단계 통과로 세지 않는다. 다음은 공통 보정과 실제 사적 추가 정보의 설계 검토 20–30분이다. 같은 backbone·CFG·seed를 재조정하지 않고, 구체적인 정보/표현 변경 근거 전에 새 GPU 실행을 붙이지 않는다. 아래 head 미실행·다음 안내는 이전 이력이다.
 
 **2026-09-16 최신 실제 확인 — 좋은 형태 관문 결과:** [예약16장 확인과 조건부 채택](TRACK1_PUBLIC_OPERATING_CONFIRMATION_RESULTS_20260916.md). 고정 E4/CFG7.5에 대해 두 판독자 각16/16·교집합16/16·prompt별4/4로 통과했다. 후속 비DP head 평가를 위한 운영 기반모델만 조건부 채택한다. 이전 확인 실패는 유지하고 CFG 우위·임상 품질·일반화 안정성·patient-DP 효용으로 확대하지 않는다. 네 공통 latent block·비임상 AI 판독이며 root는 후보 정체를 알고 있었다. 다음은 새 특징/통계/W·CFG 적용 검산과 public-only/pooled 실제 생성 비교(45–75분 예상), 현재 큰단계2·방향1 및 새head/DP 미실행을 유지한다. 아래 미실행/채택보류 문장은 이전 이력이다.

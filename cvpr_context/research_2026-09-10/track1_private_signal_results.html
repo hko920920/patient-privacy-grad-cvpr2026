@@ -1,0 +1,277 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>방향1: 사적 추가 신호의 자료·출력·평가 검토</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p><h1>사적 추가 신호 검토: 자료 차이와 출력 방향은 확인, 생성 효용은 미확인</h1>
+<p><strong>최종 판정: 후속 연구 근거에는 제한적으로 긍정적이다. 현재 후보를 ‘단순 배율 변화/완전한 무신호’로 끝낼 근거는 없지만, patient-DP로 진행할 근거도 아직 없다.</strong></p>
+<p>실제 명부·픽셀·기존 4,352개 raw·환자 통계로 CPU 분석을 수행했다. Private-only head의 출력 차이는 단순 scalar 확대가 아니며, 사적 환자를 나눈 모든 16개 head에서 재사용 개발 MSE의 작은 개선이 유지됐다. 자료에는 폐기종·기흉의 빈도 차이가 있고, 직전 생성 평가의 prompt/reference가 이 두 조건을 직접 다루지 않았음도 확인했다.</p>
+<p>그러나 해당 개선은 아직 denoising MSE다. 공개 backbone도 두 질환의 자료를 학습했고, 개발/참조 자료는 작고 불균형하다. <strong>직전 192장의 사적 생성 효용 미통과는 그대로 유지한다.</strong> 이번은 전체 연구의 2번·방향 1 안에서 한 CPU 검토를 완료한 것이며 새 GPU·생성·DP 실행은 0이다.</p>
+<h2>1. 확인 범위</h2>
+<p><a href="track1_private_signal_protocol.html">실행 전 명세</a>에 따라 새 분석 폴더에 입력·코드 hash를 묶었다. 원 metadata, public32/private80/development40/reference40 명부와 원본 pixel, 기존 A/B/Q·W와 raw를 대조했다. 표본·threshold·배율·lambda·backbone을 결과에 맞춰 바꾸지 않았다.</p>
+<p>핵심 분석은 실행 전에 고정했다. 전체 14개 weak-label 개발 손실표, public640 backbone의 label 문맥, 미학습 공개 명부의 자료 수는 <strong>주 분석 결과 이후의 해석/계획용 보조 집계</strong>로 따로 저장했다. 유리한 질환만 골라 기존 성공 기준을 바꾼 것이 아니다. 기존 code·계약·실패·192개 생성물은 변경하지 않았다.</p>
+<h2>2. 자료는 같은 출처지만 완전히 같은 구성은 아니다</h2>
+<table>
+<thead>
+<tr>
+<th>역할</th>
+<th style="text-align: right;">환자/영상</th>
+<th style="text-align: right;">환자별 선택영상 median age의 평균</th>
+<th style="text-align: right;">남성 환자</th>
+<th style="text-align: right;">PA</th>
+<th>실제 파일 크기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public head</td>
+<td style="text-align: right;">32/64</td>
+<td style="text-align: right;">48.44</td>
+<td style="text-align: right;">17/32</td>
+<td style="text-align: right;">64/64</td>
+<td>모두 1024×1024</td>
+</tr>
+<tr>
+<td>Private-role head</td>
+<td style="text-align: right;">80/320</td>
+<td style="text-align: right;">49.93</td>
+<td style="text-align: right;">50/80</td>
+<td style="text-align: right;">320/320</td>
+<td>모두 1024×1024</td>
+</tr>
+<tr>
+<td>재사용 development</td>
+<td style="text-align: right;">40/160</td>
+<td style="text-align: right;">48.76</td>
+<td style="text-align: right;">28/40</td>
+<td style="text-align: right;">160/160</td>
+<td>모두 1024×1024</td>
+</tr>
+<tr>
+<td>직전 generation reference</td>
+<td style="text-align: right;">40/40</td>
+<td style="text-align: right;">46.85</td>
+<td style="text-align: right;">19/40</td>
+<td style="text-align: right;">40/40</td>
+<td>모두 1024×1024</td>
+</tr>
+</tbody>
+</table>
+<p>Private−public의 환자 단위 standardized mean difference는 나이 +0.101, 평균 밝기 +0.0166, 픽셀 표준편차 −0.1357, p99−p1 대비 +0.0218이었다. 밝기·대비는 고정 grayscale 256px 변환의 proxy다. 이런 값만으로 같은 기관 분포임을 증명하거나 acquisition 차이가 전혀 없다고 단정하지 않는다. 서로 다른 실제 병원으로 정의된 자료는 아니며, 같은 NIH 자료의 역할 분할이다.</p>
+<p>아래는 <strong>선택 영상의 weak-label 비율</strong>이다. 다중 label이므로 합이 100%일 필요가 없다. 각 역할 안에서는 환자당 영상 수가 같아 환자별 영상비율의 평균과 같다. 환자 중 진단자 비율과는 다르다.</p>
+<table>
+<thead>
+<tr>
+<th>Weak label</th>
+<th style="text-align: right;">Public 64장</th>
+<th style="text-align: right;">Private 320장</th>
+<th style="text-align: right;">Development 160장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No Finding</td>
+<td style="text-align: right;">29, 45.31%</td>
+<td style="text-align: right;">160, 50.00%</td>
+<td style="text-align: right;">78, 48.75%</td>
+</tr>
+<tr>
+<td>Effusion</td>
+<td style="text-align: right;">9, 14.06%</td>
+<td style="text-align: right;">50, 15.63%</td>
+<td style="text-align: right;">23, 14.38%</td>
+</tr>
+<tr>
+<td>Cardiomegaly</td>
+<td style="text-align: right;">3, 4.69%</td>
+<td style="text-align: right;">3, 0.94%</td>
+<td style="text-align: right;">1, 0.63%</td>
+</tr>
+<tr>
+<td>Emphysema</td>
+<td style="text-align: right;">0, 0%</td>
+<td style="text-align: right;">21, 6.56%</td>
+<td style="text-align: right;">6, 3.75%</td>
+</tr>
+<tr>
+<td>Pneumothorax</td>
+<td style="text-align: right;">1, 1.56%</td>
+<td style="text-align: right;">33, 10.31%</td>
+<td style="text-align: right;">13, 8.13%</td>
+</tr>
+<tr>
+<td>Nodule</td>
+<td style="text-align: right;">11, 17.19%</td>
+<td style="text-align: right;">21, 6.56%</td>
+<td style="text-align: right;">24, 15.00%</td>
+</tr>
+<tr>
+<td>Mass</td>
+<td style="text-align: right;">10, 15.63%</td>
+<td style="text-align: right;">23, 7.19%</td>
+<td style="text-align: right;">5, 3.13%</td>
+</tr>
+</tbody>
+</table>
+<p>이는 “Private80이 의미상 완전히 같은 자료를 단순히 더한 것”이라고 단정할 수 없다는 근거다. 반대로 자연적인 표본/역할 선택으로 생긴 차이이지 미리 정의한 private-target 병원 shift의 재현은 아니다. 전체 label·성별·원 해상도·연령 범위·관측량은 원본 분석 JSON에 포함했다.</p>
+<p><strong>공개 head 자료만 보고 전체 공개 지식을 판단하면 안 된다.</strong> E4 backbone의 공개640명·749장에는 Emphysema 4명/4장, Pneumothorax 5명/5장이 이미 있다. Private80은 각각 11명/21장, 17명/33장이다. 따라서 검토 가능한 후보는 “공개측에서 상대적으로 적게 다뤄진 조건의 추가 적응”이며, 공개 모델이 전혀 모르는 질환의 최초 학습이 아니다.</p>
+<h2>3. Private-only는 실제로 다른 보정을 만든다</h2>
+<p>동일 64×4 head·lambda .001로 private80 통계만의 비DP ridge 해도 계산했다. 가중치 좌표뿐 아니라 development40의 저장 feature가 유도하는 inner product, 즉 실제-noise 상태의 prediction 공간에서도 비교했다.</p>
+<table>
+<thead>
+<tr>
+<th>Private 또는 pooled를 public과 비교</th>
+<th style="text-align: right;">Private-only</th>
+<th style="text-align: right;">Pooled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>가중치 cosine</td>
+<td style="text-align: right;">0.982430</td>
+<td style="text-align: right;">0.991595</td>
+</tr>
+<tr>
+<td>가중치 delta norm / public norm</td>
+<td style="text-align: right;">19.79%</td>
+<td style="text-align: right;">13.45%</td>
+</tr>
+<tr>
+<td>개발 prediction cosine</td>
+<td style="text-align: right;">0.994920</td>
+<td style="text-align: right;">0.997404</td>
+</tr>
+<tr>
+<td>prediction delta norm / public correction norm</td>
+<td style="text-align: right;">10.72%</td>
+<td style="text-align: right;">7.59%</td>
+</tr>
+<tr>
+<td>public에 맞춘 최적 prediction scalar</td>
+<td style="text-align: right;">1.026402</td>
+<td style="text-align: right;">1.018697</td>
+</tr>
+<tr>
+<td>delta energy 중 scalar로 설명되지 않는 비율</td>
+<td style="text-align: right;">93.93%</td>
+<td style="text-align: right;">93.93%</td>
+</tr>
+</tbody>
+</table>
+<p>전체 보정의 cosine이 0.99에 가깝다고 해서 <strong>차이 자체가 단순 크기 조절이라는 뜻은 아니다.</strong> 두 보정에 큰 공통 성분이 있어도 작은 차이는 다른 방향일 수 있다. 실제로 이번 차이의 약 94%는 public 보정에 대한 scalar projection으로 설명되지 않는다. 따라서 앞선 “pooled가 공통 보정을 조금 더 강하게 할 뿐”이라는 설명은 확인된 원인으로 사용할 수 없다.</p>
+<p>이 결과가 새로운 의미적/질환별 정보의 입증은 아니다. 가중치 차원 선택에 따른 좌표 효과를 줄이기 위해 prediction 공간도 봤지만, 그 공간 역시 실제 CXR 주변의 noisy state이며 pure-noise 생성 경로의 효용과는 다르다.</p>
+<p>기존 생성 PNG에서 public−backbone RMS는 평균 0.100146, pooled−public RMS는 0.017947이었다(0–1 RGB). 차이가 0인 것은 아니지만 pixel 이동량은 품질 지표가 아니다.</p>
+<h2>4. 환자 subset을 바꿔도 작은 MSE 개선은 남았다</h2>
+<p>Private80을 미리 정한 8개 hash순서로 40명/40명씩 나눴다. 각 분할 안에서는 무중복이며, 분할끼리는 같은 80명을 반복해서 사용했다.</p>
+<ul>
+<li>두 절반의 delta prediction cosine: <strong>0.5810–0.7023</strong></li>
+<li>delta coefficient cosine: <strong>0.3202–0.7300</strong></li>
+<li>16개 head 모두 public보다 평균 개발 MSE가 낮음</li>
+<li>public 대비 절대 MSE 감소: <strong>0.00009114–0.00024507</strong></li>
+</ul>
+<p>방향의 일부 일관성이 있는 개발 관측이다. 매우 안정적인 하나의 환자 모집단 방향을 확증했다거나 16회 독립 재현했다고 세지 않는다.</p>
+<p>특히 모든 delta는 같은 W_public을 빼서 만든다. W_public의 표본 오차를 여러 private subset이 공통으로 교정해도 delta가 같은 방향을 향할 수 있다. 따라서 <strong>안정된 delta만으로 private-specific signal을 증명할 수 없다.</strong> 이것은 고유 의미 정보가 아닌 더 많은 동일-source 자료의 추정 안정화일 가능성도 남긴다.</p>
+<h2>5. 관측량과 pooled 희석은 어디까지 설명하는가</h2>
+<table>
+<thead>
+<tr>
+<th>Head</th>
+<th style="text-align: right;">개발 MSE</th>
+<th style="text-align: right;">Public보다 낮은 환자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public32×2장</td>
+<td style="text-align: right;">0.4479379975</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td>Private80×4장</td>
+<td style="text-align: right;">0.4477354797</td>
+<td style="text-align: right;">32/40</td>
+</tr>
+<tr>
+<td>Pooled112명</td>
+<td style="text-align: right;">0.4477524809</td>
+<td style="text-align: right;">35/40</td>
+</tr>
+<tr>
+<td>Private80×고정2장</td>
+<td style="text-align: right;">0.4477722331</td>
+<td style="text-align: right;">29/40</td>
+</tr>
+</tbody>
+</table>
+<p>Private-only의 public 대비 상대 감소는 약 0.0452%다. Pooled보다 추가로 낮춘 양은 <strong>0.0000170012</strong>뿐이다. 현재 MSE에서 pooled는 private-only가 얻은 public 대비 개선의 약 91.6%를 이미 유지한다. Pooled 목적이 private 신호를 완전히 지워버렸다는 근거는 아니다. Private-only의 실제 생성 품질은 이번에 측정하지 않았으므로 pooled보다 좋다고 말하지 않는다.</p>
+<p>환자당 두 장을 hash로 고정한 private 대조도 작은 MSE 개선을 유지했다. 따라서 관측한 차이 전부가 “4장 대 2장” 때문이라고 설명할 수는 없다. 다만 환자 수는 여전히 80 대 32이므로 public sufficiency나 동일 표본 수 비교를 마친 것은 아니다. Public budget curve는 이번에 실행하지 않았다.</p>
+<p>8개 timestep stratum 중 private-only는 6개에서 MSE가 낮고 2개에서 높았다. Delta energy는 단일 stratum이나 하나의 latent output channel에만 존재하지 않았다. 채널은 VAE latent 좌표로 임상 질환 축이 아니다. 이 결과만으로 특정 timestep을 골라 새 head를 만들지 않는다.</p>
+<h2>6. 질환별 MSE도 생성 효용을 대신하지 못한다</h2>
+<p>주 분석의 No Finding/Effusion/Cardiomegaly/other와, 후속 <strong>전체 14-label</strong> 보조 표를 구분해 저장했다. 조건 내에서는 환자별로 해당 영상들을 평균한 뒤 환자 평균을 사용했다. 다중 label이 겹치므로 각 행은 독립 집합이 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th style="text-align: right;">개발 환자/영상</th>
+<th style="text-align: right;">Private−public MSE</th>
+<th style="text-align: right;">Pooled−public MSE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No Finding</td>
+<td style="text-align: right;">34/78</td>
+<td style="text-align: right;">−0.000282604</td>
+<td style="text-align: right;">−0.000243419</td>
+</tr>
+<tr>
+<td>Effusion</td>
+<td style="text-align: right;">15/23</td>
+<td style="text-align: right;">−0.000211145</td>
+<td style="text-align: right;">−0.000191058</td>
+</tr>
+<tr>
+<td>Cardiomegaly</td>
+<td style="text-align: right;">1/1</td>
+<td style="text-align: right;">+0.000485379</td>
+<td style="text-align: right;">+0.000310910</td>
+</tr>
+<tr>
+<td>Emphysema, 보조 집계</td>
+<td style="text-align: right;">5/6</td>
+<td style="text-align: right;">−0.000136054</td>
+<td style="text-align: right;">−0.000134377</td>
+</tr>
+<tr>
+<td>Pneumothorax, 보조 집계</td>
+<td style="text-align: right;">7/13</td>
+<td style="text-align: right;">−0.000293124</td>
+<td style="text-align: right;">−0.000247485</td>
+</tr>
+</tbody>
+</table>
+<p>폐기종·기흉에서도 MSE는 조금 낮지만, No Finding에서도 개선되고 크기가 압도적으로 다른 것은 아니다. 희소 조건만의 개선이라고 해석하지 않는다. Cardiomegaly의 악화도 1명뿐이므로 일반화하지 않는다. 전체 표에는 악화한 다른 label과 개발 표본이 0인 Pneumonia도 그대로 포함했다.</p>
+<p>직전 생성 prompt는 generic/normal/effusion/cardiomegaly였고 KID reference는 normal·effusion 중심 40명이었다. Reference의 emphysema/pneumothorax 표기는 각각 0이었다. 따라서 이 배치는 두 희소 조건의 추가 생성 가치를 직접 검증한 실험은 아니다. <strong>그렇다고 기존 normal/effusion의 KID 악화를 성공으로 다시 해석하지 않는다.</strong></p>
+<h2>7. Pooled와 residual의 정확한 관계</h2>
+<p>L_g(W)를 해당 cohort의 평균 quadratic prediction loss로 쓰면 기존 목적은 다음이다.</p>
+<p><code>(32/112)L_public(W) + (80/112)L_private(W) + lambda||W||²</code></p>
+<p>여기에 단순히 <code>W=W_public+Delta</code>를 대입하고 total-W penalty를 그대로 두면 <strong>동일한 함수족·목적·최적해</strong>다. 이번 private-only/pooled 모두 수치적으로 같은 해를 복원했다.</p>
+<p>Private-only loss에 total-W ridge를 유지하면 residual 형식의 해도 W_private와 같다. 반면 <code>L_private(W_public+Delta)+lambda||Delta||²</code>는 W_public을 중심으로 하는 다른 prior다.</p>
+<p><code>Delta=(A_private+lambda I)^(-1)(B_private−A_private W_public)</code></p>
+<p>이 경우 최종 W는 기존 private-only ridge와 일반적으로 다르다. 변경의 본질은 residual이라는 이름이 아니라 <strong>정규화 중심/목적함수 변경</strong>이다. 조건별 gating이나 새로운 특징을 추가하면 함수족도 달라진다. 이번에는 이 다른 목적의 solver를 만들거나 성능 후보로 선택하지 않았다.</p>
+<h2>8. 다음 결정: 하나의 타당한 후보는 남지만 평가 자료부터 필요하다</h2>
+<p>이번 답은 “전혀 차이가 없다, 즉시 전부 중단”도 아니고 “안정된 delta를 찾았으니 DP 진행”도 아니다.</p>
+<p><strong>구체적인 후속 후보:</strong> 공개자료에서 상대적으로 적게 관측된 폐기종·기흉 조건에 대해 현재 사적 역할 자료가 추가 생성 가치를 주는지 확인한다. 이미 계산한 public/private-only/pooled를 대조하고, normal/effusion에서의 변화도 함께 보존해야 한다. 현재 데이터에서 실제로 관측한 대표성 차이에 근거하며 가상의 유리한 병원을 만들어낸 것이 아니다. 이 두 조건은 결과를 본 뒤 나온 가설이므로 새로운 사전 명세와 확인 자료가 필요하다.</p>
+<p>하지만 현재 reference40에는 두 조건이 없고, 개발자료는 5명/7명뿐이다. 기존 공개 backbone 명부에서 train을 제외한 selection/confirmation/reserve를 <strong>재배정하지 않고 개수만 확인</strong>했을 때도 해당 후보는 폐기종 3명/3장, 기흉 1명/1장이었다. 이것으로 신뢰할 만한 target 분포 비교가 바로 준비됐다고 말할 수 없다. 이 집합들을 새 reference로 채택하지 않았다.</p>
+<p>따라서 다음 한 작업은 <strong>환자 중복·학습 노출을 배제한 조건별 reference와 실제 target 정의를 확보할 수 있는지 확인</strong>하는 것이다. 예상 15–25분의 자료/평가 가능성 점검이며 새 GPU 학습·생성은 포함하지 않는다. 충분한 자료와 적절한 지표가 확보되면, 기존 세 head로 한 번의 비DP 확인을 먼저 명세한다. 그때도 공개 backbone·lambda·배율을 튜닝하지 않는다.</p>
+<p>자료가 부족한 상태에서 높은 text cosine만으로 성공을 선언하거나, 이 MSE를 근거로 conditional/residual head와 DP solver를 계속 늘리지 않는다. 평가 가능한 target을 확보하지 못하면 현재 자료로 privacy 방법 논문을 밀어붙이는 작업을 중단하고 자료 확보 또는 연구 구성 변경을 별도 결정한다. <strong>현재 CVPR privacy 기여는 아직 미확보다.</strong></p>
+<h2>9. 실제 실행·검산·자료</h2>
+<p>CPU 본 분석은 20.359초, 별도 검산은 4.563초였다. 신규 해석용 head 18개(private-only, 두장 대조, 16개 half)를 계산하고 기존 세 head도 복원했다. 새 모델 forward/backward, 생성, patient-DP는 모두 0이다.</p>
+<p>코드·자료 검토·분석·해석·문서화를 합친 실제 작업은 <strong>2026-09-16 23:49–09-17 00:11 KST경, 약 22분</strong>이다. 최초 전체 예상20–30분 안에서 완료했다.</p>
+<p>독립 검산은 2,819항목을 통과했다. 다른 선형 solve, scalar projection, 같은-loss reparameterization, 모든 development raw 1,280건의 직접 prediction loss, subset/관측량 규칙, metadata 연결을 확인했다. 최대 수치 차이는 약 1.73×10^-15였다. 이 수는 독립 환자 수나 생성 품질의 검증 수가 아니다.</p>
+<ul>
+<li><a href="../../code_working/_reports/private_signal_20260917_v1/contract.json">실행 계약</a></li>
+<li><a href="../../code_working/_reports/private_signal_20260917_v1/analysis.json">전체 분석과 cohort·direction·timestep 수치</a></li>
+<li><a href="../../code_working/_reports/private_signal_20260917_v1/verification.json">독립 검산</a></li>
+<li><a href="../../code_working/_reports/private_signal_20260917_v1/all_label_development_exploratory.json">전체 label 보조 표</a></li>
+<li><a href="../../code_working/_reports/private_signal_20260917_v1/public_backbone_label_context.json">공개 backbone의 label 문맥</a></li>
+<li><a href="../../code_working/_reports/private_signal_20260917_v1/public_unused_role_availability.json">기존 공개 미학습 명부의 자료 수 확인</a></li>
+<li><a href="track1_medical_head_results.html">직전 실제 192장 생성 결과</a></li>
+</ul>
+<p>로컬 분석과 기록이며 원격 main 확인·push는 수행하지 않았다. 192장 결과·checkpoint·원래 실패 채택 파일과 final calibration/test는 유지했다.</p></main></body></html>

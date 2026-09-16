@@ -91,6 +91,8 @@ def convert(md,from_review=False):
         if href=='TRACK1_MEDICAL_HEAD_PROTOCOL_20260916.md':href='track1_medical_head_protocol.html'
         if href=='TRACK1_MEDICAL_HEAD_EVALUATION_NOTE_20260916.md':href='track1_medical_head_evaluation_note.html'
         if href=='TRACK1_MEDICAL_HEAD_RESULTS_20260916.md':href='track1_medical_head_results.html'
+        if href=='TRACK1_PRIVATE_SIGNAL_PROTOCOL_20260917.md':href='track1_private_signal_protocol.html'
+        if href=='TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md':href='track1_private_signal_results.html'
         a['href']=href
     return str(soup)
 
@@ -168,6 +170,7 @@ def main():
     head = '<section class="panel"><h2>최신 실제 결과: 공통 잡음·CFG 진단 64장 완료</h2><p><a href="track1_public_operating_results.html"><strong>전체 영상·대응 비교·실측 시간</strong></a> · <a href="track1_public_operating_protocol.html">고정 실행 명세</a></p><p>형태에는 긍정적이나 CFG를 높여 이전 실패를 해결했다는 증거는 없습니다. E4/CFG1·E4/CFG7.5·E8/CFG1은 각각16/16, E8/CFG7.5는15/16입니다. 이번 입력에서는 CFG1도 실패하지 않았습니다.</p><p>네 seed block·한 명의 가림 형태 판독이며, 이전 확인10/16 실패와 채택 보류는 유지합니다. E4/CFG7.5는 새16장 확인 후보일 뿐입니다. 그 확인은 아직 미실행이며15–25분 예상입니다. 실제 실행3분17초·새학습0, 작은head·DP 효용은 미검증입니다. 아래 최신/다음 안내는 이전 기록입니다.</p></section>' + head
     head = '<section class="panel"><h2>최신 실제 결과: 예약16장 확인 통과</h2><p><a href="track1_public_operating_confirmation_results.html"><strong>전체16장·독립 원표·후속 실험용 조건부 채택</strong></a> · <a href="track1_public_operating_confirmation_protocol.html">생성 전 고정 명세</a></p><p>E4·CFG7.5의 예약 입력에서 두 판독자 모두16/16, 네 prompt 각4/4, 불일치0입니다. 기본 흉부 형태 관문에는 좋은 결과입니다. 의료 품질·CFG 우위·사적 추가 효용·patient-DP 성능은 아직 검증하지 않았습니다.</p><p>이전 확인 실패는 보존하고 새 상태에 후속 비DP head 평가용 조건부 채택만 기록했습니다. 실행64초·새학습/head/DP0. 다음은 새backbone 특징/통계/W와 CFG 연결 검산 후 public-only/pooled 실제 생성 비교,45–75분 예상입니다. 아래 pending/다음 안내는 이전 기록입니다.</p></section>' + head
     head = '<section class="panel"><h2>최신 실제 결과: 192장 비교 완료, 사적 추가 효용은 미통과</h2><p><a href="track1_medical_head_results.html"><strong>전체 결과·192장 대응 그림·수치 검산</strong></a> · <a href="track1_medical_head_protocol.html">실행 전 명세</a></p><p>판정은 혼합적입니다. 새 공개 의료 backbone에서 공개전용 head는 조건별 KID를 7.98% 낮췄지만, 사적80명을 합친 pooled는 공개전용보다 0.99% 높았습니다. 해당 prompt 유사도는 조금 좋아졌으나 질환 간 상대 구별·분포 지표·전체 가림 관찰이 일관된 사적 이득을 보여주지는 못했습니다.</p><p>특징4352건·새 head·192장 실제 생성과 의료 encoder 평가까지 완료했습니다. DP 확대와 backbone 재조정은 보류합니다. 다음은 공통 보정과 사적 코호트 추가 정보의 설계 검토20–30분이며 새 GPU 실행은 미정입니다. 현재 큰단계2·방향1, 실행중없음. 아래 최신/다음 안내는 이전 기록입니다.</p></section>' + head
+    head = '<section class="panel"><h2>최신 CPU 검토: 사적 추가 방향은 존재, 생성 효용은 미확인</h2><p><a href="track1_private_signal_results.html"><strong>자료 차이·출력 delta·subset·목적함수 검토</strong></a> · <a href="track1_private_signal_protocol.html">고정 분석 명세</a></p><p>제한적으로 긍정적인 후속 근거입니다. Private-only의 출력 delta 중93.93%는 단순 scalar가 아니고,16개 subset head에서도 작은 개발MSE 개선이 남았습니다. Private에서 더 많이 관측된 폐기종·기흉을 직전 생성 평가가 직접 다루지 않았음도 확인했습니다.</p><p>공개 backbone도 두 조건을 학습했고 평가자료가 부족하므로 private 생성효용·DP 성공은 아닙니다. 기존192장 관문 실패는 유지합니다. 다음은target/reference·평가 가능성15–25분 점검, 새GPU/생성0이며 아래 최신/다음은 이전 기록입니다.</p></section>' + head
     controls+=''.join('<option value="'+k+'">'+esc(v)+' ('+str(stats[k])+')</option>' for k,v in ROLES.items())
     controls+='''</select></label><label>확인 수준<select id="status"><option value="all">모든 확인 수준</option><option value="selected">PDF 선택 절 (75)</option><option value="partial">공식 본문 일부 (3)</option><option value="abstract">초록만 (1)</option><option value="replay">공개 packet 재계산 (2)</option></select></label><label>발표 형식<select id="venue"><option value="all">모든 발표 형식</option><option value="main">메인 학회 표기</option><option value="other">저널·워크샵·공개본 등</option></select></label><label class="search">논문명·방법·검토 내용 검색<input id="search" type="search" placeholder="예: MoFit, CLiD, 환자 평균, FPR" autocomplete="off"></label></div><p id="count" aria-live="polite"></p><button id="reset" type="button">필터 초기화</button><button id="expand" type="button">표시된 검토 펼치기</button><button id="collapse" type="button">모두 접기</button><p class="meta">비교 후보 수는 전부 실행할 의무 목록이나 같은 문제의 SOTA 순위가 아니다. 접근 권한과 주장에 맞는 비교군을 선택한다.</p></section>'''
     cards=[]
@@ -230,6 +233,8 @@ def main():
         ('TRACK1_MEDICAL_HEAD_PROTOCOL_20260916.md','track1_medical_head_protocol.html','방향1: 공개 의료 backbone 위의 고정 비DP head 비교'),
         ('TRACK1_MEDICAL_HEAD_EVALUATION_NOTE_20260916.md','track1_medical_head_evaluation_note.html','방향1: 대응 생성의 평가 해석과 확인 범위'),
         ('TRACK1_MEDICAL_HEAD_RESULTS_20260916.md','track1_medical_head_results.html','방향1: 새 의료 backbone의 public·pooled 실제 생성 비교'),
+        ('TRACK1_PRIVATE_SIGNAL_PROTOCOL_20260917.md','track1_private_signal_protocol.html','방향1: 사적 추가 신호의 저장 자료 검토 명세'),
+        ('TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md','track1_private_signal_results.html','방향1: 사적 추가 신호의 자료·출력·평가 검토'),
         ('REALISTIC_RESEARCH_PLAN_20260916.md','realistic_research_plan.html','의료 생성모델 환자 보호: 현실적인 다음 계획')]:
         if (ROOT/source).exists():
             body='<p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p>'+convert((ROOT/source).read_text(encoding='utf-8'))

@@ -1,0 +1,31 @@
+{
+  "status": "PASS_PRIVATE_SIGNAL_REPORT_BINDINGS",
+  "created_utc": "2026-09-16T15:11:37.006377+00:00",
+  "existing_HTML_check": {
+    "rows": 79,
+    "checked_local_links": 1145,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_local_links": 12,
+  "new_broken_links": 0,
+  "frozen_source_files": 111,
+  "prior_plan_files": 17,
+  "prior_generation_images_unchanged": 192,
+  "old_failed_adoption_unchanged": true,
+  "state_fields": [
+    "current_step",
+    "next_task",
+    "next_task_output",
+    "step2_open_items",
+    "current_result_report",
+    "current_planning_report",
+    "active_execution"
+  ],
+  "independent_analysis_checks": 2819,
+  "new_GPU": 0,
+  "new_generation": 0,
+  "report_sha256": "1e6f9e4d7fff8d1d54751067cbe35be048a1353f92b26a9af731be07357973c4",
+  "decision_sha256": "5493e11a1c0f8541c6ff7f13f7bf53376cc5c895020ac754b56352f6c8220eb2",
+  "verifier_sha256": "5994f1b57edc8c35ec64903c37c804bfd7343942c5b0d23df2b6ea838a934268"
+}

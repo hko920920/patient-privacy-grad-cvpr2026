@@ -24,13 +24,14 @@
       "meaning": "192-image fixed paired screen is mixed; it is not a successful final test or patient-DP comparison."
     }
   ],
-  "next_task": "Bounded20-30min design review using current results and existing cohort/statistic evidence: distinguish common calibration from genuinely additional private-cohort information. Justify any public-budget/matched-observation control or representation change before a new experiment; no arbitrary favorable distribution, seed/scale rescue, backbone retuning or DP solver expansion.",
-  "next_task_output": "A concrete information-gap/representation justification or a decision to end/rework the current shared-head candidate, before further computation.",
+  "next_task": "One bounded15-25min inventory/evaluation-feasibility task: establish a real target definition and adequate patient-disjoint, unexposed reference for the observed underrepresented Emphysema/Pneumothorax conditions, with normal/effusion controls. Do not reassign locked roles or start GPU/head/DP redesign before this is feasible; if unavailable, stop expansion on current data and make a separate data/research-configuration decision.",
+  "next_task_output": "Concrete target/reference feasibility and a fixed non-DP comparison only if supported by real data; no automatic residual/DP or favorable-group selection.",
   "step2_open_items": [
-    "Track1: public head changes actual generation and improves some metrics, but pooled private increment is mixed and fails the current utility gate.",
-    "Track1: distinguish public sufficiency, cohort information and limited shared-head representation before further GPU/DP work.",
-    "Track1: clinical utility, independent reproducibility and patient-DP quality-cost superiority remain unestablished.",
-    "Track2 remains retained, not an automatic fallback."
+    "Track1: a nonscalar delta and actual label-frequency differences are present, but shared-public-anchor/estimation explanations remain.",
+    "Track1: prior192-image private-utility failure stays fixed; underrepresented-condition generation was not directly tested.",
+    "Track1: sufficient independent condition-matched reference and true target definition are not yet secured.",
+    "Track1: patient-DP efficacy and fair quality-cost/privacy contribution remain unestablished.",
+    "Track2 retained separately, not an automatic fallback."
   ],
   "step2_completed_diagnostics": [
     "Core source/code premise review within documented scope",
@@ -57,7 +58,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Non-DP medical-head generation comparison completed; private incremental utility remains unconfirmed. Bounded design review next.",
+  "step2_active_task": "Saved private-direction/cohort review completed; assess target-specific generation evaluation feasibility next.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -72,13 +73,13 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\medical_head_20260916_v1",
-    "last_completed_report": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md",
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\private_signal_20260917_v1",
+    "last_completed_report": "TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md",
     "additional_execution_contract_fixed": false,
     "stage2_completion_claim": false,
     "latest_design_review": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md#9",
     "new_two_track_experiment_started": true,
-    "new_two_track_experiment_status": "completed_private_incremental_utility_gate_not_passed_mixed",
+    "new_two_track_experiment_status": "saved_CPU_private_signal_audit_complete_no_new_GPU",
     "latest_cpu_outputs": [
       "spec_sources/track1_cpu_allocation_20260916",
       "spec_sources/track2_cpu_audit_20260916"
@@ -194,7 +195,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "design_review_next_no_new_GPU_contract",
+    "latest_planning_status": "target_reference_feasibility_next_no_new_GPU_contract",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -343,8 +344,8 @@
       "remaining_generation_package_not_completed": true
     },
     "next_substep_estimated_work_minutes": [
-      20,
-      30
+      15,
+      25
     ],
     "sampling_integration_contract_sha256": "c32c1cae5ac2a15b7c3af267f7e03d066e065213024a3bccd03fe40fec65fcfa",
     "historical_pre_sampling_last_completed": {
@@ -806,9 +807,50 @@
       "last_completed_report": "TRACK1_PUBLIC_OPERATING_CONFIRMATION_RESULTS_20260916.md",
       "latest_planning_status": "fresh_backbone_head_comparison_not_started",
       "new_two_track_experiment_status": "reserved_confirmation_passed_operating_backbone_conditionally_adopted_nonDP_head_next"
+    },
+    "private_signal_audit": {
+      "status": "completed_limited_positive_lead_generation_utility_unvalidated",
+      "report": "TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md",
+      "protocol": "TRACK1_PRIVATE_SIGNAL_PROTOCOL_20260917.md",
+      "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\private_signal_20260917_v1",
+      "completed_utc": "2026-09-16T15:09:04.481045+00:00",
+      "new_GPU": 0,
+      "new_generation": 0,
+      "DP": false,
+      "independent_checks": 2819,
+      "analysis_seconds": 20.35851819999516,
+      "verification_seconds": 4.5633758000331,
+      "private_generation_utility_established": false,
+      "previous192_utility_gate_passed": false,
+      "private_prediction_delta_nonscalar_energy_fraction": 0.9392948667940575,
+      "private_half_prediction_cosine_range": [
+        0.5810054279528514,
+        0.7023050246860316
+      ],
+      "prior_shared_public_anchor_confound_remains": true,
+      "actual_role_difference": "Emphysema11patients/21images and Pneumothorax17/33 in private; auxiliary public0/0 and1/1. Backbone also had4/4 and5/5.",
+      "reference_limitation": "Prior40 reference has neither condition. Development5/7patients; existing nontraining public roster3/1 candidate patients, not assigned to new evaluation.",
+      "same_loss_residual_is_reparameterization": true,
+      "new_head_fits_CPU": 18,
+      "original_models_reconstructed": 3,
+      "original_patient_roles_unchanged": true,
+      "source_sha256": {
+        "contract.json": "4eded6b9da31d5f333f7d8933ace65b228264aeb567b1393ff60898c6b4931a3",
+        "analysis.json": "9539991a622741a91a8affc8b74bc9dc7a8e62daee2172c27ce5447d0a673ec3",
+        "verification.json": "ce8999507d24e32f1a3e7c098dadb1a5a40e5b4e4d3085c98d95f03a5d62e131",
+        "all_label_development_exploratory.json": "853262f760d612882aa7b0dbe95343389854f8f19b5a2afa66852d61b83d4c21",
+        "public_backbone_label_context.json": "48452fdf867f67cb6d21ce419875569a4143785b43a75764ea7f71ba28e25cb0",
+        "public_unused_role_availability.json": "55bc25d666273fe2df4566f3aecd2cdbbac1ecf61549ee0345019df97a78d6b1"
+      }
+    },
+    "historical_pre_private_signal_last_completed": {
+      "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\medical_head_20260916_v1",
+      "last_completed_report": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md",
+      "new_two_track_experiment_status": "completed_private_incremental_utility_gate_not_passed_mixed",
+      "latest_planning_status": "design_review_next_no_new_GPU_contract"
     }
   },
-  "updated_utc": "2026-09-16T14:15:48.833312+00:00",
+  "updated_utc": "2026-09-16T15:09:04.481045+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -859,7 +901,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md",
+  "current_result_report": "TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -2261,7 +2303,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md",
+  "next_task_plan_report": "TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -2473,8 +2515,8 @@
     "new_experiments": 0
   },
   "next_package_total_work_hours": [
-    0.3333333333333333,
-    0.5
+    0.25,
+    0.4166666666666667
   ],
   "current_research_questions": [
     "Does protected use of private patient data add meaningful generation utility over the available public-only adaptation?",
@@ -2738,7 +2780,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "REALISTIC_RESEARCH_PLAN_20260916.md",
+  "current_planning_report": "TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -2919,5 +2961,40 @@
   "historical_pre_medical_head_next_package_total_work_hours": [
     2.5,
     5
-  ]
+  ],
+  "completed_private_signal_audit_20260917": {
+    "status": "completed_limited_positive_lead_generation_utility_unvalidated",
+    "report": "TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md",
+    "protocol": "TRACK1_PRIVATE_SIGNAL_PROTOCOL_20260917.md",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\private_signal_20260917_v1",
+    "completed_utc": "2026-09-16T15:09:04.481045+00:00",
+    "new_GPU": 0,
+    "new_generation": 0,
+    "DP": false,
+    "independent_checks": 2819,
+    "analysis_seconds": 20.35851819999516,
+    "verification_seconds": 4.5633758000331,
+    "private_generation_utility_established": false,
+    "previous192_utility_gate_passed": false,
+    "private_prediction_delta_nonscalar_energy_fraction": 0.9392948667940575,
+    "private_half_prediction_cosine_range": [
+      0.5810054279528514,
+      0.7023050246860316
+    ],
+    "prior_shared_public_anchor_confound_remains": true,
+    "actual_role_difference": "Emphysema11patients/21images and Pneumothorax17/33 in private; auxiliary public0/0 and1/1. Backbone also had4/4 and5/5.",
+    "reference_limitation": "Prior40 reference has neither condition. Development5/7patients; existing nontraining public roster3/1 candidate patients, not assigned to new evaluation.",
+    "same_loss_residual_is_reparameterization": true,
+    "new_head_fits_CPU": 18,
+    "original_models_reconstructed": 3,
+    "original_patient_roles_unchanged": true,
+    "source_sha256": {
+      "contract.json": "4eded6b9da31d5f333f7d8933ace65b228264aeb567b1393ff60898c6b4931a3",
+      "analysis.json": "9539991a622741a91a8affc8b74bc9dc7a8e62daee2172c27ce5447d0a673ec3",
+      "verification.json": "ce8999507d24e32f1a3e7c098dadb1a5a40e5b4e4d3085c98d95f03a5d62e131",
+      "all_label_development_exploratory.json": "853262f760d612882aa7b0dbe95343389854f8f19b5a2afa66852d61b83d4c21",
+      "public_backbone_label_context.json": "48452fdf867f67cb6d21ce419875569a4143785b43a75764ea7f71ba28e25cb0",
+      "public_unused_role_availability.json": "55bc25d666273fe2df4566f3aecd2cdbbac1ecf61549ee0345019df97a78d6b1"
+    }
+  }
 }
