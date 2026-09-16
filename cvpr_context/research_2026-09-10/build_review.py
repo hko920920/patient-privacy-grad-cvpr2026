@@ -82,6 +82,8 @@ def convert(md,from_review=False):
         if href=='TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md':href='track1_sampling_integration_results.html'
         if href=='TRACK1_LORA_POSITIVE_CONTROL_PROTOCOL_20260916.md':href='track1_lora_positive_control_protocol.html'
         if href=='TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md':href='track1_lora_positive_control_results.html'
+        if href=='TRACK1_PUBLIC_MEDICAL_BACKBONE_PLAN_20260916.md':href='track1_public_medical_backbone_plan.html'
+        if href=='TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md':href='track1_public_medical_backbone_results.html'
         a['href']=href
     return str(soup)
 
@@ -154,6 +156,8 @@ def main():
     head = '<section class="panel"><h2>현재 판정: 연결은 정확하지만 생성 결과는 나쁨</h2><p><a href="track1_sampling_integration_results.html"><strong>고정6장 전체·6,475개 검산·다음 결정</strong></a></p><p>base/public/pooled 모두 이번 두 조건에서 흉부영상 형태를 만들지 못했습니다. 96장 확대와 새 solver 탐색은 보류합니다. 다음은 이미 흉부영상 형태를 생성한 기존 LoRA 양성 대조와 현재 sampling 경로의 조건을 연결하는 최소 확인(예상30–60분)입니다. 현재 큰 단계2·방향1이며 아래 안내는 이전 기록입니다.</p></section>' + head
     controls='''<section class="panel"><div class="filters"><label>목록 범위<select id="scope"><option value="all">전체 79편</option><option value="legacy">기존 관련 67편</option><option value="legacy35">기존 최신 판정 35편</option><option value="new">이번 추가 12편</option><option value="direct">공격·생성 비교 후보 26편</option></select></label><label>역할<select id="role"><option value="all">모든 역할</option>'''
     head = '<section class="panel"><h2>최신 판정: LoRA 경로 진단은 긍정적, 영상 품질은 아직 부족</h2><p><a href="track1_lora_positive_control_results.html"><strong>12장 전체·과거 재현·현재 조건 대조</strong></a> · <a href="track1_lora_positive_control_protocol.html">실행 전 명세</a></p><p>과거 이미지2장과 같은 입력의 직접 sampling 경로를 정확히 재현했습니다. 현재 FP32/CFG1/캐시/초기 잡음에서도 LoRA는 기본 흉부 형태를 만들지만, 마지막 두 영상에는 뚜렷한 왜곡과 잡상이 있습니다. 작은 head의 효용·의료 품질·환자DP 성공은 아직 확인하지 못했습니다.</p><p>독립 최종 검산4,503개PASS, 새학습0. 사적역할 M1을 공개 기반모델로 사용하지 않습니다. 다음은 공개 의료 기반모델의 자료·훈련 경계와 새head 대조 명세(설계30–45분)입니다. 현재 큰단계2·방향1, 아래 다음 안내는 이전 기록입니다.</p></section>' + head
+    head = '<section class="panel"><h2>최신 준비: 공개 의료 backbone 자료·훈련량 고정</h2><p><a href="track1_public_medical_backbone_plan.html"><strong>640명·749장 / 한 번의 공개 LoRA / 선택·확인 분리</strong></a></p><p>준비는 긍정적이나 새 학습·생성은 아직 없습니다. 공개32명만 반복하지 않고 기존 역할과 분리된 로컬 자료를 확보했습니다. 영상당4회·8회 노출의749/1498step을 비교하고 새 생성 입력으로 한 번 확인합니다. 다음 전체 구현·실행은50–85분,순수학습10–16분 예상입니다.</p><p>현재 큰단계2·방향1. 작은 head의 효용·환자DP 우위는 미확인이고,마지막 실제 생성 결과는 아래LoRA진단입니다. 고정 random P는 재사용 가능하며 새backbone특징·통계·W는 다시 계산합니다.</p></section>' + head
+    head = '<section class="panel"><h2>최신 실제 결과: 공개 LoRA 학습·52장 생성 완료, 확인 기준 미달</h2><p><a href="track1_public_medical_backbone_results.html"><strong>전체 이미지·두 판독·선택/확인 결과·실측 시간</strong></a></p><p>공개640명·749장으로 한 번 학습했습니다. 선택 E4/E8는 각각13/16장 통과했지만, 선택된 E4의 새 입력 확인은10/16장(흉수 prompt0/4)으로 미통과했습니다. 기본 흉부 형태는 만들지만 현재 생성 안정성은 부족합니다.</p><p>학습11분36초, 총52장 생성. 정확성 검산PASS와 생성 품질 판정을 구별합니다. 현재모델 채택·새 작은head·DP 확대는 보류합니다. 다음은 공개 기반모델과 운용조건의 좁은 검토20–40분이며, 아래 준비·다음 안내는 과거 기록입니다.</p></section>' + head
     controls+=''.join('<option value="'+k+'">'+esc(v)+' ('+str(stats[k])+')</option>' for k,v in ROLES.items())
     controls+='''</select></label><label>확인 수준<select id="status"><option value="all">모든 확인 수준</option><option value="selected">PDF 선택 절 (75)</option><option value="partial">공식 본문 일부 (3)</option><option value="abstract">초록만 (1)</option><option value="replay">공개 packet 재계산 (2)</option></select></label><label>발표 형식<select id="venue"><option value="all">모든 발표 형식</option><option value="main">메인 학회 표기</option><option value="other">저널·워크샵·공개본 등</option></select></label><label class="search">논문명·방법·검토 내용 검색<input id="search" type="search" placeholder="예: MoFit, CLiD, 환자 평균, FPR" autocomplete="off"></label></div><p id="count" aria-live="polite"></p><button id="reset" type="button">필터 초기화</button><button id="expand" type="button">표시된 검토 펼치기</button><button id="collapse" type="button">모두 접기</button><p class="meta">비교 후보 수는 전부 실행할 의무 목록이나 같은 문제의 SOTA 순위가 아니다. 접근 권한과 주장에 맞는 비교군을 선택한다.</p></section>'''
     cards=[]
@@ -207,6 +211,8 @@ def main():
         ('TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md','track1_sampling_integration_results.html','방향1: 연결 PASS·현재 생성 부적합 결과'),
         ('TRACK1_LORA_POSITIVE_CONTROL_PROTOCOL_20260916.md','track1_lora_positive_control_protocol.html','방향1: 기존 LoRA 양성 대조 재현 계획'),
         ('TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md','track1_lora_positive_control_results.html','방향1: 기존 LoRA 재현·현재 생성 조건 대조 결과'),
+        ('TRACK1_PUBLIC_MEDICAL_BACKBONE_PLAN_20260916.md','track1_public_medical_backbone_plan.html','방향1: 공개 의료 backbone 자료·훈련·선택 계획'),
+        ('TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md','track1_public_medical_backbone_results.html','방향1: 공개 LoRA 실제 학습·52장 생성·확인 실패'),
         ('REALISTIC_RESEARCH_PLAN_20260916.md','realistic_research_plan.html','의료 생성모델 환자 보호: 현실적인 다음 계획')]:
         if (ROOT/source).exists():
             body='<p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p>'+convert((ROOT/source).read_text(encoding='utf-8'))

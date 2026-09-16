@@ -1,0 +1,30 @@
+{
+  "status": "PASS_MANIFEST_RECONSTRUCTION_AND_1016_FILE_HASHES",
+  "patients": 905,
+  "images": 1016,
+  "patients_by_role": {
+    "train": 640,
+    "selection": 128,
+    "confirmation": 128,
+    "reserve": 9
+  },
+  "images_by_role": {
+    "confirmation": 128,
+    "train": 749,
+    "selection": 128,
+    "reserve": 11
+  },
+  "historical_diagnostic_patients": 118,
+  "history_patients_by_role": {
+    "train": 117,
+    "reserve": 1
+  },
+  "seconds": 4.482627799967304,
+  "output_sha256": {
+    "patients.csv": "50a1392e981125b83dbd92189c042fb0f8fe0c5afd478e6b4e63ddd3c9794375",
+    "images.csv": "11f0d4907f3b8bf513b2f5f56961034f97861945dd135f80d406d440a77a2081",
+    "diagnostic_history.csv": "9b37ee2e3e9c46bc4c10a135847ada659f4e267ef8f98e635e583512082e22ed",
+    "exclusion_calculation.json": "40b1f356dabf896212766f43f3952cc5f691455f5ca3094168f0e79cbd7789ac"
+  },
+  "code_sha256": "47bb54a824a493099b2b57b6bd314ffa361683c350558879b8b8540cfeebe7ab"
+}

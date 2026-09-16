@@ -1,5 +1,27 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 127-PUBLIC-MEDICAL-BACKBONE-EXECUTION — 2026-09-16
+
+- 사용자 ‘준비만 했으니 실행해야 판단된다’ 지시에 따라 고정 패키지를 실제 끝까지 실행했다. 시작 예상 전체50–85분, 순수학습10–16분을 보고했다. 큰단계2·방향1을 유지했다. 실행 contract와 별도 생산기/CPU검산기/판정집계기를 GPU 전에 동결했고 사적 M1/M2나 기존 혼합역할 cache를 불러오지 않았다.
+- 공개 역할640명·749장 새 cache28.267초. fresh SD2.1 rank8/alpha8 LoRA 한 번,1498시도=1498성공·retry0. 모든 이미지 E4에서4회/E8에서8회, frozenbase불변·초기zero-B예측exact·실제로드FP32 adapter exact. 전체 학습696.330초, E4저장349.5초, 학습peak1.93GiB. 공개학습 비용이며 환자DP효율 우위가 아니다.
+- 선택32장+진단4장+확인16장 총52장 실제 생성. 두 checkpoint 선택각13/16·prompt별4/4,4/4,3/4,2/4로 통과, 미리정한가장이른E4선택. 확인은 합의10/16·generic3/normal4/effusion0/cardiomegaly3으로 실패했다. 두 판독자 각11/16이고불일치2장이므로 합의정책만의 탈락은 아니다. 모델정체를숨긴선택전체/독립확인판독을기록했으나 root는확인시E4선택을알았으므로완전2인blind확인이라고하지않았다.
+- **연구 판정은 나쁨/현재모델채택보류.** 흉부기본형태는새공개자료만으로형성됐으나 새입력에서큰구조단절/중첩/비의료질감이남았다. 흉수prompt4개확인입력실패를prompt자체의인과효과로확정하지않았다. 기존일반base+작은head실패와새공개LoRA의불안정성을구분했다. 확인실패후E8교체/seed변경/추가학습/새head/DPsolver없음.
+- 저장학습상태24684·선택산술20139·확인산술12991검사PASS. 이는전체UNet/VAE재추론이나1498gradient재학습이아니다. API forward3060·backward1498, 생성단계109.610+50.627초. 최초기대시간과실측범위를구분하고code/load/판독/기록전체와학습loop시간을혼동하지않았다.
+- 실제 결과MD/HTML, 52장원본·trajectory·blind원표·합의판정·checkpoint·로그를보존했다. 다음은공개의료생성모델사용가능성과현sampling/conditioning을대조하는20–40분검토이며새실험명세/비용은별도다. 원격커밋/push는수행했다고주장하지않는다. 기존동결자료와앞선실험결과는그대로보존했다.
+- 최종 독립 판정집계542항목PASS, 실제 확인관문fail과 구분했다. 원투표·task·seed·52개PNG/trace hash·선택/확인결속을 재계산했다. 추가audit의 첫 실행은 검산입력해시의 상대경로를 절대경로로 오해한 조회 오류로 중단됐으며, 첫 실패/원코드를 보존하고 v2에서 경로조회만 정정했다. 원실험/투표 변경없음. decision_verification.json에 근거가 있다.
+- 문서검증1129로컬링크/221PDF앵커/새보고서23링크·이미지/깨진링크0, 실행소스33개·계획17파일 hash불변, 두state 핵심5필드일치PASS. spec_sources/public_medical_execution_report_verification_20260916.json에 기록했다. 실제 작업은19:59–20:50경KST 약51분으로 초기전체예상50–85분 범위다. 현재 실행 중 작업은 없다.
+
+## 126-PUBLIC-MEDICAL-BACKBONE-PLAN — 2026-09-16
+
+- 사용자 LoRA진단 후속검토를 반영하고, 이어서진행 지시에 따라 공개backbone자료·훈련·선택명세를고정했다. **준비는긍정적,새성능결과는없음**. 원격SHA는사용자보고정보이며이번작업은로컬파일/공식자료출처확인이다. 예상30–45분을먼저보고했고19:34–19:58경KST약24분작업했다.
+- public32만반복할필요가없음을실제명부에서확인했다. public_development1816명/5206개명부중4831장로컬취득,기존fit/dev/cal/test/public32/auxreference/background/reference259의합집합911명을제외하면905명1016장모두존재한다. 최종분할train640/749장,selection128/128장,confirmation128/128장,reserve9/11장이다. 조사한진단이력118명중117train/1reserve,선택·확인0이다. history0를절대미사용이나외부기관test라고하지않았다.
+- 자료담당이작성한builder를root가실행해1016실파일SHA,원inventory/sourceaudit일치,기존pixel/byte exact중복부재,저장명부재구성을확인했다. 담당턴이사용한도로끝난이후root가이어완료한범위를구분했다. 다른담당들은원trainer/P구현과gate방법론을독립검토했다. 기존역할/코드/원자료변경0,새PNGdecode/GPU0.
+- 한freshLoRA의E4=749/E8=1498성공update,총5992귀속노출을고정했다.749는4의배수가아니므로옛sampler를그대로호출하지않고epoch순열stream을이어fullbatch4로묶는다. overflow실제시도노출과귀속노출은별도log다. 학습schedule5992행,선택·확인32개새seed task,execution_spec JSON과별도CPU검산을저장했다.검산수는산술/명세검사이지성능표본수가아니다.
+- 공개생성4prompt×4seed16장/checkpoint,가장이른E4/E8가전체12/16및prompt별2/4의사전운영기준을통과하면새16입력확인한번만한다. 옛2입력은진단전용이고최대52장이다. 확인실패후다른checkpoint로같은확인을구제하지않는다. 임상전문가판독/통계적품질기준으로확대하지않으며예약128환자씩을실제평가한것으로쓰지않는다.
+- 사용자보고서의P필수재생성을정정했다. 현P는seededGaussianQR로데이터/모델독립이므로같은320채널tap이면재사용가능하다. 반드시새로만들것은h/pred/residual/A/B/Q/W/witness다. 기존VAE/textlatent는원칙적재사용가능하나새749장은옛cache에없어전용cache준비가필요하다.
+- 다음패키지는새실행기구현+공개학습+판독+기록50–85분,순수학습10–16분예상이다(기존1000step496.731초→1498step744.103초비례추정). 아직새학습/생성0이며코드실행계약은다음구현시결속한다. current_result_report는실제LoRA결과로유지하고current_planning_report와next_task만갱신했다. HTML/AGENTS/CURRENT_STATUS/RESEARCH_FRAMEWORK/현실계획에동일하게반영했다.
+
+
 ## 125-LORA-POSITIVE-CONTROL-AND-CONDITION-BRIDGE — 2026-09-16
 
 - 연구 판정: **경로 진단에는 긍정적, 생성 품질은 부족**. 과거 M1 정상/effusion prompt의 두 PNG를 파일 해시까지 재현했다. 원형 pipeline과 같은 실제 latent·embedding을 준 직접 경로의 전체 저장값이 일치했다. 현재 FP32/CFG1/캐시/초기 잡음까지 옮겨도 기본 흉부 형태는 남지만 최종 영상에 artifact와 심한 형상 왜곡이 있다. 임상 품질·작은head 효용·DP 기여로 확대하지 않았다.

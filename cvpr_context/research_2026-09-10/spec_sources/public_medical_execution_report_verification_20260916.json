@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "static": {
+    "rows": 79,
+    "checked_local_links": 1129,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_report_local_links_and_images": 23,
+  "broken_links": 0,
+  "runtime_sources_unchanged": 33,
+  "frozen_plan_files_unchanged": 17,
+  "state_fields_matched": 5,
+  "source_report_sha256": "a077233ad7b579cac36b6d61014e2c21afb872825052191cfde16be7e5afb53e",
+  "html_sha256": "9fe28f988893d6e771b042c48c7b9d64c181abd8b292ab34bada2033db8e14fb"
+}

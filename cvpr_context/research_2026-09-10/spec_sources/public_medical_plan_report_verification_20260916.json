@@ -1,0 +1,22 @@
+{
+  "status": "PASS_PUBLIC_BACKBONE_PLAN_LINKS_STATE_AND_FROZEN_SPEC",
+  "utc": "2026-09-16T10:58:03.281957+00:00",
+  "static": {
+    "rows": 79,
+    "checked_local_links": 1126,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_report_local_links": 21,
+  "plan_files_bound": 17,
+  "actual_result_pointer_preserved": true,
+  "new_GPU_runs": 0,
+  "state_keys": [
+    "current_step",
+    "current_result_report",
+    "current_planning_report",
+    "next_task",
+    "active_execution",
+    "completed_public_medical_backbone_plan_20260916"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS_INDEPENDENT_PROSPECTIVE_ROLE_SCHEDULE_AND_INPUT_CHECKS",
+  "utc": "2026-09-16T10:51:29.314229+00:00",
+  "checks": 25018,
+  "manifest_reconstruction": "Separate build_verify_inventory.py --verify result retained; this verifier additionally checks saved roles and independently reconstructs schedules.",
+  "GPU_runs": 0,
+  "train_images": 749,
+  "checkpoints": [
+    749,
+    1498
+  ],
+  "exposure_counts": [
+    4,
+    8
+  ],
+  "generated_images_max": 52,
+  "sources": {
+    "patients.csv": "50a1392e981125b83dbd92189c042fb0f8fe0c5afd478e6b4e63ddd3c9794375",
+    "images.csv": "11f0d4907f3b8bf513b2f5f56961034f97861945dd135f80d406d440a77a2081",
+    "training_schedule.csv": "a5ab9d33780abc4ea561c1d26c12ca9c72057f66e24a1ff75ba52dbcec0d79a6",
+    "generation_tasks.csv": "01ad79166158a0e3b0fffa5c5e8fa948be66b9facdf6111902e06bc38f2d4983",
+    "execution_spec.json": "05b62514b7248aeaf65e409de8b717e093bfab78237ec8a33ada8c1ececd9f26",
+    "verify_execution_spec.py": "803dbeaf5868b0dfbf29c64dc19ac6215feaf43326d1ceb255d5e00256074b7b"
+  }
+}

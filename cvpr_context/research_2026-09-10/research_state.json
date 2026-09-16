@@ -24,13 +24,13 @@
       "meaning": "Existing development results are preserved; actual generated utility, private added value and final contribution are not established."
     }
   ],
-  "next_task": "Fix a public-only medical-backbone data/training boundary and fresh-head comparison; do not relabel diagnostic M1 as public or reuse its old generic-base W.",
-  "next_task_output": "One bounded public-backbone acquisition/training specification with quality criterion, patient roles, compute estimate and independent evaluation boundary.",
+  "next_task": "Review viable public medical generators and current public-LoRA conditioning/sampling limits; fix a justified starting model and minimal next comparison before any new private-head or DP experiment.",
+  "next_task_output": "A bounded public-generator/configuration decision with data boundary, compatibility, expected gain and separately estimated new compute; 20-40min review estimate.",
   "step2_open_items": [
-    "Track1: useful sampling behavior of the existing compact head; public-plus-private added value versus public-only in the fixed development setup.",
-    "Track1: a concrete application/integration claim with real generation utility and total cost; use strong existing public-informed solvers if appropriate.",
-    "Track1: patient-DP, public-access and objective alignment for subsequent quality-cost comparisons; formal utility evaluation is not yet ready.",
-    "Track2: retained as a separate protection-evaluation question, not an automatic fallback for a weak track1 pilot."
+    "Track1: establish a sufficiently stable public medical generator/configuration after the fixed public-LoRA confirmation gate failed.",
+    "Track1: only after backbone adoption, test public-only versus pooled non-DP private incremental generation utility with fresh backbone-dependent statistics.",
+    "Track1: patient-DP retention and fair quality-cost comparisons remain untested for the new backbone.",
+    "Track2: retained separately, not an automatic fallback."
   ],
   "step2_completed_diagnostics": [
     "Core source/code premise review within documented scope",
@@ -57,7 +57,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Specify a valid public medical generation starting point before further small-head privacy/utility comparisons.",
+  "step2_active_task": "Review viable public medical generators and current public-LoRA conditioning/sampling limits; fix a justified starting model and minimal next comparison before any new private-head or DP experiment.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -72,13 +72,13 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_lora_positive_control_20260916_v1",
-    "last_completed_report": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
-    "additional_execution_contract_fixed": false,
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\public_medical_backbone_20260916_v1",
+    "last_completed_report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
+    "additional_execution_contract_fixed": true,
     "stage2_completion_claim": false,
-    "latest_design_review": "REALISTIC_RESEARCH_PLAN_20260916.md",
+    "latest_design_review": "TRACK1_PUBLIC_MEDICAL_BACKBONE_PLAN_20260916.md",
     "new_two_track_experiment_started": true,
-    "new_two_track_experiment_status": "lora_path_diagnostic_positive_quality_inadequate",
+    "new_two_track_experiment_status": "public_backbone_training_generation_complete_confirmation_failed",
     "latest_cpu_outputs": [
       "spec_sources/track1_cpu_allocation_20260916",
       "spec_sources/track2_cpu_audit_20260916"
@@ -194,7 +194,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "public_medical_backbone_boundary_and_retraining_design_next",
+    "latest_planning_status": "public_backbone_manifest_exposure_selection_plan_complete_training_not_started",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -343,8 +343,8 @@
       "remaining_generation_package_not_completed": true
     },
     "next_substep_estimated_work_minutes": [
-      30,
-      45
+      50,
+      85
     ],
     "sampling_integration_contract_sha256": "c32c1cae5ac2a15b7c3af267f7e03d066e065213024a3bccd03fe40fec65fcfa",
     "historical_pre_sampling_last_completed": {
@@ -435,9 +435,112 @@
       ],
       "automatic_96image_expansion": false
     },
-    "historical_pre_lora_sampling_scope": "realistic_plan5B numerical integration, fixed325F/0B, then6preview only after independentPASS"
+    "historical_pre_lora_sampling_scope": "realistic_plan5B numerical integration, fixed325F/0B, then6preview only after independentPASS",
+    "historical_pre_public_plan_next_task": "public_medical_backbone_boundary_and_retraining_design_next",
+    "completed_public_medical_backbone_plan": {
+      "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_PLAN_20260916.md",
+      "execution_spec": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\public_medical_backbone_plan_20260916_v1\\execution_spec.json",
+      "execution_spec_sha256": "05b62514b7248aeaf65e409de8b717e093bfab78237ec8a33ada8c1ececd9f26",
+      "status": "completed_design_and_cpu_verification_no_training",
+      "current_step": 2,
+      "track": 1,
+      "research_judgment": "Favorable readiness: a separate local public cohort is available; new backbone/head efficacy remains untested.",
+      "training_patients": 640,
+      "training_images": 749,
+      "selection_patients": 128,
+      "confirmation_patients": 128,
+      "reserve_patients": 9,
+      "planned_checkpoint_steps": [
+        749,
+        1498
+      ],
+      "planned_committed_exposures": [
+        4,
+        8
+      ],
+      "next_package_minutes": [
+        50,
+        85
+      ],
+      "pure_training_minutes": [
+        10,
+        16
+      ],
+      "planned_max_generation_images": 52,
+      "actual_new_GPU_runs": 0,
+      "actual_new_training": 0,
+      "actual_generated_images": 0,
+      "current_actual_result_unchanged": true,
+      "independent_plan_verification_sha256": "35f7b61a1a3cfc54105b7eaf47d728fa34a144ab3a95250f453f8e7dfb954080",
+      "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
+      "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
+    },
+    "completed_public_medical_backbone_execution": {
+      "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
+      "output_directory": "../../code_working/_reports/public_medical_backbone_20260916_v1",
+      "status": "completed_confirmation_gate_failed",
+      "research_judgment": "unfavorable_for_current_backbone_adoption; chest-like form exists but new-input stability insufficient",
+      "train_patients": 640,
+      "train_images": 749,
+      "successful_updates": 1498,
+      "attempts": 1498,
+      "retries": 0,
+      "checkpoints": [
+        "E4",
+        "E8"
+      ],
+      "selected_for_confirmation": "E4",
+      "public_model_adopted": false,
+      "selection_results": {
+        "E4": {
+          "total_pass": 13,
+          "per_prompt_pass": {
+            "generic": 4,
+            "normal": 4,
+            "effusion": 3,
+            "cardiomegaly": 2
+          },
+          "passes_gate": true
+        },
+        "E8": {
+          "total_pass": 13,
+          "per_prompt_pass": {
+            "generic": 4,
+            "normal": 4,
+            "effusion": 3,
+            "cardiomegaly": 2
+          },
+          "passes_gate": true
+        }
+      },
+      "confirmation_results": {
+        "E4": {
+          "total_pass": 10,
+          "per_prompt_pass": {
+            "generic": 3,
+            "normal": 4,
+            "effusion": 0,
+            "cardiomegaly": 3
+          },
+          "passes_gate": false
+        }
+      },
+      "generated_images": 52,
+      "training_seconds": 696.3299601000035,
+      "generation_seconds": 160.23656550003216,
+      "total_unet_forward_api_calls": 3060,
+      "backward_iterations": 1498,
+      "new_private_head_or_DP_runs": 0,
+      "verification_statuses": {
+        "training": "PASS_PUBLIC_MEDICAL_TRAINING_SAVED_INPUTS_STATES_AND_EXPOSURES",
+        "selection": "PASS_PUBLIC_MEDICAL_SELECTION_SAVED_SAMPLING_AND_PAIRED_INPUTS",
+        "confirmation": "PASS_PUBLIC_MEDICAL_CONFIRMATION_SAVED_SAMPLING_AND_SELECTION_BINDING"
+      },
+      "confirmation_blinding_limit": "Root coordinator knew chosen E4; figure/task labels hidden; independent reviewer did not open mapping. Not fully two-reviewer identity-blind confirmation.",
+      "all_original_evidence_preserved": true
+    }
   },
-  "updated_utc": "2026-09-16T10:17:14.717833+00:00",
+  "updated_utc": "2026-09-16T10:56:35.683237+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -488,7 +591,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
+  "current_result_report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -1890,7 +1993,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "REALISTIC_RESEARCH_PLAN_20260916.md",
+  "next_task_plan_report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -2012,7 +2115,7 @@
     "finalnextquestion": "Does the observed restricted-head denoising gain survive a fair patient-DP comparison, given the full64 statistic dimension2336 versus static16 dimension200 and only0.4467% extra nonprivate MSE reduction?"
   },
   "current_paper_problem_fixed": false,
-  "research_question_status": "Adapted LoRA supports basic CXR form under current sampling inputs, with serious artifacts. Public medical backbone plus fresh patient-private small head remains an unvalidated application candidate.",
+  "research_question_status": "Public medical backbone plus fresh small patient-private adaptation remains unvalidated; public data allocation and exposure/selection specification are now fixed.",
   "new_dp_principle_required": false,
   "new_solver_required_for_application_contribution": false,
   "realistic_replan_20260916": {
@@ -2328,5 +2431,109 @@
       45
     ],
     "automatic_96image_expansion": false
+  },
+  "completed_public_medical_backbone_plan_20260916": {
+    "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_PLAN_20260916.md",
+    "execution_spec": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\public_medical_backbone_plan_20260916_v1\\execution_spec.json",
+    "execution_spec_sha256": "05b62514b7248aeaf65e409de8b717e093bfab78237ec8a33ada8c1ececd9f26",
+    "status": "completed_design_and_cpu_verification_no_training",
+    "current_step": 2,
+    "track": 1,
+    "research_judgment": "Favorable readiness: a separate local public cohort is available; new backbone/head efficacy remains untested.",
+    "training_patients": 640,
+    "training_images": 749,
+    "selection_patients": 128,
+    "confirmation_patients": 128,
+    "reserve_patients": 9,
+    "planned_checkpoint_steps": [
+      749,
+      1498
+    ],
+    "planned_committed_exposures": [
+      4,
+      8
+    ],
+    "next_package_minutes": [
+      50,
+      85
+    ],
+    "pure_training_minutes": [
+      10,
+      16
+    ],
+    "planned_max_generation_images": 52,
+    "actual_new_GPU_runs": 0,
+    "actual_new_training": 0,
+    "actual_generated_images": 0,
+    "current_actual_result_unchanged": true,
+    "independent_plan_verification_sha256": "35f7b61a1a3cfc54105b7eaf47d728fa34a144ab3a95250f453f8e7dfb954080",
+    "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
+    "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
+  },
+  "current_planning_report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_PLAN_20260916.md",
+  "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
+  "completed_public_medical_backbone_execution_20260916": {
+    "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
+    "output_directory": "../../code_working/_reports/public_medical_backbone_20260916_v1",
+    "status": "completed_confirmation_gate_failed",
+    "research_judgment": "unfavorable_for_current_backbone_adoption; chest-like form exists but new-input stability insufficient",
+    "train_patients": 640,
+    "train_images": 749,
+    "successful_updates": 1498,
+    "attempts": 1498,
+    "retries": 0,
+    "checkpoints": [
+      "E4",
+      "E8"
+    ],
+    "selected_for_confirmation": "E4",
+    "public_model_adopted": false,
+    "selection_results": {
+      "E4": {
+        "total_pass": 13,
+        "per_prompt_pass": {
+          "generic": 4,
+          "normal": 4,
+          "effusion": 3,
+          "cardiomegaly": 2
+        },
+        "passes_gate": true
+      },
+      "E8": {
+        "total_pass": 13,
+        "per_prompt_pass": {
+          "generic": 4,
+          "normal": 4,
+          "effusion": 3,
+          "cardiomegaly": 2
+        },
+        "passes_gate": true
+      }
+    },
+    "confirmation_results": {
+      "E4": {
+        "total_pass": 10,
+        "per_prompt_pass": {
+          "generic": 3,
+          "normal": 4,
+          "effusion": 0,
+          "cardiomegaly": 3
+        },
+        "passes_gate": false
+      }
+    },
+    "generated_images": 52,
+    "training_seconds": 696.3299601000035,
+    "generation_seconds": 160.23656550003216,
+    "total_unet_forward_api_calls": 3060,
+    "backward_iterations": 1498,
+    "new_private_head_or_DP_runs": 0,
+    "verification_statuses": {
+      "training": "PASS_PUBLIC_MEDICAL_TRAINING_SAVED_INPUTS_STATES_AND_EXPOSURES",
+      "selection": "PASS_PUBLIC_MEDICAL_SELECTION_SAVED_SAMPLING_AND_PAIRED_INPUTS",
+      "confirmation": "PASS_PUBLIC_MEDICAL_CONFIRMATION_SAVED_SAMPLING_AND_SELECTION_BINDING"
+    },
+    "confirmation_blinding_limit": "Root coordinator knew chosen E4; figure/task labels hidden; independent reviewer did not open mapping. Not fully two-reviewer identity-blind confirmation.",
+    "all_original_evidence_preserved": true
   }
 }

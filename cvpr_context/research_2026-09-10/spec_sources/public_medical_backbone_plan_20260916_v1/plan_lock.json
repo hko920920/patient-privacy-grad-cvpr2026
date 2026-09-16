@@ -1,0 +1,26 @@
+{
+  "schema": "public-medical-backbone-plan-lock/v1",
+  "utc": "2026-09-16T10:58:00.152405+00:00",
+  "status": "PLANNED_NOT_EXECUTED",
+  "files": {
+    "spec_sources/public_medical_backbone_plan_20260916_v1/build_execution_spec.py": "5a7d49dbc52c413283606711c55bae9a79f6540094897f5fa26cbe79acd5c574",
+    "spec_sources/public_medical_backbone_plan_20260916_v1/build_verify_inventory.py": "47bb54a824a493099b2b57b6bd314ffa361683c350558879b8b8540cfeebe7ab",
+    "spec_sources/public_medical_backbone_plan_20260916_v1/diagnostic_history.csv": "9b37ee2e3e9c46bc4c10a135847ada659f4e267ef8f98e635e583512082e22ed",
+    "spec_sources/public_medical_backbone_plan_20260916_v1/exclusion_calculation.json": "40b1f356dabf896212766f43f3952cc5f691455f5ca3094168f0e79cbd7789ac",
+    "spec_sources/public_medical_backbone_plan_20260916_v1/execution_spec.json": "05b62514b7248aeaf65e409de8b717e093bfab78237ec8a33ada8c1ececd9f26",
+    "spec_sources/public_medical_backbone_plan_20260916_v1/execution_spec_verification.json": "35f7b61a1a3cfc54105b7eaf47d728fa34a144ab3a95250f453f8e7dfb954080",
+    "spec_sources/public_medical_backbone_plan_20260916_v1/generation_tasks.csv": "01ad79166158a0e3b0fffa5c5e8fa948be66b9facdf6111902e06bc38f2d4983",
+    "spec_sources/public_medical_backbone_plan_20260916_v1/images.csv": "11f0d4907f3b8bf513b2f5f56961034f97861945dd135f80d406d440a77a2081",
+    "spec_sources/public_medical_backbone_plan_20260916_v1/patients.csv": "50a1392e981125b83dbd92189c042fb0f8fe0c5afd478e6b4e63ddd3c9794375",
+    "spec_sources/public_medical_backbone_plan_20260916_v1/training_schedule.csv": "a5ab9d33780abc4ea561c1d26c12ca9c72057f66e24a1ff75ba52dbcec0d79a6",
+    "spec_sources/public_medical_backbone_plan_20260916_v1/verification.json": "787faaf5e7db1379fd446dae21d8e7d0295f0f2d8485b0345517910f8ff5aec8",
+    "spec_sources/public_medical_backbone_plan_20260916_v1/verify_execution_spec.py": "803dbeaf5868b0dfbf29c64dc19ac6215feaf43326d1ceb255d5e00256074b7b",
+    "spec_sources/public_medical_data_inventory_20260916.md": "aa01aad2c01f87add1cc806595002502bf540c9af3789133fc549b53578559ad",
+    "spec_sources/public_medical_gate_design_audit_20260916.md": "dccdd7c5201e97047613203dcfc33709db746fd71404b08a325cbdf74239bb82",
+    "spec_sources/public_medical_source_terms_20260916.md": "a7fb941879d96f784ba3bb1643ec88cbbbdd27092713e5abb7e82e8f2e1a9b75",
+    "spec_sources/public_medical_training_design_audit_20260916.md": "383d45df41525d004ce950b41c8d596a19f4cd8494e0eb261b43cf4dc4264250",
+    "TRACK1_PUBLIC_MEDICAL_BACKBONE_PLAN_20260916.md": "d66b74797f080406c093602131c5d5cb60dc324018cef42b83eea378fa42dc68"
+  },
+  "runtime_code_bound": false,
+  "new_GPU_runs": 0
+}

@@ -1,0 +1,33 @@
+task_id,phase,prompt_id,prompt,seed,generator_device,initial_dtype,guidance,steps,width,height
+selection_generic_0,selection,generic,a frontal chest radiograph,544161476315835781,cpu,float32,1.0,30,256,256
+selection_generic_1,selection,generic,a frontal chest radiograph,954896933200642460,cpu,float32,1.0,30,256,256
+selection_generic_2,selection,generic,a frontal chest radiograph,204567172993962924,cpu,float32,1.0,30,256,256
+selection_generic_3,selection,generic,a frontal chest radiograph,490235314450870406,cpu,float32,1.0,30,256,256
+selection_normal_0,selection,normal,a frontal posteroanterior chest radiograph with no labeled finding,691100270134485496,cpu,float32,1.0,30,256,256
+selection_normal_1,selection,normal,a frontal posteroanterior chest radiograph with no labeled finding,129275772868094657,cpu,float32,1.0,30,256,256
+selection_normal_2,selection,normal,a frontal posteroanterior chest radiograph with no labeled finding,538029539910286,cpu,float32,1.0,30,256,256
+selection_normal_3,selection,normal,a frontal posteroanterior chest radiograph with no labeled finding,191216811875857244,cpu,float32,1.0,30,256,256
+selection_effusion_0,selection,effusion,a frontal posteroanterior chest radiograph with radiographic findings of pleural effusion,222391703342096992,cpu,float32,1.0,30,256,256
+selection_effusion_1,selection,effusion,a frontal posteroanterior chest radiograph with radiographic findings of pleural effusion,482740832966413279,cpu,float32,1.0,30,256,256
+selection_effusion_2,selection,effusion,a frontal posteroanterior chest radiograph with radiographic findings of pleural effusion,704752732447756696,cpu,float32,1.0,30,256,256
+selection_effusion_3,selection,effusion,a frontal posteroanterior chest radiograph with radiographic findings of pleural effusion,735092197893158742,cpu,float32,1.0,30,256,256
+selection_cardiomegaly_0,selection,cardiomegaly,a frontal posteroanterior chest radiograph with radiographic findings of cardiomegaly,43320550358018545,cpu,float32,1.0,30,256,256
+selection_cardiomegaly_1,selection,cardiomegaly,a frontal posteroanterior chest radiograph with radiographic findings of cardiomegaly,324913327549106850,cpu,float32,1.0,30,256,256
+selection_cardiomegaly_2,selection,cardiomegaly,a frontal posteroanterior chest radiograph with radiographic findings of cardiomegaly,673330191158891410,cpu,float32,1.0,30,256,256
+selection_cardiomegaly_3,selection,cardiomegaly,a frontal posteroanterior chest radiograph with radiographic findings of cardiomegaly,954826557804556146,cpu,float32,1.0,30,256,256
+confirmation_generic_0,confirmation,generic,a frontal chest radiograph,704345592436895244,cpu,float32,1.0,30,256,256
+confirmation_generic_1,confirmation,generic,a frontal chest radiograph,70069505244728401,cpu,float32,1.0,30,256,256
+confirmation_generic_2,confirmation,generic,a frontal chest radiograph,649100555989454389,cpu,float32,1.0,30,256,256
+confirmation_generic_3,confirmation,generic,a frontal chest radiograph,520111841500365678,cpu,float32,1.0,30,256,256
+confirmation_normal_0,confirmation,normal,a frontal posteroanterior chest radiograph with no labeled finding,243148071592739643,cpu,float32,1.0,30,256,256
+confirmation_normal_1,confirmation,normal,a frontal posteroanterior chest radiograph with no labeled finding,799767237910285847,cpu,float32,1.0,30,256,256
+confirmation_normal_2,confirmation,normal,a frontal posteroanterior chest radiograph with no labeled finding,377896156709317049,cpu,float32,1.0,30,256,256
+confirmation_normal_3,confirmation,normal,a frontal posteroanterior chest radiograph with no labeled finding,86639059356085928,cpu,float32,1.0,30,256,256
+confirmation_effusion_0,confirmation,effusion,a frontal posteroanterior chest radiograph with radiographic findings of pleural effusion,231372304077300540,cpu,float32,1.0,30,256,256
+confirmation_effusion_1,confirmation,effusion,a frontal posteroanterior chest radiograph with radiographic findings of pleural effusion,91023717752780608,cpu,float32,1.0,30,256,256
+confirmation_effusion_2,confirmation,effusion,a frontal posteroanterior chest radiograph with radiographic findings of pleural effusion,745006998657049403,cpu,float32,1.0,30,256,256
+confirmation_effusion_3,confirmation,effusion,a frontal posteroanterior chest radiograph with radiographic findings of pleural effusion,595767730889045990,cpu,float32,1.0,30,256,256
+confirmation_cardiomegaly_0,confirmation,cardiomegaly,a frontal posteroanterior chest radiograph with radiographic findings of cardiomegaly,76577098590600355,cpu,float32,1.0,30,256,256
+confirmation_cardiomegaly_1,confirmation,cardiomegaly,a frontal posteroanterior chest radiograph with radiographic findings of cardiomegaly,595981369862879504,cpu,float32,1.0,30,256,256
+confirmation_cardiomegaly_2,confirmation,cardiomegaly,a frontal posteroanterior chest radiograph with radiographic findings of cardiomegaly,204924695874642988,cpu,float32,1.0,30,256,256
+confirmation_cardiomegaly_3,confirmation,cardiomegaly,a frontal posteroanterior chest radiograph with radiographic findings of cardiomegaly,831515847442003225,cpu,float32,1.0,30,256,256

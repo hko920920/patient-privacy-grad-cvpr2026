@@ -1,0 +1,146 @@
+{
+  "schema": "public-medical-backbone-role-plan/v1",
+  "status": "METADATA_AND_FILE_BYTES_VERIFIED_NO_TRAINING",
+  "salt": "public-medical-backbone-20260916-v1",
+  "ordering_rule": "ascending SHA256(UTF8(salt+'|patient|'+patient_id)); numeric ID text as in original manifest",
+  "assignment_rule": "known-history0 confirmation128 first; next known-history0 selection128; remaining all train640 then reserve9 in same SHA order",
+  "public_role_assumption": "Existing public_development is available for public backbone training. These patients themselves receive no privacy guarantee. Original roles elsewhere are unchanged.",
+  "source_inventory": {
+    "local_image_files": 42423,
+    "inventory_images": 42423,
+    "inventory_patients": 14755,
+    "source_public_patients": 1816,
+    "source_public_manifest_images": 5206,
+    "source_public_acquired_images": 4831
+  },
+  "excluded_patient_counts": {
+    "fit": 80,
+    "selection": 40,
+    "calibration": 140,
+    "test": 140,
+    "quality": 32,
+    "reference": 64,
+    "background": 256,
+    "reference259": 259
+  },
+  "excluded_union": 911,
+  "eligible_patients": 905,
+  "eligible_images": 1016,
+  "patients_by_role": {
+    "train": 640,
+    "selection": 128,
+    "confirmation": 128,
+    "reserve": 9
+  },
+  "images_by_role": {
+    "confirmation": 128,
+    "train": 749,
+    "selection": 128,
+    "reserve": 11
+  },
+  "images_per_patient_histogram": {
+    "1": 822,
+    "2": 55,
+    "3": 28
+  },
+  "target_patient_counts_by_role": {
+    "train": {
+      "0": 462,
+      "1": 178
+    },
+    "selection": {
+      "0": 102,
+      "1": 26
+    },
+    "confirmation": {
+      "0": 102,
+      "1": 26
+    },
+    "reserve": {
+      "0": 6,
+      "1": 3
+    }
+  },
+  "historical_diagnostic_patients": 118,
+  "no_known_history_patients": 787,
+  "history_patients_by_role": {
+    "train": 117,
+    "reserve": 1
+  },
+  "history_sources_patients": {
+    "CVPR 주제 탐색/research_2026-09-10/spec_sources/protection_observation_design_20260915/public_triplet_fixture.json": 5,
+    "K5_four_step_fixture:code_working/_reports/nih_cxr14_k5_actual_sd21_resume_preflight_protocol_v1_002/protocol.json": 1,
+    "code_working/_reports/nih_cxr14_cross_record_context_confirmation_v2_001/selected_public_cross_record_cohort_private.csv": 17,
+    "code_working/_reports/nih_cxr14_order_proxy_residual_premise_v1_001/selected_public_ordered_pairs_private.csv": 12,
+    "code_working/_reports/nih_cxr14_patient_exposure_tail_premise_v1_001/selected_public_query_gallery_private.csv": 83,
+    "code_working/_reports/nih_cxr14_patient_set_premise_confirmation_v2_001/selected_public_patient_sets_private.csv": 27,
+    "code_working/_reports/nih_cxr14_public_clip_calibration_v1_001/selected_public_units_private.csv": 41,
+    "code_working/_reports/nih_cxr14_sd21_ppmark_interface_v1_001/selected_interface_records_private.csv": 1,
+    "code_working/_reports/nih_cxr14_setadapter_context_signal_v1_001/selected_public_context_cohort_private.csv": 18
+  },
+  "history_change_record": {
+    "before": "Unexecuted calculation only: first640 train,next128 selection,next128 confirmation,last9 reserve.",
+    "initial_rule_images_by_role": {
+      "train": 712,
+      "reserve": 11,
+      "selection": 142,
+      "confirmation": 151
+    },
+    "initial_rule_history_by_role": {
+      "train": 79,
+      "selection": 17,
+      "confirmation": 21,
+      "reserve": 1
+    },
+    "reason": "Before training or outcome inspection, reserve selection/confirmation without overlap in inspected diagnostic manifests.",
+    "previous_manifest_published": false
+  },
+  "file_checks": {
+    "actual_image_sha256_checked": 1016,
+    "all_match_content_inventory_and_source_audit": true,
+    "cross_patient_exact_byte_matches": 0,
+    "cross_patient_prior_pixel_hash_matches": 0,
+    "new_png_decodes": 0,
+    "near_duplicate_screen_new": false
+  },
+  "cache_boundary": "All original CVPR evaluation/auxiliary patients excluded; the existing 2304-image cache cannot supply these newly reserved images. New latent/text preparation is required before training.",
+  "history_scope": "Inspected selected_*.csv in NIH report directories (including negative/donor patient IDs), public-triplet fixture, and source-defined K5 four-step fixture. All public images also had acquisition/source-audit preprocessing. Zero known history is not proof of never being viewed, nor an independent clinical/external dataset.",
+  "input_sha256": {
+    "code_working/_data/derived/nih_cxr14_pa_target_enriched_v1/all_selected_pa_images_private.csv": "547e0c1773d0f3681c22674124ff665cb730abf5153745ae32d110b0cab01bed",
+    "code_working/_data/derived/nih_cxr14_pa_target_enriched_v1/k5_private.csv": "dc49d82e497eaa6940dcf92c8f773179b8f7a838057a82ae0c26a69ca785bfc5",
+    "code_working/_data/derived/nih_cxr14_pa_target_enriched_v1/patients_private.csv": "46c564fbd76c5189b23ac687e3171903f7854d53dcc3e0b5a038ca5e26c4f0f0",
+    "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/content_inventory_private.csv": "ad34344f962fac7052114a3486d42d2b48cb5c9f27dddc70365e07b715f68cc3",
+    "code_working/_reports/cvpr_u_pilot_v1_001/cohort/auxiliary_images.csv": "4ae1c513099d28b142eef6d9d805eadb529fb05b9895301497393d93d9b14fe2",
+    "code_working/_reports/cvpr_u_pilot_v1_001/cohort/evaluation_images.csv": "08efab0eafeeca7cb6b8ff191c2eca2954e092a9c282a69785ac84a1cac35a7e",
+    "code_working/_reports/cvpr_u_pilot_v1_001/cohort/source_audit.csv": "a310be21f19ddec3d5925cb1956fb19816ead476f496e5c50a682e1a16433e7f",
+    "code_working/_reports/nih_cxr14_cross_record_context_confirmation_v2_001/selected_public_cross_record_cohort_private.csv": "9145e378dafd976acaecee6b78ed8f8b28d73bcdb13a466111decbb648d038c0",
+    "code_working/_reports/nih_cxr14_k5_actual_sd21_resume_preflight_protocol_v1_002/protocol.json": "3921227498086c6d3e794fbe92de12df229e463d9f461642bdf71187b704924d",
+    "code_working/_reports/nih_cxr14_k5_evaluator_preflight_protocol_v1_001/real_evaluator_tasks_local.csv": "f82c4513eb64fac2c17b31686ba18eac4650c7a2eaa5871be3c5d0c7cc3889fa",
+    "code_working/_reports/nih_cxr14_order_proxy_residual_premise_v1_001/selected_public_ordered_pairs_private.csv": "4086bf15e8c50547c12eebf26bb755c923f1799ab9d1aa83cebd3c669383e60c",
+    "code_working/_reports/nih_cxr14_patient_exposure_tail_premise_v1_001/selected_public_query_gallery_private.csv": "03b1fe65f2eacaac9964b0ed7f124c2eac6d610f88574d464d327304e32984ec",
+    "code_working/_reports/nih_cxr14_patient_set_premise_confirmation_v2_001/selected_public_patient_sets_private.csv": "e1abc33ea68082f69086cdfb752b558580710fad35fb70640bdad590dfc2c6f8",
+    "code_working/_reports/nih_cxr14_patient_set_premise_v1_001/selected_public_patient_sets_private.csv": "87b356a6175493e309de2d84e8d0769b4764005bee809aa8eb5cf5d5ef544ab0",
+    "code_working/_reports/nih_cxr14_public_clip_calibration_v1_001/selected_public_units_private.csv": "cb7e845f7b1d627bf52973adba9e7f3e6207f2081441dbefbade7e40ae261f6e",
+    "code_working/_reports/nih_cxr14_q2_setadapter_architecture_smoke_v1_001/selected_public_q2_patient_private.csv": "829775f20880d3e600008828a6e747b7f98b733e6b225b44ac05c5fc2d45a0c8",
+    "code_working/_reports/nih_cxr14_sd21_ppmark_interface_v1_001/selected_interface_records_private.csv": "6b48ad409cff55daf0bcf4c38e3f07d4a8eb173156417915a95a721c7de464cd",
+    "code_working/_reports/nih_cxr14_setadapter_context_signal_v1_001/selected_public_context_cohort_private.csv": "b6951897c7270cc7a462496f82a5ec1cddc65d7f37a15ea6e2d629809604e319",
+    "code_working/_reports/nih_cxr14_ucan_public_diagnostic_v1_001/selected_public_patients_private.csv": "13cb2054de2a25208972590ba023585c16555d7ece260d4fa571633cd9681af0",
+    "code_working/dp_training/run_k5_actual_sd21_resume_preflight.py": "b94f4591d471a1c20570fdde937f3dad40cbaee6a1c34cd917d0fc1cba56f477",
+    "CVPR 주제 탐색/research_2026-09-10/spec_sources/protection_observation_design_20260915/public_triplet_fixture.json": "c6af0b68466c94f56c6a22c78f6fa897a864dae8780764ad120b09414f684e48"
+  },
+  "builder_sha256": "47bb54a824a493099b2b57b6bd314ffa361683c350558879b8b8540cfeebe7ab",
+  "limitations": [
+    "Patient identities/splits are NIH metadata, not clinical study UID.",
+    "Same NIH PA population, not an external dataset.",
+    "Historical reference259 includes original auxiliary patients; exclusion is a union, not subtraction of summed counts.",
+    "No feature/loss/generation score used for role assignment.",
+    "No training, backbone evaluation, private reclassification, or final calibration/test image access performed.",
+    "Remaining 905 patients are mostly single-image and have a different case mix from prior >=4-image CVPR cohort.",
+    "No new perceptual near-duplicate search was run; exact byte and previously audited pixel hashes were checked."
+  ],
+  "output_sha256": {
+    "patients.csv": "50a1392e981125b83dbd92189c042fb0f8fe0c5afd478e6b4e63ddd3c9794375",
+    "images.csv": "11f0d4907f3b8bf513b2f5f56961034f97861945dd135f80d406d440a77a2081",
+    "diagnostic_history.csv": "9b37ee2e3e9c46bc4c10a135847ada659f4e267ef8f98e635e583512082e22ed"
+  }
+}
