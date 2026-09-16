@@ -78,6 +78,8 @@ def convert(md,from_review=False):
         if href=='TRACK1_PATIENT_DP_RESULTS_20260916.md':href='track1_patient_dp_results.html'
         if href=='REALISTIC_RESEARCH_PLAN_20260916.md':href='realistic_research_plan.html'
         if href=='TRACK1_POOLED_REFERENCE_RESULTS_20260916.md':href='track1_pooled_reference_results.html'
+        if href=='TRACK1_SAMPLING_INTEGRATION_PROTOCOL_20260916.md':href='track1_sampling_integration_protocol.html'
+        if href=='TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md':href='track1_sampling_integration_results.html'
         a['href']=href
     return str(soup)
 
@@ -147,6 +149,7 @@ def main():
     head += '<p class="notice"><a href="pfami_comparison_results.html"><strong>2번의 최근 GPU 진단: PFAMI 고정 비교·독립 검산</strong></a><br>선택 40명·480건·9,600F를 완료했습니다. U AUC 0.3550/0.6575이며 정규화의 추가 이득은 미확인입니다. 이 부분 결과를 2번 전체 완료나 방향 폐기의 근거로 확대하지 않습니다. <a href="pfami_comparison_protocol.html">실행 전 계약</a></p>'
     head += '<p class="notice"><a href="paired_score_audit.html"><strong>최신 분석: 두 모델의 공통 순위와 참여 방향 변화</strong></a><br>기존 40명의 저장 점수로 반대 AUC의 구조를 확인했습니다. 새 GPU 실행 없이 공통 성분·점수 변화·환자 간 순위 변화를 구분하며, 개인 인과 효과나 새 공격의 성능으로 해석하지 않습니다.</p>'
     head = '<section class="panel"><h2>현재 진행: 공개+사적 비DP 대조 완료</h2><p><a href="track1_pooled_reference_results.html"><strong>첫 하위작업 결과·481개 독립 확인</strong></a></p><p>공개32+사적80명 결합 full64는 공개전용보다 개발 denoising MSE가0.01666% 낮았고37/40명에서 개선됐습니다. 차이는 작으며 실제 생성 효용은 미확인입니다. 현재 큰 단계2·방향1, 다음은 sampling 연결·정합 검증(예상45–90분)입니다. 생성은 아직 실행하지 않았습니다. 아래 안내는 이전 기록입니다.</p></section>' + head
+    head = '<section class="panel"><h2>현재 판정: 연결은 정확하지만 생성 결과는 나쁨</h2><p><a href="track1_sampling_integration_results.html"><strong>고정6장 전체·6,475개 검산·다음 결정</strong></a></p><p>base/public/pooled 모두 이번 두 조건에서 흉부영상 형태를 만들지 못했습니다. 96장 확대와 새 solver 탐색은 보류합니다. 다음은 이미 흉부영상 형태를 생성한 기존 LoRA 양성 대조와 현재 sampling 경로의 조건을 연결하는 최소 확인(예상30–60분)입니다. 현재 큰 단계2·방향1이며 아래 안내는 이전 기록입니다.</p></section>' + head
     controls='''<section class="panel"><div class="filters"><label>목록 범위<select id="scope"><option value="all">전체 79편</option><option value="legacy">기존 관련 67편</option><option value="legacy35">기존 최신 판정 35편</option><option value="new">이번 추가 12편</option><option value="direct">공격·생성 비교 후보 26편</option></select></label><label>역할<select id="role"><option value="all">모든 역할</option>'''
     controls+=''.join('<option value="'+k+'">'+esc(v)+' ('+str(stats[k])+')</option>' for k,v in ROLES.items())
     controls+='''</select></label><label>확인 수준<select id="status"><option value="all">모든 확인 수준</option><option value="selected">PDF 선택 절 (75)</option><option value="partial">공식 본문 일부 (3)</option><option value="abstract">초록만 (1)</option><option value="replay">공개 packet 재계산 (2)</option></select></label><label>발표 형식<select id="venue"><option value="all">모든 발표 형식</option><option value="main">메인 학회 표기</option><option value="other">저널·워크샵·공개본 등</option></select></label><label class="search">논문명·방법·검토 내용 검색<input id="search" type="search" placeholder="예: MoFit, CLiD, 환자 평균, FPR" autocomplete="off"></label></div><p id="count" aria-live="polite"></p><button id="reset" type="button">필터 초기화</button><button id="expand" type="button">표시된 검토 펼치기</button><button id="collapse" type="button">모두 접기</button><p class="meta">비교 후보 수는 전부 실행할 의무 목록이나 같은 문제의 SOTA 순위가 아니다. 접근 권한과 주장에 맞는 비교군을 선택한다.</p></section>'''
@@ -197,6 +200,8 @@ def main():
         ('TRACK1_PATIENT_DP_PROTOCOL_20260916.md','track1_patient_dp_protocol.html','방향1: 공개 보정과 환자DP 실행 조건'),
         ('TRACK1_PATIENT_DP_RESULTS_20260916.md','track1_patient_dp_results.html','방향1: 실제 환자DP 결과와 손실 원인'),
         ('TRACK1_POOLED_REFERENCE_RESULTS_20260916.md','track1_pooled_reference_results.html','방향1: 공개+사적 비DP 대조 결과'),
+        ('TRACK1_SAMPLING_INTEGRATION_PROTOCOL_20260916.md','track1_sampling_integration_protocol.html','방향1: 실제 sampling 연결 검증 명세'),
+        ('TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md','track1_sampling_integration_results.html','방향1: 연결 PASS·현재 생성 부적합 결과'),
         ('REALISTIC_RESEARCH_PLAN_20260916.md','realistic_research_plan.html','의료 생성모델 환자 보호: 현실적인 다음 계획')]:
         if (ROOT/source).exists():
             body='<p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p>'+convert((ROOT/source).read_text(encoding='utf-8'))

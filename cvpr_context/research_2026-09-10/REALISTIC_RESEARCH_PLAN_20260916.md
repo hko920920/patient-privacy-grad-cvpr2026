@@ -71,6 +71,8 @@
 
 ### B. 기존 구성의 실제 생성 경로를 연결
 
+**2026-09-16 연결 검증·최소6장 완료:** [결과](TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md). 연결 산술·전체 원상복구6,475개PASS이나 두고정조건의base/public/pooled6장모두흉부영상형성실패다. 아래96장확대는현재보류하며 C의‘목표도메인부적합’분기에따른다. 다음은기존step1000LoRA 양성대조와현재sampling조건을연결하는최소확인,예상30–60분이다. 기존LoRA를공개DP-safebackbone으로전환한다는뜻이아니다. 현재연구적결과는나쁘며새solver로해결될것이라추정하지않는다.
+
 동일 feature tap·projection·log-SNR basis를 sampling에 적용한다. W=0의 기반 모델 복원, 저장 noisy input에서 offline/online 출력 일치, scheduler 출력 parameterization을 먼저 확인한다. 학습조건과 일치시키기 위해 첫 primary는 조건부 guidance=1을 제안한다. CFG7.5는 null branch 적용 규칙을 별도로 정할 때만 대조하며 결과를 섞지 않는다.
 
 full64의 **base/public-only/private-only 비DP/pooled 비DP/기존 DP-SGD/기존 SSP**, 여섯 모델을 사전 고정4개 흉부영상 prompt×4개 sampling seed로 비교한다. 총96장, 같은 prompt·seed를 방법끼리 짝짓는다. **DP 방법별로 기존 manifest index0 가중치 하나를 결과와 무관한 고정 대표로 지정하고, 같은 head로16장을 생성한다.** 이전 미실행 제안인16개 DP head×각1장은 혼합분포를 만들므로 개별 학습모델의 KID/PRDC로 평가하지 않는다. 이번은 DP 각1회 모델의 탐색이며, 후속은 head별 충분한 생성→head별 metric→DP seed 간 요약 순서로 진행한다.

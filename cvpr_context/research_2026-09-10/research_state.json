@@ -24,8 +24,8 @@
       "meaning": "Existing development results are preserved; actual generated utility, private added value and final contribution are not established."
     }
   ],
-  "next_task": "Realistic-plan5B: verify fixed-head sampling integration (zero-head base recovery, saved-input offline/online agreement and scheduler semantics); then profile fixed generation.",
-  "next_task_output": "Verified sampling wrapper and numerical evidence; no generated utility claim from tiny denoising differences.",
+  "next_task": "Use the existing step1000 LoRA CXR-form positive control to check the bridge between its known generation path and current sampling conditions; no automatic96-image expansion or solver search.",
+  "next_task_output": "Matched-input positive-control specification and generation-path evidence, keeping diagnostic private-trained LoRA separate from a DP-valid public backbone.",
   "step2_open_items": [
     "Track1: useful sampling behavior of the existing compact head; public-plus-private added value versus public-only in the fixed development setup.",
     "Track1: a concrete application/integration claim with real generation utility and total cost; use strong existing public-informed solvers if appropriate.",
@@ -57,7 +57,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Evaluate the useful medical generation-adaptation application of existing principles, separately from any optional new private-regression solver claim.",
+  "step2_active_task": "Re-establish a valid generation starting point and sampling control before extending privacy/utility comparisons.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -72,13 +72,13 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_pooled_reference_20260916_v1",
-    "last_completed_report": "TRACK1_POOLED_REFERENCE_RESULTS_20260916.md",
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_sampling_integration_20260916_v1",
+    "last_completed_report": "TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md",
     "additional_execution_contract_fixed": false,
     "stage2_completion_claim": false,
     "latest_design_review": "REALISTIC_RESEARCH_PLAN_20260916.md",
     "new_two_track_experiment_started": true,
-    "new_two_track_experiment_status": "pooled_nonDP_reference_completed_verified",
+    "new_two_track_experiment_status": "sampling_verified_but_current_generation_bad",
     "latest_cpu_outputs": [
       "spec_sources/track1_cpu_allocation_20260916",
       "spec_sources/track2_cpu_audit_20260916"
@@ -194,11 +194,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "realistic_plan5A_completed_5B_pending",
-    "proposed_next_package_total_hours": [
-      2.5,
-      5
-    ],
+    "latest_planning_status": "96image_expansion_paused_existing_positive_control_bridge_next",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -347,11 +343,58 @@
       "remaining_generation_package_not_completed": true
     },
     "next_substep_estimated_work_minutes": [
-      45,
-      90
+      30,
+      60
+    ],
+    "sampling_integration_contract_sha256": "c32c1cae5ac2a15b7c3af267f7e03d066e065213024a3bccd03fe40fec65fcfa",
+    "current_sampling_scope": "realistic_plan5B numerical integration, fixed325F/0B, then6preview only after independentPASS",
+    "historical_pre_sampling_last_completed": {
+      "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_pooled_reference_20260916_v1",
+      "last_completed_report": "TRACK1_POOLED_REFERENCE_RESULTS_20260916.md",
+      "new_two_track_experiment_status": "pooled_nonDP_reference_completed_verified"
+    },
+    "completed_track1_sampling_integration": {
+      "report": "TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md",
+      "protocol": "TRACK1_SAMPLING_INTEGRATION_PROTOCOL_20260916.md",
+      "status": "completed_verified_integration_negative_generation_applicability",
+      "current_step": 2,
+      "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_sampling_integration_20260916_v1",
+      "contract_sha256": "c32c1cae5ac2a15b7c3af267f7e03d066e065213024a3bccd03fe40fec65fcfa",
+      "verifier_result_sha256": "6de01bf74001cb21b25bd079ea73e3690f8b9ddb306f9d7ba7dc060f6a2f82a9",
+      "preview_manifest_sha256": "7745a89c36f2147f8730f1f3acbad60cd8d40785a7aae299fc2dd2fcfc54696e",
+      "implementation_judgment": "PASS",
+      "research_judgment": "Poor in the current fixed two-case configuration: all six previews are grossly non-CXR.",
+      "independent_checks": 6475,
+      "DDIM_transitions": 300,
+      "original_public_witnesses_exact": 4,
+      "zero_and_restored_full_trajectories_exact": true,
+      "UNet_forward": 325,
+      "backward": 0,
+      "VAE_decodes": 6,
+      "execution_seconds": 36.285263099940494,
+      "verification_seconds": 4.499093299964443,
+      "trajectory_seconds": 18.427226799656637,
+      "peak_allocated_gpu_bytes": 3853043712,
+      "generated_images": 6,
+      "generated_quality_metrics": false,
+      "new_DP_training": false,
+      "cohort_evaluation": "Public witness reconstruction only; no final calibration/test evaluation",
+      "decision": "Pause96-image expansion and solver variants; verify existing CXR-form LoRA positive control under matched generation path.",
+      "causal_attribution_to_head_or_guidance_established": false,
+      "private_incremental_generation_value_established": false,
+      "positive_control_scope": "Existing M1/M2 used private-role training data; diagnostic only, not a patient-DP-safe public backbone.",
+      "next_work_minutes": [
+        30,
+        60
+      ]
+    },
+    "automatic_96image_expansion": false,
+    "historical_pre_sampling_package_total_hours": [
+      2.5,
+      5
     ]
   },
-  "updated_utc": "2026-09-16T07:34:33.579209+00:00",
+  "updated_utc": "2026-09-16T09:37:09.987456+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -402,7 +445,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_POOLED_REFERENCE_RESULTS_20260916.md",
+  "current_result_report": "TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -1926,7 +1969,7 @@
     "finalnextquestion": "Does the observed restricted-head denoising gain survive a fair patient-DP comparison, given the full64 statistic dimension2336 versus static16 dimension200 and only0.4467% extra nonprivate MSE reduction?"
   },
   "current_paper_problem_fixed": false,
-  "research_question_status": "Legitimate application candidate and feasibility question; final technical contribution and real generation utility remain unestablished.",
+  "research_question_status": "Application question remains open; current general-base plus small-head fixed preview failed basic CXR-form applicability, despite correct integration.",
   "new_dp_principle_required": false,
   "new_solver_required_for_application_contribution": false,
   "realistic_replan_20260916": {
@@ -2166,5 +2209,42 @@
     ],
     "remaining_generation_package_not_completed": true
   },
-  "latest_user_execution_scope_20260916": "Proceed slowly and thoroughly, one substep at a time; section5A completed this turn."
+  "latest_user_execution_scope_20260916": "Proceed slowly and thoroughly, one substep at a time; section5A completed this turn.",
+  "pre_sampling_current_result_report_20260916": "TRACK1_POOLED_REFERENCE_RESULTS_20260916.md",
+  "completed_track1_sampling_integration_20260916": {
+    "report": "TRACK1_SAMPLING_INTEGRATION_RESULTS_20260916.md",
+    "protocol": "TRACK1_SAMPLING_INTEGRATION_PROTOCOL_20260916.md",
+    "status": "completed_verified_integration_negative_generation_applicability",
+    "current_step": 2,
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_sampling_integration_20260916_v1",
+    "contract_sha256": "c32c1cae5ac2a15b7c3af267f7e03d066e065213024a3bccd03fe40fec65fcfa",
+    "verifier_result_sha256": "6de01bf74001cb21b25bd079ea73e3690f8b9ddb306f9d7ba7dc060f6a2f82a9",
+    "preview_manifest_sha256": "7745a89c36f2147f8730f1f3acbad60cd8d40785a7aae299fc2dd2fcfc54696e",
+    "implementation_judgment": "PASS",
+    "research_judgment": "Poor in the current fixed two-case configuration: all six previews are grossly non-CXR.",
+    "independent_checks": 6475,
+    "DDIM_transitions": 300,
+    "original_public_witnesses_exact": 4,
+    "zero_and_restored_full_trajectories_exact": true,
+    "UNet_forward": 325,
+    "backward": 0,
+    "VAE_decodes": 6,
+    "execution_seconds": 36.285263099940494,
+    "verification_seconds": 4.499093299964443,
+    "trajectory_seconds": 18.427226799656637,
+    "peak_allocated_gpu_bytes": 3853043712,
+    "generated_images": 6,
+    "generated_quality_metrics": false,
+    "new_DP_training": false,
+    "cohort_evaluation": "Public witness reconstruction only; no final calibration/test evaluation",
+    "decision": "Pause96-image expansion and solver variants; verify existing CXR-form LoRA positive control under matched generation path.",
+    "causal_attribution_to_head_or_guidance_established": false,
+    "private_incremental_generation_value_established": false,
+    "positive_control_scope": "Existing M1/M2 used private-role training data; diagnostic only, not a patient-DP-safe public backbone.",
+    "next_work_minutes": [
+      30,
+      60
+    ]
+  },
+  "result_reporting_policy": "Lead with favorable/unclear/poor research judgment, then implementation evidence and next decision."
 }

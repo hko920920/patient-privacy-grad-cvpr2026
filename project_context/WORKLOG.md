@@ -5305,6 +5305,16 @@ noise/condition에서 synthetic images를 만들며, 생성물은 외부 연구,
 - RESEARCH_FRAMEWORK의 낡은 DP미실행 단계표와 현재위치, AGENTS/CURRENT_STATUS/두상태JSON/HTML상단을 동기화했다. 완료된 실험객체와 current_result_report가 그대로인 것을 상태갱신에서 확인했다. 기존 private/public protocol·가중치·수치·최종cal/test는 변경하지 않았다. 이번 새 GPU·학습·공격·생성 실험0이다.
 - 독립 계획 검토에서 사용자 정정과의 충돌, 부당한 자동중단, 작은생성진단 한계, 시간범위 혼선을 점검했다. HTML 정적검사1095로컬링크·221PDF앵커·깨진링크0,79편장부/75PDF 유지,두상태핵심필드동기화PASS. 근거는 spec_sources/realistic_plan_verification_20260916.json이다. 15:36:47–15:49경 KST 약13분에 계획·원문·실행가능성 검토와 기록을 마쳤다. 초기예상15–25분보다 일찍 완료했다.
 
+## 124-SAMPLING-INTEGRATION-AND-NEGATIVE-PREVIEW — 2026-09-16
+
+- 사용자 후속 검토를 반영해 현실 계획 §5B의 sampling 연결 패킷부터 실행했다. 보고 첫머리에 연구 결과의 좋음/불명확/나쁨을 말하라는 지침도 AGENTS에 기록했다. 시작 예상45–90분, 실제18:14–18:38경 KST 약24분이었다. 사용자 검토의 static 수치는0.01794%·39/40으로 정정했고 이전 pooled검산은 원시영상 재추출이 아닌 검증된 환자통계 재사용임을 구분했다.
+- 원 소스/공개witness 독립 감사 후 신규 sampling_adapter.py,run_sampling_integration.py,verify_sampling_integration.py와 명세·기존입력·라이브러리소스26개를 계약에 결속했다. 실행전 리뷰에서 예외시hook해제,clamp전finite,preview전검산hash재확인 보완을 완료했다. 기존동결파일은수정하지않았다.
+- 공개0/7/16/23의 입력복원·실제재추론에서과거base/features exact. full64 zero/public/pooled,두고정prompt와CPU seed,base/zero/public/pooled/base_restored10경로×30step을저장했다. 총325UNetF/0B,가중치전후hash동일,gradient/남은hook0. zero/restored는기반전체경로와exact였다.
+- 독립CPU검산6,475개PASS,DDIM300전이는고정tolerance및FP32연산범위내일치(각CPU/GPUbitwiseexact라는뜻아님). 본실행36.285초,trajectory합계18.427초,최대allocated3.588GiB,독립검산4.499초. 소스동결이전합성101검사PASS. 이후검산이결속한파일SHA재확인후VAE6decode했다.
+- **연구적결과는나쁨:** 미리정한normal/effusion각base/public/pooled6장전부흉부영상목적부적합. normal은반복패턴,effusion은분홍물체. root와독립검토자가모든이미지직접확인. MSE감소가현재구성의의료생성효용으로이어지지않았으며출력변화자체를품질개선으로부르지않았다. 96장자동확대/DPsolver탐색보류. 사적자료가원래불필요하거나head/DP전반불가능하다는결론은아니다.
+- 기존training_coverage_v2/step_1000_both의LoRA M1/M2에는기본CXR형태양성대조가있음을실제grid와기록에서재확인했다. 예전base도CFG7.5에서비의료출력이었다. 다음은기존양성경로와현조건의연결(예상30–60분)로고정하며,FP16/CFG7.5/CUDA RNG/directtext와FP32/CFG1/CPU RNG/cachetext차이를하나로원인단정하지않는다. M1/M2는사적역할학습이므로진단용양성대조일뿐공개DP-safe backbone으로자동채택불가.
+- TRACK1_SAMPLING_INTEGRATION_PROTOCOL/RESULTS_20260916.md 및HTML,계획§5B,framework,AGENTS,CURRENT_STATUS,두state와index를갱신했다. 현재실행중작업없음,큰단계2·방향1유지. 1119로컬링크/221PDF앵커/새22링크·이미지/깨진링크0,두state5필드및26sourcehash/검산packet결속재확인PASS. spec_sources/sampling_report_verification_20260916.json에기록했다.
+
 ## 123-POOLED-NONDP-REFERENCE — 2026-09-16
 
 - 사용자 ‘하나씩 천천히 철저히 진행’에 따라 현재 큰 단계2·방향1의 현실 계획 §5A만 실행했다. 시작 예상20–30분을 보고했고, 실제 작업은16:21–16:36경 KST 약15분이었다. 생성·평가 패키지 전체를 완료한 것으로 세지 않는다.

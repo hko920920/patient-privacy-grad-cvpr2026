@@ -1,0 +1,21 @@
+{
+  "status": "PASS_SAMPLING_REPORTS_LINKS_STATE_AND_FROZEN_PACKET",
+  "utc": "2026-09-16T09:37:52.841539+00:00",
+  "static": {
+    "rows": 79,
+    "checked_local_links": 1119,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_report_links_and_images": 22,
+  "state_keys": [
+    "current_step",
+    "current_result_report",
+    "next_task",
+    "active_execution",
+    "completed_track1_sampling_integration_20260916"
+  ],
+  "source_hashes": 26,
+  "independent_packet_still_bound": true,
+  "extra_GPU_runs": 0
+}

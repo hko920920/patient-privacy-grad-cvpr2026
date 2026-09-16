@@ -1,0 +1,24 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>방향1: 실제 sampling 연결 검증 명세</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p><h1>방향1: 실제 sampling 연결 검증 명세</h1>
+<p><strong>실행 전 판단: pooled MSE 결과는 약한 연구 근거다. 이번 작업의 목적은 현재 보정층을 정확히 적용했을 때 실제 생성 경로에서 무엇이 바뀌는지 확인하는 것이다.</strong> 구현 PASS와 유용한 의료 생성의 성공을 구분한다. <a href="realistic_research_plan.html">현실 계획</a> §5B의 제한된 첫 작업이며 새 solver나 새 DP 학습을 하지 않는다.</p>
+<h2>고정 범위</h2>
+<p>동일 SD2.1 snapshot의 FP16 artifact를 FP32로 올린 직접 UNet에 full64 출력 보정을 붙인다. conv_out 직전320채널을 저장 P로 FP32 투영하고, 상수1·기존1000단계 logSNR의 네 Legendre 항을 원래 순서로 결합한다. FP64 W로 계산한 residual을 FP32로 바꿔 <strong>epsilon 예측에 더한 뒤</strong> DDIM에 전달한다. 가중치·시간 basis·projection은 기존 검산된 값을 그대로 사용한다.</p>
+<p>실제 scheduler 설정은 epsilon, DDIM30·eta0·256px·guidance1로 고정한다. 현재 설정의 timestep은958→925→…→34→1이며 alpha와 logSNR 정규화는 학습 당시1000개 전체를 따른다. 새 null branch나 CFG 규칙을 도입하지 않는다. 기존 weak-label prompt의 저장 conditioning을 쓴다.</p>
+<h2>검증할 연결</h2>
+<ol>
+<li>공개 witness0/7/16/23에서 원 latent·prompt·seed로 noisy input을 복원한다. 저장 noise와 현재 복원 noise, 원 특징/기반 예측, 시간 basis, offline/online residual을 대조한다.</li>
+<li>같은 입력의 W=0 출력, 보정 연결 제거 후 기반 출력, 같은 public 보정의 반복 호출은 exact equality를 요구한다.</li>
+<li>미리 정한 no-finding/effusion 두 prompt와 CPU seed26091631/26091632 각각에서 base/zero/public/pooled/base_restored 경로를 실행한다. 매 경로 자신의 현재 latent에서 특징을 다시 계산한다.</li>
+<li>10개 경로×30step의 모든 epsilon·latent를 저장한다. 별도 CPU 검산기가 보정식과 DDIM 전이를 다시 계산하고, zero/base/restored 전체 경로 일치를 확인한다.</li>
+<li>UNet 전체 상태의 실행 전후 hash, gradient 부재, hook 해제, finite 값, 단계별 비용·메모리를 기록한다. 독립 검산기는 모든 UNet step을 다시 GPU 추론하는 검증은 아니다.</li>
+</ol>
+<p>실행량은 warmup1 + witness4×6 + trajectory10×30 = <strong>325 UNet forward,0 backward</strong>다. FP32 반올림과 원 저장 재현 허용오차는 실행 전 JSON 계약과 검산 코드에 동결한다. 독립 검산기는 생산 수치 함수를 import하지 않는다.</p>
+<h2>최소 영상 확인과 판정</h2>
+<p>패킷 검산 PASS 뒤에만 두 고정 조건의 base/public/pooled 최종 latent를 VAE로 decode해 <strong>6장 전부</strong> 보존·확인한다. seed나 보기 좋은 이미지의 재선택은 없다. clamp 전에 raw decode의 finite 여부를 확인한다. VAE의 실제 scaling factor를 읽고 최종 latent를 그 값으로 나눈다.</p>
+<ul>
+<li>구현이 틀리면 연결 문제를 고친다. 성능 결과로 해석하지 않는다.</li>
+<li>올바른 경로에서도 현재 예시가 비의료적이거나 심하게 부적합하면, 96장으로 자동 확대하지 않는다. 현재 기반 모델·작은 head의 생성 적용성을 먼저 재검토한다.</li>
+<li>기본 도메인 형성이 가능하고 방법 차이가 관찰되면, 고정 여섯 방법·96장과 기존 평가기를 연결할 근거로 사용한다. 이 작은 관찰만으로 public 대비 사적 생성 효용을 확정하지 않는다.</li>
+</ul>
+<p>최초 총작업 예상45–90분. 실제 GPU profile 뒤 계산시간을 따로 보고한다. 최종 보고는 <strong>연구적으로 좋은지/약한지/불명확한지 → 구현 결과 → 그 판단의 근거 → 다음 결정</strong> 순서로 쓴다.</p>
+<p><a href="spec_sources/sampling_integration_source_audit_20260916.md">원 소스 감사</a> · <a href="spec_sources/sampling_witness_audit_20260916.md">공개 witness 감사</a> · <a href="../../code_working/frozen_residual_head/run_sampling_integration.py">생산 코드</a> · <a href="../../code_working/frozen_residual_head/sampling_adapter.py">보정 연결</a> · <a href="../../code_working/frozen_residual_head/verify_sampling_integration.py">독립 검산기</a>.</p></main></body></html>
