@@ -1,0 +1,29 @@
+{
+  "schema": "public-operating-report-verification/v1",
+  "utc": "2026-09-16T12:30:45.900047+00:00",
+  "static_review": {
+    "rows": 79,
+    "checked_local_links": 1133,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_page_local_links_and_images": 21,
+  "broken_new_links": [],
+  "runtime_source_hashes_unchanged": 45,
+  "frozen_plan_hashes_unchanged": 17,
+  "state_fields_equal": [
+    "current_step",
+    "current_result_report",
+    "current_planning_report",
+    "next_task",
+    "next_task_output",
+    "step2_active_task",
+    "active_execution"
+  ],
+  "old_adoption_unchanged": true,
+  "confirmation_not_executed": true,
+  "current_report_sha256": "1a90daba7ce44aa55f5f9ad6565e2b15a5256a5f54c181460efd30a4fceef880",
+  "current_html_sha256": "3d9802cebd34f78c20aaa9fb08825cdfc4b42bd2a862dae3421faf11a9563cd6",
+  "runtime_contract_sha256": "756f3d2ea401181b55664aecf477c97aad690f9be7297aea886180c1d2a929c4",
+  "status": "PASS"
+}

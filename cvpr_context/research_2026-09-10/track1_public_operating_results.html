@@ -1,0 +1,171 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>방향1: 64장 운용 진단과 CFG 대응 결과</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p><h1>공개 의료 LoRA: 공통 latent·CFG 운용 진단 결과</h1>
+<p><strong>판정: 새 입력의 기본 형태 생성은 긍정적이다. 그러나 CFG를 높여 이전 실패를 해결했다는 증거는 얻지 못했다.</strong> 새 네 latent를 모든 prompt·checkpoint·CFG에 공통 적용해 64장을 실제 생성했다. Root 한 명의 가림 형태 판독에서 E4/CFG1, E4/CFG7.5, E8/CFG1은 각각16/16장, E8/CFG7.5는15/16장이 개발 기준을 통과했다.</p>
+<p>이번 입력에서는 CFG1의 실패부터 재현되지 않았다. 따라서 7.5의 성공을 CFG1 실패의 해결로 해석할 수 없다. 앞선 두 판독자의 확인10/16·effusion0/4 실패는 그대로 보존한다. <strong>현재 모델의 채택 승인은 여전히 false이며 작은 사적 head·DP 학습은 실행하지 않았다.</strong></p>
+<h2>1. 사용자의 검토를 어떻게 반영했나</h2>
+<p><a href="track1_public_operating_protocol.html">실행 전에 고정한 명세</a>를 따랐다. 일반 SD2.1+작은 head의 실패, 사적 LoRA 경로 진단, 공개 LoRA의 부분적 형태 형성과 확인 미통과를 분리했다. 공개 backbone 조정을 무한 반복하지 않도록 이번 운용 진단 한 번과 필요한 경우 강한 공개 대안 한 후보로 투자 한도를 정했다.</p>
+<p>운영 기준 미달과 모델의 본질적 불안정성에 대한 과학적 확증도 구별했다. prompt별로 서로 다른 seed를 배정하던 문제를 고쳤고, 같은 실제 initial tensor를 네 prompt 모두에 사용했다. 다만 어떤 요인의 변경이 결과를 바꾸더라도 그 요인이 유일한 실패 원인이라고 확정하지 않기로 했다.</p>
+<h2>2. 실제 실행과 결과</h2>
+<p>E4/E8 × CFG1/7.5 × 새 공통 latent4개 × prompt4개 = <strong>64장</strong>을 생성했다. 새 학습·역전파·사적 head·DP 실행은 모두0이다. FP32, DDIM30 eta0, 256px, 같은 공개 conditional cache를 유지했다. CFG7.5용 빈 문자열 embedding 한 개만 고정 text encoder로 새 계산했다.</p>
+<table>
+<thead>
+<tr>
+<th>설정</th>
+<th style="text-align: right;">Generic</th>
+<th style="text-align: right;">Normal</th>
+<th style="text-align: right;">Effusion</th>
+<th style="text-align: right;">Cardiomegaly</th>
+<th style="text-align: right;">전체 형태 통과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E4 / CFG1</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;"><strong>16/16</strong></td>
+</tr>
+<tr>
+<td>E4 / CFG7.5</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;"><strong>16/16</strong></td>
+</tr>
+<tr>
+<td>E8 / CFG1</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;"><strong>16/16</strong></td>
+</tr>
+<tr>
+<td>E8 / CFG7.5</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;">3/4</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;">4/4</td>
+<td style="text-align: right;"><strong>15/16</strong></td>
+</tr>
+</tbody>
+</table>
+<p>동일 checkpoint·prompt·initial latent 안에서 CFG만 비교하면 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>대응 비교</th>
+<th style="text-align: right;">CFG1 실패→7.5 통과</th>
+<th style="text-align: right;">CFG1 통과→7.5 실패</th>
+<th style="text-align: right;">동일 판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td>E8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">15</td>
+</tr>
+</tbody>
+</table>
+<p>미통과 한 장은 E8/CFG7.5의 normal/S1이며, 하부 흉부·횡격막 주변에 카드처럼 생긴 사각 물체가 겹쳤다. 모호한 큰 비의료적 겹침은 실패로 처리한다는 고정 기준을 적용했다. 별도의 질환 진단은 하지 않았다.</p>
+<h3>E4 / CFG1 전체</h3>
+<p><img alt="E4 CFG1의 네 prompt·네 공통 latent" src="../../code_working/_reports/public_operating_diagnostic_20260916_v1/E4_CFG1.0_reviewed.png"/></p>
+<h3>E4 / CFG7.5 전체</h3>
+<p><img alt="E4 CFG7.5의 같은 입력" src="../../code_working/_reports/public_operating_diagnostic_20260916_v1/E4_CFG7.5_reviewed.png"/></p>
+<h3>E8 / CFG1 전체</h3>
+<p><img alt="E8 CFG1의 같은 입력" src="../../code_working/_reports/public_operating_diagnostic_20260916_v1/E8_CFG1.0_reviewed.png"/></p>
+<h3>E8 / CFG7.5 전체</h3>
+<p><img alt="E8 CFG7.5의 같은 입력" src="../../code_working/_reports/public_operating_diagnostic_20260916_v1/E8_CFG7.5_reviewed.png"/></p>
+<h2>3. 무엇이 좋아졌고 무엇은 확인되지 않았나</h2>
+<p><strong>긍정적 사실:</strong> 새 공통 latent 네 개에서는 모든 prompt의 기본 흉부 형태가 대체로 유지됐다. 특히 effusion prompt가 새 입력에서도 항상 실패하는 것은 아니었다. E4에서도 이 형태를 낼 수 있어, 추가 학습이나 더 높은 CFG가 이 네 latent의 gross 형태 형성에 필수였다는 증거는 없다.</p>
+<p><strong>해결하지 못한 질문:</strong> 실패 대조군이 이번 네 latent에서 재현되지 않아 앞선 실패 원인을 prompt·guidance·latent 가운데 하나로 좁히지 못했다. 특정 latent가 모든 모델에서 ‘나쁘다’는 사실도 보지 못했다. 결과가 앞선 확인과 다른 데에는 입력 묶음과 판독자 조건의 차이가 함께 있으므로, 개선량이나 일반화 성능으로 직접 비교하지 않는다.</p>
+<p><strong>질감에 관한 관찰:</strong> CFG7.5 그림은 더 매끈하고 대비가 강하며 렌더링처럼 보이는 경향이 있었다. 동일 seed에서 prompt를 바꾼 그림들도 시각적으로 비슷했다. 이것은 비임상 시각 관찰이지, 임상 사실성 저하·mode collapse·질환 conditioning 무효를 정량 입증한 결과는 아니다. 이번에는 KID, PRDC, 임상 라벨 정확도, memorization을 계산하지 않았다.</p>
+<p>따라서 다음처럼 쓰지 않는다.</p>
+<ul>
+<li>“CFG1 때문에 실패했고 CFG7.5로 고쳤다.”</li>
+<li>“새64장 대부분 통과했으니 이전 실패가 취소됐다.”</li>
+<li>“E8을 더 학습했으므로 좋은 backbone이다.”</li>
+<li>“기본 형태 통과는 실제 의료 생성 효용 또는 patient-DP 기여를 뜻한다.”</li>
+</ul>
+<h2>4. 판독과 통계적 범위</h2>
+<p>이번 개발 판독자는 root 한 명이다. 모든 모델/CFG/prompt/seed label을 가린 네 grid의64장을 확인하고, 경계 사례4장을 개별 원본으로 확인한 뒤 원표를 저장했다. 그 다음 조건 매핑을 열고 집계했다. 가린 label과 별개로 처리 조건이 그림의 질감에서 추측될 수 있다는 한계도 원표에 적었다.</p>
+<p>앞선 pilot은 두 판독자의 합의였으므로, 두 실험의 통과 수를 같은 평가자 조건의 점수처럼 비교하지 않는다. 이번 단일 판독은 개발용 후보 지명에만 사용하며 채택 판정으로 바꾸지 않는다.</p>
+<p>네 실제 latent를64장 전체가 공유한다. 각 설정의16개 cell은 <strong>네 seed block</strong>으로 묶이며 16개 또는64개의 독립 표본이 아니다. 표본4개에 해당하는 좁은 대응 진단으로 해석한다. 이 결과에 모집단 유의성이나 임상 품질 인증을 붙이지 않는다.</p>
+<h2>5. 수치 검산과 정정 이력</h2>
+<p>최종 저장 tensor 검산은 <strong>22,568개 확인 PASS</strong>다. 실제 공통 latent, 조건 embedding과 branch 순서, CFG 산술, 1,920개 DDIM 전이, PNG 후처리, model/adapter 불변과 checkpoint/cache/source hash를 확인했다. 전체 UNet/VAE/CLIP을 독립적으로 다시 추론한 검사는 아니다.</p>
+<p>같은 initial latent의 첫 step에서 CFG1 batch1과 CFG7.5 batch2의 conditional prediction 차이는 최대 <strong>1.073×10^-6</strong>이었다. 사전 허용오차 <code>atol=rtol=1e-4</code> 안에 있었으며, 이후 trajectory 차이를 모델·입력이 바뀐 오류로 혼동하지 않도록 확인한 값이다.</p>
+<p>최초 검산은 빈 문자열의 padding token 재구성에서 실패했다. 모델 폴더의 <code>tokenizer_config.json</code>은 padding을 end-of-text로 적고 있지만, 별도로 존재하는 <code>special_tokens_map.json</code>은 <code>!</code>(ID0)를 지정한다. 실제 tokenizer와 저장 토큰은 BOS49406, EOS49407, 이후0이었다. 두 설정 파일 모두 실행 전 source 계약에 포함돼 있었다.</p>
+<p>원 검산기는 앞의 파일만 읽었다. 원본 코드와 <a href="../../code_working/_reports/public_operating_diagnostic_20260916_v1/verification_attempt1_failed.json">최초 실패 기록</a>을 보존하고, 별도v2에서 special-token 설정의 우선순위만 반영했다. 생성 영상·입력·모델·수치 알고리즘·허용오차를 바꾸거나 GPU를 다시 실행하지 않았다. v2와 정정 근거 hash는 최종 검산 결과에 남겼다.</p>
+<h2>6. 실제 비용</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th style="text-align: right;">실측</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>64장 실행 단계</td>
+<td style="text-align: right;"><strong>197.279초, 약3분17초</strong></td>
+</tr>
+<tr>
+<td>CFG1 한 장의 평균 sampling/decode</td>
+<td style="text-align: right;">2.225초</td>
+</tr>
+<tr>
+<td>CFG7.5 한 장의 평균 sampling/decode</td>
+<td style="text-align: right;">2.586초</td>
+</tr>
+<tr>
+<td>UNet API forward 호출</td>
+<td style="text-align: right;">1,920</td>
+</tr>
+<tr>
+<td>UNet batch examples</td>
+<td style="text-align: right;">2,880</td>
+</tr>
+<tr>
+<td>역전파/학습</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>VAE decode</td>
+<td style="text-align: right;">64</td>
+</tr>
+<tr>
+<td>최대 GPU allocated memory</td>
+<td style="text-align: right;">4,218,274,304 bytes, 약3.93GiB</td>
+</tr>
+<tr>
+<td>최종 CPU 저장 산술 검산</td>
+<td style="text-align: right;">7.071초</td>
+</tr>
+</tbody>
+</table>
+<p>CFG7.5의 API 호출당 branch는 두 개다. 처리 example 수와 wall time을 혼동하지 않는다. 이번 RTX3070 측정에서 한 장 시간이 정확히 두 배가 된 것은 아니다. 전체197.279초에는 이 실행 함수의 모델 준비·생성·저장을 포함하지만 코드 작성·판독·문서·일부 프로세스 준비는 포함하지 않는다. 시작 전 총작업 예상35–60분, GPU 생성 예상3–6분을 보고했다.</p>
+<h2>7. 다음 결정과 탐색 한도</h2>
+<p>사전에 정한 개발 지표를 기계적으로 적용하면 <strong>E4/CFG7.5가 별도 확인 후보</strong>다. 두 변경 후보가 모두 전체12/16·prompt별2/4를 충족하면 먼저 학습된 E4를 지명한다는 규칙에 따른다. 이것은 CFG 우월성의 입증이나 최종 채택이 아니다. CFG1 대조의 새 입력 통과도 이전 미통과를 취소하지 않는다.</p>
+<p>남은 것은 이 후보에 대해 <strong>미리 따로 고정한 새 latent4개×prompt4개,16장을 한 번 확인하고 독립적인 형태 판독을 거쳐 채택 여부를 결정하는 것</strong>이다. 이번64장 결과를 보고 확인 seed를 새로 고르지 않는다. 확인16장은 아직 생성하지 않았다. 이 패키지는 생성·검산·독립 판독을 포함해15–25분 예상이며 실행 전에 판독 절차와 최종 모델 경계를 다시 결속한다.</p>
+<p>확인에서도 미달하면 이 recipe의 추가 step/seed/CFG 탐색을 종료하고, 자료·사용 조건·호환성을 확인한 강한 공개 의료 기반모델 <strong>한 후보</strong>만 검토·시도한다. 그 대안도 확인 기준을 넘지 못하면 현재 생성 기반 방향1을 확대하지 않는다. 다른 연구 방향은 별도 논리와 근거로 결정한다.</p>
+<p>확인을 통과하더라도 임상 효용과 작은 private head의 추가 생성 가치는 여전히 다음 질문이다. 조건부 head를 쓰면 표준 CFG에 <code>s*Delta_head</code>가 더해지므로 보정 오차와 DP noise의 출력 영향도 같이 커진다. 새 backbone·고정 운용 조건에서 특징/통계/W를 다시 만들고, 동일 CFG의 강한 비교군으로 평가해야 한다.</p>
+<h2>8. 재현 파일</h2>
+<ul>
+<li><a href="../../code_working/_reports/public_operating_diagnostic_20260916_v1/contract.json">고정 실행 contract</a> — <code>756f3d2ea401181b55664aecf477c97aad690f9be7297aea886180c1d2a929c4</code></li>
+<li><a href="../../code_working/public_medical_backbone/operating_diagnostic.py">실행 코드</a>, <a href="../../code_working/public_medical_backbone/verify_operating.py">원 검산기</a>, <a href="../../code_working/public_medical_backbone/verify_operating_v2.py">별도 정정 검산기v2</a></li>
+<li><a href="../../code_working/_reports/public_operating_diagnostic_20260916_v1/execution.json">실제 실행 결과</a>, <a href="../../code_working/_reports/public_operating_diagnostic_20260916_v1/manifest.json">64장 manifest</a>, <a href="../../code_working/_reports/public_operating_diagnostic_20260916_v1/verification.json">수치 검산</a></li>
+<li><a href="../../code_working/_reports/public_operating_diagnostic_20260916_v1/review_root.json">가림 판독 원표</a>, <a href="../../code_working/_reports/public_operating_diagnostic_20260916_v1/development_summary.json">집계·후보 지명</a></li>
+<li><a href="track1_public_medical_backbone_results.html">이전 공개 LoRA 확인 미통과 결과</a>, <a href="../../code_working/_reports/public_medical_backbone_20260916_v1/adoption_status.json">그대로 보존한 이전 채택 보류</a></li>
+</ul>
+<p>기존 실패·원표·checkpoint를 변경하지 않았다. 이번 결과는 로컬 실행과 기록이며, 사용자가 제공한 원격 main SHA를 재확인하거나 원격을 갱신했다고 주장하지 않는다.</p></main></body></html>
