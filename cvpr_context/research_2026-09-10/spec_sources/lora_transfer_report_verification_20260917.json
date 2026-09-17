@@ -1,0 +1,17 @@
+{
+  "status": "PASS_REPORT_STATE_AND_FROZEN_SOURCE_BINDING",
+  "checks": 2859,
+  "local_links": 504,
+  "engineering_gate_passed": false,
+  "report_sha256": "2d71a254082c5f15a284c8aac489608cef6a4204d422e9aba755d9d5273bea36",
+  "html_sha256": "e6101defeb5ac737d076773c058c782d0e2d92d225dd1c4809f97efe9e240b54",
+  "record_sha256": "8dd7170665ce2b3ab2aadaa07815f37b5b781308d4884a0a4f02b74ac1f00d22",
+  "result_sha256": "608e9d081e9710d8dc195d6c6ceacccf25122dcc943a95d3ecd1a7b4861d76e8",
+  "verification_sha256": "a587b27230132b83dba5c0ddf4bb99e880ce7afd5def4d22a672d3e032ff4bfa",
+  "source_sha256": "c733fae00bddeb94c128896ea6da38d2fc004d2a9399ea17303ca4835382004b",
+  "new_model_inference": 0,
+  "prior_results_preserved": true,
+  "expert_opened": false,
+  "reserved_opened": false,
+  "new_DP": 0
+}

@@ -1,0 +1,517 @@
+{
+  "schema": "lora-transfer-public-record/v1",
+  "status": "completed_verified",
+  "result": {
+    "status": "DEVELOPMENT_EFFICACY_COMPLETE_PENDING_INDEPENDENT_VERIFY",
+    "created_utc": "2026-09-17T12:52:46.370893+00:00",
+    "scores": {
+      "L_public": [
+        {
+          "seed": 11,
+          "AUROC": 0.5762285359450877,
+          "AP": 0.05324562854752987,
+          "inference_seconds": 5.204633400077,
+          "prediction_sha256": "7a5535709b1bf9f5dc8f5e8e7b55e85a0849aabb280dd81ea55f3235341b65f0"
+        },
+        {
+          "seed": 23,
+          "AUROC": 0.5568695201124423,
+          "AP": 0.05467675714113477,
+          "inference_seconds": 2.9314934000140056,
+          "prediction_sha256": "d26c3eca65ba055d44430896050bdfe928e8e8f63b4972c3a61662eeef5255f4"
+        },
+        {
+          "seed": 37,
+          "AUROC": 0.5416048494448534,
+          "AP": 0.0496217926210553,
+          "inference_seconds": 2.9497118999715894,
+          "prediction_sha256": "c6d8bc0fa89c0afac667901fae74ccc71011099b1ad8422498dae9b4d644042c"
+        }
+      ],
+      "L_pooled": [
+        {
+          "seed": 11,
+          "AUROC": 0.5486831537380363,
+          "AP": 0.05453341605595499,
+          "inference_seconds": 2.9335433000233024,
+          "prediction_sha256": "daed9cd4225e7ac21384a02e892b0fe8c0ad0da769a856cbbac1053a3e9c2ec2"
+        },
+        {
+          "seed": 23,
+          "AUROC": 0.5163680848373974,
+          "AP": 0.047553199901424315,
+          "inference_seconds": 2.9338254999602214,
+          "prediction_sha256": "2368d3ed5a4ec670e4e55d53301a2585f6e88e81a4ef2b4b37ce2a1734aa3a15"
+        },
+        {
+          "seed": 37,
+          "AUROC": 0.5657103124140137,
+          "AP": 0.05506510510841377,
+          "inference_seconds": 2.96169689996168,
+          "prediction_sha256": "c5478e78dcff17e6359ce187e08aa4bbbfafc5672f0ad15acbba737434100c42"
+        }
+      ],
+      "R0": [
+        {
+          "seed": 11,
+          "AUROC": 0.576789538852821,
+          "AP": 0.05649531058568359,
+          "prediction_sha256": "e8f4b4fb99bb1771ca3f34d5c66ceacd332c2feb5c53f6f74640f1af6ed1c699",
+          "inference_seconds": 3.1734604999655858
+        },
+        {
+          "seed": 23,
+          "AUROC": 0.5380129435037071,
+          "AP": 0.055846928043295885,
+          "prediction_sha256": "deeac666218b6b7ab8b43ce9821f5d3700540f2579d1e3235719249c1f0e5366",
+          "inference_seconds": 2.8384423999814317
+        },
+        {
+          "seed": 37,
+          "AUROC": 0.5494314674757751,
+          "AP": 0.052919996187339134,
+          "prediction_sha256": "d12158dc1e08fde715fee111104cda6a67530a925c2503eb4cf6fe361463bcb9",
+          "inference_seconds": 2.9311224999837577
+        }
+      ],
+      "R1": [
+        {
+          "seed": 11,
+          "AUROC": 0.568314537179573,
+          "AP": 0.05507428921422003,
+          "prediction_sha256": "48897caae17b30783c9e8d56677c8ef7fd6c7ce03779be3f49e03e0ac75c9122",
+          "inference_seconds": 2.882595100090839
+        },
+        {
+          "seed": 23,
+          "AUROC": 0.5565520677628301,
+          "AP": 0.053881431506855704,
+          "prediction_sha256": "270a3e92d23bd3a56265ed6eda9a9585c0ead124b5661d1371a7dd3a81d9dff5",
+          "inference_seconds": 2.8197717999573797
+        },
+        {
+          "seed": 37,
+          "AUROC": 0.5089621027894905,
+          "AP": 0.046052117570254895,
+          "prediction_sha256": "95caf53b356dfc7ee838d176c5692f95d70feb54b8e9f8a6befae6c36eb4b4ca",
+          "inference_seconds": 2.8147048000246286
+        }
+      ],
+      "S0": [
+        {
+          "seed": 11,
+          "AUROC": 0.5404554209520409,
+          "AP": 0.05164248171381173,
+          "prediction_sha256": "030c0b948f8119a9005e7bc4836b8d66ed6992dffc960c7a5b84e3b8315ed045",
+          "inference_seconds": 2.8380707000615075
+        },
+        {
+          "seed": 23,
+          "AUROC": 0.5608132729476681,
+          "AP": 0.05191608182382341,
+          "prediction_sha256": "78d4e9dbda880990f37c8ab37c85ae4482eece9edfd6290acf9e6993bc1fadb7",
+          "inference_seconds": 2.8307707000058144
+        },
+        {
+          "seed": 37,
+          "AUROC": 0.5600775085707487,
+          "AP": 0.053879558417892666,
+          "prediction_sha256": "6ba094315f57bb77d23527b18240d3e5d48bfb713e7e50fcd2021110ff4bf0ff",
+          "inference_seconds": 2.821986800059676
+        }
+      ],
+      "S1": [
+        {
+          "seed": 11,
+          "AUROC": 0.5175542318303847,
+          "AP": 0.048904207044266394,
+          "prediction_sha256": "8299f1647ae37f11d5b7068adc6e9c7fc42d7449ba2a9a2bc6e51ef9bda0d749",
+          "inference_seconds": 2.820840199943632
+        },
+        {
+          "seed": 23,
+          "AUROC": 0.5369332336821127,
+          "AP": 0.05263626907930641,
+          "prediction_sha256": "561698524c1e0633038bf68b7fb1c201a698b719d75d053e27dda4c44803b822",
+          "inference_seconds": 2.8247252999572083
+        },
+        {
+          "seed": 37,
+          "AUROC": 0.5542903940685214,
+          "AP": 0.053084115391411016,
+          "prediction_sha256": "8d89c1cce19d413984b0b0848bf0672404a9c73eb0107f9d8921b60e1df397be",
+          "inference_seconds": 2.8556126999901608
+        }
+      ],
+      "S2": [
+        {
+          "seed": 11,
+          "AUROC": 0.551877198462099,
+          "AP": 0.0527814333236907,
+          "prediction_sha256": "55f65ff658d071666adeaa45d0e2a5dcbb6c8733cb857dd186b6231b8237ae27",
+          "inference_seconds": 2.845727500040084
+        },
+        {
+          "seed": 23,
+          "AUROC": 0.5321858569633149,
+          "AP": 0.05072891912811881,
+          "prediction_sha256": "d24dfba35ce0baa42d2ec0187291329c181b36632c8bae6bca29f54edd3cdeac",
+          "inference_seconds": 2.8242485999362543
+        },
+        {
+          "seed": 37,
+          "AUROC": 0.5632729476682359,
+          "AP": 0.05498065552159495,
+          "prediction_sha256": "3ea30ad85f80cbdb817b51bff4a88d06327819588b0aebc3ab23841691255d3e",
+          "inference_seconds": 2.8363326999824494
+        }
+      ],
+      "S3": [
+        {
+          "seed": 11,
+          "AUROC": 0.5475332604540823,
+          "AP": 0.05012760886512986,
+          "prediction_sha256": "e42d0461142ecee5505a69ceaabef2e1239272c9939b3b7457cda51e697e8f33",
+          "inference_seconds": 2.816441399976611
+        },
+        {
+          "seed": 23,
+          "AUROC": 0.5141584677509314,
+          "AP": 0.04923656957934042,
+          "prediction_sha256": "dd51795839d9988419565ac0dc148290002c9340cb0a995d1e362435e0dc57b9",
+          "inference_seconds": 2.8179724999936298
+        },
+        {
+          "seed": 37,
+          "AUROC": 0.5239469691899248,
+          "AP": 0.047832247067808906,
+          "prediction_sha256": "6af0dc0fbeb74f5536537d930d215e470ff8778f82e186ba6f5c50199e2ad78e",
+          "inference_seconds": 2.8165330999763682
+        }
+      ],
+      "Dreal": [
+        {
+          "seed": 11,
+          "AUROC": 0.6335396076419101,
+          "AP": 0.0861805716073405,
+          "prediction_sha256": "46e544fbaeb667e7f84d6dbae851fd72071a145676c6ddafaa8954c0b6aa5b6a",
+          "inference_seconds": 2.8233660000842065
+        },
+        {
+          "seed": 23,
+          "AUROC": 0.545057318043564,
+          "AP": 0.058991366213938294,
+          "prediction_sha256": "efd1353bd0d9a274d37c6c45157b845ffdaabf31789eb8d99ccebbfb943f441a",
+          "inference_seconds": 2.8205397999845445
+        },
+        {
+          "seed": 37,
+          "AUROC": 0.6099203162067094,
+          "AP": 0.09016395418492296,
+          "prediction_sha256": "d1f056e9fcf47b154648bbdfa83e7052532d86f6ba5d4dcd984c5a3ff5adead4",
+          "inference_seconds": 2.820988899911754
+        }
+      ]
+    },
+    "means": {
+      "L_public": {
+        "AUROC": 0.5582343018341279,
+        "AP": 0.052514726103239984
+      },
+      "L_pooled": {
+        "AUROC": 0.5435871836631491,
+        "AP": 0.05238390702193102
+      },
+      "R0": {
+        "AUROC": 0.5547446499441011,
+        "AP": 0.055087411605439535
+      },
+      "R1": {
+        "AUROC": 0.5446095692439646,
+        "AP": 0.05166927943044355
+      },
+      "S0": {
+        "AUROC": 0.5537820674901526,
+        "AP": 0.05247937398517594
+      },
+      "S1": {
+        "AUROC": 0.5362592865270063,
+        "AP": 0.051541530504994604
+      },
+      "S2": {
+        "AUROC": 0.5491120010312166,
+        "AP": 0.05283033599113482
+      },
+      "S3": {
+        "AUROC": 0.5285462324649796,
+        "AP": 0.04906547517075973
+      },
+      "Dreal": {
+        "AUROC": 0.5961724139640613,
+        "AP": 0.07844529733540058
+      }
+    },
+    "comparisons": {
+      "L_public": {
+        "AUROC_delta": -0.014647118170978857,
+        "AP_delta": -0.0001308190813089638,
+        "seed_AUROC_deltas": [
+          -0.027545382207051383,
+          -0.040501435275044906,
+          0.024105462969160274
+        ],
+        "positive_seeds": 1
+      },
+      "R1": {
+        "AUROC_delta": -0.0010223855808155768,
+        "AP_delta": 0.0007146275914874725,
+        "seed_AUROC_deltas": [
+          -0.0196313834415367,
+          -0.04018398292543268,
+          0.056748209624523205
+        ],
+        "positive_seeds": 1
+      },
+      "R0": {
+        "AUROC_delta": -0.011157466280952044,
+        "AP_delta": -0.0027035045835085147,
+        "seed_AUROC_deltas": [
+          -0.028106385114784693,
+          -0.02164485866630972,
+          0.016278844938238612
+        ],
+        "positive_seeds": 1
+      },
+      "S0": {
+        "AUROC_delta": -0.01019488382700351,
+        "AP_delta": -9.546696324491677e-05,
+        "seed_AUROC_deltas": [
+          0.008227732785995423,
+          -0.04444518811027076,
+          0.005632803843265033
+        ],
+        "positive_seeds": 2
+      }
+    },
+    "engineering_gate_passed": false,
+    "contract_sha256": "eaf866921068b2258989eb21d0f8f884a674bbb18defd3590a433e935b5c5be2",
+    "new_generator_updates": 896,
+    "new_images": 256,
+    "new_classifier_updates": 2400,
+    "extra_classifier_updates": 6,
+    "extra_generation_decodes": 2,
+    "new_DP": 0,
+    "expert_pixels": 0,
+    "reserved_pixels": 0,
+    "final_ready": false,
+    "current_full64_branch_closed": true,
+    "one_training_trajectory_per_arm": true,
+    "one_bank_per_arm": true,
+    "classifier_seeds": 3,
+    "weak_label_development_only": true
+  },
+  "verification": {
+    "status": "PASS_INTEGRITY_NOT_AUTOMATIC_EFFICACY",
+    "created_utc": "2026-09-17T12:55:28.386508+00:00",
+    "checks": 46849,
+    "errors": {
+      "ddim_max_abs": 9.5367431640625e-07,
+      "cfg_max_abs": 0.0,
+      "BCE_max_abs": 9.389780429710712e-08,
+      "metric_max_abs": 1.1102230246251565e-16
+    },
+    "engineering_gate_passed": false,
+    "bootstrap_repeats": 2000,
+    "patient_cluster_intervals_95": {
+      "L_pooled-L_public": {
+        "AUROC": [
+          -0.04987755932810456,
+          0.022601034636697163
+        ],
+        "AP": [
+          -0.006781723563014634,
+          0.008997350320456376
+        ]
+      },
+      "L_pooled-R1": {
+        "AUROC": [
+          -0.038648348482587205,
+          0.03789388148124047
+        ],
+        "AP": [
+          -0.005220766915491874,
+          0.010514053591337827
+        ]
+      },
+      "L_pooled-R0": {
+        "AUROC": [
+          -0.049994316325284845,
+          0.03077855102233892
+        ],
+        "AP": [
+          -0.012361020770495938,
+          0.00744275164924454
+        ]
+      },
+      "L_pooled-S0": {
+        "AUROC": [
+          -0.05670470870964858,
+          0.03591918234584617
+        ],
+        "AP": [
+          -0.010008613521434643,
+          0.010638998916847688
+        ]
+      },
+      "L_public-S1": {
+        "AUROC": [
+          -0.01807084529034796,
+          0.0625247244140943
+        ],
+        "AP": [
+          -0.007681437893806529,
+          0.008313467834388157
+        ]
+      },
+      "L_pooled-S3": {
+        "AUROC": [
+          -0.023709096181360738,
+          0.05205588468288264
+        ],
+        "AP": [
+          -0.004695176787099265,
+          0.013594270453148025
+        ]
+      },
+      "interaction_descriptive": {
+        "AUROC": [
+          -0.0455611657662797,
+          0.03449783863024693
+        ],
+        "AP": [
+          -0.004258783385297402,
+          0.012232563937600497
+        ]
+      }
+    },
+    "bootstrap_sha256": "2a57b7e22636e6ea2e909afa330089bae216d8414003f4c9c40b2ecaa2ef4729",
+    "result_sha256": "608e9d081e9710d8dc195d6c6ceacccf25122dcc943a95d3ecd1a7b4861d76e8",
+    "contract_sha256": "eaf866921068b2258989eb21d0f8f884a674bbb18defd3590a433e935b5c5be2",
+    "original_frozen_sources_unchanged": true,
+    "expert_pixels": 0,
+    "reserved_pixels": 0,
+    "new_DP": 0,
+    "final_ready": false,
+    "unit": "Single LoRA trajectory and bank per arm; three classifier seeds, development patients reused"
+  },
+  "additional_input_verification": {
+    "status": "PASS_INDEPENDENT_NEW_LORA_RAW_PNG_TO_GPU_INPUT",
+    "records": [
+      {
+        "arm": "L_public",
+        "repeat": 0,
+        "exact": true,
+        "input_sha256": "12e1e337987fef1cea03c8f76d1453b96b3b03290a2f6adf85066c2b6d5474ad",
+        "input_file_sha256": "56b0c6dbcc3e1b86211e58b1f66fe67dc35775452046950d5cb13047dd2340d7",
+        "trace_sha256": "fcce701480a2fb61bb24c2b954f25b73dc301addccc3bccf4533b102aeec7309"
+      },
+      {
+        "arm": "L_public",
+        "repeat": 1,
+        "exact": true,
+        "input_sha256": "12e1e337987fef1cea03c8f76d1453b96b3b03290a2f6adf85066c2b6d5474ad",
+        "input_file_sha256": "56b0c6dbcc3e1b86211e58b1f66fe67dc35775452046950d5cb13047dd2340d7",
+        "trace_sha256": "eda11bcc6f5bdb826a3829728e65e86a7f00c48d44e42852bfbd9ab1693a410e"
+      },
+      {
+        "arm": "L_pooled",
+        "repeat": 0,
+        "exact": true,
+        "input_sha256": "1c647e7d89509d181b913ed0c9d50a8371efc4aedd971887f733403c4aa9d49d",
+        "input_file_sha256": "fc04252305c7334149f7a905ecbf4bc00641980ed0e8a754512dbec20abd4ce6",
+        "trace_sha256": "4e6b21cffbc64d4812034d1e5d5c5be784fcb9c3fdcfa2308193e5143b268e7c"
+      },
+      {
+        "arm": "L_pooled",
+        "repeat": 1,
+        "exact": true,
+        "input_sha256": "1c647e7d89509d181b913ed0c9d50a8371efc4aedd971887f733403c4aa9d49d",
+        "input_file_sha256": "fc04252305c7334149f7a905ecbf4bc00641980ed0e8a754512dbec20abd4ce6",
+        "trace_sha256": "26d4d81a7337c5326614ded99cfb77adac6674a7a8d8bf9deb326597f8fb977e"
+      }
+    ],
+    "selected_files": 43,
+    "actual_paired_training_noise_batches": 448,
+    "actual_shared_public_slots": 512,
+    "bootstrap_crosscheck_fixed_first_draws": 10,
+    "bootstrap_crosscheck_models": 27,
+    "bootstrap_max_abs_error": 1.1102230246251565e-16,
+    "script_sha256": "fcf4a86bd17cd31fd0da1fcf5489831caf2bb561a747363fe0bde6be60fd6035",
+    "independent_preprocessor_sha256": "d787320576f48f38271f5c3cc49e4119e7d5ee91f9325d2cb7498bbd634f5384",
+    "contract_sha256": "eaf866921068b2258989eb21d0f8f884a674bbb18defd3590a433e935b5c5be2",
+    "new_model_forwards": 0,
+    "new_training": 0,
+    "new_generation": 0
+  },
+  "training": {
+    "L_public": {
+      "arm": "L_public",
+      "successful_updates": 448,
+      "attempts": 448,
+      "skipped": 0,
+      "optimizer_post_hook_calls": 448,
+      "seconds": 232.93258230003994,
+      "base_before": "b36c72d1189bfa60cd6ff5d0e2183bf9a02a5ce01fedd377a89198dc50d40003",
+      "base_after": "b36c72d1189bfa60cd6ff5d0e2183bf9a02a5ce01fedd377a89198dc50d40003",
+      "initial_adapter_sha256": "4583cd3e017bb31d964c1129d1f3b9c5459be84bd4c16f70cb6be2cd4534b171",
+      "final_adapter_sha256": "3a566334d8c8c566bb90b13f3203e46659df3177d934fe879634c89b56be35dc",
+      "peak_allocated": 2073024000,
+      "peak_reserved": 2214592512
+    },
+    "L_pooled": {
+      "arm": "L_pooled",
+      "successful_updates": 448,
+      "attempts": 448,
+      "skipped": 0,
+      "optimizer_post_hook_calls": 448,
+      "seconds": 227.7207035999745,
+      "base_before": "b36c72d1189bfa60cd6ff5d0e2183bf9a02a5ce01fedd377a89198dc50d40003",
+      "base_after": "b36c72d1189bfa60cd6ff5d0e2183bf9a02a5ce01fedd377a89198dc50d40003",
+      "initial_adapter_sha256": "4583cd3e017bb31d964c1129d1f3b9c5459be84bd4c16f70cb6be2cd4534b171",
+      "final_adapter_sha256": "be1721bb2c5c27bdd2b5e9b71d95003d47ac3c010b26811627c41d8cb99b2a28",
+      "peak_allocated": 2073024000,
+      "peak_reserved": 2214592512
+    }
+  },
+  "training_changed_tensors": {
+    "L_public": 256,
+    "L_pooled": 256
+  },
+  "timing": {
+    "cache_seconds": 28.150312199955806,
+    "lora_training_seconds": 460.65328590001445,
+    "generation_compute_seconds": 695.2503057011636,
+    "generation_IO_seconds": 79.14673909987323,
+    "classifier_training_seconds": 346.9760087998584,
+    "classifier_eval_seconds": 19.9149044000078
+  },
+  "peak_allocated": {
+    "lora_training": 2073024000,
+    "generation": 4219740672,
+    "classifier": 991114240
+  },
+  "source_sha256": {
+    "code_working\\_reports\\lora_transfer_20260917_v1\\contract.json": "eaf866921068b2258989eb21d0f8f884a674bbb18defd3590a433e935b5c5be2",
+    "code_working\\_reports\\lora_transfer_20260917_v1\\result.json": "608e9d081e9710d8dc195d6c6ceacccf25122dcc943a95d3ecd1a7b4861d76e8",
+    "code_working\\_reports\\lora_transfer_20260917_v1\\verification.json": "a587b27230132b83dba5c0ddf4bb99e880ce7afd5def4d22a672d3e032ff4bfa",
+    "code_working\\_reports\\lora_transfer_20260917_v1\\generation_manifest.json": "bb6caff88b8570187d3ba1d034aac0fb3a5a80079d05c5d365ab950035d4032e",
+    "CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\lora_transfer_generation_manifest_20260917.json": "bb6caff88b8570187d3ba1d034aac0fb3a5a80079d05c5d365ab950035d4032e",
+    "code_working\\_reports\\lora_transfer_20260917_v1\\additional_input_verification.json": "891fbdf2ca7db0480cccc6a5511dc9a465ac95603efbe49b503af034ccb83b88",
+    "CVPR 주제 탐색\\research_2026-09-10\\summarize_lora_transfer_20260917.py": "3ca10f71585dbc9e7d2c1b459f28c237764fcb714b3a7f355fce9ac5f1cbce5d"
+  },
+  "unchanged_old_failure": true,
+  "expert_final_opened": false,
+  "reserved_opened": false,
+  "new_DP": 0,
+  "final_ready": false
+}

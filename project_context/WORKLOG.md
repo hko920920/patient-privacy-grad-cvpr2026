@@ -1,5 +1,15 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 147-EXISTING-LORA-TRANSFER-EXECUTION (2026-09-17 KST)
+
+- 사용자 검토에 따라 계획에서 멈추지 않고 별도 runner를 구현해 두 LoRA 학습·256장·분류기6run을 실제 실행했다. 코드/결과는 lora_transfer 및 _reports/lora_transfer_20260917_v1, 보고서는 TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md다.
+- E4 A/B를 두 arm에서 각각 정확히 복원했다. 과거 backbone의 DDIM 전체배열과 최종출력2회 exact, freshAdamW/scaler,1,659,904trainable parameter,기존base불변을 확인했다. 선택384cache를public64/private320으로 분리했고 public학습의 privatecache 접근0,각448성공update·AMPskip0이었다. 실제448noise/timestep묶음과공통공개512slot이대응했다.
+- 기존128개 development cell을 두 arm에 그대로 사용해256장생성했다. Full64hook없음,FP32/CFG7.5/DDIM30/eta0유지. 결과선별·재생성없음. 생성256장후 별도6update로기존S1과새두source의1step연결/replay를검사했다. 기존kernel바이트불변,새raw/PNG→GPU입력독립exact,전체2400batch의공개draw/cell대응PASS였다.
+- Classifier6run×400=2400update를 모두 완료한 뒤 기존2026명/5047장 weak-label method-development에서평가했다. L_publicAUROC/AP=.558234/.052515,L_pooled=.543587/.052384. 차이−.014647,우세1/3,AP감소;R0/R1대비도실패했다. 사적추가효용gate=false다. 각LoRA는과거해당head보다평균AUROC가높았지만구간은0을포함하고사적increment는없었다.
+- 독립46849검사PASS;DDIM7680전이max9.54e-7,CFG차이0,BCEmax9.39e-8,metricmax1.11e-16. 환자cluster2000회 pooled-public95%CI[-.049878,+.022601]. 별도43파일입력검산과첫10bootstrapdraw×27모델sklearn대조PASS. 검사항목은성능표본수가아니며임상판독없음. 한LoRA학습/한bank/세classifierseed한계유지.
+- 순수cache28.15초,LoRA460.65초,생성695.25초+저장79.15초,classifier346.98초,개발추론19.91초. 계약21:20:28KST부터독립검산21:55:28까지약35분;구현/보고전체시간과구분한다. Peakallocated학습1.931GiB/생성3.930/classifier.923. 계약전metadata역할train→private명시와NumPy1.26trapz호환성수정만있었고계약후source변경·학습중단·재생성없음.
+- 기존full64종료/모든과거결과는보존했다. 이번고정LoRA도추가효용을확보하지못했지만LoRA전체무효·사적자료의해로움·head용량원인으로확정하지않는다. DP0,expert532/reserved4213미사용,final_ready=false. 다음GPU실험/adapter순회/새알고리즘/주제이동안함. 실행중작업없음. 보고서·두state·framework·index와소스결속검증을갱신했다.
+
 ## 146-EXISTING-LORA-TRANSFER-COMPARISON-DESIGN (2026-09-17 KST)
 
 - 사용자 요청대로 새 알고리즘/주제 선정 대신 기존 LoRA의 public-only 대 public+private 대조 명세 하나를 작성했다. 기존 full64 종료를 취소하지 않았으며 이번 실제 모델·GPU·학습·생성·환자 pixel 접근은0이다.
