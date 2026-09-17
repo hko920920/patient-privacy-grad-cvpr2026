@@ -24,13 +24,13 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "Review the completed head and fixed LoRA negative development results, then decide whether one evidence-based shared downstream/data-use/measurement uncertainty warrants a separate diagnostic. No automatic adapter sweep, new algorithm, topic switch, DP, expert-final or reserved access.",
-  "next_task_output": "A bounded next-question decision from stored evidence only; no next GPU experiment or alternative method is currently selected.",
+  "next_task": "Interpret the observed train/development gap and decide whether one specific prospective data-support or classifier-recipe contrast is warranted. No automatic retraining, BN calibration, adapter sweep, DP or final/reserved access.",
+  "next_task_output": "A bounded next-comparison decision; no new experiment or solution selected by this diagnostic.",
   "step2_open_items": [
-    "Private synthetic utility remains unestablished under the tested head and fixed LoRA configurations",
-    "Shared classifier, requested-label, bank and fixed-compute replacement factors are not causally separated",
-    "Single LoRA trajectory/bank and reused weak-label development limit generalization",
-    "No automatic DP/final/reserved or third-adapter execution; preserve both negative records"
+    "Train/eval-path-on-seen-data collapse was not observed; near-perfect seen-training discrimination coexists with weak development discrimination",
+    "Limited public-positive support, memorization, cohort/weak-label differences and classifier/synthetic interactions remain causally unseparated",
+    "Both previous private-synthetic utility gates remain failed; no new efficacy comparison in this diagnostic",
+    "DP remains paused; expert532 and reserved4213 remain unopened"
   ],
   "step2_completed_diagnostics": [
     "Core source/code premise review within documented scope",
@@ -52,13 +52,14 @@
     "Full literal CDI masked-control U82 extraction, original18 fixed scorers plus DINO and U79 auxiliary-fit exclusion: saved raw2132 features and1517 scores independently verified; one-intervention diagnostic only.",
     "Two fixed patient interventions;90 new literal CDI records,168 reused;2340-feature raw verification and4767 branch-score/73-contrast independent arithmetic complete",
     "Public8 x two original Adam states: primary166F52B inactive; one explicit post-hoc activation114F0B; both16-condition saved arithmetic/source/CPU Adam checks passed. Conditional local responses, not DP/MIA efficacy.",
-    "Fixed public-only/pooled E4 LoRA continuation:896updates,256images,6classifier runs; integrity verified, private-increment gate failed; no final or DP"
+    "Fixed public-only/pooled E4 LoRA continuation:896updates,256images,6classifier runs; integrity verified, private-increment gate failed; no final or DP",
+    "Fixed12classifier checkpoint inference on actually seen training images: high training discrimination vs weak development, unchanged parameters/BN; no retraining or new efficacy"
   ],
   "candidate_R_status": "Expansion on hold; not a reason to terminate step 2 or the research goal",
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Existing LoRA comparison completed and verified; private incremental synthetic utility gate failed",
+  "step2_active_task": "Fixed classifier inference diagnostic complete: near-perfect seen-training discrimination, poor stored development generalization; no cause isolated",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -73,13 +74,13 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1",
-    "last_completed_report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\classifier_generalization_20260917_v1",
+    "last_completed_report": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
     "additional_execution_contract_fixed": true,
     "stage2_completion_claim": false,
     "latest_design_review": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
     "new_two_track_experiment_started": true,
-    "new_two_track_experiment_status": "existing_LoRA_comparison_completed_private_increment_gate_failed",
+    "new_two_track_experiment_status": "fixed_classifier_diagnostic_complete_generalization_gap_observed",
     "latest_cpu_outputs": [
       "spec_sources/track1_cpu_allocation_20260916",
       "spec_sources/track2_cpu_audit_20260916"
@@ -195,7 +196,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "frozen_LoRA_plan_executed_and_verified",
+    "latest_planning_status": "bounded_inference_only_diagnostic_completed",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -1473,7 +1474,7 @@
       "images_planned": 256,
       "classifier_runs_planned": 6
     },
-    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\classifier_generalization_20260917_v1",
     "next_execution_scheduled": false,
     "completed_lora_transfer_comparison": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
@@ -1556,9 +1557,233 @@
       "final_ready": false,
       "causal_failure_source_established": false,
       "alternative_selected": false
+    },
+    "completed_classifier_generalization": {
+      "report": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
+      "protocol": "TRACK1_CLASSIFIER_GENERALIZATION_PROTOCOL_20260917.md",
+      "status": "completed_verified_generalization_gap_observed",
+      "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\classifier_generalization_20260917_v1",
+      "new_training": 0,
+      "new_generation": 0,
+      "classifiers": 12,
+      "unique_training_images": 1389,
+      "new_training_image_forward": 11201,
+      "development_witness_forward": 768,
+      "model_states_unchanged": true,
+      "BN_buffers_unchanged": true,
+      "development_witness_exact": true,
+      "means": {
+        "R1": {
+          "real/public": {
+            "AUROC": 1.0,
+            "AP": 1.0,
+            "BCE": 0.00011788785986138284,
+            "balanced_BCE": 9.40702251338099e-05,
+            "exposure_weighted_BCE": 9.236659476445073e-05,
+            "images_per_seed": [
+              807,
+              809,
+              810
+            ],
+            "positive_images_per_seed": [
+              6,
+              6,
+              6
+            ]
+          },
+          "development": {
+            "AUROC": 0.5446095692439646,
+            "AP": 0.05166927943044355,
+            "BCE": 0.41799963727884043,
+            "balanced_BCE": 4.727682184027979,
+            "by_label": {
+              "0": {
+                "BCE": 0.00023862535749380733,
+                "logit_mean": -9.565022666470625
+              },
+              "1": {
+                "BCE": 9.455125742698465,
+                "logit_mean": -9.454964713309021
+              }
+            }
+          },
+          "logged_last50_BCE": 0.00016579341992231395
+        },
+        "Dreal": {
+          "real/private": {
+            "AUROC": 1.0,
+            "AP": 1.0,
+            "BCE": 0.002863745042467595,
+            "balanced_BCE": 0.0021192352515312985,
+            "exposure_weighted_BCE": 0.0024084903969315264,
+            "images_per_seed": [
+              320,
+              320,
+              320
+            ],
+            "positive_images_per_seed": [
+              33,
+              33,
+              33
+            ]
+          },
+          "real/public": {
+            "AUROC": 1.0,
+            "AP": 1.0,
+            "BCE": 0.0011522158488389254,
+            "balanced_BCE": 0.0007721986196354974,
+            "exposure_weighted_BCE": 0.0006654549014584849,
+            "images_per_seed": [
+              788,
+              778,
+              783
+            ],
+            "positive_images_per_seed": [
+              6,
+              6,
+              6
+            ]
+          },
+          "development": {
+            "AUROC": 0.5961724139640613,
+            "AP": 0.07844529733540058,
+            "BCE": 0.3577355705879601,
+            "balanced_BCE": 3.9863518803858717,
+            "by_label": {
+              "0": {
+                "BCE": 0.0059940200185472645,
+                "logit_mean": -8.748581468899651
+              },
+              "1": {
+                "BCE": 7.9667097407531955,
+                "logit_mean": -7.9343275618036415
+              }
+            }
+          },
+          "logged_last50_BCE": 0.003937652960109214
+        },
+        "L_public": {
+          "real/public": {
+            "AUROC": 1.0,
+            "AP": 1.0,
+            "BCE": 0.001673497107120149,
+            "balanced_BCE": 0.0009161776582775567,
+            "exposure_weighted_BCE": 0.0007864543976400527,
+            "images_per_seed": [
+              788,
+              778,
+              783
+            ],
+            "positive_images_per_seed": [
+              6,
+              6,
+              6
+            ]
+          },
+          "synthetic/lora_public": {
+            "AUROC": 1.0,
+            "AP": 1.0,
+            "BCE": 0.01657693590983787,
+            "balanced_BCE": 0.01657693590983787,
+            "exposure_weighted_BCE": 0.015744615664805017,
+            "images_per_seed": [
+              128,
+              128,
+              128
+            ],
+            "positive_images_per_seed": [
+              64,
+              64,
+              64
+            ]
+          },
+          "development": {
+            "AUROC": 0.5582343018341279,
+            "AP": 0.052514726103239984,
+            "BCE": 0.3362522376269876,
+            "balanced_BCE": 3.7451024027617397,
+            "by_label": {
+              "0": {
+                "BCE": 0.0058138169249446455,
+                "logit_mean": -7.816474975578667
+              },
+              "1": {
+                "BCE": 7.484390988598535,
+                "logit_mean": -7.480455909965641
+              }
+            }
+          },
+          "logged_last50_BCE": 0.004218165470520035
+        },
+        "L_pooled": {
+          "real/public": {
+            "AUROC": 1.0,
+            "AP": 1.0,
+            "BCE": 0.0012364679325138066,
+            "balanced_BCE": 0.00075564243150676,
+            "exposure_weighted_BCE": 0.0005576891075051223,
+            "images_per_seed": [
+              788,
+              778,
+              783
+            ],
+            "positive_images_per_seed": [
+              6,
+              6,
+              6
+            ]
+          },
+          "synthetic/lora_pooled": {
+            "AUROC": 0.9996744791666666,
+            "AP": 0.9996936274509803,
+            "BCE": 0.013047548119046412,
+            "balanced_BCE": 0.013047548119046412,
+            "exposure_weighted_BCE": 0.014873625633286596,
+            "images_per_seed": [
+              128,
+              128,
+              128
+            ],
+            "positive_images_per_seed": [
+              64,
+              64,
+              64
+            ]
+          },
+          "development": {
+            "AUROC": 0.5435871836631491,
+            "AP": 0.05238390702193102,
+            "BCE": 0.3507744343064228,
+            "balanced_BCE": 3.9478655217117833,
+            "by_label": {
+              "0": {
+                "BCE": 0.0020887953186395467,
+                "logit_mean": -8.186376366134157
+              },
+              "1": {
+                "BCE": 7.8936422481049275,
+                "logit_mean": -7.891038860529885
+              }
+            }
+          },
+          "logged_last50_BCE": 0.004383622892200947
+        }
+      },
+      "contract_sha256": "034a94eaab13a95a920a4044191c0e9fce5a550e109dd9371fcac156912d4fc0",
+      "result_sha256": "6532f53b6ec58b812b934178e663645c92c6b01782060d81fcc5a5a591faf176",
+      "verification_sha256": "9f302909d2935ae54d38f2cefb0fda3b4b0d59ba5ece203c93e772f116778395",
+      "public_record_sha256": "4b7f431af16ea75c22338b258f79cbbbb4edc31da7fa9c012ce62064b7b2e91a",
+      "current_full64_branch_closed": true,
+      "fixed_LoRA_utility_gate_passed": false,
+      "method_efficacy_retested": false,
+      "causal_failure_source_established": false,
+      "DP_executed": false,
+      "expert_opened": false,
+      "reserved_opened": false,
+      "final_ready": false
     }
   },
-  "updated_utc": "2026-09-17T12:59:37.952194+00:00",
+  "updated_utc": "2026-09-17T13:39:31.354029+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -1609,7 +1834,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
+  "current_result_report": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -3488,7 +3713,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
+  "current_planning_report": "TRACK1_CLASSIFIER_GENERALIZATION_PROTOCOL_20260917.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -3843,7 +4068,7 @@
     }
   },
   "pre_chexzero_review_result_report_20260917": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
-  "last_actual_model_result_report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
+  "last_actual_model_result_report": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
   "completed_chexzero_review_20260917": {
     "status": "POSITIVE_SINGLE_ALTERNATIVE_READINESS_NOT_EFFICACY",
     "completed_utc": "2026-09-17T05:49:39.987145+00:00",
@@ -4499,7 +4724,7 @@
       0.4166666666666667
     ]
   },
-  "current_decision_report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
+  "current_decision_report": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
   "current_head_branch_closure_20260917": {
     "report": "TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md",
     "record": "spec_sources\\current_head_branch_closure_20260917.json",
@@ -4617,5 +4842,230 @@
     "final_ready": false,
     "causal_failure_source_established": false,
     "alternative_selected": false
+  },
+  "pre_classifier_generalization_current_result": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
+  "completed_classifier_generalization_20260917": {
+    "report": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
+    "protocol": "TRACK1_CLASSIFIER_GENERALIZATION_PROTOCOL_20260917.md",
+    "status": "completed_verified_generalization_gap_observed",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\classifier_generalization_20260917_v1",
+    "new_training": 0,
+    "new_generation": 0,
+    "classifiers": 12,
+    "unique_training_images": 1389,
+    "new_training_image_forward": 11201,
+    "development_witness_forward": 768,
+    "model_states_unchanged": true,
+    "BN_buffers_unchanged": true,
+    "development_witness_exact": true,
+    "means": {
+      "R1": {
+        "real/public": {
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.00011788785986138284,
+          "balanced_BCE": 9.40702251338099e-05,
+          "exposure_weighted_BCE": 9.236659476445073e-05,
+          "images_per_seed": [
+            807,
+            809,
+            810
+          ],
+          "positive_images_per_seed": [
+            6,
+            6,
+            6
+          ]
+        },
+        "development": {
+          "AUROC": 0.5446095692439646,
+          "AP": 0.05166927943044355,
+          "BCE": 0.41799963727884043,
+          "balanced_BCE": 4.727682184027979,
+          "by_label": {
+            "0": {
+              "BCE": 0.00023862535749380733,
+              "logit_mean": -9.565022666470625
+            },
+            "1": {
+              "BCE": 9.455125742698465,
+              "logit_mean": -9.454964713309021
+            }
+          }
+        },
+        "logged_last50_BCE": 0.00016579341992231395
+      },
+      "Dreal": {
+        "real/private": {
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.002863745042467595,
+          "balanced_BCE": 0.0021192352515312985,
+          "exposure_weighted_BCE": 0.0024084903969315264,
+          "images_per_seed": [
+            320,
+            320,
+            320
+          ],
+          "positive_images_per_seed": [
+            33,
+            33,
+            33
+          ]
+        },
+        "real/public": {
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.0011522158488389254,
+          "balanced_BCE": 0.0007721986196354974,
+          "exposure_weighted_BCE": 0.0006654549014584849,
+          "images_per_seed": [
+            788,
+            778,
+            783
+          ],
+          "positive_images_per_seed": [
+            6,
+            6,
+            6
+          ]
+        },
+        "development": {
+          "AUROC": 0.5961724139640613,
+          "AP": 0.07844529733540058,
+          "BCE": 0.3577355705879601,
+          "balanced_BCE": 3.9863518803858717,
+          "by_label": {
+            "0": {
+              "BCE": 0.0059940200185472645,
+              "logit_mean": -8.748581468899651
+            },
+            "1": {
+              "BCE": 7.9667097407531955,
+              "logit_mean": -7.9343275618036415
+            }
+          }
+        },
+        "logged_last50_BCE": 0.003937652960109214
+      },
+      "L_public": {
+        "real/public": {
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.001673497107120149,
+          "balanced_BCE": 0.0009161776582775567,
+          "exposure_weighted_BCE": 0.0007864543976400527,
+          "images_per_seed": [
+            788,
+            778,
+            783
+          ],
+          "positive_images_per_seed": [
+            6,
+            6,
+            6
+          ]
+        },
+        "synthetic/lora_public": {
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.01657693590983787,
+          "balanced_BCE": 0.01657693590983787,
+          "exposure_weighted_BCE": 0.015744615664805017,
+          "images_per_seed": [
+            128,
+            128,
+            128
+          ],
+          "positive_images_per_seed": [
+            64,
+            64,
+            64
+          ]
+        },
+        "development": {
+          "AUROC": 0.5582343018341279,
+          "AP": 0.052514726103239984,
+          "BCE": 0.3362522376269876,
+          "balanced_BCE": 3.7451024027617397,
+          "by_label": {
+            "0": {
+              "BCE": 0.0058138169249446455,
+              "logit_mean": -7.816474975578667
+            },
+            "1": {
+              "BCE": 7.484390988598535,
+              "logit_mean": -7.480455909965641
+            }
+          }
+        },
+        "logged_last50_BCE": 0.004218165470520035
+      },
+      "L_pooled": {
+        "real/public": {
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.0012364679325138066,
+          "balanced_BCE": 0.00075564243150676,
+          "exposure_weighted_BCE": 0.0005576891075051223,
+          "images_per_seed": [
+            788,
+            778,
+            783
+          ],
+          "positive_images_per_seed": [
+            6,
+            6,
+            6
+          ]
+        },
+        "synthetic/lora_pooled": {
+          "AUROC": 0.9996744791666666,
+          "AP": 0.9996936274509803,
+          "BCE": 0.013047548119046412,
+          "balanced_BCE": 0.013047548119046412,
+          "exposure_weighted_BCE": 0.014873625633286596,
+          "images_per_seed": [
+            128,
+            128,
+            128
+          ],
+          "positive_images_per_seed": [
+            64,
+            64,
+            64
+          ]
+        },
+        "development": {
+          "AUROC": 0.5435871836631491,
+          "AP": 0.05238390702193102,
+          "BCE": 0.3507744343064228,
+          "balanced_BCE": 3.9478655217117833,
+          "by_label": {
+            "0": {
+              "BCE": 0.0020887953186395467,
+              "logit_mean": -8.186376366134157
+            },
+            "1": {
+              "BCE": 7.8936422481049275,
+              "logit_mean": -7.891038860529885
+            }
+          }
+        },
+        "logged_last50_BCE": 0.004383622892200947
+      }
+    },
+    "contract_sha256": "034a94eaab13a95a920a4044191c0e9fce5a550e109dd9371fcac156912d4fc0",
+    "result_sha256": "6532f53b6ec58b812b934178e663645c92c6b01782060d81fcc5a5a591faf176",
+    "verification_sha256": "9f302909d2935ae54d38f2cefb0fda3b4b0d59ba5ece203c93e772f116778395",
+    "public_record_sha256": "4b7f431af16ea75c22338b258f79cbbbb4edc31da7fa9c012ce62064b7b2e91a",
+    "current_full64_branch_closed": true,
+    "fixed_LoRA_utility_gate_passed": false,
+    "method_efficacy_retested": false,
+    "causal_failure_source_established": false,
+    "DP_executed": false,
+    "expert_opened": false,
+    "reserved_opened": false,
+    "final_ready": false
   }
 }

@@ -1,0 +1,15 @@
+{
+  "status": "PASS_REPORT_STATE_AND_PAST_EVIDENCE_BINDING",
+  "checks": 828,
+  "local_links": 488,
+  "preserved_completed_objects": 82,
+  "new_model_inference": 0,
+  "report_sha256": "369f486276f66748beb810e3633a5542f0eb9915399bf765402cad4276f7b32e",
+  "html_sha256": "191a0213268f77a6becbe0176ccfe47e8b2b21a7a66419417f8a7c6785c32a8d",
+  "contract_sha256": "034a94eaab13a95a920a4044191c0e9fce5a550e109dd9371fcac156912d4fc0",
+  "result_sha256": "6532f53b6ec58b812b934178e663645c92c6b01782060d81fcc5a5a591faf176",
+  "verification_sha256": "9f302909d2935ae54d38f2cefb0fda3b4b0d59ba5ece203c93e772f116778395",
+  "public_record_sha256": "4b7f431af16ea75c22338b258f79cbbbb4edc31da7fa9c012ce62064b7b2e91a",
+  "last_efficacy_result_unchanged": true,
+  "expert_reserved_closed": true
+}

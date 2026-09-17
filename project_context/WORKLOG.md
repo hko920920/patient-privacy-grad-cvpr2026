@@ -1,5 +1,15 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 148-FIXED-CLASSIFIER-GENERALIZATION (2026-09-17 KST)
+
+- 사용자 후속 제안에 따라 새 생성·재학습 없이 저장된 분류기의 학습자료–개발자료 차이를 진단했다. 큰 단계2, 예상20–35분을 먼저 보고했다. 명세·12개checkpoint·trace·기존 예측·source를 새 추론 전에 동결했고 기존 runtime 코드는 변경하지 않았다.
+- R1/Dreal/L_public/L_pooled, seed11/23/37의400step 모델12개를 그대로 사용했다. 실제 trace에 등장한 고유영상만 source별로 평가했다. 학습 고유1,389장과 기존 개발 경로 검사64장만 raw/PNG 허용 목록에 넣었다. 모델별 학습 추론합11,201+개발경로768=11,969회, 새 학습/생성/DP0이다.
+- 모든 모델의 real/public 및 Dreal의 real/private 학습 AUROC/AP가1.0이었다. Synthetic은 L_public1.0, L_pooled 평균AUROC.999674/범위.999023–1.0이었다. 개발 평균AUROC는 기존 R1.544610/Dreal.596172/L_public.558234/L_pooled.543587 그대로다. 학습자료에 대한 eval collapse는 관측되지 않았고 공통된 일반화 차이를 직접 확인했다.
+- R1의 고유 학습영상 eval BCE.000118, 마지막50step 로그BCE.000166이었다. 개발BCE.4180은 다수 음성에 가중된 값이며 개발 양성BCE9.4551/음성.000239였다. 같은 분포/가중치/증강/모드에서의 수치가 아니므로 BCE 일치를 요구하거나 원인으로 단정하지 않는다. 개발 양·음성 모두 낮은 raw logit을 받는 양상이 있다.
+- 모델당 parameter62개와 BatchNorm buffer60개 전후exact, 기존 개발첫64장×12모델 raw logit exact(최대차0). 생산 metric을 import하지 않는 검산기가 원본1453개 letterbox·GPU normalization·전체 trace/노출·AUROC/AP/BCE를 확인했다.325,916항목PASS,metric최대차1.11e-16. 항목수는 성능 표본 수가 아니다. 본프로그램50.38초/검산33.96초, 구현·문서화 제외.
+- 높은 train 판별력은 병변 표현 학습의 증명이 아니다. 공개양성6장·암기·자료구성/weak label·recipe·합성신호 차이는 미분리다. R1/Dreal에도 차이가 있어 합성자료에만 원인을 돌리지 않는다. 기존 head/LoRA 효용 실패와 expert532/reserved4213 보존, final_ready=false, 새 BN보정/재학습/adapter/DP 자동실행 없음.
+- TRACK1_CLASSIFIER_GENERALIZATION_PROTOCOL/RESULTS_20260917.md, 집계JSON·seed별CSV·두그림, classifier_generalization code/output, 상태·framework·index를 연결했다. 마지막 method-efficacy pointer는 LoRA 실패 그대로, 최신 actual/diagnostic pointer만 이번 고정 추론으로 갱신했다. 원 completed 객체와 원본 결과/가중치/source hash는 보존했다.
+
 ## 147-EXISTING-LORA-TRANSFER-EXECUTION (2026-09-17 KST)
 
 - 사용자 검토에 따라 계획에서 멈추지 않고 별도 runner를 구현해 두 LoRA 학습·256장·분류기6run을 실제 실행했다. 코드/결과는 lora_transfer 및 _reports/lora_transfer_20260917_v1, 보고서는 TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md다.

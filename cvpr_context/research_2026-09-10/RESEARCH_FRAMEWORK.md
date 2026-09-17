@@ -1,5 +1,7 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-17 고정 분류기 일반화 진단 완료:** [학습자료와 개발자료의 실제 평가 차이](TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md). 새 모델을 학습하지 않고12개 고정 checkpoint를 평가했다. 실제 본 real AUROC/AP1.0, synthetic AUROC0.9990–1.0 대 기존 개발0.5436–0.5962의 차이를 확인했다. 같은 eval 경로에서도 학습자료는 잘 구별하며 가중치·BatchNorm buffer와 기존 개발 재추론768개가 exact다. 이는 일반화 차이의 확인이며 실패 원인 하나의 증명이나 이전 효용 미통과 취소가 아니다. 새 생성·학습·DP0, expert532/reserved4213 보존, 큰 단계2·final_ready=false 유지. 다음은 근거 있는 일반화 대조 하나의 필요성을 판단하는 일이며 해결책이나 새 실험을 자동 선정하지 않았다. 아래 최신/다음 문단은 당시 이력이다.
+
 **2026-09-17 기존 LoRA의 사적 효용 전달 대조 실제 완료:** [고정448update×2·256장·6run 결과](TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md). **사적 추가 효용 관문은 미통과다.** L_public/L_pooled AUROC0.558234/0.543587, 차이−0.014647·우세1/3이며 R0·R1도 넘지 못했다. 구간[−0.049878,+0.022601]은0을 포함한다. 이 고정 LoRA 구성도 성공하지 못했지만 head 용량 하나의 원인, 모든 LoRA의 실패, 사적 자료의 해로움으로 일반화하지 않는다. 실제 실행·독립 산술 검산은 통과했다. 기존 full64와 원 결과는 보존하고 새DP·expert/reserved 접근0,큰 단계2·방향1·final_ready=false를 유지한다. 다음은 공통 downstream/자료 사용/측정 조건 중 근거 있는 불확실성 하나를 검토할지 판단하는 일이며, 다음 GPU 실험이나 대체 방법은 자동 선정하지 않는다. 아래 과거 최신/다음은 당시 상태다.
 
 **2026-09-17 기존 LoRA 대조 계획 완료:** [동일 public32/private80의 사적 합성 효용 전달 대조](TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md). 현재 full64 종료를 유지하고, E4 rank8 계속학습의 공개전용/공개+사적 두 조건을 별도 개발 명세로 고정했다.448update씩·256장·분류기6run 계획이며 새 모델 실행은0이다. 기존 loss/예측/노출의 짧은 점검은 낮은 downstream 성능의 한계를 재확인했지만 실패 원인을 분리하지 않는다. 같은 개발 입력·과거 대조를 재사용하므로 독립확인이 아니다. 새runner/runtime검증미완료,expert532/reserved4213/DP보존,final_ready=false. 실제 마지막 효용 결과는 아래 full64 비DP 관문 실패다.

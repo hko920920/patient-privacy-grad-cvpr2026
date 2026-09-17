@@ -1,0 +1,2199 @@
+{
+  "scope": "Frozen-checkpoint diagnostic, not a new method efficacy test",
+  "contract_created_utc": "2026-09-17T13:33:45.875916+00:00",
+  "contract_sha256": "034a94eaab13a95a920a4044191c0e9fce5a550e109dd9371fcac156912d4fc0",
+  "result_sha256": "6532f53b6ec58b812b934178e663645c92c6b01782060d81fcc5a5a591faf176",
+  "verification_sha256": "9f302909d2935ae54d38f2cefb0fda3b4b0d59ba5ece203c93e772f116778395",
+  "source_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\classifier_generalization_20260917_v1\\manifest_private.json": "52a6c35208005c1bef66553007a028c35ad986b4977a869c272c8f7efc409fcf",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\classifier_generalization_20260917_v1\\runs_private.json": "b4bb13742dd88630860fbb65cd2bc78a261b1d490a8997a3398555e49333827f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\classifier_generalization_20260917_v1\\state_before.json": "348201b0759b40beab87f0301df56e40029e83e477b311a13284e972bbf9c57b",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\contract.json": "88543635a25bf396b8ed2b82bab1f4f4074685e41a2f3e66ce045410a53178fd",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\Dreal_11.npz": "46e544fbaeb667e7f84d6dbae851fd72071a145676c6ddafaa8954c0b6aa5b6a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\Dreal_23.npz": "efd1353bd0d9a274d37c6c45157b845ffdaabf31789eb8d99ccebbfb943f441a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\Dreal_37.npz": "d1f056e9fcf47b154648bbdfa83e7052532d86f6ba5d4dcd984c5a3ff5adead4",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\R1_11.npz": "48897caae17b30783c9e8d56677c8ef7fd6c7ce03779be3f49e03e0ac75c9122",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\R1_23.npz": "270a3e92d23bd3a56265ed6eda9a9585c0ead124b5661d1371a7dd3a81d9dff5",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\R1_37.npz": "95caf53b356dfc7ee838d176c5692f95d70feb54b8e9f8a6befae6c36eb4b4ca",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\generation_manifest.json": "62b5b64399a0065e39478a30b680ef5653d5455a8dc96d663356e2a9893d058f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\result.json": "c6c2bad3a729050910361edd681a12a6cc3cd11c34e8216ef36d661bce5fb038",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_11\\complete.json": "baca599311b5249732f335ae99b2f01ce1f0a2767c0b6037b865bb0fca3a2361",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_11\\exposure.json": "b34ff6f2dd9b7e850df921ea9ca75a072f888c30628c610d7ec15154e6feb6e2",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_11\\state_400.pt": "18270643351ee6a6b6a37843112e039834153118ed55379ca50bb7ee56601f07",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_11\\trace.json": "59f5b87701fe33be1592ddf072096e745cb725736e000b18a0d41d0a9c5f40f4",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_23\\complete.json": "3fe8cd909d53c055c191e8b6be7f1a17c783efae4163543bd1a63deec427a0a3",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_23\\exposure.json": "e508856bdcc3cbc8a74f37ee2c64c752fc5e5f4e189530be659d7aa4a64543e5",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_23\\state_400.pt": "87a22d3b605fa307ce476eb4cf9284680ffb6727ceae7f366c4b23c77019e18a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_23\\trace.json": "7a35927ba8bb6b7fc76bf132baea7a685338b3f3a8c55c24dc4abf35e991e722",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_37\\complete.json": "682b18805532cdd8d0e7fe41991f3e76eddb095e80106dbe99cf2120cdb3d2cb",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_37\\exposure.json": "88b71b36624b5bdbb7557f548bd93bc4b656eaa32f2405a483ef4c97e19801f8",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_37\\state_400.pt": "7e9d50c6bc32989202ba709f36c41aedc7cc86ce1bd702afbe7cc0574b000acb",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\Dreal_37\\trace.json": "91a944b932367b667fea3e8954988c7d248919d4afe941ef8d56b340a438acb4",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_11\\complete.json": "5c40c2efd539b5a4811d7b5b1144645acef85781d0aaf0ae9fcc80ad15961f00",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_11\\exposure.json": "eb72d100860da21f69f8da98cab3a361110b434153d63683516d8cae3b443661",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_11\\state_400.pt": "efb97aab5c4feeb270e0e67638a648458ec1a8c0201184f287fbe1c1474c344f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_11\\trace.json": "8981cf4a6603f664c6357a98c70d4516874f520b01666deec7a2b9e528565274",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_23\\complete.json": "b503f118bf7735fc32bea1721c619fa4229a78b14121313596427dec3b69d490",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_23\\exposure.json": "ab8a169f130c566290e2bddc7c5e480b8a5dd1856c8ec0f9f879675915d8e925",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_23\\state_400.pt": "9585c5afe305ab8cc8e6793c6ed05a4998121d0c8ae31c81a86cd8feec9399d3",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_23\\trace.json": "275f0d3ed2168dc74f4b73e98fc504fdb239774705adb9bd23944623d05f43ea",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_37\\complete.json": "5d921a765d788362f142d1e93c87bc2b4ef99cec603dfaa69bd9bb6523b345c0",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_37\\exposure.json": "8518399132c6c5e967e31d1030d35db2f587b28331c1dc7dd6f08788aca5f181",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_37\\state_400.pt": "ff34825f8a7de53b92e58c9a740a5a57da41b4894eb091e781f4c1a83d08a5d7",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_37\\trace.json": "d2772cfc9c25c18b44ca38d13e4aafaecb55d01fae7b1b275dc9f8af7ce9de03",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\verification.json": "6b0399fe136ded068242363bc21ebc68581908f4a3b93da5773b63726ddc668a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_profile_20260917_v3\\image_audit.json": "b971f151085227994d64a4a005edc653929da6f4a6da31ea1d497356da30e3aa",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_profile_20260917_v3\\real_manifest_private.csv": "3cd8fa6f6df2c381ed8a05b46c3284f9c4c269e483ce48323147ffd7afb89653",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\contract.json": "eaf866921068b2258989eb21d0f8f884a674bbb18defd3590a433e935b5c5be2",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\evaluation\\L_pooled_11.npz": "daed9cd4225e7ac21384a02e892b0fe8c0ad0da769a856cbbac1053a3e9c2ec2",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\evaluation\\L_pooled_23.npz": "2368d3ed5a4ec670e4e55d53301a2585f6e88e81a4ef2b4b37ce2a1734aa3a15",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\evaluation\\L_pooled_37.npz": "c5478e78dcff17e6359ce187e08aa4bbbfafc5672f0ad15acbba737434100c42",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\evaluation\\L_public_11.npz": "7a5535709b1bf9f5dc8f5e8e7b55e85a0849aabb280dd81ea55f3235341b65f0",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\evaluation\\L_public_23.npz": "d26c3eca65ba055d44430896050bdfe928e8e8f63b4972c3a61662eeef5255f4",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\evaluation\\L_public_37.npz": "c6d8bc0fa89c0afac667901fae74ccc71011099b1ad8422498dae9b4d644042c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\generation_manifest.json": "bb6caff88b8570187d3ba1d034aac0fb3a5a80079d05c5d365ab950035d4032e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\result.json": "608e9d081e9710d8dc195d6c6ceacccf25122dcc943a95d3ecd1a7b4861d76e8",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_11\\complete.json": "bc376db6b8cddc063483d5871b1b628fcb39e1b306235c3d42da5300cbc87103",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_11\\exposure.json": "22c36d0c8a30b47d68859cb109ff98b10dd51a80815612e7462668562c70a92b",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_11\\state_400.pt": "93c7d97bcbdbe74406be9236e9c1f0b7d62c320efdc6910e32e2892957ac4a55",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_11\\trace.json": "7d960ac5889e3c14e0aca131d20b44216d072450ab8228cf2e5a2389abc4b5b0",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_23\\complete.json": "4a1c8085ce963ee94799b79325d9ed2c15d3a0a126beae05d08c720257fdc7d0",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_23\\exposure.json": "8fb06392f23c8fb940c17f02d456f263195d03860de8f21e76f2dcf9f4ae1b7a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_23\\state_400.pt": "93449f7c708774168754c82cd763113f34d3387e2a885d0ee3b377a9cdc3500e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_23\\trace.json": "08b0901bdbb6d26d0b815c2dc9fa98af66638bbf5673f699a9538d25ac23d6a1",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_37\\complete.json": "310a4231e6539ca4650af68ed325570f3dd62ba017d9502b7fca3fc76f8b8de2",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_37\\exposure.json": "3c72679cf2513d43cf10b298df60f25dd3fee6c7751412f63c237fd2e432e05d",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_37\\state_400.pt": "9108b35ced65199026e5b283761828a1cde84d2dafa27925e8402a4797da10d5",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_pooled_37\\trace.json": "28fa7b171068eef4125e6035a84fb80f2d8e9b0758f5bd96940d3614ab718a06",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_11\\complete.json": "4557622876f7322ddc1750246a91b7d65ea690e16e7c13df785f3a64bede1b94",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_11\\exposure.json": "4c81a77a91a75c721c43cee0c28629e68d11bea1c5e82166039decbf96165621",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_11\\state_400.pt": "77268261361b3dab7203d1fe2fab0dcf9b9ac22ac0c1c96d9996709b41f37a51",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_11\\trace.json": "31e8bb7a54c750ebba3e4c93ea0866fa160ffde4e95c5a4bb97e37056e65032f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_23\\complete.json": "afbdf8f256b691391d1e4e5cd9a573f366cb313bb23eb4b845d1bc5f1079552f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_23\\exposure.json": "44b8a10a6e5825a34dfab3409d41a4ab6f59f51550a8932034ad23f79b13e501",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_23\\state_400.pt": "ea47906a145e7ced5d797a86e6a2cf27fa0088d9e7370e94ef35861a41b0a424",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_23\\trace.json": "f0a2caf0daba6c308a492045aa5cbb2393c8003de029e12c715d27e3e38f3594",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_37\\complete.json": "a389a209c1bb93605bd8e144aa6b7a19a756e78067c1dd73ed348124b89d5237",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_37\\exposure.json": "525f50adb49166e50f08573bcac2bc0059d4575c5d9b909e9abd27dd42978c5c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_37\\state_400.pt": "604cfba43695def3627cdced09cb74c1e16ea09595420a3fa6d5825a19b27163",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\runs\\L_public_37\\trace.json": "068c015cbc6ebc53e86abbedb143ab53638acb845580ac83918a35b91d2cad7f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\verification.json": "a587b27230132b83dba5c0ddf4bb99e880ce7afd5def4d22a672d3e032ff4bfa",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\patient_usage_audit_20260917_v1\\patient_usage_private.csv": "73510072e464307b7a8d7a770c8880ad085e314dada69df3c42db5ea90e89d0c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\patient_usage_audit_20260917_v1\\provisional_patient_split_private.csv": "914dd4fc986f8ea5d7fdfb71a8305dc10bf83fe893360104ff755bf55cc9f2ee",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\classifier_generalization\\__init__.py": "fea3382cf9744a19dbe44aa9a1edd0e7c2970df58f1dce97bf64ded3d1c8b4f9",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\classifier_generalization\\common.py": "f030ff3c8463f21aff523d1593d26674727f19a627be981e9544ed8e2827b69e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\classifier_generalization\\run.py": "9ee37105956533b46316fc36a98b6f3814cba4beff35b5a5255af7e0ed81a697",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\classifier_generalization\\verify.py": "7637d4ac8cfbad33c42cf1fbd7b955e9d49869a23d3386d5b51d9063cc219f14",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\downstream_utility\\common.py": "a3634bc79934ac213f18510be8df74f45450a33cf08d037b39c6e9b26d3a05a8",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\downstream_utility\\data_v2.py": "e3754b83bd7a3bc0f5b5366a5647b9a17e5c3455d935537561964aba79a7c393",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\downstream_utility\\development_v1.py": "25d639239a20506e163a800043d1cda924c5679f1c350fd6346c98bb5d63b37f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\downstream_utility\\run_v2.py": "ddb2caac38ef903f323c89473c6aa19045e03cacae0290226857aee66280f466",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\downstream_utility\\train_v2.py": "0d4d6c35c781038f01533ce67b3f1cb4feb2c83ef8661145f9690febf92bbdc0",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_CLASSIFIER_GENERALIZATION_PROTOCOL_20260917.md": "f83fd1eceb0ff26068cd51de5f62d0156b33b5aa07e5180092067767b47b101f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md": "83b14e96691b2d6c7bad5f77852bca87a4cd0921a2c8b12064cb4efad483cb3a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_DOWNSTREAM_DEVELOPMENT_RESULTS_20260917.md": "c82c915d04273a97a37f7e0601e765fa75bab0839a25860eebf0a3baeb4e67a7",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md": "2d71a254082c5f15a284c8aac489608cef6a4204d422e9aba755d9d5273bea36"
+  },
+  "budget": {
+    "unique_training_images": 1389,
+    "witness_images": 64,
+    "raw_or_PNG_decode": 1453,
+    "training_image_presentations": 11201,
+    "witness_presentations": 768,
+    "models": 12,
+    "optimizer_updates": 0,
+    "new_generation": 0,
+    "expert_pixels": 0,
+    "reserved_pixels": 0,
+    "DP": 0
+  },
+  "means": {
+    "R1": {
+      "real/public": {
+        "AUROC": 1.0,
+        "AP": 1.0,
+        "BCE": 0.00011788785986138284,
+        "balanced_BCE": 9.40702251338099e-05,
+        "exposure_weighted_BCE": 9.236659476445073e-05,
+        "images_per_seed": [
+          807,
+          809,
+          810
+        ],
+        "positive_images_per_seed": [
+          6,
+          6,
+          6
+        ]
+      },
+      "development": {
+        "AUROC": 0.5446095692439646,
+        "AP": 0.05166927943044355,
+        "BCE": 0.41799963727884043,
+        "balanced_BCE": 4.727682184027979,
+        "by_label": {
+          "0": {
+            "BCE": 0.00023862535749380733,
+            "logit_mean": -9.565022666470625
+          },
+          "1": {
+            "BCE": 9.455125742698465,
+            "logit_mean": -9.454964713309021
+          }
+        }
+      },
+      "logged_last50_BCE": 0.00016579341992231395
+    },
+    "Dreal": {
+      "real/private": {
+        "AUROC": 1.0,
+        "AP": 1.0,
+        "BCE": 0.002863745042467595,
+        "balanced_BCE": 0.0021192352515312985,
+        "exposure_weighted_BCE": 0.0024084903969315264,
+        "images_per_seed": [
+          320,
+          320,
+          320
+        ],
+        "positive_images_per_seed": [
+          33,
+          33,
+          33
+        ]
+      },
+      "real/public": {
+        "AUROC": 1.0,
+        "AP": 1.0,
+        "BCE": 0.0011522158488389254,
+        "balanced_BCE": 0.0007721986196354974,
+        "exposure_weighted_BCE": 0.0006654549014584849,
+        "images_per_seed": [
+          788,
+          778,
+          783
+        ],
+        "positive_images_per_seed": [
+          6,
+          6,
+          6
+        ]
+      },
+      "development": {
+        "AUROC": 0.5961724139640613,
+        "AP": 0.07844529733540058,
+        "BCE": 0.3577355705879601,
+        "balanced_BCE": 3.9863518803858717,
+        "by_label": {
+          "0": {
+            "BCE": 0.0059940200185472645,
+            "logit_mean": -8.748581468899651
+          },
+          "1": {
+            "BCE": 7.9667097407531955,
+            "logit_mean": -7.9343275618036415
+          }
+        }
+      },
+      "logged_last50_BCE": 0.003937652960109214
+    },
+    "L_public": {
+      "real/public": {
+        "AUROC": 1.0,
+        "AP": 1.0,
+        "BCE": 0.001673497107120149,
+        "balanced_BCE": 0.0009161776582775567,
+        "exposure_weighted_BCE": 0.0007864543976400527,
+        "images_per_seed": [
+          788,
+          778,
+          783
+        ],
+        "positive_images_per_seed": [
+          6,
+          6,
+          6
+        ]
+      },
+      "synthetic/lora_public": {
+        "AUROC": 1.0,
+        "AP": 1.0,
+        "BCE": 0.01657693590983787,
+        "balanced_BCE": 0.01657693590983787,
+        "exposure_weighted_BCE": 0.015744615664805017,
+        "images_per_seed": [
+          128,
+          128,
+          128
+        ],
+        "positive_images_per_seed": [
+          64,
+          64,
+          64
+        ]
+      },
+      "development": {
+        "AUROC": 0.5582343018341279,
+        "AP": 0.052514726103239984,
+        "BCE": 0.3362522376269876,
+        "balanced_BCE": 3.7451024027617397,
+        "by_label": {
+          "0": {
+            "BCE": 0.0058138169249446455,
+            "logit_mean": -7.816474975578667
+          },
+          "1": {
+            "BCE": 7.484390988598535,
+            "logit_mean": -7.480455909965641
+          }
+        }
+      },
+      "logged_last50_BCE": 0.004218165470520035
+    },
+    "L_pooled": {
+      "real/public": {
+        "AUROC": 1.0,
+        "AP": 1.0,
+        "BCE": 0.0012364679325138066,
+        "balanced_BCE": 0.00075564243150676,
+        "exposure_weighted_BCE": 0.0005576891075051223,
+        "images_per_seed": [
+          788,
+          778,
+          783
+        ],
+        "positive_images_per_seed": [
+          6,
+          6,
+          6
+        ]
+      },
+      "synthetic/lora_pooled": {
+        "AUROC": 0.9996744791666666,
+        "AP": 0.9996936274509803,
+        "BCE": 0.013047548119046412,
+        "balanced_BCE": 0.013047548119046412,
+        "exposure_weighted_BCE": 0.014873625633286596,
+        "images_per_seed": [
+          128,
+          128,
+          128
+        ],
+        "positive_images_per_seed": [
+          64,
+          64,
+          64
+        ]
+      },
+      "development": {
+        "AUROC": 0.5435871836631491,
+        "AP": 0.05238390702193102,
+        "BCE": 0.3507744343064228,
+        "balanced_BCE": 3.9478655217117833,
+        "by_label": {
+          "0": {
+            "BCE": 0.0020887953186395467,
+            "logit_mean": -8.186376366134157
+          },
+          "1": {
+            "BCE": 7.8936422481049275,
+            "logit_mean": -7.891038860529885
+          }
+        }
+      },
+      "logged_last50_BCE": 0.004383622892200947
+    }
+  },
+  "model_results": [
+    {
+      "arm": "R1",
+      "seed": 11,
+      "components": {
+        "real/public": {
+          "images": 807,
+          "positive_images": 6,
+          "prevalence": 0.007434944237918215,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.00021975384595704516,
+          "balanced_BCE": 0.0001297232790674347,
+          "by_label": {
+            "0": {
+              "images": 801,
+              "BCE": 0.00022111279791009589,
+              "logit_mean": -8.598812033621114,
+              "logit_quantiles": [
+                -10.222243309020996,
+                -9.434585571289062,
+                -8.992608070373535,
+                -8.63133430480957,
+                -8.241484642028809,
+                -7.688116073608398,
+                -6.273584842681885
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 3.833376022477353e-05,
+              "logit_mean": 10.340469042460123,
+              "logit_quantiles": [
+                9.551146507263184,
+                9.582699298858643,
+                9.802377700805664,
+                10.370513916015625,
+                10.848033666610718,
+                11.083537578582764,
+                11.130434036254883
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.0001266688734198573,
+          "exposures": 12800,
+          "exposure_min": 1,
+          "exposure_median": 8.0,
+          "exposure_max": 1087,
+          "unique_patients": 672,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.568314537179573,
+        "AP": 0.05507428921422003,
+        "BCE": 0.37165142896176295,
+        "balanced_BCE": 4.200710032136307,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.0004799147222831164,
+            "logit_mean": -8.52720698643828,
+            "logit_quantiles": [
+              -10.635730743408203,
+              -9.4273916721344,
+              -8.933057308197021,
+              -8.575528621673584,
+              -8.19243049621582,
+              -7.492735958099366,
+              0.652612030506134
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 8.400940149550332,
+            "logit_mean": -8.400662815624289,
+            "logit_quantiles": [
+              -9.977203369140625,
+              -9.349648475646973,
+              -8.832414627075195,
+              -8.40625,
+              -8.048562049865723,
+              -7.316770744323731,
+              -6.270244598388672
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.00019299018080346287,
+          "source_BCE": {
+            "real/public": 0.00019299217563792812
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.01007717849133769,
+          "source_BCE": {
+            "real/public": 0.01007717848801778
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.07770801295991987,
+          "source_BCE": {
+            "real/public": 0.07770800903889172
+          }
+        }
+      }
+    },
+    {
+      "arm": "R1",
+      "seed": 23,
+      "components": {
+        "real/public": {
+          "images": 809,
+          "positive_images": 6,
+          "prevalence": 0.007416563658838072,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 6.589687056839234e-05,
+          "balanced_BCE": 7.03374104636234e-05,
+          "by_label": {
+            "0": {
+              "images": 803,
+              "BCE": 6.583001174939262e-05,
+              "logit_mean": -10.120117002228277,
+              "logit_quantiles": [
+                -13.365632057189941,
+                -11.698457050323487,
+                -10.79571008682251,
+                -10.099160194396973,
+                -9.479893684387207,
+                -8.541552448272705,
+                -6.73500919342041
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 7.484480917785419e-05,
+              "logit_mean": 9.564113775889078,
+              "logit_quantiles": [
+                9.141891479492188,
+                9.16046404838562,
+                9.270455598831177,
+                9.539731979370117,
+                9.655431509017944,
+                10.131102561950684,
+                10.2886323928833
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 6.865623635950052e-05,
+          "exposures": 12800,
+          "exposure_min": 1,
+          "exposure_median": 8.0,
+          "exposure_max": 1107,
+          "unique_patients": 672,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.5565520677628301,
+        "AP": 0.053881431506855704,
+        "BCE": 0.4319371760733262,
+        "balanced_BCE": 4.886856362313431,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 9.758531847141007e-05,
+            "logit_mean": -9.98095287429555,
+            "logit_quantiles": [
+              -14.495851516723633,
+              -11.75859055519104,
+              -10.711344480514526,
+              -9.99191665649414,
+              -9.285564661026001,
+              -8.148438405990602,
+              -3.8073928356170654
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 9.77361513930839,
+            "logit_mean": -9.773507282872906,
+            "logit_quantiles": [
+              -12.576448440551758,
+              -11.607173252105714,
+              -10.536261081695557,
+              -9.830546379089355,
+              -8.988792419433594,
+              -7.928501510620118,
+              -6.206466197967529
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.00013724090051255188,
+          "source_BCE": {
+            "real/public": 0.00013724529715503135
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.0077430310534145974,
+          "source_BCE": {
+            "real/public": 0.007743030281193311
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.05978470474481583,
+          "source_BCE": {
+            "real/public": 0.05978470471289239
+          }
+        }
+      }
+    },
+    {
+      "arm": "R1",
+      "seed": 37,
+      "components": {
+        "real/public": {
+          "images": 810,
+          "positive_images": 6,
+          "prevalence": 0.007407407407407408,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 6.801286305871106e-05,
+          "balanced_BCE": 8.214998587037157e-05,
+          "by_label": {
+            "0": {
+              "images": 804,
+              "BCE": 6.780027474575376e-05,
+              "logit_mean": -10.32411628813293,
+              "logit_quantiles": [
+                -14.177145957946777,
+                -12.411590480804444,
+                -11.188710451126099,
+                -10.27090072631836,
+                -9.4312584400177,
+                -8.378727912902832,
+                -6.990240097045898
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 9.649969699498939e-05,
+              "logit_mean": 9.302374998728434,
+              "logit_quantiles": [
+                8.812369346618652,
+                8.857677936553955,
+                9.048868179321289,
+                9.30912971496582,
+                9.5382661819458,
+                9.750935316085815,
+                9.806861877441406
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 8.177467451399439e-05,
+          "exposures": 12800,
+          "exposure_min": 1,
+          "exposure_median": 8.0,
+          "exposure_max": 1113,
+          "unique_patients": 672,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.5089621027894905,
+        "AP": 0.046052117570254895,
+        "BCE": 0.4504103068014323,
+        "balanced_BCE": 5.0954801576342,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.0001383760317268955,
+            "logit_mean": -10.186908138678046,
+            "logit_quantiles": [
+              -15.267768859863281,
+              -12.562384271621704,
+              -11.13910961151123,
+              -10.205973625183105,
+              -9.235801219940186,
+              -7.853377389907838,
+              -3.473496913909912
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 10.190821939236674,
+            "logit_mean": -10.19072404142987,
+            "logit_quantiles": [
+              -14.660720825195312,
+              -12.743024730682373,
+              -11.212121486663818,
+              -10.016257286071777,
+              -9.160585403442383,
+              -7.8015820503234865,
+              -6.863302707672119
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.00016714917845092714,
+          "source_BCE": {
+            "real/public": 0.00016715149914440255
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.010043368340629967,
+          "source_BCE": {
+            "real/public": 0.010043369362487824
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.0772420737077482,
+          "source_BCE": {
+            "real/public": 0.07724206558429303
+          }
+        }
+      }
+    },
+    {
+      "arm": "Dreal",
+      "seed": 11,
+      "components": {
+        "real/private": {
+          "images": 320,
+          "positive_images": 33,
+          "prevalence": 0.103125,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.0004363922738308308,
+          "balanced_BCE": 0.0002837243379660446,
+          "by_label": {
+            "0": {
+              "images": 287,
+              "BCE": 0.0004760618949610508,
+              "logit_mean": -8.179059807847185,
+              "logit_quantiles": [
+                -10.647089958190918,
+                -9.680112934112548,
+                -8.849923610687256,
+                -8.24505615234375,
+                -7.537342309951782,
+                -6.476359558105469,
+                -5.283656597137451
+              ]
+            },
+            "1": {
+              "images": 33,
+              "BCE": 9.138678097103838e-05,
+              "logit_mean": 10.4697909933148,
+              "logit_quantiles": [
+                6.898815631866455,
+                7.94162540435791,
+                9.38117790222168,
+                10.771181106567383,
+                11.287628173828125,
+                12.639335441589354,
+                13.17955493927002
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.00028336745531594226,
+          "exposures": 6400,
+          "exposure_min": 3,
+          "exposure_median": 11.0,
+          "exposure_max": 208,
+          "unique_patients": 80,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        },
+        "real/public": {
+          "images": 788,
+          "positive_images": 6,
+          "prevalence": 0.007614213197969543,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.0008608835236300405,
+          "balanced_BCE": 0.0004544623299320483,
+          "by_label": {
+            "0": {
+              "images": 782,
+              "BCE": 0.0008671683874501124,
+              "logit_mean": -8.020215260403235,
+              "logit_quantiles": [
+                -10.895501136779785,
+                -9.724448585510254,
+                -8.798369646072388,
+                -8.14556884765625,
+                -7.388212442398071,
+                -5.745874738693241,
+                -3.2497527599334717
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 4.1756272413984163e-05,
+              "logit_mean": 10.432603359222412,
+              "logit_quantiles": [
+                8.874946594238281,
+                9.26472020149231,
+                10.471374750137329,
+                10.670047283172607,
+                10.813351154327393,
+                11.043789148330688,
+                11.114309310913086
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.00041992572175546147,
+          "exposures": 6400,
+          "exposure_min": 1,
+          "exposure_median": 4.0,
+          "exposure_max": 566,
+          "unique_patients": 664,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.6335396076419101,
+        "AP": 0.0861805716073405,
+        "BCE": 0.31133450135339796,
+        "balanced_BCE": 3.451464053139631,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.006944633912263444,
+            "logit_mean": -7.7641878071685895,
+            "logit_quantiles": [
+              -11.650154113769531,
+              -9.626079654693603,
+              -8.759387969970703,
+              -8.074934005737305,
+              -7.111214637756348,
+              -4.89143705368042,
+              3.3390395641326904
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 6.895983472366998,
+            "logit_mean": -6.865260209737872,
+            "logit_quantiles": [
+              -10.516243934631348,
+              -9.219347476959229,
+              -8.33677053451538,
+              -7.365328311920166,
+              -6.040191888809204,
+              -2.883578014373782,
+              2.4101085662841797
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.000480884006829001,
+          "source_BCE": {
+            "real/public": 0.0004873716729423284,
+            "real/private": 0.0004743802760740591
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.029025178259471433,
+          "source_BCE": {
+            "real/public": 0.022048563022701913,
+            "real/private": 0.03600179250499573
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.20793381018564105,
+          "source_BCE": {
+            "real/public": 0.15532712886625724,
+            "real/private": 0.2605404965407203
+          }
+        }
+      }
+    },
+    {
+      "arm": "Dreal",
+      "seed": 23,
+      "components": {
+        "real/private": {
+          "images": 320,
+          "positive_images": 33,
+          "prevalence": 0.103125,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.007941073303500136,
+          "balanced_BCE": 0.005755112865471244,
+          "by_label": {
+            "0": {
+              "images": 287,
+              "BCE": 0.008509078771649378,
+              "logit_mean": -10.269603711802786,
+              "logit_quantiles": [
+                -16.847618103027344,
+                -14.217479515075684,
+                -11.736166000366211,
+                -10.229984283447266,
+                -8.753352642059326,
+                -6.764689302444461,
+                2.2599456310272217
+              ]
+            },
+            "1": {
+              "images": 33,
+              "BCE": 0.0030011469592931095,
+              "logit_mean": 7.818822340531782,
+              "logit_quantiles": [
+                3.605590581893921,
+                4.196536350250244,
+                5.977567672729492,
+                7.881587505340576,
+                9.133695602416992,
+                11.892859268188475,
+                13.303897857666016
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.006644847697689999,
+          "exposures": 6400,
+          "exposure_min": 2,
+          "exposure_median": 11.0,
+          "exposure_max": 210,
+          "unique_patients": 80,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        },
+        "real/public": {
+          "images": 778,
+          "positive_images": 6,
+          "prevalence": 0.007712082262210797,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.002247041820993716,
+          "balanced_BCE": 0.0016376253872924362,
+          "by_label": {
+            "0": {
+              "images": 772,
+              "BCE": 0.002256588814733161,
+              "logit_mean": -9.669543286814436,
+              "logit_quantiles": [
+                -18.22327995300293,
+                -13.068109941482543,
+                -11.22983717918396,
+                -9.67877721786499,
+                -8.178317546844482,
+                -5.815845561027527,
+                -0.06373189389705658
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 0.0010186619598517115,
+              "logit_mean": 7.465885321299235,
+              "logit_quantiles": [
+                5.991012096405029,
+                6.051053881645203,
+                6.389112591743469,
+                7.505712270736694,
+                8.462363958358765,
+                8.887781381607056,
+                8.994714736938477
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.0013713793229995714,
+          "exposures": 6400,
+          "exposure_min": 1,
+          "exposure_median": 4.0,
+          "exposure_max": 550,
+          "unique_patients": 668,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.545057318043564,
+        "AP": 0.058991366213938294,
+        "BCE": 0.39683470638743423,
+        "balanced_BCE": 4.417519268313248,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.00708784383170442,
+            "logit_mean": -9.256958838681973,
+            "logit_quantiles": [
+              -18.019874572753906,
+              -13.216183185577393,
+              -10.880934238433838,
+              -9.37934398651123,
+              -7.6817930936813354,
+              -5.2320878267288276,
+              3.7344672679901123
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 8.82795069279479,
+            "logit_mean": -8.788489598329827,
+            "logit_quantiles": [
+              -14.409734725952148,
+              -13.169221210479737,
+              -10.644886016845703,
+              -8.84874439239502,
+              -7.244961977005005,
+              -4.551493692398073,
+              7.187604904174805
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.010770306381164118,
+          "source_BCE": {
+            "real/public": 0.006321460099402909,
+            "real/private": 0.01521914924758053
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.027443548847804776,
+          "source_BCE": {
+            "real/public": 0.019901941414595732,
+            "real/private": 0.03498515549565948
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.1747736742720008,
+          "source_BCE": {
+            "real/public": 0.12714893492594703,
+            "real/private": 0.22239841245539832
+          }
+        }
+      }
+    },
+    {
+      "arm": "Dreal",
+      "seed": 37,
+      "components": {
+        "real/private": {
+          "images": 320,
+          "positive_images": 33,
+          "prevalence": 0.103125,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.00021376955007181876,
+          "balanced_BCE": 0.0003188685511566075,
+          "by_label": {
+            "0": {
+              "images": 287,
+              "BCE": 0.00018646036081356663,
+              "logit_mean": -9.757245088703542,
+              "logit_quantiles": [
+                -15.73100471496582,
+                -12.66330690383911,
+                -10.638546466827393,
+                -9.604511260986328,
+                -8.66886568069458,
+                -7.246156787872315,
+                -5.305093765258789
+              ]
+            },
+            "1": {
+              "images": 33,
+              "BCE": 0.0004512767414996483,
+              "logit_mean": 8.342228557124283,
+              "logit_quantiles": [
+                5.423759937286377,
+                6.584324073791504,
+                7.870631217956543,
+                8.726897239685059,
+                9.095705032348633,
+                9.537790489196777,
+                10.043562889099121
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.00029725603778863764,
+          "exposures": 6400,
+          "exposure_min": 3,
+          "exposure_median": 11.0,
+          "exposure_max": 228,
+          "unique_patients": 80,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        },
+        "real/public": {
+          "images": 783,
+          "positive_images": 6,
+          "prevalence": 0.007662835249042145,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.00034872220189301965,
+          "balanced_BCE": 0.00022450814168200754,
+          "by_label": {
+            "0": {
+              "images": 777,
+              "BCE": 0.0003506554946589498,
+              "logit_mean": -9.622183406675184,
+              "logit_quantiles": [
+                -16.10070037841797,
+                -12.675244522094726,
+                -10.732270240783691,
+                -9.603544235229492,
+                -8.390779495239258,
+                -6.678492641448974,
+                -3.1170918941497803
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 9.836078870506526e-05,
+              "logit_mean": 9.43155288696289,
+              "logit_quantiles": [
+                8.224600791931152,
+                8.492388725280762,
+                9.382014513015747,
+                9.683044910430908,
+                9.763134241104126,
+                9.889281034469604,
+                9.927124977111816
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.00020505965962042206,
+          "exposures": 6400,
+          "exposure_min": 1,
+          "exposure_median": 4.0,
+          "exposure_max": 571,
+          "unique_patients": 667,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.6099203162067094,
+        "AP": 0.09016395418492296,
+        "BCE": 0.36503750402304824,
+        "balanced_BCE": 4.090072319704737,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.003949582311673929,
+            "logit_mean": -9.224597760848392,
+            "logit_quantiles": [
+              -17.150959014892578,
+              -12.703583002090454,
+              -10.618231534957886,
+              -9.325061798095703,
+              -7.929631948471069,
+              -5.426899361610413,
+              2.4109299182891846
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 8.1761950570978,
+            "logit_mean": -8.149232877343225,
+            "logit_quantiles": [
+              -15.132890701293945,
+              -12.741358757019043,
+              -10.090417385101318,
+              -8.529043197631836,
+              -6.54833722114563,
+              -2.545593810081487,
+              1.4471369981765747
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.0005617684923345224,
+          "source_BCE": {
+            "real/public": 0.0006705196563722142,
+            "real/private": 0.00045301069858899584
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.02844614352339704,
+          "source_BCE": {
+            "real/public": 0.021932811815205885,
+            "real/private": 0.03495947323276174
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.19305903356522322,
+          "source_BCE": {
+            "real/public": 0.14360675270029213,
+            "real/private": 0.24251131327408335
+          }
+        }
+      }
+    },
+    {
+      "arm": "L_public",
+      "seed": 11,
+      "components": {
+        "real/public": {
+          "images": 788,
+          "positive_images": 6,
+          "prevalence": 0.007614213197969543,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.0027445985571874685,
+          "balanced_BCE": 0.0014067871106609882,
+          "by_label": {
+            "0": {
+              "images": 782,
+              "BCE": 0.002765286363061589,
+              "logit_mean": -7.538259185945896,
+              "logit_quantiles": [
+                -12.06957721710205,
+                -9.860805702209472,
+                -8.632667064666748,
+                -7.667451858520508,
+                -6.649449706077576,
+                -4.699432134628297,
+                -1.1783467531204224
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 4.8287858260387395e-05,
+              "logit_mean": 10.242494424184164,
+              "logit_quantiles": [
+                9.281560897827148,
+                9.327679872512817,
+                9.529492616653442,
+                10.003528594970703,
+                10.81861925125122,
+                11.527353763580322,
+                11.704551696777344
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.0011995256901012287,
+          "exposures": 6400,
+          "exposure_min": 1,
+          "exposure_median": 4.0,
+          "exposure_max": 566,
+          "unique_patients": 664,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        },
+        "synthetic/lora_public": {
+          "images": 128,
+          "positive_images": 64,
+          "prevalence": 0.5,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.041664989349031525,
+          "balanced_BCE": 0.041664989349031525,
+          "by_label": {
+            "0": {
+              "images": 64,
+              "BCE": 0.08331073832956867,
+              "logit_mean": -4.877637556404807,
+              "logit_quantiles": [
+                -10.164566040039062,
+                -7.8616232633590695,
+                -6.387542486190796,
+                -4.906329870223999,
+                -3.761614203453064,
+                -0.8253245711326604,
+                1.734931230545044
+              ]
+            },
+            "1": {
+              "images": 64,
+              "BCE": 1.9240368494377602e-05,
+              "logit_mean": 13.364849910140038,
+              "logit_quantiles": [
+                7.254247665405273,
+                10.05612416267395,
+                11.733551502227783,
+                13.312033653259277,
+                14.75074052810669,
+                18.125972938537593,
+                18.85129165649414
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.038854819966025446,
+          "exposures": 6400,
+          "exposure_min": 31,
+          "exposure_median": 50.0,
+          "exposure_max": 74,
+          "unique_patients": null,
+          "unique_synthetic_cells": 128,
+          "label_type": "requested_condition_not_expert_ground_truth"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.5762285359450877,
+        "AP": 0.05324562854752987,
+        "BCE": 0.31644505436274867,
+        "balanced_BCE": 3.4863027164434652,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.009173479207782493,
+            "logit_mean": -7.342496556377387,
+            "logit_quantiles": [
+              -11.823880195617676,
+              -9.673935985565185,
+              -8.495812892913818,
+              -7.5982444286346436,
+              -6.4453346729278564,
+              -4.07110476493836,
+              3.14615797996521
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 6.963431953679148,
+            "logit_mean": -6.958319084526712,
+            "logit_quantiles": [
+              -10.22633171081543,
+              -9.174578380584716,
+              -8.082490921020508,
+              -7.140411376953125,
+              -6.18675422668457,
+              -3.7281555175781294,
+              -1.6242880821228027
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.008051884680753574,
+          "source_BCE": {
+            "real/public": 0.0017835250679598047,
+            "synthetic/lora_public": 0.01432023886147723
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.05602166219017818,
+          "source_BCE": {
+            "real/public": 0.02189600393764367,
+            "synthetic/lora_public": 0.09014731773650711
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.29303749367594717,
+          "source_BCE": {
+            "real/public": 0.14559173591547928,
+            "synthetic/lora_public": 0.44048324448985327
+          }
+        }
+      }
+    },
+    {
+      "arm": "L_public",
+      "seed": 23,
+      "components": {
+        "real/public": {
+          "images": 778,
+          "positive_images": 6,
+          "prevalence": 0.007712082262210797,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.0012172783680450884,
+          "balanced_BCE": 0.0006818703200322878,
+          "by_label": {
+            "0": {
+              "images": 772,
+              "BCE": 0.001225665961486542,
+              "logit_mean": -8.295421748272496,
+              "logit_quantiles": [
+                -14.109426498413086,
+                -11.05264310836792,
+                -9.434367179870605,
+                -8.368616104125977,
+                -7.166794538497925,
+                -5.408801126480102,
+                -2.8537299633026123
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 0.00013807467857803365,
+              "logit_mean": 8.989468574523926,
+              "logit_quantiles": [
+                8.457099914550781,
+                8.517573356628418,
+                8.717589616775513,
+                8.874337196350098,
+                8.987291812896729,
+                9.778387546539307,
+                10.040753364562988
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.0005888602801105948,
+          "exposures": 6400,
+          "exposure_min": 1,
+          "exposure_median": 4.0,
+          "exposure_max": 550,
+          "unique_patients": 668,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        },
+        "synthetic/lora_public": {
+          "images": 128,
+          "positive_images": 64,
+          "prevalence": 0.5,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.00499865929338476,
+          "balanced_BCE": 0.00499865929338476,
+          "by_label": {
+            "0": {
+              "images": 64,
+              "BCE": 0.009915400614376825,
+              "logit_mean": -7.47026682458818,
+              "logit_quantiles": [
+                -13.715751647949219,
+                -12.029339361190797,
+                -9.654582977294922,
+                -6.931253910064697,
+                -5.356405019760132,
+                -3.3199367880821287,
+                -1.004794955253601
+              ]
+            },
+            "1": {
+              "images": 64,
+              "BCE": 8.191797239269494e-05,
+              "logit_mean": 11.723935142159462,
+              "logit_quantiles": [
+                6.032010555267334,
+                8.823681831359863,
+                10.404425859451294,
+                11.448866367340088,
+                13.30126142501831,
+                14.702744817733764,
+                17.85321044921875
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.005277331159535206,
+          "exposures": 6400,
+          "exposure_min": 34,
+          "exposure_median": 49.0,
+          "exposure_max": 72,
+          "unique_patients": null,
+          "unique_synthetic_cells": 128,
+          "label_type": "requested_condition_not_expert_ground_truth"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.5568695201124423,
+        "AP": 0.05467675714113477,
+        "BCE": 0.3413806612614994,
+        "balanced_BCE": 3.802876825818615,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.0058389769771104855,
+            "logit_mean": -8.01843469839228,
+            "logit_quantiles": [
+              -15.841858863830566,
+              -11.174469041824342,
+              -9.362690448760986,
+              -8.111878871917725,
+              -6.744997501373291,
+              -4.602448868751527,
+              3.3129563331604004
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 7.59991467466012,
+            "logit_mean": -7.5952740111158565,
+            "logit_quantiles": [
+              -12.274551391601562,
+              -10.638856029510498,
+              -9.098008155822754,
+              -7.789282321929932,
+              -6.299803733825684,
+              -4.144477796554566,
+              -1.3232922554016113
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.0022332850052043797,
+          "source_BCE": {
+            "real/public": 0.001151781844709949,
+            "synthetic/lora_public": 0.0033147832460030786
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.05684356047262554,
+          "source_BCE": {
+            "real/public": 0.01744295492641361,
+            "synthetic/lora_public": 0.09624416602760773
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.2686161048710346,
+          "source_BCE": {
+            "real/public": 0.10816595571149501,
+            "synthetic/lora_public": 0.4290662460941397
+          }
+        }
+      }
+    },
+    {
+      "arm": "L_public",
+      "seed": 37,
+      "components": {
+        "real/public": {
+          "images": 783,
+          "positive_images": 6,
+          "prevalence": 0.007662835249042145,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.0010586143961278907,
+          "balanced_BCE": 0.0006598755441393942,
+          "by_label": {
+            "0": {
+              "images": 777,
+              "BCE": 0.001064820448298918,
+              "logit_mean": -8.389371970445493,
+              "logit_quantiles": [
+                -13.957554817199707,
+                -10.964310836791991,
+                -9.552658081054688,
+                -8.414791107177734,
+                -7.24306058883667,
+                -5.684218883514408,
+                -2.168771743774414
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 0.0002549306399798705,
+              "logit_mean": 8.430867354075113,
+              "logit_quantiles": [
+                7.634035587310791,
+                7.711316347122192,
+                8.011266350746155,
+                8.388487815856934,
+                8.758540630340576,
+                9.261146306991577,
+                9.40677547454834
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.0005709772227083346,
+          "exposures": 6400,
+          "exposure_min": 1,
+          "exposure_median": 4.0,
+          "exposure_max": 571,
+          "unique_patients": 667,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        },
+        "synthetic/lora_public": {
+          "images": 128,
+          "positive_images": 64,
+          "prevalence": 0.5,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.003067159087097324,
+          "balanced_BCE": 0.003067159087097324,
+          "by_label": {
+            "0": {
+              "images": 64,
+              "BCE": 0.005754511375360028,
+              "logit_mean": -7.788650739938021,
+              "logit_quantiles": [
+                -15.868072509765625,
+                -11.987027788162232,
+                -9.24356722831726,
+                -7.840587615966797,
+                -5.995663285255432,
+                -3.5191526293754585,
+                -2.152841329574585
+              ]
+            },
+            "1": {
+              "images": 64,
+              "BCE": 0.0003798067988346199,
+              "logit_mean": 10.0659089833498,
+              "logit_quantiles": [
+                4.060938358306885,
+                7.2404265880584715,
+                9.313892126083374,
+                10.032490253448486,
+                11.165425777435303,
+                12.408438301086425,
+                12.900273323059082
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.003101695868854391,
+          "exposures": 6400,
+          "exposure_min": 32,
+          "exposure_median": 49.5,
+          "exposure_max": 66,
+          "unique_patients": null,
+          "unique_synthetic_cells": 128,
+          "label_type": "requested_condition_not_expert_ground_truth"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.5416048494448534,
+        "AP": 0.0496217926210553,
+        "BCE": 0.3509309972567145,
+        "balanced_BCE": 3.946127666023139,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.0024289945899409605,
+            "logit_mean": -8.088493671966331,
+            "logit_quantiles": [
+              -14.21390151977539,
+              -10.913343238830567,
+              -9.331238508224487,
+              -8.155512809753418,
+              -6.957297086715698,
+              -4.974798345565797,
+              1.3809691667556763
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 7.889826337456337,
+            "logit_mean": -7.887774634254353,
+            "logit_quantiles": [
+              -12.566258430480957,
+              -10.848868656158448,
+              -8.916289329528809,
+              -7.815966606140137,
+              -6.8052637577056885,
+              -4.733752298355109,
+              -2.693873882293701
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.00236932672560215,
+          "source_BCE": {
+            "real/public": 0.0012282766777344115,
+            "synthetic/lora_public": 0.0035103721545893694
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.059596601140510755,
+          "source_BCE": {
+            "real/public": 0.02283743892772767,
+            "synthetic/lora_public": 0.09635575881900028
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.29237383395433425,
+          "source_BCE": {
+            "real/public": 0.14300800976732886,
+            "synthetic/lora_public": 0.4417396479350812
+          }
+        }
+      }
+    },
+    {
+      "arm": "L_pooled",
+      "seed": 11,
+      "components": {
+        "real/public": {
+          "images": 788,
+          "positive_images": 6,
+          "prevalence": 0.007614213197969543,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.00223706653754721,
+          "balanced_BCE": 0.001163280624114391,
+          "by_label": {
+            "0": {
+              "images": 782,
+              "BCE": 0.0022536714743528726,
+              "logit_mean": -7.773194502953373,
+              "logit_quantiles": [
+                -10.253707885742188,
+                -9.474693822860718,
+                -8.578470706939697,
+                -7.844104528427124,
+                -7.13405442237854,
+                -5.752533197402957,
+                0.42139866948127747
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 7.288977387590971e-05,
+              "logit_mean": 9.763582547505697,
+              "logit_quantiles": [
+                9.022464752197266,
+                9.063378095626831,
+                9.19312310218811,
+                9.38098669052124,
+                10.21964716911316,
+                10.986412048339844,
+                11.167354583740234
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.0006290909968414896,
+          "exposures": 6400,
+          "exposure_min": 1,
+          "exposure_median": 4.0,
+          "exposure_max": 566,
+          "unique_patients": 664,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        },
+        "synthetic/lora_pooled": {
+          "images": 128,
+          "positive_images": 64,
+          "prevalence": 0.5,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.0005926253552857364,
+          "balanced_BCE": 0.0005926253552857364,
+          "by_label": {
+            "0": {
+              "images": 64,
+              "BCE": 0.0011079793817846103,
+              "logit_mean": -7.871145017445087,
+              "logit_quantiles": [
+                -10.995504379272461,
+                -10.530442905426025,
+                -8.941029071807861,
+                -7.925917148590088,
+                -6.734987020492554,
+                -5.386389708518983,
+                -4.683539390563965
+              ]
+            },
+            "1": {
+              "images": 64,
+              "BCE": 7.72713287868626e-05,
+              "logit_mean": 11.219269774854183,
+              "logit_quantiles": [
+                6.637521266937256,
+                8.121015930175782,
+                9.819427490234375,
+                11.144525051116943,
+                12.614931344985962,
+                14.748763656616209,
+                16.607330322265625
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.0005933655217482625,
+          "exposures": 6400,
+          "exposure_min": 31,
+          "exposure_median": 50.0,
+          "exposure_max": 74,
+          "unique_patients": null,
+          "unique_synthetic_cells": 128,
+          "label_type": "requested_condition_not_expert_ground_truth"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.5486831537380363,
+        "AP": 0.05453341605595499,
+        "BCE": 0.32751675449100154,
+        "balanced_BCE": 3.680636559974744,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.002480581214377054,
+            "logit_mean": -7.614410291269891,
+            "logit_quantiles": [
+              -11.173247337341309,
+              -9.368992137908936,
+              -8.471848487854004,
+              -7.764002799987793,
+              -6.965486407279968,
+              -5.320728898048401,
+              1.0671606063842773
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 7.358792538735111,
+            "logit_mean": -7.356616914005023,
+            "logit_quantiles": [
+              -9.666592597961426,
+              -9.160600948333741,
+              -8.334463596343994,
+              -7.637736797332764,
+              -6.635908126831055,
+              -4.585694694519046,
+              -2.863309383392334
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.0008442318736342713,
+          "source_BCE": {
+            "real/public": 0.0007102490062629492,
+            "synthetic/lora_pooled": 0.0009782049248905622
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.051696167827394675,
+          "source_BCE": {
+            "real/public": 0.02113329033862508,
+            "synthetic/lora_pooled": 0.0822590437417915
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.29361642844974994,
+          "source_BCE": {
+            "real/public": 0.14260255576281067,
+            "synthetic/lora_pooled": 0.44463030183283747
+          }
+        }
+      }
+    },
+    {
+      "arm": "L_pooled",
+      "seed": 23,
+      "components": {
+        "real/public": {
+          "images": 778,
+          "positive_images": 6,
+          "prevalence": 0.007712082262210797,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.00047557176358269956,
+          "balanced_BCE": 0.00035459207052319767,
+          "by_label": {
+            "0": {
+              "images": 772,
+              "BCE": 0.00047746700681600764,
+              "logit_mean": -8.917448896818211,
+              "logit_quantiles": [
+                -15.055756568908691,
+                -11.619381284713745,
+                -10.07817554473877,
+                -8.909780025482178,
+                -7.734264612197876,
+                -6.318106365203859,
+                -3.804244041442871
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 0.00023171713423038773,
+              "logit_mean": 8.432827154795328,
+              "logit_quantiles": [
+                7.9895782470703125,
+                8.00846552848816,
+                8.103596925735474,
+                8.446593761444092,
+                8.687120914459229,
+                8.891085386276245,
+                8.957635879516602
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.0003409093960405516,
+          "exposures": 6400,
+          "exposure_min": 1,
+          "exposure_median": 4.0,
+          "exposure_max": 550,
+          "unique_patients": 668,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        },
+        "synthetic/lora_pooled": {
+          "images": 128,
+          "positive_images": 64,
+          "prevalence": 0.5,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.0005738716252494049,
+          "balanced_BCE": 0.0005738716252494049,
+          "by_label": {
+            "0": {
+              "images": 64,
+              "BCE": 0.0008520229897697055,
+              "logit_mean": -9.597974918782711,
+              "logit_quantiles": [
+                -15.107034683227539,
+                -12.560299062728882,
+                -10.672062397003174,
+                -9.796486854553223,
+                -8.74587631225586,
+                -5.4938405752182025,
+                -3.6965785026550293
+              ]
+            },
+            "1": {
+              "images": 64,
+              "BCE": 0.0002957202607291043,
+              "logit_mean": 9.394512593746185,
+              "logit_quantiles": [
+                5.656698226928711,
+                7.33750433921814,
+                8.157145261764526,
+                9.095469951629639,
+                10.494358539581299,
+                12.51803274154663,
+                14.070860862731934
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.0005661321393008841,
+          "exposures": 6400,
+          "exposure_min": 34,
+          "exposure_median": 49.0,
+          "exposure_max": 72,
+          "unique_patients": null,
+          "unique_synthetic_cells": 128,
+          "label_type": "requested_condition_not_expert_ground_truth"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.5163680848373974,
+        "AP": 0.047553199901424315,
+        "BCE": 0.3800975982297816,
+        "balanced_BCE": 4.290967299932936,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.0009956884363440251,
+            "logit_mean": -8.748369832215815,
+            "logit_quantiles": [
+              -15.386351585388184,
+              -11.833037519454956,
+              -9.965068578720093,
+              -8.740809917449951,
+              -7.509350419044495,
+              -5.699891781806947,
+              -1.097769856452942
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 8.580938911429527,
+            "logit_mean": -8.579406814190305,
+            "logit_quantiles": [
+              -12.880705833435059,
+              -10.917549228668213,
+              -9.716156005859375,
+              -8.677309036254883,
+              -7.6639275550842285,
+              -5.730089712142945,
+              -2.207036018371582
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.0014197030704235659,
+          "source_BCE": {
+            "real/public": 0.0009202887795181209,
+            "synthetic/lora_pooled": 0.0019191078466827302
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.050077993028753556,
+          "source_BCE": {
+            "real/public": 0.017197581020645128,
+            "synthetic/lora_pooled": 0.0829584052017187
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.2639699050784111,
+          "source_BCE": {
+            "real/public": 0.10562602365741373,
+            "synthetic/lora_pooled": 0.4223137901706197
+          }
+        }
+      }
+    },
+    {
+      "arm": "L_pooled",
+      "seed": 37,
+      "components": {
+        "real/public": {
+          "images": 783,
+          "positive_images": 6,
+          "prevalence": 0.007662835249042145,
+          "AUROC": 1.0,
+          "AP": 1.0,
+          "BCE": 0.0009967654964115108,
+          "balanced_BCE": 0.0007490545998826913,
+          "by_label": {
+            "0": {
+              "images": 777,
+              "BCE": 0.001000620918925578,
+              "logit_mean": -8.461233622012145,
+              "logit_quantiles": [
+                -13.242018699645996,
+                -11.274991989135742,
+                -9.718841552734375,
+                -8.455456733703613,
+                -7.270181179046631,
+                -5.606613349914552,
+                -2.3223421573638916
+              ]
+            },
+            "1": {
+              "images": 6,
+              "BCE": 0.0004974882808398048,
+              "logit_mean": 7.8253036340077715,
+              "logit_quantiles": [
+                6.950145244598389,
+                6.954042315483093,
+                7.198455810546875,
+                8.028595447540283,
+                8.206265926361084,
+                8.62331485748291,
+                8.757253646850586
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.0007030669296333257,
+          "exposures": 6400,
+          "exposure_min": 1,
+          "exposure_median": 4.0,
+          "exposure_max": 571,
+          "unique_patients": 667,
+          "unique_synthetic_cells": null,
+          "label_type": "NIH_weak_image_label"
+        },
+        "synthetic/lora_pooled": {
+          "images": 128,
+          "positive_images": 64,
+          "prevalence": 0.5,
+          "AUROC": 0.9990234375,
+          "AP": 0.9990808823529411,
+          "BCE": 0.0379761473766041,
+          "balanced_BCE": 0.0379761473766041,
+          "by_label": {
+            "0": {
+              "images": 64,
+              "BCE": 0.005768015651254177,
+              "logit_mean": -9.932439643889666,
+              "logit_quantiles": [
+                -16.449811935424805,
+                -15.538932275772094,
+                -12.623405933380127,
+                -9.702629566192627,
+                -7.545611619949341,
+                -4.35394814014435,
+                -1.2082645893096924
+              ]
+            },
+            "1": {
+              "images": 64,
+              "BCE": 0.07018427910195402,
+              "logit_mean": 8.69131163880229,
+              "logit_quantiles": [
+                -4.333987712860107,
+                4.834483504295349,
+                7.569002032279968,
+                8.769207000732422,
+                9.97202181816101,
+                12.841223573684688,
+                14.44530200958252
+              ]
+            }
+          },
+          "exposure_weighted_BCE": 0.04346137923881064,
+          "exposures": 6400,
+          "exposure_min": 32,
+          "exposure_median": 49.5,
+          "exposure_max": 66,
+          "unique_patients": null,
+          "unique_synthetic_cells": 128,
+          "label_type": "requested_condition_not_expert_ground_truth"
+        }
+      },
+      "development": {
+        "images": 5047,
+        "positive_images": 223,
+        "prevalence": 0.04418466415692491,
+        "AUROC": 0.5657103124140137,
+        "AP": 0.05506510510841377,
+        "BCE": 0.3447089501984853,
+        "balanced_BCE": 3.8719927052276715,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.0027901163051975617,
+            "logit_mean": -8.196348974916768,
+            "logit_quantiles": [
+              -14.507203102111816,
+              -11.331088447570801,
+              -9.577516317367554,
+              -8.233283042907715,
+              -6.927674770355225,
+              -4.8701680421829225,
+              1.054957628250122
+            ]
+          },
+          "1": {
+            "images": 223,
+            "BCE": 7.741195294150145,
+            "logit_mean": -7.737092853394325,
+            "logit_quantiles": [
+              -12.09771728515625,
+              -10.768171405792236,
+              -9.071616172790527,
+              -7.849278926849365,
+              -6.3766562938690186,
+              -4.620989227294924,
+              -0.5011160969734192
+            ]
+          }
+        }
+      },
+      "training_log": {
+        "50": {
+          "mean_logged_BCE": 0.010886933732545004,
+          "source_BCE": {
+            "real/public": 0.0015603354316255104,
+            "synthetic/lora_pooled": 0.020213533915653246
+          }
+        },
+        "400": {
+          "mean_logged_BCE": 0.055773597700317624,
+          "source_BCE": {
+            "real/public": 0.021698121447546147,
+            "synthetic/lora_pooled": 0.08984907468570408
+          }
+        },
+        "first50": {
+          "mean_logged_BCE": 0.27997440710663796,
+          "source_BCE": {
+            "real/public": 0.14123490355474977,
+            "synthetic/lora_pooled": 0.4187139042484545
+          }
+        }
+      }
+    }
+  ],
+  "verification": {
+    "status": "PASS_FIXED_INFERENCE_DIAGNOSTIC_INTEGRITY",
+    "created_utc": "2026-09-17T13:35:49.766317+00:00",
+    "checks": 325916,
+    "maximum_metric_difference": 1.1102230246251565e-16,
+    "models": [
+      {
+        "run": "R1_11",
+        "seen_images": 807,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      },
+      {
+        "run": "R1_23",
+        "seen_images": 809,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      },
+      {
+        "run": "R1_37",
+        "seen_images": 810,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      },
+      {
+        "run": "Dreal_11",
+        "seen_images": 1108,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      },
+      {
+        "run": "Dreal_23",
+        "seen_images": 1098,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      },
+      {
+        "run": "Dreal_37",
+        "seen_images": 1103,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      },
+      {
+        "run": "L_public_11",
+        "seen_images": 916,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      },
+      {
+        "run": "L_public_23",
+        "seen_images": 906,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      },
+      {
+        "run": "L_public_37",
+        "seen_images": 911,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      },
+      {
+        "run": "L_pooled_11",
+        "seen_images": 916,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      },
+      {
+        "run": "L_pooled_23",
+        "seen_images": 906,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      },
+      {
+        "run": "L_pooled_37",
+        "seen_images": 911,
+        "state_unchanged": true,
+        "witness_max_absolute_difference": 0.0
+      }
+    ],
+    "independent_raw_PNG_decodes": 1453,
+    "independent_GPU_input_arithmetic": true,
+    "new_model_forward": 0,
+    "no_production_metric_import": true,
+    "seconds": 33.951765200006776,
+    "method_efficacy_verified": false,
+    "result_sha256": "6532f53b6ec58b812b934178e663645c92c6b01782060d81fcc5a5a591faf176",
+    "contract_sha256": "034a94eaab13a95a920a4044191c0e9fce5a550e109dd9371fcac156912d4fc0"
+  },
+  "actual_inference_seconds": 50.02135900000576,
+  "all_model_states_unchanged": true,
+  "maximum_witness_logit_difference": 0.0,
+  "method_efficacy_retested": false,
+  "expert_opened": false,
+  "reserved_opened": false,
+  "DP": false,
+  "final_ready": false
+}

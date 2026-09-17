@@ -117,6 +117,8 @@ def convert(md,from_review=False):
         if href=='TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md':href='track1_current_head_branch_closure.html'
         if href=='TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md':href='track1_lora_transfer_comparison_protocol.html'
         if href=='TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md':href='track1_lora_transfer_comparison_results.html'
+        if href=='TRACK1_CLASSIFIER_GENERALIZATION_PROTOCOL_20260917.md':href='track1_classifier_generalization_protocol.html'
+        if href=='TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md':href='track1_classifier_generalization_results.html'
         a['href']=href
     return str(soup)
 
@@ -210,7 +212,8 @@ def main():
     head = '<section class="panel"><h2>최신 실제 성능: 사적 합성자료 효용 관문 미통과</h2><p><a href="track1_downstream_development_results.html"><strong>나쁜 효용 결과 · 512장 생성 / 공개 calibration / 21run 완료</strong></a></p><p>R1 .54461, public-head .53626, private-only .54911, pooled .52855, private-real .59617 AUROC입니다. Private-only는R1 대비+.00450·양의seed1/3으로 미달했고 pooled도 실패했습니다.</p><p>실행·독립검산은 통과했습니다. DP 확대를 멈추고 expert532/reserved4213을 보존합니다. <a href="track1_downstream_development_protocol.html">실행 전 계약</a> · 아래 이전 최신/다음 표시는 이력입니다.</p></section>' + head
     head = '<section class="panel"><h2>최신 결정: 현재 full64 방법 분기 종료</h2><p><a href="track1_current_head_branch_closure.html"><strong>비DP 관문 실패 · DP 확대 종료 · expert final 보존</strong></a></p><p>효용에는 나쁜 결과입니다. 원인을 head 하나로 확정하지 않고 현재 전체 구성의 실패로 기록했습니다. Pooled head의 공개32명64장과 downstream 공개672명813장을 구분합니다. 이번에는 새 모델 실행 없이 저장 결과·명부·코드를 검토했습니다. 다른 방법이나 주제를 자동 선택하지 않았습니다.</p></section>' + head
     head = '<section class="panel"><h2>이전 계획: 기존 LoRA의 사적 효용 전달 대조</h2><p><a href="track1_lora_transfer_comparison_protocol.html">실행 전 동결한 명세</a> — 계획 당시 실행0 기록이며, 아래 링크의 실제 결과로 이어집니다. 기존 full64 종료와 최종자료 보존은 유지합니다.</p></section>' + head
-    head = '<section class="panel"><h2>최신 실제 결과: LoRA 대조도 사적 추가 효용 미통과</h2><p><a href="track1_lora_transfer_comparison_results.html"><strong>두 LoRA 학습 · 256장 생성 · 분류기6run 완료</strong></a></p><p>L_public AUROC0.558234, L_pooled0.543587. 차이−0.014647·우세1/3이며 R0/R1 관문도 미통과입니다. 95% 환자 구간은[−0.049878,+0.022601]입니다.</p><p>실행 연결·독립 검산은 통과했습니다. 이 고정 구성의 음성 결과이며 LoRA 전체나 사적 자료의 무효를 증명하지 않습니다. 새DP0, expert532/reserved4213 보존, 기존 full64 종료 유지, 실행 중 작업 없음.</p></section>' + head
+    head = '<section class="panel"><h2>최근 방법 효용: LoRA 대조도 사적 추가 효용 미통과</h2><p><a href="track1_lora_transfer_comparison_results.html"><strong>두 LoRA 학습 · 256장 생성 · 분류기6run 완료</strong></a></p><p>L_public AUROC0.558234, L_pooled0.543587. 차이−0.014647·우세1/3이며 R0/R1 관문도 미통과입니다. 95% 환자 구간은[−0.049878,+0.022601]입니다.</p><p>실행 연결·독립 검산은 통과했습니다. 이 고정 구성의 음성 결과이며 LoRA 전체나 사적 자료의 무효를 증명하지 않습니다. 새DP0, expert532/reserved4213 보존, 기존 full64 종료 유지, 실행 중 작업 없음.</p></section>' + head
+    head = '<section class="panel"><h2>최신 고정 분류기 진단: 학습자료와 개발자료의 큰 차이</h2><p><a href="track1_classifier_generalization_results.html"><strong>기존12개 모델 그대로 추론 · 학습 real AUROC1.0 / 개발0.54–0.60</strong></a></p><p>Eval 모드에서도 실제 본 학습자료는 거의 완벽히 구별하지만 개발 실영상에는 일반화되지 않았습니다. 합성 요청 label도 거의 완벽히 구별했습니다. 가중치·BatchNorm 통계 불변, 기존 개발768개 점수 exact입니다.</p><p>원인과 해결책은 아직 분리하지 않았습니다. 새 학습·생성·DP0, 기존 head/LoRA 효용 실패와 expert532/reserved4213 보존. <a href="track1_classifier_generalization_protocol.html">추론 전 고정한 명세</a></p></section>' + head
     controls+=''.join('<option value="'+k+'">'+esc(v)+' ('+str(stats[k])+')</option>' for k,v in ROLES.items())
     controls+='''</select></label><label>확인 수준<select id="status"><option value="all">모든 확인 수준</option><option value="selected">PDF 선택 절 (75)</option><option value="partial">공식 본문 일부 (3)</option><option value="abstract">초록만 (1)</option><option value="replay">공개 packet 재계산 (2)</option></select></label><label>발표 형식<select id="venue"><option value="all">모든 발표 형식</option><option value="main">메인 학회 표기</option><option value="other">저널·워크샵·공개본 등</option></select></label><label class="search">논문명·방법·검토 내용 검색<input id="search" type="search" placeholder="예: MoFit, CLiD, 환자 평균, FPR" autocomplete="off"></label></div><p id="count" aria-live="polite"></p><button id="reset" type="button">필터 초기화</button><button id="expand" type="button">표시된 검토 펼치기</button><button id="collapse" type="button">모두 접기</button><p class="meta">비교 후보 수는 전부 실행할 의무 목록이나 같은 문제의 SOTA 순위가 아니다. 접근 권한과 주장에 맞는 비교군을 선택한다.</p></section>'''
     cards=[]
@@ -299,6 +302,8 @@ def main():
         ('TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md','track1_current_head_branch_closure.html','현재 full64 방법 분기 종료와 해석 범위'),
         ('TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md','track1_lora_transfer_comparison_protocol.html','기존 LoRA의 공개전용 대 공개+사적 효용 전달 대조 명세'),
         ('TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md','track1_lora_transfer_comparison_results.html','기존 LoRA 실제 대조: 사적 추가 합성 효용 미통과'),
+        ('TRACK1_CLASSIFIER_GENERALIZATION_PROTOCOL_20260917.md','track1_classifier_generalization_protocol.html','고정 분류기 일반화 진단 명세'),
+        ('TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md','track1_classifier_generalization_results.html','고정 분류기 진단: 학습과 개발자료의 일반화 차이'),
         ('REALISTIC_RESEARCH_PLAN_20260916.md','realistic_research_plan.html','의료 생성모델 환자 보호: 현실적인 다음 계획')]:
         if (ROOT/source).exists():
             body='<p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p>'+convert((ROOT/source).read_text(encoding='utf-8'))
