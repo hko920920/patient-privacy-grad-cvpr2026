@@ -1,0 +1,108 @@
+{
+  "created_utc": "2026-09-17T05:44:56.764455+00:00",
+  "seconds": 260.91261270001996,
+  "files": [
+    {
+      "id": "1bGFF8e--30SLZzDhJAL0qLOLhsq5Ff-7",
+      "filename": "best_128_0.0002_original_15000_0.859.pt",
+      "url": "https://drive.google.com/file/d/1bGFF8e--30SLZzDhJAL0qLOLhsq5Ff-7/view",
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_models\\chexzero_official_20220916\\best_128_0.0002_original_15000_0.859.pt",
+      "bytes": 353548709,
+      "sha256": "620ee11d836f65104cd77c3764fd11ee787d709b0873ea58ca1acbf89c40c50c",
+      "seconds": 47.757096600020304,
+      "status": "DOWNLOADED"
+    },
+    {
+      "id": "1xmCrWThAhq7-nPB77Jgaft_KLYcPMuJ_",
+      "filename": "best_128_0.0002_original_8000_0.857.pt",
+      "url": "https://drive.google.com/file/d/1xmCrWThAhq7-nPB77Jgaft_KLYcPMuJ_/view",
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_models\\chexzero_official_20220916\\best_128_0.0002_original_8000_0.857.pt",
+      "bytes": 353548709,
+      "sha256": "c1ec95b173e8dcd007320e6c33c2ae29023f5f38efc208add99702150c0a72f7",
+      "seconds": 33.20547509996686,
+      "status": "DOWNLOADED"
+    },
+    {
+      "id": "1S1qkcx0XDW0CRUDvZvpt_kChCNZ3VM2E",
+      "filename": "best_128_5e-05_original_22000_0.855.pt",
+      "url": "https://drive.google.com/file/d/1S1qkcx0XDW0CRUDvZvpt_kChCNZ3VM2E/view",
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_models\\chexzero_official_20220916\\best_128_5e-05_original_22000_0.855.pt",
+      "bytes": 353548709,
+      "sha256": "1e3ae7be8d92caf09aa101ab81840b39ee4b1cad3111522250800566834622bf",
+      "seconds": 57.552878899965435,
+      "status": "DOWNLOADED"
+    },
+    {
+      "id": "1YCV_8fHTBzMMX3DKzhsBLK4Czrp03ju-",
+      "filename": "best_64_0.0001_original_16000_0.861.pt",
+      "url": "https://drive.google.com/file/d/1YCV_8fHTBzMMX3DKzhsBLK4Czrp03ju-/view",
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_models\\chexzero_official_20220916\\best_64_0.0001_original_16000_0.861.pt",
+      "bytes": 353548709,
+      "sha256": "8f5f2679d205476b2e8f8c5112d010008b85ee3d17286cf4d301e50857282006",
+      "seconds": 50.495771300047636,
+      "status": "DOWNLOADED"
+    },
+    {
+      "id": "1UptppovinnBS7zl_5OvTj9v7UObCNllA",
+      "filename": "best_64_0.0001_original_17000_0.863.pt",
+      "url": "https://drive.google.com/file/d/1UptppovinnBS7zl_5OvTj9v7UObCNllA/view",
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_models\\chexzero_official_20220916\\best_64_0.0001_original_17000_0.863.pt",
+      "bytes": 353548709,
+      "sha256": "ba3f39d6981c252148d7c3eff37979f2f28d29d193259eda06aaae6b5df596f5",
+      "seconds": 35.21429559995886,
+      "status": "DOWNLOADED"
+    },
+    {
+      "id": "1IEdILq06WgbVMBIz2DSyu8oDSJEGlSvh",
+      "filename": "best_64_0.0001_original_35000_0.864.pt",
+      "url": "https://drive.google.com/file/d/1IEdILq06WgbVMBIz2DSyu8oDSJEGlSvh/view",
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_models\\chexzero_official_20220916\\best_64_0.0001_original_35000_0.864.pt",
+      "bytes": 353548709,
+      "sha256": "40ad37ea1933b6ae021a570d1a228e1b21ce1f7f4741348050766c365de214e9",
+      "seconds": 55.273581599933095,
+      "status": "DOWNLOADED"
+    },
+    {
+      "id": "1Q2klR1TE6-GxqTR9C8-r5Y3XxygtPRVt",
+      "filename": "best_64_0.0002_original_23000_0.854.pt",
+      "url": "https://drive.google.com/file/d/1Q2klR1TE6-GxqTR9C8-r5Y3XxygtPRVt/view",
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_models\\chexzero_official_20220916\\best_64_0.0002_original_23000_0.854.pt",
+      "bytes": 353548709,
+      "sha256": "060d9743c5580b35ce42b602adc1a6dd8cd77e06055a0699584eb111757d9460",
+      "seconds": 50.37302339996677,
+      "status": "DOWNLOADED"
+    },
+    {
+      "id": "1ubtwzK0QPXJBMnRpab3pf1VLgOMqBwtA",
+      "filename": "best_64_5e-05_original_16000_0.858.pt",
+      "url": "https://drive.google.com/file/d/1ubtwzK0QPXJBMnRpab3pf1VLgOMqBwtA/view",
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_models\\chexzero_official_20220916\\best_64_5e-05_original_16000_0.858.pt",
+      "bytes": 353548709,
+      "sha256": "6af517141430a61ac4084d8d08cf77d713dda8386eb1bb4afa4ea621b3483a6b",
+      "seconds": 59.94221230002586,
+      "status": "DOWNLOADED"
+    },
+    {
+      "id": "1GmsTIzNbICY9yhcVgxUCxXz4dggwbT4F",
+      "filename": "best_64_5e-05_original_18000_0.862.pt",
+      "url": "https://drive.google.com/file/d/1GmsTIzNbICY9yhcVgxUCxXz4dggwbT4F/view",
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_models\\chexzero_official_20220916\\best_64_5e-05_original_18000_0.862.pt",
+      "bytes": 353548709,
+      "sha256": "0bc03704af2c5db952d2b9f59af1d93b7baa58b2346c953abf556d00eeccf7dc",
+      "seconds": 44.43915500002913,
+      "status": "DOWNLOADED"
+    },
+    {
+      "id": "1P3D5qukxg3oX88LrAJwRb_03h59O9jdk",
+      "filename": "best_64_5e-05_original_22000_0.864.pt",
+      "url": "https://drive.google.com/file/d/1P3D5qukxg3oX88LrAJwRb_03h59O9jdk/view",
+      "path": "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_models\\chexzero_official_20220916\\best_64_5e-05_original_22000_0.864.pt",
+      "bytes": 353548709,
+      "sha256": "567a2efbabc6a02370de6e18178afd22ee72d7e6f29a789db1535e5c798d6ae8",
+      "seconds": 47.40917569992598,
+      "status": "DOWNLOADED"
+    }
+  ],
+  "completed": 10,
+  "new_model_inference": 0
+}

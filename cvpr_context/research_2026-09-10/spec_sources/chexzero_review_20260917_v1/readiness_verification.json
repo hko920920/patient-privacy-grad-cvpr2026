@@ -1,0 +1,43 @@
+{
+  "status": "PASS_CANDIDATE_READINESS_NOT_PERFORMANCE",
+  "created_utc": "2026-09-17T05:46:54.402818+00:00",
+  "checks": 8197,
+  "seconds": 3.8158735999604687,
+  "checkpoint_count": 10,
+  "total_checkpoint_bytes": 3535487090,
+  "fresh_reserved_evaluator_patients": 80,
+  "remaining_method_development": 4053,
+  "remaining_exclusive_emphysema": 44,
+  "all_previous_outputs_preserved": true,
+  "new_NIH_pixel_access": 0,
+  "new_model_inference": 0,
+  "new_DP": 0,
+  "external_padchest_source_values": {
+    "emphysema_auc": [
+      0.8232,
+      0.8018,
+      0.8428,
+      376
+    ],
+    "pneumothorax_auc": [
+      0.7659,
+      0.7187,
+      0.8071,
+      98
+    ],
+    "subcutaneous emphysema_auc": [
+      0.9092,
+      0.8694,
+      0.946,
+      41
+    ]
+  },
+  "bound_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\chexzero_evaluator_plan_20260917_v1\\cohort_contract.json": "1f44943c3e8b3d002e4012114dc0625503e7bc86a5fc2743bbdc64d3b97c8dc7",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\asset_inspection.json": "8349763278beed9439b69cf7caae76870fb0abd1ac4da0fc508f1a3f2a81a4aa",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\official_release.json": "2f4a5b5425758968529e9af019c59203125f7939ce95b8ae8df01b150a2764cb",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\checkpoint_acquisition.json": "366a8fbe820f7464376385c16b46ab527145efa50504225f4f13b7337cda4010",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\figure3_source.xlsx": "370aa032b4a6c37c0302b42ceb2111dc260851e8c41da8243b4973829b57dce1"
+  },
+  "verifier_sha256": "3accf72fa372d688e0631fda1d95f9cf40516972127cc8530fc64704e373d994"
+}

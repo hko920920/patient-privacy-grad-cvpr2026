@@ -1,5 +1,17 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 135-CHEXZERO-SINGLE-ALTERNATIVE-REVIEW (2026-09-17 KST)
+
+- 큰 단계2·방향1. 예상20–30분으로 공식논문/source/배포파일과 별도 검증환자 구성을 검토했다. 판정은후보준비에긍정적이며NIH성능은미실행이다.
+- MIMIC-CXR 의료적응/CheXpert모델선택/CLIP초기화를구분했다. 선언된의료훈련에NIH표기는없지만원CLIP웹corpus까지배제한증명은아니다. Fig3XLSX의Emphysema0.8232(n376),Pneumothorax0.7659(n98)를직접확인하고피하폐기종과구분했다.
+- Officialcommit5c341db...의source와MIT/NOTICE를보존하고release10개전부를고정했다. 실제3,535,487,090bytes다운로드260.913초,CPU strict-load검사20.762초. 각302keys누락0/추가rounding0/모델forward0, GPU0, 새NIHpixel0.
+- 공식score는positive-negativecosine softmax후checkpoint10개평균이다. CLIP학습logitscale미사용/동의어탐색금지. 전처리mean101.48761/std83.43944와320→224두단계resize, legacyantialiasFalse를확인했다.
+- 이전소비80명제외후남은development4133명에서새salt/hash로네군20명씩예약했다. 새80명은아직추론에소비되지않았으며기존309명/reserved4213명과교집합0이다. 남은4053명중E-only44명/P-only177명. 이전reference64명/군권고는유지불가라32명/군탐색계획으로정정하되power보장하지않는다.
+- 독립준비검산8197항목PASS(3.816초). 이는무결성확인수로성능표본수가아니다. 원래졸논역할/lockedsets/192생성물/PadChest실패보존.
+- 다음20–35분은고정CheXzero실영상검증한번. Runner/verifier/CPU–GPU/전처리결속후실행한다. 두target중하나라도미통과면현재공동가설에서세번째classifier/prompt구제탐색없이중단한다. 생성·DP는아직안한다.
+- TRACK1_CHEXZERO_REVIEW_20260917.md/HTML과sourceassetpacket,새비공개예약명부,execution_spec,상태문서에기록한다. 일부Nature로컬HTML은브라우저확인페이지여서본문증거로세지않았고웹원문및실제XLSX로검토했다. 원격main확인/push는하지않았다.
+
+
 ## 134-PADCHEST-REAL-IMAGE-VALIDATION (2026-09-17 KST)
 
 - 큰 단계2·방향1, 예상20–35분. 고정 PadChest-only 평가기를 실제 NIH309명309장에 실행했다. 준비뿐인 단계가 아니다.

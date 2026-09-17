@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-09-17T05:40:35.884589+00:00",
+  "official_folder": "https://drive.google.com/drive/folders/1makFLiEMbSleYltaRxw81aBhEDMpVwno",
+  "source_html_sha256": "5d1d12e1fe93e75912e8e9b84fb5d7ab17cda4514ee5adb41f268651f1ebc936",
+  "selection": "ALL ten official release files; no local performance-based checkpoint selection",
+  "files": [
+    {
+      "id": "1bGFF8e--30SLZzDhJAL0qLOLhsq5Ff-7",
+      "filename": "best_128_0.0002_original_15000_0.859.pt",
+      "url": "https://drive.google.com/file/d/1bGFF8e--30SLZzDhJAL0qLOLhsq5Ff-7/view"
+    },
+    {
+      "id": "1xmCrWThAhq7-nPB77Jgaft_KLYcPMuJ_",
+      "filename": "best_128_0.0002_original_8000_0.857.pt",
+      "url": "https://drive.google.com/file/d/1xmCrWThAhq7-nPB77Jgaft_KLYcPMuJ_/view"
+    },
+    {
+      "id": "1S1qkcx0XDW0CRUDvZvpt_kChCNZ3VM2E",
+      "filename": "best_128_5e-05_original_22000_0.855.pt",
+      "url": "https://drive.google.com/file/d/1S1qkcx0XDW0CRUDvZvpt_kChCNZ3VM2E/view"
+    },
+    {
+      "id": "1YCV_8fHTBzMMX3DKzhsBLK4Czrp03ju-",
+      "filename": "best_64_0.0001_original_16000_0.861.pt",
+      "url": "https://drive.google.com/file/d/1YCV_8fHTBzMMX3DKzhsBLK4Czrp03ju-/view"
+    },
+    {
+      "id": "1UptppovinnBS7zl_5OvTj9v7UObCNllA",
+      "filename": "best_64_0.0001_original_17000_0.863.pt",
+      "url": "https://drive.google.com/file/d/1UptppovinnBS7zl_5OvTj9v7UObCNllA/view"
+    },
+    {
+      "id": "1IEdILq06WgbVMBIz2DSyu8oDSJEGlSvh",
+      "filename": "best_64_0.0001_original_35000_0.864.pt",
+      "url": "https://drive.google.com/file/d/1IEdILq06WgbVMBIz2DSyu8oDSJEGlSvh/view"
+    },
+    {
+      "id": "1Q2klR1TE6-GxqTR9C8-r5Y3XxygtPRVt",
+      "filename": "best_64_0.0002_original_23000_0.854.pt",
+      "url": "https://drive.google.com/file/d/1Q2klR1TE6-GxqTR9C8-r5Y3XxygtPRVt/view"
+    },
+    {
+      "id": "1ubtwzK0QPXJBMnRpab3pf1VLgOMqBwtA",
+      "filename": "best_64_5e-05_original_16000_0.858.pt",
+      "url": "https://drive.google.com/file/d/1ubtwzK0QPXJBMnRpab3pf1VLgOMqBwtA/view"
+    },
+    {
+      "id": "1GmsTIzNbICY9yhcVgxUCxXz4dggwbT4F",
+      "filename": "best_64_5e-05_original_18000_0.862.pt",
+      "url": "https://drive.google.com/file/d/1GmsTIzNbICY9yhcVgxUCxXz4dggwbT4F/view"
+    },
+    {
+      "id": "1P3D5qukxg3oX88LrAJwRb_03h59O9jdk",
+      "filename": "best_64_5e-05_original_22000_0.864.pt",
+      "url": "https://drive.google.com/file/d/1P3D5qukxg3oX88LrAJwRb_03h59O9jdk/view"
+    }
+  ]
+}

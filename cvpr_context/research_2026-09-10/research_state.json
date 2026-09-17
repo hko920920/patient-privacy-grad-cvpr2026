@@ -24,14 +24,15 @@
       "meaning": "192-image fixed paired screen is mixed; it is not a successful final test or patient-DP comparison."
     }
   ],
-  "next_task": "One bounded20-30min measurement redesign review: explain fixed PadChest failure without outcome tuning; examine target label definitions, training provenance/NIH overlap and external validation evidence to justify at most one alternative evaluator or clinical assessment route. No model sweep, reserved-confirmation use, targeted generation, solver search or DP execution.",
-  "next_task_output": "A defensible condition-sensitive measurement proposal with explicit validation independence and cost, or a documented measurement-resource blocker; retain the actual failed PadChest scores and all prior generator results.",
+  "next_task": "One bounded20-35min fixed CheXzero real-NIH validation on the fresh reserved80patients: official ten-checkpoint equal-weight ensemble, literal positive/negative templates, official preprocessing with explicit legacy antialias semantics, independent source/output/metric checks. Bind actual runner and verifier before inference. No checkpoint/template selection, reserved-confirmation consumption, third classifier, generated images or DP.",
+  "next_task_output": "Actual new80-patient condition-specific AUC/AP/bootstrap and two-target joint gate; if either target fails, stop classifier shopping for this joint targeted path. If both pass, only propose separately verified generated-artifact/non-DP comparison, not private utility success.",
   "step2_open_items": [
-    "Fixed PadChest validation actually completed: fresh80patients, both target-vs-rest AUC .5308, both predeclared criteria failed. Correct implementation is not metric efficacy.",
-    "New80 evaluator-only patients are now consumed: always exclude evaluator_exclusions_private.csv from subsequent generation reference/confirmation;4133 development candidates remain, including64 E-only/197 P-only.",
-    "Reserved4213 confirmation patients and original final/census/roles remain protected; metadata intersection checks only.",
-    "Targeted private generation utility is unmeasured because the required condition-sensitive evaluator is not validated; prior192-image private-utility failure remains.",
-    "No automatic additional classifier search or generated/DP experiments; next is source-grounded measurement design, at most one justified alternative."
+    "CheXzero candidate justified by official external data and code;10 downloaded checkpoints strictly loaded, but new NIH inference and actual runner remain unexecuted.",
+    "New80 evaluator-only patients are reserved from remaining development; do not use them as generation reference. Prior PadChest80 stay consumed/excluded.4053 method-development candidates remain, including44 E-only; earlier64/reference proposal is infeasible after this reservation, provisional32/condition has no power guarantee.",
+    "NIH absent from declared medical training/selection is not proof of no overlap with original CLIP web pretraining.",
+    "Both fixed targets must pass real discrimination; generated artifact sensitivity remains a separate validity issue.",
+    "CheXzero is the last classifier alternative for the current joint hypothesis; failure requires clinical/annotation/external-measurement resources or suspension, not a third classifier.",
+    "Old192-image private utility failure and PadChest failure remain; targeted private generation utility/DP retention/cost advantage unestablished."
   ],
   "step2_completed_diagnostics": [
     "Core source/code premise review within documented scope",
@@ -981,6 +982,49 @@
         "evaluator_exclusions_private.csv": "e5ed02d33a6524b6b324a77331fee9724822a1d0d94f76240d26e6588be2e879",
         "remaining_development_private.csv": "5590e8217ed5ee614fc04cb626d41e83ef55fa5bbdf9ba4fb8f3cef3e1c86529"
       }
+    },
+    "chexzero_review": {
+      "status": "POSITIVE_SINGLE_ALTERNATIVE_READINESS_NOT_EFFICACY",
+      "completed_utc": "2026-09-17T05:49:39.987145+00:00",
+      "report": "TRACK1_CHEXZERO_REVIEW_20260917.md",
+      "protocol": "TRACK1_CHEXZERO_REVIEW_PROTOCOL_20260917.md",
+      "current_step": 2,
+      "track": 1,
+      "candidate": "CheXzero_official_ten_checkpoint_ensemble",
+      "checkpoints": 10,
+      "checkpoint_bytes": 3535487090,
+      "weights_strict_load_passed": true,
+      "evaluator_validated": false,
+      "new_NIH_pixel_access": 0,
+      "new_model_inference": 0,
+      "new_GPU": 0,
+      "new_generation": 0,
+      "new_DP": 0,
+      "fresh_reserved_evaluator_patients": 80,
+      "reserved_manifest": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\chexzero_evaluator_plan_20260917_v1\\selected_images_private.csv",
+      "selected_model_results_consumed": false,
+      "remaining_method_development": 4053,
+      "remaining_exclusive_emphysema": 44,
+      "later_reference_plan_per_condition": 32,
+      "reference_power_established": false,
+      "reserved_confirmation_used": false,
+      "original_roles_changed": false,
+      "previous_padchest_gate_passed": false,
+      "private_generation_utility_established": false,
+      "DP_allowed_to_expand": false,
+      "final_allowed_classifier_alternative": true,
+      "source_revision": "5c341db0fe0db2f663a2c136c7120a8b303f1d11",
+      "independent_preparation_checks": 8197,
+      "source_sha256": {
+        "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\chexzero_evaluator_plan_20260917_v1\\execution_spec.json": "cc3ae5291ff3b5298bc2571e4a17165bd0ae2dfa101e3de5ca8942714373952d",
+        "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\chexzero_evaluator_plan_20260917_v1\\cohort_contract.json": "1f44943c3e8b3d002e4012114dc0625503e7bc86a5fc2743bbdc64d3b97c8dc7",
+        "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\readiness_verification.json": "abd4363f53cdaaccdbd6421b5808eb53fde17eff866398f72b92760b4265aa4a",
+        "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\asset_inspection.json": "8349763278beed9439b69cf7caae76870fb0abd1ac4da0fc508f1a3f2a81a4aa",
+        "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\checkpoint_acquisition.json": "366a8fbe820f7464376385c16b46ab527145efa50504225f4f13b7337cda4010",
+        "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\official_release.json": "2f4a5b5425758968529e9af019c59203125f7939ce95b8ae8df01b150a2764cb",
+        "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\figure3_source.xlsx": "370aa032b4a6c37c0302b42ceb2111dc260851e8c41da8243b4973829b57dce1",
+        "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\additional_sources.json": "4670dcdc9fd9fefb0333403b58add1546f8e739dfe9fb429c85e6eaf16b28c87"
+      }
     }
   },
   "updated_utc": "2026-09-16T15:09:04.481045+00:00",
@@ -1034,7 +1078,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
+  "current_result_report": "TRACK1_CHEXZERO_REVIEW_20260917.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -2436,7 +2480,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
+  "next_task_plan_report": "TRACK1_CHEXZERO_REVIEW_20260917.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -2913,7 +2957,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
+  "current_planning_report": "TRACK1_CHEXZERO_REVIEW_20260917.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -3177,7 +3221,7 @@
       "verification.json": "d0be5b08d3d6f7dd1342face6493f7e0fb7689f06073bf047f2048f3d916a882"
     }
   },
-  "latest_user_execution_scope_20260917": "Complete fixed evaluator actual real-image validation, source/metric verification and records; no generated image/DP expansion.",
+  "latest_user_execution_scope_20260917": "Review and concretely pin one defensible alternative evaluator, its assets, independent patient reservation and stopping rule; no new medical model inference in this review.",
   "pre_patient_usage_current_result_report_20260917": "TRACK1_TARGET_EVALUATION_INVENTORY_RESULTS_20260917.md",
   "completed_patient_usage_audit_20260917": {
     "status": "POSITIVE_SEPARATE_CVPR_REFERENCE_FEASIBILITY_NOT_EFFICACY",
@@ -3265,6 +3309,51 @@
       "selected_images_private.csv": "3b194f0404fb7293ea80fe4edfdf787101679feca4804b36792b2abde30ffcfd",
       "evaluator_exclusions_private.csv": "e5ed02d33a6524b6b324a77331fee9724822a1d0d94f76240d26e6588be2e879",
       "remaining_development_private.csv": "5590e8217ed5ee614fc04cb626d41e83ef55fa5bbdf9ba4fb8f3cef3e1c86529"
+    }
+  },
+  "pre_chexzero_review_result_report_20260917": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
+  "last_actual_model_result_report": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
+  "completed_chexzero_review_20260917": {
+    "status": "POSITIVE_SINGLE_ALTERNATIVE_READINESS_NOT_EFFICACY",
+    "completed_utc": "2026-09-17T05:49:39.987145+00:00",
+    "report": "TRACK1_CHEXZERO_REVIEW_20260917.md",
+    "protocol": "TRACK1_CHEXZERO_REVIEW_PROTOCOL_20260917.md",
+    "current_step": 2,
+    "track": 1,
+    "candidate": "CheXzero_official_ten_checkpoint_ensemble",
+    "checkpoints": 10,
+    "checkpoint_bytes": 3535487090,
+    "weights_strict_load_passed": true,
+    "evaluator_validated": false,
+    "new_NIH_pixel_access": 0,
+    "new_model_inference": 0,
+    "new_GPU": 0,
+    "new_generation": 0,
+    "new_DP": 0,
+    "fresh_reserved_evaluator_patients": 80,
+    "reserved_manifest": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\chexzero_evaluator_plan_20260917_v1\\selected_images_private.csv",
+    "selected_model_results_consumed": false,
+    "remaining_method_development": 4053,
+    "remaining_exclusive_emphysema": 44,
+    "later_reference_plan_per_condition": 32,
+    "reference_power_established": false,
+    "reserved_confirmation_used": false,
+    "original_roles_changed": false,
+    "previous_padchest_gate_passed": false,
+    "private_generation_utility_established": false,
+    "DP_allowed_to_expand": false,
+    "final_allowed_classifier_alternative": true,
+    "source_revision": "5c341db0fe0db2f663a2c136c7120a8b303f1d11",
+    "independent_preparation_checks": 8197,
+    "source_sha256": {
+      "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\chexzero_evaluator_plan_20260917_v1\\execution_spec.json": "cc3ae5291ff3b5298bc2571e4a17165bd0ae2dfa101e3de5ca8942714373952d",
+      "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\chexzero_evaluator_plan_20260917_v1\\cohort_contract.json": "1f44943c3e8b3d002e4012114dc0625503e7bc86a5fc2743bbdc64d3b97c8dc7",
+      "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\readiness_verification.json": "abd4363f53cdaaccdbd6421b5808eb53fde17eff866398f72b92760b4265aa4a",
+      "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\asset_inspection.json": "8349763278beed9439b69cf7caae76870fb0abd1ac4da0fc508f1a3f2a81a4aa",
+      "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\checkpoint_acquisition.json": "366a8fbe820f7464376385c16b46ab527145efa50504225f4f13b7337cda4010",
+      "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\official_release.json": "2f4a5b5425758968529e9af019c59203125f7939ce95b8ae8df01b150a2764cb",
+      "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\figure3_source.xlsx": "370aa032b4a6c37c0302b42ceb2111dc260851e8c41da8243b4973829b57dce1",
+      "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\chexzero_review_20260917_v1\\additional_sources.json": "4670dcdc9fd9fefb0333403b58add1546f8e739dfe9fb429c85e6eaf16b28c87"
     }
   }
 }

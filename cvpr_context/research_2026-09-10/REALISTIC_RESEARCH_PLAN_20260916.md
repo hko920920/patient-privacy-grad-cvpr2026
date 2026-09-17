@@ -1,5 +1,7 @@
 # 의료 생성모델 환자 보호 연구: 현실적인 다음 계획
 
+**2026-09-17 最新단일 대안 검토 — 후보 준비에는 긍정적, 실제 성능은 미실행:** [CheXzero 공식 근거·10개weight·새80명예약·중단선](TRACK1_CHEXZERO_REVIEW_20260917.md). 외부 PadChest 원자료의 폐기종AUC0.8232/기흉0.7659를 확인하고 공개ensemble10개3.29GiB를 실제 확보·strict-load했다. 새NIH pixel/모델추론/GPU0이다. 새80명을 예약하면 development E-only64→44명으로 줄어 이후reference64명/군 권고는 유지할 수 없고32명/군을 탐색 계획값으로 둔다. Reserved confirmation은 보존했다. 다음은20–35분 고정 NIH 실영상 검증 한 번이며 어느target이라도 실패하면classifier탐색을종료한다. 기존실패와private효용미확인유지. 아래 최신/다음은 이전 이력이다.
+
 **2026-09-17 最新 실제 평가기 검증 — 나쁜 결과, 두 질환 판정에 사용 불가:** [309명 실제 추론·전처리·통계 검산](TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md). 새 개발80명에서 폐기종·기흉 AUC가 각각0.5308로 사전 기준을 모두 통과하지 못했다. 정상 대조 일부 신호와 target 간 판별력을 구분하며, correctness PASS를 성능 성공으로 바꾸지 않는다. 새 evaluator80명은 결과를 소비했으므로 후속 생성 reference에서 제외한다. 잔여 개발4,133명/폐기종-only64명과 reserved confirmation4,213명은 보존한다. 기존192장 실패도 유지하며 새생성·DP0이다. 다음은20–30분 조건 평가방법의 근거 검토이며, 자동classifier탐색/생성 확대는 하지 않는다. 큰 단계2·방향1, 실행중 없음. 아래 최신/다음은 이전 이력이다.
 
 **2026-09-17 실제 사용 이력 감사 완료:** [별도CVPR 후보8,426명과 두target 분할](TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md). 자료 구성은 긍정적이다. Original private_train8476명 중 실제시험학습50명을 제외했고 추가 미확인사용hit는없었다. 후보273명폐기종/559명기흉을 사전hash로 반분할해 development135/268명, confirmation138/291명 확보 가능성을 확인했다. 졸논 원본분할은 바꾸지 않았고 새CVPR 모델별 train/reference 교집합을 이후 실행에서도 검사해야 한다. 특히 미래 졸논 K5/K10 모델은 이 reference를 학습할 수 있으므로 그대로 CVPR 독립비교에 가져오면 안 된다. 다음20–35분은 고정 PadChest 평가기의 전처리·출력·실제질환 구별력 확인이며, 기존소비공개324명 후보는 target/confirmation과 분리한다. 실제private 효용과DP는 여전히 미확인이고 기존192장 실패는 유지한다.

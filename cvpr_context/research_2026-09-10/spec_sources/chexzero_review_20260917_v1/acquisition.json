@@ -1,0 +1,168 @@
+{
+  "created_utc": "2026-09-17T05:39:09.997498+00:00",
+  "revision": "5c341db0fe0db2f663a2c136c7120a8b303f1d11",
+  "files": [
+    {
+      "path": "source/README.md",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/README.md",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/README.md",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 10366,
+      "sha256": "0387b8787e26b190ff6ffd38862ae78018be15d6e393c50a97d86d33bf1efc28"
+    },
+    {
+      "path": "source/LICENSE",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/LICENSE",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/LICENSE",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 1070,
+      "sha256": "df79d7fddeb1395599f38d5f0f4448e9ff9f43aa87c046988f9aef40fdf47cc1"
+    },
+    {
+      "path": "source/NOTICE.md",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/NOTICE.md",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/NOTICE.md",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 1455,
+      "sha256": "a875dbff136eba3e6c35ead19e2fb074b55e01488523be58b94da4e9570ab866"
+    },
+    {
+      "path": "source/zero_shot.py",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/zero_shot.py",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/zero_shot.py",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 23516,
+      "sha256": "010725cda6bba7996946ce0aa826fcd8223bff293f8596ca5cb234fafe2ae548"
+    },
+    {
+      "path": "source/clip.py",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/clip.py",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/clip.py",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 8350,
+      "sha256": "cad7578b336821be30996c8ce75b573f2445edb72d1238bc2e121453ee93b76f"
+    },
+    {
+      "path": "source/model.py",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/model.py",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/model.py",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 18314,
+      "sha256": "e71725f5690d9f0724d3dfc5dc80e7c10f9e39662ec06c8875de9f154b128c1f"
+    },
+    {
+      "path": "source/data_process.py",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/data_process.py",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/data_process.py",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 4889,
+      "sha256": "8c5c72c6a504914930e5293a9eebbef664b8c23a16872e5cb0e9ce5e21cff574"
+    },
+    {
+      "path": "source/preprocess_padchest.py",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/preprocess_padchest.py",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/preprocess_padchest.py",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 8281,
+      "sha256": "f103493989e6bc97fbb928626587c09b0a70f772b925f14fa49a603f900a95b7"
+    },
+    {
+      "path": "source/run_preprocess.py",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/run_preprocess.py",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/run_preprocess.py",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 2268,
+      "sha256": "06a1dc30a85a40c24ad9577bcdd067afa20dee6ea48fd204a565df54d13628e6"
+    },
+    {
+      "path": "source/run_train.py",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/run_train.py",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/run_train.py",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 5319,
+      "sha256": "1342c35a0ba3d13334bb46609288636307a10e6198439d97e533c69ea9de05a9"
+    },
+    {
+      "path": "source/train.py",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/train.py",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/train.py",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 8549,
+      "sha256": "6913bd8fb580467996fb709494a3ef919fa5e628c937454a04389db96b95098b"
+    },
+    {
+      "path": "source/requirements.txt",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/requirements.txt",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/requirements.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 497,
+      "sha256": "2a74b69320d0b8f70c2cff86220e8213c57d7ff764df6a17e165af2b0e75ddab"
+    },
+    {
+      "path": "source/simple_tokenizer.py",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/simple_tokenizer.py",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/simple_tokenizer.py",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 5704,
+      "sha256": "c6c554c66cf1d2d5837a89c23a3ce6ce6076dce3469386d0ece6eb775856787f"
+    },
+    {
+      "path": "source/bpe_simple_vocab_16e6.txt.gz",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/bpe_simple_vocab_16e6.txt.gz",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/bpe_simple_vocab_16e6.txt.gz",
+      "content_type": "application/octet-stream",
+      "bytes": 1356917,
+      "sha256": "924691ac288e54409236115652ad4aa250f48203de50a9e4722a6ecd48d6804a"
+    },
+    {
+      "path": "source/notebooks/zero_shot.ipynb",
+      "url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/notebooks/zero_shot.ipynb",
+      "final_url": "https://raw.githubusercontent.com/rajpurkarlab/CheXzero/5c341db0fe0db2f663a2c136c7120a8b303f1d11/notebooks/zero_shot.ipynb",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 34244,
+      "sha256": "fdc1a5a7819d0f9f8271e351d10264d5dd6fa5812f0f50ad8c4930bcf8f93ac4"
+    },
+    {
+      "path": "official_repository.json",
+      "url": "https://api.github.com/repos/rajpurkarlab/CheXzero/commits/5c341db0fe0db2f663a2c136c7120a8b303f1d11",
+      "final_url": "https://api.github.com/repos/rajpurkarlab/CheXzero/commits/5c341db0fe0db2f663a2c136c7120a8b303f1d11",
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 5503,
+      "sha256": "41775b35b91618ce16c3eaf321d6d3d5bcab8c91e2a5bfaf4feeee551f0bd6b1"
+    },
+    {
+      "path": "official_drive.html",
+      "url": "https://drive.google.com/drive/folders/1makFLiEMbSleYltaRxw81aBhEDMpVwno",
+      "final_url": "https://drive.google.com/drive/folders/1makFLiEMbSleYltaRxw81aBhEDMpVwno",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 395973,
+      "sha256": "5d1d12e1fe93e75912e8e9b84fb5d7ab17cda4514ee5adb41f268651f1ebc936"
+    },
+    {
+      "path": "paper.html",
+      "url": "https://www.nature.com/articles/s41551-022-00936-9",
+      "final_url": "https://www.nature.com/articles/s41551-022-00936-9",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 3038,
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea"
+    },
+    {
+      "path": "table4.html",
+      "url": "https://www.nature.com/articles/s41551-022-00936-9/tables/4",
+      "final_url": "https://www.nature.com/articles/s41551-022-00936-9/tables/4",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 3038,
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea"
+    },
+    {
+      "path": "table5.html",
+      "url": "https://www.nature.com/articles/s41551-022-00936-9/tables/5",
+      "final_url": "https://www.nature.com/articles/s41551-022-00936-9/tables/5",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 3038,
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea"
+    }
+  ],
+  "new_model_inference": 0,
+  "new_NIH_pixel_access": 0
+}

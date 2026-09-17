@@ -1,0 +1,177 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>방향1: CheXzero 근거·자산·별도 검증 준비</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p><h1>방향1: CheXzero 단일 대안 검토 결과</h1>
+<p><strong>판정: 후보 선택 근거와 로컬 실행 준비에는 긍정적이다. CheXzero10-checkpoint ensemble을 마지막 대안 하나로 고정해 새 NIH80명에서 한 번 검증할 근거를 확보했다. 아직 NIH 성능은 실행하지 않았고, 평가기 채택이나 private 생성 효용 성공은 아니다.</strong></p>
+<p>2026-09-17, 큰 단계2·방향1. <a href="track1_chexzero_review_protocol.html">점수 확인 전 검토/후속 규칙</a> · <a href="track1_padchest_validation_results.html">직전 PadChest 실영상 실패</a>. 이번에는 문헌과 공식 source를 대조하고, weight를 실제 확보/로딩하고, 새 환자 명부를 예약했다. 새 NIH pixel 접근·이미지/text encoder forward·GPU·생성·학습·DP는 모두0이다.</p>
+<h2>1. 왜 이 후보를 한 번 검증할 만한가</h2>
+<p>Tiu et al., <em>Expert-level detection of pathologies from unannotated chest X-ray images via self-supervised learning</em>, Nature Biomedical Engineering(2022)의 공식 방법은 MIMIC-CXR image/report로 의료 적응을 하고 CheXpert validation으로 모델을 선택한다. NIH를 의료 적응/선택 데이터로 썼다는 표기는 없다. 다만 CLIP 초기화의 원 웹 corpus 전체에 대한 환자 배제증명은 아니므로 <strong>NIH를 절대로 본 적 없다고 주장하지 않는다.</strong> <a href="https://www.nature.com/articles/s41551-022-00936-9">공식 원문</a>.</p>
+<p>이번에는 ‘임의 pathology를 질의할 수 있다’만으로 후보를 고른 것이 아니다. Fig.3의 공개 source XLSX에서 실제 두 질환의 외부 PadChest 결과를 확인했다.</p>
+<table>
+<thead>
+<tr>
+<th>원문의 PadChest 소견</th>
+<th style="text-align: right;">AUC</th>
+<th style="text-align: right;">95%구간</th>
+<th style="text-align: right;">해당 소견 n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Emphysema</td>
+<td style="text-align: right;"><strong>0.8232</strong></td>
+<td style="text-align: right;">0.8018–0.8428</td>
+<td style="text-align: right;">376</td>
+</tr>
+<tr>
+<td>Pneumothorax</td>
+<td style="text-align: right;"><strong>0.7659</strong></td>
+<td style="text-align: right;">0.7187–0.8071</td>
+<td style="text-align: right;">98</td>
+</tr>
+<tr>
+<td>Subcutaneous emphysema — 다른 소견</td>
+<td style="text-align: right;">0.9092</td>
+<td style="text-align: right;">0.8694–0.9460</td>
+<td style="text-align: right;">41</td>
+</tr>
+</tbody>
+</table>
+<p>폐기종 근거로 피하폐기종0.9092를 가져오지 않았다. 두 target에 대한 외부 실영상 판별 근거는 있지만, 이 수치는 <strong>우리 NIH 환자군, target 간 직접 대조, 생성 artifact에서의 성능이 아니다.</strong> <a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41551-022-00936-9/MediaObjects/41551_2022_936_MOESM4_ESM.xlsx">Fig.3 공개 원자료</a>. 다운로드한 workbook SHA는 <code>370aa032b4a6c37c0302b42ceb2111dc260851e8c41da8243b4973829b57dce1</code>이다.</p>
+<p>이 근거는 기존 PadChest-only DenseNet과 다른 의료 적응 데이터/학습 방식의 후보를 선택하는 이유가 된다. 어떤 후보든 잘 될 것이라는 보장은 없고, 두 질환의 실제 NIH 구별력이 다음 질문이다. 다른 classifier는 실행하지 않았다.</p>
+<h2>2. 이름만 정한 것이 아니라 실제 자산을 확보했다</h2>
+<p>공식 repository commit <strong><code>5c341db0fe0db2f663a2c136c7120a8b303f1d11</code></strong>을 고정했다. README가 연결한 Google Drive 공개 release의10개를 전부 받았다. 좋은 이름/filename 점수의 checkpoint 하나를 골라 NIH 결과를 본 것이 아니다.10개 전체의 equal-weight ensemble을 하나의 고정 후보로 사용한다. <a href="https://github.com/rajpurkarlab/CheXzero/blob/5c341db0fe0db2f663a2c136c7120a8b303f1d11/README.md">공식 README</a>, <a href="https://drive.google.com/drive/folders/1makFLiEMbSleYltaRxw81aBhEDMpVwno">공식 release</a>.</p>
+<ul>
+<li>총 <strong>3,535,487,090bytes = 3.293GiB</strong>, 다운로드260.9초.</li>
+<li>각 checkpoint302개 state key/151,277,313 tensor elements. ViT-B/32,224px,context77,embedding512로 모두 일치.</li>
+<li>tensor-only CPU 로딩, 모든 tensor finite, 공식 architecture strict-load, 누락 key0, 저장값과 로딩값의 추가 rounding 차이0.</li>
+<li>검사20.762초. 가중치를 로딩한 것과 환자의 모델 결과를 계산한 것을 구분한다. <strong>모델 forward0회</strong>다.</li>
+<li>환경은 기존 PyTorch2.6.0+cu124 등을 유지했다. old requirements 전체 설치/downgrade는 하지 않았다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>공식 checkpoint</th>
+<th>실제 SHA256</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>best_128_0.0002_original_15000_0.859.pt</td>
+<td><code>620ee11d836f65104cd77c3764fd11ee787d709b0873ea58ca1acbf89c40c50c</code></td>
+</tr>
+<tr>
+<td>best_128_0.0002_original_8000_0.857.pt</td>
+<td><code>c1ec95b173e8dcd007320e6c33c2ae29023f5f38efc208add99702150c0a72f7</code></td>
+</tr>
+<tr>
+<td>best_128_5e-05_original_22000_0.855.pt</td>
+<td><code>1e3ae7be8d92caf09aa101ab81840b39ee4b1cad3111522250800566834622bf</code></td>
+</tr>
+<tr>
+<td>best_64_0.0001_original_16000_0.861.pt</td>
+<td><code>8f5f2679d205476b2e8f8c5112d010008b85ee3d17286cf4d301e50857282006</code></td>
+</tr>
+<tr>
+<td>best_64_0.0001_original_17000_0.863.pt</td>
+<td><code>ba3f39d6981c252148d7c3eff37979f2f28d29d193259eda06aaae6b5df596f5</code></td>
+</tr>
+<tr>
+<td>best_64_0.0001_original_35000_0.864.pt</td>
+<td><code>40ad37ea1933b6ae021a570d1a228e1b21ce1f7f4741348050766c365de214e9</code></td>
+</tr>
+<tr>
+<td>best_64_0.0002_original_23000_0.854.pt</td>
+<td><code>060d9743c5580b35ce42b602adc1a6dd8cd77e06055a0699584eb111757d9460</code></td>
+</tr>
+<tr>
+<td>best_64_5e-05_original_16000_0.858.pt</td>
+<td><code>6af517141430a61ac4084d8d08cf77d713dda8386eb1bb4afa4ea621b3483a6b</code></td>
+</tr>
+<tr>
+<td>best_64_5e-05_original_18000_0.862.pt</td>
+<td><code>0bc03704af2c5db952d2b9f59af1d93b7baa58b2346c953abf556d00eeccf7dc</code></td>
+</tr>
+<tr>
+<td>best_64_5e-05_original_22000_0.864.pt</td>
+<td><code>567a2efbabc6a02370de6e18178afd22ee72d7e6f29a789db1535e5c798d6ae8</code></td>
+</tr>
+</tbody>
+</table>
+<p>Source의 MIT LICENSE/NOTICE를 함께 보존했다. 공식 README는 code 라이선스를 설명하고 weights를 공개 배포한다. 이번 연구용 로컬 확보를 넘어 weight의 별도 재배포/상업적 사용 조건까지 확인했다고 쓰지는 않는다. <a href="https://github.com/rajpurkarlab/CheXzero/blob/5c341db0fe0db2f663a2c136c7120a8b303f1d11/LICENSE">LICENSE</a>, <a href="https://github.com/rajpurkarlab/CheXzero/blob/5c341db0fe0db2f663a2c136c7120a8b303f1d11/NOTICE.md">NOTICE</a>.</p>
+<h2>3. 점수 계산을 실제 source 기준으로 고정했다</h2>
+<p>공식 notebook의 template은 <code>("{}", "no {}")</code>다. 이번 query는 다음 네 문자열로 고정했다.</p>
+<p><code>Emphysema</code> / <code>no Emphysema</code> / <code>Pneumothorax</code> / <code>no Pneumothorax</code>.</p>
+<p>각 모델 m에서 정규화된 image/text embedding의 cosine을 z+와 z−라고 하면:</p>
+<p><code>p_m = exp(z+) / (exp(z+) + exp(z−)) = sigmoid(z+ − z−)</code></p>
+<p>최종 score는 <strong>모델10개의 p_m 평균</strong>이다. 공식 <code>predict</code>/<code>run_softmax_eval</code> 경로에는 학습된 CLIP logit_scale 곱이 없다. Temperature를 따로 탐색하지 않는다. Ensemble 전에 sigmoid를 적용하므로 평균 margin에 sigmoid를 한 번 적용하는 것과 일반적으로 같지 않다. <a href="https://github.com/rajpurkarlab/CheXzero/blob/5c341db0fe0db2f663a2c136c7120a8b303f1d11/zero_shot.py">고정 zero_shot.py</a>, <a href="https://github.com/rajpurkarlab/CheXzero/blob/5c341db0fe0db2f663a2c136c7120a8b303f1d11/notebooks/zero_shot.ipynb">공식 notebook</a>.</p>
+<p>이는 raw positive cosine만 보는 것보다 질문에 맞는 공식 점수 정의지만, NIH에 교정된 확률이나 질환 간 동일 scale은 아니다. 단일 checkpoint/template/동의어 중 좋은 결과를 고르지 않고,10개의 개별 결과를 final metric 선택에 쓰지 않는다.</p>
+<h2>4. 실제 전처리와 최신 환경 차이를 확인했다</h2>
+<p>공식 파일 변환과 inference를 연결하면8bit 영상→종횡비 유지320 LANCZOS/padding→gray3채널→0–255 intensity에서 mean101.48761/std83.43944 정규화→tensor bicubic224다. 일반 CLIP RGB mean/std나 앞선 XRV[-1024,1024]를 재사용하면 다른 입력이 된다. <a href="https://github.com/rajpurkarlab/CheXzero/blob/5c341db0fe0db2f663a2c136c7120a8b303f1d11/data_process.py">data_process.py</a>, <a href="https://github.com/rajpurkarlab/CheXzero/blob/5c341db0fe0db2f663a2c136c7120a8b303f1d11/zero_shot.py">zero_shot.make</a>.</p>
+<p>Pillow에서 제거된 <code>Image.ANTIALIAS</code>는 LANCZOS enum으로 치환해야 한다. 또 원 requirements의 torchvision0.11.3 tensor Resize 기본 antialias는 False였고 현재 버전과 다르므로 <strong>False를 명시</strong>해야 한다. <a href="https://github.com/pytorch/vision/blob/v0.11.3/torchvision/transforms/transforms.py">해당 버전 Resize source</a>. 아직 실제 환자 pixel의 변환/CPU–GPU 추론 대조는 실행하지 않았고 다음 packet의 검사 항목이다.</p>
+<p>공식 아키텍처를 checkpoint에서 완전히 구성할 수 있으므로 원 CLIP weight를 다시 받아 임시 초기화할 필요는 없다. 그 대신 strict full-state loading을 확인했고, missing key를 무시하는 경로는 금지했다. 실제 후속 평가에서는 공식CPU경로와 GPU FP32 경로의 고정입력 feature/score 대조 및 전처리 검산을 결속한다.</p>
+<h2>5. 새 환자80명 예약과 reference 규모 정정</h2>
+<p>이미 PadChest 평가에 소비한80명을 새 CheXzero 통과 판정에 재사용하지 않는다. 남은 development4,133명에서 별도 salt/hash로 네 군20명씩 총80명을 <strong>metadata만으로 예약</strong>했다. 점수를 보고 명부를 고른 것이 아니다. 같은 환자의 보유 PA label 합집합, target/control 상호배타성, 해당 label 영상1장의 hash선택은 직전 정의와 같다.</p>
+<table>
+<thead>
+<tr>
+<th>군</th>
+<th style="text-align: right;">새 평가기 예약 전</th>
+<th style="text-align: right;">이번 예약</th>
+<th style="text-align: right;">이후 method-development 후보</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Emphysema+/Pneumothorax−</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;"><strong>44</strong></td>
+</tr>
+<tr>
+<td>Pneumothorax+/Emphysema−</td>
+<td style="text-align: right;">197</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">177</td>
+</tr>
+<tr>
+<td>두 target 없는 Effusion</td>
+<td style="text-align: right;">774</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">754</td>
+</tr>
+<tr>
+<td>세 질환 없는 환자의 No Finding 영상</td>
+<td style="text-align: right;">2,152</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">2,132</td>
+</tr>
+<tr>
+<td>Dual / 기타</td>
+<td style="text-align: right;">51 /895</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">51 /895</td>
+</tr>
+<tr>
+<td>전체</td>
+<td style="text-align: right;">4,133</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">4,053</td>
+</tr>
+</tbody>
+</table>
+<p>신규80명과 기존 평가309명 교집합0, reserved confirmation4,213명과 교집합0, 기존 기록상 훈련/모델결과 소비 환자와 교집합0이다. 원래 졸논 역할·test/calibration·official census를 변경하지 않았다. 아직80명의 이미지 content나 모델 결과를 열지 않았으므로 <strong>새 소비 환자라기보다 다음 평가용 예약 환자</strong>다. 실제 실행 후 소비 상태를 갱신해야 한다.</p>
+<p>이 배정에서는 <strong>기존 reference64명/군 권고를 유지할 수 없다.</strong> Development의 E-only가44명으로 줄기 때문이다. 다음 소규모 생성 개발평가의 계획값을32명/군으로 정정했다. Reserved confirmation의 실제 reference 명부는 아직 고르지 않았고 개발용으로 쓰지 않는다.32명은 자원상 가능한 탐색 규모일 뿐 검정력/논문 최종 표본 충분성을 보장하지 않는다. 생성분포 지표는 표본 불확실성을 보고해야 하고, 더 큰 집합이 필요한 주장을 하려면 외부 자료 등 별도 자원이 필요하다.</p>
+<p>원본 파일의 존재/bytes와 inventory의 저장 SHA/공식 metadata를 대조했으나 이번에 새80장의 pixel이나 실제 SHA를 다시 읽지는 않았다. 실제 validation 시작 전 선택80장 SHA/decode를 확인하는 항목이 남아 있다.</p>
+<h2>6. 다음 한 번의 검증과 중단선</h2>
+<p>다음 <strong>20–35분</strong> 패키지는 새80명에 실제 CheXzero 추론을 하고 저장 scores/metric을 검산하는 일이다. 공식10개 모델은 순차 로딩해 GPU 메모리를 제한한다. 주 image-encoder 계산은80×10=800image-examples, replay/text는 별도이며 실제 시간은 측정해서 갱신한다. 이미 weights를 받았으므로3.29GiB 다운로드를 다시 포함하지 않는다. 현재는 runner/독립계산 코드와 최종 실행 contract가 아직 없다.</p>
+<p>각 질환의 target-vs-rest AUC≥0.70와95%하한&gt;0.50, target-vs-opposite AUC≥0.60와95%하한&gt;0.50을 그대로 요구한다. Normal/effusion 대조, AP와prevalence, 군별 patient bootstrap2,000회도 유지한다. 양 target 모두 통과해야 하며 결과를 보고 기준/환자/prompt/checkpoint를 바꾸지 않는다.</p>
+<ul>
+<li><strong>둘 다 통과:</strong> real-image evaluator 관문만 통과한 것이다. 생성 artifact에 대한 취약성 확인을 포함한 고정 비DP 생성 비교가 다음이다.</li>
+<li><strong>하나 또는 둘 다 실패:</strong> 현재 폐기종·기흉 공동 가설의 classifier 탐색을 종료한다. 세 번째/네 번째 모델이나 synonym/ensemble subset으로 구제하지 않는다.</li>
+<li><strong>Real 통과, artifact 취약:</strong> 해당 score 단독으로 질환 생성 개선을 판정하지 않는다. 임상 판독/annotation 또는 독립적인 추가 측정 근거가 필요하다.</li>
+</ul>
+<p>어느 경우에도 이번 검토가 private-only/pooled 생성 효용이나 patient-DP 실행을 승인하는 결과는 아니다. 원래192장 실험의 private 효용 실패와 PadChest 평가기 실패를 모두 보존한다.</p>
+<h2>7. 검증과 기록 경계</h2>
+<p>독립 준비 검산 <strong>8,197항목 PASS</strong>, 3.816초. 공식 공개10개 전체 membership, checkpoint 실제bytes/hash, 저장된 strict-load 결과, 새 cohort의 독립 재구성, 이전 source/192장/PadChest outputs 불변, 원문의 E/P 및 피하폐기종 source행을 대조했다. 성능 표본 수나 별도 모델 forward 재현 횟수가 아니다.</p>
+<p>Source/asset 기록은 <code>spec_sources/chexzero_review_20260917_v1</code>, 새 비공개 명부/실행 계획은 <code>code_working/_reports/chexzero_evaluator_plan_20260917_v1</code>에 있다. 고정 <a href="../../code_working/_reports/chexzero_evaluator_plan_20260917_v1/execution_spec.json">execution spec</a>은 candidate/cohort 계약이며 실제 runner contract와 구분한다.</p>
+<p>일부 Nature URL을 일반 HTTP로 저장한 <code>paper.html/table4.html/table5.html</code>은3038byte의 브라우저 확인 페이지다. 이 파일들을 논문 본문을 확보한 증거로 세지 않았다. 원문 Methods/Table은 공식 웹 reader에서 읽었고, 위 실제 수치는 정상 다운로드한 Fig.3 XLSX에서 확인했다. 원격 main 확인/push는 이번 작업 범위가 아니다.</p>
+<p><strong>현재 결정: CheXzero 한 번을 검증할 근거와 자산은 확보됐다. 실제 NIH 성능 판단은 아직 시작 전이다.</strong></p></main></body></html>

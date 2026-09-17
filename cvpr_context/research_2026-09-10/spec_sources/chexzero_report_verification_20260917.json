@@ -1,0 +1,25 @@
+{
+  "status": "PASS_CHEXZERO_REVIEW_REPORT_STATE_AND_HISTORY",
+  "created_utc": "2026-09-17T05:53:27.448501+00:00",
+  "checks": 345,
+  "report_sha256": "f9b64d582a2fec76ba0ea333ecbaa777963b8270a26714e389569c4004728154",
+  "protocol_sha256": "a99e6fd14b49bae9c643390371f9b659b0331833350cb8171e309a159fa95982",
+  "decision_sha256": "329853cb2416d2c372eb84108d7408055aa56d3239d8be030b2e91fd4b1126a6",
+  "state_sha256": {
+    "research_state.json": "e8d86dead00df33673868bdba17ee6b03fe31b744c14f707d7788edd8e9c5546",
+    "patient_baseline_spec.json": "1a3fd0e6de688bf73dd3cede2ea0fa916ea92b4504442248177d47e284a04f6b"
+  },
+  "new_pages_local_links": 8,
+  "existing_review_static": {
+    "rows": 79,
+    "checked_local_links": 1161,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "evaluator_validated": false,
+  "actual_CheXzero_NIH_inference": 0,
+  "fresh_evaluator_patients_reserved": 80,
+  "remaining_development": 4053,
+  "reserved_confirmation_used": false,
+  "verifier_sha256": "14f1931dd4986c3edc868652230cc403df4b8412c56c12b7ce2304484c876129"
+}
