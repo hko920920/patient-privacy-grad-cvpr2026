@@ -1,5 +1,7 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-17 최신 자료 점검 — 현재 배정에서 targeted generation 보류:** [환자분리 reference·평가기 결과](TRACK1_TARGET_EVALUATION_INVENTORY_RESULTS_20260917.md). 자료 확보에는 부정적이다. 전체 NIH local inventory에서도 학습·CVPR 역할 제외 후 폐기종3명/기흉6명, 과거 평가 제외 후3명/1명뿐이다. 후보511장 실제파일 확인과 독립2,124항목 검산을 완료했다. 평가기는 PadChest-only 파일/label 후보가 있으나 판별력 검증 전이다. 새GPU·생성·DP0, 과거192장 실패·모든 역할·잠긴test/census 보존. 가설이 반증된 것이 아니라 현재 배정에서 검증자료가 부족한 상태다. 다음은 별도 CVPR 데이터 구성의 타당성/사용이력 검토20–30분이며, 큰 단계2·방향1을 유지한다. 아래 최신/다음은 이전 이력이다.
+
 **2026-09-17 최신 CPU 검토 — 제한적으로 긍정적인 구체적 후속 근거:** [사적 자료/출력 방향 결과](TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md). Private-only의 출력 변화는 단순 scalar가 아니고 여러 private subset에서도 작은 개발MSE 개선이 남았다. Private에 더 많이 있는 폐기종·기흉 조건을 직전 생성 평가가 직접 다루지 않았다는 자료 차이도 확인했다. 다만 backbone도 해당 질환을 봤고 target reference는 부족하다. 192장 생성 효용 미통과·patient-DP 보류는 유지한다. 안정된delta·metadata차이를 privacy기여 성공조건으로 바꾸지 않는다. 다음은 실재 target/reference와 공정한 평가 가능성 확인15–25분이며 새GPU0, 큰단계2·방향1이다. 아래 최신/다음은 이전 이력이다.
 
 **2026-09-16 최신 실제 결과 — public/pooled 192장 비교 완료:** [전체 결과와 원본 대응 그림](TRACK1_MEDICAL_HEAD_RESULTS_20260916.md). **혼합적이며 사적 추가 생성 효용은 미통과다.** 새 의료 backbone의 head는 실제 생성 지표를 변화시켰고 공개전용의 조건별 KID가 7.98% 낮아졌다. 그러나 pooled는 공개전용보다 KID 0.99% 악화, precision 동일, density·coverage 낮음이었다. 해당 prompt cosine의 +0.009668은 긍정적 관측이나 질환 간 상대 구별 개선은 아니다. 전체 가림 판독도 일관된 public/pooled 우열을 확인하지 못했다. 큰단계 2·방향 1에서 이 개발 패키지는 완료했으며 DP 단계 통과로 세지 않는다. 다음은 공통 보정과 실제 사적 추가 정보의 설계 검토 20–30분이다. 같은 backbone·CFG·seed를 재조정하지 않고, 구체적인 정보/표현 변경 근거 전에 새 GPU 실행을 붙이지 않는다. 아래 head 미실행·다음 안내는 이전 이력이다.

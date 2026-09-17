@@ -1,0 +1,30 @@
+{
+  "status": "PASS_TARGET_INVENTORY_REPORT_BINDINGS",
+  "created_utc": "2026-09-16T15:37:37.961789+00:00",
+  "old_HTML_check": {
+    "rows": 79,
+    "checked_local_links": 1149,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_local_links": 7,
+  "broken_links": 0,
+  "state_fields": [
+    "current_step",
+    "next_task",
+    "next_task_output",
+    "step2_open_items",
+    "current_result_report",
+    "current_planning_report",
+    "active_execution"
+  ],
+  "independent_checks": 2124,
+  "actual_public_files_verified": 511,
+  "prior_generated_images_unchanged": 192,
+  "old_failed_adoption_preserved": true,
+  "new_GPU": 0,
+  "new_generation": 0,
+  "report_sha256": "a3e274452ef4345224397ef20e3868891f04a585470a7b4c3a3d6d8acefe037f",
+  "decision_sha256": "0a424b8849a7c85443e6bf7576840b0d59cb874ba4a176d916b7fc10cf45b6d5",
+  "verifier_sha256": "4d3bf5eac1e4743e34afd0443f5245e4af6894d02bf12491dac073e08fbc281e"
+}
