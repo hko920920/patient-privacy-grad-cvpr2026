@@ -1,5 +1,13 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 142-DOWNSTREAM-BOUNDED-PROFILE (2026-09-17 KST)
+
+- 큰 단계2·방향1에서 실제 실행 경로와 비용을 확인했다.11,277장/4805명 raw SHA·decode·224cache, 역할 간 환자/영상/SHA0중복을 확인했다. Final532/reserved4213 pixel·prediction0, 원 역할 변경0. 새 개발4053명의 pixel과 비용 측정용128장 inference는 소비로 기록했다.
+- 생성28장+3회 재현=31decode,931UNet calls/0backward. Private-only witness·W0·복구·private 재실행 exact/고정오차 검산 통과. 생성2.600–2.638초/장, peak3.930GiB. 독립 DDIM840/correction630 검산 통과; 임상 정확성/사적 효용 주장은 하지 않았다.
+- 최초 classifier7군×7step×2=98update는 자료 namespace 충돌로 실패했다. 실자료 public을 합성 public이 덮어쓴 것을 독립 검산이 검출했다. 정확한 재실행이더라도 대조군이 틀렸으므로 유효 비교로 인정하지 않았다. 원 코드/계약/weights/실패를 보존했다.
+- data_v2/train_v2로 real/*와 synthetic/*를 분리했다.49개 CPU 배치와 수정 S1 한step×2회 exact 통과. 총100update 제한 때문에 수정7군 전체 실학습은 미실행이다. 종합 MIXED, full profile pass=false. 다음 별도14update 재검증10–15분, 본512장/21run은 아직 미실행이며 예상90–150분은 거친 계획치다.
+- 준비 중 original/re-solved weight1e-15 차이, SHA대소문자, 일반raw row와 full witness schema 오류도 실패본과 수정 원인을 보존했다. 어떤 것도 seed·prompt·tolerance·효용 gate 사후 변경이 아니다. [결과](CVPR%20주제%20탐색/research_2026-09-10/track1_downstream_profile_results.html). 로컬 실행·기록이며 원격 main 확인/push는 하지 않았다.
+
 ## 141-DOWNSTREAM-MASTER-PROTOCOL (2026-09-17 KST)
 
 - 사용자 검토의 핵심인 final 누출 위험을 반영했다. 비DP 가능성·DP 설계·모든 비교군을 비잠금 개발자료에서 완성하고, 전체 모델/분석 동결 후 expert final을 평가하도록 통합 계획을 작성했다. 큰 단계2·방향1 유지.

@@ -1,5 +1,7 @@
 # 현재 상태와 기록 권위
 
+**2026-09-17 최신 실제 profile — 혼합, classifier 전체 통과 아님:** [실행 결과와 오류 수정](CVPR%20주제%20탐색/research_2026-09-10/track1_downstream_profile_results.html). 실자료11,277장 검증과28장 생성·3회 재현은 통과했다. Classifier 최초98회는 실자료 public이 합성 public으로 덮어써져 대조군 구성이 틀렸다. 별도 수정본의49개 배치와 S1 한step×2회는 통과했지만 수정된7군 전체 학습 재검사는 남았다. 총100update 제한을 지켰으며 AUROC/AP·사적 효용·DP·expert final은 미실행이다. 다음은 기존 profile bank로7군×1step×2회만 재검증(10–15분)한 뒤 본실험 진입 여부를 정한다. Final532명·reserved4213명은 보존했다. 아래 최신/다음 표시는 각 시점 이력이다.
+
 **2026-09-17 최신 통합 계획 — expert final은 개발 이후에:** [기흉 downstream 통합 명세](CVPR%20주제%20탐색/research_2026-09-10/track1_downstream_master_protocol.html). 설계·자료에는 긍정적이며 새 방법 성능은 미실행이다. 공개672명813장, private80명320장, 개발2027명/2026명을 명부로 재계산했다. 개발에서 비DP·DP와 강한 비교군을 완성한 뒤 전체 weights·분석을 동결하고 expert532명을 평가한다. 다음은 runner와 작은 시간 profile45–75분. 큰 단계2·방향1, 실행 중 모델 없음.
 
 **2026-09-17 expert 환자 감사 — 최종 후보 확보:** [532명810장 환자 중복 감사](CVPR%20주제%20탐색/research_2026-09-10/nih_expert_patient_overlap_results.html). 기록된 학습·개발 소비와 교집합0이며 final466명+census66명이다. 기흉86명·폐기종7명 양성 환자는 전부 final에 있다. 새 개발자료0명이며 기존 잠금을 유지한다.810장 존재·bytes 확인, pixel/추론/생성/DP0. 저장 시 깨진 한글을 원 보고서에 맞춰 복구했다.

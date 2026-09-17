@@ -1,0 +1,21 @@
+{
+  "status": "PASS_REPORT_BINDINGS_NOT_EFFICACY",
+  "profile_judgment": "mixed_generator_pass_original_classifier_fail_limited_repair",
+  "all_profile_gates_passed": false,
+  "source_contracts_and_archived_failure_sources_unchanged": true,
+  "old_four_reports_unchanged": true,
+  "synchronized_state_fields": [
+    "current_step",
+    "current_result_report",
+    "last_actual_model_result_report",
+    "next_task",
+    "step2_active_task",
+    "completed_downstream_profile_20260917"
+  ],
+  "new_html_local_links_checked": 16,
+  "generated_HTML_has_replacement_character": false,
+  "model_reruns": 0,
+  "new_training_updates": 0,
+  "record_sha256": "8831e0afa50ea3647c5d30c35567f12a3bf4ae139e6af23293e24c79ee51428b",
+  "results_html_sha256": "6232bce686b849f90046c6e29b27faaa1ef2162aae0d3f98027288d8172040c9"
+}
