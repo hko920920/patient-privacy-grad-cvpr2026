@@ -1,0 +1,65 @@
+{
+  "status": "PASS_PLAN_METADATA_AND_SAVED_RESULT_BINDING",
+  "created_utc": "2026-09-17T11:56:40.505590+00:00",
+  "scope": "No model, raw-pixel, clinical or new efficacy validation; future runtime preflight remains pending.",
+  "schedule_rows": 3584,
+  "common_public_slots": 512,
+  "patient_weights_verified": true,
+  "source_files": 89,
+  "independently_recomputed_loss_means": [
+    {
+      "arm": "R0",
+      "first50": 0.0427005703766675,
+      "last50": 0.00010791677899154214
+    },
+    {
+      "arm": "R1",
+      "first50": 0.0715782638041613,
+      "last50": 0.00016579341992231395
+    },
+    {
+      "arm": "S0",
+      "first50": 0.2699309955413143,
+      "last50": 0.004193736211746
+    },
+    {
+      "arm": "S1",
+      "first50": 0.29902822678287827,
+      "last50": 0.006294156090007164
+    },
+    {
+      "arm": "S2",
+      "first50": 0.29662290240327516,
+      "last50": 0.017576252645424877
+    },
+    {
+      "arm": "S3",
+      "first50": 0.29889737675587336,
+      "last50": 0.010513078361982479
+    },
+    {
+      "arm": "Dreal",
+      "first50": 0.19192217267428835,
+      "last50": 0.003937652960109214
+    }
+  ],
+  "local_links_checked": 481,
+  "broken_links": 0,
+  "plan_sha256": "2db17a53fc5c89b77d966083da7c9fcd8476aaee903ddc41f401a96bf0be6e3c",
+  "protocol_sha256": "d6d9bf3be726d7c82db1cc5ede6a7878320395dfec4d55e83a34a28ebd9917c8",
+  "record_sha256": "9c8b5771da1152d9cec2f454c7f9f34ea1d81ad0fbd263f35821a4fcce90caff",
+  "verifier_sha256": "ef9760238eb5b6751fc92ccc96edc778944745c495ad65bf20a16ecd833aace9",
+  "state_sha256": {
+    "research_state.json": "9aa117e3b59619fdcce5f9e680fbcad48da50b8c5a3185eba538b269e5baaf9c",
+    "patient_baseline_spec.json": "51cfa1f6ff6da0905a25e431c9321508ee3d97b6a7fb544b92418dd0194baf1f"
+  },
+  "existing_completed_results_unchanged": true,
+  "full64_branch_closed": true,
+  "new_model_forwards": 0,
+  "new_training": 0,
+  "new_generation": 0,
+  "new_patient_pixels": 0,
+  "DP": 0,
+  "expert_opened": false,
+  "reserved_opened": false
+}

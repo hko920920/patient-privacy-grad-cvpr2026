@@ -1,5 +1,15 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 146-EXISTING-LORA-TRANSFER-COMPARISON-DESIGN (2026-09-17 KST)
+
+- 사용자 요청대로 새 알고리즘/주제 선정 대신 기존 LoRA의 public-only 대 public+private 대조 명세 하나를 작성했다. 기존 full64 종료를 취소하지 않았으며 이번 실제 모델·GPU·학습·생성·환자 pixel 접근은0이다.
+- 저장21run의 loss/개발예측/양성영상노출만 점검했다. R1 BCE 처음50 .071578→마지막50 .000166, 공개양성6장각1025–1113회. LR1e-4 calibration400→800에서 학습loss는 더 낮아졌지만 selectionAUROC .547047→.538445. 낮은 개발 score와 학습/일반화 괴리를 기록하되 원인으로 반복노출/labelnoise를 확정하지 않았다. 표와 저장loss plot,JSON을 남겼다.
+- 기존 load_unet과 public trainer를 읽어 E4 rank8 A/B 계속학습·freshAdamW가 가능한 코드 기반을 확인했다. 조건부epsilon loss/양branch LoRA와 CFG-aware head 목적의 차이를 명시했다. DP-LoRA 공식웹은403이어서 이미 확보한 원논문PDF Fig1/§3을 확인했고 전체재현/성공보장으로 쓰지 않았다.
+- 두 arm에448성공update×batch4를 고정했다. Public32/64만의 L_public은 영상당28회,public32+private80의 L_pooled는 환자당16회·공개영상8회/사적영상4회로 정확환자질량. 3584개의 예정presentation을 outcome-independent metadata 일정으로 저장했다. Public-only 순서는 실제privateID/label에 의존하지 않는다. 224snapshot은 진단/재개용, 생성endpoint448만이며 사후checkpoint선택없음.
+- 기존128cell/prompt/실제initiallatent와 동일한256장 신규 LoRA생성, classifier2arm×3seed=6run을 계획했다. 기존calibration/초기state/real draw/source교체비율/400step유지, old7arm은parity성립때만 재사용. Gate는 L_pooled가L_public/R1/R0 모두meanAUROC+.01,positive2/3,AP비감소. 실패시자동adapter순회/seed추가/DP/final없음.
+- 새rawcache는선택384장만, public64/private320분리하며광범위혼합cache재사용금지. Runner·runtime parity·추가source연결은아직미구현. 다음구현+한정실행잠정65–100분이며이번실측아님. 상태/HTML을계획완료·실행0으로갱신하고실제성능포인터는기존음성결과에유지한다.
+- 별도 metadata 검증은3584개일정행·공통공개512slot·환자질량·노출량·저장loss평균을확인했다. 결속source89개와로컬링크481개확인,깨진링크0,기존completed결과객체불변PASS. 이는계획/저장집계검증이며LoRA추론·학습·효용검증이아니다. spec_sources/lora_transfer_plan_verification_20260917.json에기록했다.
+
 ## 145-CURRENT-HEAD-BRANCH-CLOSED (2026-09-17 KST)
 
 - 사용자 검토의 no-go 결론을 반영해 E4/full64/방법당128장/고정 계산량 ResNet18 분기를 음성 결과로 닫았다. 기존 실험·gate·512장·21run 수치는 변경하지 않았다. DP 확대와 expert final 개방은 중단 상태다.

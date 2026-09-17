@@ -1,5 +1,7 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-17 기존 LoRA 대조 계획 완료:** [동일 public32/private80의 사적 합성 효용 전달 대조](TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md). 현재 full64 종료를 유지하고, E4 rank8 계속학습의 공개전용/공개+사적 두 조건을 별도 개발 명세로 고정했다.448update씩·256장·분류기6run 계획이며 새 모델 실행은0이다. 기존 loss/예측/노출의 짧은 점검은 낮은 downstream 성능의 한계를 재확인했지만 실패 원인을 분리하지 않는다. 같은 개발 입력·과거 대조를 재사용하므로 독립확인이 아니다. 새runner/runtime검증미완료,expert532/reserved4213/DP보존,final_ready=false. 실제 마지막 효용 결과는 아래 full64 비DP 관문 실패다.
+
 **2026-09-17 현재 full64 방법 분기 종료:** [종료 결정과 원인 해석의 경계](TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md). 비DP 사적 합성자료 관문 실패는 이 구성에 대한 나쁜 결과이며 DP 확대를 종료한다. Dreal의 제한적 양성 신호와 생성 전달 미통과를 구분하되 head 하나의 인과적 실패로 확정하지 않는다. Pooled head는 공개32/사적80 환자 질량이며 downstream 공개813장을 학습 통계로 혼동하지 않는다. 새 GPU 실험이나 대체 방법은 선정하지 않았다. Expert532/reserved4213은 보존하고 큰 단계2·final_ready=false를 유지한다. 아래 본 개발 실험이 마지막 실제 성능 결과다.
 
 **2026-09-17 본 비DP downstream 완료 — 사적 합성자료 관문 미통과:** [512장·공개 calibration·21run 실제 결과](TRACK1_DOWNSTREAM_DEVELOPMENT_RESULTS_20260917.md). **방법 효용에는 나쁜 결과다.** R1/S1/S2/S3/Dreal 평균AUROC는 .54461/.53626/.54911/.52855/.59617이다. S2는S1보다+.01285지만 R1보다+.00450, 양의seed1/3으로 미달했다. S3도 미통과다. Dreal의 직접 실자료 개선과 현재 합성자료의 효용 전달을 구분한다. 새DP로 확대하지 않는다. 실행·독립검산은 통과했고 expert532/reserved4213은 닫아두었다. 다음은 저장 결과의 한계와 연구 방향 판단이며 자동 GPU 구제 실험은 없다. 큰 단계2·방향1·final_ready=false 유지. 아래 최신/다음 문단은 과거 기록이다.

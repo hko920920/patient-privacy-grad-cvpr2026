@@ -1,0 +1,1124 @@
+{
+  "schema": "lora-private-transfer-comparison/v1",
+  "status": "FROZEN_DESIGN_NOT_EXECUTED",
+  "created_utc": "2026-09-17T11:52:57.411147+00:00",
+  "question": "Can an existing LoRA adaptation transmit incremental private-role downstream utility under the fixed development conditions?",
+  "current_full64_branch_closed": true,
+  "new_method_claim": false,
+  "DP_allowed": false,
+  "final_ready": false,
+  "expert_allowed": false,
+  "reserved_allowed": false,
+  "arms": [
+    "L_public",
+    "L_pooled"
+  ],
+  "starting_checkpoint_sha256": "7bc5ce421cc02091e8c3812676e9c27dc58330afce5e9384abd8edc9f61a3b91",
+  "adaptation": {
+    "kind": "Continue existing E4 LoRA A/B with fresh optimizer; no merge, no new adapter, no head",
+    "rank": 8,
+    "alpha": 8,
+    "target_modules": [
+      "to_q",
+      "to_k",
+      "to_v",
+      "to_out.0"
+    ],
+    "trainable_parameters": 1659904,
+    "scheduler_prediction_type": "epsilon_runtime_verified",
+    "objective": "Conditional epsilon MSE; uniform patient then image; not guided-head regression",
+    "conditioning_dropout": 0.0,
+    "training_resolution": 256,
+    "batch_size": 4,
+    "committed_steps_per_arm": 448,
+    "total_committed_steps": 896,
+    "checkpoint_primary": 448,
+    "diagnostic_checkpoint_only": 224,
+    "checkpoint_selection": "Fixed terminal step448 in both arms; no metric-based checkpoint selection or fallback",
+    "optimizer": {
+      "name": "AdamW",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.01,
+      "foreach": false,
+      "fused": false
+    },
+    "gradient_norm_cap": 1.0,
+    "gradient_accumulation": 1,
+    "precision": "FP16 frozen base and autocast; FP32 trainable LoRA and loss",
+    "scaler_initial": 1024.0,
+    "max_skipped_attempts_per_arm": 16,
+    "training_repeats": 1,
+    "training_schedule_salt": "lora-transfer-comparison-20260917-v1",
+    "cache": "Rebuild selected384 only with fixed256 preprocessing/VAE mode/scaling/text prompts; split public64/private320 caches; do not load broad historical mixed cache"
+  },
+  "expected_exposure": {
+    "L_public": {
+      "presentations": 1792,
+      "unique_patients": 32,
+      "unique_images": 64,
+      "patient_exposures": [
+        56
+      ],
+      "weak_P_presentations": 28,
+      "public_image_exposures": [
+        28
+      ],
+      "private_image_exposures": []
+    },
+    "L_pooled": {
+      "presentations": 1792,
+      "unique_patients": 112,
+      "unique_images": 384,
+      "patient_exposures": [
+        16
+      ],
+      "weak_P_presentations": 140,
+      "public_image_exposures": [
+        8
+      ],
+      "private_image_exposures": [
+        4
+      ]
+    }
+  },
+  "pooled_patient_mass": {
+    "public": 0.2857142857142857,
+    "private": 0.7142857142857143
+  },
+  "generation": {
+    "new_images": 256,
+    "images_per_arm": 128,
+    "positive": 64,
+    "negative": 64,
+    "negative_prompts": {
+      "normal": 22,
+      "effusion": 21,
+      "cardiomegaly": 21
+    },
+    "cells": [
+      {
+        "cell": "C000_1",
+        "latent": "L000",
+        "seed": 900694405940898496,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C000_0",
+        "latent": "L000",
+        "seed": 900694405940898496,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C001_1",
+        "latent": "L001",
+        "seed": 391128970507383942,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C001_0",
+        "latent": "L001",
+        "seed": 391128970507383942,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C002_1",
+        "latent": "L002",
+        "seed": 294382822320519737,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C002_0",
+        "latent": "L002",
+        "seed": 294382822320519737,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C003_1",
+        "latent": "L003",
+        "seed": 854172809309312432,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C003_0",
+        "latent": "L003",
+        "seed": 854172809309312432,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C004_1",
+        "latent": "L004",
+        "seed": 789806622596820098,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C004_0",
+        "latent": "L004",
+        "seed": 789806622596820098,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C005_1",
+        "latent": "L005",
+        "seed": 1044113915237671754,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C005_0",
+        "latent": "L005",
+        "seed": 1044113915237671754,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C006_1",
+        "latent": "L006",
+        "seed": 361974098321113069,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C006_0",
+        "latent": "L006",
+        "seed": 361974098321113069,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C007_1",
+        "latent": "L007",
+        "seed": 566092000886443045,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C007_0",
+        "latent": "L007",
+        "seed": 566092000886443045,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C008_1",
+        "latent": "L008",
+        "seed": 307772407334183572,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C008_0",
+        "latent": "L008",
+        "seed": 307772407334183572,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C009_1",
+        "latent": "L009",
+        "seed": 13022821568681101,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C009_0",
+        "latent": "L009",
+        "seed": 13022821568681101,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C010_1",
+        "latent": "L010",
+        "seed": 991694684861756543,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C010_0",
+        "latent": "L010",
+        "seed": 991694684861756543,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C011_1",
+        "latent": "L011",
+        "seed": 435885231837574453,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C011_0",
+        "latent": "L011",
+        "seed": 435885231837574453,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C012_1",
+        "latent": "L012",
+        "seed": 941726784942104463,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C012_0",
+        "latent": "L012",
+        "seed": 941726784942104463,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C013_1",
+        "latent": "L013",
+        "seed": 643689365473620016,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C013_0",
+        "latent": "L013",
+        "seed": 643689365473620016,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C014_1",
+        "latent": "L014",
+        "seed": 136298176984679059,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C014_0",
+        "latent": "L014",
+        "seed": 136298176984679059,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C015_1",
+        "latent": "L015",
+        "seed": 762595025273914862,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C015_0",
+        "latent": "L015",
+        "seed": 762595025273914862,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C016_1",
+        "latent": "L016",
+        "seed": 212676885733497995,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C016_0",
+        "latent": "L016",
+        "seed": 212676885733497995,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C017_1",
+        "latent": "L017",
+        "seed": 309319685775631837,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C017_0",
+        "latent": "L017",
+        "seed": 309319685775631837,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C018_1",
+        "latent": "L018",
+        "seed": 1012093439602698803,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C018_0",
+        "latent": "L018",
+        "seed": 1012093439602698803,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C019_1",
+        "latent": "L019",
+        "seed": 456003244829717885,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C019_0",
+        "latent": "L019",
+        "seed": 456003244829717885,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C020_1",
+        "latent": "L020",
+        "seed": 320759397498671810,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C020_0",
+        "latent": "L020",
+        "seed": 320759397498671810,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C021_1",
+        "latent": "L021",
+        "seed": 947051704184113955,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C021_0",
+        "latent": "L021",
+        "seed": 947051704184113955,
+        "label": 0,
+        "prompt": "normal"
+      },
+      {
+        "cell": "C022_1",
+        "latent": "L022",
+        "seed": 794619092957633633,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C022_0",
+        "latent": "L022",
+        "seed": 794619092957633633,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C023_1",
+        "latent": "L023",
+        "seed": 390849292654792665,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C023_0",
+        "latent": "L023",
+        "seed": 390849292654792665,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C024_1",
+        "latent": "L024",
+        "seed": 157031213551137242,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C024_0",
+        "latent": "L024",
+        "seed": 157031213551137242,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C025_1",
+        "latent": "L025",
+        "seed": 1000850280218627142,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C025_0",
+        "latent": "L025",
+        "seed": 1000850280218627142,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C026_1",
+        "latent": "L026",
+        "seed": 78794290915560027,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C026_0",
+        "latent": "L026",
+        "seed": 78794290915560027,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C027_1",
+        "latent": "L027",
+        "seed": 750037668574697659,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C027_0",
+        "latent": "L027",
+        "seed": 750037668574697659,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C028_1",
+        "latent": "L028",
+        "seed": 354578163212559928,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C028_0",
+        "latent": "L028",
+        "seed": 354578163212559928,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C029_1",
+        "latent": "L029",
+        "seed": 209449493437953964,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C029_0",
+        "latent": "L029",
+        "seed": 209449493437953964,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C030_1",
+        "latent": "L030",
+        "seed": 125824053265513111,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C030_0",
+        "latent": "L030",
+        "seed": 125824053265513111,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C031_1",
+        "latent": "L031",
+        "seed": 308618305390203285,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C031_0",
+        "latent": "L031",
+        "seed": 308618305390203285,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C032_1",
+        "latent": "L032",
+        "seed": 804684720444921976,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C032_0",
+        "latent": "L032",
+        "seed": 804684720444921976,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C033_1",
+        "latent": "L033",
+        "seed": 1108936003462490143,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C033_0",
+        "latent": "L033",
+        "seed": 1108936003462490143,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C034_1",
+        "latent": "L034",
+        "seed": 583062407791255198,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C034_0",
+        "latent": "L034",
+        "seed": 583062407791255198,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C035_1",
+        "latent": "L035",
+        "seed": 550716760062397240,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C035_0",
+        "latent": "L035",
+        "seed": 550716760062397240,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C036_1",
+        "latent": "L036",
+        "seed": 543412604406009789,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C036_0",
+        "latent": "L036",
+        "seed": 543412604406009789,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C037_1",
+        "latent": "L037",
+        "seed": 217345325910617535,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C037_0",
+        "latent": "L037",
+        "seed": 217345325910617535,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C038_1",
+        "latent": "L038",
+        "seed": 1072067777481727750,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C038_0",
+        "latent": "L038",
+        "seed": 1072067777481727750,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C039_1",
+        "latent": "L039",
+        "seed": 857768419587510633,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C039_0",
+        "latent": "L039",
+        "seed": 857768419587510633,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C040_1",
+        "latent": "L040",
+        "seed": 738069323866734697,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C040_0",
+        "latent": "L040",
+        "seed": 738069323866734697,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C041_1",
+        "latent": "L041",
+        "seed": 292943189634952741,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C041_0",
+        "latent": "L041",
+        "seed": 292943189634952741,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C042_1",
+        "latent": "L042",
+        "seed": 792748540628903989,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C042_0",
+        "latent": "L042",
+        "seed": 792748540628903989,
+        "label": 0,
+        "prompt": "effusion"
+      },
+      {
+        "cell": "C043_1",
+        "latent": "L043",
+        "seed": 912565868072161595,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C043_0",
+        "latent": "L043",
+        "seed": 912565868072161595,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C044_1",
+        "latent": "L044",
+        "seed": 602121672266107439,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C044_0",
+        "latent": "L044",
+        "seed": 602121672266107439,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C045_1",
+        "latent": "L045",
+        "seed": 913850698447153808,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C045_0",
+        "latent": "L045",
+        "seed": 913850698447153808,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C046_1",
+        "latent": "L046",
+        "seed": 927782466143421084,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C046_0",
+        "latent": "L046",
+        "seed": 927782466143421084,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C047_1",
+        "latent": "L047",
+        "seed": 881095438703758168,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C047_0",
+        "latent": "L047",
+        "seed": 881095438703758168,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C048_1",
+        "latent": "L048",
+        "seed": 90866255269504721,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C048_0",
+        "latent": "L048",
+        "seed": 90866255269504721,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C049_1",
+        "latent": "L049",
+        "seed": 104784225018558388,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C049_0",
+        "latent": "L049",
+        "seed": 104784225018558388,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C050_1",
+        "latent": "L050",
+        "seed": 507353689053765965,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C050_0",
+        "latent": "L050",
+        "seed": 507353689053765965,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C051_1",
+        "latent": "L051",
+        "seed": 937124322774200206,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C051_0",
+        "latent": "L051",
+        "seed": 937124322774200206,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C052_1",
+        "latent": "L052",
+        "seed": 69755969191649084,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C052_0",
+        "latent": "L052",
+        "seed": 69755969191649084,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C053_1",
+        "latent": "L053",
+        "seed": 324686377909186696,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C053_0",
+        "latent": "L053",
+        "seed": 324686377909186696,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C054_1",
+        "latent": "L054",
+        "seed": 902046105449070611,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C054_0",
+        "latent": "L054",
+        "seed": 902046105449070611,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C055_1",
+        "latent": "L055",
+        "seed": 561071523099235441,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C055_0",
+        "latent": "L055",
+        "seed": 561071523099235441,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C056_1",
+        "latent": "L056",
+        "seed": 178284048839241080,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C056_0",
+        "latent": "L056",
+        "seed": 178284048839241080,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C057_1",
+        "latent": "L057",
+        "seed": 57296021970221671,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C057_0",
+        "latent": "L057",
+        "seed": 57296021970221671,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C058_1",
+        "latent": "L058",
+        "seed": 1004440612494482739,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C058_0",
+        "latent": "L058",
+        "seed": 1004440612494482739,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C059_1",
+        "latent": "L059",
+        "seed": 814015306942473014,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C059_0",
+        "latent": "L059",
+        "seed": 814015306942473014,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C060_1",
+        "latent": "L060",
+        "seed": 687038967900307978,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C060_0",
+        "latent": "L060",
+        "seed": 687038967900307978,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C061_1",
+        "latent": "L061",
+        "seed": 107072630273862156,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C061_0",
+        "latent": "L061",
+        "seed": 107072630273862156,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C062_1",
+        "latent": "L062",
+        "seed": 444052027734812323,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C062_0",
+        "latent": "L062",
+        "seed": 444052027734812323,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      },
+      {
+        "cell": "C063_1",
+        "latent": "L063",
+        "seed": 182688899401263157,
+        "label": 1,
+        "prompt": "pneumothorax"
+      },
+      {
+        "cell": "C063_0",
+        "latent": "L063",
+        "seed": 182688899401263157,
+        "label": 0,
+        "prompt": "cardiomegaly"
+      }
+    ],
+    "existing_actual_initials_sha256": "324eb57a39fb41317f0dd09b8b353e784d584c8ae729d7f8e83153d07f28091a",
+    "CFG": 7.5,
+    "steps": 30,
+    "eta": 0.0,
+    "precision": "FP32",
+    "resolution": 256,
+    "reuse_is_development_not_independent_confirmation": true,
+    "branches": "Both conditional and unconditional UNet branches use the adapted LoRA; no full64 head"
+  },
+  "classifier": {
+    "new_runs": 6,
+    "seeds": [
+      11,
+      23,
+      37
+    ],
+    "architecture": "ImageNet ResNet18",
+    "lr": 0.0001,
+    "steps": 400,
+    "batch": 32,
+    "weight_decay": 0.0001,
+    "real_public": 16,
+    "synthetic": 16,
+    "positive_per_half": 8,
+    "negative_per_half": 8,
+    "reuse_initial_states_real_draws_and_synthetic_cells": true,
+    "recalibration": false,
+    "sampling": "Within each requested class patient/cell uniform then image uniform",
+    "new_source_namespaces": [
+      "real/public",
+      "synthetic/lora_public",
+      "synthetic/lora_pooled"
+    ]
+  },
+  "evaluation": {
+    "role": "method_development",
+    "patients": 2026,
+    "images": 5047,
+    "weak_positive_images": 223,
+    "seed_metrics_then_mean": true,
+    "all_six_runs_before_outcomes": true,
+    "primary": "L_pooled minus L_public",
+    "gate_comparators": [
+      "L_public",
+      "R1",
+      "R0"
+    ],
+    "mean_AUROC_min_delta": 0.01,
+    "positive_seed_minimum": 2,
+    "mean_AP_min_delta": 0.0,
+    "gate_purpose": "Development investment heuristic only; no automatic DP or final",
+    "reference_arms": [
+      "R0",
+      "R1",
+      "S0",
+      "S1",
+      "S2",
+      "S3",
+      "Dreal"
+    ],
+    "cluster_bootstrap": 2000,
+    "bootstrap_seed": 99767195075549955,
+    "descriptive_comparisons": [
+      "L_pooled-L_public",
+      "L_pooled-R1",
+      "L_pooled-R0",
+      "L_pooled-S0",
+      "L_public-S1",
+      "L_pooled-S3",
+      "(L_pooled-L_public)-(S3-S1)"
+    ],
+    "causal_head_capacity_identification": false
+  },
+  "execution_readiness": {
+    "runner_implemented": false,
+    "patient_sampler_runtime_verified": false,
+    "E4_continuation_runtime_verified": false,
+    "downstream_new_source_binding_verified": false,
+    "full_execution_started": false,
+    "required_preflight": "New runner, source guards and per-phase allowlists, E4 initializer parity, patient schedule/exposure check, new batch-provider with unchanged classifier math replay; source SHA freeze before models"
+  },
+  "future_budget": {
+    "generator_optimizer_successes": 896,
+    "generation_primary_images": 256,
+    "classifier_optimizer_successes": 2400,
+    "classifier_preflight_update_cap": 8,
+    "extra_generation_decode_cap": 2,
+    "implementation_and_full_execution_estimate_minutes": [
+      65,
+      100
+    ],
+    "estimate_is_not_measurement": true
+  },
+  "new_model_forwards": 0,
+  "new_training": 0,
+  "new_generation": 0,
+  "new_patient_pixels": 0,
+  "source_sha256": {
+    "CVPR 주제 탐색\\research_2026-09-10\\TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md": "d6d9bf3be726d7c82db1cc5ede6a7878320395dfec4d55e83a34a28ebd9917c8",
+    "CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\lora_transfer_stored_review_20260917.json": "491cf8ab1f7a591e1cdc74bd12bed5d311e43256259fb139423843c0c2031885",
+    "CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\lora_transfer_saved_loss_20260917.png": "d187dfe7d1f1c3817a63421bdc7a468a7db730d717c82823ba1ef5dd0e2e0298",
+    "CVPR 주제 탐색\\research_2026-09-10\\prepare_lora_transfer_plan_20260917.py": "7d71259ce2054dc45bd127e3e8b2ec85c3e8d84a06ad62e6d94e780f38b9f6d6",
+    "code_working\\_reports\\medical_head_20260916_v1\\images.json": "d895817ff43d4e74342c3406b319315627828fff0f142e32ec159fc159acb431",
+    "code_working\\_reports\\downstream_profile_20260917_v3\\real_manifest_private.csv": "3cd8fa6f6df2c381ed8a05b46c3284f9c4c269e483ce48323147ffd7afb89653",
+    "code_working\\_reports\\public_medical_backbone_20260916_v1\\checkpoints\\E4.pt": "7bc5ce421cc02091e8c3812676e9c27dc58330afce5e9384abd8edc9f61a3b91",
+    "code_working\\_reports\\downstream_development_20260917_v1\\contract.json": "88543635a25bf396b8ed2b82bab1f4f4074685e41a2f3e66ce045410a53178fd",
+    "code_working\\_reports\\downstream_development_20260917_v1\\calibration_choice.json": "9f46645d3922ddd0d24ae9daa7d9e152b80fad9a7f52e284d8d07131692d0892",
+    "code_working\\_reports\\downstream_development_20260917_v1\\result.json": "c6c2bad3a729050910361edd681a12a6cc3cd11c34e8216ef36d661bce5fb038",
+    "code_working\\_reports\\downstream_development_20260917_v1\\verification.json": "6b0399fe136ded068242363bc21ebc68581908f4a3b93da5773b63726ddc668a",
+    "code_working\\_reports\\downstream_development_20260917_v1\\generation_inputs.pt": "324eb57a39fb41317f0dd09b8b353e784d584c8ae729d7f8e83153d07f28091a",
+    "code_working\\_reports\\downstream_development_20260917_v1\\generation_manifest.json": "62b5b64399a0065e39478a30b680ef5653d5455a8dc96d663356e2a9893d058f",
+    "CVPR 주제 탐색\\research_2026-09-10\\TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md": "83b14e96691b2d6c7bad5f77852bca87a4cd0921a2c8b12064cb4efad483cb3a",
+    "CVPR 주제 탐색\\research_2026-09-10\\pdfs\\B08.pdf": "d8a994c761423685ae5432afd3c36e499b29f8f5a2cbabb9b3334be57bae3776",
+    "code_working\\_reports\\lora_transfer_plan_20260917_v1\\training_images_private.json": "91ea141c2f4da3ff0efe552da8c48f5704634ab9a7405a07a9fa2b21e1ba8206",
+    "code_working\\_reports\\lora_transfer_plan_20260917_v1\\training_schedule_private.csv": "57ba7386981317fd6f4a476ed670dec5319fa0eda317d6aa8dc810e9fe99c00c",
+    "code_working\\_reports\\lora_transfer_plan_20260917_v1\\expected_exposure.json": "8cbf653f43d6f25c087bb741aaaf0f17f448cbaca331f89eb68c606b9eea5286",
+    "code_working\\u_patient_audit\\models.py": "cd1a0b0eca3f4460eadc247d62960eb50f60d09cc4c39c2ed279e5a3afb2fd91",
+    "code_working\\public_medical_backbone\\run_pilot.py": "a46795cbe9cb803e733ddccdfc612281f202c1b407a561f401db364981bea374",
+    "code_working\\downstream_utility\\data_v2.py": "e3754b83bd7a3bc0f5b5366a5647b9a17e5c3455d935537561964aba79a7c393",
+    "code_working\\downstream_utility\\train_v2.py": "0d4d6c35c781038f01533ce67b3f1cb4feb2c83ef8661145f9690febf92bbdc0",
+    "code_working\\downstream_utility\\development_v1.py": "25d639239a20506e163a800043d1cda924c5679f1c350fd6346c98bb5d63b37f",
+    "code_working\\frozen_residual_head\\run_lora_positive_control.py": "0e7cdff90ce5c4610850693c21310b5d5e4976686729932677f7f40f289aee64"
+  }
+}

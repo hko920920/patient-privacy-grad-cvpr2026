@@ -1,5 +1,7 @@
 # 현재 상태와 기록 권위
 
+**2026-09-17 다음 대조 명세 완료 — 기존 LoRA로 효용 전달 가능성을 확인:** [공개전용 대 공개+사적 LoRA 계획](CVPR%20주제%20탐색/research_2026-09-10/track1_lora_transfer_comparison_protocol.html). 성공 가능성을 높게 평가한 것이 아니라 빠진 대조를 채우는 계획이다. 저장 loss·예측·노출을 짧게 점검했고, E4 rank8 계속학습448update×2, 기존128cell×2=256장, 고정 분류기6run을 명세했다. 공개전용 영상28회와 pooled 공개8/사적4회 노출을 구분한다. 새 모델 실행0이며 runner·runtime 검증은 아직 미구현이다. 기존 full64 종료·DP 중단·expert532/reserved4213 보존은 유지한다. 마지막 실제 성능 결과는 기존 비DP downstream 실패다.
+
 **2026-09-17 현재 full64 방법 분기 종료 — 효용에는 나쁜 결과:** [종료 범위와 해석 정정](CVPR%20주제%20탐색/research_2026-09-10/track1_current_head_branch_closure.html). 기존 비DP 관문 실패에 따라 이 구성의 DP 확대를 종료하고 expert532/reserved4213은 계속 보존한다. 원인은 head 하나로 확정하지 않는다. Pooled 회귀는 공개32명64장+사적80명320장의 환자 평균이며, downstream 공개813장과 혼동하지 않는다. 이번에는 저장 명부·계약·소스·수치만 확인했으며 새 모델/생성/학습/환자 pixel 접근0이다. 현재 실제 결과는 아래 본 개발 실험이고, 종료 문서는 별도의 결정 기록이다. 다음 실험이나 다른 주제는 자동 선택하지 않았다.
 
 **2026-09-17 최신 실제 비DP downstream — 사적 합성자료 효용에는 나쁜 결과:** [512장·R1 calibration·21run 결과와 검산](CVPR%20주제%20탐색/research_2026-09-10/track1_downstream_development_results.html). 공개 R1 calibration1600step을 완료하고 LR1e-4/400step을21개 run에 동결했다. 개발AUROC 평균은 R1 .544610 /S1 .536259 /S2 .549112 /S3 .528546 /Dreal .596172다. S2는S1 대비+.012853이나 R1 대비+.004502·양의seed1/3으로 미달했고 S3도 미통과다. Dreal 직접 실자료 평균 개선을 합성자료 효용 성공으로 바꾸지 않는다. 독립114,538항목 검산은 통과했고,512장·학습10000회(+관찰기4회)·개발예측을 실제 완료했다. DP 확대 중단, expert532/reserved4213 보존, 실행 중 작업 없음. 큰 단계2·방향1·final_ready=false. 아래 최신/다음은 과거 기록이다.
