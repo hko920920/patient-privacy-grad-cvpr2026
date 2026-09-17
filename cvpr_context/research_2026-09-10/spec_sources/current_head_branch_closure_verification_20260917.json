@@ -1,0 +1,103 @@
+{
+  "status": "PASS_DOCUMENT_METADATA_AND_STATE_BINDING",
+  "created_utc": "2026-09-17T11:18:43.023051+00:00",
+  "scope": "Saved metadata/means/contract/source review; no raw-image decode, model replay or new efficacy evidence",
+  "immutable_source_files": 23,
+  "source_sha256": {
+    "code_working\\_reports\\downstream_development_20260917_v1\\contract.json": "88543635a25bf396b8ed2b82bab1f4f4074685e41a2f3e66ce045410a53178fd",
+    "code_working\\_reports\\downstream_development_20260917_v1\\result.json": "c6c2bad3a729050910361edd681a12a6cc3cd11c34e8216ef36d661bce5fb038",
+    "code_working\\_reports\\downstream_development_20260917_v1\\verification.json": "6b0399fe136ded068242363bc21ebc68581908f4a3b93da5773b63726ddc668a",
+    "code_working\\_reports\\downstream_development_20260917_v1\\calibration_choice.json": "9f46645d3922ddd0d24ae9daa7d9e152b80fad9a7f52e284d8d07131692d0892",
+    "code_working\\_reports\\downstream_development_20260917_v1\\generation_manifest.json": "62b5b64399a0065e39478a30b680ef5653d5455a8dc96d663356e2a9893d058f",
+    "code_working\\_reports\\medical_head_20260916_v1\\contract.json": "32bc27e775395113d8075c212434563036755a040722ba43070206d06d8d3d33",
+    "code_working\\_reports\\medical_head_20260916_v1\\fit.json": "d9e2bd4d918140274d8ce392aefdb1e7d0b58c02e98b067d605a452d0a0bad5d",
+    "code_working\\_reports\\medical_head_20260916_v1\\images.json": "d895817ff43d4e74342c3406b319315627828fff0f142e32ec159fc159acb431",
+    "code_working\\_reports\\medical_head_20260916_v1\\patients.json": "706aebf5dfed6e39e5840bb97ba421f0dfbf6e7eafd6482500028d13752aa7ce",
+    "code_working\\_reports\\downstream_master_20260917_v1\\public_real_images_private.csv": "4c912fcfbb81acfd9c5b3b6767ae8f33b554ae94f621825762afd87808c4063e",
+    "code_working\\_reports\\private_signal_20260917_v1\\analysis.json": "9539991a622741a91a8affc8b74bc9dc7a8e62daee2172c27ce5447d0a673ec3",
+    "code_working\\frozen_residual_head\\run_medical_head.py": "d38ec4877c9fe3eee4c372541973105a6ee5af9fc9c9ef2df5974300de582d27",
+    "code_working\\downstream_utility\\data_v2.py": "e3754b83bd7a3bc0f5b5366a5647b9a17e5c3455d935537561964aba79a7c393",
+    "code_working\\downstream_utility\\train_v2.py": "0d4d6c35c781038f01533ce67b3f1cb4feb2c83ef8661145f9690febf92bbdc0",
+    "CVPR 주제 탐색\\research_2026-09-10\\TRACK1_DOWNSTREAM_DEVELOPMENT_RESULTS_20260917.md": "c82c915d04273a97a37f7e0601e765fa75bab0839a25860eebf0a3baeb4e67a7",
+    "CVPR 주제 탐색\\research_2026-09-10\\TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md": "72df5a0dc0534b5e6573dd0c4f4600f8776bb3acd126652d20b6647dc612e47e",
+    "CVPR 주제 탐색\\research_2026-09-10\\TRACK1_MEDICAL_HEAD_RESULTS_20260916.md": "08f6b02f71498bb454654aa94a432be4ffc24bf7c06501806d49d199b9f5cb47",
+    "CVPR 주제 탐색\\research_2026-09-10\\TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md": "1e6f9e4d7fff8d1d54751067cbe35be048a1353f92b26a9af731be07357973c4",
+    "CVPR 주제 탐색\\research_2026-09-10\\TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md": "8837f86cbb422272ba13d08d60c7ea979539e907aaad4e0c442d125a569a1a4f",
+    "CVPR 주제 탐색\\research_2026-09-10\\TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md": "a2f1556f6dcfac42f40fbed445afba14f86db0891d851a47d40ad6165abe7b9b",
+    "CVPR 주제 탐색\\research_2026-09-10\\NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md": "c150ec73417981db15fa3199dd26d65f2710bedd6daf31362539c0546f9d63e1",
+    "CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\downstream_development_record_20260917.json": "bb48867beeac510e03aaa5d19ad6f486e14939411e94ef049dce6ec9d22fd164",
+    "CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\downstream_development_report_verification_20260917.json": "4513731f617cdf7bf70ce1ac03b65dd97f5a3d845d29313fe094ba5d6dc6b58f"
+  },
+  "role_counts": {
+    "backbone": {
+      "patients": 640,
+      "images": 749,
+      "P_images": 5,
+      "P_patients": 5
+    },
+    "public_head": {
+      "patients": 32,
+      "images": 64,
+      "P_images": 1,
+      "P_patients": 1
+    },
+    "downstream_public": {
+      "patients": 672,
+      "images": 813,
+      "P_images": 6,
+      "P_patients": 6
+    },
+    "private_head": {
+      "patients": 80,
+      "images": 320,
+      "P_images": 33,
+      "P_patients": 17
+    }
+  },
+  "recomputed_mean_deltas": {
+    "Dreal-R1": {
+      "AUROC": 0.051562844720096646,
+      "AP": 0.026776017904957032
+    },
+    "S2-S1": {
+      "AUROC": 0.012852714504210327,
+      "AP": 0.0012888054861402154
+    },
+    "S2-R1": {
+      "AUROC": 0.004502431787251959,
+      "AP": 0.0011610565606912718
+    },
+    "S2-R0": {
+      "AUROC": -0.005632648912884508,
+      "AP": -0.0022570756143047155
+    },
+    "S2-S0": {
+      "AUROC": -0.004670066458935973,
+      "AP": 0.0003509620059588825
+    },
+    "S3-S1": {
+      "AUROC": -0.007713054062026714,
+      "AP": -0.0024760553342348737
+    },
+    "S3-R1": {
+      "AUROC": -0.016063336778985082,
+      "AP": -0.0026038042596838173
+    }
+  },
+  "local_links_checked": 475,
+  "broken_local_links": 0,
+  "state_sha256": {
+    "research_state.json": "92bd33207150e264edb7bcdd3dc4df9bfd3761d0dba85bfbc051ef4bd03b53f6",
+    "patient_baseline_spec.json": "4665004699bbc6290289cff4a693f1fbe5d498012e22b78332046f86586b4b63"
+  },
+  "report_sha256": "83b14e96691b2d6c7bad5f77852bca87a4cd0921a2c8b12064cb4efad483cb3a",
+  "record_sha256": "735ac3fdf5045cdb1fa2b991b9e0086544b3d391cb009741cf95c5540efc658b",
+  "new_model_forwards": 0,
+  "new_training": 0,
+  "new_generation": 0,
+  "new_patient_pixel_reads": 0,
+  "old_completed_objects_preserved": true,
+  "expert_or_reserved_opened": false,
+  "remote_main_checked": false,
+  "remote_push": false
+}

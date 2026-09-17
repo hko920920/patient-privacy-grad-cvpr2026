@@ -1,0 +1,70 @@
+# 현재 full64 head 분기 종료와 해석 범위 — 2026-09-17
+
+**판정: 현재 방법에는 나쁜 결과다. 사전 지정한 비DP 개발 관문 실패로 이 구성의 DP 확대를 종료한다.** Expert final 532명·810장과 reserved 4,213명은 계속 보존한다. 이번 문서는 완료된 실험의 해석과 종료 결정이며, 새 모델 추론·학습·생성·환자 영상 접근은 없다.
+
+[본 개발 결과](TRACK1_DOWNSTREAM_DEVELOPMENT_RESULTS_20260917.md)와 [실행 전 명세](TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md)를 변경하지 않는다. 기존 192장 pooled 효용 미통과와 PadChest·CheXzero 실패, 잘못된 source로 수행한 과거 98회 학습의 무효 판정도 유지한다.
+
+## 종료하는 정확한 구성
+
+공개 E4 LoRA + CFG 7.5 + 현재 full64 선형 conditional output head + 현재 환자 평균 residual 회귀 + 방법당 128장 단일 생성 bank + ImageNet ResNet18의 고정 계산량 downstream 비교다. 네 생성 방법은 동일 latent·prompt를 사용했고, 공개 R1 calibration 뒤 모든 arm에 LR 0.0001·400step·3seed를 공통 적용했다.
+
+S2/S3는 공개 real batch의 절반을 합성자료로 **대체**했다. 공개 real 노출량을 그대로 유지하면서 합성 학습을 추가한 비교가 아니다. 합성 양성/음성은 생성 시 요청한 조건이며 영상별 전문가 정답은 아니다.
+
+| 비교 | 개발 평균 ΔAUROC | 판단 |
+|---|---:|---|
+| Dreal−R1 | +0.051563 | 사적 실자료의 제한적 task signal. AUROC 2/3seed, AP 3/3seed에서 양수 |
+| S2−S1 | +0.012853 | 약한 public-head 기준 대비 차이. 이것만으로 전체 관문 통과 아님 |
+| S2−R1 | +0.004502 | 기준 +0.01 미달, 양의 seed 1/3 |
+| S2−R0 | −0.005633 | 공개 plain-real보다 점추정 낮음 |
+| S2−S0 | −0.004670 | head 없는 backbone 합성보다 점추정 낮음 |
+| S3−S1 / S3−R1 | −0.007713 / −0.016063 | 두 기준보다 AUROC와 AP 평균 모두 낮음 |
+
+Dreal−R1의 환자 cluster bootstrap 구간은 [+0.005193, +0.098900], S2−R1은 [−0.044948, +0.053823]이다. 이는 한 bank·세 classifier·현재 weak-label 개발집합에 조건부인 개발 분석이다. 작은 차이의 부재를 증명하거나 모든 재학습 변동을 포함한 모집단 구간으로 확대하지 않는다.
+
+## 원인은 어디까지 확인됐는가
+
+가장 정확한 결론은 **사적 실자료 직접 사용에는 이득 후보가 있었지만, 현재 head·생성 bank·downstream 학습의 조합은 반복 가능한 추가 효용을 입증하지 못했다**는 것이다. 이 운영 결론만으로 DP 투자 중단은 충분하다.
+
+반면 head의 표현력 하나가 유일한 원인이라고 확정할 수는 없다. 목적함수, 조건 반영, 요청 라벨의 오류, 합성 다양성, real/synthetic 분포 차이, classifier와 상호작용을 각각 바꾼 인과 대조는 없다. 더 표현력 있는 generator adapter가 동일 downstream 조건에서 성공하는지도 실행하지 않았다. Dreal은 real-to-classifier 진단이며 generator-to-synthetic-to-classifier 전달의 양성 대조를 대신하지 않는다.
+
+전체 AUROC가 약 0.53–0.60으로 낮고 Dreal도 AUROC 세 seed 중 하나에서는 R1보다 낮았다. Dreal 결과를 사적 자료만의 고유 정보나 모든 설정에서의 효용 보장으로 쓰지 않는다. 그렇다고 낮은 절대 성능을 이유로 사전 관문 실패를 취소하지도 않는다.
+
+## 공개자료 수와 pooled 목적함수 정정
+
+세 공개자료 역할을 혼동하면 안 된다. 아래 기흉 수는 NIH weak label 기준이다.
+
+| 용도 | 환자 | 영상 | 기흉 양성 영상 / 환자 |
+|---|---:|---:|---:|
+| 공개 E4 backbone 학습 | 640 | 749 | 5 / 5 |
+| Public head 회귀 | 32 | 64 | 1 / 1 |
+| Downstream public real: 위 두 집합의 합집합 | 672 | 813 | 6 / 6 |
+| Private head 회귀 및 Dreal private source | 80 | 320 | 33 / 17 |
+
+Pooled head는 공개 **813장**과 사적 320장을 이미지 수로 합산한 모델이 아니다. 공개 **32명·64장**과 사적 **80명·320장**의 환자별 충분통계를 각각 평균하고 전체 112명에 동일 질량을 준다. 따라서 ridge를 제외한 환자 평균 손실은 다음과 같다.
+
+\[
+L_{pool}(W)=\frac{32}{112}L_{public32}(W)+\frac{80}{112}L_{private80}(W)+0.001\lVert W\rVert_F^2.
+\]
+
+사적 환자의 질량은 약 71.43%다. 따라서 공개 813장의 수적 우세가 pooled head에서 사적 신호를 희석했다는 설명은 실제 학습과 맞지 않는다. 희소 task와 공통 residual 사이의 충돌 가능성은 남지만, S3의 저하만으로 그 메커니즘이 증명되지는 않는다. 환자당 관측량이 공개 2장/사적 4장이라는 차이도 환자 질량과 구분한다.
+
+실제 의료 backbone용 목적은 CFG를 이미 반영한다. $g=\epsilon_u+7.5(\epsilon_c-\epsilon_u)$, $X=7.5\phi_c$로 놓고 $\epsilon-g-XW$를 회귀한다. 단순히 conditional epsilon만 맞춘 뒤 sampling에서 처음 7.5배 증폭한 구성은 아니다. 이 CFG-aware noise residual 목적이 기흉 downstream 효용을 직접 최적화하는 것은 아니라는 지적은 유효하다.
+
+근거: [의료 head 생산 fit 코드](../../code_working/frozen_residual_head/run_medical_head.py), [당시 계약](../../code_working/_reports/medical_head_20260916_v1/contract.json), [환자 수와 fit](../../code_working/_reports/medical_head_20260916_v1/fit.json), [자료·보정 방향 분석](TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md). 이번 정정은 저장 명부·계약·소스를 대조했으며 새 feature 추출이나 회귀 실행은 아니다.
+
+## 결정과 후속 경계
+
+- 현재 full64 구성은 음성 결과로 닫는다. 기존 bank에 seed·prompt·scale·생성 수를 추가하거나 gate를 낮춰 성공 판정을 바꾸지 않는다.
+- 현재 구성의 patient-DP, 새 solver, expert final 평가는 진행하지 않는다. Non-DP 실패가 DP 실패의 수학적 증명이라는 뜻은 아니다.
+- 공개 backbone·sampling·classifier 구현과 현재 음성 결과는 보존한다. 프로젝트 전체, 모든 adapter, 모든 합성 증강의 실패로 확대하지 않는다.
+- 현재 positive claim으로는 patient-private synthetic utility나 DP-LoRA 대비 비용–효용 우위를 주장할 수 없다.
+
+같은 문제를 다시 연구하려면 별도의 prospective 설계가 필요하다. 먼저 바꿀 구조나 목적이 어떤 실패 가설을 검증하는지, 강한 기존 adapter 대조와 어떤 비교를 하는지, 같은 공개/사적 접근량·계산량에서 무엇을 이겨야 하는지를 정해야 한다. 기존의 더 강한 방법을 대조로 활용할 수 있으며 새 optimizer 발명 자체가 필수 조건은 아니다. Gating이나 task-aware loss라는 이름만으로 해결을 예상하지 않는다.
+
+이미 소비한 selection/method-development는 개발자료로 계속 표시한다. 새로운 개발 실험을 쓰더라도 현재 expert/reserved를 자동으로 열거나 같은 집합을 새 독립 자료로 부르지 않는다. Expert final은 모든 최종 arm과 분석을 동결한 뒤의 자원으로 남긴다.
+
+이번에는 후속 방법이나 다른 논문 주제를 자동 선택하지 않았다. 현재 분기의 종료 기록을 완료했고, 새 실행 계약은 없다. 큰 단계2를 유지하며 해당 full64 방법 분기만 종료한다.
+
+## 기록 범위
+
+[종료 결정·근거 SHA 기록](spec_sources/current_head_branch_closure_20260917.json)과 [문서·수치·상태 결속 확인](spec_sources/current_head_branch_closure_verification_20260917.json)을 남긴다. 이번 확인은 저장된 집계와 명부·소스·문서의 검증이며, 모델 재추론·영상 재판독 또는 새로운 효용 검증이 아니다. 원격 main 확인이나 push를 수행했다는 기록도 아니다.

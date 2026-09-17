@@ -1,5 +1,13 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 145-CURRENT-HEAD-BRANCH-CLOSED (2026-09-17 KST)
+
+- 사용자 검토의 no-go 결론을 반영해 E4/full64/방법당128장/고정 계산량 ResNet18 분기를 음성 결과로 닫았다. 기존 실험·gate·512장·21run 수치는 변경하지 않았다. DP 확대와 expert final 개방은 중단 상태다.
+- 종료 해석을 정정했다. Dreal 양성 대비 synthetic 관문 미통과는 현재 전달 구성의 실패 근거이며 head 표현력 하나의 인과적 확정은 아니다. 요청 label fidelity·bank·classifier 상호작용과 강한 generator adapter 양성 대조는 분리되지 않았다.
+- 저장 metadata와 생산 fit 코드를 대조했다. Backbone640/749/P5, public-head32/64/P1, downstream-public672/813/P6은 다른 역할이다. Pooled 회귀는32/112 대80/112 환자 질량이며 공개813장 우세에 따른 희석이라는 설명은 맞지 않는다. 목적은 이미 CFG7.5 guided residual과 X=7.5phi를 사용한다.
+- 새 종료 MD/HTML과 근거 SHA·상태 결속 기록을 추가했다. 실제 결과 포인터는 기존 본 개발 결과에 유지하고 current decision만 종료 문서로 구분했다. 새 방법은 선정하지 않았다. 새로운 prospective 설계는 구체적 실패 가설·강한 기존 방법 대조가 필요하며 새 solver 발명 자체가 필수는 아니다.
+- 이번 새 모델 추론·GPU·학습·생성·환자 pixel 접근0, expert532/reserved4213 유지, final-ready=false. 문서 검증은 저장 metadata/집계/hash 범위이며 모델 재실행이 아니다. 원격 main 확인 또는 push를 수행하지 않았다.
+
 ## 144-NONDP-DOWNSTREAM-DEVELOPMENT-COMPLETE (2026-09-17 KST)
 
 - 사용자 승인대로 준비에 그치지 않고 별도 run_development_v1으로512장 bank, 공개 R1 calibration 두800step trajectory, 공통설정의7군×3seed=21run과개발평가를 실행했다. 시작18:44KST, 본계산 종료19:49경, 보고·결속검사까지약70분이다. 초기90–150분 추정은 실제 처리량으로 갱신했다.
