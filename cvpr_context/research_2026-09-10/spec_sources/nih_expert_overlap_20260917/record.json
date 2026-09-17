@@ -1,0 +1,48 @@
+{
+  "status": {
+    "report": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md",
+    "completed_utc": "2026-09-17T07:51:09.443550+00:00",
+    "type": "patient_metadata_and_recorded_usage_audit_not_model_experiment",
+    "judgment": "positive_for_disjoint_final_candidate_not_new_development_data",
+    "patients": 532,
+    "images": 810,
+    "expert_positive_patients": {
+      "Emphysema": 7,
+      "Pneumothorax": 86
+    },
+    "recorded_model_or_result_consumption_overlap": 0,
+    "current_generator_training_overlap": 0,
+    "all_patients_in_existing_official_test": true,
+    "original_roles": {
+      "final_test": 466,
+      "official_test_census_only": 66
+    },
+    "new_nonlocked_development_candidates": 0,
+    "reserved_cvpr_confirmation_overlap": 0,
+    "existing_roles_changed": false,
+    "final_evaluation_adopted_or_executed": false,
+    "official_original_label_row_match_verified": false,
+    "new_inference": 0,
+    "new_generation": 0,
+    "new_training": 0,
+    "new_DP": 0,
+    "new_patient_pixel_reads": 0,
+    "all810_files_exist_and_sizes_match": true,
+    "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+    "audit_sha256": "1a95e54b660da907603c5d8fe928244b1842b18fdb90a6c1b51ae3d0b932774b",
+    "verification_sha256": "c4c807555f07bd8b5619fe5dade1ad3216c7802d3f7490c4af0fc9bad17a3a66",
+    "report_sha256": "c150ec73417981db15fa3199dd26d65f2710bedd6daf31362539c0546f9d63e1"
+  },
+  "previous_planning": {
+    "research_state.json": {
+      "current_planning_report": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
+      "next_task": "Audit overlap between the acquired810-image derived roster and fixed patient roles; assess feasible downstream claim/sample size. Do not wait for author contact as the only access route. Preserve failed joint-classifier results and locked cohorts; no automatic new model experiment.",
+      "research_question_status": "Private added generation utility remains unvalidated. Two fixed clinical classifiers failed; neither universal measurement impossibility nor lack of all measurement resources is established."
+    },
+    "patient_baseline_spec.json": {
+      "current_planning_report": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
+      "next_task": "Audit overlap between the acquired810-image derived roster and fixed patient roles; assess feasible downstream claim/sample size. Do not wait for author contact as the only access route. Preserve failed joint-classifier results and locked cohorts; no automatic new model experiment.",
+      "research_question_status": "Private added generation utility remains unvalidated. Two fixed clinical classifiers failed; neither universal measurement impossibility nor lack of all measurement resources is established."
+    }
+  }
+}

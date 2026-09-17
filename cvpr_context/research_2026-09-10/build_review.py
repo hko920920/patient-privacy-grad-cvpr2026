@@ -106,6 +106,7 @@ def convert(md,from_review=False):
         if href=='MEASUREMENT_CLAIM_REVIEW_20260917.md':href='measurement_claim_review.html'
         if href=='NIH_EXPERT_LABEL_ACCESS_20260917.md':href='nih_expert_label_access.html'
         if href=='NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md':href='nih_expert_label_public_copy.html'
+        if href=='NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md':href='nih_expert_patient_overlap_results.html'
         a['href']=href
     return str(soup)
 
@@ -192,6 +193,7 @@ def main():
     head = '<section class="panel"><h2>최신 해석 정정: 평가기 실패는 측정 불가능의 증명이 아니다</h2><p><a href="measurement_claim_review.html"><strong>전문 주석·downstream 효용·현재 적용 가능성 검토</strong></a></p><p>측정 경로의 존재에는 긍정적이며, private head의 효용은 여전히 미판정입니다. NIH 14소견 전문의 재라벨이 따로 있고, 가까운 DP 생성 선행도 분포 지표와 downstream 성능을 함께 평가합니다. 낮은 AUC의 원인을 NIH 라벨 오류 하나로 확정하지 않습니다.</p><p>기존 두 평가기의 실패와 이번 공동 가설의 무한 classifier 탐색 중단은 유지합니다. 다음은 실제 라벨 접근·질환 수·환자 중복과 주장에 맞는 측정 설계입니다. 전문의 협력이 없다는 이유만으로 보호·효율 방향 전체를 종료하지 않습니다. 새 추론·생성·DP는0이며, 아래 기록은 각 시점의 실제 결과입니다.</p></section>' + head
     head = '<section class="panel"><h2>최신 자료 접근 결과: 공식 CSV 403, 공개 부록은 확보</h2><p><a href="nih_expert_label_access.html"><strong>접근 기록·양성 영상 수·문의 문안</strong></a></p><p>공식 요청 양식과 직접 파일 경로를 확인했지만 CSV는 접근 거부 상태입니다. 공개 부록의 양성 영상은 폐기종7장·기흉136장으로, 환자 중복 제외 전 수입니다. 접근이 풀려도 두 질환의 충분한 평가자료가 자동으로 확보되지는 않습니다. 환자 중복 감사는 미완료이며 새 추론·생성·DP는 없습니다. 메일은 준비만 했고 발송하지 않았습니다.</p></section>' + head
     head = '<section class="panel"><h2>최신: 연락 없이 전문가 라벨 공개 가공본 확보</h2><p><a href="nih_expert_label_public_copy.html"><strong>810장·532명·14소견 추출 및 출처 교차 확인</strong></a></p><p>공개 파일의 전문가 출처 열만 분리했고14소견 양성 수가 공식 부록과 모두 일치합니다. 별도 후속 논문 저자 저장소와810개 영상ID도 일치합니다. 공식 원본과의 직접 대조·전문의별14소견 판독·기존 연구 환자 중복은 아직 미확인입니다. 직접 연락만 가능하다는 이전 결론을 정정합니다. 새 모델 실험은 없습니다.</p></section>' + head
+    head = '<section class="panel"><h2>최신 환자 감사: 기록상 학습·개발과 분리된 expert532명</h2><p><a href="nih_expert_patient_overlap_results.html"><strong>학습·개발 소비와 교집합0, 전원 기존 공식 테스트 영역</strong></a></p><p>졸논 final466명과 census66명입니다. 기흉 양성86명·폐기종7명은 전부 final에 있고,810장 파일도 로컬에 있습니다. 최종 평가 후보로는 좋은 결과지만 개발용으로 풀지 않습니다. 자료 확보와 모델 효용은 별개이며 새 추론·생성·DP는 없습니다.</p></section>' + head
     controls+=''.join('<option value="'+k+'">'+esc(v)+' ('+str(stats[k])+')</option>' for k,v in ROLES.items())
     controls+='''</select></label><label>확인 수준<select id="status"><option value="all">모든 확인 수준</option><option value="selected">PDF 선택 절 (75)</option><option value="partial">공식 본문 일부 (3)</option><option value="abstract">초록만 (1)</option><option value="replay">공개 packet 재계산 (2)</option></select></label><label>발표 형식<select id="venue"><option value="all">모든 발표 형식</option><option value="main">메인 학회 표기</option><option value="other">저널·워크샵·공개본 등</option></select></label><label class="search">논문명·방법·검토 내용 검색<input id="search" type="search" placeholder="예: MoFit, CLiD, 환자 평균, FPR" autocomplete="off"></label></div><p id="count" aria-live="polite"></p><button id="reset" type="button">필터 초기화</button><button id="expand" type="button">표시된 검토 펼치기</button><button id="collapse" type="button">모두 접기</button><p class="meta">비교 후보 수는 전부 실행할 의무 목록이나 같은 문제의 SOTA 순위가 아니다. 접근 권한과 주장에 맞는 비교군을 선택한다.</p></section>'''
     cards=[]
@@ -269,6 +271,7 @@ def main():
         ('MEASUREMENT_CLAIM_REVIEW_20260917.md','measurement_claim_review.html','측정 불가능 주장 정정과 실제 평가 경로'),
         ('NIH_EXPERT_LABEL_ACCESS_20260917.md','nih_expert_label_access.html','NIH 전문가 라벨 접근 결과와 실제 표본 수'),
         ('NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md','nih_expert_label_public_copy.html','연락 없이 NIH 전문가 라벨 공개 가공본 확보'),
+        ('NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md','nih_expert_patient_overlap_results.html','NIH 전문가 라벨532명 환자 중복 감사'),
         ('REALISTIC_RESEARCH_PLAN_20260916.md','realistic_research_plan.html','의료 생성모델 환자 보호: 현실적인 다음 계획')]:
         if (ROOT/source).exists():
             body='<p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p>'+convert((ROOT/source).read_text(encoding='utf-8'))

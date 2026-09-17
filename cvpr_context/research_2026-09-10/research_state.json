@@ -24,8 +24,8 @@
       "meaning": "192-image fixed paired screen is mixed; it is not a successful final test or patient-DP comparison."
     }
   ],
-  "next_task": "Audit overlap between the acquired810-image derived roster and fixed patient roles; assess feasible downstream claim/sample size. Do not wait for author contact as the only access route. Preserve failed joint-classifier results and locked cohorts; no automatic new model experiment.",
-  "next_task_output": "Patient overlap and feasible real-test scope, with third-party-derived provenance and E7 sample limitation explicit.",
+  "next_task": "Prepare a bounded prospective pneumothorax downstream-utility specification using existing nonfinal development resources and preserving the expert final. Fix synthetic comparisons, training budgets, patient-clustered measurement and when final results may be opened. Do not revive the failed two-target classifier protocol or automatically launch generation/DP.",
+  "next_task_output": "A concrete non-DP downstream comparison specification and measured-or-explicitly-provisional execution cost; final532patients remain unopened for model performance.",
   "step2_open_items": [
     "CheXzero NIH80 actual inference complete: E/P rest AUC .6741667/.5966667 and opposite .5900/.4900; BOTH fixed gates failed. Official CPU/GPU and independent pixel/score/bootstrap verification passed.",
     "Classifier search for the joint target hypothesis CLOSED; no third candidate, checkpoint subset, prompt search or target deletion.",
@@ -58,7 +58,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Public derived all14 label copy acquired:810images/532patients, all14 aggregate counts and separate author image roster agree. Original official CSV remains inaccessible; patient-role overlap review can proceed.",
+  "step2_active_task": "Expert patient overlap audit complete: all532patients have no recorded model/result consumption but belong to existing locked NIH test. Specify a prospective downstream claim while preserving final independence.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -77,7 +77,7 @@
     "last_completed_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
     "additional_execution_contract_fixed": false,
     "stage2_completion_claim": false,
-    "latest_design_review": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
+    "latest_design_review": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md",
     "new_two_track_experiment_started": true,
     "new_two_track_experiment_status": "chexzero_actual80_complete_both_measurement_gates_failed",
     "latest_cpu_outputs": [
@@ -195,7 +195,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "public_derived_all14_copy_acquired_overlap_pending",
+    "latest_planning_status": "expert532_all_locked_test_no_consumption_overlap_downstream_design_next",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -1121,7 +1121,7 @@
       "roentgen_arxiv_pdf_sha256": "99e5a03e8dd10a4286cac16583813f61246542d37620387170f1c80f469d1f24",
       "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md"
     },
-    "next_substep_timing_condition": "Metadata overlap review estimated20-30min using the acquired derived roster; no external email response prerequisite.",
+    "next_substep_timing_condition": "Next20-30min is prospective downstream study design, not model training or final-set inference.",
     "nih_expert_label_access_review": {
       "report": "NIH_EXPERT_LABEL_ACCESS_20260917.md",
       "completed_utc": "2026-09-17T07:24:31.691365+00:00",
@@ -1236,9 +1236,43 @@
       "author_contact_only_claim_retracted": true,
       "patient_role_overlap_pending": true,
       "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md"
+    },
+    "nih_expert_patient_overlap_audit": {
+      "report": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md",
+      "completed_utc": "2026-09-17T07:51:09.443550+00:00",
+      "type": "patient_metadata_and_recorded_usage_audit_not_model_experiment",
+      "judgment": "positive_for_disjoint_final_candidate_not_new_development_data",
+      "patients": 532,
+      "images": 810,
+      "expert_positive_patients": {
+        "Emphysema": 7,
+        "Pneumothorax": 86
+      },
+      "recorded_model_or_result_consumption_overlap": 0,
+      "current_generator_training_overlap": 0,
+      "all_patients_in_existing_official_test": true,
+      "original_roles": {
+        "final_test": 466,
+        "official_test_census_only": 66
+      },
+      "new_nonlocked_development_candidates": 0,
+      "reserved_cvpr_confirmation_overlap": 0,
+      "existing_roles_changed": false,
+      "final_evaluation_adopted_or_executed": false,
+      "official_original_label_row_match_verified": false,
+      "new_inference": 0,
+      "new_generation": 0,
+      "new_training": 0,
+      "new_DP": 0,
+      "new_patient_pixel_reads": 0,
+      "all810_files_exist_and_sizes_match": true,
+      "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+      "audit_sha256": "1a95e54b660da907603c5d8fe928244b1842b18fdb90a6c1b51ae3d0b932774b",
+      "verification_sha256": "c4c807555f07bd8b5619fe5dade1ad3216c7802d3f7490c4af0fc9bad17a3a66",
+      "report_sha256": "c150ec73417981db15fa3199dd26d65f2710bedd6daf31362539c0546f9d63e1"
     }
   },
-  "updated_utc": "2026-09-17T07:31:04.111658+00:00",
+  "updated_utc": "2026-09-17T07:51:09.443550+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -2691,7 +2725,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
+  "next_task_plan_report": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -2813,7 +2847,7 @@
     "finalnextquestion": "Does the observed restricted-head denoising gain survive a fair patient-DP comparison, given the full64 statistic dimension2336 versus static16 dimension200 and only0.4467% extra nonprivate MSE reduction?"
   },
   "current_paper_problem_fixed": false,
-  "research_question_status": "Private added generation utility remains unvalidated. Two fixed clinical classifiers failed; neither universal measurement impossibility nor lack of all measurement resources is established.",
+  "research_question_status": "Private incremental utility remains unvalidated. A crosschecked derived expert real-test candidate is available, with86P/7E positive patients and zero recorded model/result overlap; all are in the existing official test area. No downstream or DP success established.",
   "new_dp_principle_required": false,
   "new_solver_required_for_application_contribution": false,
   "realistic_replan_20260916": {
@@ -3168,7 +3202,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
+  "current_planning_report": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -3783,5 +3817,45 @@
     "author_contact_only_claim_retracted": true,
     "patient_role_overlap_pending": true,
     "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md"
-  }
+  },
+  "pre_nih_expert_overlap_20260917": {
+    "current_planning_report": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
+    "next_task": "Audit overlap between the acquired810-image derived roster and fixed patient roles; assess feasible downstream claim/sample size. Do not wait for author contact as the only access route. Preserve failed joint-classifier results and locked cohorts; no automatic new model experiment.",
+    "research_question_status": "Private added generation utility remains unvalidated. Two fixed clinical classifiers failed; neither universal measurement impossibility nor lack of all measurement resources is established."
+  },
+  "completed_nih_expert_overlap_20260917": {
+    "report": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md",
+    "completed_utc": "2026-09-17T07:51:09.443550+00:00",
+    "type": "patient_metadata_and_recorded_usage_audit_not_model_experiment",
+    "judgment": "positive_for_disjoint_final_candidate_not_new_development_data",
+    "patients": 532,
+    "images": 810,
+    "expert_positive_patients": {
+      "Emphysema": 7,
+      "Pneumothorax": 86
+    },
+    "recorded_model_or_result_consumption_overlap": 0,
+    "current_generator_training_overlap": 0,
+    "all_patients_in_existing_official_test": true,
+    "original_roles": {
+      "final_test": 466,
+      "official_test_census_only": 66
+    },
+    "new_nonlocked_development_candidates": 0,
+    "reserved_cvpr_confirmation_overlap": 0,
+    "existing_roles_changed": false,
+    "final_evaluation_adopted_or_executed": false,
+    "official_original_label_row_match_verified": false,
+    "new_inference": 0,
+    "new_generation": 0,
+    "new_training": 0,
+    "new_DP": 0,
+    "new_patient_pixel_reads": 0,
+    "all810_files_exist_and_sizes_match": true,
+    "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+    "audit_sha256": "1a95e54b660da907603c5d8fe928244b1842b18fdb90a6c1b51ae3d0b932774b",
+    "verification_sha256": "c4c807555f07bd8b5619fe5dade1ad3216c7802d3f7490c4af0fc9bad17a3a66",
+    "report_sha256": "c150ec73417981db15fa3199dd26d65f2710bedd6daf31362539c0546f9d63e1"
+  },
+  "latest_data_audit_report": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md"
 }

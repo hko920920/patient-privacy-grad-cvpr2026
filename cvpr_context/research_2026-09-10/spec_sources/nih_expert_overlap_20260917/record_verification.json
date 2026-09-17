@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "checks": {
+    "audit_binding": true,
+    "contract_binding": true,
+    "report_binding": true,
+    "historical:TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md": true,
+    "historical:TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md": true,
+    "historical:TRACK1_MEDICAL_HEAD_RESULTS_20260916.md": true,
+    "state:current_step": true,
+    "state:current_result_report": true,
+    "state:current_planning_report": true,
+    "state:next_task": true,
+    "state:completed_nih_expert_overlap_20260917": true,
+    "actual_model_pointer": true,
+    "local_links": true
+  },
+  "scope": "report/state/source bindings; earlier independent audit verification handles patient metadata, no new model or pixel test"
+}
