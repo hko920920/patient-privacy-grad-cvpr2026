@@ -1,0 +1,13 @@
+{
+  "status": "VERIFIED_FAILED_JOINT_MEASUREMENT_GATE",
+  "contract_sha256": "3315653399770ddb2cab55b9ecf9f55f0ea0fb8df06a9d7592be9e3597394d67",
+  "selected_manifest_sha256": "7494944befbf199d3ac4cc3dbca1b34ff9b29a0d9b540a1c6114c4c4052110dd",
+  "original_plan_manifest_sha256": "7494944befbf199d3ac4cc3dbca1b34ff9b29a0d9b540a1c6114c4c4052110dd",
+  "evidence_files": {
+    "result.json": "a77a5c42d53c7eb57cdb3aab570453c7b56fb8c29389cb9868b160f02f125b38",
+    "metrics.json": "f153f383896560b5ddefa013a734abca93b995929fe7903c1bf72f480e52588e",
+    "verification.json": "d093c9aaf0e7b5c02dc5b4688493b1b419811fc57d269c8da5de03e4330cf5e7",
+    "parity.json": "48300f378e2640507c8efdbb01e79911da406eb1ca90207b308a4eb9ecfe2a5a"
+  },
+  "scope": "Public aggregate record; individual images, patient IDs, tensors and checkpoint outputs remain in local execution packet."
+}

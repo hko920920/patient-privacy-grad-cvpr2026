@@ -1,0 +1,21 @@
+{
+  "status": "PASS_INDEPENDENT_CHEXZERO_VALIDATION",
+  "created_utc": "2026-09-17T06:12:00.323993+00:00",
+  "checks": 17222,
+  "seconds": 10.489019899978302,
+  "patients": 80,
+  "checkpoints": 10,
+  "preprocessing_recomputed": 80,
+  "bootstrap_pairs_recomputed": 16000,
+  "max_metric_abs_difference": 3.3306690738754696e-16,
+  "max_cosine_reconstruction_difference": 9.054468674829508e-08,
+  "max_pair_score_difference": 8.690299790892198e-08,
+  "actual_CPU_GPU_reference": true,
+  "independent_verifier_repeats_model_forward": false,
+  "old192_preserved": true,
+  "reserved_confirmation_consumed": false,
+  "contract_sha256": "3315653399770ddb2cab55b9ecf9f55f0ea0fb8df06a9d7592be9e3597394d67",
+  "result_sha256": "a77a5c42d53c7eb57cdb3aab570453c7b56fb8c29389cb9868b160f02f125b38",
+  "metrics_sha256": "f153f383896560b5ddefa013a734abca93b995929fe7903c1bf72f480e52588e",
+  "verifier_sha256": "c5395c89c48f4948370aec957031a1aef0a671d9a14ecd721eb58d85e81d4364"
+}

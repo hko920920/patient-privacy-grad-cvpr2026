@@ -1,5 +1,16 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 136-CHEXZERO-REAL-NIH-VALIDATION (2026-09-17 KST)
+
+- 큰단계2·방향1. 예상20–35분으로 시작해 예약80명·공식10checkpoint를 실제 실행했다. 명부/score/기준/runner/verifier를 outcome 전에 고정했다.
+- 나쁜 결과: E/P rest AUC0.6741667/0.5966667, 상대 target0.5900/0.4900. 둘 다 gate 실패. 정상 대조0.7975/0.6875의 일부 신호와 질환 간 구별 실패를 함께 기록한다. 이전 PadChest와 환자가 달라 paired 우월 비교가 아니다.
+- CPU 공식 run_softmax_eval을10모델×4환자에서 실제 실행. GPU full80+4replay, 모두사전오차내; ensemble차이5.96e-8. 독립pixel80개 exact,bootstrap16000쌍 재계산,max3.33e-16,17222항목PASS. 1회실행/검산 첫시도통과,결과후모델/허용오차/데이터변경없음.
+- 실측전체52.374초/GPU4.962초/CPUreference7.511초/검산10.489초/peakallocated0.601GiB. 새학습/생성/DP0.
+- classifier탐색종료·공동targeted경로보류를실제적용. 새로운classifier/prompt/checkpoint구제없음. Private head효용은여전히미평가이고프로젝트전체불가능이라고해석하지않는다.
+- evaluator80소비overlay추가,계획manifest/과거ledger보존. 잔여4053/E-only44,원reserved4213/final/원역할/기존192실패보존.
+- 보고서 `TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md`, protocol,PNG/PDF,공개aggregate JSON,실행packet,상태문서기록. 다음은20–30분측정자원/논문문제의설계판단. 원격확인/push없음.
+
+
 ## 135-CHEXZERO-SINGLE-ALTERNATIVE-REVIEW (2026-09-17 KST)
 
 - 큰 단계2·방향1. 예상20–30분으로 공식논문/source/배포파일과 별도 검증환자 구성을 검토했다. 판정은후보준비에긍정적이며NIH성능은미실행이다.

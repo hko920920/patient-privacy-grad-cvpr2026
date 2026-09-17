@@ -1,0 +1,30 @@
+{
+  "status": "PASS_CHEXZERO_ACTUAL_RESULT_REPORT_STATE_AND_HISTORY",
+  "created_utc": "2026-09-17T06:16:12.909311+00:00",
+  "checks": 331,
+  "new_pages_links": 14,
+  "review_static": {
+    "rows": 79,
+    "checked_local_links": 1165,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "local_execution_artifacts_checked": true,
+  "actual_patients": 80,
+  "checkpoints": 10,
+  "joint_gate_passed": false,
+  "classifier_search_closed": true,
+  "reserved_confirmation_consumed": false,
+  "report_sha256": "a2f1556f6dcfac42f40fbed445afba14f86db0891d851a47d40ad6165abe7b9b",
+  "protocol_sha256": "3818ff49783f1780c5807888420086871a0e7744b7507b4ceba63235f1e69121",
+  "public_aggregate_sha256": "c20278e94281733b7b6e444353c19c349e4060078cbfb7837feeb20458eb507d",
+  "figure_sha256": {
+    "png": "efa5ef74d353c4174a88413937e3332dfdeb18e3a41e403bfb6eb49720485f96",
+    "pdf": "f3fac47ebad79474f8e9233cf723328d98a86673a685dce71ee544fda06b21dd"
+  },
+  "state_sha256": {
+    "research_state.json": "2610e0fb39f810ed09e88cf87788c3d94aeeffbd7038ff32d835f70a47036c87",
+    "patient_baseline_spec.json": "aa5c9f2b1d1cbcfbcbf19aa7944c1954282dd953632be7c65417fe4d66df745a"
+  },
+  "verifier_sha256": "c9f868c0cc103a07cdb260783b22d2002160ca0877bdac5557904fb8b9e89f51"
+}
