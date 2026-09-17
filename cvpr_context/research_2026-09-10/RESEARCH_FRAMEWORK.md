@@ -1,5 +1,7 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-17 최신 이력 감사 — 새 자료 구성에 긍정적:** [실제 소비와 역할을 구분한 결과](TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md). Original private_train 실제 시험학습50명을 제외한8,426명은 조사 실행기록상 미사용 후보이며, 두 target을 유지한 별도CVPR development/confirmation 구성이 가능하다. 사전 hash 분할의 폐기종/기흉 환자는135/268과138/291명이다. 원본 분할·final/census는 보존하고 가상 새명부만 작성했다. 이로써 이전public-only 역할의 자료부족을 넘어설 경로가 생겼지만 private 생성효용/DP 성공은 아니다. 다음은 별도 고정 평가기 검증20–35분, 큰 단계2·방향1이며 새GPU/생성0이다. 아래 최신/다음은 이전 이력이다.
+
 **2026-09-17 최신 자료 점검 — 현재 배정에서 targeted generation 보류:** [환자분리 reference·평가기 결과](TRACK1_TARGET_EVALUATION_INVENTORY_RESULTS_20260917.md). 자료 확보에는 부정적이다. 전체 NIH local inventory에서도 학습·CVPR 역할 제외 후 폐기종3명/기흉6명, 과거 평가 제외 후3명/1명뿐이다. 후보511장 실제파일 확인과 독립2,124항목 검산을 완료했다. 평가기는 PadChest-only 파일/label 후보가 있으나 판별력 검증 전이다. 새GPU·생성·DP0, 과거192장 실패·모든 역할·잠긴test/census 보존. 가설이 반증된 것이 아니라 현재 배정에서 검증자료가 부족한 상태다. 다음은 별도 CVPR 데이터 구성의 타당성/사용이력 검토20–30분이며, 큰 단계2·방향1을 유지한다. 아래 최신/다음은 이전 이력이다.
 
 **2026-09-17 최신 CPU 검토 — 제한적으로 긍정적인 구체적 후속 근거:** [사적 자료/출력 방향 결과](TRACK1_PRIVATE_SIGNAL_RESULTS_20260917.md). Private-only의 출력 변화는 단순 scalar가 아니고 여러 private subset에서도 작은 개발MSE 개선이 남았다. Private에 더 많이 있는 폐기종·기흉 조건을 직전 생성 평가가 직접 다루지 않았다는 자료 차이도 확인했다. 다만 backbone도 해당 질환을 봤고 target reference는 부족하다. 192장 생성 효용 미통과·patient-DP 보류는 유지한다. 안정된delta·metadata차이를 privacy기여 성공조건으로 바꾸지 않는다. 다음은 실재 target/reference와 공정한 평가 가능성 확인15–25분이며 새GPU0, 큰단계2·방향1이다. 아래 최신/다음은 이전 이력이다.

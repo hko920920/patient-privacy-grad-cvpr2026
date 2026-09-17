@@ -137,7 +137,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_TARGET_EVALUATION_INVENTORY_RESULTS_20260917.md",
+  "current_result_report": "TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md",
   "stage2_status": "in_progress",
   "comparison_completion_is_not_stage2_completion": true,
   "completed_rank_decomposition": {
@@ -184,7 +184,7 @@
     "original_verification_failure_preserved": true,
     "base_membership_performance_claim": false
   },
-  "next_task": "One bounded20-30min separate data-configuration feasibility review: retain the existing patient-private adaptation question and both target conditions, inspect actual use/training histories for potentially unused original NIH training-role patients, and specify whether a separate CVPR target/reference split can coexist with frozen graduation contracts. Do not relabel roles, consume final/census or start generation/DP automatically. If this is not defensible, assess external data access, target-domain alignment and evaluator overlap instead.",
+  "next_task": "One bounded20-35min fixed PadChest evaluator validation: predeclare real-image patient/label selection and preprocessing/raw-score semantics on nonlocked development-only patients, independently verify loading/output and measure Emphysema/Pneumothorax discrimination with patient-level uncertainty and normal/effusion controls. Do not use the provisional reserved confirmation, pick evaluator/thresholds from generated outcomes, launch targeted generation or DP automatically.",
   "completed_meanmax_decomposition": {
     "status": "completed_and_independently_verified",
     "scorers": 4,
@@ -203,7 +203,7 @@
     "finding": "Within-frozen-scorer spread removal lowers observed target ranking in8 contexts; all4 own-target difference intervals include0. Spread use is an existing aggregation property; participation specificity remains unidentified",
     "stage2_completion_claim": false
   },
-  "next_task_output": "Concrete data-setting decision with source/role/exposure boundaries, counts for both targets and normal/effusion controls, and evaluator validation prerequisites; no new experiment until feasible.",
+  "next_task_output": "Bound evaluator-validation manifest and actual performance/implementation verdict; then a separate targeted non-DP comparison contract only if justified. Preserve existing private80, public32, all old results and original thesis roles.",
   "user_priority_20260915": "User requested maximal concrete follow-through on remaining stage2 investigations; preserve framework and do not substitute further score decomposition for missing baseline execution",
   "completed_eu_comparison": {
     "status": "completed_and_independently_verified",
@@ -1172,16 +1172,62 @@
         "file_checks.json": "5c060852c79bc79a9529437b39ee6ecffe0abb8a6f1c2ff6958df726d2372297",
         "verification.json": "d0be5b08d3d6f7dd1342face6493f7e0fb7689f06073bf047f2048f3d916a882"
       }
+    },
+    "patient_usage_audit": {
+      "status": "POSITIVE_SEPARATE_CVPR_REFERENCE_FEASIBILITY_NOT_EFFICACY",
+      "completed_utc": "2026-09-17T04:58:55.581154+00:00",
+      "report": "TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md",
+      "protocol": "TRACK1_PATIENT_USAGE_AUDIT_PROTOCOL_20260917.md",
+      "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\patient_usage_audit_20260917_v1",
+      "current_step": 2,
+      "track": 1,
+      "candidate_patients": 8426,
+      "target_candidate_patients": {
+        "Emphysema": 273,
+        "Pneumothorax": 559
+      },
+      "development_target_patients": {
+        "Emphysema": 135,
+        "Pneumothorax": 268
+      },
+      "confirmation_target_patients": {
+        "Emphysema": 138,
+        "Pneumothorax": 291
+      },
+      "actual_old_private_dryrun_patients": 50,
+      "actual_old_private_dryrun_images": 59,
+      "artifact_scan_files": 3680,
+      "independent_checks": 100948,
+      "audit_seconds": 35.649430499994196,
+      "verification_seconds": 1.5646466999314725,
+      "new_GPU": 0,
+      "new_generation": 0,
+      "new_model_inference": 0,
+      "original_roles_changed": false,
+      "provisional_split_only": true,
+      "locked_original_sets_preserved": true,
+      "private_generation_utility_established": false,
+      "previous192_utility_gate_passed": false,
+      "evaluator_validated": false,
+      "DP_allowed_to_expand": false,
+      "source_sha256": {
+        "contract.json": "8758464a9a8c37b6e8e0ac06a477fe6913a37d4d6640c260ddf73636994f18cb",
+        "audit.json": "5686be2b4fe49a329e5f21f5435c95d0deb144aa071bf9f3b04224c9c9a22865",
+        "verification.json": "28c80275f82ee96ce2a6a6658814131a399232fbd6fb4a7655caca75be3989ed",
+        "patient_usage_private.csv": "73510072e464307b7a8d7a770c8880ad085e314dada69df3c42db5ea90e89d0c",
+        "provisional_patient_split_private.csv": "914dd4fc986f8ea5d7fdfb71a8305dc10bf83fe893360104ff755bf55cc9f2ee",
+        "provisional_condition_images_private.csv": "b62fd54678e4bca290c08625ad36ad388c8bd50298c7b834d7f25bc75128cefe"
+      }
     }
   },
   "step2_active_task": "Saved private-direction/cohort review completed; assess target-specific generation evaluation feasibility next.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "step2_open_items": [
-    "Current fixed public-role reference feasibility failed: at most3/6 target patients, or3/1 after prior-evaluation exclusions.",
-    "Existing private delta and representation difference remain leads; targeted generation efficacy was not tested.",
-    "Separate data-setting feasibility and classifier validation are required; old final/test/census and study roles stay intact.",
-    "Private incremental utility, patient-DP retention and fair quality-cost comparisons remain unestablished.",
-    "Track2 is separate and not an automatic fallback."
+    "Separate CVPR reference is feasible by recorded use:8426 original-private candidates, provisional development/confirmation counts sufficient for both targets; not absolute never-used proof.",
+    "Original thesis roles remain fixed. Future models trained on candidate reference patients cannot treat that reference as independent.",
+    "Fixed PadChest condition-sensitive evaluator needs actual validation; old nonlocked324patient pool is development-only and has just15 emphysema-positive patients in its available images.",
+    "Targeted private incremental generation utility, DP retention and fair quality-cost advantages remain unestablished.",
+    "Prior192-image private utility gate remains failed; no posthoc rewriting."
   ],
   "step2_completed_diagnostics": [
     "CDI E480 extraction, four E/U cells18methods144AUC156contrasts and independent saved arithmetic/fit/statistics verification",
@@ -2387,7 +2433,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "TRACK1_TARGET_EVALUATION_INVENTORY_RESULTS_20260917.md",
+  "next_task_plan_report": "TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -2865,7 +2911,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "TRACK1_TARGET_EVALUATION_INVENTORY_RESULTS_20260917.md",
+  "current_planning_report": "TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -3129,5 +3175,52 @@
       "verification.json": "d0be5b08d3d6f7dd1342face6493f7e0fb7689f06073bf047f2048f3d916a882"
     }
   },
-  "latest_user_execution_scope_20260917": "Complete the bounded target-reference/evaluator inventory only; preserve existing results and locked roles."
+  "latest_user_execution_scope_20260917": "Complete the patient-level actual-use ledger and separate-CVPR reference feasibility audit; original thesis roles/final tests preserved, no model execution.",
+  "pre_patient_usage_current_result_report_20260917": "TRACK1_TARGET_EVALUATION_INVENTORY_RESULTS_20260917.md",
+  "completed_patient_usage_audit_20260917": {
+    "status": "POSITIVE_SEPARATE_CVPR_REFERENCE_FEASIBILITY_NOT_EFFICACY",
+    "completed_utc": "2026-09-17T04:58:55.581154+00:00",
+    "report": "TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md",
+    "protocol": "TRACK1_PATIENT_USAGE_AUDIT_PROTOCOL_20260917.md",
+    "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\patient_usage_audit_20260917_v1",
+    "current_step": 2,
+    "track": 1,
+    "candidate_patients": 8426,
+    "target_candidate_patients": {
+      "Emphysema": 273,
+      "Pneumothorax": 559
+    },
+    "development_target_patients": {
+      "Emphysema": 135,
+      "Pneumothorax": 268
+    },
+    "confirmation_target_patients": {
+      "Emphysema": 138,
+      "Pneumothorax": 291
+    },
+    "actual_old_private_dryrun_patients": 50,
+    "actual_old_private_dryrun_images": 59,
+    "artifact_scan_files": 3680,
+    "independent_checks": 100948,
+    "audit_seconds": 35.649430499994196,
+    "verification_seconds": 1.5646466999314725,
+    "new_GPU": 0,
+    "new_generation": 0,
+    "new_model_inference": 0,
+    "original_roles_changed": false,
+    "provisional_split_only": true,
+    "locked_original_sets_preserved": true,
+    "private_generation_utility_established": false,
+    "previous192_utility_gate_passed": false,
+    "evaluator_validated": false,
+    "DP_allowed_to_expand": false,
+    "source_sha256": {
+      "contract.json": "8758464a9a8c37b6e8e0ac06a477fe6913a37d4d6640c260ddf73636994f18cb",
+      "audit.json": "5686be2b4fe49a329e5f21f5435c95d0deb144aa071bf9f3b04224c9c9a22865",
+      "verification.json": "28c80275f82ee96ce2a6a6658814131a399232fbd6fb4a7655caca75be3989ed",
+      "patient_usage_private.csv": "73510072e464307b7a8d7a770c8880ad085e314dada69df3c42db5ea90e89d0c",
+      "provisional_patient_split_private.csv": "914dd4fc986f8ea5d7fdfb71a8305dc10bf83fe893360104ff755bf55cc9f2ee",
+      "provisional_condition_images_private.csv": "b62fd54678e4bca290c08625ad36ad388c8bd50298c7b834d7f25bc75128cefe"
+    }
+  }
 }

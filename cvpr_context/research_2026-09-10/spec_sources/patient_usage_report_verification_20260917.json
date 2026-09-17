@@ -1,0 +1,31 @@
+{
+  "status": "PASS_PATIENT_USAGE_REPORT_AND_STATE",
+  "created_utc": "2026-09-17T04:59:36.270982+00:00",
+  "existing_HTML_check": {
+    "rows": 79,
+    "checked_local_links": 1153,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_local_links": 7,
+  "broken_links": 0,
+  "source_files": 3691,
+  "independent_checks": 100948,
+  "old192_generated_images_unchanged": true,
+  "frozen_original_roles_preserved": true,
+  "state_fields": [
+    "current_step",
+    "next_task",
+    "next_task_output",
+    "step2_open_items",
+    "current_result_report",
+    "current_planning_report",
+    "active_execution"
+  ],
+  "new_GPU": 0,
+  "new_generation": 0,
+  "worklog132_encoding_restored": true,
+  "report_sha256": "f999a25ed7e70d23d8432b7cd25611728a505c65d3e1f2f387a32fa3056280b4",
+  "decision_sha256": "f7b802ac3f8d11abcfa09ba9319c77616a1753a079613856a8ceff53f8dd3ac4",
+  "verifier_sha256": "1307b1dbd1683ad74c90fbf44246d465eb3dd46bdebda8c90145feb66688b06a"
+}
