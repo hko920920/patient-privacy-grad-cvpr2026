@@ -1,5 +1,9 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-17 access correction: public derived labels acquired without contact.** [810-image/532-patient all14 copy and provenance](NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md). All14 published positive counts and a separate author-repository810-image roster match. Official CSV byte identity and full individual pathology readings remain unverified; role overlap is next. Do not treat author contact as the only route. No new models, generation or DP; prior failures stay fixed.
+
+**2026-09-17 최신 자료 접근 결과 — CSV403, 원문 부록 E7/P136:** [접근 기록과 문의 문안](NIH_EXPERT_LABEL_ACCESS_20260917.md). 공식 요청 양식·직접 객체 경로를 확인했지만 expert CSV는 미확보다. 부록의 폐기종7장·기흉136장은 영상 수이며 환자 중복은 미계산이다. 이 파일이 유일한 필수자료는 아니고 접근 성공도 두 질환 표본 충분성을 보장하지 않는다. 배포자 문의 문안만 준비했고 발송하지 않았다. 새 모델·생성·DP0, 마지막 실제 모델 결과는 CheXzero 실패 그대로다.
+
 **2026-09-17 최신 해석 정정 — 측정 경로는 존재, 방법 효용은 미판정:** [공식 주석·downstream 평가·현실적 다음 단계](MEASUREMENT_CLAIM_REVIEW_20260917.md). 두 classifier의 고정 NIH 검증 실패는 보존하지만 측정 불가능이나 방향1 전체 종료로 확대하지 않는다. NIH에는 14소견 전문의 재판독810장이 별도로 있다. 낮은 AUC의 주원인이 weak label이라고도 확정하지 않는다. 기존 전문 주석의 실제 접근·target 수·환자 중복과 downstream utility를 검토하며, 전문가 협력 여부는 미확인이다. 새GPU·생성·학습·DP0, reserved confirmation과 기존192장 실패를 보존한다. 현재 큰단계2·방향1이며 아래 최신/다음 문장은 이전 이력이다.
 
 **2026-09-17 최신 실제 검증 — CheXzero도 두 질환 미통과, classifier 탐색 종료:** [NIH80명 실제 추론·공식 CPU/GPU·독립 검산](TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md). 폐기종/기흉 rest AUC0.6742/0.5967, 상대 target0.5900/0.4900으로 두 관문 모두 실패했다. 구현 검산은 통과했지만 신뢰할 조건 평가기 채택에는 실패다. 새80명은 소비자료로 제외하고 잔여4053명·reserved4213명·졸논 final·기존192장 실패를 보존한다. 이 두 질환의 classifier 기반 targeted 경로를 보류한다. 다음20–30분은 실제 전문판독/주석 자원과 논문 질문의 연결을 재검토하는 설계 판단이며, 제3평가기·prompt구제·새생성·DP·방향2 자동전환은 없다. Private 생성효용은 미판정, 큰단계2·방향1 유지. 아래 최신/다음은 이전 이력이다.

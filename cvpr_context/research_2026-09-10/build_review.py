@@ -104,6 +104,8 @@ def convert(md,from_review=False):
         if href=='TRACK1_CHEXZERO_VALIDATION_PROTOCOL_20260917.md':href='track1_chexzero_validation_protocol.html'
         if href=='TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md':href='track1_chexzero_validation_results.html'
         if href=='MEASUREMENT_CLAIM_REVIEW_20260917.md':href='measurement_claim_review.html'
+        if href=='NIH_EXPERT_LABEL_ACCESS_20260917.md':href='nih_expert_label_access.html'
+        if href=='NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md':href='nih_expert_label_public_copy.html'
         a['href']=href
     return str(soup)
 
@@ -188,6 +190,8 @@ def main():
     head = '<section class="panel"><h2>이전 검토: CheXzero 한 대안의 근거·자산 확보</h2><p><a href="track1_chexzero_review.html"><strong>공식 질환별 근거·10개weight·새80명예약·중단선</strong></a> · <a href="track1_chexzero_review_protocol.html">사전 검토와 후속 검증 규칙</a></p><p>후보 준비 당시 기록입니다. 외부 PadChest의 폐기종AUC0.8232/기흉0.7659를 원자료에서 확인했고, 공식checkpoint10개3.29GiB를 확보·strict-load했습니다. 당시에는 모델forward/GPU/환자pixel접근0이었습니다.</p><p>이후 실제 NIH80명 검증은 위 최신 결과에서 완료됐습니다. 새예약 후개발E-only44명이라기존64명/reference예시는유지불가하고32명/군을탐색계획으로정정했습니다. Reserved confirmation과기존실패는보존합니다. 아래최신/다음은이전이력입니다.</p></section>' + head
     head = '<section class="panel"><h2>최신 실제 검증: CheXzero도 미통과 · classifier 탐색 종료</h2><p><a href="track1_chexzero_validation_results.html"><strong>NIH80명·10개 공식 모델 실제 결과와 중단 결정</strong></a> · <a href="track1_chexzero_validation_protocol.html">실행 전 고정 명세</a></p><p><strong>나쁜 결과입니다.</strong> 폐기종/기흉 rest AUC0.6742/0.5967, 상대 target AUC0.5900/0.4900으로 두 관문 모두 실패했습니다. 공식 CPU–GPU 대응과80장 pixel·16,000개 bootstrap 독립 검산은 통과했습니다.</p><p>정한 중단선에 따라 이 두 질환의 classifier 탐색을 종료하고 targeted 경로를 보류합니다. Private head의 생성효용은 미판정이며 새 생성·DP는0입니다. 소비80명을 추가 제외했고 잔여4,053명·reserved4,213명·졸논 final·과거192장 실패는 보존했습니다. 다음은 실제 측정 자원과 논문 질문의 설계 판단이며 자동 제3평가기/solver 실험은 없습니다. 아래 최신/다음은 이전 이력입니다.</p></section>' + head
     head = '<section class="panel"><h2>최신 해석 정정: 평가기 실패는 측정 불가능의 증명이 아니다</h2><p><a href="measurement_claim_review.html"><strong>전문 주석·downstream 효용·현재 적용 가능성 검토</strong></a></p><p>측정 경로의 존재에는 긍정적이며, private head의 효용은 여전히 미판정입니다. NIH 14소견 전문의 재라벨이 따로 있고, 가까운 DP 생성 선행도 분포 지표와 downstream 성능을 함께 평가합니다. 낮은 AUC의 원인을 NIH 라벨 오류 하나로 확정하지 않습니다.</p><p>기존 두 평가기의 실패와 이번 공동 가설의 무한 classifier 탐색 중단은 유지합니다. 다음은 실제 라벨 접근·질환 수·환자 중복과 주장에 맞는 측정 설계입니다. 전문의 협력이 없다는 이유만으로 보호·효율 방향 전체를 종료하지 않습니다. 새 추론·생성·DP는0이며, 아래 기록은 각 시점의 실제 결과입니다.</p></section>' + head
+    head = '<section class="panel"><h2>최신 자료 접근 결과: 공식 CSV 403, 공개 부록은 확보</h2><p><a href="nih_expert_label_access.html"><strong>접근 기록·양성 영상 수·문의 문안</strong></a></p><p>공식 요청 양식과 직접 파일 경로를 확인했지만 CSV는 접근 거부 상태입니다. 공개 부록의 양성 영상은 폐기종7장·기흉136장으로, 환자 중복 제외 전 수입니다. 접근이 풀려도 두 질환의 충분한 평가자료가 자동으로 확보되지는 않습니다. 환자 중복 감사는 미완료이며 새 추론·생성·DP는 없습니다. 메일은 준비만 했고 발송하지 않았습니다.</p></section>' + head
+    head = '<section class="panel"><h2>최신: 연락 없이 전문가 라벨 공개 가공본 확보</h2><p><a href="nih_expert_label_public_copy.html"><strong>810장·532명·14소견 추출 및 출처 교차 확인</strong></a></p><p>공개 파일의 전문가 출처 열만 분리했고14소견 양성 수가 공식 부록과 모두 일치합니다. 별도 후속 논문 저자 저장소와810개 영상ID도 일치합니다. 공식 원본과의 직접 대조·전문의별14소견 판독·기존 연구 환자 중복은 아직 미확인입니다. 직접 연락만 가능하다는 이전 결론을 정정합니다. 새 모델 실험은 없습니다.</p></section>' + head
     controls+=''.join('<option value="'+k+'">'+esc(v)+' ('+str(stats[k])+')</option>' for k,v in ROLES.items())
     controls+='''</select></label><label>확인 수준<select id="status"><option value="all">모든 확인 수준</option><option value="selected">PDF 선택 절 (75)</option><option value="partial">공식 본문 일부 (3)</option><option value="abstract">초록만 (1)</option><option value="replay">공개 packet 재계산 (2)</option></select></label><label>발표 형식<select id="venue"><option value="all">모든 발표 형식</option><option value="main">메인 학회 표기</option><option value="other">저널·워크샵·공개본 등</option></select></label><label class="search">논문명·방법·검토 내용 검색<input id="search" type="search" placeholder="예: MoFit, CLiD, 환자 평균, FPR" autocomplete="off"></label></div><p id="count" aria-live="polite"></p><button id="reset" type="button">필터 초기화</button><button id="expand" type="button">표시된 검토 펼치기</button><button id="collapse" type="button">모두 접기</button><p class="meta">비교 후보 수는 전부 실행할 의무 목록이나 같은 문제의 SOTA 순위가 아니다. 접근 권한과 주장에 맞는 비교군을 선택한다.</p></section>'''
     cards=[]
@@ -263,6 +267,8 @@ def main():
         ('TRACK1_CHEXZERO_VALIDATION_PROTOCOL_20260917.md','track1_chexzero_validation_protocol.html','방향1: CheXzero 실제 NIH80명 검증 명세'),
         ('TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md','track1_chexzero_validation_results.html','방향1: CheXzero 실제 검증 실패와 중단 결정'),
         ('MEASUREMENT_CLAIM_REVIEW_20260917.md','measurement_claim_review.html','측정 불가능 주장 정정과 실제 평가 경로'),
+        ('NIH_EXPERT_LABEL_ACCESS_20260917.md','nih_expert_label_access.html','NIH 전문가 라벨 접근 결과와 실제 표본 수'),
+        ('NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md','nih_expert_label_public_copy.html','연락 없이 NIH 전문가 라벨 공개 가공본 확보'),
         ('REALISTIC_RESEARCH_PLAN_20260916.md','realistic_research_plan.html','의료 생성모델 환자 보호: 현실적인 다음 계획')]:
         if (ROOT/source).exists():
             body='<p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p>'+convert((ROOT/source).read_text(encoding='utf-8'))

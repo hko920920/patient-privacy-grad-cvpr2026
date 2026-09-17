@@ -86,7 +86,7 @@
     "independent_saved_tensor_verification": "PASS",
     "failure_cause_or_membership_performance_claim": false
   },
-  "updated_utc": "2026-09-17T07:00:29.585762+00:00",
+  "updated_utc": "2026-09-17T07:31:04.111658+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -184,7 +184,7 @@
     "original_verification_failure_preserved": true,
     "base_membership_performance_claim": false
   },
-  "next_task": "Prioritize access feasibility, target counts and patient-role overlap for existing NIH all14 expert labels, without model scores or locked-data reuse. Specify a downstream-utility alternative separately from generated disease correctness. No rescue of the failed joint-classifier experiment and no automatic generation or DP.",
+  "next_task": "Audit overlap between the acquired810-image derived roster and fixed patient roles; assess feasible downstream claim/sample size. Do not wait for author contact as the only access route. Preserve failed joint-classifier results and locked cohorts; no automatic new model experiment.",
   "completed_meanmax_decomposition": {
     "status": "completed_and_independently_verified",
     "scorers": 4,
@@ -203,7 +203,7 @@
     "finding": "Within-frozen-scorer spread removal lowers observed target ranking in8 contexts; all4 own-target difference intervals include0. Spread use is an existing aggregation property; participation specificity remains unidentified",
     "stage2_completion_claim": false
   },
-  "next_task_output": "An accessible label/reference manifest and claim-matched comparison specification, or precise unresolved access requirements; do not infer scientific impossibility from resource uncertainty.",
+  "next_task_output": "Patient overlap and feasible real-test scope, with third-party-derived provenance and E7 sample limitation explicit.",
   "user_priority_20260915": "User requested maximal concrete follow-through on remaining stage2 investigations; preserve framework and do not substitute further score decomposition for missing baseline execution",
   "completed_eu_comparison": {
     "status": "completed_and_independently_verified",
@@ -355,7 +355,7 @@
     "last_completed_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
     "additional_execution_contract_fixed": false,
     "stage2_completion_claim": false,
-    "latest_design_review": "MEASUREMENT_CLAIM_REVIEW_20260917.md",
+    "latest_design_review": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
     "new_two_track_experiment_started": true,
     "new_two_track_experiment_status": "chexzero_actual80_complete_both_measurement_gates_failed",
     "latest_cpu_outputs": [
@@ -473,7 +473,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "measurement_routes_exist_access_and_claim_match_pending",
+    "latest_planning_status": "public_derived_all14_copy_acquired_overlap_pending",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -1399,9 +1399,124 @@
       "roentgen_arxiv_pdf_sha256": "99e5a03e8dd10a4286cac16583813f61246542d37620387170f1c80f469d1f24",
       "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md"
     },
-    "next_substep_timing_condition": "Metadata count/overlap estimate starts after obtaining a label manifest; external access delay is unknown."
+    "next_substep_timing_condition": "Metadata overlap review estimated20-30min using the acquired derived roster; no external email response prerequisite.",
+    "nih_expert_label_access_review": {
+      "report": "NIH_EXPERT_LABEL_ACCESS_20260917.md",
+      "completed_utc": "2026-09-17T07:24:31.691365+00:00",
+      "type": "access_and_document_inventory_not_model_experiment",
+      "judgment": "negative_for_immediate_access_and_two_target_sample_sufficiency_not_method_efficacy",
+      "expert_csv_acquired": false,
+      "patient_overlap_computed": false,
+      "published_positive_image_counts": {
+        "Emphysema": 7,
+        "Pneumothorax": 136,
+        "Effusion": 226
+      },
+      "counts_source": "Official paper Supplementary Table 4; image counts, not independent patients",
+      "counts_recomputed_from_label_csv": false,
+      "official_download_form_submissions": 1,
+      "identity_or_contact_submitted": false,
+      "anonymous_object_get_http_status": 403,
+      "user_reports_authenticated_browser_url_http403": true,
+      "user_account_login_and_IAM_independently_inspected": false,
+      "author_email_draft": "NIH_EXPERT_LABEL_ACCESS_REQUEST_20260917.txt",
+      "author_emails_sent": 0,
+      "specific_label_file_uniquely_required": false,
+      "new_model_inference": 0,
+      "new_generation": 0,
+      "new_training": 0,
+      "new_DP": 0,
+      "reserved_confirmation_model_or_pixel_consumption": false,
+      "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+      "report_sha256": "858505cfe4646a52cda594ee84f9894984546505b5b43c039288cae57d98896b",
+      "supplement_sha256": "87cebda60e13af16e553c6f294d30290bd4720849dbfd73ef0ed2218d88be999",
+      "inventory_record_sha256": "dbec8768fd2befd436f830a6f3cc0b65937834513050099bb8d606d3ea74de0a"
+    },
+    "nih_expert_label_public_copy": {
+      "report": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
+      "completed_utc": "2026-09-17T07:31:04.111658+00:00",
+      "type": "public_derived_label_acquisition_not_model_experiment",
+      "judgment": "positive_for_access_not_method_utility",
+      "recovery": {
+        "completed_utc": "2026-09-17T07:29:31.568814+00:00",
+        "status": "PUBLIC_DERIVED_COPY_ACQUIRED_AND_CROSSCHECKED",
+        "sources": [
+          {
+            "url": "https://raw.githubusercontent.com/manwithacat/Radiology-for-Dummies/b49f9519dba7237529cf6975ee9f268e4c370de8/data/processed/metadata_with_optimal_labels.parquet",
+            "local_file": "candidate_parquet.parquet",
+            "status": 200,
+            "bytes": 1800838,
+            "sha256": "4fe670b70795a69755637c4a2238f056fe9d452998c1d0580a09467ea16562e7",
+            "commit": "b49f9519dba7237529cf6975ee9f268e4c370de8"
+          },
+          {
+            "url": "https://raw.githubusercontent.com/markellekelly/consensus/38f2ceb1040b21a0e956660594eec3f438a90e34/data/nih/data_clean.csv",
+            "local_file": "consensus_data.txt",
+            "status": 200,
+            "bytes": 60778,
+            "sha256": "83186ce70d6d40c2422b83ff2bcf03a8a5adb76f169d51158d77715b33ac9696",
+            "commit": "38f2ceb1040b21a0e956660594eec3f438a90e34"
+          }
+        ],
+        "export_file": "nih_all14_from_public_mirror_810.csv",
+        "export_sha256": "40fede31f3f158a6e58419c202568b340fba22684f6f8900d45b35f9c3fb43c4",
+        "images": 810,
+        "unique_patients": 532,
+        "published_all14_positive_counts_match": true,
+        "positive_image_counts": {
+          "Atelectasis": 303,
+          "Cardiomegaly": 81,
+          "Consolidation": 83,
+          "Edema": 23,
+          "Effusion": 226,
+          "Emphysema": 7,
+          "Fibrosis": 13,
+          "Hernia": 5,
+          "Infiltration": 61,
+          "Mass": 99,
+          "Nodule": 130,
+          "Pleural_Thickening": 49,
+          "Pneumonia": 2,
+          "Pneumothorax": 136
+        },
+        "author_repository_810_image_ID_set_match": true,
+        "positive_patient_counts": {
+          "Atelectasis": 209,
+          "Cardiomegaly": 66,
+          "Consolidation": 69,
+          "Edema": 22,
+          "Effusion": 156,
+          "Emphysema": 7,
+          "Fibrosis": 12,
+          "Hernia": 5,
+          "Infiltration": 53,
+          "Mass": 71,
+          "Nodule": 99,
+          "Pleural_Thickening": 43,
+          "Pneumonia": 2,
+          "Pneumothorax": 86
+        },
+        "original_source_columns_only": true,
+        "merged_optimal_columns_used": false,
+        "official_original_csv_downloaded": false,
+        "official_byte_identical_verification": false,
+        "all14_individual_reader_labels_acquired": false,
+        "author_binary_copy_note": "Only normal/abnormal reader votes; five-reader consensus is not asserted equivalent to official designated-three-reader ground truth.",
+        "existing_cohort_overlap_computed": false,
+        "patient_images_opened": false,
+        "new_model_inference": 0,
+        "new_training": 0,
+        "new_generation": 0,
+        "new_DP": 0,
+        "author_contact_required_for_this_copy": false,
+        "author_emails_sent": 0
+      },
+      "author_contact_only_claim_retracted": true,
+      "patient_role_overlap_pending": true,
+      "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md"
+    }
   },
-  "step2_active_task": "Source-based measurement correction complete; match the intended utility claim to an accessible independent measurement resource.",
+  "step2_active_task": "Public derived all14 label copy acquired:810images/532patients, all14 aggregate counts and separate author image roster agree. Original official CSV remains inaccessible; patient-role overlap review can proceed.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "step2_open_items": [
     "CheXzero NIH80 actual inference complete: E/P rest AUC .6741667/.5966667 and opposite .5900/.4900; BOTH fixed gates failed. Official CPU/GPU and independent pixel/score/bootstrap verification passed.",
@@ -2614,7 +2729,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "MEASUREMENT_CLAIM_REVIEW_20260917.md",
+  "next_task_plan_report": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -3092,7 +3207,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "MEASUREMENT_CLAIM_REVIEW_20260917.md",
+  "current_planning_report": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -3582,6 +3697,130 @@
     "external_messages_or_access_form_submissions": 0,
     "report_sha256": "102948afadb46765776394c26efaab6600701dcca54d282dd98cadd9b5b05da4",
     "roentgen_arxiv_pdf_sha256": "99e5a03e8dd10a4286cac16583813f61246542d37620387170f1c80f469d1f24",
+    "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md"
+  },
+  "pre_nih_expert_label_access_20260917": {
+    "current_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+    "current_planning_report": "MEASUREMENT_CLAIM_REVIEW_20260917.md",
+    "next_task": "Prioritize access feasibility, target counts and patient-role overlap for existing NIH all14 expert labels, without model scores or locked-data reuse. Specify a downstream-utility alternative separately from generated disease correctness. No rescue of the failed joint-classifier experiment and no automatic generation or DP."
+  },
+  "completed_nih_expert_label_access_20260917": {
+    "report": "NIH_EXPERT_LABEL_ACCESS_20260917.md",
+    "completed_utc": "2026-09-17T07:24:31.691365+00:00",
+    "type": "access_and_document_inventory_not_model_experiment",
+    "judgment": "negative_for_immediate_access_and_two_target_sample_sufficiency_not_method_efficacy",
+    "expert_csv_acquired": false,
+    "patient_overlap_computed": false,
+    "published_positive_image_counts": {
+      "Emphysema": 7,
+      "Pneumothorax": 136,
+      "Effusion": 226
+    },
+    "counts_source": "Official paper Supplementary Table 4; image counts, not independent patients",
+    "counts_recomputed_from_label_csv": false,
+    "official_download_form_submissions": 1,
+    "identity_or_contact_submitted": false,
+    "anonymous_object_get_http_status": 403,
+    "user_reports_authenticated_browser_url_http403": true,
+    "user_account_login_and_IAM_independently_inspected": false,
+    "author_email_draft": "NIH_EXPERT_LABEL_ACCESS_REQUEST_20260917.txt",
+    "author_emails_sent": 0,
+    "specific_label_file_uniquely_required": false,
+    "new_model_inference": 0,
+    "new_generation": 0,
+    "new_training": 0,
+    "new_DP": 0,
+    "reserved_confirmation_model_or_pixel_consumption": false,
+    "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+    "report_sha256": "858505cfe4646a52cda594ee84f9894984546505b5b43c039288cae57d98896b",
+    "supplement_sha256": "87cebda60e13af16e553c6f294d30290bd4720849dbfd73ef0ed2218d88be999",
+    "inventory_record_sha256": "dbec8768fd2befd436f830a6f3cc0b65937834513050099bb8d606d3ea74de0a"
+  },
+  "pre_nih_expert_public_copy_20260917": {
+    "current_planning_report": "NIH_EXPERT_LABEL_ACCESS_20260917.md",
+    "next_task": "Use the prepared author inquiry to obtain current official access instructions. No message sent. After CSV access, audit patient-role overlap; do not presume seven emphysema-positive images suffice for the old joint-target design. The exact file is not a unique prerequisite; separate prospective claim/resource design remains possible."
+  },
+  "completed_nih_expert_public_copy_20260917": {
+    "report": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
+    "completed_utc": "2026-09-17T07:31:04.111658+00:00",
+    "type": "public_derived_label_acquisition_not_model_experiment",
+    "judgment": "positive_for_access_not_method_utility",
+    "recovery": {
+      "completed_utc": "2026-09-17T07:29:31.568814+00:00",
+      "status": "PUBLIC_DERIVED_COPY_ACQUIRED_AND_CROSSCHECKED",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/manwithacat/Radiology-for-Dummies/b49f9519dba7237529cf6975ee9f268e4c370de8/data/processed/metadata_with_optimal_labels.parquet",
+          "local_file": "candidate_parquet.parquet",
+          "status": 200,
+          "bytes": 1800838,
+          "sha256": "4fe670b70795a69755637c4a2238f056fe9d452998c1d0580a09467ea16562e7",
+          "commit": "b49f9519dba7237529cf6975ee9f268e4c370de8"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/markellekelly/consensus/38f2ceb1040b21a0e956660594eec3f438a90e34/data/nih/data_clean.csv",
+          "local_file": "consensus_data.txt",
+          "status": 200,
+          "bytes": 60778,
+          "sha256": "83186ce70d6d40c2422b83ff2bcf03a8a5adb76f169d51158d77715b33ac9696",
+          "commit": "38f2ceb1040b21a0e956660594eec3f438a90e34"
+        }
+      ],
+      "export_file": "nih_all14_from_public_mirror_810.csv",
+      "export_sha256": "40fede31f3f158a6e58419c202568b340fba22684f6f8900d45b35f9c3fb43c4",
+      "images": 810,
+      "unique_patients": 532,
+      "published_all14_positive_counts_match": true,
+      "positive_image_counts": {
+        "Atelectasis": 303,
+        "Cardiomegaly": 81,
+        "Consolidation": 83,
+        "Edema": 23,
+        "Effusion": 226,
+        "Emphysema": 7,
+        "Fibrosis": 13,
+        "Hernia": 5,
+        "Infiltration": 61,
+        "Mass": 99,
+        "Nodule": 130,
+        "Pleural_Thickening": 49,
+        "Pneumonia": 2,
+        "Pneumothorax": 136
+      },
+      "author_repository_810_image_ID_set_match": true,
+      "positive_patient_counts": {
+        "Atelectasis": 209,
+        "Cardiomegaly": 66,
+        "Consolidation": 69,
+        "Edema": 22,
+        "Effusion": 156,
+        "Emphysema": 7,
+        "Fibrosis": 12,
+        "Hernia": 5,
+        "Infiltration": 53,
+        "Mass": 71,
+        "Nodule": 99,
+        "Pleural_Thickening": 43,
+        "Pneumonia": 2,
+        "Pneumothorax": 86
+      },
+      "original_source_columns_only": true,
+      "merged_optimal_columns_used": false,
+      "official_original_csv_downloaded": false,
+      "official_byte_identical_verification": false,
+      "all14_individual_reader_labels_acquired": false,
+      "author_binary_copy_note": "Only normal/abnormal reader votes; five-reader consensus is not asserted equivalent to official designated-three-reader ground truth.",
+      "existing_cohort_overlap_computed": false,
+      "patient_images_opened": false,
+      "new_model_inference": 0,
+      "new_training": 0,
+      "new_generation": 0,
+      "new_DP": 0,
+      "author_contact_required_for_this_copy": false,
+      "author_emails_sent": 0
+    },
+    "author_contact_only_claim_retracted": true,
+    "patient_role_overlap_pending": true,
     "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md"
   }
 }

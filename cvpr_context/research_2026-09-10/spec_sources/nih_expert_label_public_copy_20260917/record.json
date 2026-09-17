@@ -1,0 +1,97 @@
+{
+  "status": {
+    "report": "NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md",
+    "completed_utc": "2026-09-17T07:31:04.111658+00:00",
+    "type": "public_derived_label_acquisition_not_model_experiment",
+    "judgment": "positive_for_access_not_method_utility",
+    "recovery": {
+      "completed_utc": "2026-09-17T07:29:31.568814+00:00",
+      "status": "PUBLIC_DERIVED_COPY_ACQUIRED_AND_CROSSCHECKED",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/manwithacat/Radiology-for-Dummies/b49f9519dba7237529cf6975ee9f268e4c370de8/data/processed/metadata_with_optimal_labels.parquet",
+          "local_file": "candidate_parquet.parquet",
+          "status": 200,
+          "bytes": 1800838,
+          "sha256": "4fe670b70795a69755637c4a2238f056fe9d452998c1d0580a09467ea16562e7",
+          "commit": "b49f9519dba7237529cf6975ee9f268e4c370de8"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/markellekelly/consensus/38f2ceb1040b21a0e956660594eec3f438a90e34/data/nih/data_clean.csv",
+          "local_file": "consensus_data.txt",
+          "status": 200,
+          "bytes": 60778,
+          "sha256": "83186ce70d6d40c2422b83ff2bcf03a8a5adb76f169d51158d77715b33ac9696",
+          "commit": "38f2ceb1040b21a0e956660594eec3f438a90e34"
+        }
+      ],
+      "export_file": "nih_all14_from_public_mirror_810.csv",
+      "export_sha256": "40fede31f3f158a6e58419c202568b340fba22684f6f8900d45b35f9c3fb43c4",
+      "images": 810,
+      "unique_patients": 532,
+      "published_all14_positive_counts_match": true,
+      "positive_image_counts": {
+        "Atelectasis": 303,
+        "Cardiomegaly": 81,
+        "Consolidation": 83,
+        "Edema": 23,
+        "Effusion": 226,
+        "Emphysema": 7,
+        "Fibrosis": 13,
+        "Hernia": 5,
+        "Infiltration": 61,
+        "Mass": 99,
+        "Nodule": 130,
+        "Pleural_Thickening": 49,
+        "Pneumonia": 2,
+        "Pneumothorax": 136
+      },
+      "author_repository_810_image_ID_set_match": true,
+      "positive_patient_counts": {
+        "Atelectasis": 209,
+        "Cardiomegaly": 66,
+        "Consolidation": 69,
+        "Edema": 22,
+        "Effusion": 156,
+        "Emphysema": 7,
+        "Fibrosis": 12,
+        "Hernia": 5,
+        "Infiltration": 53,
+        "Mass": 71,
+        "Nodule": 99,
+        "Pleural_Thickening": 43,
+        "Pneumonia": 2,
+        "Pneumothorax": 86
+      },
+      "original_source_columns_only": true,
+      "merged_optimal_columns_used": false,
+      "official_original_csv_downloaded": false,
+      "official_byte_identical_verification": false,
+      "all14_individual_reader_labels_acquired": false,
+      "author_binary_copy_note": "Only normal/abnormal reader votes; five-reader consensus is not asserted equivalent to official designated-three-reader ground truth.",
+      "existing_cohort_overlap_computed": false,
+      "patient_images_opened": false,
+      "new_model_inference": 0,
+      "new_training": 0,
+      "new_generation": 0,
+      "new_DP": 0,
+      "author_contact_required_for_this_copy": false,
+      "author_emails_sent": 0
+    },
+    "author_contact_only_claim_retracted": true,
+    "patient_role_overlap_pending": true,
+    "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md"
+  },
+  "previous_planning": {
+    "research_state.json": {
+      "current_planning_report": "NIH_EXPERT_LABEL_ACCESS_20260917.md",
+      "next_task": "Use the prepared author inquiry to obtain current official access instructions. No message sent. After CSV access, audit patient-role overlap; do not presume seven emphysema-positive images suffice for the old joint-target design. The exact file is not a unique prerequisite; separate prospective claim/resource design remains possible."
+    },
+    "patient_baseline_spec.json": {
+      "current_planning_report": "NIH_EXPERT_LABEL_ACCESS_20260917.md",
+      "next_task": "Use the prepared author inquiry to obtain current official access instructions. No message sent. After CSV access, audit patient-role overlap; do not presume seven emphysema-positive images suffice for the old joint-target design. The exact file is not a unique prerequisite; separate prospective claim/resource design remains possible."
+    }
+  },
+  "report_sha256": "17a64e32e5a4aac4cbdca0cbff24956a7e96765943215d8173048ee53a2ca9cf",
+  "recovery_record_sha256": "3794c9a18e033c6209210b4aa4fd2f0f2c2cb3f8a550f507515c00d2453f1195"
+}

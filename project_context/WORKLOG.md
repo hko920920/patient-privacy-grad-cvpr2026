@@ -1,5 +1,13 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 139-NIH-PUBLIC-LABEL-COPY (2026-09-17 KST)
+
+Found and downloaded a public derived copy without contact after the user challenged the premature access conclusion. Extracted810images/532patients/14 source-specific labels. All14 positive counts match official supplement and image roster matches a separate paper-author repository. Original CSV/full individual readings not acquired. Recorded pinned URLs, SHA and extraction; no images/models/DP or contact. [Report](CVPR%20??%20??/research_2026-09-10/nih_expert_label_public_copy.html).
+
+## 138-NIH-EXPERT-LABEL-ACCESS (2026-09-17 KST)
+
+공식 익명 범주형 요청 양식 완료 후 CSV 접근403을 확인했고 사용자의 직접 링크403도 기록했다. 공식 부록을 내려받아 XML와 python-docx로 폐기종7장·기흉136장·흉수226장을 확인했다. expert 환자 중복 감사는 미완료다. 공식 교신저자 문의 초안만 준비했으며 발송하지 않았다. 새 모델/생성/DP0, 기존 실패와 reserved 자료 보존. [접근 보고서](CVPR%20주제%20탐색/research_2026-09-10/nih_expert_label_access.html).
+
 ## 137-MEASUREMENT-CLAIM-CORRECTION (2026-09-17 KST)
 
 사용자 지적에 따라 두 평가기 실패를 측정 불가능으로 확대한 해석을 철회했다. 원 실험 실패는 유지한다. NIH14소견810장·VinDr 두 target 주석 및 작은 합의양성 수·SIIM의 NIH 출처·DP-LoRA/RoentGen downstream 평가 근거를 확인했다. 실제 라벨 접근·중복·전문의 협력은 미확정이며 새 환자영상/추론/생성/DP0이다. 최종 actual-result 포인터를 CheXzero로 유지하고 planning/HTML/상태에 정정을 반영했다. [검토 문서](CVPR%20주제%20탐색/research_2026-09-10/measurement_claim_review.html).

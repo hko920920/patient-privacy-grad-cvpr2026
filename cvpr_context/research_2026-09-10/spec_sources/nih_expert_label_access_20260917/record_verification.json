@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "historical:TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md": true,
+    "historical:TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md": true,
+    "historical:TRACK1_MEDICAL_HEAD_RESULTS_20260916.md": true,
+    "actual:research_state.json": true,
+    "planning:research_state.json": true,
+    "actual:patient_baseline_spec.json": true,
+    "planning:patient_baseline_spec.json": true,
+    "report_links_exist": true,
+    "draft_exists": true,
+    "email_not_sent": true
+  },
+  "missing_links": [],
+  "status": "PASS",
+  "scope": "document pointers, local links, and historical report hashes; no patient pixels or inference"
+}

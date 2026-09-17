@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "checks": {
+    "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md": true,
+    "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md": true,
+    "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md": true,
+    "extracted_csv_hash": true,
+    "research_state.json": true,
+    "patient_baseline_spec.json": true,
+    "local_links": true
+  },
+  "scope": "record pointers, artifact SHA, document links, preserved prior report SHA; no new model or patient-pixel evaluation"
+}

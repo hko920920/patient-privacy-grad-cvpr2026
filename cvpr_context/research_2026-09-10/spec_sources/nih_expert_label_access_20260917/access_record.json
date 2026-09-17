@@ -1,0 +1,51 @@
+{
+  "status": {
+    "report": "NIH_EXPERT_LABEL_ACCESS_20260917.md",
+    "completed_utc": "2026-09-17T07:24:31.691365+00:00",
+    "type": "access_and_document_inventory_not_model_experiment",
+    "judgment": "negative_for_immediate_access_and_two_target_sample_sufficiency_not_method_efficacy",
+    "expert_csv_acquired": false,
+    "patient_overlap_computed": false,
+    "published_positive_image_counts": {
+      "Emphysema": 7,
+      "Pneumothorax": 136,
+      "Effusion": 226
+    },
+    "counts_source": "Official paper Supplementary Table 4; image counts, not independent patients",
+    "counts_recomputed_from_label_csv": false,
+    "official_download_form_submissions": 1,
+    "identity_or_contact_submitted": false,
+    "anonymous_object_get_http_status": 403,
+    "user_reports_authenticated_browser_url_http403": true,
+    "user_account_login_and_IAM_independently_inspected": false,
+    "author_email_draft": "NIH_EXPERT_LABEL_ACCESS_REQUEST_20260917.txt",
+    "author_emails_sent": 0,
+    "specific_label_file_uniquely_required": false,
+    "new_model_inference": 0,
+    "new_generation": 0,
+    "new_training": 0,
+    "new_DP": 0,
+    "reserved_confirmation_model_or_pixel_consumption": false,
+    "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+    "report_sha256": "858505cfe4646a52cda594ee84f9894984546505b5b43c039288cae57d98896b",
+    "supplement_sha256": "87cebda60e13af16e553c6f294d30290bd4720849dbfd73ef0ed2218d88be999",
+    "inventory_record_sha256": "dbec8768fd2befd436f830a6f3cc0b65937834513050099bb8d606d3ea74de0a"
+  },
+  "previous_state_pointers": {
+    "research_state.json": {
+      "current_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+      "current_planning_report": "MEASUREMENT_CLAIM_REVIEW_20260917.md",
+      "next_task": "Prioritize access feasibility, target counts and patient-role overlap for existing NIH all14 expert labels, without model scores or locked-data reuse. Specify a downstream-utility alternative separately from generated disease correctness. No rescue of the failed joint-classifier experiment and no automatic generation or DP."
+    },
+    "patient_baseline_spec.json": {
+      "current_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+      "current_planning_report": "MEASUREMENT_CLAIM_REVIEW_20260917.md",
+      "next_task": "Prioritize access feasibility, target counts and patient-role overlap for existing NIH all14 expert labels, without model scores or locked-data reuse. Specify a downstream-utility alternative separately from generated disease correctness. No rescue of the failed joint-classifier experiment and no automatic generation or DP."
+    }
+  },
+  "preserved_historical_report_hashes": {
+    "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md": "a2f1556f6dcfac42f40fbed445afba14f86db0891d851a47d40ad6165abe7b9b",
+    "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md": "8837f86cbb422272ba13d08d60c7ea979539e907aaad4e0c442d125a569a1a4f",
+    "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md": "08f6b02f71498bb454654aa94a432be4ffc24bf7c06501806d49d199b9f5cb47"
+  }
+}

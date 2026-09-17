@@ -1,0 +1,18 @@
+To: tsed@google.com
+Subject: Access to NIH ChestX-ray14 all-findings expert labels (403)
+
+Dear Dr. Tse,
+
+I am conducting academic research on privacy-preserving medical image generation and downstream evaluation.
+
+I followed the official NIH additional-label instructions and completed the request form. The supplied Google Cloud Storage bucket returns Access denied. The authenticated direct link to the CSV also returns HTTP 403.
+
+Could you please provide the current download link or access instructions for these two files from the 810-image all-findings expert-label set?
+
+all_findings_expert_labels/test_labels.csv
+all_findings_expert_labels/test_individual_readers.csv
+
+The bucket linked by the form is:
+gs://gcs-public-data--healthcare-nih-chest-xray-labels
+
+Thank you for your help.
