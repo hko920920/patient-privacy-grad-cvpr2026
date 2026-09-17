@@ -1,0 +1,66 @@
+{
+  "status": "PASS_METADATA_COUNTS_PARTITIONS_RECORDED_DUPLICATES_AND_PLAN_BINDINGS",
+  "allocation_patients": 4053,
+  "public_images": 813,
+  "private_images": 320,
+  "overlaps": {
+    "public_real__private_real_diagnostic": {
+      "patient": 0,
+      "image": 0,
+      "recorded_file_sha": 0
+    },
+    "public_real__expert_final": {
+      "patient": 0,
+      "image": 0,
+      "recorded_file_sha": 0
+    },
+    "public_real__classifier_selection": {
+      "patient": 0,
+      "image": 0,
+      "recorded_file_sha": 0
+    },
+    "public_real__method_development": {
+      "patient": 0,
+      "image": 0,
+      "recorded_file_sha": 0
+    },
+    "private_real_diagnostic__expert_final": {
+      "patient": 0,
+      "image": 0,
+      "recorded_file_sha": 0
+    },
+    "private_real_diagnostic__classifier_selection": {
+      "patient": 0,
+      "image": 0,
+      "recorded_file_sha": 0
+    },
+    "private_real_diagnostic__method_development": {
+      "patient": 0,
+      "image": 0,
+      "recorded_file_sha": 0
+    },
+    "expert_final__classifier_selection": {
+      "patient": 0,
+      "image": 0,
+      "recorded_file_sha": 0
+    },
+    "expert_final__method_development": {
+      "patient": 0,
+      "image": 0,
+      "recorded_file_sha": 0
+    },
+    "classifier_selection__method_development": {
+      "patient": 0,
+      "image": 0,
+      "recorded_file_sha": 0
+    }
+  },
+  "source_files_checked": 6,
+  "frozen_reports_checked": 4,
+  "raw_image_file_hashes_recomputed": false,
+  "pixels_read": 0,
+  "model_inference": 0,
+  "statistical_power_established": false,
+  "implementation_note": "Independent pandas joins/grouping, no import from production inventory script",
+  "verifier_sha256": "e572a0f46c6cade08cf76e143921a71e3bfa3dd058a1b6a8868fbdb81f09ae81"
+}

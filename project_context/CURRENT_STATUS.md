@@ -1,8 +1,10 @@
 # 현재 상태와 기록 권위
 
-**2026-09-17 expert ?? ?? ?? ? ?? ?? ???? ???:** [532??810? ?? ?? ??](CVPR%20??%20??/research_2026-09-10/nih_expert_patient_overlap_results.html). ??? ???????? ??? ???0??. ?? ??test?? ??final466?+census66?, ??86??????7??? ??final? ??. ? ????? ??0??? ?? ?????? ?? ???.810? ??? ??? ??? ????? ????. ?pixel/??/??/DP0, ?????downstream????20?30???.
+**2026-09-17 최신 통합 계획 — expert final은 개발 이후에:** [기흉 downstream 통합 명세](CVPR%20주제%20탐색/research_2026-09-10/track1_downstream_master_protocol.html). 설계·자료에는 긍정적이며 새 방법 성능은 미실행이다. 공개672명813장, private80명320장, 개발2027명/2026명을 명부로 재계산했다. 개발에서 비DP·DP와 강한 비교군을 완성한 뒤 전체 weights·분석을 동결하고 expert532명을 평가한다. 다음은 runner와 작은 시간 profile45–75분. 큰 단계2·방향1, 실행 중 모델 없음.
 
-**2026-09-17 access correction: public derived labels acquired without contact.** [810-image/532-patient all14 copy and provenance](CVPR%20??%20??/research_2026-09-10/nih_expert_label_public_copy.html). All14 published positive counts and a separate author-repository810-image roster match. Official CSV byte identity and full individual pathology readings remain unverified; role overlap is next. Do not treat author contact as the only route. No new models, generation or DP; prior failures stay fixed.
+**2026-09-17 expert 환자 감사 — 최종 후보 확보:** [532명810장 환자 중복 감사](CVPR%20주제%20탐색/research_2026-09-10/nih_expert_patient_overlap_results.html). 기록된 학습·개발 소비와 교집합0이며 final466명+census66명이다. 기흉86명·폐기종7명 양성 환자는 전부 final에 있다. 새 개발자료0명이며 기존 잠금을 유지한다.810장 존재·bytes 확인, pixel/추론/생성/DP0. 저장 시 깨진 한글을 원 보고서에 맞춰 복구했다.
+
+**2026-09-17 access correction: public derived labels acquired without contact.** [810-image/532-patient all14 copy and provenance](CVPR%20주제%20탐색/research_2026-09-10/nih_expert_label_public_copy.html). All14 published positive counts and a separate author-repository810-image roster match. Official CSV byte identity and full individual pathology readings remain unverified; role overlap is next. Do not treat author contact as the only route. No new models, generation or DP; prior failures stay fixed.
 
 **2026-09-17 최신 자료 접근 결과 — CSV403, 원문 부록 E7/P136:** [접근 기록과 문의 문안](CVPR%20주제%20탐색/research_2026-09-10/nih_expert_label_access.html). 공식 요청 양식·직접 객체 경로를 확인했지만 expert CSV는 미확보다. 부록의 폐기종7장·기흉136장은 영상 수이며 환자 중복은 미계산이다. 이 파일이 유일한 필수자료는 아니고 접근 성공도 두 질환 표본 충분성을 보장하지 않는다. 배포자 문의 문안만 준비했고 발송하지 않았다. 새 모델·생성·DP0, 마지막 실제 모델 결과는 CheXzero 실패 그대로다.
 

@@ -24,14 +24,14 @@
       "meaning": "192-image fixed paired screen is mixed; it is not a successful final test or patient-DP comparison."
     }
   ],
-  "next_task": "Prepare a bounded prospective pneumothorax downstream-utility specification using existing nonfinal development resources and preserving the expert final. Fix synthetic comparisons, training budgets, patient-clustered measurement and when final results may be opened. Do not revive the failed two-target classifier protocol or automatically launch generation/DP.",
-  "next_task_output": "A concrete non-DP downstream comparison specification and measured-or-explicitly-provisional execution cost; final532patients remain unopened for model performance.",
+  "next_task": "Implement and bind the downstream runner and fixed manifests, then at most32 separate profile images and100 public-real classifier steps to measure cost and verify integration. Keep expert final and reserved4213 closed. Report actual feasibility/time before the full512-image non-DP development package. No DP or final execution yet.",
+  "next_task_output": "Verified downstream inputs/runner and measured small-profile cost. Full non-DP comparison, medical DP and expert final remain subsequent phases of the master protocol.",
   "step2_open_items": [
-    "CheXzero NIH80 actual inference complete: E/P rest AUC .6741667/.5966667 and opposite .5900/.4900; BOTH fixed gates failed. Official CPU/GPU and independent pixel/score/bootstrap verification passed.",
-    "Classifier search for the joint target hypothesis CLOSED; no third candidate, checkpoint subset, prompt search or target deletion.",
-    "New80 now evaluator-consumed; exclude both prior PadChest80 and new CheXzero80. Remaining4053/E-only44; original reserved4213/final sets unchanged.",
-    "Private targeted generation utility remains unmeasured. Public-head generation effect and original192-image private-utility failure remain historical evidence, not current privacy success.",
-    "Next is a paper-level measurement/resource decision, not automatic direction2, solver or DP execution."
+    "Downstream non-DP utility remains unexecuted. Existing192 pooled failure and both evaluator failures are preserved.",
+    "Public672/813 contains only6 weak-P positive images; private80/320 has33. Fixed real augmentation and private-real diagnostic are needed to interpret learning efficacy.",
+    "Prospective nonfinal selection2027 and method-development2026 groups are disjoint and unconsumed by new pixels/models. Expert532 and reserved4213 remain closed.",
+    "Medical-backbone patient-DP and patient-DP LoRA implementation/accounting/cost are pending; do not reuse generic-head weights or nonprotected private calibration.",
+    "All final non-DP and DP models, seed banks, contrast families and release scope must be frozen before expert test predictions are inspected."
   ],
   "step2_completed_diagnostics": [
     "Core source/code premise review within documented scope",
@@ -58,7 +58,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Expert patient overlap audit complete: all532patients have no recorded model/result consumption but belong to existing locked NIH test. Specify a prospective downstream claim while preserving final independence.",
+  "step2_active_task": "Downstream master design and metadata inventory completed; non-DP and DP development precede any expert final performance evaluation.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -77,7 +77,7 @@
     "last_completed_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
     "additional_execution_contract_fixed": false,
     "stage2_completion_claim": false,
-    "latest_design_review": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md",
+    "latest_design_review": "TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md",
     "new_two_track_experiment_started": true,
     "new_two_track_experiment_status": "chexzero_actual80_complete_both_measurement_gates_failed",
     "latest_cpu_outputs": [
@@ -195,7 +195,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "expert532_all_locked_test_no_consumption_overlap_downstream_design_next",
+    "latest_planning_status": "downstream_master_protocol_and_metadata_complete_final_closed",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -1270,6 +1270,55 @@
       "audit_sha256": "1a95e54b660da907603c5d8fe928244b1842b18fdb90a6c1b51ae3d0b932774b",
       "verification_sha256": "c4c807555f07bd8b5619fe5dade1ad3216c7802d3f7490c4af0fc9bad17a3a66",
       "report_sha256": "c150ec73417981db15fa3199dd26d65f2710bedd6daf31362539c0546f9d63e1"
+    },
+    "downstream_master_design": {
+      "report": "TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md",
+      "completed_utc": "2026-09-17T08:19:28.465586+00:00",
+      "judgment": "positive_design_and_development_resources_not_method_efficacy",
+      "report_sha256": "e8eccf2cea6416cd946d0a4bc829c565243d91e9392011d4902609891997ea06",
+      "plan_sha256": "b17910325f546d94e148e12922fef7d5714b631d2ebd5f453ec7509f393bd251",
+      "resource_sha256": "6195560006389e481c14d1cc2767cb3ed1a955dcf388bc0539927d78ec7fbfee",
+      "public_real": {
+        "patients": 672,
+        "images": 813,
+        "positive_images": 6,
+        "positive_patients": 6
+      },
+      "private_real_diagnostic": {
+        "patients": 80,
+        "images": 320,
+        "positive_images": 33,
+        "positive_patients": 17
+      },
+      "development": {
+        "classifier_selection": {
+          "patients": 2027,
+          "images": 5097,
+          "positive_images": 230,
+          "positive_patients": 114
+        },
+        "method_development": {
+          "patients": 2026,
+          "images": 5047,
+          "positive_images": 223,
+          "positive_patients": 114
+        }
+      },
+      "final_ready": false,
+      "expert_final_performance_opened": false,
+      "new_model_forwards": 0,
+      "new_training": 0,
+      "new_generation": 0,
+      "new_DP": 0,
+      "new_patient_pixel_reads": 0,
+      "original_roles_changed": false,
+      "actual_result_unchanged": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+      "next_task_eta_minutes": [
+        45,
+        75
+      ],
+      "metadata_verification_report": "spec_sources/downstream_master_verification_20260917.json",
+      "metadata_verification_sha256": "2ac7ba67c1ce141034b4815ad489d13b092d3f8a1b9ca33fbe1887070899fbc3"
     }
   },
   "updated_utc": "2026-09-17T07:51:09.443550+00:00",
@@ -2725,7 +2774,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md",
+  "next_task_plan_report": "TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -2847,7 +2896,7 @@
     "finalnextquestion": "Does the observed restricted-head denoising gain survive a fair patient-DP comparison, given the full64 statistic dimension2336 versus static16 dimension200 and only0.4467% extra nonprivate MSE reduction?"
   },
   "current_paper_problem_fixed": false,
-  "research_question_status": "Private incremental utility remains unvalidated. A crosschecked derived expert real-test candidate is available, with86P/7E positive patients and zero recorded model/result overlap; all are in the existing official test area. No downstream or DP success established.",
+  "research_question_status": "A prospective pneumothorax downstream study is specified using nonfinal weak-label development; no private synthetic benefit, medical DP utility, cost superiority or CVPR contribution established.",
   "new_dp_principle_required": false,
   "new_solver_required_for_application_contribution": false,
   "realistic_replan_20260916": {
@@ -3202,7 +3251,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md",
+  "current_planning_report": "TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -3857,5 +3906,68 @@
     "verification_sha256": "c4c807555f07bd8b5619fe5dade1ad3216c7802d3f7490c4af0fc9bad17a3a66",
     "report_sha256": "c150ec73417981db15fa3199dd26d65f2710bedd6daf31362539c0546f9d63e1"
   },
-  "latest_data_audit_report": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md"
+  "latest_data_audit_report": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md",
+  "pre_downstream_master_20260917": {
+    "current_planning_report": "NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md",
+    "next_task": "Prepare a bounded prospective pneumothorax downstream-utility specification using existing nonfinal development resources and preserving the expert final. Fix synthetic comparisons, training budgets, patient-clustered measurement and when final results may be opened. Do not revive the failed two-target classifier protocol or automatically launch generation/DP.",
+    "next_task_output": "A concrete non-DP downstream comparison specification and measured-or-explicitly-provisional execution cost; final532patients remain unopened for model performance.",
+    "step2_active_task": "Expert patient overlap audit complete: all532patients have no recorded model/result consumption but belong to existing locked NIH test. Specify a prospective downstream claim while preserving final independence.",
+    "research_question_status": "Private incremental utility remains unvalidated. A crosschecked derived expert real-test candidate is available, with86P/7E positive patients and zero recorded model/result overlap; all are in the existing official test area. No downstream or DP success established.",
+    "step2_open_items": [
+      "CheXzero NIH80 actual inference complete: E/P rest AUC .6741667/.5966667 and opposite .5900/.4900; BOTH fixed gates failed. Official CPU/GPU and independent pixel/score/bootstrap verification passed.",
+      "Classifier search for the joint target hypothesis CLOSED; no third candidate, checkpoint subset, prompt search or target deletion.",
+      "New80 now evaluator-consumed; exclude both prior PadChest80 and new CheXzero80. Remaining4053/E-only44; original reserved4213/final sets unchanged.",
+      "Private targeted generation utility remains unmeasured. Public-head generation effect and original192-image private-utility failure remain historical evidence, not current privacy success.",
+      "Next is a paper-level measurement/resource decision, not automatic direction2, solver or DP execution."
+    ]
+  },
+  "completed_downstream_master_20260917": {
+    "report": "TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md",
+    "completed_utc": "2026-09-17T08:19:28.465586+00:00",
+    "judgment": "positive_design_and_development_resources_not_method_efficacy",
+    "report_sha256": "e8eccf2cea6416cd946d0a4bc829c565243d91e9392011d4902609891997ea06",
+    "plan_sha256": "b17910325f546d94e148e12922fef7d5714b631d2ebd5f453ec7509f393bd251",
+    "resource_sha256": "6195560006389e481c14d1cc2767cb3ed1a955dcf388bc0539927d78ec7fbfee",
+    "public_real": {
+      "patients": 672,
+      "images": 813,
+      "positive_images": 6,
+      "positive_patients": 6
+    },
+    "private_real_diagnostic": {
+      "patients": 80,
+      "images": 320,
+      "positive_images": 33,
+      "positive_patients": 17
+    },
+    "development": {
+      "classifier_selection": {
+        "patients": 2027,
+        "images": 5097,
+        "positive_images": 230,
+        "positive_patients": 114
+      },
+      "method_development": {
+        "patients": 2026,
+        "images": 5047,
+        "positive_images": 223,
+        "positive_patients": 114
+      }
+    },
+    "final_ready": false,
+    "expert_final_performance_opened": false,
+    "new_model_forwards": 0,
+    "new_training": 0,
+    "new_generation": 0,
+    "new_DP": 0,
+    "new_patient_pixel_reads": 0,
+    "original_roles_changed": false,
+    "actual_result_unchanged": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+    "next_task_eta_minutes": [
+      45,
+      75
+    ],
+    "metadata_verification_report": "spec_sources/downstream_master_verification_20260917.json",
+    "metadata_verification_sha256": "2ac7ba67c1ce141034b4815ad489d13b092d3f8a1b9ca33fbe1887070899fbc3"
+  }
 }

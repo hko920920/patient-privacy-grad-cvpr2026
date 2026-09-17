@@ -1,6 +1,8 @@
 # CVPR 연구의 네 단계와 현재 위치
 
-**2026-09-17 expert ?? ?? ?? ? ?? ?? ???? ???:** [532??810? ?? ?? ??](NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md). ??? ???????? ??? ???0??. ?? ??test?? ??final466?+census66?, ??86??????7??? ??final? ??. ? ????? ??0??? ?? ?????? ?? ???.810? ??? ??? ??? ????? ????. ?pixel/??/??/DP0, ?????downstream????20?30???.
+**2026-09-17 최신 통합 계획 — 개발에서 비DP·DP를 완료하고 final은 마지막에:** [기흉 downstream master protocol](TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md). 공개672명813장, private80명320장, 별도 개발2027명/2026명을 명부로 확인했다. 모델 성능은 새로 실행하지 않았다. Expert532명은 개발 선택에 사용하지 않으며 전체 비DP·DP 비교와 통계를 동결한 뒤 평가한다. 다음은 runner·명부 결속·작은 시간 profile45–75분이다. 큰 단계2·방향1 유지.
+
+**2026-09-17 expert 환자 감사 — 최종 후보 확보, 개발용 전환 아님:** [532명810장 환자 중복 감사](NIH_EXPERT_PATIENT_OVERLAP_RESULTS_20260917.md). 기록된 모델·결과 소비와 교집합0이며 전원 official test(final466+census66)다. 기흉86명과 폐기종7명 양성 환자는 모두 final에 있다.810장 로컬 존재·bytes를 확인했다. 새 pixel/추론/생성/DP0. 이 문단은 저장 시 깨진 한글을 원 보고서에 맞춰 복구한 것이며 수치·실험 변경이 아니다.
 
 **2026-09-17 access correction: public derived labels acquired without contact.** [810-image/532-patient all14 copy and provenance](NIH_EXPERT_LABEL_PUBLIC_COPY_20260917.md). All14 published positive counts and a separate author-repository810-image roster match. Official CSV byte identity and full individual pathology readings remain unverified; role overlap is next. Do not treat author contact as the only route. No new models, generation or DP; prior failures stay fixed.
 

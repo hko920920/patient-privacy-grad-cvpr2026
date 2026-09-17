@@ -1,12 +1,20 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 141-DOWNSTREAM-MASTER-PROTOCOL (2026-09-17 KST)
+
+- 사용자 검토의 핵심인 final 누출 위험을 반영했다. 비DP 가능성·DP 설계·모든 비교군을 비잠금 개발자료에서 완성하고, 전체 모델/분석 동결 후 expert final을 평가하도록 통합 계획을 작성했다. 큰 단계2·방향1 유지.
+- 실제 metadata/trace 재계산: 기존 공개672명813장(P6장), private80명320장(P33장17명). 잔여4053명을 고정 hash로 classifier-selection2027명/5097장과 method-development2026명/5047장으로 나눴으며 각각P114명이다. 전향적 overlay이며 원 역할 변경0, 새 pixel/모델/생성/DP0.
+- 같은 optimizer step의 real-repeat 중복, 합성 조건 label과 expert truth의 차이, private 비보호 초기화/clip 선택, DP 여러 모델 공개 composition, seed 변동과 환자 bootstrap의 차이를 명세에 반영했다. 새 의료 DP와 최종 실행 계약은 미완료로 표시했다.
+- [통합 명세](CVPR%20주제%20탐색/research_2026-09-10/track1_downstream_master_protocol.html). 다음은 runner·작은 시간 profile45–75분이며 full512장/학습/DP는 아직 미실행이다. 최신 상태 일부에 저장됐던 깨진 한글과 링크를 원 보고서 내용대로 복구했다. 과거 실험 원본은 바꾸지 않았다.
+- 독립 pandas 명부 재집계·배정·원본6개 SHA 및 과거4개 결과 불변 확인PASS. 주요5역할의10쌍에서 환자/영상/기록된 파일SHA 중복0. 새 보고서와 index 링크 검증PASS,79문헌/75PDF 유지. 작업 약18분; 원격 main 재확인이나 push는 하지 않았다.
+
 ## 140-NIH-EXPERT-PATIENT-OVERLAP (2026-09-17 KST)
 
-532??810?? ??? ??evaluator160?? ????. ?? ???????? ?????0, ??officialtest(final466+census66)??. ??86????7???final? ??.37???/14??? ??pandas? ???PASS,810?????bytes??. ???/pixel/??/DP0, ????0. ?????????????? ??????????. [??](CVPR%20??%20??/research_2026-09-10/nih_expert_patient_overlap_results.html).
+532명810장을 기존 원장과 이후 evaluator160명에 결속했다. 기록된 모델·결과 소비와 교집합0이며 전원 official test(final466+census66)다. 기흉86명·폐기종7명 양성 환자는 final에 있다.37집합/14소견을 pandas로 독립 재집계해 PASS,810장 존재·bytes 확인. 새 pixel/모델/생성/DP0, 원 역할 변경0. 최종 평가 후보 확보와 새 개발자료 확보를 구분했다. [보고서](CVPR%20주제%20탐색/research_2026-09-10/nih_expert_patient_overlap_results.html). 이 문단은 다음 기록에서 저장 인코딩 손상을 복구했다.
 
 ## 139-NIH-PUBLIC-LABEL-COPY (2026-09-17 KST)
 
-Found and downloaded a public derived copy without contact after the user challenged the premature access conclusion. Extracted810images/532patients/14 source-specific labels. All14 positive counts match official supplement and image roster matches a separate paper-author repository. Original CSV/full individual readings not acquired. Recorded pinned URLs, SHA and extraction; no images/models/DP or contact. [Report](CVPR%20??%20??/research_2026-09-10/nih_expert_label_public_copy.html).
+Found and downloaded a public derived copy without contact after the user challenged the premature access conclusion. Extracted810images/532patients/14 source-specific labels. All14 positive counts match official supplement and image roster matches a separate paper-author repository. Original CSV/full individual readings not acquired. Recorded pinned URLs, SHA and extraction; no images/models/DP or contact. [Report](CVPR%20주제%20탐색/research_2026-09-10/nih_expert_label_public_copy.html).
 
 ## 138-NIH-EXPERT-LABEL-ACCESS (2026-09-17 KST)
 

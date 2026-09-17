@@ -1,0 +1,161 @@
+{
+  "schema": "pneumothorax-downstream-master/v1",
+  "created_date": "2026-09-17",
+  "status": "planning_and_metadata_snapshot_complete_no_model_execution",
+  "stage": 2,
+  "track": 1,
+  "report": "TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md",
+  "final_ready": false,
+  "expert_final_performance_opened": false,
+  "original_roles_changed": false,
+  "claim": "Incremental downstream pneumothorax utility of private-role synthetic data, then preservation under patient DP and full cost comparison",
+  "development_resources": "../../code_working/_reports/downstream_master_20260917_v1/resources.json",
+  "phases": [
+    "runner_and_bounded_profile",
+    "nonDP_weak_label_development",
+    "patient_DP_and_strong_baselines_on_development",
+    "freeze_all_final_arms_models_analysis",
+    "expert_final_frozen_round"
+  ],
+  "initial_arms": [
+    "R0_real_plain",
+    "R1_real_standard_augmentation",
+    "S0_real_backbone_synthetic",
+    "S1_real_public_head_synthetic",
+    "S2_real_private_head_synthetic",
+    "S3_real_pooled_synthetic",
+    "Dreal_public_plus_private_real_NONDP"
+  ],
+  "synthetic": {
+    "methods": [
+      "backbone",
+      "public",
+      "private_only",
+      "pooled"
+    ],
+    "images_per_method": 128,
+    "total_images": 512,
+    "positive_count": 64,
+    "negative_counts": {
+      "normal": 22,
+      "effusion": 21,
+      "cardiomegaly": 21
+    },
+    "fresh_latent_blocks": 64,
+    "shared_across_methods": true,
+    "no_outcome_filtering": true,
+    "labels": "requested conditions, not expert ground truth",
+    "guidance": 7.5,
+    "ddim_steps": 30,
+    "eta": 0,
+    "precision": "float32",
+    "resolution": 256,
+    "prompts": {
+      "pneumothorax": "a frontal posteroanterior chest radiograph with radiographic findings of pneumothorax",
+      "normal": "a frontal posteroanterior chest radiograph with no labeled finding",
+      "effusion": "a frontal posteroanterior chest radiograph with radiographic findings of pleural effusion",
+      "cardiomegaly": "a frontal posteroanterior chest radiograph with radiographic findings of cardiomegaly"
+    }
+  },
+  "classifier": {
+    "architecture": "torchvision_resnet18",
+    "initialization": "IMAGENET1K_V1",
+    "checkpoint_acquired": false,
+    "trainable": "all",
+    "outputs": 1,
+    "loss": "BCEWithLogitsLoss",
+    "batch": 32,
+    "lr_candidates": [
+      0.0001,
+      0.0003
+    ],
+    "checkpoint_candidates_steps": [
+      400,
+      800
+    ],
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "selection": "public R1 only on classifier_selection; AUROC tie within .002 prefers fewer steps then lower lr",
+    "paired_seeds": [
+      11,
+      23,
+      37
+    ],
+    "synthetic_slots": 16,
+    "real_slots": 16,
+    "class_balance_per_source": "1:1",
+    "real_sampling": "uniform patient within class, then uniform image within patient/class",
+    "input": "full frame aspect-preserving letterbox224 then ImageNet normalization; no center crop",
+    "augmentation": "affine rotation5deg translation.02 scale[.95,1.05], no flips",
+    "real_repeat": "same fixed-step sampling distribution as R1, not a separate efficacy arm"
+  },
+  "development_investment_rule": {
+    "candidate_vs": "S1 and R1",
+    "mean_AUROC_gain_at_least": 0.01,
+    "positive_seeds_at_least": 2,
+    "seed_count": 3,
+    "AP_mean_must_not_decrease": true,
+    "scope": "engineering investment criterion, not clinical margin, significance or final efficacy criterion"
+  },
+  "DP": {
+    "implementation": "pending on medical backbone",
+    "primary_epsilon": 8,
+    "secondary_epsilon_candidate": 4,
+    "delta": 0.00001,
+    "unit": "add_remove_one_patient",
+    "public_denominator": 80,
+    "head_primary": "public_initialized_patient_DP_SGD_same_head_with_public_gradient",
+    "strong_baseline": "patient_DP_LoRA_same_public_medical_backbone",
+    "solver_novelty_required": false,
+    "nonprivate_private_initialization_permitted": false,
+    "private_raw_clip_calibration_permitted": false,
+    "accounting": "must be recalibrated and independently checked",
+    "release": "individual mechanism guarantee; entire public-data research bundle is not a DP release; compose multiple releases"
+  },
+  "final": {
+    "patients": 532,
+    "images": 810,
+    "image_labels_preserved": true,
+    "patient_any_positive_relabel": false,
+    "negative_label_means": "pneumothorax negative, not normal",
+    "primary": "image_level_AUROC",
+    "secondary": "average_precision",
+    "bootstrap": "10000 paired patient-cluster draws, carry all images and multiplicities",
+    "seed_aggregation": "mean of per-seed metrics, not prediction ensemble",
+    "nonDP_primary_contrasts": [
+      "S2-S1",
+      "S3-S1"
+    ],
+    "nonDP_each_CI_level": 0.975,
+    "training_randomness": "report separately from conditional patient bootstrap",
+    "sensitivity": "final_test466patients741images; patient-equal weights",
+    "Emphysema": "no efficacy endpoint without separately frozen output; seven positives descriptive only",
+    "threshold_selection": "development only if included",
+    "all_nonDP_and_DP_models_frozen_before_first_score": true
+  },
+  "next_profile": {
+    "eta_minutes": [
+      45,
+      75
+    ],
+    "max_generated_images": 32,
+    "max_classifier_steps": 100,
+    "expert_access": false,
+    "performed": false
+  },
+  "unresolved_before_execution": [
+    "downstream runner verification",
+    "checkpoint version/SHA",
+    "runtime preprocessing parity",
+    "new latent tensors/SHA and previous-seed exclusion",
+    "private-only sampling integration"
+  ],
+  "unresolved_before_final": [
+    "public calibration result",
+    "medical DP mechanism/accountant",
+    "patient DP LoRA validity/profile",
+    "final synthesis count and independent banks",
+    "DP training repetitions and release composition",
+    "all weights/SHA and analysis family"
+  ]
+}
