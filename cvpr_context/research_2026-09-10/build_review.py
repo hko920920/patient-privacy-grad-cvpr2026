@@ -97,6 +97,8 @@ def convert(md,from_review=False):
         if href=='TRACK1_TARGET_EVALUATION_INVENTORY_RESULTS_20260917.md':href='track1_target_evaluation_inventory_results.html'
         if href=='TRACK1_PATIENT_USAGE_AUDIT_PROTOCOL_20260917.md':href='track1_patient_usage_audit_protocol.html'
         if href=='TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md':href='track1_patient_usage_audit_results.html'
+        if href=='TRACK1_PADCHEST_VALIDATION_PROTOCOL_20260917.md':href='track1_padchest_validation_protocol.html'
+        if href=='TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md':href='track1_padchest_validation_results.html'
         a['href']=href
     return str(soup)
 
@@ -177,6 +179,7 @@ def main():
     head = '<section class="panel"><h2>최신 CPU 검토: 사적 추가 방향은 존재, 생성 효용은 미확인</h2><p><a href="track1_private_signal_results.html"><strong>자료 차이·출력 delta·subset·목적함수 검토</strong></a> · <a href="track1_private_signal_protocol.html">고정 분석 명세</a></p><p>제한적으로 긍정적인 후속 근거입니다. Private-only의 출력 delta 중93.93%는 단순 scalar가 아니고,16개 subset head에서도 작은 개발MSE 개선이 남았습니다. Private에서 더 많이 관측된 폐기종·기흉을 직전 생성 평가가 직접 다루지 않았음도 확인했습니다.</p><p>공개 backbone도 두 조건을 학습했고 평가자료가 부족하므로 private 생성효용·DP 성공은 아닙니다. 기존192장 관문 실패는 유지합니다. 다음은target/reference·평가 가능성15–25분 점검, 새GPU/생성0이며 아래 최신/다음은 이전 기록입니다.</p></section>' + head
     head = '<section class="panel"><h2>최신 자료 점검: 현재 배정으로 두 질환의 새 확인자료 부족</h2><p><a href="track1_target_evaluation_inventory_results.html"><strong>전체 자료 inventory·평가기 후보·진행 결정</strong></a> · <a href="track1_target_evaluation_inventory_protocol.html">점검 범위</a></p><p>자료에는 부정적, 평가기 후보에는 긍정적입니다. 학습·CVPR 역할을 제외하면 폐기종3명/기흉6명, 과거 평가까지 제외하면3명/1명입니다. 실제 후보511장의 hash와 PNG를 확인했습니다. 설치된 PadChest 분류기는 두 질환 출력을 지원하지만 해당 자료에서의 성능 검증은 아직입니다.</p><p>독립 재집계2,124항목 PASS, 새GPU·생성0. 기존192장 실패와 잠긴 역할은 유지합니다. 다음은 새 데이터 구성 검토20–30분이며, 기존 배정에서 생성·DP 확대는 보류합니다. 아래 최신/다음은 이전 이력입니다.</p></section>' + head
     head = '<section class="panel"><h2>최신 실제 이력 감사: 별도 CVPR 확인자료 구성 가능</h2><p><a href="track1_patient_usage_audit_results.html"><strong>환자별 사용 이력·새 후보 분할·진행 판단</strong></a> · <a href="track1_patient_usage_audit_protocol.html">사전 감사 규칙</a></p><p>자료 구성에는 긍정적입니다. Original private_train8,476명 중 실제 시험학습50명을 제외한8,426명이 조사 기록상 미사용 후보입니다. 폐기종273명·기흉559명이 남았고, 사전 hash 반분할에서도 개발135/268명·별도확인138/291명으로 두 질환이 유지됐습니다.</p><p>기존 졸논 역할과 final/test는 변경하지 않았고, 새GPU·생성0입니다. 독립 재집계는 통과했지만 private 효용 성공은 아닙니다. 다음은 고정 평가기의 조건 구별력·전처리 검증20–35분입니다. 아래 최신/다음은 이전 이력입니다.</p></section>' + head
+    head = '<section class="panel"><h2>최신 실제 평가기 검증: 두 질환 판별력 기준 미달</h2><p><a href="track1_padchest_validation_results.html"><strong>309명 실제 추론·전처리·AUC/AP·실패 판정</strong></a> · <a href="track1_padchest_validation_protocol.html">점수 확인 전 명세</a></p><p>평가기 후보에는 나쁜 결과입니다. 새 개발80명에서 폐기종·기흉 AUC가 모두0.5308이며, 상대 target 구별도0.5025/0.5425로 사전 기준을 통과하지 못했습니다. 독립 검산 PASS는 구현 정확성이지 평가기 성능 성공이 아닙니다.</p><p>새 evaluator80명은 후속 생성 reference에서 제외합니다. 잔여 개발4,133명과 reserved confirmation4,213명은 보존했고 새 생성·학습·DP는0입니다. 다음은 조건 평가방법의 근거 검토20–30분이며, 현재 점수로 private 효용을 판정하지 않습니다. 아래 최신/다음은 이전 이력입니다.</p></section>' + head
     controls+=''.join('<option value="'+k+'">'+esc(v)+' ('+str(stats[k])+')</option>' for k,v in ROLES.items())
     controls+='''</select></label><label>확인 수준<select id="status"><option value="all">모든 확인 수준</option><option value="selected">PDF 선택 절 (75)</option><option value="partial">공식 본문 일부 (3)</option><option value="abstract">초록만 (1)</option><option value="replay">공개 packet 재계산 (2)</option></select></label><label>발표 형식<select id="venue"><option value="all">모든 발표 형식</option><option value="main">메인 학회 표기</option><option value="other">저널·워크샵·공개본 등</option></select></label><label class="search">논문명·방법·검토 내용 검색<input id="search" type="search" placeholder="예: MoFit, CLiD, 환자 평균, FPR" autocomplete="off"></label></div><p id="count" aria-live="polite"></p><button id="reset" type="button">필터 초기화</button><button id="expand" type="button">표시된 검토 펼치기</button><button id="collapse" type="button">모두 접기</button><p class="meta">비교 후보 수는 전부 실행할 의무 목록이나 같은 문제의 SOTA 순위가 아니다. 접근 권한과 주장에 맞는 비교군을 선택한다.</p></section>'''
     cards=[]
@@ -245,6 +248,8 @@ def main():
         ('TRACK1_TARGET_EVALUATION_INVENTORY_RESULTS_20260917.md','track1_target_evaluation_inventory_results.html','방향1: 새 환자 reference 부족과 평가기 후보'),
         ('TRACK1_PATIENT_USAGE_AUDIT_PROTOCOL_20260917.md','track1_patient_usage_audit_protocol.html','방향1: 실제 사용 이력 감사 규칙'),
         ('TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md','track1_patient_usage_audit_results.html','방향1: 별도 CVPR 확인자료 구성 가능성'),
+        ('TRACK1_PADCHEST_VALIDATION_PROTOCOL_20260917.md','track1_padchest_validation_protocol.html','방향1: 고정 PadChest 평가기 실영상 검증 명세'),
+        ('TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md','track1_padchest_validation_results.html','방향1: PadChest 조건 구별력 실제 검증 결과'),
         ('REALISTIC_RESEARCH_PLAN_20260916.md','realistic_research_plan.html','의료 생성모델 환자 보호: 현실적인 다음 계획')]:
         if (ROOT/source).exists():
             body='<p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p>'+convert((ROOT/source).read_text(encoding='utf-8'))

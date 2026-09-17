@@ -137,7 +137,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md",
+  "current_result_report": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
   "stage2_status": "in_progress",
   "comparison_completion_is_not_stage2_completion": true,
   "completed_rank_decomposition": {
@@ -184,7 +184,7 @@
     "original_verification_failure_preserved": true,
     "base_membership_performance_claim": false
   },
-  "next_task": "One bounded20-35min fixed PadChest evaluator validation: predeclare real-image patient/label selection and preprocessing/raw-score semantics on nonlocked development-only patients, independently verify loading/output and measure Emphysema/Pneumothorax discrimination with patient-level uncertainty and normal/effusion controls. Do not use the provisional reserved confirmation, pick evaluator/thresholds from generated outcomes, launch targeted generation or DP automatically.",
+  "next_task": "One bounded20-30min measurement redesign review: explain fixed PadChest failure without outcome tuning; examine target label definitions, training provenance/NIH overlap and external validation evidence to justify at most one alternative evaluator or clinical assessment route. No model sweep, reserved-confirmation use, targeted generation, solver search or DP execution.",
   "completed_meanmax_decomposition": {
     "status": "completed_and_independently_verified",
     "scorers": 4,
@@ -203,7 +203,7 @@
     "finding": "Within-frozen-scorer spread removal lowers observed target ranking in8 contexts; all4 own-target difference intervals include0. Spread use is an existing aggregation property; participation specificity remains unidentified",
     "stage2_completion_claim": false
   },
-  "next_task_output": "Bound evaluator-validation manifest and actual performance/implementation verdict; then a separate targeted non-DP comparison contract only if justified. Preserve existing private80, public32, all old results and original thesis roles.",
+  "next_task_output": "A defensible condition-sensitive measurement proposal with explicit validation independence and cost, or a documented measurement-resource blocker; retain the actual failed PadChest scores and all prior generator results.",
   "user_priority_20260915": "User requested maximal concrete follow-through on remaining stage2 investigations; preserve framework and do not substitute further score decomposition for missing baseline execution",
   "completed_eu_comparison": {
     "status": "completed_and_independently_verified",
@@ -1218,16 +1218,57 @@
         "provisional_patient_split_private.csv": "914dd4fc986f8ea5d7fdfb71a8305dc10bf83fe893360104ff755bf55cc9f2ee",
         "provisional_condition_images_private.csv": "b62fd54678e4bca290c08625ad36ad388c8bd50298c7b834d7f25bc75128cefe"
       }
+    },
+    "padchest_validation": {
+      "status": "NEGATIVE_PADCHEST_CONDITION_DISCRIMINATION",
+      "completed_utc": "2026-09-17T05:20:22.555208+00:00",
+      "report": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
+      "protocol": "TRACK1_PADCHEST_VALIDATION_PROTOCOL_20260917.md",
+      "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\padchest_validation_20260917_v1",
+      "current_step": 2,
+      "track": 1,
+      "actual_validation_patients": 309,
+      "primary_new_development_patients": 80,
+      "evaluator_validated": false,
+      "private_generation_utility_established": false,
+      "previous192_utility_gate_passed": false,
+      "DP_allowed_to_expand": false,
+      "automatic_targeted_generation_allowed": false,
+      "reserved_confirmation_consumed": false,
+      "original_roles_changed": false,
+      "new_GPU_inference": true,
+      "new_generation": 0,
+      "new_DP": 0,
+      "remaining_target_development_patients": 4133,
+      "remaining_exclusive_emphysema": 64,
+      "evaluator_exclusions_manifest": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\padchest_validation_20260917_v1\\evaluator_exclusions_private.csv",
+      "primary_auc": {
+        "Emphysema": 0.5308333333333334,
+        "Pneumothorax": 0.5308333333333334
+      },
+      "independent_checks": 34805,
+      "execution_seconds": 30.950679300003685,
+      "inference_seconds": 1.1914240000769496,
+      "verification_seconds": 20.764544699923135,
+      "source_sha256": {
+        "contract.json": "f93556a5fa8972947b915223a298628ef7cc24549c07c49be914fdebdb2322eb",
+        "result.json": "71b3be4cf28acbf23e826479687729d9680f9cba2931250c50e963e98e95840e",
+        "metrics.json": "578f548157b7c932e5a47ef71e3d88a3dc61afef7b6b2af0a5a5dfb1766d99ff",
+        "verification.json": "6c46d3e570bd2d9faad8ac042c6e64582714c367dfa8b6ae97d856cf17712847",
+        "selected_images_private.csv": "3b194f0404fb7293ea80fe4edfdf787101679feca4804b36792b2abde30ffcfd",
+        "evaluator_exclusions_private.csv": "e5ed02d33a6524b6b324a77331fee9724822a1d0d94f76240d26e6588be2e879",
+        "remaining_development_private.csv": "5590e8217ed5ee614fc04cb626d41e83ef55fa5bbdf9ba4fb8f3cef3e1c86529"
+      }
     }
   },
   "step2_active_task": "Saved private-direction/cohort review completed; assess target-specific generation evaluation feasibility next.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "step2_open_items": [
-    "Separate CVPR reference is feasible by recorded use:8426 original-private candidates, provisional development/confirmation counts sufficient for both targets; not absolute never-used proof.",
-    "Original thesis roles remain fixed. Future models trained on candidate reference patients cannot treat that reference as independent.",
-    "Fixed PadChest condition-sensitive evaluator needs actual validation; old nonlocked324patient pool is development-only and has just15 emphysema-positive patients in its available images.",
-    "Targeted private incremental generation utility, DP retention and fair quality-cost advantages remain unestablished.",
-    "Prior192-image private utility gate remains failed; no posthoc rewriting."
+    "Fixed PadChest validation actually completed: fresh80patients, both target-vs-rest AUC .5308, both predeclared criteria failed. Correct implementation is not metric efficacy.",
+    "New80 evaluator-only patients are now consumed: always exclude evaluator_exclusions_private.csv from subsequent generation reference/confirmation;4133 development candidates remain, including64 E-only/197 P-only.",
+    "Reserved4213 confirmation patients and original final/census/roles remain protected; metadata intersection checks only.",
+    "Targeted private generation utility is unmeasured because the required condition-sensitive evaluator is not validated; prior192-image private-utility failure remains.",
+    "No automatic additional classifier search or generated/DP experiments; next is source-grounded measurement design, at most one justified alternative."
   ],
   "step2_completed_diagnostics": [
     "CDI E480 extraction, four E/U cells18methods144AUC156contrasts and independent saved arithmetic/fit/statistics verification",
@@ -2433,7 +2474,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md",
+  "next_task_plan_report": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -2911,7 +2952,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md",
+  "current_planning_report": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -3175,7 +3216,7 @@
       "verification.json": "d0be5b08d3d6f7dd1342face6493f7e0fb7689f06073bf047f2048f3d916a882"
     }
   },
-  "latest_user_execution_scope_20260917": "Complete the patient-level actual-use ledger and separate-CVPR reference feasibility audit; original thesis roles/final tests preserved, no model execution.",
+  "latest_user_execution_scope_20260917": "Complete fixed evaluator actual real-image validation, source/metric verification and records; no generated image/DP expansion.",
   "pre_patient_usage_current_result_report_20260917": "TRACK1_TARGET_EVALUATION_INVENTORY_RESULTS_20260917.md",
   "completed_patient_usage_audit_20260917": {
     "status": "POSITIVE_SEPARATE_CVPR_REFERENCE_FEASIBILITY_NOT_EFFICACY",
@@ -3221,6 +3262,48 @@
       "patient_usage_private.csv": "73510072e464307b7a8d7a770c8880ad085e314dada69df3c42db5ea90e89d0c",
       "provisional_patient_split_private.csv": "914dd4fc986f8ea5d7fdfb71a8305dc10bf83fe893360104ff755bf55cc9f2ee",
       "provisional_condition_images_private.csv": "b62fd54678e4bca290c08625ad36ad388c8bd50298c7b834d7f25bc75128cefe"
+    }
+  },
+  "pre_padchest_validation_result_report_20260917": "TRACK1_PATIENT_USAGE_AUDIT_RESULTS_20260917.md",
+  "completed_padchest_validation_20260917": {
+    "status": "NEGATIVE_PADCHEST_CONDITION_DISCRIMINATION",
+    "completed_utc": "2026-09-17T05:20:22.555208+00:00",
+    "report": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
+    "protocol": "TRACK1_PADCHEST_VALIDATION_PROTOCOL_20260917.md",
+    "directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\padchest_validation_20260917_v1",
+    "current_step": 2,
+    "track": 1,
+    "actual_validation_patients": 309,
+    "primary_new_development_patients": 80,
+    "evaluator_validated": false,
+    "private_generation_utility_established": false,
+    "previous192_utility_gate_passed": false,
+    "DP_allowed_to_expand": false,
+    "automatic_targeted_generation_allowed": false,
+    "reserved_confirmation_consumed": false,
+    "original_roles_changed": false,
+    "new_GPU_inference": true,
+    "new_generation": 0,
+    "new_DP": 0,
+    "remaining_target_development_patients": 4133,
+    "remaining_exclusive_emphysema": 64,
+    "evaluator_exclusions_manifest": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\padchest_validation_20260917_v1\\evaluator_exclusions_private.csv",
+    "primary_auc": {
+      "Emphysema": 0.5308333333333334,
+      "Pneumothorax": 0.5308333333333334
+    },
+    "independent_checks": 34805,
+    "execution_seconds": 30.950679300003685,
+    "inference_seconds": 1.1914240000769496,
+    "verification_seconds": 20.764544699923135,
+    "source_sha256": {
+      "contract.json": "f93556a5fa8972947b915223a298628ef7cc24549c07c49be914fdebdb2322eb",
+      "result.json": "71b3be4cf28acbf23e826479687729d9680f9cba2931250c50e963e98e95840e",
+      "metrics.json": "578f548157b7c932e5a47ef71e3d88a3dc61afef7b6b2af0a5a5dfb1766d99ff",
+      "verification.json": "6c46d3e570bd2d9faad8ac042c6e64582714c367dfa8b6ae97d856cf17712847",
+      "selected_images_private.csv": "3b194f0404fb7293ea80fe4edfdf787101679feca4804b36792b2abde30ffcfd",
+      "evaluator_exclusions_private.csv": "e5ed02d33a6524b6b324a77331fee9724822a1d0d94f76240d26e6588be2e879",
+      "remaining_development_private.csv": "5590e8217ed5ee614fc04cb626d41e83ef55fa5bbdf9ba4fb8f3cef3e1c86529"
     }
   }
 }

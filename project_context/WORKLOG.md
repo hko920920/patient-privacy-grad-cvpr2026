@@ -1,5 +1,17 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 134-PADCHEST-REAL-IMAGE-VALIDATION (2026-09-17 KST)
+
+- 큰 단계2·방향1, 예상20–35분. 고정 PadChest-only 평가기를 실제 NIH309명309장에 실행했다. 준비뿐인 단계가 아니다.
+- 기존 pool324명 중 E-only4/P-only34/NF95/target-freeEff85/dual11명=229명을 사용했다. E-only4명 부족을 score 전 확인하고 새development에서 군별20명80명을 고정hash로 evaluator-only 분리했다. Reserved confirmation 이미지는 사용하지 않았다.
+- 주 검증80명의 E/P one-vs-rest AUC 둘다0.5308,95%CI 각각0.3925–0.6675 /0.3841–0.6808. 상대target AUC0.5025/0.5425. 두질환 모두 사전 관문 실패. 정상과의 구별 일부를 질환특이성 성공으로 해석하지 않았다.
+- 모델/소스/전처리/출력 사전결속. 실제pixel309장 및rawlogit/default transform,32,000bootstrap통계쌍을독립계산했다. 34,805확인PASS, 최대metric차이3.33e-16. 이는성능증거표본수가아니다.
+- 실측전체30.951초/GPU추론1.191초/22F(317image-examples)/0B/0생성/0DP/peakallocated0.159GiB. 별도검산20.765초. 모델/환자/threshold사후변경없음.
+- 새evaluator80명은이제소비자료이며후속reference에서제외한다. 별도제외CSV및잔여4,133명명부를저장했고E-only64명/P-only197명등이남는다. 기존frozen감사ledger의D는과거상태로보존하고새사용이력을별도로결속했다.
+- 판정: 현재평가기후보에는부정적,private효용에는미판정. 현재평가기점수만으로targeted생성효용을판정하지않는다. 다음20–30분은학습출처/label/NIHoverlap/외부검증을근거로조건평가방법대안한후보가성립하는지검토한다. 무작위classifier탐색/생성/DP자동확대는없다.
+- TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md/HTML·rawscore분포그림·명세·원본출력·검산·상태문서에기록한다. 원격확인/push는하지않았다.
+
+
 ## 133-PATIENT-ACTUAL-USE-AUDIT (2026-09-17 KST)
 
 - 큰 단계2·방향1. 예상20–30분으로 역할명과 실제 소비를 구분하는 감사를 진행했다. 중간 sandbox 폴더쓰기 거부로 중단됐고 사용자가 권한을 바꾼 후 동일코드로 재개했다. 중단된 프로세스/결과폴더가 없음을 먼저 확인했다.

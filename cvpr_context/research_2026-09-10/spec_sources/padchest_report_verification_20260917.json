@@ -1,0 +1,37 @@
+{
+  "status": "PASS_PADCHEST_REPORT_STATE_AND_HISTORY",
+  "created_utc": "2026-09-17T05:21:28.471577+00:00",
+  "existing_HTML_check": {
+    "rows": 79,
+    "checked_local_links": 1157,
+    "checked_pdf_page_anchors": 221,
+    "broken_links": []
+  },
+  "new_local_links": 9,
+  "broken_links": 0,
+  "old_audit_source_files_checked": 3691,
+  "current_sources_checked": 15,
+  "frozen192_images_and_failed_adoption_unchanged": true,
+  "independent_checks": 34805,
+  "state_fields": [
+    "current_step",
+    "next_task",
+    "next_task_output",
+    "step2_open_items",
+    "current_result_report",
+    "current_planning_report",
+    "active_execution"
+  ],
+  "measurement_gate_passed": false,
+  "primary_patients": 80,
+  "total_patients": 309,
+  "remaining_development_patients": 4133,
+  "reserved_confirmation_consumed": false,
+  "report_sha256": "8837f86cbb422272ba13d08d60c7ea979539e907aaad4e0c442d125a569a1a4f",
+  "decision_sha256": "7a946ebd469b00202cffb31b8c70c711dc78b3fce0047ea3384b7ef1bab0fe58",
+  "verifier_sha256": "dae745eec42e0fda38f3caf3025a8a9c804afcf51dcde48cf91f5806ae8ae087",
+  "figure_sha256": {
+    "png": "fcf5fcc6838d712ea404a0139799fbbc5bf5383b3980f325473622ee4a892188",
+    "pdf": "b51706ca2a9e457b3650d1c21313101660ae05cdf5c21951228344b665e1283b"
+  }
+}
