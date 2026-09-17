@@ -1,5 +1,12 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 143-CORRECTED-ALL-ARM-ONE-STEP-REPLAY (2026-09-17 KST)
+
+- 사용자 지적대로 legacy run.py classifier를 즉시 실패시켰다. 새 run_v2는 구형 data/train import와 이미 로드된 모듈도 차단한다. Data_v2 helper를 자체 보유하도록 바꾸고, 과거 실행 source·SHA는 별도 archive와 계약의 historical mapping으로 보존했다.
+- 7군×1step×2회=14실제 update 통과. Public22/private15/synthetic각6개, 고유61파일을 원본SHA→독립decode→array index→GPU전처리까지 검산했다. 공통 real16, R0/R1 동일32개와 증강 차이, synthetic cell 대응과 다른 method pixel, class16/16 모두 확인했다. 매 run62trainable tensors 갱신,7군의 두 최종 state exact.
+- 첫 R0 update 저장 후 logging json import 누락으로 중단됐다. 저장1회의 산출물·원 source를 보존하고 로그/명시적resume만 수정하여13회를 더 실행했다. 총14회를 지켰고 모델·optimizer·seed·자료·tolerance 변경0. 독립검산4.030초, BCE최대차3.875e-8, 새 생성/평가지표/DP/전문final/reserved 접근0.
+- [결과](CVPR%20주제%20탐색/research_2026-09-10/track1_downstream_all_arm_replay_results.html). 판정은 GOOD integration only. 최초98회와 이전100회 이력은 그대로이며, 본512장/21run은 다음90–150분 잠정 패키지다. 장기 convergence와 private 효용은 미판정. 로컬 실행·검산이며 원격main확인/push는 하지 않았다.
+
 ## 142-DOWNSTREAM-BOUNDED-PROFILE (2026-09-17 KST)
 
 - 큰 단계2·방향1에서 실제 실행 경로와 비용을 확인했다.11,277장/4805명 raw SHA·decode·224cache, 역할 간 환자/영상/SHA0중복을 확인했다. Final532/reserved4213 pixel·prediction0, 원 역할 변경0. 새 개발4053명의 pixel과 비용 측정용128장 inference는 소비로 기록했다.

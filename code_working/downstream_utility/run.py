@@ -13,8 +13,7 @@ def main():
         from .generate import generate
         generate()
     elif a.phase=='classifier':
-        from .train import profile_classifier
-        profile_classifier()
+        raise RuntimeError('Legacy classifier path is invalid. Use python -m downstream_utility.run_v2 classifier_corrected with its frozen contract.')
     else:
         from .verify import verify
         verify()

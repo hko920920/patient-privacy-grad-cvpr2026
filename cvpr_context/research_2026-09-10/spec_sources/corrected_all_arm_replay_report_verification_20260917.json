@@ -1,0 +1,15 @@
+{
+  "status": "PASS_REPORT_STATE_SOURCE_ARCHIVE_AND_LINK_BINDINGS",
+  "corrected_integration_gate": "PASS",
+  "new_optimizer_updates": 14,
+  "old98_still_invalid": true,
+  "old_profile_and_four_prior_reports_unchanged": true,
+  "actual_corrected_module_files_verified": true,
+  "source_changes_resolved_through_preserved_archive_and_logging_amendment": true,
+  "state_synchronized": true,
+  "local_HTML_links_checked": 13,
+  "new_model_runs_during_this_report_check": 0,
+  "expert_reserved_access": 0,
+  "record_sha256": "b97b45d59af6647d2fcfeceb115fcc481104efd37696c7f8dfa620643d1a21d8",
+  "report_html_sha256": "78ee6cbfdfd802316256ee595e5a6a9de4868fadfb2190397b7d0d0f5fd1cabe"
+}

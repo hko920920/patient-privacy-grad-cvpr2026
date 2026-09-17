@@ -86,7 +86,7 @@
     "independent_saved_tensor_verification": "PASS",
     "failure_cause_or_membership_performance_claim": false
   },
-  "updated_utc": "2026-09-17T09:06:45.683260+00:00",
+  "updated_utc": "2026-09-17T09:29:20.111365+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -137,7 +137,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md",
+  "current_result_report": "TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md",
   "stage2_status": "in_progress",
   "comparison_completion_is_not_stage2_completion": true,
   "completed_rank_decomposition": {
@@ -184,7 +184,7 @@
     "original_verification_failure_preserved": true,
     "base_membership_performance_claim": false
   },
-  "next_task": "Separate corrected seven-arm runtime replay: reuse existing profile bank,7 arms x1 update x2 repeats=14 updates, bind exact real/synthetic namespaces and verify independently. Prior profile100-update cap stays closed. No new generation, AUROC/AP, DP, expert-final or reserved access. Only after this passes execute the master512-image/21-run non-DP development package.",
+  "next_task": "Freeze and execute the master non-DP development package:512 fresh paired synthetic images, public R1 classifier calibration,7 arms x3seeds=21runs, corrected safe imports and actual pixel-array binding. Extend explicit full-study orchestration using corrected kernel, never legacy classifier. Update ETA from each arm first10-20steps. Evaluate S2/S3 versus BOTH S1/R1 on method-development only. Keep expert532/reserved4213 closed; no DP before non-DP gate.",
   "completed_meanmax_decomposition": {
     "status": "completed_and_independently_verified",
     "scorers": 4,
@@ -203,7 +203,7 @@
     "finding": "Within-frozen-scorer spread removal lowers observed target ranking in8 contexts; all4 own-target difference intervals include0. Spread use is an existing aggregation property; participation specificity remains unidentified",
     "stage2_completion_claim": false
   },
-  "next_task_output": "Corrected seven-arm minimal runtime replay and valid source-composition verification; full non-DP efficacy study remains subsequent.",
+  "next_task_output": "Full non-DP method-development AUROC/AP comparison and interpretation; not expert-final or DP results.",
   "user_priority_20260915": "User requested maximal concrete follow-through on remaining stage2 investigations; preserve framework and do not substitute further score decomposition for missing baseline execution",
   "completed_eu_comparison": {
     "status": "completed_and_independently_verified",
@@ -351,8 +351,8 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_profile_20260917_v3",
-    "last_completed_report": "TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md",
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_all_arm_replay_20260917_v1",
+    "last_completed_report": "TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md",
     "additional_execution_contract_fixed": false,
     "stage2_completion_claim": false,
     "latest_design_review": "TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md",
@@ -473,7 +473,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "mixed_profile_needs_corrected_seven_arm_runtime_replay",
+    "latest_planning_status": "corrected_one_step_integration_passed_full_nonDP_utility_unexecuted",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -622,8 +622,8 @@
       "remaining_generation_package_not_completed": true
     },
     "next_substep_estimated_work_minutes": [
-      10,
-      15
+      90,
+      150
     ],
     "sampling_integration_contract_sha256": "c32c1cae5ac2a15b7c3af267f7e03d066e065213024a3bccd03fe40fec65fcfa",
     "historical_pre_sampling_last_completed": {
@@ -1399,7 +1399,7 @@
       "roentgen_arxiv_pdf_sha256": "99e5a03e8dd10a4286cac16583813f61246542d37620387170f1c80f469d1f24",
       "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md"
     },
-    "next_substep_timing_condition": "No new generation: separate14-update corrected replay; previous100 updates remain counted and preserved.",
+    "next_substep_timing_condition": "Provisional full non-DP package estimate; update at first10-20corrected steps per arm, includes orchestration/analysis/verification.",
     "nih_expert_label_access_review": {
       "report": "NIH_EXPERT_LABEL_ACCESS_20260917.md",
       "completed_utc": "2026-09-17T07:24:31.691365+00:00",
@@ -1672,17 +1672,73 @@
         "sampler_semantics": "6dbce4e079c938e3159461091221234faa5f3f0a44095b62e4df9a246314b879",
         "consumption": "1cc0f521b7b9c5db14f962418b6fd2cc4052e2fe06bd4db226c72d5756ede491"
       }
+    },
+    "corrected_all_arm_replay": {
+      "report": "TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md",
+      "completed_utc": "2026-09-17T09:29:20.111365+00:00",
+      "judgment": "positive_corrected_all_arm_one_step_integration_not_efficacy",
+      "integration_gate_passed": true,
+      "optimizer_updates": 14,
+      "prior_separate_profile_updates": 100,
+      "old98_still_invalid": true,
+      "arms": 7,
+      "repeats": 2,
+      "steps_per_run": 1,
+      "selected_source_files": 61,
+      "independent_GPU_preprocessing_exact_arms": 7,
+      "exact_final_state_replays": 7,
+      "changed_trainable_parameter_tensors_each_run": 62,
+      "actual_source_array_binding": true,
+      "legacy_classifier_CLI_blocked": true,
+      "legacy_data_train_imports_blocked": true,
+      "logging_resume": "One fully saved update retained,13 resumed; source/data/optimizer/seed/tolerance unchanged.",
+      "new_generation": 0,
+      "AUROC_AP_computed": false,
+      "new_DP": 0,
+      "expert_pixels": 0,
+      "expert_predictions": 0,
+      "reserved_pixels": 0,
+      "reserved_predictions": 0,
+      "long_run_convergence_validated": false,
+      "private_utility_established": false,
+      "final_ready": false,
+      "full512_bank_executed": false,
+      "full21_classifier_runs_executed": false,
+      "next_task_eta_minutes": [
+        90,
+        150
+      ],
+      "remote_main_checked": false,
+      "remote_push": false,
+      "source_paths": {
+        "report": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md",
+        "protocol": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_PROTOCOL_20260917.md",
+        "contract": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_all_arm_replay_20260917_v1\\contract.json",
+        "actual_result": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_all_arm_replay_20260917_v1\\result.json",
+        "verification": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_all_arm_replay_20260917_v1\\verification.json",
+        "entrypoint_safety": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_all_arm_replay_20260917_v1\\entrypoint_safety.json",
+        "logging_resume": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_all_arm_replay_20260917_v1\\logging_fix_amendment.json"
+      },
+      "source_sha256": {
+        "report": "f45c82ef13b8bd169f82777043f4927af6b549bd8318e43dda45605eeab81c7d",
+        "protocol": "2806470263af4d9afc123ae69937f94b1f323051d0c28e7b4b6eb6ea9fb2fe7c",
+        "contract": "e275cfbe07517e21fc70e7ffff7cfc1becc99a8c21dededbddd8a1cea0d0eba5",
+        "actual_result": "0540ec228e5ae801018bbbfd7d5b5869f43b70ae55ecbf4bd029e237e57535ba",
+        "verification": "1cf8d6056a3a8a20fa2f82790915ec4f7f54ce9c84e77396c61fb8ef5f321d88",
+        "entrypoint_safety": "c0c48552edd2ffd190e1feb47e68ef9938ea629b13afa4d2b4db6aca6805c356",
+        "logging_resume": "c768938e49e754a6901f26c8bfd61480852bdf09336d2433b9a91feceb970d85"
+      }
     }
   },
-  "step2_active_task": "Bounded downstream profile complete with mixed result; generator passes, original classifier source composition failed and limited repair passed. Corrected seven-arm runtime check remains.",
+  "step2_active_task": "Corrected all-arm one-step integration passed; proceed to actual non-DP downstream development utility question.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "step2_open_items": [
-    "Original98 classifier updates invalid for requested real/synthetic comparison; source namespace repaired and two S1 updates exact, but corrected full seven-arm runtime replay not done.",
-    "Full512-image synthetic bank, public R1 calibration,21 classifier runs and S2/S3 versus S1/R1 development metrics remain unexecuted.",
-    "Development4053 patients are now consumed for preprocessing;128 development images had cost-only inference. Final532 and reserved4213 remain closed.",
-    "Medical patient-DP/accounting and DP-LoRA pending non-DP development utility gate.",
-    "Stronger real augmentation, second ImageNet architecture and broader negative prompts/independent bank remain development robustness work if first pilot is positive.",
-    "Expert final may be opened only after all final non-DP/DP models and analysis are frozen; old192 and both evaluator failures remain unchanged."
+    "Full512-image bank/public calibration/21classifier runs and private incremental AUROC/AP remain unexecuted; use corrected code only.",
+    "14updates establish all-arm one-step integration, not400/800step convergence or precise long-run throughput.",
+    "Original98 wrong-source updates stay invalid; previous100-update profile and new14-update replay are separately counted.",
+    "Development4053 already consumed for preprocessing/profile; expert532 and reserved4213 remain closed.",
+    "Only if the non-DP development gate passes pursue new medical patient-DP, accounting, DP-LoRA and stronger augmentation/architecture/prompt robustness.",
+    "Freeze all final non-DP/DP models and analysis before any expert final prediction; old192 and both evaluator failures remain unchanged."
   ],
   "step2_completed_diagnostics": [
     "CDI E480 extraction, four E/U cells18methods144AUC156contrasts and independent saved arithmetic/fit/statistics verification",
@@ -2888,7 +2944,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md",
+  "next_task_plan_report": "TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -3010,7 +3066,7 @@
     "finalnextquestion": "Does the observed restricted-head denoising gain survive a fair patient-DP comparison, given the full64 statistic dimension2336 versus static16 dimension200 and only0.4467% extra nonprivate MSE reduction?"
   },
   "current_paper_problem_fixed": false,
-  "research_question_status": "Private synthetic downstream utility remains unmeasured. Engineering profile is mixed, not a method efficacy pass; final_ready=false.",
+  "research_question_status": "Execution integration established; private incremental utility, long-run convergence, DP utility and CVPR contribution remain unestablished.",
   "new_dp_principle_required": false,
   "new_solver_required_for_application_contribution": false,
   "realistic_replan_20260916": {
@@ -3721,7 +3777,7 @@
     }
   },
   "pre_chexzero_review_result_report_20260917": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
-  "last_actual_model_result_report": "TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md",
+  "last_actual_model_result_report": "TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md",
   "completed_chexzero_review_20260917": {
     "status": "POSITIVE_SINGLE_ALTERNATIVE_READINESS_NOT_EFFICACY",
     "completed_utc": "2026-09-17T05:49:39.987145+00:00",
@@ -4166,6 +4222,63 @@
       "raw_verified_overlap": "018720e6352281530c7fd2792e9c20d02df1d50b24eca9c03bb0d01d8801282a",
       "sampler_semantics": "6dbce4e079c938e3159461091221234faa5f3f0a44095b62e4df9a246314b879",
       "consumption": "1cc0f521b7b9c5db14f962418b6fd2cc4052e2fe06bd4db226c72d5756ede491"
+    }
+  },
+  "pre_corrected_replay_actual_result": "TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md",
+  "completed_corrected_all_arm_replay_20260917": {
+    "report": "TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md",
+    "completed_utc": "2026-09-17T09:29:20.111365+00:00",
+    "judgment": "positive_corrected_all_arm_one_step_integration_not_efficacy",
+    "integration_gate_passed": true,
+    "optimizer_updates": 14,
+    "prior_separate_profile_updates": 100,
+    "old98_still_invalid": true,
+    "arms": 7,
+    "repeats": 2,
+    "steps_per_run": 1,
+    "selected_source_files": 61,
+    "independent_GPU_preprocessing_exact_arms": 7,
+    "exact_final_state_replays": 7,
+    "changed_trainable_parameter_tensors_each_run": 62,
+    "actual_source_array_binding": true,
+    "legacy_classifier_CLI_blocked": true,
+    "legacy_data_train_imports_blocked": true,
+    "logging_resume": "One fully saved update retained,13 resumed; source/data/optimizer/seed/tolerance unchanged.",
+    "new_generation": 0,
+    "AUROC_AP_computed": false,
+    "new_DP": 0,
+    "expert_pixels": 0,
+    "expert_predictions": 0,
+    "reserved_pixels": 0,
+    "reserved_predictions": 0,
+    "long_run_convergence_validated": false,
+    "private_utility_established": false,
+    "final_ready": false,
+    "full512_bank_executed": false,
+    "full21_classifier_runs_executed": false,
+    "next_task_eta_minutes": [
+      90,
+      150
+    ],
+    "remote_main_checked": false,
+    "remote_push": false,
+    "source_paths": {
+      "report": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md",
+      "protocol": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_PROTOCOL_20260917.md",
+      "contract": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_all_arm_replay_20260917_v1\\contract.json",
+      "actual_result": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_all_arm_replay_20260917_v1\\result.json",
+      "verification": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_all_arm_replay_20260917_v1\\verification.json",
+      "entrypoint_safety": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_all_arm_replay_20260917_v1\\entrypoint_safety.json",
+      "logging_resume": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_all_arm_replay_20260917_v1\\logging_fix_amendment.json"
+    },
+    "source_sha256": {
+      "report": "f45c82ef13b8bd169f82777043f4927af6b549bd8318e43dda45605eeab81c7d",
+      "protocol": "2806470263af4d9afc123ae69937f94b1f323051d0c28e7b4b6eb6ea9fb2fe7c",
+      "contract": "e275cfbe07517e21fc70e7ffff7cfc1becc99a8c21dededbddd8a1cea0d0eba5",
+      "actual_result": "0540ec228e5ae801018bbbfd7d5b5869f43b70ae55ecbf4bd029e237e57535ba",
+      "verification": "1cf8d6056a3a8a20fa2f82790915ec4f7f54ce9c84e77396c61fb8ef5f321d88",
+      "entrypoint_safety": "c0c48552edd2ffd190e1feb47e68ef9938ea629b13afa4d2b4db6aca6805c356",
+      "logging_resume": "c768938e49e754a6901f26c8bfd61480852bdf09336d2433b9a91feceb970d85"
     }
   }
 }

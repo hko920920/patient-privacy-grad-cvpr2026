@@ -110,6 +110,8 @@ def convert(md,from_review=False):
         if href=='TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md':href='track1_downstream_master_protocol.html'
         if href=='TRACK1_DOWNSTREAM_PROFILE_PROTOCOL_20260917.md':href='track1_downstream_profile_protocol.html'
         if href=='TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md':href='track1_downstream_profile_results.html'
+        if href=='TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_PROTOCOL_20260917.md':href='track1_downstream_all_arm_replay_protocol.html'
+        if href=='TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md':href='track1_downstream_all_arm_replay_results.html'
         a['href']=href
     return str(soup)
 
@@ -198,7 +200,8 @@ def main():
     head = '<section class="panel"><h2>최신: 연락 없이 전문가 라벨 공개 가공본 확보</h2><p><a href="nih_expert_label_public_copy.html"><strong>810장·532명·14소견 추출 및 출처 교차 확인</strong></a></p><p>공개 파일의 전문가 출처 열만 분리했고14소견 양성 수가 공식 부록과 모두 일치합니다. 별도 후속 논문 저자 저장소와810개 영상ID도 일치합니다. 공식 원본과의 직접 대조·전문의별14소견 판독·기존 연구 환자 중복은 아직 미확인입니다. 직접 연락만 가능하다는 이전 결론을 정정합니다. 새 모델 실험은 없습니다.</p></section>' + head
     head = '<section class="panel"><h2>최신 환자 감사: 기록상 학습·개발과 분리된 expert532명</h2><p><a href="nih_expert_patient_overlap_results.html"><strong>학습·개발 소비와 교집합0, 전원 기존 공식 테스트 영역</strong></a></p><p>졸논 final466명과 census66명입니다. 기흉 양성86명·폐기종7명은 전부 final에 있고,810장 파일도 로컬에 있습니다. 최종 평가 후보로는 좋은 결과지만 개발용으로 풀지 않습니다. 자료 확보와 모델 효용은 별개이며 새 추론·생성·DP는 없습니다.</p></section>' + head
     head = '<section class="panel"><h2>최신 통합 계획: expert final은 비DP·DP 개발 이후 평가</h2><p><a href="track1_downstream_master_protocol.html"><strong>기흉 downstream 비교·자료 규모·최종 동결 규칙</strong></a></p><p>설계에는 긍정적이며 방법 성능은 아직 미실행입니다. 공개672명813장과 private80명320장, 환자 분리 개발2027명/2026명을 실제 명부로 확인했습니다. Expert532명은 모델 성능을 열지 않았습니다. 개발에서 비DP와 DP를 완성한 후 전체 모델을 동결하고 final을 평가합니다.</p><p>이 패널은 통합 명세 작성 시점의 기록입니다. 이후 실제 실행은 상단 profile 결과를 따릅니다.</p></section>' + head
-    head = '<section class="panel"><h2>최신 실제 실행: 생성 통과, classifier 오류 수정은 제한 검증</h2><p><a href="track1_downstream_profile_results.html"><strong>혼합 판정 · 31decode / 총100update / final 미사용</strong></a></p><p>실자료11,277장과 생성 경로는 통과했습니다. 최초 classifier98회는 real/public과 synthetic/public 키 충돌로 실패했습니다. 수정된49개 배치와 S1 두 번의1step은 통과했으나 수정7군 전체 학습 재검사는 남았습니다. Private 효용·AUROC/AP·DP를 확인한 결과가 아닙니다.</p><p>다음은 기존 profile bank로 별도14update 재검증10–15분입니다. Expert532명과 reserved4213명은 보존합니다.</p></section>' + head
+    head = '<section class="panel"><h2>이전 profile: 생성 통과, classifier 오류 수정은 제한 검증</h2><p><a href="track1_downstream_profile_results.html"><strong>혼합 판정 · 31decode / 총100update / final 미사용</strong></a></p><p>실자료11,277장과 생성 경로는 통과했습니다. 최초 classifier98회는 real/public과 synthetic/public 키 충돌로 실패했습니다. 이 기록의 최초98회는 현재도 무효입니다. 이후 수정7군 재검증은 상단 별도 결과를 따릅니다.</p></section>' + head
+    head = '<section class="panel"><h2>최신 실제 실행: 수정7군 연결 관문 통과</h2><p><a href="track1_downstream_all_arm_replay_results.html"><strong>좋은 결과 · 안전 runner /14update / 실제 pixel부터 final weight까지 검산</strong></a></p><p>7군×1step×2회의 초기값·자료·class balance·실제 갱신·exact replay가 통과했습니다. 구형 classifier 명령과 legacy import를 차단했습니다. 원본61개와 GPU 입력도 독립적으로 일치했습니다.</p><p>장기 수렴·사적 효용·DP는 아직 미판정입니다. 다음은 본512장과21개 classifier 개발 실행이며 expert532/reserved4213은 보존합니다.</p></section>' + head
     controls+=''.join('<option value="'+k+'">'+esc(v)+' ('+str(stats[k])+')</option>' for k,v in ROLES.items())
     controls+='''</select></label><label>확인 수준<select id="status"><option value="all">모든 확인 수준</option><option value="selected">PDF 선택 절 (75)</option><option value="partial">공식 본문 일부 (3)</option><option value="abstract">초록만 (1)</option><option value="replay">공개 packet 재계산 (2)</option></select></label><label>발표 형식<select id="venue"><option value="all">모든 발표 형식</option><option value="main">메인 학회 표기</option><option value="other">저널·워크샵·공개본 등</option></select></label><label class="search">논문명·방법·검토 내용 검색<input id="search" type="search" placeholder="예: MoFit, CLiD, 환자 평균, FPR" autocomplete="off"></label></div><p id="count" aria-live="polite"></p><button id="reset" type="button">필터 초기화</button><button id="expand" type="button">표시된 검토 펼치기</button><button id="collapse" type="button">모두 접기</button><p class="meta">비교 후보 수는 전부 실행할 의무 목록이나 같은 문제의 SOTA 순위가 아니다. 접근 권한과 주장에 맞는 비교군을 선택한다.</p></section>'''
     cards=[]
@@ -280,6 +283,8 @@ def main():
         ('TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md','track1_downstream_master_protocol.html','기흉 downstream 통합 계획과 expert final 보호'),
         ('TRACK1_DOWNSTREAM_PROFILE_PROTOCOL_20260917.md','track1_downstream_profile_protocol.html','Downstream 제한 실행 범위와 정합 검증'),
         ('TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md','track1_downstream_profile_results.html','Downstream profile: 생성 통과와 classifier 자료 연결 수정'),
+        ('TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_PROTOCOL_20260917.md','track1_downstream_all_arm_replay_protocol.html','수정7군 one-step integration 실행 명세'),
+        ('TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md','track1_downstream_all_arm_replay_results.html','수정7군14update 연결 관문 통과'),
         ('REALISTIC_RESEARCH_PLAN_20260916.md','realistic_research_plan.html','의료 생성모델 환자 보호: 현실적인 다음 계획')]:
         if (ROOT/source).exists():
             body='<p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p>'+convert((ROOT/source).read_text(encoding='utf-8'))

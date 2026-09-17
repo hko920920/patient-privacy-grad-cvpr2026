@@ -1,5 +1,7 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-17 수정7군 실학습 연결 관문 통과:** [안전 runner와14update independent replay](TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md). 실제 픽셀·array·GPU 입력과62개parameter 갱신,7군의 exact replay를 확인했다. Legacy 진입점/import는 차단했다.14회는 이전100회와 별도이며 최초98회는 여전히 무효다. 다음은 본512장 bank·공개 calibration·21run 비DP 개발 실험(90–150분 잠정)이다. 성능·private 효용·DP·expert final은 아직 미실행이다. 큰 단계2·방향1·final_ready=false 유지.
+
 **2026-09-17 실제 downstream profile — 혼합 판정:** [생성 통과·classifier 자료 혼선·제한 내 수정](TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md).11,277장 파일 검증,31decode 연결은 통과했다. 최초98 classifier update는 public 실자료/합성자료 키 충돌로 대조 구성이 잘못됐다. 수정된49개 배치와 S1 한step×2회는 확인했지만7군 전체 학습 재검사는 남았다. 총100update; AUROC/AP·private 효용·DP·expert final은 미실행이다. 다음은 수정본14update의 별도 한정 재검증이며 본512장 실험으로 자동 확대하지 않는다. 큰 단계2·방향1·final_ready=false를 유지한다. 아래 최신/다음 표시는 이력이다.
 
 **2026-09-17 최신 통합 계획 — 개발에서 비DP·DP를 완료하고 final은 마지막에:** [기흉 downstream master protocol](TRACK1_DOWNSTREAM_MASTER_PROTOCOL_20260917.md). 공개672명813장, private80명320장, 별도 개발2027명/2026명을 명부로 확인했다. 모델 성능은 새로 실행하지 않았다. Expert532명은 개발 선택에 사용하지 않으며 전체 비DP·DP 비교와 통계를 동결한 뒤 평가한다. 다음은 runner·명부 결속·작은 시간 profile45–75분이다. 큰 단계2·방향1 유지.
