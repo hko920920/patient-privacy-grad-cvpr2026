@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checked_utc": "2026-09-17T07:01:02.394018+00:00",
+  "checks": [
+    "unchanged:TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+    "unchanged:TRACK1_CHEXZERO_VALIDATION_PROTOCOL_20260917.md",
+    "unchanged:TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
+    "unchanged:TRACK1_MEDICAL_HEAD_RESULTS_20260916.md",
+    "state:stage_actual_planning_and_frozen_experiment",
+    "state:stage_actual_planning_and_frozen_experiment"
+  ],
+  "local_link_targets_checked": 454,
+  "unique_local_targets": 229,
+  "new_review_sha256": "102948afadb46765776394c26efaab6600701dcca54d282dd98cadd9b5b05da4",
+  "new_html_sha256": "4f332f9ab52a535e811576dcf980eb8eb9a879b54540510bf78c2f8e84ab048c",
+  "scope": "Document/state and specified existing source hashes only; no fresh model inference or patient pixel replay."
+}

@@ -1,5 +1,9 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 137-MEASUREMENT-CLAIM-CORRECTION (2026-09-17 KST)
+
+사용자 지적에 따라 두 평가기 실패를 측정 불가능으로 확대한 해석을 철회했다. 원 실험 실패는 유지한다. NIH14소견810장·VinDr 두 target 주석 및 작은 합의양성 수·SIIM의 NIH 출처·DP-LoRA/RoentGen downstream 평가 근거를 확인했다. 실제 라벨 접근·중복·전문의 협력은 미확정이며 새 환자영상/추론/생성/DP0이다. 최종 actual-result 포인터를 CheXzero로 유지하고 planning/HTML/상태에 정정을 반영했다. [검토 문서](CVPR%20주제%20탐색/research_2026-09-10/measurement_claim_review.html).
+
 ## 136-CHEXZERO-REAL-NIH-VALIDATION (2026-09-17 KST)
 
 - 큰단계2·방향1. 예상20–35분으로 시작해 예약80명·공식10checkpoint를 실제 실행했다. 명부/score/기준/runner/verifier를 outcome 전에 고정했다.

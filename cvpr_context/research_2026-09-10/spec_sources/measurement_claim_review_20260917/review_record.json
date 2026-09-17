@@ -1,0 +1,53 @@
+{
+  "review": {
+    "report": "MEASUREMENT_CLAIM_REVIEW_20260917.md",
+    "completed_utc": "2026-09-17T07:00:29.585762+00:00",
+    "current_step": 2,
+    "track": 1,
+    "type": "source_and_measurement_claim_review_not_model_experiment",
+    "judgment": "positive_for_existing_measurement_routes_not_private_efficacy",
+    "universal_measurement_impossibility_established": false,
+    "weak_label_error_as_main_cause_established": false,
+    "current_joint_classifier_search_closed": true,
+    "expert_collaboration_availability": "unconfirmed_user_question_pending",
+    "expert_label_files_acquired": false,
+    "clinical_generation_correctness_established": false,
+    "private_generation_utility_established": false,
+    "NIH_all14_expert_images_documented": 810,
+    "NIH_all14_expert_target_counts_and_patient_overlap": "not_checked_without_label_manifest",
+    "VinDr_majority_label_counts_paper_table2": {
+      "Emphysema": {
+        "train": 14,
+        "test": 3
+      },
+      "Pneumothorax": {
+        "train": 58,
+        "test": 18
+      }
+    },
+    "VinDr_patient_grouping": "image_UID_is_not_verified_patient_ID",
+    "new_model_inference": 0,
+    "new_generation": 0,
+    "new_training": 0,
+    "new_DP": 0,
+    "reserved_confirmation_consumed": false,
+    "external_messages_or_access_form_submissions": 0,
+    "report_sha256": "102948afadb46765776394c26efaab6600701dcca54d282dd98cadd9b5b05da4",
+    "roentgen_arxiv_pdf_sha256": "99e5a03e8dd10a4286cac16583813f61246542d37620387170f1c80f469d1f24",
+    "last_actual_model_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md"
+  },
+  "pre_review_state_pointers": {
+    "research_state.json": {
+      "current_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+      "current_planning_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+      "next_task": "One20-30min paper-level measurement/resource decision: retain the failed fixed CheXzero result and close classifier search for the joint Emphysema/Pneumothorax hypothesis. Determine whether real expert/annotation resources justify a separately specified measurement route; if unavailable, revise the paper question within the two authorized protection directions. No third classifier, prompt/ensemble search, automatic targeted generation, solver or DP.",
+      "research_question_status": "Public medical backbone plus fresh small patient-private adaptation remains unvalidated; public data allocation and exposure/selection specification are now fixed."
+    },
+    "patient_baseline_spec.json": {
+      "current_result_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+      "current_planning_report": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
+      "next_task": "One20-30min paper-level measurement/resource decision: retain the failed fixed CheXzero result and close classifier search for the joint Emphysema/Pneumothorax hypothesis. Determine whether real expert/annotation resources justify a separately specified measurement route; if unavailable, revise the paper question within the two authorized protection directions. No third classifier, prompt/ensemble search, automatic targeted generation, solver or DP.",
+      "research_question_status": "Public medical backbone plus fresh small patient-private adaptation remains unvalidated; public data allocation and exposure/selection specification are now fixed."
+    }
+  }
+}

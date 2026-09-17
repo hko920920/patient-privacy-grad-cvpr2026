@@ -1,0 +1,100 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>측정 불가능 주장 정정과 실제 평가 경로</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p><h1>측정 불가능 주장 정정과 실제 평가 경로 검토</h1>
+<p>2026-09-17. 큰 단계 2 / 방향 1의 문제–측정 연결 검토. <strong>측정 경로의 존재에는 긍정적, 현재 private head의 효용에는 미판정이다.</strong> 새로운 환자 영상 열람·모델 추론·생성·학습·DP 실행은 없다. 원격 main을 이번 검토에서 조회한 것은 아니다.</p>
+<h2>1. 정정할 결론과 유지할 결과</h2>
+<p><strong>“측정할 수 없다”, “전문의 협력이 없으면 방향 1을 종료해야 한다”는 일반화는 철회한다.</strong> 두 자동 평가기가 특정 NIH 집합에서 채택 기준을 통과하지 못한 것과, 질환 표현이나 합성자료 효용을 측정하는 모든 방법이 불가능한 것은 다르다.</p>
+<ul>
+<li><a href="track1_padchest_validation_results.html">PadChest 검증</a>과 <a href="track1_chexzero_validation_results.html">CheXzero 검증</a>의 고정 점수·실패 판정은 유지한다. CheXzero의 target-vs-opposite AUC는 폐기종 0.5900, 기흉 0.4900이다. 현재 목적의 primary 질환 평가기로 채택할 근거를 확보하지 못했다.</li>
+<li>AUC 0.70/0.60과 신뢰구간 기준은 사전 운영 관문이다. 보편적인 측정 가능성의 경계나 질환 자체의 식별 불가능성을 증명하는 기준은 아니다.</li>
+<li>두 검증에서는 생성기를 실행하지 않았다. 따라서 targeted private generation utility의 유무를 판정하지 않았다. 반면 <a href="track1_medical_head_results.html">기존 192장</a>의 해당 prompt/reference 아래 pooled 추가 효용 미통과는 별도의 실제 음성 결과로 유지한다.</li>
+<li>현재 공동 가설에서 세 번째 classifier·prompt·checkpoint를 바꾸며 통과할 때까지 찾지 않는 중단선은 유지한다. 이 중단선은 향후 근거 있는 새 자료·새 평가 명세까지 금지하는 과학 법칙이 아니다. 탐색한 평가기를 최종 확인에 그대로 재사용하는 문제와, 개발 후 독립적으로 확인하는 절차를 구분한다.</li>
+</ul>
+<h2>2. 사용자 참고문 중 추가로 고칠 부분</h2>
+<p><strong>NIH weak label이 이번 낮은 AUC의 주원인이라는 설명은 아직 가설이다.</strong> NIH의 텍스트 추출 라벨에 시각적 내용과의 불일치가 있다는 선행 근거는 있다. 그러나 우리 80명씩을 전문가가 재판독하지 않았으므로 실제 라벨 오류량, 기관 간 전이, 동반질환, 군 구성, 표본 불확실성의 기여를 분리하지 못했다. 구현 검산은 라벨의 의미적 타당성을 검증하지 않는다. <a href="https://arxiv.org/abs/1907.12720">Oakden-Rayner 원 연구</a></p>
+<p><strong>“NIH 전문의 재라벨에는 폐기종이 없다”는 말은 네 소견 묶음에만 해당한다.</strong> 별도로 14개 원래 소견 전체를 판독한 810 PA 영상 묶음도 있다. 또한 전문가가 실영상을 판독한 자료는 새 생성영상의 정답 라벨이 아니다. 실영상 판별력 검증이나 downstream 시험에 활용할 후보이며, 생성 질환의 정확성까지 자동으로 보증하지 않는다.</p>
+<p><strong>전문의가 없을 때 기흉 단독 또는 포기라는 양자택일도 이르다.</strong> 두 질환의 기존 전문가 주석을 검토하거나, 합성자료의 downstream 효용이라는 다른 주장을 명시적으로 정의할 수 있다. 새로운 측정법이나 데이터셋을 사용하는 것 자체가 논문 신규성은 아니다.</p>
+<h2>3. 공식 출처에서 확인한 자원과 아직 확인하지 못한 것</h2>
+<table>
+<thead>
+<tr>
+<th>자원</th>
+<th>확인한 사실</th>
+<th>현재 활용의 한계·상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NIH / Google 14소견 재판독</td>
+<td>810 PA 영상, 동일 전문의 5명의 독립 판독. 3명의 다수결 기준 라벨과 개별 판독, patient/image ID 제공. 폐기종·기흉 모두 원래 14소견에 포함</td>
+<td>공식 안내는 양식 작성 후 라벨 다운로드. 이번에 양식 제출·라벨 확보를 하지 않았다. 질환별 양성 수와 로컬 환자/잠긴 역할 중복은 미확인</td>
+</tr>
+<tr>
+<td>NIH / Google 네 소견 재판독</td>
+<td>기흉을 포함한 네 소견. validation 2,412장 / test 1,962장, 판독 조정 절차</td>
+<td>폐기종은 이 묶음에 없다. 같은 NIH 자료이므로 환자 중복을 먼저 확인해야 함</td>
+</tr>
+<tr>
+<td>VinDr-CXR 전체 28라벨판</td>
+<td>두 질환 모두 영상 직접 주석과 box 대상. 총 18,000장, train 3명 독립 판독 / test 5명 합의</td>
+<td>공식 원논문 Table 2의 다수결 양성은 폐기종 train 14 / test 3, 기흉 58 / 18. 단순히 “대규모 전문 주석”이라고 충분한 target 표본을 보장하지 않음. PhysioNet 자격·교육·DUA 필요, 현 접근권 미확인</td>
+</tr>
+<tr>
+<td>SIIM–ACR 기흉 자료</td>
+<td>공식 주최측은 NIH 영상에 전문가 주석을 보강한 기흉 검출·분할 과제로 설명</td>
+<td>NIH와 독립인 외부 병원 자료라고 취급할 수 없음. 폐기종 공동 가설을 검증하지 않음. 정확한 release·분할·환자 중복 확인 전에는 채택하지 않음</td>
+</tr>
+<tr>
+<td>새 생성영상 전문가 판독</td>
+<td>생성영상 자체의 목표 소견·해부학·artifact를 가리고 판독하는 직접 경로</td>
+<td>사용자에게 협력 가능 여부를 문의했으나 현재 답변 미수신. 협력이 없다고 가정하지 않음. 표본 수·판독 비용·일정 미확정</td>
+</tr>
+</tbody>
+</table>
+<p>공식 자료: <a href="https://docs.cloud.google.com/healthcare-api/docs/resources/public-datasets/nih-chest#additional_labels">NIH 추가 라벨 설명</a>, <a href="https://doi.org/10.1038/s41598-021-93967-2">14소견 연구</a>, <a href="https://physionet.org/content/vindr-cxr/1.0.0/">VinDr 배포·접근 조건</a>, <a href="https://arxiv.org/pdf/2012.15029">VinDr 원문 pp.3,6 및 Tables 2–4</a>, <a href="https://siim.org/industry-partners/siim-and-acr-recognize-winners-of-pneumothorax-detection-machine-learning-challenge/">SIIM/ACR 공식 설명</a>.</p>
+<p>VinDr의 공개 image ID는 SOP Instance UID에서 만들어진 식별자다. 이를 patient ID로 간주할 수 없다. 환자 묶음이 필요한 patient-DP 학습자료로 옮기려면 환자 단위 식별 가능성도 별도로 확인해야 한다. 외부 실영상 reference만 바꾸면 현재 NIH private80이 가진 target-domain 효용이 검증되는 것도 아니다.</p>
+<p>로컬 <code>_data/raw</code>에는 현재 NIH와 ISIC 자료가 있다. <code>_data/intake</code>·<code>_data/derived</code>의 파일명 및 연구 문서에서 전문가 라벨·협력 기록을 확인하지 못했다. 이는 해당 검색 범위의 결과이지 다른 위치나 실제 협력이 없다는 증명은 아니다.</p>
+<h2>4. 논문 주장과 측정 대상을 맞춰야 한다</h2>
+<table>
+<thead>
+<tr>
+<th>주장</th>
+<th>직접 연결되는 측정</th>
+<th>이것만으로 주장할 수 없는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>생성 feature 분포가 개선된다</td>
+<td>환자 분리 실영상에 대한 KID/PRDC 등과 다양성·artifact 점검</td>
+<td>목표 질환의 의학적 정확성</td>
+</tr>
+<tr>
+<td>목표 소견이 영상에 더 정확하게 나타난다</td>
+<td>가림 전문가 판독 또는 해당 소견에 검증된 측정 절차</td>
+<td>작은 실영상 검증을 통과한 모델만으로 모든 synthetic artifact에 강함</td>
+</tr>
+<tr>
+<td>합성자료가 실제 분석에 유용하다</td>
+<td>합성자료로 학습/증강한 분류·분할 모델의 독립 실영상 성능</td>
+<td>모든 생성영상의 질환 정확성이나 임상 사용 적합성</td>
+</tr>
+<tr>
+<td>환자 보호와 비용의 절충이 개선된다</td>
+<td>정한 효용을 같은 patient-DP 조건·공개 자료·전체 비용에서 비교</td>
+<td>작은 head fitting 시간만으로 전체 효율 우위</td>
+</tr>
+</tbody>
+</table>
+<p>가까운 선행인 <strong>ICCV 2025 DP-LoRA는 §4에서 FID와 합성자료로 학습한 분류기의 real-test 정확도를 함께 사용한다.</strong> 따라서 생성 privacy/efficiency 논문 전반이 반드시 한 질환 classifier의 직접 점수에 의존한다는 전제는 틀리다. 이 논문은 의료 환자 DP 자체를 증명한 선행은 아니다. 이번 재확인 범위는 로컬 공식 PDF pp.4–6이다. <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.pdf">공식 PDF</a></p>
+<p>RoentGen도 합성자료의 학습 효용을 평가했다. 이번에 확보한 arXiv v1의 §7은 real/synthetic 학습 구성을 달리한 분류기를 별도 실영상 test에서 비교한다. 출판본의 평가 설명은 전문가 판독과 분포·분류·학습 효용을 구분한다. 이번에 출판본 전체를 재검산한 것은 아니다. <a href="https://arxiv.org/abs/2211.12737">arXiv 원문</a>, <a href="https://www.nature.com/articles/s41551-024-01246-y">출판본</a></p>
+<p>Downstream 비교 후보는 공통 공개 real 학습자료만 사용하는 기준과, 같은 수의 public-head 합성자료 또는 private/pooled-head 합성자료를 더하는 기준이다. 학습량·classifier·seed·모델 선택 절차를 맞추고 단순 real 반복/일반 augmentation 효과와 구분한다. 환자 단위 독립 real test와 반복 실험이 필요하다. private real을 downstream 학습에 직접 넣는 비DP 진단 기준은 별도로 표시해야 하며, 그 경로까지 포함한 모델을 자동으로 patient-DP라고 주장하면 안 된다.</p>
+<p>마스크가 있는 실영상은 segmenter의 시험 정답을 제공한다. 현재 text-to-image 생성기는 합성 마스크를 제공하지 않으므로, SIIM 마스크가 있다는 이유만으로 synthetic segmentation 학습 쌍까지 준비됐다고 말할 수 없다. 분할 경로는 paired mask 생성/주석 규칙이라는 추가 설계가 필요하다.</p>
+<h2>5. 현실적인 결정과 다음 한 단계</h2>
+<p><strong>연구 종료 판단은 취소하고, 무엇을 측정할지 다시 연결하는 검토를 진행하는 것이 맞다.</strong> 현재 두 평가기의 채택 실패와 기존 pooled 생성 효용 미통과는 그대로다. 새 측정 경로의 존재는 우리 방법이 좋아진 증거가 아니다.</p>
+<p>우선순위는 <strong>NIH 14소견 전문가 라벨의 실제 이용 가능성·target 수·환자 중복을 확인하는 것</strong>이다. 폐기종을 사후에 지우거나 곧바로 새 classifier를 돌리는 순서가 아니다. 라벨 명부를 확보하면 모델 점수를 열지 않고 metadata만으로 20–30분 안에 적격 수와 사용 가능한 역할을 산출할 수 있다. 접근 처리 대기시간은 아직 모른다. 졸논 final/census나 reserved confirmation을 개발자료로 자동 재배정하지 않는다.</p>
+<p>동시에 전문가 협력 여부에 의존하지 않고 설계할 수 있는 후보는 <strong>합성자료의 downstream 추가 효용</strong>이다. 이를 채택하려면 reliable real-test 확보와 공정한 증강 비교 명세부터 정해야 한다. 이 명세 작성은 30–45분 예상이며, 학습 실행 시간은 classifier·자료 규모를 정하기 전에는 약속하지 않는다. 기존 두 질환 임상 정확성 주장의 성공으로 바꿔 쓰지 않는다.</p>
+<p>전문의 판독이 현실적으로 가능하다는 답변이 오면 직접 소견 평가를 함께 설계할 수 있다. 현재 질환당 latent 32개·판독자 2명을 충분한 표본으로 확정하지 않는다. 그것은 비용과 효과크기에 따라 정할 파일럿 제안값이다.</p>
+<p>현재는 <strong>문헌에 근거한 측정 대안은 있고, 채택 가능한 실제 자료와 효용 증거는 아직 확보 전</strong>이다. 보호 설계·효율이라는 큰 질문을 임의로 “두 질환 classifier 통과 여부”로 대체하지 않는다. 방향 2도 별도의 구체적인 기여 근거 없이 자동으로 시작하지 않는다.</p>
+<h2>6. 이번 작업의 범위</h2>
+<p>공식 데이터 설명, VinDr 원문 관련 표, DP-LoRA 평가 절, RoentGen 선택 절을 대조했다. 새 모델 추론·생성·학습·DP·reserved confirmation 소비는 0이다. 새 전문 라벨을 내려받거나 개인정보가 들어가는 접근 양식을 제출하지 않았다. RoentGen 공개 논문 PDF만 보존했다.</p>
+<p>이 문서와 최신 상태/HTML의 해석을 정정한다. 이전 실험 보고서·protocol·raw 결과는 수정하지 않는다. 이번 확인은 문서/상태 결속과 선택된 과거 파일 hash 확인이며, 192개 PNG나 전체 환자 pixel을 새로 검산했다는 주장이 아니다.</p></main></body></html>
