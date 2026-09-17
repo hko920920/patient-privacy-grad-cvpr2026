@@ -86,7 +86,7 @@
     "independent_saved_tensor_verification": "PASS",
     "failure_cause_or_membership_performance_claim": false
   },
-  "updated_utc": "2026-09-17T13:39:31.366118+00:00",
+  "updated_utc": "2026-09-17T14:06:22.384358+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -184,7 +184,7 @@
     "original_verification_failure_preserved": true,
     "base_membership_performance_claim": false
   },
-  "next_task": "Interpret the observed train/development gap and decide whether one specific prospective data-support or classifier-recipe contrast is warranted. No automatic retraining, BN calibration, adapter sweep, DP or final/reserved access.",
+  "next_task": "Implement the Rwide diagnostic pool provider with legacy guards and unchanged classifier kernels; freeze runtime sources and pass four seed11 one-step parity/replay updates before three fixed400-step runs. Preserve prior results and locked cohorts; no automatic DP.",
   "completed_meanmax_decomposition": {
     "status": "completed_and_independently_verified",
     "scorers": 4,
@@ -203,7 +203,7 @@
     "finding": "Within-frozen-scorer spread removal lowers observed target ranking in8 contexts; all4 own-target difference intervals include0. Spread use is an existing aggregation property; participation specificity remains unidentified",
     "stage2_completion_claim": false
   },
-  "next_task_output": "A bounded next-comparison decision; no new experiment or solution selected by this diagnostic.",
+  "next_task_output": "A verified runtime followed by the single predeclared Rwide-R1 development comparison; no classifier or pool sweep.",
   "user_priority_20260915": "User requested maximal concrete follow-through on remaining stage2 investigations; preserve framework and do not substitute further score decomposition for missing baseline execution",
   "completed_eu_comparison": {
     "status": "completed_and_independently_verified",
@@ -355,7 +355,7 @@
     "last_completed_report": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
     "additional_execution_contract_fixed": true,
     "stage2_completion_claim": false,
-    "latest_design_review": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
+    "latest_design_review": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PLAN_REVIEW_20260917.md",
     "new_two_track_experiment_started": true,
     "new_two_track_experiment_status": "fixed_classifier_diagnostic_complete_generalization_gap_observed",
     "latest_cpu_outputs": [
@@ -473,7 +473,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "bounded_inference_only_diagnostic_completed",
+    "latest_planning_status": "real_support_plan_metadata_verified_no_new_model",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -2058,15 +2058,254 @@
       "expert_opened": false,
       "reserved_opened": false,
       "final_ready": false
+    },
+    "completed_real_support_plan": {
+      "protocol": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PROTOCOL_20260917.md",
+      "review": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PLAN_REVIEW_20260917.md",
+      "status": "metadata_verified_runtime_not_implemented",
+      "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_plan_20260917_v1",
+      "plan_sha256": "de8c088e23ffdd111436c62393bb7c2fcc5a1f4bb7dfc98376839d3965cc196c",
+      "verification_sha256": "6f5e16ca386f4c94456762818207e3013ad1114e26551325023978c6b5dac3df",
+      "public_plan": "spec_sources/real_support_diagnostic_plan_20260917.json",
+      "counts": {
+        "public": {
+          "images": 813,
+          "patients": 672,
+          "positive_images": 6,
+          "positive_patients": 6,
+          "negative_patients": 669,
+          "mixed_label_patients": 3
+        },
+        "former_classifier_selection": {
+          "images": 5097,
+          "patients": 2027,
+          "positive_images": 230,
+          "positive_patients": 114,
+          "negative_patients": 2015,
+          "mixed_label_patients": 102
+        },
+        "expanded": {
+          "images": 5910,
+          "patients": 2699,
+          "positive_images": 236,
+          "positive_patients": 120,
+          "negative_patients": 2684,
+          "mixed_label_patients": 105
+        },
+        "method_development": {
+          "images": 5047,
+          "patients": 2026,
+          "positive_images": 223,
+          "positive_patients": 114,
+          "negative_patients": 2016,
+          "mixed_label_patients": 104
+        }
+      },
+      "planned_exposure": {
+        "11": {
+          "actual_not_executed": true,
+          "planned_unique_images": 3439,
+          "planned_unique_patients": 2466,
+          "sources": {
+            "public/0": {
+              "draws": 1568,
+              "eligible_images": 807,
+              "eligible_patients": 669,
+              "seen_images": 652,
+              "seen_patients": 602,
+              "image_exposure_min": 0,
+              "image_exposure_median": 2.0,
+              "image_exposure_max": 8,
+              "patient_exposure_min": 0,
+              "patient_exposure_median": 2.0,
+              "patient_exposure_max": 8
+            },
+            "public/1": {
+              "draws": 327,
+              "eligible_images": 6,
+              "eligible_patients": 6,
+              "seen_images": 6,
+              "seen_patients": 6,
+              "image_exposure_min": 47,
+              "image_exposure_median": 54.0,
+              "image_exposure_max": 62,
+              "patient_exposure_min": 47,
+              "patient_exposure_median": 54.0,
+              "patient_exposure_max": 62
+            },
+            "classifier_selection/0": {
+              "draws": 4832,
+              "eligible_images": 4867,
+              "eligible_patients": 2015,
+              "seen_images": 2551,
+              "seen_patients": 1838,
+              "image_exposure_min": 0,
+              "image_exposure_median": 1.0,
+              "image_exposure_max": 9,
+              "patient_exposure_min": 0,
+              "patient_exposure_median": 2.0,
+              "patient_exposure_max": 11
+            },
+            "classifier_selection/1": {
+              "draws": 6073,
+              "eligible_images": 230,
+              "eligible_patients": 114,
+              "seen_images": 230,
+              "seen_patients": 114,
+              "image_exposure_min": 3,
+              "image_exposure_median": 22.0,
+              "image_exposure_max": 74,
+              "patient_exposure_min": 37,
+              "patient_exposure_median": 53.0,
+              "patient_exposure_max": 74
+            }
+          }
+        },
+        "23": {
+          "actual_not_executed": true,
+          "planned_unique_images": 3459,
+          "planned_unique_patients": 2468,
+          "sources": {
+            "public/0": {
+              "draws": 1620,
+              "eligible_images": 807,
+              "eligible_patients": 669,
+              "seen_images": 676,
+              "seen_patients": 613,
+              "image_exposure_min": 0,
+              "image_exposure_median": 2.0,
+              "image_exposure_max": 8,
+              "patient_exposure_min": 0,
+              "patient_exposure_median": 2.0,
+              "patient_exposure_max": 8
+            },
+            "public/1": {
+              "draws": 325,
+              "eligible_images": 6,
+              "eligible_patients": 6,
+              "seen_images": 6,
+              "seen_patients": 6,
+              "image_exposure_min": 45,
+              "image_exposure_median": 54.0,
+              "image_exposure_max": 61,
+              "patient_exposure_min": 45,
+              "patient_exposure_median": 54.0,
+              "patient_exposure_max": 61
+            },
+            "classifier_selection/0": {
+              "draws": 4780,
+              "eligible_images": 4867,
+              "eligible_patients": 2015,
+              "seen_images": 2547,
+              "seen_patients": 1830,
+              "image_exposure_min": 0,
+              "image_exposure_median": 1.0,
+              "image_exposure_max": 8,
+              "patient_exposure_min": 0,
+              "patient_exposure_median": 2.0,
+              "patient_exposure_max": 8
+            },
+            "classifier_selection/1": {
+              "draws": 6075,
+              "eligible_images": 230,
+              "eligible_patients": 114,
+              "seen_images": 230,
+              "seen_patients": 114,
+              "image_exposure_min": 2,
+              "image_exposure_median": 20.5,
+              "image_exposure_max": 80,
+              "patient_exposure_min": 30,
+              "patient_exposure_median": 54.0,
+              "patient_exposure_max": 80
+            }
+          }
+        },
+        "37": {
+          "actual_not_executed": true,
+          "planned_unique_images": 3476,
+          "planned_unique_patients": 2472,
+          "sources": {
+            "public/0": {
+              "draws": 1535,
+              "eligible_images": 807,
+              "eligible_patients": 669,
+              "seen_images": 660,
+              "seen_patients": 607,
+              "image_exposure_min": 0,
+              "image_exposure_median": 2.0,
+              "image_exposure_max": 9,
+              "patient_exposure_min": 0,
+              "patient_exposure_median": 2.0,
+              "patient_exposure_max": 9
+            },
+            "public/1": {
+              "draws": 316,
+              "eligible_images": 6,
+              "eligible_patients": 6,
+              "seen_images": 6,
+              "seen_patients": 6,
+              "image_exposure_min": 48,
+              "image_exposure_median": 52.5,
+              "image_exposure_max": 58,
+              "patient_exposure_min": 48,
+              "patient_exposure_median": 52.5,
+              "patient_exposure_max": 58
+            },
+            "classifier_selection/0": {
+              "draws": 4865,
+              "eligible_images": 4867,
+              "eligible_patients": 2015,
+              "seen_images": 2580,
+              "seen_patients": 1842,
+              "image_exposure_min": 0,
+              "image_exposure_median": 1.0,
+              "image_exposure_max": 9,
+              "patient_exposure_min": 0,
+              "patient_exposure_median": 2.0,
+              "patient_exposure_max": 9
+            },
+            "classifier_selection/1": {
+              "draws": 6084,
+              "eligible_images": 230,
+              "eligible_patients": 114,
+              "seen_images": 230,
+              "seen_patients": 114,
+              "image_exposure_min": 3,
+              "image_exposure_median": 21.5,
+              "image_exposure_max": 71,
+              "patient_exposure_min": 36,
+              "patient_exposure_median": 52.0,
+              "patient_exposure_max": 74
+            }
+          }
+        }
+      },
+      "planned_main_updates": 1200,
+      "planned_probe_updates": 4,
+      "planned_probe_seed": 11,
+      "new_model_execution": 0,
+      "new_training": 0,
+      "new_generation": 0,
+      "new_pixel_decode": 0,
+      "original_roles_changed": false,
+      "role_overlay_status": "planned_not_yet_optimizer_consumed",
+      "runtime_implemented": false,
+      "DP_executed": false,
+      "expert_opened": false,
+      "reserved_opened": false,
+      "final_ready": false,
+      "improved_performance_established": false,
+      "cause_established": false
     }
   },
-  "step2_active_task": "Fixed classifier inference diagnostic complete: near-perfect seen-training discrimination, poor stored development generalization; no cause isolated",
+  "step2_active_task": "One fixed-compute expanded real-patient pool comparison designed; metadata schedule verified, new runtime/model execution pending",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "step2_open_items": [
-    "Train/eval-path-on-seen-data collapse was not observed; near-perfect seen-training discrimination coexists with weak development discrimination",
-    "Limited public-positive support, memorization, cohort/weak-label differences and classifier/synthetic interactions remain causally unseparated",
-    "Both previous private-synthetic utility gates remain failed; no new efficacy comparison in this diagnostic",
-    "DP remains paused; expert532 and reserved4213 remain unopened"
+    "Current real-only and synthetic paths both show a train/development generalization gap",
+    "Rwide pool5910/2699 with120positive patients is frozen as a diagnostic NONDP expansion, not a public baseline",
+    "Actual expanded-pool performance and runtime source/pixel/kernel parity are not yet tested",
+    "Former selection2027 must not be reused as held-out validation after its future training use",
+    "Prior head/LoRA gates remain failed; expert532/reserved4213 and DP boundaries preserved"
   ],
   "step2_completed_diagnostics": [
     "CDI E480 extraction, four E/U cells18methods144AUC156contrasts and independent saved arithmetic/fit/statistics verification",
@@ -2077,7 +2316,8 @@
     "Full literal CDI masked-control U82 extraction, original18 fixed scorers plus DINO and U79 auxiliary-fit exclusion: saved raw2132 features and1517 scores independently verified; one-intervention diagnostic only.",
     "Public8 x two original Adam states: primary166F52B inactive; one explicit post-hoc activation114F0B; both16-condition saved arithmetic/source/CPU Adam checks passed. Conditional local responses, not DP/MIA efficacy.",
     "Fixed public-only/pooled E4 LoRA continuation:896updates,256images,6classifier runs; integrity verified, private-increment gate failed; no final or DP",
-    "Fixed12classifier checkpoint inference on actually seen training images: high training discrimination vs weak development, unchanged parameters/BN; no retraining or new efficacy"
+    "Fixed12classifier checkpoint inference on actually seen training images: high training discrimination vs weak development, unchanged parameters/BN; no retraining or new efficacy",
+    "Metadata-only prospective Rwide real-support comparison:2699patients5910images120positivepatients; original R1 sampler and38400 planned slots checked; no new model/pixel execution"
   ],
   "active_comparison_state_source": "active_execution",
   "execution_history_20260915b": [
@@ -3752,7 +3992,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "TRACK1_CLASSIFIER_GENERALIZATION_PROTOCOL_20260917.md",
+  "current_planning_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PROTOCOL_20260917.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -4763,7 +5003,7 @@
       0.4166666666666667
     ]
   },
-  "current_decision_report": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
+  "current_decision_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PLAN_REVIEW_20260917.md",
   "current_head_branch_closure_20260917": {
     "report": "TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md",
     "record": "spec_sources\\current_head_branch_closure_20260917.json",
@@ -5106,5 +5346,243 @@
     "expert_opened": false,
     "reserved_opened": false,
     "final_ready": false
+  },
+  "completed_real_support_plan_20260917": {
+    "protocol": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PROTOCOL_20260917.md",
+    "review": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PLAN_REVIEW_20260917.md",
+    "status": "metadata_verified_runtime_not_implemented",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_plan_20260917_v1",
+    "plan_sha256": "de8c088e23ffdd111436c62393bb7c2fcc5a1f4bb7dfc98376839d3965cc196c",
+    "verification_sha256": "6f5e16ca386f4c94456762818207e3013ad1114e26551325023978c6b5dac3df",
+    "public_plan": "spec_sources/real_support_diagnostic_plan_20260917.json",
+    "counts": {
+      "public": {
+        "images": 813,
+        "patients": 672,
+        "positive_images": 6,
+        "positive_patients": 6,
+        "negative_patients": 669,
+        "mixed_label_patients": 3
+      },
+      "former_classifier_selection": {
+        "images": 5097,
+        "patients": 2027,
+        "positive_images": 230,
+        "positive_patients": 114,
+        "negative_patients": 2015,
+        "mixed_label_patients": 102
+      },
+      "expanded": {
+        "images": 5910,
+        "patients": 2699,
+        "positive_images": 236,
+        "positive_patients": 120,
+        "negative_patients": 2684,
+        "mixed_label_patients": 105
+      },
+      "method_development": {
+        "images": 5047,
+        "patients": 2026,
+        "positive_images": 223,
+        "positive_patients": 114,
+        "negative_patients": 2016,
+        "mixed_label_patients": 104
+      }
+    },
+    "planned_exposure": {
+      "11": {
+        "actual_not_executed": true,
+        "planned_unique_images": 3439,
+        "planned_unique_patients": 2466,
+        "sources": {
+          "public/0": {
+            "draws": 1568,
+            "eligible_images": 807,
+            "eligible_patients": 669,
+            "seen_images": 652,
+            "seen_patients": 602,
+            "image_exposure_min": 0,
+            "image_exposure_median": 2.0,
+            "image_exposure_max": 8,
+            "patient_exposure_min": 0,
+            "patient_exposure_median": 2.0,
+            "patient_exposure_max": 8
+          },
+          "public/1": {
+            "draws": 327,
+            "eligible_images": 6,
+            "eligible_patients": 6,
+            "seen_images": 6,
+            "seen_patients": 6,
+            "image_exposure_min": 47,
+            "image_exposure_median": 54.0,
+            "image_exposure_max": 62,
+            "patient_exposure_min": 47,
+            "patient_exposure_median": 54.0,
+            "patient_exposure_max": 62
+          },
+          "classifier_selection/0": {
+            "draws": 4832,
+            "eligible_images": 4867,
+            "eligible_patients": 2015,
+            "seen_images": 2551,
+            "seen_patients": 1838,
+            "image_exposure_min": 0,
+            "image_exposure_median": 1.0,
+            "image_exposure_max": 9,
+            "patient_exposure_min": 0,
+            "patient_exposure_median": 2.0,
+            "patient_exposure_max": 11
+          },
+          "classifier_selection/1": {
+            "draws": 6073,
+            "eligible_images": 230,
+            "eligible_patients": 114,
+            "seen_images": 230,
+            "seen_patients": 114,
+            "image_exposure_min": 3,
+            "image_exposure_median": 22.0,
+            "image_exposure_max": 74,
+            "patient_exposure_min": 37,
+            "patient_exposure_median": 53.0,
+            "patient_exposure_max": 74
+          }
+        }
+      },
+      "23": {
+        "actual_not_executed": true,
+        "planned_unique_images": 3459,
+        "planned_unique_patients": 2468,
+        "sources": {
+          "public/0": {
+            "draws": 1620,
+            "eligible_images": 807,
+            "eligible_patients": 669,
+            "seen_images": 676,
+            "seen_patients": 613,
+            "image_exposure_min": 0,
+            "image_exposure_median": 2.0,
+            "image_exposure_max": 8,
+            "patient_exposure_min": 0,
+            "patient_exposure_median": 2.0,
+            "patient_exposure_max": 8
+          },
+          "public/1": {
+            "draws": 325,
+            "eligible_images": 6,
+            "eligible_patients": 6,
+            "seen_images": 6,
+            "seen_patients": 6,
+            "image_exposure_min": 45,
+            "image_exposure_median": 54.0,
+            "image_exposure_max": 61,
+            "patient_exposure_min": 45,
+            "patient_exposure_median": 54.0,
+            "patient_exposure_max": 61
+          },
+          "classifier_selection/0": {
+            "draws": 4780,
+            "eligible_images": 4867,
+            "eligible_patients": 2015,
+            "seen_images": 2547,
+            "seen_patients": 1830,
+            "image_exposure_min": 0,
+            "image_exposure_median": 1.0,
+            "image_exposure_max": 8,
+            "patient_exposure_min": 0,
+            "patient_exposure_median": 2.0,
+            "patient_exposure_max": 8
+          },
+          "classifier_selection/1": {
+            "draws": 6075,
+            "eligible_images": 230,
+            "eligible_patients": 114,
+            "seen_images": 230,
+            "seen_patients": 114,
+            "image_exposure_min": 2,
+            "image_exposure_median": 20.5,
+            "image_exposure_max": 80,
+            "patient_exposure_min": 30,
+            "patient_exposure_median": 54.0,
+            "patient_exposure_max": 80
+          }
+        }
+      },
+      "37": {
+        "actual_not_executed": true,
+        "planned_unique_images": 3476,
+        "planned_unique_patients": 2472,
+        "sources": {
+          "public/0": {
+            "draws": 1535,
+            "eligible_images": 807,
+            "eligible_patients": 669,
+            "seen_images": 660,
+            "seen_patients": 607,
+            "image_exposure_min": 0,
+            "image_exposure_median": 2.0,
+            "image_exposure_max": 9,
+            "patient_exposure_min": 0,
+            "patient_exposure_median": 2.0,
+            "patient_exposure_max": 9
+          },
+          "public/1": {
+            "draws": 316,
+            "eligible_images": 6,
+            "eligible_patients": 6,
+            "seen_images": 6,
+            "seen_patients": 6,
+            "image_exposure_min": 48,
+            "image_exposure_median": 52.5,
+            "image_exposure_max": 58,
+            "patient_exposure_min": 48,
+            "patient_exposure_median": 52.5,
+            "patient_exposure_max": 58
+          },
+          "classifier_selection/0": {
+            "draws": 4865,
+            "eligible_images": 4867,
+            "eligible_patients": 2015,
+            "seen_images": 2580,
+            "seen_patients": 1842,
+            "image_exposure_min": 0,
+            "image_exposure_median": 1.0,
+            "image_exposure_max": 9,
+            "patient_exposure_min": 0,
+            "patient_exposure_median": 2.0,
+            "patient_exposure_max": 9
+          },
+          "classifier_selection/1": {
+            "draws": 6084,
+            "eligible_images": 230,
+            "eligible_patients": 114,
+            "seen_images": 230,
+            "seen_patients": 114,
+            "image_exposure_min": 3,
+            "image_exposure_median": 21.5,
+            "image_exposure_max": 71,
+            "patient_exposure_min": 36,
+            "patient_exposure_median": 52.0,
+            "patient_exposure_max": 74
+          }
+        }
+      }
+    },
+    "planned_main_updates": 1200,
+    "planned_probe_updates": 4,
+    "planned_probe_seed": 11,
+    "new_model_execution": 0,
+    "new_training": 0,
+    "new_generation": 0,
+    "new_pixel_decode": 0,
+    "original_roles_changed": false,
+    "role_overlay_status": "planned_not_yet_optimizer_consumed",
+    "runtime_implemented": false,
+    "DP_executed": false,
+    "expert_opened": false,
+    "reserved_opened": false,
+    "final_ready": false,
+    "improved_performance_established": false,
+    "cause_established": false
   }
 }

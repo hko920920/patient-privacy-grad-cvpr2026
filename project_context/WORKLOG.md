@@ -1,5 +1,17 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 149-REAL-PATIENT-SUPPORT-DIAGNOSTIC-PLAN (2026-09-17 KST)
+
+- 사용자 검토의 다음 후보를 받아 큰 단계2에서 단일 실자료 범위 대조를 명세했다. 예상20–30분, 새 학습 없이 설계·명부 확인이라고 먼저 밝혔다. 새GPU/학습/추론/생성/raw pixel decode0이다.
+- 기존 R1 public672명813장/P6명6장에 classifier-selection2027명5097장/P114명230장 전체를 합치는 Rwide 하나를 정했다. 총2699명5910장/P120명236장이다. 추가환자 전원 original private_train이며, 비DP 진단이지 확대 공개 baseline이 아니다. Private80은 포함하지 않는다.
+- 동일 initial seed11/23/37, ResNet18/224/affine/AdamW1e-4/400step/실자료32장양음16씩을 유지한다. 두 half-batch 모두 합친 pool에서 class별patient→imageuniform로 뽑는다. 50:50 source혼합이나 앞16public고정이 아니다. 원 public RNG stream을 유지하지만 pool차이 때문에 같은ID를 요구하지 않는다.
+- 별도 planned 역할 overlay2027명, 전체 학습manifest5910, 기존methoddev5047,3seed×400×32=38400예정slot을 저장했다. 이미 calibration에 사용된selection이며 미래학습 후 해당분기의 validation/독립확인으로 재사용하지 않는다. 원 역할표·과거 calibration·head/LoRA실패는 그대로다.
+- Metadata독립검산124175항목PASS: 원R1 1200batch재현, 새1200batch각38400slot환자/영상/label/source/노출정확. 예정고유영상3439/3459/3476,환자2466/2468/2472,세seed모두P120명/236장이등장한다. PublicP6영상별반복은기존1025–1113→계획45–62회. 이는예정값이며실제학습아니다.
+- 확대pool과methoddev/private80은환자·영상·기록SHA모두교집합0,expert/reserved/locked환자0. 실제파일재hash/decode는이번에안했고실행전결속항목으로남겼다. 같은weakmethoddev를재사용하므로새독립확인아니다. 원인으로positive수/암기만을단정하지않는다.
+- Primary Rwide−R1 AUROC,AP와seed방향/절대성능보고;R0secondary,기존2000patientclusterdraw공유. +.01/2of3/AP비감소는진단개선후보표시일뿐임상/DPgate아니다. 같은400step이확대자료수렴을보장하지않는한계유지.
+- Runtime미구현. 다음별도패키지의seed11기존R1/새publicprovider2update+Rwide2replay=4probe,그후fresh3×400=1200mainupdate를계획했다. 기존R1순수학습합161.78초는참고,미래구현/실행/검산/보고30–50분예상이며미실측이다.
+- TRACK1_REAL_SUPPORT_DIAGNOSTIC_PROTOCOL/PLAN_REVIEW_20260917.md,계획JSON·검증·원본명부·역할overlay·CPU계획코드·framework/두state/AGENTS/status/index를연결했다. 실제결과pointer는고정분류기진단,효용pointer는LoRA미통과로보존. 현재실행중없음,expert532/reserved4213/DP보존,큰단계2/final_ready=false.
+
 ## 148-FIXED-CLASSIFIER-GENERALIZATION (2026-09-17 KST)
 
 - 사용자 후속 제안에 따라 새 생성·재학습 없이 저장된 분류기의 학습자료–개발자료 차이를 진단했다. 큰 단계2, 예상20–35분을 먼저 보고했다. 명세·12개checkpoint·trace·기존 예측·source를 새 추론 전에 동결했고 기존 runtime 코드는 변경하지 않았다.

@@ -1,0 +1,384 @@
+{
+  "schema": "real-support-generalization-plan/v1",
+  "created_utc": "2026-09-17T14:02:35.674022+00:00",
+  "status": "design_complete_no_new_model_execution",
+  "current_step": 2,
+  "protocol": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PROTOCOL_20260917.md",
+  "arm": "Rwide_real_diagnostic_NONDP",
+  "new_model_execution": 0,
+  "new_pixel_decode": 0,
+  "runtime_implemented": false,
+  "final_ready": false,
+  "expert_opened": false,
+  "reserved_opened": false,
+  "DP": false,
+  "counts": {
+    "public": {
+      "images": 813,
+      "patients": 672,
+      "positive_images": 6,
+      "positive_patients": 6,
+      "negative_patients": 669,
+      "mixed_label_patients": 3
+    },
+    "former_classifier_selection": {
+      "images": 5097,
+      "patients": 2027,
+      "positive_images": 230,
+      "positive_patients": 114,
+      "negative_patients": 2015,
+      "mixed_label_patients": 102
+    },
+    "expanded": {
+      "images": 5910,
+      "patients": 2699,
+      "positive_images": 236,
+      "positive_patients": 120,
+      "negative_patients": 2684,
+      "mixed_label_patients": 105
+    },
+    "method_development": {
+      "images": 5047,
+      "patients": 2026,
+      "positive_images": 223,
+      "positive_patients": 114,
+      "negative_patients": 2016,
+      "mixed_label_patients": 104
+    }
+  },
+  "overlaps": {
+    "method_development": {
+      "patient_id": 0,
+      "image_id": 0,
+      "sha256": 0
+    },
+    "private80": {
+      "patient_id": 0,
+      "image_id": 0,
+      "sha256": 0
+    },
+    "expert_patients": 0,
+    "reserved_patients": 0,
+    "locked_patients": 0
+  },
+  "additional_source_original_role": "private_train",
+  "original_role_files_changed": false,
+  "role_overlay_status": "planned_not_yet_optimizer_consumed",
+  "sampling": {
+    "class_balanced": true,
+    "within_label": "uniform patient then uniform image within patient/label",
+    "original_role_mixture": "emergent from class-specific patient counts, NOT 50:50",
+    "half_batch_size": 16,
+    "labels_per_half": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "stream_names": [
+      "public-shared",
+      "public-extra"
+    ],
+    "same_random_streams_not_same_image_ids": true
+  },
+  "seeds": [
+    11,
+    23,
+    37
+  ],
+  "steps": 400,
+  "batch": 32,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "optimizer": {
+    "name": "AdamW",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "foreach": false
+  },
+  "initialization": "same per-seed ImageNet initialization as prior R1, fresh optimizer",
+  "selected_calibration_sha256": "9f46645d3922ddd0d24ae9daa7d9e152b80fad9a7f52e284d8d07131692d0892",
+  "scheduled_presentations": 38400,
+  "planned_exposure": {
+    "11": {
+      "actual_not_executed": true,
+      "planned_unique_images": 3439,
+      "planned_unique_patients": 2466,
+      "sources": {
+        "public/0": {
+          "draws": 1568,
+          "eligible_images": 807,
+          "eligible_patients": 669,
+          "seen_images": 652,
+          "seen_patients": 602,
+          "image_exposure_min": 0,
+          "image_exposure_median": 2.0,
+          "image_exposure_max": 8,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 8
+        },
+        "public/1": {
+          "draws": 327,
+          "eligible_images": 6,
+          "eligible_patients": 6,
+          "seen_images": 6,
+          "seen_patients": 6,
+          "image_exposure_min": 47,
+          "image_exposure_median": 54.0,
+          "image_exposure_max": 62,
+          "patient_exposure_min": 47,
+          "patient_exposure_median": 54.0,
+          "patient_exposure_max": 62
+        },
+        "classifier_selection/0": {
+          "draws": 4832,
+          "eligible_images": 4867,
+          "eligible_patients": 2015,
+          "seen_images": 2551,
+          "seen_patients": 1838,
+          "image_exposure_min": 0,
+          "image_exposure_median": 1.0,
+          "image_exposure_max": 9,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 11
+        },
+        "classifier_selection/1": {
+          "draws": 6073,
+          "eligible_images": 230,
+          "eligible_patients": 114,
+          "seen_images": 230,
+          "seen_patients": 114,
+          "image_exposure_min": 3,
+          "image_exposure_median": 22.0,
+          "image_exposure_max": 74,
+          "patient_exposure_min": 37,
+          "patient_exposure_median": 53.0,
+          "patient_exposure_max": 74
+        }
+      }
+    },
+    "23": {
+      "actual_not_executed": true,
+      "planned_unique_images": 3459,
+      "planned_unique_patients": 2468,
+      "sources": {
+        "public/0": {
+          "draws": 1620,
+          "eligible_images": 807,
+          "eligible_patients": 669,
+          "seen_images": 676,
+          "seen_patients": 613,
+          "image_exposure_min": 0,
+          "image_exposure_median": 2.0,
+          "image_exposure_max": 8,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 8
+        },
+        "public/1": {
+          "draws": 325,
+          "eligible_images": 6,
+          "eligible_patients": 6,
+          "seen_images": 6,
+          "seen_patients": 6,
+          "image_exposure_min": 45,
+          "image_exposure_median": 54.0,
+          "image_exposure_max": 61,
+          "patient_exposure_min": 45,
+          "patient_exposure_median": 54.0,
+          "patient_exposure_max": 61
+        },
+        "classifier_selection/0": {
+          "draws": 4780,
+          "eligible_images": 4867,
+          "eligible_patients": 2015,
+          "seen_images": 2547,
+          "seen_patients": 1830,
+          "image_exposure_min": 0,
+          "image_exposure_median": 1.0,
+          "image_exposure_max": 8,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 8
+        },
+        "classifier_selection/1": {
+          "draws": 6075,
+          "eligible_images": 230,
+          "eligible_patients": 114,
+          "seen_images": 230,
+          "seen_patients": 114,
+          "image_exposure_min": 2,
+          "image_exposure_median": 20.5,
+          "image_exposure_max": 80,
+          "patient_exposure_min": 30,
+          "patient_exposure_median": 54.0,
+          "patient_exposure_max": 80
+        }
+      }
+    },
+    "37": {
+      "actual_not_executed": true,
+      "planned_unique_images": 3476,
+      "planned_unique_patients": 2472,
+      "sources": {
+        "public/0": {
+          "draws": 1535,
+          "eligible_images": 807,
+          "eligible_patients": 669,
+          "seen_images": 660,
+          "seen_patients": 607,
+          "image_exposure_min": 0,
+          "image_exposure_median": 2.0,
+          "image_exposure_max": 9,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 9
+        },
+        "public/1": {
+          "draws": 316,
+          "eligible_images": 6,
+          "eligible_patients": 6,
+          "seen_images": 6,
+          "seen_patients": 6,
+          "image_exposure_min": 48,
+          "image_exposure_median": 52.5,
+          "image_exposure_max": 58,
+          "patient_exposure_min": 48,
+          "patient_exposure_median": 52.5,
+          "patient_exposure_max": 58
+        },
+        "classifier_selection/0": {
+          "draws": 4865,
+          "eligible_images": 4867,
+          "eligible_patients": 2015,
+          "seen_images": 2580,
+          "seen_patients": 1842,
+          "image_exposure_min": 0,
+          "image_exposure_median": 1.0,
+          "image_exposure_max": 9,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 9
+        },
+        "classifier_selection/1": {
+          "draws": 6084,
+          "eligible_images": 230,
+          "eligible_patients": 114,
+          "seen_images": 230,
+          "seen_patients": 114,
+          "image_exposure_min": 3,
+          "image_exposure_median": 21.5,
+          "image_exposure_max": 71,
+          "patient_exposure_min": 36,
+          "patient_exposure_median": 52.0,
+          "patient_exposure_max": 74
+        }
+      }
+    }
+  },
+  "primary_comparison": "Rwide-R1 mean per-seed AUROC",
+  "secondary_comparison": "Rwide-R0 AUROC/AP",
+  "bootstrap": {
+    "iterations": 2000,
+    "saved_counts": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\cluster_bootstrap.npz",
+    "patient_clusters": 2026,
+    "interval": 0.95,
+    "conditional_development_only": true
+  },
+  "improvement_candidate": {
+    "mean_AUROC_gain_min": 0.01,
+    "positive_seeds_min": 2,
+    "mean_AP_non_decrease": true,
+    "implies_adequate_absolute_performance": false,
+    "implies_DP_entry": false
+  },
+  "execution_budget": {
+    "main_updates": 1200,
+    "independent_probe_updates": 4,
+    "new_generated_images": 0,
+    "existing_R1_path_witness_images": 192,
+    "method_development_image_forward": 15141,
+    "training_eval_image_forward": 10374,
+    "DP": 0,
+    "expert_pixels": 0,
+    "reserved_pixels": 0
+  },
+  "prior_R1_pure_training_seconds": 161.7778664000798,
+  "future_total_work_estimate_minutes": [
+    30,
+    50
+  ],
+  "limitations": [
+    "Changes diversity, positive support, per-image repetition, source weights and label/cohort composition together",
+    "Same adaptive weak-label development reused, not a new independent confirmation",
+    "Fixed 400 updates is a compute comparison, not a convergence guarantee",
+    "One additional pool, three classifier seeds, no subset or budget sweep"
+  ],
+  "source_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_profile_20260917_v3\\real_manifest_private.csv": "3cd8fa6f6df2c381ed8a05b46c3284f9c4c269e483ce48323147ffd7afb89653",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_profile_20260917_v3\\image_audit.json": "b971f151085227994d64a4a005edc653929da6f4a6da31ea1d497356da30e3aa",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_profile_20260917_v3\\data.json": "48017914db604dd33cb4df354889215b721d3ccce0af840e5f768505c4a113d8",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\patient_usage_audit_20260917_v1\\patient_usage_private.csv": "73510072e464307b7a8d7a770c8880ad085e314dada69df3c42db5ea90e89d0c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\patient_usage_audit_20260917_v1\\provisional_patient_split_private.csv": "914dd4fc986f8ea5d7fdfb71a8305dc10bf83fe893360104ff755bf55cc9f2ee",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\nih_expert_label_public_routes_20260917_v1\\nih_all14_from_public_mirror_810.csv": "40fede31f3f158a6e58419c202568b340fba22684f6f8900d45b35f9c3fb43c4",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_master_20260917_v1\\resources.json": "6195560006389e481c14d1cc2767cb3ed1a955dcf388bc0539927d78ec7fbfee",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\contract.json": "88543635a25bf396b8ed2b82bab1f4f4074685e41a2f3e66ce045410a53178fd",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\calibration_choice.json": "9f46645d3922ddd0d24ae9daa7d9e152b80fad9a7f52e284d8d07131692d0892",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\result.json": "c6c2bad3a729050910361edd681a12a6cc3cd11c34e8216ef36d661bce5fb038",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\verification.json": "6b0399fe136ded068242363bc21ebc68581908f4a3b93da5773b63726ddc668a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\cluster_bootstrap.npz": "00ac9762c5903b2a448de2af60c05a6350c0d7f80e8a07ce0e936514bb34c377",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\classifier_generalization_20260917_v1\\result.json": "6532f53b6ec58b812b934178e663645c92c6b01782060d81fcc5a5a591faf176",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\classifier_generalization_20260917_v1\\verification.json": "9f302909d2935ae54d38f2cefb0fda3b4b0d59ba5ece203c93e772f116778395",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\lora_transfer_20260917_v1\\result.json": "608e9d081e9710d8dc195d6c6ceacccf25122dcc943a95d3ecd1a7b4861d76e8",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md": "83b14e96691b2d6c7bad5f77852bca87a4cd0921a2c8b12064cb4efad483cb3a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_REAL_SUPPORT_DIAGNOSTIC_PROTOCOL_20260917.md": "30dd7308a0806629f874aaa911823ab5eab24e8dac02b304be502225c7a7681f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\real_support_plan\\prepare.py": "e9d2fe24236510735dd3a0da87b6fc415619569d1efad6c466dae1e945cbe6f1",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\real_support_plan\\verify.py": "4fa3f0c250d9b9a0127ccd30bc79b81d0821327c189972defa6a6b3438a28a9d",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\real_support_plan\\__init__.py": "a59134de22dca725766f8abda5d4bdb0ea6bc3f6754cfc1e8d10dab288479560",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\downstream_utility\\data_v2.py": "e3754b83bd7a3bc0f5b5366a5647b9a17e5c3455d935537561964aba79a7c393",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\downstream_utility\\train_v2.py": "0d4d6c35c781038f01533ce67b3f1cb4feb2c83ef8661145f9690febf92bbdc0",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\downstream_utility\\common.py": "a3634bc79934ac213f18510be8df74f45450a33cf08d037b39c6e9b26d3a05a8",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\downstream_utility\\run_v2.py": "ddb2caac38ef903f323c89473c6aa19045e03cacae0290226857aee66280f466",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\downstream_utility\\development_v1.py": "25d639239a20506e163a800043d1cda924c5679f1c350fd6346c98bb5d63b37f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_11\\trace.json": "8981cf4a6603f664c6357a98c70d4516874f520b01666deec7a2b9e528565274",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_11\\exposure.json": "eb72d100860da21f69f8da98cab3a361110b434153d63683516d8cae3b443661",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_11\\state_400.pt": "efb97aab5c4feeb270e0e67638a648458ec1a8c0201184f287fbe1c1474c344f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_11\\complete.json": "5c40c2efd539b5a4811d7b5b1144645acef85781d0aaf0ae9fcc80ad15961f00",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\R0_11.npz": "e8f4b4fb99bb1771ca3f34d5c66ceacd332c2feb5c53f6f74640f1af6ed1c699",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\R1_11.npz": "48897caae17b30783c9e8d56677c8ef7fd6c7ce03779be3f49e03e0ac75c9122",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_23\\trace.json": "275f0d3ed2168dc74f4b73e98fc504fdb239774705adb9bd23944623d05f43ea",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_23\\exposure.json": "ab8a169f130c566290e2bddc7c5e480b8a5dd1856c8ec0f9f879675915d8e925",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_23\\state_400.pt": "9585c5afe305ab8cc8e6793c6ed05a4998121d0c8ae31c81a86cd8feec9399d3",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_23\\complete.json": "b503f118bf7735fc32bea1721c619fa4229a78b14121313596427dec3b69d490",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\R0_23.npz": "deeac666218b6b7ab8b43ce9821f5d3700540f2579d1e3235719249c1f0e5366",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\R1_23.npz": "270a3e92d23bd3a56265ed6eda9a9585c0ead124b5661d1371a7dd3a81d9dff5",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_37\\trace.json": "d2772cfc9c25c18b44ca38d13e4aafaecb55d01fae7b1b275dc9f8af7ce9de03",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_37\\exposure.json": "8518399132c6c5e967e31d1030d35db2f587b28331c1dc7dd6f08788aca5f181",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_37\\state_400.pt": "ff34825f8a7de53b92e58c9a740a5a57da41b4894eb091e781f4c1a83d08a5d7",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\runs\\R1_37\\complete.json": "5d921a765d788362f142d1e93c87bc2b4ef99cec603dfaa69bd9bb6523b345c0",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\R0_37.npz": "d12158dc1e08fde715fee111104cda6a67530a925c2503eb4cf6fe361463bcb9",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\evaluation\\R1_37.npz": "95caf53b356dfc7ee838d176c5692f95d70feb54b8e9f8a6befae6c36eb4b4ca",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_plan_20260917_v1\\expanded_training_manifest_private.csv": "2dceb96c90a7013d38ea9dd274511f2a55978d8ec83f76f6b7aad0ef9b6d4c91",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_plan_20260917_v1\\method_development_unchanged_private.csv": "ba70d37000c42312266fddb9ac1568fc68318d1d80aa4c1a9f05691834461ab3",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_plan_20260917_v1\\planned_batches_private.csv": "f25a156410ead0193e91ff1c6d99c5dfcc71ee9e9c0b9e311afe5207754fe68e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_plan_20260917_v1\\role_overlay_private.csv": "a18daaede44853a5bb798dcd5f89b51ba7dab9d11b12604c203c7fb5c6d08f5e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_plan_20260917_v1\\state_before.json": "df7a1b1896f84fc3d97ff49ccab417d0445e6647d411956dad10cb180c7676cd"
+  }
+}

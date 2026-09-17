@@ -1,0 +1,20 @@
+{
+  "status": "PASS_METADATA_ROLE_BOUNDARIES_AND_INDEPENDENT_SCHEDULE",
+  "created_utc": "2026-09-17T14:02:54.299402+00:00",
+  "checks": 124175,
+  "original_R1_batches_reproduced": 1200,
+  "new_planned_batches": 1200,
+  "new_planned_slots": 38400,
+  "metadata_only": true,
+  "new_model_inference": 0,
+  "new_training": 0,
+  "new_pixel_decode": 0,
+  "new_generation": 0,
+  "expert_reserved_opened": false,
+  "original_roles_changed": false,
+  "runtime_implemented": false,
+  "plan_sha256": "de8c088e23ffdd111436c62393bb7c2fcc5a1f4bb7dfc98376839d3965cc196c",
+  "protocol_sha256": "30dd7308a0806629f874aaa911823ab5eab24e8dac02b304be502225c7a7681f",
+  "public_plan_sha256": "de8c088e23ffdd111436c62393bb7c2fcc5a1f4bb7dfc98376839d3965cc196c",
+  "source_sha256_preserved": true
+}

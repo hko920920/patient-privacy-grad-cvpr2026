@@ -1,0 +1,16 @@
+{
+  "status": "PASS_PLAN_REPORT_STATE_AND_PRIOR_RESULT_BINDING",
+  "checks": 664,
+  "local_links": 488,
+  "preserved_completed_objects": 86,
+  "current_model_result_unchanged": true,
+  "current_efficacy_result_unchanged": true,
+  "new_model_execution": 0,
+  "new_training": 0,
+  "new_pixel_decode": 0,
+  "plan_sha256": "de8c088e23ffdd111436c62393bb7c2fcc5a1f4bb7dfc98376839d3965cc196c",
+  "verification_sha256": "6f5e16ca386f4c94456762818207e3013ad1114e26551325023978c6b5dac3df",
+  "protocol_sha256": "30dd7308a0806629f874aaa911823ab5eab24e8dac02b304be502225c7a7681f",
+  "review_sha256": "44144707e4ae316376c9893a4372149e526e6220b225fd1cd32d129891a0a657",
+  "review_html_sha256": "96d0565e6c4fbb3b5b022f7b58fc9e0b9ed46086343dd02ef037057fbf6076fb"
+}
