@@ -1,5 +1,7 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-17 실환자 범위 대조 실제 완료 — 실자료 범위 대조에는 긍정적이다:** [고정 Rwide 3seed 결과](TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md). 개발 AUROC R1 0.544610 → Rwide 0.679434, 차이+0.134825, 우세3/3; AP 0.051669 → 0.103542. 추가2027명을 직접 학습한 비DP 진단이며 공개 baseline/사적 합성 효용이 아니다. 같은400step·초기화·학습코드,4probe와1200본update 및338,410개 독립검산을 완료했다. 기존head/LoRA실패·원역할·expert532/reserved4213·DP중단 유지. Former-selection은 해당분기 학습으로 소비됐으며 다시validation으로 쓰지 않는다. 큰단계2·final_ready=false,실행중없음. 아래 최신/다음은 과거 이력이다.
+
 **2026-09-17 실환자 학습 범위 대조 설계 완료:** [단일 Rwide 대 R1의 계획 점검](TRACK1_REAL_SUPPORT_DIAGNOSTIC_PLAN_REVIEW_20260917.md). 고정 ResNet18·400step에서 pool만 public813→public+former-selection5910장으로 바꾸는 비DP 진단이다. Eligible2699명/양성120명, 예정3seed38400slot을 검산했지만 새 모델 성능은0이다. 추가2,027명은 원 private_train 및 이미 calibration에 쓰인 개발자료이며 공개 baseline/새 독립확인으로 부르지 않는다. 별도 역할 overlay를 준비했고 원 역할표·expert532/reserved4213은 보존한다. 다음은 source/pixel/kernel 연결을 구현하는 패키지이며 아직 미실행이다. 현재 큰 단계2, last actual은 고정 분류기 진단, last efficacy는 LoRA 실패, final_ready=false를 유지한다.
 
 **2026-09-17 고정 분류기 일반화 진단 완료:** [학습자료와 개발자료의 실제 평가 차이](TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md). 새 모델을 학습하지 않고12개 고정 checkpoint를 평가했다. 실제 본 real AUROC/AP1.0, synthetic AUROC0.9990–1.0 대 기존 개발0.5436–0.5962의 차이를 확인했다. 같은 eval 경로에서도 학습자료는 잘 구별하며 가중치·BatchNorm buffer와 기존 개발 재추론768개가 exact다. 이는 일반화 차이의 확인이며 실패 원인 하나의 증명이나 이전 효용 미통과 취소가 아니다. 새 생성·학습·DP0, expert532/reserved4213 보존, 큰 단계2·final_ready=false 유지. 다음은 근거 있는 일반화 대조 하나의 필요성을 판단하는 일이며 해결책이나 새 실험을 자동 선정하지 않았다. 아래 최신/다음 문단은 당시 이력이다.

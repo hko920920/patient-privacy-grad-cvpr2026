@@ -86,7 +86,7 @@
     "independent_saved_tensor_verification": "PASS",
     "failure_cause_or_membership_performance_claim": false
   },
-  "updated_utc": "2026-09-17T14:06:22.384358+00:00",
+  "updated_utc": "2026-09-17T14:41:39.557906+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -137,7 +137,7 @@
       55
     ]
   },
-  "current_result_report": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
+  "current_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
   "stage2_status": "in_progress",
   "comparison_completion_is_not_stage2_completion": true,
   "completed_rank_decomposition": {
@@ -184,7 +184,7 @@
     "original_verification_failure_preserved": true,
     "base_membership_performance_claim": false
   },
-  "next_task": "Implement the Rwide diagnostic pool provider with legacy guards and unchanged classifier kernels; freeze runtime sources and pass four seed11 one-step parity/replay updates before three fixed400-step runs. Preserve prior results and locked cohorts; no automatic DP.",
+  "next_task": "Interpret the fixed real-support contrast and separate permitted data access from the still-unresolved private synthetic transfer question. Select at most one justified prospective contrast; no automatic DP, generator, seed, step or final/reserved execution.",
   "completed_meanmax_decomposition": {
     "status": "completed_and_independently_verified",
     "scorers": 4,
@@ -203,7 +203,7 @@
     "finding": "Within-frozen-scorer spread removal lowers observed target ranking in8 contexts; all4 own-target difference intervals include0. Spread use is an existing aggregation property; participation specificity remains unidentified",
     "stage2_completion_claim": false
   },
-  "next_task_output": "A verified runtime followed by the single predeclared Rwide-R1 development comparison; no classifier or pool sweep.",
+  "next_task_output": "Bounded next-comparison decision grounded in the observed support contrast; no rescue of prior frozen failures.",
   "user_priority_20260915": "User requested maximal concrete follow-through on remaining stage2 investigations; preserve framework and do not substitute further score decomposition for missing baseline execution",
   "completed_eu_comparison": {
     "status": "completed_and_independently_verified",
@@ -351,8 +351,8 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\classifier_generalization_20260917_v1",
-    "last_completed_report": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_20260917_v1",
+    "last_completed_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
     "additional_execution_contract_fixed": true,
     "stage2_completion_claim": false,
     "latest_design_review": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PLAN_REVIEW_20260917.md",
@@ -473,7 +473,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "real_support_plan_metadata_verified_no_new_model",
+    "latest_planning_status": "fixed_real_support_diagnostic_completed",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -1751,7 +1751,7 @@
       "images_planned": 256,
       "classifier_runs_planned": 6
     },
-    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\classifier_generalization_20260917_v1",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_20260917_v1",
     "next_execution_scheduled": false,
     "completed_lora_transfer_comparison": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
@@ -2296,16 +2296,122 @@
       "final_ready": false,
       "improved_performance_established": false,
       "cause_established": false
+    },
+    "completed_real_support_diagnostic": {
+      "report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+      "protocol": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PROTOCOL_20260917.md",
+      "status": "completed_real_support_diagnostic",
+      "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_20260917_v1",
+      "means": {
+        "Rwide": {
+          "AUROC": 0.6794344793223717,
+          "AP": 0.10354165488202786,
+          "BCE": 0.32391954605817297,
+          "balanced_BCE": 2.163283257305867
+        },
+        "R1": {
+          "AUROC": 0.5446095692439646,
+          "AP": 0.05166927943044355,
+          "BCE": 0.41799963727884043,
+          "balanced_BCE": 4.727682184027979
+        },
+        "R0": {
+          "AUROC": 0.5547446499441011,
+          "AP": 0.055087411605439535,
+          "BCE": 0.40054306857478555,
+          "balanced_BCE": 4.530708574400664
+        }
+      },
+      "comparisons": {
+        "Rwide-R1": {
+          "AUROC": {
+            "mean_delta": 0.13482491007840702,
+            "seed_deltas": [
+              0.10118828503223787,
+              0.167400107087879,
+              0.13588633811510464
+            ],
+            "positive_seeds": 3,
+            "percentile95": [
+              0.08415597918365177,
+              0.18775056664067777
+            ]
+          },
+          "AP": {
+            "mean_delta": 0.05187237545158432,
+            "seed_deltas": [
+              0.03472100740655462,
+              0.0790416931673775,
+              0.04185442578082083
+            ],
+            "positive_seeds": 3,
+            "percentile95": [
+              0.028306644014320512,
+              0.08323149145499129
+            ]
+          }
+        },
+        "Rwide-R0": {
+          "AUROC": {
+            "mean_delta": 0.12468982937827056,
+            "seed_deltas": [
+              0.09271328335898987,
+              0.18593923134700197,
+              0.09541697342882005
+            ],
+            "positive_seeds": 3,
+            "percentile95": [
+              0.06986352477173162,
+              0.1772902731270042
+            ]
+          },
+          "AP": {
+            "mean_delta": 0.04845424327658833,
+            "seed_deltas": [
+              0.03329998603509106,
+              0.07707619663093732,
+              0.034986547163736594
+            ],
+            "positive_seeds": 3,
+            "percentile95": [
+              0.024104582978398622,
+              0.07812776852030352
+            ]
+          }
+        }
+      },
+      "improvement_candidate": true,
+      "new_training_updates": 1200,
+      "probe_updates": 4,
+      "training_pool_patients": 2699,
+      "training_pool_images": 5910,
+      "training_positive_patients": 120,
+      "former_selection_patients": 2027,
+      "source_roles_unchanged": true,
+      "role_overlay_status": "consumption_recorded_not_validation",
+      "raw_files": 10957,
+      "verification_checks": 338410,
+      "new_generation": 0,
+      "DP_executed": false,
+      "expert_opened": false,
+      "reserved_opened": false,
+      "final_ready": false,
+      "private_synthetic_efficacy_established": false,
+      "causal_failure_source_established": false,
+      "contract_sha256": "121ac57d44d48265475403914858c58f62fb2a483ba91880686afc958efb6673",
+      "result_sha256": "5cdeac09d236a23fe5b2142e4dfa6de1a3c1e756802d3b38d848549fa44017ee",
+      "verification_sha256": "5d6c73dd6e01d8034a82d975e4a53507366365fc8c27e5a90969173054e2352f",
+      "public_record": "spec_sources/real_support_diagnostic_record_20260917.json"
     }
   },
-  "step2_active_task": "One fixed-compute expanded real-patient pool comparison designed; metadata schedule verified, new runtime/model execution pending",
+  "step2_active_task": "Fixed real-support diagnostic completed; expanded-pool development improvement flag=True; no private synthetic or causal claim",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "step2_open_items": [
-    "Current real-only and synthetic paths both show a train/development generalization gap",
-    "Rwide pool5910/2699 with120positive patients is frozen as a diagnostic NONDP expansion, not a public baseline",
-    "Actual expanded-pool performance and runtime source/pixel/kernel parity are not yet tested",
-    "Former selection2027 must not be reused as held-out validation after its future training use",
-    "Prior head/LoRA gates remain failed; expert532/reserved4213 and DP boundaries preserved"
+    "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
+    "Support, repetition, cohort composition and weak labels are not causally separated",
+    "Original head and fixed LoRA private synthetic utility gates remain failed",
+    "Former selection2027 is consumed as training for this branch, not reusable independent validation",
+    "Expert532/reserved4213 remain closed, DP paused, full stage2 not complete"
   ],
   "step2_completed_diagnostics": [
     "CDI E480 extraction, four E/U cells18methods144AUC156contrasts and independent saved arithmetic/fit/statistics verification",
@@ -2317,7 +2423,8 @@
     "Public8 x two original Adam states: primary166F52B inactive; one explicit post-hoc activation114F0B; both16-condition saved arithmetic/source/CPU Adam checks passed. Conditional local responses, not DP/MIA efficacy.",
     "Fixed public-only/pooled E4 LoRA continuation:896updates,256images,6classifier runs; integrity verified, private-increment gate failed; no final or DP",
     "Fixed12classifier checkpoint inference on actually seen training images: high training discrimination vs weak development, unchanged parameters/BN; no retraining or new efficacy",
-    "Metadata-only prospective Rwide real-support comparison:2699patients5910images120positivepatients; original R1 sampler and38400 planned slots checked; no new model/pixel execution"
+    "Metadata-only prospective Rwide real-support comparison:2699patients5910images120positivepatients; original R1 sampler and38400 planned slots checked; no new model/pixel execution",
+    "Rwide: same classifier400steps x3; expanded5910real-image pool; development AUROC delta +0.134825; independent raw/sampler/metric verification; original failures and final resources preserved"
   ],
   "active_comparison_state_source": "active_execution",
   "execution_history_20260915b": [
@@ -4347,7 +4454,7 @@
     }
   },
   "pre_chexzero_review_result_report_20260917": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
-  "last_actual_model_result_report": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
+  "last_actual_model_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
   "completed_chexzero_review_20260917": {
     "status": "POSITIVE_SINGLE_ALTERNATIVE_READINESS_NOT_EFFICACY",
     "completed_utc": "2026-09-17T05:49:39.987145+00:00",
@@ -5003,7 +5110,7 @@
       0.4166666666666667
     ]
   },
-  "current_decision_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PLAN_REVIEW_20260917.md",
+  "current_decision_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
   "current_head_branch_closure_20260917": {
     "report": "TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md",
     "record": "spec_sources\\current_head_branch_closure_20260917.json",
@@ -5584,5 +5691,112 @@
     "final_ready": false,
     "improved_performance_established": false,
     "cause_established": false
-  }
+  },
+  "completed_real_support_diagnostic_20260917": {
+    "report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+    "protocol": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PROTOCOL_20260917.md",
+    "status": "completed_real_support_diagnostic",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_20260917_v1",
+    "means": {
+      "Rwide": {
+        "AUROC": 0.6794344793223717,
+        "AP": 0.10354165488202786,
+        "BCE": 0.32391954605817297,
+        "balanced_BCE": 2.163283257305867
+      },
+      "R1": {
+        "AUROC": 0.5446095692439646,
+        "AP": 0.05166927943044355,
+        "BCE": 0.41799963727884043,
+        "balanced_BCE": 4.727682184027979
+      },
+      "R0": {
+        "AUROC": 0.5547446499441011,
+        "AP": 0.055087411605439535,
+        "BCE": 0.40054306857478555,
+        "balanced_BCE": 4.530708574400664
+      }
+    },
+    "comparisons": {
+      "Rwide-R1": {
+        "AUROC": {
+          "mean_delta": 0.13482491007840702,
+          "seed_deltas": [
+            0.10118828503223787,
+            0.167400107087879,
+            0.13588633811510464
+          ],
+          "positive_seeds": 3,
+          "percentile95": [
+            0.08415597918365177,
+            0.18775056664067777
+          ]
+        },
+        "AP": {
+          "mean_delta": 0.05187237545158432,
+          "seed_deltas": [
+            0.03472100740655462,
+            0.0790416931673775,
+            0.04185442578082083
+          ],
+          "positive_seeds": 3,
+          "percentile95": [
+            0.028306644014320512,
+            0.08323149145499129
+          ]
+        }
+      },
+      "Rwide-R0": {
+        "AUROC": {
+          "mean_delta": 0.12468982937827056,
+          "seed_deltas": [
+            0.09271328335898987,
+            0.18593923134700197,
+            0.09541697342882005
+          ],
+          "positive_seeds": 3,
+          "percentile95": [
+            0.06986352477173162,
+            0.1772902731270042
+          ]
+        },
+        "AP": {
+          "mean_delta": 0.04845424327658833,
+          "seed_deltas": [
+            0.03329998603509106,
+            0.07707619663093732,
+            0.034986547163736594
+          ],
+          "positive_seeds": 3,
+          "percentile95": [
+            0.024104582978398622,
+            0.07812776852030352
+          ]
+        }
+      }
+    },
+    "improvement_candidate": true,
+    "new_training_updates": 1200,
+    "probe_updates": 4,
+    "training_pool_patients": 2699,
+    "training_pool_images": 5910,
+    "training_positive_patients": 120,
+    "former_selection_patients": 2027,
+    "source_roles_unchanged": true,
+    "role_overlay_status": "consumption_recorded_not_validation",
+    "raw_files": 10957,
+    "verification_checks": 338410,
+    "new_generation": 0,
+    "DP_executed": false,
+    "expert_opened": false,
+    "reserved_opened": false,
+    "final_ready": false,
+    "private_synthetic_efficacy_established": false,
+    "causal_failure_source_established": false,
+    "contract_sha256": "121ac57d44d48265475403914858c58f62fb2a483ba91880686afc958efb6673",
+    "result_sha256": "5cdeac09d236a23fe5b2142e4dfa6de1a3c1e756802d3b38d848549fa44017ee",
+    "verification_sha256": "5d6c73dd6e01d8034a82d975e4a53507366365fc8c27e5a90969173054e2352f",
+    "public_record": "spec_sources/real_support_diagnostic_record_20260917.json"
+  },
+  "last_real_generalization_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md"
 }

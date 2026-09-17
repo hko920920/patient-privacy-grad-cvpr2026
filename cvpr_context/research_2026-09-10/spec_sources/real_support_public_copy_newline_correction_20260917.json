@@ -1,0 +1,26 @@
+{
+  "changes": [
+    {
+      "file": "real_support_diagnostic_record_20260917.json",
+      "prior_sha256": "eeb82adbc4c88c7981b466bb4e1a72885d48e697f1620aeae84ece993b0940ba",
+      "source_sha256": "5cdeac09d236a23fe5b2142e4dfa6de1a3c1e756802d3b38d848549fa44017ee",
+      "semantic_json_unchanged": true,
+      "reason": "Preserve original CRLF bytes instead of read_text newline normalization"
+    },
+    {
+      "file": "real_support_diagnostic_execution_verification_20260917.json",
+      "prior_sha256": "2c2667342c579cd66346a1ddc92092cff08b4f621d4880cb46b7ed2295f6a598",
+      "source_sha256": "5d6c73dd6e01d8034a82d975e4a53507366365fc8c27e5a90969173054e2352f",
+      "semantic_json_unchanged": true,
+      "reason": "Preserve original CRLF bytes instead of read_text newline normalization"
+    },
+    {
+      "file": "real_support_diagnostic_probe_verification_20260917.json",
+      "prior_sha256": "eeb204cd47c45ccf88f39243f3caad2a24c4ffd7db427b837b6737901561709a",
+      "source_sha256": "19761d4f0f50e696c42530ae40fc7a769184a36d9fffe1c23a5f0235abad354a",
+      "semantic_json_unchanged": true,
+      "reason": "Preserve original CRLF bytes instead of read_text newline normalization"
+    }
+  ],
+  "model_or_score_changes": 0
+}

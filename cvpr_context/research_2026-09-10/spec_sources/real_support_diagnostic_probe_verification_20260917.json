@@ -1,0 +1,15 @@
+{
+  "status": "PASS_INDEPENDENT_PROBE",
+  "checks": 479,
+  "updates": 4,
+  "independent_new_updates": 0,
+  "raw_input_presentations": 128,
+  "max_BCE_difference": 1.65989031408742e-08,
+  "exact_input": true,
+  "exact_state": true,
+  "seconds": 5.248678099946119,
+  "contract_sha256": "121ac57d44d48265475403914858c58f62fb2a483ba91880686afc958efb6673",
+  "probe_complete_sha256": "bbd2b8aaff25e7d47895170e62708c8280ac697d15cb56677c6340b60c4ae181",
+  "expert_pixels": 0,
+  "reserved_pixels": 0
+}

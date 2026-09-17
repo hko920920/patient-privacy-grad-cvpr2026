@@ -1,0 +1,681 @@
+{
+  "schema": "real-support-diagnostic-result/v1",
+  "created_utc": "2026-09-17T14:38:00.035088+00:00",
+  "status": "COMPLETED_FIXED_REAL_SUPPORT_DEVELOPMENT_DIAGNOSTIC",
+  "improvement_candidate": true,
+  "scores": {
+    "Rwide": [
+      {
+        "seed": 11,
+        "images": 5047,
+        "positive_images": 223,
+        "AUROC": 0.6695028222118109,
+        "AP": 0.08979529662077465,
+        "BCE": 0.26799592321179305,
+        "balanced_BCE": 2.6955393176373805,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.03268091475410735,
+            "logit_mean": -6.761884462105336
+          },
+          "1": {
+            "images": 223,
+            "BCE": 5.358397720520654,
+            "logit_mean": -5.24799800096205
+          }
+        }
+      },
+      {
+        "seed": 23,
+        "images": 5047,
+        "positive_images": 223,
+        "AUROC": 0.7239521748507091,
+        "AP": 0.1329231246742332,
+        "BCE": 0.2946023866921381,
+        "balanced_BCE": 1.9544774944208252,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.13370164814682306,
+            "logit_mean": -6.149322449503803
+          },
+          "1": {
+            "images": 223,
+            "BCE": 3.775253340694827,
+            "logit_mean": -3.1450092163555023
+          }
+        }
+      },
+      {
+        "seed": 37,
+        "images": 5047,
+        "positive_images": 223,
+        "AUROC": 0.6448484409045951,
+        "AP": 0.08790654335107573,
+        "BCE": 0.40916032827058785,
+        "balanced_BCE": 1.8398329598593957,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.2704774346195102,
+            "logit_mean": -4.589598175045566
+          },
+          "1": {
+            "images": 223,
+            "BCE": 3.409188485099281,
+            "logit_mean": -2.717779256336625
+          }
+        }
+      }
+    ],
+    "R1": [
+      {
+        "seed": 11,
+        "images": 5047,
+        "positive_images": 223,
+        "AUROC": 0.568314537179573,
+        "AP": 0.05507428921422003,
+        "BCE": 0.37165142896176295,
+        "balanced_BCE": 4.200710032136307,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.0004799147222831164,
+            "logit_mean": -8.52720698643828
+          },
+          "1": {
+            "images": 223,
+            "BCE": 8.400940149550332,
+            "logit_mean": -8.400662815624289
+          }
+        }
+      },
+      {
+        "seed": 23,
+        "images": 5047,
+        "positive_images": 223,
+        "AUROC": 0.5565520677628301,
+        "AP": 0.053881431506855704,
+        "BCE": 0.4319371760733262,
+        "balanced_BCE": 4.886856362313431,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 9.758531847141007e-05,
+            "logit_mean": -9.98095287429555
+          },
+          "1": {
+            "images": 223,
+            "BCE": 9.77361513930839,
+            "logit_mean": -9.773507282872906
+          }
+        }
+      },
+      {
+        "seed": 37,
+        "images": 5047,
+        "positive_images": 223,
+        "AUROC": 0.5089621027894905,
+        "AP": 0.046052117570254895,
+        "BCE": 0.4504103068014323,
+        "balanced_BCE": 5.0954801576342,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.0001383760317268955,
+            "logit_mean": -10.186908138678046
+          },
+          "1": {
+            "images": 223,
+            "BCE": 10.190821939236674,
+            "logit_mean": -10.19072404142987
+          }
+        }
+      }
+    ],
+    "R0": [
+      {
+        "seed": 11,
+        "images": 5047,
+        "positive_images": 223,
+        "AUROC": 0.576789538852821,
+        "AP": 0.05649531058568359,
+        "BCE": 0.38238633110576387,
+        "balanced_BCE": 4.3253265552438975,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.00017565082634461804,
+            "logit_mean": -8.763702732611256
+          },
+          "1": {
+            "images": 223,
+            "BCE": 8.65047745966145,
+            "logit_mean": -8.650279145604292
+          }
+        }
+      },
+      {
+        "seed": 23,
+        "images": 5047,
+        "positive_images": 223,
+        "AUROC": 0.5380129435037071,
+        "AP": 0.055846928043295885,
+        "BCE": 0.4109678419985657,
+        "balanced_BCE": 4.6491482280520975,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.00013792411552402632,
+            "logit_mean": -9.476825400766844
+          },
+          "1": {
+            "images": 223,
+            "BCE": 9.29815853198867,
+            "logit_mean": -9.29798470056645
+          }
+        }
+      },
+      {
+        "seed": 37,
+        "images": 5047,
+        "positive_images": 223,
+        "AUROC": 0.5494314674757751,
+        "AP": 0.052919996187339134,
+        "BCE": 0.4082750326200272,
+        "balanced_BCE": 4.617650939905996,
+        "by_label": {
+          "0": {
+            "images": 4824,
+            "BCE": 0.00023728981421506384,
+            "logit_mean": -9.472126785993181
+          },
+          "1": {
+            "images": 223,
+            "BCE": 9.235064589997776,
+            "logit_mean": -9.234791905356095
+          }
+        }
+      }
+    ]
+  },
+  "means": {
+    "Rwide": {
+      "AUROC": 0.6794344793223717,
+      "AP": 0.10354165488202786,
+      "BCE": 0.32391954605817297,
+      "balanced_BCE": 2.163283257305867
+    },
+    "R1": {
+      "AUROC": 0.5446095692439646,
+      "AP": 0.05166927943044355,
+      "BCE": 0.41799963727884043,
+      "balanced_BCE": 4.727682184027979
+    },
+    "R0": {
+      "AUROC": 0.5547446499441011,
+      "AP": 0.055087411605439535,
+      "BCE": 0.40054306857478555,
+      "balanced_BCE": 4.530708574400664
+    }
+  },
+  "comparisons": {
+    "Rwide-R1": {
+      "AUROC": {
+        "mean_delta": 0.13482491007840702,
+        "seed_deltas": [
+          0.10118828503223787,
+          0.167400107087879,
+          0.13588633811510464
+        ],
+        "positive_seeds": 3,
+        "percentile95": [
+          0.08415597918365177,
+          0.18775056664067777
+        ]
+      },
+      "AP": {
+        "mean_delta": 0.05187237545158432,
+        "seed_deltas": [
+          0.03472100740655462,
+          0.0790416931673775,
+          0.04185442578082083
+        ],
+        "positive_seeds": 3,
+        "percentile95": [
+          0.028306644014320512,
+          0.08323149145499129
+        ]
+      }
+    },
+    "Rwide-R0": {
+      "AUROC": {
+        "mean_delta": 0.12468982937827056,
+        "seed_deltas": [
+          0.09271328335898987,
+          0.18593923134700197,
+          0.09541697342882005
+        ],
+        "positive_seeds": 3,
+        "percentile95": [
+          0.06986352477173162,
+          0.1772902731270042
+        ]
+      },
+      "AP": {
+        "mean_delta": 0.04845424327658833,
+        "seed_deltas": [
+          0.03329998603509106,
+          0.07707619663093732,
+          0.034986547163736594
+        ],
+        "positive_seeds": 3,
+        "percentile95": [
+          0.024104582978398622,
+          0.07812776852030352
+        ]
+      }
+    }
+  },
+  "training_eval": {
+    "11": {
+      "all_seen": {
+        "images": 3439,
+        "positive_images": 236,
+        "AUROC": 0.999339866756272,
+        "AP": 0.9917342425579344,
+        "BCE": 0.01893985471428611,
+        "balanced_BCE": 0.047397344827138414,
+        "by_label": {
+          "0": {
+            "images": 3203,
+            "BCE": 0.014412744726666869,
+            "logit_mean": -7.191656362131596
+          },
+          "1": {
+            "images": 236,
+            "BCE": 0.08038194492760996,
+            "logit_mean": 5.501306545494471
+          }
+        },
+        "exposure_weighted_BCE": 0.02802214677164269
+      },
+      "public": {
+        "images": 658,
+        "positive_images": 6,
+        "AUROC": 1.0,
+        "AP": 1.0,
+        "BCE": 0.006607629600594633,
+        "balanced_BCE": 0.0072319926485896885,
+        "by_label": {
+          "0": {
+            "images": 652,
+            "BCE": 0.006596031525399678,
+            "logit_mean": -7.39553362816755
+          },
+          "1": {
+            "images": 6,
+            "BCE": 0.007867953771779698,
+            "logit_mean": 7.398261070251465
+          }
+        },
+        "exposure_weighted_BCE": 0.00557353479745659
+      },
+      "classifier_selection": {
+        "images": 2781,
+        "positive_images": 230,
+        "AUROC": 0.9992125850050279,
+        "AP": 0.9917682823947791,
+        "BCE": 0.021857727466824402,
+        "balanced_BCE": 0.04934210089917594,
+        "by_label": {
+          "0": {
+            "images": 2551,
+            "BCE": 0.01641058753624202,
+            "logit_mean": -7.139548178103591
+          },
+          "1": {
+            "images": 230,
+            "BCE": 0.08227361426210987,
+            "logit_mean": 5.451820775283419
+          }
+        },
+        "exposure_weighted_BCE": 0.03192312060851409
+      }
+    },
+    "23": {
+      "all_seen": {
+        "images": 3459,
+        "positive_images": 236,
+        "AUROC": 0.9987589202606267,
+        "AP": 0.9825963403562928,
+        "BCE": 0.05730239973901517,
+        "balanced_BCE": 0.04301371160580493,
+        "by_label": {
+          "0": {
+            "images": 3223,
+            "BCE": 0.05956027077981706,
+            "logit_mean": -6.666952297368887
+          },
+          "1": {
+            "images": 236,
+            "BCE": 0.026467152431792807,
+            "logit_mean": 7.485776980802164
+          }
+        },
+        "exposure_weighted_BCE": 0.02967602555334774
+      },
+      "public": {
+        "images": 682,
+        "positive_images": 6,
+        "AUROC": 0.9997534516765286,
+        "AP": 0.976190476190476,
+        "BCE": 0.031986272633185826,
+        "balanced_BCE": 0.020383601007533062,
+        "by_label": {
+          "0": {
+            "images": 676,
+            "BCE": 0.03219408167722738,
+            "logit_mean": -6.9290713208049715
+          },
+          "1": {
+            "images": 6,
+            "BCE": 0.008573120337838747,
+            "logit_mean": 7.929831862449646
+          }
+        },
+        "exposure_weighted_BCE": 0.029199608274863176
+      },
+      "classifier_selection": {
+        "images": 2777,
+        "positive_images": 230,
+        "AUROC": 0.9985370683327359,
+        "AP": 0.9830707786571007,
+        "BCE": 0.06351975612582669,
+        "balanced_BCE": 0.04687874607101588,
+        "by_label": {
+          "0": {
+            "images": 2547,
+            "BCE": 0.06682353887300536,
+            "logit_mean": -6.597383212232337
+          },
+          "1": {
+            "images": 230,
+            "BCE": 0.026933953269026395,
+            "logit_mean": 7.474192940411361
+          }
+        },
+        "exposure_weighted_BCE": 0.029761390049584727
+      }
+    },
+    "37": {
+      "all_seen": {
+        "images": 3476,
+        "positive_images": 236,
+        "AUROC": 0.9966899455953129,
+        "AP": 0.9634820579169914,
+        "BCE": 0.15830248499127128,
+        "balanced_BCE": 0.09641357104554454,
+        "by_label": {
+          "0": {
+            "images": 3240,
+            "BCE": 0.16802670848740414,
+            "logit_mean": -5.165691179508504
+          },
+          "1": {
+            "images": 236,
+            "BCE": 0.024800433603684953,
+            "logit_mean": 7.2465386023208245
+          }
+        },
+        "exposure_weighted_BCE": 0.08553791788966841
+      },
+      "public": {
+        "images": 666,
+        "positive_images": 6,
+        "AUROC": 1.0,
+        "AP": 1.0,
+        "BCE": 0.1124310023486142,
+        "balanced_BCE": 0.05730785675988065,
+        "by_label": {
+          "0": {
+            "images": 660,
+            "BCE": 0.11344243621262766,
+            "logit_mean": -5.351600906100463
+          },
+          "1": {
+            "images": 6,
+            "BCE": 0.0011732773071336429,
+            "logit_mean": 9.241926352183023
+          }
+        },
+        "exposure_weighted_BCE": 0.09288900772603022
+      },
+      "classifier_selection": {
+        "images": 2810,
+        "positive_images": 230,
+        "AUROC": 0.9961358274351196,
+        "AP": 0.9633052328217763,
+        "BCE": 0.16917451610871245,
+        "balanced_BCE": 0.10370346058951292,
+        "by_label": {
+          "0": {
+            "images": 2580,
+            "BCE": 0.18199012697630043,
+            "logit_mean": -5.118132877357073
+          },
+          "1": {
+            "images": 230,
+            "BCE": 0.025416794202725423,
+            "logit_mean": 7.194485008846159
+          }
+        },
+        "exposure_weighted_BCE": 0.0842951681146108
+      }
+    }
+  },
+  "actual_exposure": {
+    "11": {
+      "actual_unique_images": 3439,
+      "actual_unique_patients": 2466,
+      "presentations": 12800,
+      "sources": {
+        "public/0": {
+          "draws": 1568,
+          "eligible_images": 807,
+          "eligible_patients": 669,
+          "seen_images": 652,
+          "seen_patients": 602,
+          "image_exposure_min": 0,
+          "image_exposure_median": 2.0,
+          "image_exposure_max": 8,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 8
+        },
+        "public/1": {
+          "draws": 327,
+          "eligible_images": 6,
+          "eligible_patients": 6,
+          "seen_images": 6,
+          "seen_patients": 6,
+          "image_exposure_min": 47,
+          "image_exposure_median": 54.0,
+          "image_exposure_max": 62,
+          "patient_exposure_min": 47,
+          "patient_exposure_median": 54.0,
+          "patient_exposure_max": 62
+        },
+        "classifier_selection/0": {
+          "draws": 4832,
+          "eligible_images": 4867,
+          "eligible_patients": 2015,
+          "seen_images": 2551,
+          "seen_patients": 1838,
+          "image_exposure_min": 0,
+          "image_exposure_median": 1.0,
+          "image_exposure_max": 9,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 11
+        },
+        "classifier_selection/1": {
+          "draws": 6073,
+          "eligible_images": 230,
+          "eligible_patients": 114,
+          "seen_images": 230,
+          "seen_patients": 114,
+          "image_exposure_min": 3,
+          "image_exposure_median": 22.0,
+          "image_exposure_max": 74,
+          "patient_exposure_min": 37,
+          "patient_exposure_median": 53.0,
+          "patient_exposure_max": 74
+        }
+      },
+      "last50_training_BCE": 0.051188897443935275
+    },
+    "23": {
+      "actual_unique_images": 3459,
+      "actual_unique_patients": 2468,
+      "presentations": 12800,
+      "sources": {
+        "public/0": {
+          "draws": 1620,
+          "eligible_images": 807,
+          "eligible_patients": 669,
+          "seen_images": 676,
+          "seen_patients": 613,
+          "image_exposure_min": 0,
+          "image_exposure_median": 2.0,
+          "image_exposure_max": 8,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 8
+        },
+        "public/1": {
+          "draws": 325,
+          "eligible_images": 6,
+          "eligible_patients": 6,
+          "seen_images": 6,
+          "seen_patients": 6,
+          "image_exposure_min": 45,
+          "image_exposure_median": 54.0,
+          "image_exposure_max": 61,
+          "patient_exposure_min": 45,
+          "patient_exposure_median": 54.0,
+          "patient_exposure_max": 61
+        },
+        "classifier_selection/0": {
+          "draws": 4780,
+          "eligible_images": 4867,
+          "eligible_patients": 2015,
+          "seen_images": 2547,
+          "seen_patients": 1830,
+          "image_exposure_min": 0,
+          "image_exposure_median": 1.0,
+          "image_exposure_max": 8,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 8
+        },
+        "classifier_selection/1": {
+          "draws": 6075,
+          "eligible_images": 230,
+          "eligible_patients": 114,
+          "seen_images": 230,
+          "seen_patients": 114,
+          "image_exposure_min": 2,
+          "image_exposure_median": 20.5,
+          "image_exposure_max": 80,
+          "patient_exposure_min": 30,
+          "patient_exposure_median": 54.0,
+          "patient_exposure_max": 80
+        }
+      },
+      "last50_training_BCE": 0.0469564201682806
+    },
+    "37": {
+      "actual_unique_images": 3476,
+      "actual_unique_patients": 2472,
+      "presentations": 12800,
+      "sources": {
+        "public/0": {
+          "draws": 1535,
+          "eligible_images": 807,
+          "eligible_patients": 669,
+          "seen_images": 660,
+          "seen_patients": 607,
+          "image_exposure_min": 0,
+          "image_exposure_median": 2.0,
+          "image_exposure_max": 9,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 9
+        },
+        "public/1": {
+          "draws": 316,
+          "eligible_images": 6,
+          "eligible_patients": 6,
+          "seen_images": 6,
+          "seen_patients": 6,
+          "image_exposure_min": 48,
+          "image_exposure_median": 52.5,
+          "image_exposure_max": 58,
+          "patient_exposure_min": 48,
+          "patient_exposure_median": 52.5,
+          "patient_exposure_max": 58
+        },
+        "classifier_selection/0": {
+          "draws": 4865,
+          "eligible_images": 4867,
+          "eligible_patients": 2015,
+          "seen_images": 2580,
+          "seen_patients": 1842,
+          "image_exposure_min": 0,
+          "image_exposure_median": 1.0,
+          "image_exposure_max": 9,
+          "patient_exposure_min": 0,
+          "patient_exposure_median": 2.0,
+          "patient_exposure_max": 9
+        },
+        "classifier_selection/1": {
+          "draws": 6084,
+          "eligible_images": 230,
+          "eligible_patients": 114,
+          "seen_images": 230,
+          "seen_patients": 114,
+          "image_exposure_min": 3,
+          "image_exposure_median": 21.5,
+          "image_exposure_max": 71,
+          "patient_exposure_min": 36,
+          "patient_exposure_median": 52.0,
+          "patient_exposure_max": 74
+        }
+      },
+      "last50_training_BCE": 0.0458718129247427
+    }
+  },
+  "result_interpretation": "Expanded real-patient pool improved development discrimination under the unchanged classifier recipe",
+  "no_single_cause_identified": true,
+  "not_private_synthetic_utility": true,
+  "not_a_new_public_baseline": true,
+  "main_updates": 1200,
+  "probe_updates": 4,
+  "source_original_roles_unchanged": true,
+  "former_selection_patients": 2027,
+  "actually_trained_former_selection_patients": 2026,
+  "training_seconds": 171.99830910004675,
+  "raw_audit_seconds": 47.977710900013335,
+  "analysis_seconds": 7.223133799969219,
+  "new_generation": 0,
+  "new_DP": 0,
+  "expert_pixels": 0,
+  "reserved_pixels": 0,
+  "final_ready": false,
+  "prior_head_and_LoRA_failures_preserved": true,
+  "bootstrap_scope": "2000 saved paired patient-cluster draws; per-seed metrics then mean; conditional adaptive weak-label development, no final confirmatory claim",
+  "contract_sha256": "121ac57d44d48265475403914858c58f62fb2a483ba91880686afc958efb6673",
+  "plan_sha256": "de8c088e23ffdd111436c62393bb7c2fcc5a1f4bb7dfc98376839d3965cc196c"
+}

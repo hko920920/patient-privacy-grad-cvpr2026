@@ -1,5 +1,13 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 150-REAL-PATIENT-SUPPORT-DIAGNOSTIC-EXECUTION (2026-09-17 KST)
+
+- 사용자 승인 명세대로 구현·실행·검산했다. 시작 예상30–50분, 실제 원본검사와4update를 통과한 뒤 3seed×400 본학습을 수행했다. 과거data_v2/train_v2 수정0, 독립 새provider만 연결했다.
+- 실자료 범위 대조에는 긍정적이다. Rwide AUROC0.679434/AP0.103542, R1차이+0.134825, seed3/3, 구간[+0.084156, +0.187751], 후보기준=True. R0 비교와 실제학습자료 성능·노출도 전부보고했다.
+- Raw10957장 SHA/decode/cache 결속 및 독립전체재디코딩, probe입력/가중치exact,38400실제slot/노출재계산,bootstrap18000metric쌍 재계산. 독립본검산338410항목,최대오차2.78e-16. 검사수는 성능표본수가 아니다.
+- Additional2027명 출처private_train·calibration이력·원역할을 보존하고 실제학습소비overlay작성. Expert532/reserved4213/DP/새생성0. 기존head/LoRA음성결과불변. 자료범위 확장의 진단이지 private synthetic효용·공개baseline·단일원인증명이 아니다.
+- TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md/HTML/공개JSON/CSV/그림/두state/framework/AGENTS/CURRENT_STATUS 연결. 전체실험완료,실행중없음. 다음 대조나 DP를 자동정하지 않았다.
+
 ## 149-REAL-PATIENT-SUPPORT-DIAGNOSTIC-PLAN (2026-09-17 KST)
 
 - 사용자 검토의 다음 후보를 받아 큰 단계2에서 단일 실자료 범위 대조를 명세했다. 예상20–30분, 새 학습 없이 설계·명부 확인이라고 먼저 밝혔다. 새GPU/학습/추론/생성/raw pixel decode0이다.

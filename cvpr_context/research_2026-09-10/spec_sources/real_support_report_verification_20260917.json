@@ -1,0 +1,24 @@
+{
+  "status": "PASS_REAL_SUPPORT_RESULT_REPORT_STATE_BINDING",
+  "checks": 707,
+  "local_links": 430,
+  "prior_completed_objects_preserved": 90,
+  "report_sha256": "0d65dbecc8b841404f401293a8872522d98061290ca983fc2192ca37aa1c171d",
+  "html_sha256": "c06932f28cbfb1a4329b7c5169dbfb87c80acc44a78831daa93d20115b27f0c1",
+  "result_sha256": "5cdeac09d236a23fe5b2142e4dfa6de1a3c1e756802d3b38d848549fa44017ee",
+  "runtime_verification_sha256": "5d6c73dd6e01d8034a82d975e4a53507366365fc8c27e5a90969173054e2352f",
+  "public_record_sha256": "5cdeac09d236a23fe5b2142e4dfa6de1a3c1e756802d3b38d848549fa44017ee",
+  "improvement_candidate": true,
+  "new_model_runs_in_this_verifier": 0,
+  "final_ready": false,
+  "files": {
+    "CVPR 주제 탐색\\research_2026-09-10\\TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md": "0d65dbecc8b841404f401293a8872522d98061290ca983fc2192ca37aa1c171d",
+    "CVPR 주제 탐색\\research_2026-09-10\\track1_real_support_diagnostic_results.html": "c06932f28cbfb1a4329b7c5169dbfb87c80acc44a78831daa93d20115b27f0c1",
+    "CVPR 주제 탐색\\research_2026-09-10\\research_state.json": "7dd283f43decea9239818f5b0725e95eb119ff2fefaff819d50efbdd40ed34c7",
+    "CVPR 주제 탐색\\research_2026-09-10\\patient_baseline_spec.json": "8cb3220c35125c40e7ff32984b99f4bc40d3bb7a264f982825e44eb590cb40e8",
+    "CVPR 주제 탐색\\research_2026-09-10\\RESEARCH_FRAMEWORK.md": "f331745af8e6595a1dda9d6249fc971e1c1f844e72cd4516b4b94919bff3ff12",
+    "AGENTS.md": "bc53991596e5f9133f270f70c049fe4685feb892f4b4202724fa214db426dccf",
+    "CURRENT_STATUS.md": "ddd81aac19e6f6067bf9c28e161480b57362475df0d376d10dd60748db51d59b",
+    "WORKLOG.md": "9cb173c9e0aed533effd451de43906a36020df5a6edb2492b94ebd805b716c32"
+  }
+}
