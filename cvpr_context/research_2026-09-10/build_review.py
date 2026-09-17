@@ -112,6 +112,8 @@ def convert(md,from_review=False):
         if href=='TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md':href='track1_downstream_profile_results.html'
         if href=='TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_PROTOCOL_20260917.md':href='track1_downstream_all_arm_replay_protocol.html'
         if href=='TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md':href='track1_downstream_all_arm_replay_results.html'
+        if href=='TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md':href='track1_downstream_development_protocol.html'
+        if href=='TRACK1_DOWNSTREAM_DEVELOPMENT_RESULTS_20260917.md':href='track1_downstream_development_results.html'
         a['href']=href
     return str(soup)
 
@@ -202,6 +204,7 @@ def main():
     head = '<section class="panel"><h2>최신 통합 계획: expert final은 비DP·DP 개발 이후 평가</h2><p><a href="track1_downstream_master_protocol.html"><strong>기흉 downstream 비교·자료 규모·최종 동결 규칙</strong></a></p><p>설계에는 긍정적이며 방법 성능은 아직 미실행입니다. 공개672명813장과 private80명320장, 환자 분리 개발2027명/2026명을 실제 명부로 확인했습니다. Expert532명은 모델 성능을 열지 않았습니다. 개발에서 비DP와 DP를 완성한 후 전체 모델을 동결하고 final을 평가합니다.</p><p>이 패널은 통합 명세 작성 시점의 기록입니다. 이후 실제 실행은 상단 profile 결과를 따릅니다.</p></section>' + head
     head = '<section class="panel"><h2>이전 profile: 생성 통과, classifier 오류 수정은 제한 검증</h2><p><a href="track1_downstream_profile_results.html"><strong>혼합 판정 · 31decode / 총100update / final 미사용</strong></a></p><p>실자료11,277장과 생성 경로는 통과했습니다. 최초 classifier98회는 real/public과 synthetic/public 키 충돌로 실패했습니다. 이 기록의 최초98회는 현재도 무효입니다. 이후 수정7군 재검증은 상단 별도 결과를 따릅니다.</p></section>' + head
     head = '<section class="panel"><h2>최신 실제 실행: 수정7군 연결 관문 통과</h2><p><a href="track1_downstream_all_arm_replay_results.html"><strong>좋은 결과 · 안전 runner /14update / 실제 pixel부터 final weight까지 검산</strong></a></p><p>7군×1step×2회의 초기값·자료·class balance·실제 갱신·exact replay가 통과했습니다. 구형 classifier 명령과 legacy import를 차단했습니다. 원본61개와 GPU 입력도 독립적으로 일치했습니다.</p><p>장기 수렴·사적 효용·DP는 아직 미판정입니다. 다음은 본512장과21개 classifier 개발 실행이며 expert532/reserved4213은 보존합니다.</p></section>' + head
+    head = '<section class="panel"><h2>최신 실제 성능: 사적 합성자료 효용 관문 미통과</h2><p><a href="track1_downstream_development_results.html"><strong>나쁜 효용 결과 · 512장 생성 / 공개 calibration / 21run 완료</strong></a></p><p>R1 .54461, public-head .53626, private-only .54911, pooled .52855, private-real .59617 AUROC입니다. Private-only는R1 대비+.00450·양의seed1/3으로 미달했고 pooled도 실패했습니다.</p><p>실행·독립검산은 통과했습니다. DP 확대를 멈추고 expert532/reserved4213을 보존합니다. <a href="track1_downstream_development_protocol.html">실행 전 계약</a> · 아래 이전 최신/다음 표시는 이력입니다.</p></section>' + head
     controls+=''.join('<option value="'+k+'">'+esc(v)+' ('+str(stats[k])+')</option>' for k,v in ROLES.items())
     controls+='''</select></label><label>확인 수준<select id="status"><option value="all">모든 확인 수준</option><option value="selected">PDF 선택 절 (75)</option><option value="partial">공식 본문 일부 (3)</option><option value="abstract">초록만 (1)</option><option value="replay">공개 packet 재계산 (2)</option></select></label><label>발표 형식<select id="venue"><option value="all">모든 발표 형식</option><option value="main">메인 학회 표기</option><option value="other">저널·워크샵·공개본 등</option></select></label><label class="search">논문명·방법·검토 내용 검색<input id="search" type="search" placeholder="예: MoFit, CLiD, 환자 평균, FPR" autocomplete="off"></label></div><p id="count" aria-live="polite"></p><button id="reset" type="button">필터 초기화</button><button id="expand" type="button">표시된 검토 펼치기</button><button id="collapse" type="button">모두 접기</button><p class="meta">비교 후보 수는 전부 실행할 의무 목록이나 같은 문제의 SOTA 순위가 아니다. 접근 권한과 주장에 맞는 비교군을 선택한다.</p></section>'''
     cards=[]
@@ -285,6 +288,8 @@ def main():
         ('TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md','track1_downstream_profile_results.html','Downstream profile: 생성 통과와 classifier 자료 연결 수정'),
         ('TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_PROTOCOL_20260917.md','track1_downstream_all_arm_replay_protocol.html','수정7군 one-step integration 실행 명세'),
         ('TRACK1_DOWNSTREAM_ALL_ARM_REPLAY_RESULTS_20260917.md','track1_downstream_all_arm_replay_results.html','수정7군14update 연결 관문 통과'),
+        ('TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md','track1_downstream_development_protocol.html','512장·R1 calibration·21run 비DP 개발 실행 명세'),
+        ('TRACK1_DOWNSTREAM_DEVELOPMENT_RESULTS_20260917.md','track1_downstream_development_results.html','비DP 개발 완료: 사적 합성자료 관문 미통과'),
         ('REALISTIC_RESEARCH_PLAN_20260916.md','realistic_research_plan.html','의료 생성모델 환자 보호: 현실적인 다음 계획')]:
         if (ROOT/source).exists():
             body='<p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p>'+convert((ROOT/source).read_text(encoding='utf-8'))

@@ -1,5 +1,7 @@
 # 현재 상태와 기록 권위
 
+**2026-09-17 최신 실제 비DP downstream — 사적 합성자료 효용에는 나쁜 결과:** [512장·R1 calibration·21run 결과와 검산](CVPR%20주제%20탐색/research_2026-09-10/track1_downstream_development_results.html). 공개 R1 calibration1600step을 완료하고 LR1e-4/400step을21개 run에 동결했다. 개발AUROC 평균은 R1 .544610 /S1 .536259 /S2 .549112 /S3 .528546 /Dreal .596172다. S2는S1 대비+.012853이나 R1 대비+.004502·양의seed1/3으로 미달했고 S3도 미통과다. Dreal 직접 실자료 평균 개선을 합성자료 효용 성공으로 바꾸지 않는다. 독립114,538항목 검산은 통과했고,512장·학습10000회(+관찰기4회)·개발예측을 실제 완료했다. DP 확대 중단, expert532/reserved4213 보존, 실행 중 작업 없음. 큰 단계2·방향1·final_ready=false. 아래 최신/다음은 과거 기록이다.
+
 **2026-09-17 최신 실제 수정7군 재검증 — 좋은 결과, 연결 관문 통과:** [14update 실행·안전 진입점·독립 검산](CVPR%20주제%20탐색/research_2026-09-10/track1_downstream_all_arm_replay_results.html).7군 모두 실제 source pixel/array index와 GPU 입력, 초기값·fresh optimizer·가중치 갱신·두 반복 exact를 확인했다. 구형 classifier CLI 및 data/train import는 차단했다. 로그 오류로 저장된1회 후13회만 재개해 총14회였다. 최초98회는 무효 그대로이며 본512장/21run·사적 효용·DP는 아직 미실행이다. 다음은 corrected source를 동결한 본 비DP 개발 패키지90–150분(첫10–20step에서 ETA 갱신). Final532/reserved4213 보존, 큰 단계2·방향1 유지. 아래 최신/다음은 각 시점 이력이다.
 
 **2026-09-17 최신 실제 profile — 혼합, classifier 전체 통과 아님:** [실행 결과와 오류 수정](CVPR%20주제%20탐색/research_2026-09-10/track1_downstream_profile_results.html). 실자료11,277장 검증과28장 생성·3회 재현은 통과했다. Classifier 최초98회는 실자료 public이 합성 public으로 덮어써져 대조군 구성이 틀렸다. 별도 수정본의49개 배치와 S1 한step×2회는 통과했지만 수정된7군 전체 학습 재검사는 남았다. 총100update 제한을 지켰으며 AUROC/AP·사적 효용·DP·expert final은 미실행이다. 다음은 기존 profile bank로7군×1step×2회만 재검증(10–15분)한 뒤 본실험 진입 여부를 정한다. Final532명·reserved4213명은 보존했다. 아래 최신/다음 표시는 각 시점 이력이다.

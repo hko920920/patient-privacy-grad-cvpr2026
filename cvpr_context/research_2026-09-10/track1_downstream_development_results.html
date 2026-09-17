@@ -1,0 +1,303 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>비DP 개발 완료: 사적 합성자료 관문 미통과</title><style>body{margin:0;background:#f5f6f8;color:#202a38;font:16px/1.65 system-ui,"Malgun Gothic",sans-serif}main{max-width:1120px;margin:auto;padding:28px 20px 80px}h1{font-size:29px;line-height:1.3}h2{font-size:23px;margin-top:36px}a{color:#174ca1;overflow-wrap:anywhere}header,.panel{background:white;border:1px solid #d7dce4;border-radius:12px;padding:22px;margin-bottom:18px}header p{margin:10px 0}.tag{display:inline-block;border-radius:5px;background:#eaf0f9;padding:2px 7px;margin:3px 5px 3px 0;font-size:13px}label{display:block;font-size:14px;font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #aeb8c6;border-radius:6px;background:white;max-width:100%;box-sizing:border-box}select,input{width:100%}.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.search{grid-column:1/-1}button{cursor:pointer;margin-right:8px;color:#173d75}.card{background:white;border:1px solid #d7dce4;border-radius:9px;margin:12px 0;padding:16px}.card[hidden]{display:none}summary{cursor:pointer;overflow-wrap:anywhere}.title{font-weight:650}.meta{font-size:14px;color:#536176}.review{border-top:1px solid #e4e7ed;margin-top:12px;padding-top:10px}.review p{margin:12px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}table{border-collapse:collapse;display:block;overflow-x:auto;font-size:14px}th,td{border:1px solid #ccd3dd;padding:9px;text-align:left;vertical-align:top}th{background:#eef2f7}code,pre{background:#eef1f5;border-radius:3px;overflow-wrap:anywhere}pre{padding:12px;white-space:pre-wrap}#count{font-weight:650}.notice{border-left:4px solid #355f99;padding-left:14px}.empty{padding:24px;text-align:center}@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:480px){.filters{grid-template-columns:1fr}main{padding:16px 12px}h1{font-size:24px}}
+img{max-width:100%;height:auto}</style></head><body><main><p><a href="index.html">← 전체 검토 장부</a> · <a href="two_track_operation_redesign.html">설계와 선행 대조</a></p><h1>비DP downstream 본 개발 결과 — 2026-09-17</h1>
+<p><strong>판정: 사적 합성자료 효용에는 나쁜 결과다. 사전 지정한 개발 관문을 통과하지 못했다.</strong>
+실행·수치 검산의 통과와 방법의 효용 판정은 구분한다. 이번에는 준비만 한 것이 아니라 512장 생성, R1 calibration 두 trajectory, 7군×3seed의 실제 학습과 개발 평가를 완료했다. Expert final·reserved와 DP는 실행하지 않았다.</p>
+<p><a href="track1_downstream_development_protocol.html">실행 전 명세</a>와 <a href="track1_downstream_master_protocol.html">master protocol</a>을 적용했다. 큰 단계2·방향1을 유지한다.</p>
+<h2>실제 성능</h2>
+<p>영상별 NIH weak label을 사용하는 method-development 2,026명·5,047장(양성223장)의 결과다. AUROC/AP는 seed11/23/37 각각 계산한 뒤 평균했다. 음성은 기흉 label0이며 정상 영상만을 뜻하지 않는다.</p>
+<table>
+<thead>
+<tr>
+<th>Arm</th>
+<th>역할</th>
+<th style="text-align: right;">AUROC 평균</th>
+<th style="text-align: right;">AP 평균</th>
+<th>AUROC seed11 /23 /37</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R0</td>
+<td>공개 real 기본</td>
+<td style="text-align: right;">0.554745</td>
+<td style="text-align: right;">0.055087</td>
+<td>0.576790 / 0.538013 / 0.549431</td>
+</tr>
+<tr>
+<td>R1</td>
+<td>공개 real + 일반 증강</td>
+<td style="text-align: right;">0.544610</td>
+<td style="text-align: right;">0.051669</td>
+<td>0.568315 / 0.556552 / 0.508962</td>
+</tr>
+<tr>
+<td>S0</td>
+<td>backbone 합성</td>
+<td style="text-align: right;">0.553782</td>
+<td style="text-align: right;">0.052479</td>
+<td>0.540455 / 0.560813 / 0.560078</td>
+</tr>
+<tr>
+<td>S1</td>
+<td>public-head 합성</td>
+<td style="text-align: right;">0.536259</td>
+<td style="text-align: right;">0.051542</td>
+<td>0.517554 / 0.536933 / 0.554290</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>private-only 합성</td>
+<td style="text-align: right;">0.549112</td>
+<td style="text-align: right;">0.052830</td>
+<td>0.551877 / 0.532186 / 0.563273</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>pooled 합성</td>
+<td style="text-align: right;">0.528546</td>
+<td style="text-align: right;">0.049065</td>
+<td>0.547533 / 0.514158 / 0.523947</td>
+</tr>
+<tr>
+<td>Dreal</td>
+<td>private real 비DP 진단</td>
+<td style="text-align: right;">0.596172</td>
+<td style="text-align: right;">0.078445</td>
+<td>0.633540 / 0.545057 / 0.609920</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>비교</th>
+<th style="text-align: right;">평균 ΔAUROC</th>
+<th style="text-align: right;">평균 ΔAP</th>
+<th style="text-align: right;">양의 AUROC seed</th>
+<th>관문</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S2−S1</td>
+<td style="text-align: right;">+0.012853</td>
+<td style="text-align: right;">+0.001289</td>
+<td style="text-align: right;">2/3</td>
+<td>전체 미통과</td>
+</tr>
+<tr>
+<td>S2−R1</td>
+<td style="text-align: right;">+0.004502</td>
+<td style="text-align: right;">+0.001161</td>
+<td style="text-align: right;">1/3</td>
+<td>전체 미통과</td>
+</tr>
+<tr>
+<td>S3−S1</td>
+<td style="text-align: right;">-0.007713</td>
+<td style="text-align: right;">-0.002476</td>
+<td style="text-align: right;">1/3</td>
+<td>전체 미통과</td>
+</tr>
+<tr>
+<td>S3−R1</td>
+<td style="text-align: right;">-0.016063</td>
+<td style="text-align: right;">-0.002604</td>
+<td style="text-align: right;">1/3</td>
+<td>전체 미통과</td>
+</tr>
+</tbody>
+</table>
+<p>S2 또는 S3가 S1과 R1 <strong>각각</strong>에 대해 평균AUROC +.01 이상, 양의 차이 최소2/3seed, 평균AP 비감소를 모두 만족해야 통과다. 이 .01은 추가 DP 개발 투자 기준이며 임상적 유의성 또는 final 검정 기준이 아니다.</p>
+<h2>환자 군집을 고려한 보조 불확실성</h2>
+<p>환자 단위2000회 paired cluster bootstrap에 같은 draw를 모든 arm/seed에 적용했다. 매 draw에서 seed별 metric을 계산한 뒤 평균했다. 아래95% percentile 구간은 개발용이며, 한 생성bank·세 classifier에 조건부다. 반복촬영 영상을 독립 환자로 취급하지 않았다.</p>
+<table>
+<thead>
+<tr>
+<th>비교</th>
+<th>ΔAUROC 95% 구간</th>
+<th>ΔAP 95% 구간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S2-S1</td>
+<td>[-0.008040, +0.032386]</td>
+<td>[-0.004438, +0.006395]</td>
+</tr>
+<tr>
+<td>S2-R1</td>
+<td>[-0.044948, +0.053823]</td>
+<td>[-0.007084, +0.011501]</td>
+</tr>
+<tr>
+<td>S3-S1</td>
+<td>[-0.029287, +0.013376]</td>
+<td>[-0.008333, +0.001930]</td>
+</tr>
+<tr>
+<td>S3-R1</td>
+<td>[-0.052685, +0.025458]</td>
+<td>[-0.009110, +0.005315]</td>
+</tr>
+<tr>
+<td>Dreal-R1</td>
+<td>[+0.005193, +0.098900]</td>
+<td>[+0.010691, +0.054032]</td>
+</tr>
+</tbody>
+</table>
+<h2>해석과 결정</h2>
+<p>Dreal−R1의 평균AUROC는 +0.051563, AP는 +0.026776다. Dreal은 private real을 직접 사용한 비DP 진단 비교이며 수학적 상한이나 보호 방법이 아니다.</p>
+<p>S2는 S1과의 비교만 보면 점추정 +.012853, 양의 차이2/3seed, AP 비감소를 만족한다. 하지만 R1보다 +.004502에 그쳤고 R1을 이긴 것은 seed37 하나뿐이다. 나머지 두 seed에서는 R1보다 낮았다. S2−S1의 환자 cluster 구간도0을 포함하므로, 부분적인 점추정을 확증된 개선으로 부르지 않는다. S3는 두 기준보다 AUROC/AP 평균이 모두 낮았다.</p>
+<p>Dreal은 AUROC에서2/3seed, AP에서3/3seed가 R1보다 높다. 사적 실자료가 현재 task에 유용할 수 있다는 진단 근거는 있지만, 같은 NIH 자료의 역할 분할이므로 사적 자료만의 고유 정보나 외부 병원 domain adaptation을 증명하지 않는다. Dreal 자체의 평균AUROC도 .596으로 높지 않다. 공개 R1 selection 최고AUROC .547과 전체적으로 낮은 downstream 성능은 이 pilot의 중요한 한계다.</p>
+<p>또한 S1은 R1과 backbone-synthetic S0보다 낮고, S2도 plain-real R0보다 낮다. 과거 public head의 일반 KID 개선이 이번 기흉 downstream 효용까지 보장하지 않았다. 이번에는 효용을 실제 측정했으며, 현재 구성의 사전 운영 기준에 미달했다.</p>
+<p>현재 고정 head·생성bank·classifier 설정은 DP 개발 투자 기준에 미달했다. DP로 확대하지 않는다. 기준·seed·prompt·head scale을 결과 후 바꾸어 이 실행을 성공으로 만들지 않는다. 이 결과를 private data 전체의 무용성이나 모든 생성 방법의 불가능성으로 확대하지 않는다.</p>
+<h2>R1 calibration과 실행량</h2>
+<p>Classifier-selection 2,027명·5,097장만 사용했다. 공개 R1 seed11을 LR1e-4/3e-4 각각800step까지 연속 학습하고400/800 checkpoint를 비교했다. 중간 AdamW 초기화는 없다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">LR</th>
+<th style="text-align: right;">step</th>
+<th style="text-align: right;">Selection AUROC</th>
+<th style="text-align: right;">AP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0.0001</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;">0.547047</td>
+<td style="text-align: right;">0.064292</td>
+</tr>
+<tr>
+<td style="text-align: right;">0.0001</td>
+<td style="text-align: right;">800</td>
+<td style="text-align: right;">0.538445</td>
+<td style="text-align: right;">0.063611</td>
+</tr>
+<tr>
+<td style="text-align: right;">0.0003</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;">0.525704</td>
+<td style="text-align: right;">0.048102</td>
+</tr>
+<tr>
+<td style="text-align: right;">0.0003</td>
+<td style="text-align: right;">800</td>
+<td style="text-align: right;">0.528068</td>
+<td style="text-align: right;">0.048865</td>
+</tr>
+</tbody>
+</table>
+<p>최고AUROC와 .002 이내 후보 중 적은 step, 작은 LR 우선 규칙으로 <strong>LR0.0001, 400step</strong>을 선택했다. 이후21run 모두에 동일하게 적용했다. Method-development 성능은21run이 끝난 뒤에만 계산했다.
+실제 update는 calibration1600 + development8400 + 별도 관찰기 parity4 = <strong>10004회</strong>다. 과거 잘못된98회와 이번 학습을 섞지 않았다.</p>
+<h2>입력·노출량·비용</h2>
+<p>새 latent64개에 기흉64/비기흉64 요청을 대응시켜 방법별128장, 총512장을 만들었다. 음성 요청은 No Finding22/Effusion21/Cardiomegaly21이다. 모든 방법의 latent·prompt mapping은 같고 생성 후 filtering은 없었다. 요청 라벨은 생성영상의 전문가 판독 정답이 아니다.</p>
+<p>R0/R1은 public real32장, S0–S3은 public real16+synthetic16장, Dreal은 public16+private real16장이다. 따라서 결과는 <strong>동일 계산량에서 공개 real batch 절반을 대체</strong>한 효과이며, 동일한 real 학습량에 합성을 단순 추가한 효과가 아니다.</p>
+<table>
+<thead>
+<tr>
+<th>Arm</th>
+<th>공개 양성6장 최대 노출 (seed11/23/37)</th>
+<th>공개 양성6장 중앙 노출</th>
+<th style="text-align: right;">총 학습초(3seed)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R0</td>
+<td>1087 / 1107 / 1113</td>
+<td>1070 / 1069.5 / 1063</td>
+<td style="text-align: right;">125.4</td>
+</tr>
+<tr>
+<td>R1</td>
+<td>1087 / 1107 / 1113</td>
+<td>1070 / 1069.5 / 1063</td>
+<td style="text-align: right;">161.8</td>
+</tr>
+<tr>
+<td>S0</td>
+<td>566 / 550 / 571</td>
+<td>530 / 536 / 530</td>
+<td style="text-align: right;">162.4</td>
+</tr>
+<tr>
+<td>S1</td>
+<td>566 / 550 / 571</td>
+<td>530 / 536 / 530</td>
+<td style="text-align: right;">163.5</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>566 / 550 / 571</td>
+<td>530 / 536 / 530</td>
+<td style="text-align: right;">163.1</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>566 / 550 / 571</td>
+<td>530 / 536 / 530</td>
+<td style="text-align: right;">161.8</td>
+</tr>
+<tr>
+<td>Dreal</td>
+<td>566 / 550 / 571</td>
+<td>530 / 536 / 530</td>
+<td style="text-align: right;">162.3</td>
+</tr>
+</tbody>
+</table>
+<p>512장 생성·저장·모델 적재 총 1593.9초, calibration 학습 217.9초,21run 학습 1100.2초다. 평가 추론·검산·원본 재결속·구현 시간은 별도다.</p>
+<table>
+<thead>
+<tr>
+<th>생성 방법</th>
+<th style="text-align: right;">평균 연산초/장</th>
+<th style="text-align: right;">평균 저장초/장</th>
+<th style="text-align: right;">최대 allocated GiB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backbone</td>
+<td style="text-align: right;">2.592</td>
+<td style="text-align: right;">0.292</td>
+<td style="text-align: right;">3.958</td>
+</tr>
+<tr>
+<td>public</td>
+<td style="text-align: right;">2.625</td>
+<td style="text-align: right;">0.467</td>
+<td style="text-align: right;">3.958</td>
+</tr>
+<tr>
+<td>private_only</td>
+<td style="text-align: right;">2.628</td>
+<td style="text-align: right;">0.466</td>
+<td style="text-align: right;">3.958</td>
+</tr>
+<tr>
+<td>pooled</td>
+<td style="text-align: right;">2.629</td>
+<td style="text-align: right;">0.467</td>
+<td style="text-align: right;">3.958</td>
+</tr>
+</tbody>
+</table>
+<p>각 run의 exposure.json에 모든 public/private/synthetic image 및 patient/cell별 횟수, unique coverage, 최대·중앙 노출을 남겼다. Calibration의400/800 exposure도 별도 보존했다. 이 짧은 단일 장비 측정을 patient-DP LoRA 대비 비용 우위로 주장하지 않는다.</p>
+<p><code>patient_label_exposure.json</code>에는 각 환자·class별 노출도 추가 집계했다. 원 exposure의 patient 횟수는 해당 환자의 모든 class 방문을 포함하므로 이를 양성 영상 사용 횟수와 혼동하지 않는다. Synthetic의 patient 칸은 실제 환자가 아니라 생성 cell이다.</p>
+<h2>실행·독립 검산</h2>
+<p>검증된 data_v2/train_v2는 변경하지 않고 별도 runner에 SHA를 결속했다. 중간 저장용 관찰 hook의2step plain/observed final state·입력·logit·loss가 exact였고,1step 저장state도 과거 검증과 일치했다. 원본11,277장의 SHA·decode·cache를 다시 대조했다. Legacy import와 허용 명부 밖 raw pixel 접근을 차단했다.
+독립 검산 114,538항목은 성능 표본 수가 아니다.512PNG/trajectory,15,360DDIM 전이, 모든 학습 source draw·label·array binding·BCE·exposure, 실제 최종state, calibration 선택과21개 AUROC/AP를 다시 계산했다. 최대 metric 차이는 1.11e-16, 최대 DDIM 차이는 9.54e-07였다. 독립 검산기는 생산 data/train 수치 함수를 import하지 않는다.</p>
+<p>완료 cell/run은 SHA marker로만 재사용한다. Expert final532명·810장과 reserved4213명은 pixel/prediction을 열지 않았다. 기존192장 pooled 미통과, PadChest·CheXzero 실패, 과거98회 무효 학습은 그대로 보존했다. Final-ready=false다.</p>
+<p>이번 본 실행에는 중단·재개나 재생성이 없었다. 선택된 calibration R1 checkpoint와 본 R1 seed11의 모든 state tensor도 exact였다. 검산 전 생산 결과 packet의 <code>UNVERIFIED</code> 표기는 원본 보존을 위해 바꾸지 않았고, 그 SHA에 결속된 별도 verification.json이 최종 검산 통과를 기록한다.</p>
+<h2>근거</h2>
+<ul>
+<li><a href="../../code_working/_reports/downstream_development_20260917_v1/contract.json">계약</a>, <a href="../../code_working/_reports/downstream_development_20260917_v1/calibration_choice.json">R1 선택</a>.</li>
+<li><a href="../../code_working/_reports/downstream_development_20260917_v1/result.json">실제 성능 전체</a>, <a href="../../code_working/_reports/downstream_development_20260917_v1/verification.json">독립 검산·환자 cluster 구간</a>.</li>
+<li><a href="../../code_working/_reports/downstream_development_20260917_v1/generation_manifest.json">전체 생성 manifest</a>, <a href="../../code_working/downstream_utility/run_development_v1.py">안전 본실험 runner</a>.</li>
+</ul>
+<p>이 문서는 로컬 실행·검산 결과다. 원격 main SHA 확인이나 push 완료를 뜻하지 않는다.</p></main></body></html>

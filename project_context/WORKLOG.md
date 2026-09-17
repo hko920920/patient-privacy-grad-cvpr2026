@@ -1,5 +1,16 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 144-NONDP-DOWNSTREAM-DEVELOPMENT-COMPLETE (2026-09-17 KST)
+
+- 사용자 승인대로 준비에 그치지 않고 별도 run_development_v1으로512장 bank, 공개 R1 calibration 두800step trajectory, 공통설정의7군×3seed=21run과개발평가를 실행했다. 시작18:44KST, 본계산 종료19:49경, 보고·결속검사까지약70분이다. 초기90–150분 추정은 실제 처리량으로 갱신했다.
+- 테스트된 data_v2/train_v2 SHA를 바꾸지 않았다. Factory 관찰 hook으로400step state와진행시간을 저장하며2step plain/observed final state·입력·logit·loss exact를 확인했다. 관찰1step state는이전검증과exact. 별도4update다. Legacy import와허용 명부밖rawpixel을 차단했다. 원본11277장SHA/decode/cache 재결속PASS.
+- 새로운64latent×기흉/음성2cell×4method로512장 생성. 음성normal22/effusion21/cardiomegaly21,FP32/CFG7.5/DDIM30/E4고정,조건부branch correction,filtering0. 생성·기록·적재1593.877초,weights불변. 중단·resume·재생성없음.
+- Calibration selection2027명5097장만사용. LR1e-4/400선택AUROC.547047/AP.064292(절대성능은낮음). 21run 모두이설정과seed11/23/37,400step고정. Calibration1600update+본8400=10000,관찰기4회별도. Calibration217.891초,본학습1100.233초. 모든21run후에만method-development2026명5047장성능집계.
+- **효용판정은나쁨: S2/S3모두사전관문미통과.** R0/R1/S0/S1/S2/S3/Dreal AUROC=.554745/.544610/.553782/.536259/.549112/.528546/.596172. S2−S1+.012853(2/3seed)이나S2−R1+.004502(1/3seed),S3두기준보다AUROC/AP낮음. Dreal−R1+.051563/A P+.026776,AUROC2/3·AP3/3seed양의차이다. 직접사적실자료효과와현합성전달실패를구분하며모든private adaptation무용성으로확대하지않는다.
+- 독립검산114538항목PASS(효능표본수아님). 512PNG/15360DDIM전이/모든학습draw·source·label·pixel·BCE·노출량·최종state·calibration선택·AUROC/AP재계산. 최대metric차1.11e-16,DDIM9.54e-7,residual0. 검산59.337초. 환자cluster2000draw의S2−R1 AUROC95%구간[-.044948,.053823],Dreal−R1[.005193,.098900]. 단일bank/세모델조건부개발구간이다.
+- Per-image/patient노출량과400/800노출별도저장;patient/class집계추가. 실제calibration선택state와본R1_seed11全tensor exact도확인. 기존98회무효학습·192장미통과·두자동평가기실패·기존명부/weights보존. Expert532/reserved4213 pixel/prediction0,새DP0,final_ready=false.
+- 결과MD/HTML·새runner·독립검산·state2종·framework·AGENTS·CURRENT_STATUS갱신. 다음은저장된음성결과의한계/방향판단이며자동GPU구제나DP확대없음. 원격main확인/push는수행하지않았다.
+
 ## 143-CORRECTED-ALL-ARM-ONE-STEP-REPLAY (2026-09-17 KST)
 
 - 사용자 지적대로 legacy run.py classifier를 즉시 실패시켰다. 새 run_v2는 구형 data/train import와 이미 로드된 모듈도 차단한다. Data_v2 helper를 자체 보유하도록 바꾸고, 과거 실행 source·SHA는 별도 archive와 계약의 historical mapping으로 보존했다.

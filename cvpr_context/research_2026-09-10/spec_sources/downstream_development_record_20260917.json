@@ -1,0 +1,140 @@
+{
+  "judgment": "negative_private_synthetic_development_gate",
+  "report": "TRACK1_DOWNSTREAM_DEVELOPMENT_RESULTS_20260917.md",
+  "completed_utc": "2026-09-17T10:50:24.361428+00:00",
+  "engineering_gate_passed": false,
+  "generated_images": 512,
+  "calibration_updates": 1600,
+  "development_updates": 8400,
+  "instrumentation_updates": 4,
+  "development_runs": 21,
+  "means": {
+    "R0": {
+      "AUROC": 0.5547446499441011,
+      "AP": 0.055087411605439535
+    },
+    "R1": {
+      "AUROC": 0.5446095692439646,
+      "AP": 0.05166927943044355
+    },
+    "S0": {
+      "AUROC": 0.5537820674901526,
+      "AP": 0.05247937398517594
+    },
+    "S1": {
+      "AUROC": 0.5362592865270063,
+      "AP": 0.051541530504994604
+    },
+    "S2": {
+      "AUROC": 0.5491120010312166,
+      "AP": 0.05283033599113482
+    },
+    "S3": {
+      "AUROC": 0.5285462324649796,
+      "AP": 0.04906547517075973
+    },
+    "Dreal": {
+      "AUROC": 0.5961724139640613,
+      "AP": 0.07844529733540058
+    }
+  },
+  "gate": {
+    "S2": {
+      "passed": false,
+      "comparisons": {
+        "S1": {
+          "AUROC_delta": 0.012852714504210327,
+          "AP_delta": 0.0012888054861402154,
+          "seed_AUROC_deltas": [
+            0.0343229666317143,
+            -0.004747376718797769,
+            0.008982553599714449
+          ],
+          "seed_AP_deltas": [
+            0.0038772262794243076,
+            -0.0019073499511875966,
+            0.0018965401301839352
+          ],
+          "positive_seeds": 2
+        },
+        "R1": {
+          "AUROC_delta": 0.004502431787251959,
+          "AP_delta": 0.0011610565606912718,
+          "seed_AUROC_deltas": [
+            -0.016437338717473993,
+            -0.024366210799515176,
+            0.05431084487874538
+          ],
+          "seed_AP_deltas": [
+            -0.0022928558905293273,
+            -0.0031525123787368922,
+            0.008928537951340056
+          ],
+          "positive_seeds": 1
+        }
+      }
+    },
+    "S3": {
+      "passed": false,
+      "comparisons": {
+        "S1": {
+          "AUROC_delta": -0.007713054062026714,
+          "AP_delta": -0.0024760553342348737,
+          "seed_AUROC_deltas": [
+            0.029979028623697612,
+            -0.022774765931181218,
+            -0.030343424878596648
+          ],
+          "seed_AP_deltas": [
+            0.0012234018208634664,
+            -0.0033996994999659913,
+            -0.00525186832360211
+          ],
+          "positive_seeds": 1
+        },
+        "R1": {
+          "AUROC_delta": -0.016063336778985082,
+          "AP_delta": -0.0026038042596838173,
+          "seed_AUROC_deltas": [
+            -0.020781276725490683,
+            -0.042393600011898624,
+            0.014984866400434282
+          ],
+          "seed_AP_deltas": [
+            -0.004946680349090168,
+            -0.004644861927515287,
+            0.0017801294975540102
+          ],
+          "positive_seeds": 1
+        }
+      }
+    }
+  },
+  "expert_pixels": 0,
+  "reserved_pixels": 0,
+  "new_DP": 0,
+  "final_ready": false,
+  "source_paths": {
+    "protocol": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md",
+    "report": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\TRACK1_DOWNSTREAM_DEVELOPMENT_RESULTS_20260917.md",
+    "contract": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\contract.json",
+    "calibration": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\calibration_choice.json",
+    "result": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\result.json",
+    "verification": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\verification.json",
+    "additional_checks": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\report_additional_checks.json",
+    "patient_label_exposure": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1\\patient_label_exposure.json"
+  },
+  "source_sha256": {
+    "protocol": "72df5a0dc0534b5e6573dd0c4f4600f8776bb3acd126652d20b6647dc612e47e",
+    "report": "c82c915d04273a97a37f7e0601e765fa75bab0839a25860eebf0a3baeb4e67a7",
+    "contract": "88543635a25bf396b8ed2b82bab1f4f4074685e41a2f3e66ce045410a53178fd",
+    "calibration": "9f46645d3922ddd0d24ae9daa7d9e152b80fad9a7f52e284d8d07131692d0892",
+    "result": "c6c2bad3a729050910361edd681a12a6cc3cd11c34e8216ef36d661bce5fb038",
+    "verification": "6b0399fe136ded068242363bc21ebc68581908f4a3b93da5773b63726ddc668a",
+    "additional_checks": "5fd818742419be7d9f0ecd17f9f98876c9a36d641d120531cc57180ec153d61b",
+    "patient_label_exposure": "ab09d3a05b4e3ee9d03cc4fcceac5b6504633ffec9462b84eb1ab79b34406dd4"
+  },
+  "remote_main_checked": false,
+  "remote_push": false,
+  "report_finalized_utc": "2026-09-17T10:52:37.162788+00:00"
+}
