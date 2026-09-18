@@ -1,5 +1,14 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 164-PRRD-STEP3-GUARDED-OBJECTIVE-INTEGRATION (2026-09-18 KST)
+
+- 사용자 요청대로3단계만 수행했다. Stage2의 기존 z/raw a와 공개 통계·scale을 재사용해 새 guarded_objectives.py에 target/synthetic 공통 learner, 고정 M_T 기능 정합, clean/aug 통계 및 기존 영상 규제를 연결했다. 기능 loss는clean에만1회; synthetic cap은M_S, metric은M_T다.
+- 기존 objectives.py/guarded_readout.py/encoders.py를 보존했다. Renderer의 relation arm 목록에E/E_R만 추가해 동일paired residual/증강을 적용했다. Full-run runner를 자동전환하지 않았다.
+- 새CPU6검사1.189초 및 기존core6검사0.592초 PASS. 독립moments5.55e-17/기능loss2.78e-17, replaygradient1.39e-17. 제한활성/비활성/0, 고정target, 불균등microbatch분모, clean-only기능gradient를 확인했다.
+- 실제BioViL 공개4장fixture×2,7arm과micro1/2/3·rhoedge를 포함19조건 모두 기존loss2e-6/grad2e-7+5e-4*referencepeak 통과. PixelVJP차이0, renderergradmax2.89e-6/relativeL2max2.27e-7; 기능단독 이미지gradnorm57.6821. 모델/BN/projection·target·rendererparameters불변, optimizer0.
+- GPU검사29.812초,peakallocated2863.30MiB.316F/212B호출,460F/308Bimagepresentations. P8decode/4unique, Q/Vpixels·수신자·DP·expert/reserved·remote0. P전체특징은재추출하지않았다. 테스트용계수를본계수선정으로소급하지않는다.
+- 결과보고서/사전계약/19조건JSON/입력fixture/진행계획·상태를기록했다. 요청대로3단계에서멈췄다.4단계profile/계수·예산과본실험은미실행. 전체W1false,30bank제안유지, 기존Rwide/LoRA효용·W1실패/수리·2단계기록보존.
+
 ## 163-PRRD-STEP2-PUBLIC-RAW-POINT-PATHS (2026-09-18 KST)
 
 - 사용자는1단계 완료를 인정하고2단계인 P-only 두 특징 경로·환자 통계만 구현/검증 후 멈추도록 했다. 그 범위로 실행했다.

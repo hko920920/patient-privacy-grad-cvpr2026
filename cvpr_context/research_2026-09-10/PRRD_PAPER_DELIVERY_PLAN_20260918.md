@@ -1,5 +1,7 @@
 # PRRD 단계별 구현·논문 완성 계획 — 2026-09-18
 
+**2026-09-18 3단계 후속 갱신:** [관계 개입 제한·기능 정합 연결](PRRD_STEP3_GUARDED_OBJECTIVE_RESULTS_20260918.md)을 완료했다. 실제 BioViL19조건이 기존 gradient/loss 기준을 통과했다. 계수는 수치 검사 전용이며 본실험 선택이 아니다. 이번에는3단계에서 멈췄고 전체128장 profile·계수/예산 동결·본 합성은 진행하지 않았다. 현재 진행 상태는 §12가 우선하며 이전 단계 문구는 이력이다.
+
 **2026-09-18 2단계 후속 갱신:** [공개 두 특징 경로](PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md)와 환자 통계 연결을 완료했다. 기존 점별 출력은 정확히 유지했고 raw 특징은 새로 추출했다. 이번에는 여기서 멈췄으며 다음은 사용자3단계의 학습 규칙 연결이다. 계수·30bank는 제안 상태이고 전체 runtime/W1은 미동결이다. 현재 진행 상태는 §11이 우선한다.
 
 **2026-09-18 후속 갱신:** 사용자의 1단계인 기존 목적 W1 gradient 수리를 완료했다. [수리 결과](PRRD_W1_GRADIENT_REPAIR_RESULTS_20260918.md)의 공개 18조건이 기존 기준을 통과했다. 새 방법의 전체 W1은 아직이며 이번에는 여기서 멈췄다. 아래 최초 계획의 미통과 표시는 당시 상태이며 현재 순서는 §10이 우선한다.
@@ -209,3 +211,13 @@ Cold/warm 준비, public/raw feature, private summary, 합성, PNG, recipient, �
 [실제 결과](PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md)와 [기록 JSON](spec_sources/prrd_step2_feature_paths_record_20260918.json)을 기준으로 한다. Raw 중심은 label-free 환자 균등 P 평균이며, 관계 scale은 공개 mixed3명의 inverse-CDF q95/no interpolation이다. 이 수치 결속은 learner의 rho/eta 선택과 다르다.
 
 전체 S2 가운데 기존 gradient 수리와 source 두 특징 경로까지 완료했다. 다음은 사용자3단계의 guarded learner·기능 손실 연결이며 이번에는 수행하지 않았다. 수신자 실검증·전체 bank gradient/profile·Q/V 본 비교는 남아 있다. 기존 계수/30bank 값은 제안으로 보존하며 실행 계약 동결로 표시하지 않는다.
+
+## 12. 관계 개입 제한·통계 및 기능 공동 정합 연결 완료
+
+사용자3단계만 수행했다. 목표와 합성자료가 같은 learner policy를 사용하되 각자의 점별 행렬로 관계 개입을 제한하며, 기능 정합은 고정 target M_T를 사용한다. 기존 통계 정합/영상 규제를 유지하고 무증강 경로에만 기능loss를한번적용했다. 옛 objective/learner/encoder와2단계public통계는보존하고 새목적은별도API로연결했다.
+
+[결과보고서](PRRD_STEP3_GUARDED_OBJECTIVE_RESULTS_20260918.md)와 [실행기록](spec_sources/prrd_step3_guarded_objective_record_20260918.json)이 근거다. 새구성배열6+기존core6, 실제BioViL19조건을검증했다. PixelVJP차이0, rendererparametergradient상대L2최대2.27e-7, loss최대차이1.14e-13. 기존허용오차를변경하지않았다. 기능loss단독으로도이미지gradient가유한·비영이다.
+
+사용자단계별상태는1단계기존gradient수리완료→2단계두특징/환자통계완료→3단계새목적연결완료→4단계계수·full128profile·실행량동결예정이다. 이문서의상위S2는남은profile/export/resume/runner/수신자연결범위를포함하므로전체완료로바꾸지않는다.
+
+검사에서beta1/ridge.1/eta1/kappa.1및edge용rho0/100을썼지만본실험계수를선정한것은아니다. P고유4장/8decode,460F/308Bimagepresentations,optimizer0. 수신자/Q·V성능/DP/final을실행하지않았다.30bank는기존제안상태다. 여기서중단했으며다음단계를자동실행하거나예약하지않는다.

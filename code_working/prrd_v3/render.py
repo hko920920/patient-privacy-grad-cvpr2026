@@ -13,7 +13,7 @@ class Renderer(nn.Module):
     def __init__(self,templates,arm,bank_seed):
         super().__init__(); n=len(templates)
         require(n%4==0 and templates.shape[1:]==(1,224,224),'Template shape')
-        self.arm=arm; self.relation=arm in ('C','D','R_joint'); self.n=n
+        self.arm=arm; self.relation=arm in ('E','E_R','C','D','R_joint'); self.n=n
         self.register_buffer('templates',templates.clone())
         self.register_buffer('base',torch.logit(templates.clamp(1e-4,1-1e-4)))
         generator=torch.Generator(device='cpu').manual_seed(seed('prrd-render',bank_seed))

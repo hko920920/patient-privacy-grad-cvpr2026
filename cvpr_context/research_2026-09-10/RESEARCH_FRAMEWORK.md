@@ -1,5 +1,7 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-18 PRRD 사용자3단계 완료:** [새 목적의 실제 gradient 결과](PRRD_STEP3_GUARDED_OBJECTIVE_RESULTS_20260918.md). 기존 source point/raw 경로에서 통계→guarded learner→고정 target 기능loss→이미지gradient를 연결했다. 구성배열6+core6와 공개실제BioViL19조건이 기존기준을통과했다. 기능항은clean에만적용되고 모델/target은고정이다. 큰연구단계2안의구현검증이며, 환자관계효용·다른encoder전이·DP성능은미평가다. 계수는수치검사용이고optimizer0, P고유4장만사용했다. 요청대로여기서멈췄으며 전체128profile/계수·예산동결은다음단계로남긴다.
+
 **2026-09-18 PRRD 공개 두 특징 경로 연결 완료:** [2단계 결과](PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md). 실제 BioViL 정규화 전 h와 기존 z를 같은 forward에서 분리하고 같은 공개 PCA축의 선형 a로 환자 대조를 계산했다. P813의 기존 point 출력·환자 질량은 동일, 독립 저장 통계 재계산 및 raw 입력 gradient 확인 완료. 큰 단계2의 구현 진전이며 환자 판별·전이·DP 효용 결과가 아니다. 새 학습 규칙 연결·수신자 실검증·전체 profile·본 비교는 남았고, 요청대로 이번2단계까지만 마쳤다.
 
 **2026-09-18 PRRD W1의 기존 gradient 연결 수리:** [수리 결과](PRRD_W1_GRADIENT_REPAIR_RESULTS_20260918.md). 전체 batch renderer와 microbatch renderer의 FP32 입력 차이를 원인 경계로 확인하고, retained reference의 전체 연산 분할을 replay와 맞췄다. 실제 BioViL 공개18조건·기존 CPU6검사 PASS, 허용오차·기존 목적 유지. 큰 단계2 안의 기술 진전이며 연구 효용 증거는 아니다. 사용자의 현재1단계만 완료하고 멈췄으며 새 관계/학습 규칙 연결·full128 profile·W2는 남았다. 실제 효용 포인터와 final 경계를 보존한다.

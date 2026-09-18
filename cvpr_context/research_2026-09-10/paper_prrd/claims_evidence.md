@@ -5,7 +5,7 @@ Updated2026-09-18. This ledger distinguishes mathematical scope, implementation 
 | ID | Claim | Evidence required | Current status |
 |---|---|---|---|
 | M1 | Guard limits the declared point objective increase | Consistent SPD system, direct identity and implementation checks | Derived; six CPU core checks pass within stated scope |
-| M2 | Fixed-target functional matching measures source score discrepancy plus ridge distance | Fixed M_T, same learner rule and gradient verification | CPU checks pass; actual encoder integration pending |
+| M2 | Fixed-target functional matching measures source score discrepancy plus ridge distance | Fixed M_T, same learner rule and gradient verification | CPU integration6/core6 pass; actual BioViL19 public small-fixture gradient conditions pass at original tolerance; full runtime/profile and efficacy pending |
 | U | Private point information is useful | B−A on fixed recipient and all seeds | Not measured for PRRD |
 | R | True patient correspondence adds value | C−B and C−D, same access and budget | Not measured |
 | O | Contrast-first improves beyond recalibration | C−E_R | Not measured |
@@ -17,5 +17,7 @@ Updated2026-09-18. This ledger distinguishes mathematical scope, implementation 
 | F | Frozen final evidence | Complete choices/hashes/family before Expert access | Expert/Reserved closed |
 
 Completed code evidence: [guarded learner](../../../code_working/prrd_v3/guarded_readout.py) is tracked by exact hashes in the plan; [CPU verification](../../../code_working/_reports/prrd_guarded_core_20260918/verification_v1.json) records its scope. Paths in the machine plan are authoritative.
+
+Stage3 update: [public guarded-objective image gradient verification](../PRRD_STEP3_GUARDED_OBJECTIVE_RESULTS_20260918.md) connects the dual paths, same guarded learner policy and fixed target metric. Functional loss is clean-only. No training updates, patient utility, recipient or DP result was produced; U/R/O/N/G/T/P remain unmeasured.
 
 For every future result row, record artifact hash, metric population, seeds/release identity, selection history and uncertainty. Do not turn an implementation PASS into R/T/P PASS, or use three banks as three independent patient cohorts.
