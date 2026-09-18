@@ -1,0 +1,126 @@
+{
+  "schema": "contribution-direction-review/v1",
+  "created_utc": "2026-09-18T05:25:03.989465+00:00",
+  "report": "TRACK1_CONTRIBUTION_DIRECTION_AUDIT_20260918.md",
+  "report_sha256": "c23f2b34e6bbc6ba7db787b1f64011ea782e7635be9f52273ae73119e06a2530",
+  "review_only": true,
+  "no_new_experiment": true,
+  "preserved_actual_result_pointers": {
+    "current_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+    "last_actual_model_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+    "last_efficacy_result_report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
+    "last_real_generalization_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md"
+  },
+  "prior_experiment_records_unchanged": true,
+  "local_links_resolved": true,
+  "references": [
+    {
+      "target": "RESEARCH_PURPOSE.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "https://openaccess.thecvf.com/content/ICCV2025/html/Tsai_Differentially_Private_Fine-Tuning_of_Diffusion_Models_ICCV_2025_paper.html",
+      "kind": "web_reference"
+    },
+    {
+      "target": "https://arxiv.org/abs/2305.15759",
+      "kind": "web_reference"
+    },
+    {
+      "target": "https://openreview.net/forum?id=R6W7zkMz0P",
+      "kind": "web_reference"
+    },
+    {
+      "target": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/96ddb8106a3f47a4b2ed755b3edd865a-Abstract-Conference.html",
+      "kind": "web_reference"
+    },
+    {
+      "target": "https://proceedings.mlr.press/v162/amid22a.html",
+      "kind": "web_reference"
+    },
+    {
+      "target": "https://arxiv.org/abs/2503.14681",
+      "kind": "web_reference"
+    },
+    {
+      "target": "https://arxiv.org/abs/2406.14322",
+      "kind": "web_reference"
+    },
+    {
+      "target": "https://cvpr.thecvf.com/Conferences/2026/ReviewerGuidelines",
+      "kind": "web_reference"
+    },
+    {
+      "target": "RESEARCH_PURPOSE.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "PAPER_LEVEL_REDESIGN_20260915.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "TWO_TRACK_DEEPER_CHECK_20260916.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "spec_sources/track1_operation_redesign_20260916.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "REALISTIC_RESEARCH_PLAN_20260916.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "TRACK1_MEDICAL_HEAD_RESULTS_20260916.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "TRACK1_DOWNSTREAM_DEVELOPMENT_RESULTS_20260917.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "TRACK1_CLASSIFIER_GENERALIZATION_RESULTS_20260917.md",
+      "kind": "local_reference",
+      "exists": true
+    },
+    {
+      "target": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+      "kind": "local_reference",
+      "exists": true
+    }
+  ],
+  "scope_limitation": "No new image decoding, checkpoint inference, performance bootstrap or global historical hash audit"
+}

@@ -1,0 +1,75 @@
+{
+  "scope": "Independent construction from pasted proposal; random/toy arrays plus existing CSV metadata only. No patient pixels, encoder, checkpoint, GPU, classifier, synthesis or actual DP release.",
+  "risk_expansion_max_error": 4.440892098500626e-16,
+  "sensitivity_witness_norm": 3.0,
+  "sensitivity_witness_dimension": 459,
+  "permuted_pairing": {
+    "delta_mean_max_change": 0.0,
+    "C_operator_change": 0.10500000000000001,
+    "true_pair_risk": 0.52,
+    "permuted_pair_risk": 0.625,
+    "interpretation": "With fixed mixed class lists, v is invariant; pair information changes H through C."
+  },
+  "centroid_vs_visit_pair_risk": {
+    "centroid_square_loss": 0.25,
+    "all_visit_pairs_square_loss": 0.29500000000000004,
+    "missing_within_visit_variance_term": 0.045000000000000005
+  },
+  "two_population_means": {
+    "all_class_half_gap": 0.6,
+    "mixed_half_gap": 0.2
+  },
+  "parameter_perturbation_bound": {
+    "actual_distance": 6.997079002183746,
+    "bound": 16.15539392411962
+  },
+  "moment_postprocess": {
+    "raw_min_eigenvalue": -0.41231056256176607,
+    "processed_covariance_min_eigenvalue": 0.0,
+    "processed_trace": 0.45777087639996633,
+    "claim": "PSD/mean/trace feasibility only; encoder-image realizability is not proved."
+  },
+  "gaussian": {
+    "epsilon": 8.0,
+    "delta": 1e-05,
+    "sensitivity": 3.0,
+    "sigma_sum": 1.800687216596855,
+    "delta_recomputed": 9.999999999999914e-06,
+    "point_only_sensitivity": 2.449489742783178,
+    "point_only_sigma_sum": 1.4702549556715956,
+    "dimensions": {
+      "16": {
+        "joint_dimension": 459,
+        "relation_noise_rms_l2_over_102_excluding_count": 0.2176506175089585,
+        "relation_noise_rms_l2_over_105_excluding_count": 0.21143202843727396,
+        "per_coordinate_std_over_102_excluding_count": 0.017653796241145638,
+        "interpretation": "sqrt(E ||noise||_2^2), not per-coordinate RMS, signal-to-noise ratio, or noisy-count normalized error"
+      },
+      "32": {
+        "joint_dimension": 1683,
+        "relation_noise_rms_l2_over_102_excluding_count": 0.4177650681488068,
+        "relation_noise_rms_l2_over_105_excluding_count": 0.4058289233445552,
+        "per_coordinate_std_over_102_excluding_count": 0.017653796241145638,
+        "interpretation": "sqrt(E ||noise||_2^2), not per-coordinate RMS, signal-to-noise ratio, or noisy-count normalized error"
+      }
+    }
+  },
+  "roster_counts": {
+    "real/public": {
+      "patients": 672,
+      "images": 813,
+      "positive_patients": 6,
+      "mixed_patients": 3
+    },
+    "diagnostic_real/former_classifier_selection": {
+      "patients": 2027,
+      "images": 5097,
+      "positive_patients": 114,
+      "mixed_patients": 102
+    }
+  },
+  "rank_limit": {
+    "32_uniform_samples_max_centered_covariance_rank": 31,
+    "d32_full_rank_covariance_not_exactly_representable_by_32_samples": true
+  }
+}

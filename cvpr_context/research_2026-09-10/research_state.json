@@ -24,8 +24,8 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "Interpret the fixed real-support contrast and separate permitted data access from the still-unresolved private synthetic transfer question. Select at most one justified prospective contrast; no automatic DP, generator, seed, step or final/reserved execution.",
-  "next_task_output": "Bounded next-comparison decision grounded in the observed support contrast; no rescue of prior frozen failures.",
+  "next_task": "Implement the fixed A/B/C/D runtime, pass public-only image/encoder/global-gradient wiring and measure total cost before the planned nonDP package; no cached-diffusion parallel run or automatic DP/final access.",
+  "next_task_output": "Bound runtime with measured public-only profile; preserve the prospective settings and all old actual outcomes.",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
     "Support, repetition, cohort composition and weak labels are not causally separated",
@@ -62,7 +62,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Fixed real-support diagnostic completed; expanded-pool development improvement flag=True; no private synthetic or causal claim",
+  "step2_active_task": "Relation distillation settings, metadata bindings and feature core prepared; runtime/public-only profile pending",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -2130,7 +2130,7 @@
       "public_record": "spec_sources/real_support_diagnostic_record_20260917.json"
     }
   },
-  "updated_utc": "2026-09-17T14:41:39.544161+00:00",
+  "updated_utc": "2026-09-18T06:02:44.600950+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -3583,7 +3583,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
+  "next_task_plan_report": "TRACK1_PATIENT_RELATION_DISTILLATION_PROTOCOL_20260918.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -3705,7 +3705,7 @@
     "finalnextquestion": "Does the observed restricted-head denoising gain survive a fair patient-DP comparison, given the full64 statistic dimension2336 versus static16 dimension200 and only0.4467% extra nonprivate MSE reduction?"
   },
   "current_paper_problem_fixed": false,
-  "research_question_status": "Private synthetic utility remains unestablished; full64 closed; one existing-LoRA data-factorial diagnostic planned",
+  "research_question_status": "Concrete contribution target is cross-encoder visual reuse of protected patient-centroid contrast risk; efficacy and novelty beyond closest prior are not established",
   "new_dp_principle_required": false,
   "new_solver_required_for_application_contribution": false,
   "realistic_replan_20260916": {
@@ -3794,10 +3794,7 @@
     "novel_DP_solver_required": false,
     "new_experiments": 0
   },
-  "next_package_total_work_hours": [
-    1.0833333333333333,
-    1.6666666666666667
-  ],
+  "next_package_total_work_hours": null,
   "current_research_questions": [
     "Does protected use of private patient data add meaningful generation utility over the available public-only adaptation?",
     "Does this generation-adaptation construction improve the utility-total-cost tradeoff against strong patient-DP learners at matched public access and privacy constraints?"
@@ -4060,7 +4057,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PROTOCOL_20260917.md",
+  "current_planning_report": "TRACK1_PATIENT_RELATION_DISTILLATION_PROTOCOL_20260918.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -5071,7 +5068,7 @@
       0.4166666666666667
     ]
   },
-  "current_decision_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+  "current_decision_report": "TRACK1_PATIENT_RELATION_DISTILLATION_COMPARISON_20260918.md",
   "current_head_branch_closure_20260917": {
     "report": "TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md",
     "record": "spec_sources\\current_head_branch_closure_20260917.json",
@@ -5759,5 +5756,137 @@
     "verification_sha256": "5d6c73dd6e01d8034a82d975e4a53507366365fc8c27e5a90969173054e2352f",
     "public_record": "spec_sources/real_support_diagnostic_record_20260917.json"
   },
-  "last_real_generalization_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md"
+  "last_real_generalization_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+  "pre_contribution_direction_audit_20260918": {
+    "current_decision_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+    "current_planning_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PROTOCOL_20260917.md",
+    "next_task_plan_report": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
+    "next_task": "Interpret the fixed real-support contrast and separate permitted data access from the still-unresolved private synthetic transfer question. Select at most one justified prospective contrast; no automatic DP, generator, seed, step or final/reserved execution.",
+    "next_task_output": "Bounded next-comparison decision grounded in the observed support contrast; no rescue of prior frozen failures.",
+    "step2_active_task": "Fixed real-support diagnostic completed; expanded-pool development improvement flag=True; no private synthetic or causal claim",
+    "research_question_status": "Private synthetic utility remains unestablished; full64 closed; one existing-LoRA data-factorial diagnostic planned",
+    "next_package_total_work_hours": [
+      1.0833333333333333,
+      1.6666666666666667
+    ]
+  },
+  "completed_contribution_direction_audit_20260918": {
+    "report": "TRACK1_CONTRIBUTION_DIRECTION_AUDIT_20260918.md",
+    "status": "review_complete_contribution_not_established",
+    "judgment": "Current workflow is diagnostically useful but not demonstrated to converge to a CVPR contribution",
+    "scope": "Historical objectives, key protocols/results/current state, saved Rwide metrics, scoped primary-literature check",
+    "new_model_runs": 0,
+    "new_training": 0,
+    "new_generation": 0,
+    "new_patient_pixel_access": 0,
+    "new_DP": 0,
+    "old_head_failure_preserved": true,
+    "old_LoRA_failure_preserved": true,
+    "initial_generic_head_DP_acknowledged": true,
+    "expert_final_opened": false,
+    "reserved_opened": false,
+    "new_algorithm_required": false,
+    "topic_switch_selected": false,
+    "next_experiment_selected": false,
+    "final_ready": false
+  },
+  "proposed_cached_condition_contrast_20260918": {
+    "status": "assistant_proposal_not_user_adopted_or_execution_frozen",
+    "report": "TRACK1_CACHED_CONDITION_CONTRAST_DESIGN_20260918.md",
+    "mechanism": "Per-image paired quadratic denoising energies -> nonlinear condition-contrast loss -> patient-clipped DP-SGD using only cached coefficients after extraction",
+    "prior_boundaries": [
+      "Discriminative diffusion tuning already exists",
+      "Caching and patient DP are known",
+      "No one-shot privacy or demonstrated whole-cost advantage"
+    ],
+    "actual_new_model_executions": 0,
+    "actual_new_patient_pixel_accesses": 0,
+    "actual_new_dp_executions": 0,
+    "random_cpu_algebra_check": {
+      "max_energy_error": 2.220446049250313e-16,
+      "loss_error": 0.0,
+      "max_gradient_error": 6.938893903907228e-17
+    },
+    "protected_resources": "expert532 and reserved4213 remain closed"
+  },
+  "pre_patient_relation_review_20260918": {
+    "current_decision_report": "TRACK1_CONTRIBUTION_DIRECTION_AUDIT_20260918.md",
+    "current_planning_report": "TRACK1_CACHED_CONDITION_CONTRAST_DESIGN_20260918.md",
+    "next_task_plan_report": "TRACK1_CACHED_CONDITION_CONTRAST_DESIGN_20260918.md",
+    "next_task": "No model execution scheduled. The concrete proposal connects per-image paired-condition energy caches to patient DP learning and matched utility-cost comparisons; do not automatically extend diagnostics.",
+    "next_task_output": "A decision on the explicit proposal and, if adopted, one bounded implementation/comparison protocol; no claimed efficacy yet",
+    "step2_active_task": "Concrete cached condition-contrast design proposed; not adopted or executed",
+    "research_question_status": "Protection-efficiency question remains reasonable; original SSP/head and fixed LoRA have no validated private synthetic advantage; support diagnostic is positive but not protected generation evidence",
+    "next_package_total_work_hours": null
+  },
+  "patient_relation_distillation_design_review_20260918": {
+    "report": "TRACK1_PATIENT_RELATION_DISTILLATION_COMPARISON_20260918.md",
+    "status": "comparative_recommendation_complete_not_execution_contract",
+    "preferred_design": "patient-local centroid-contrast risk distillation",
+    "deprioritized_design": "cached condition-contrast diffusion, not experimentally disproved",
+    "evidence": "pasted v2, local prior proposal/results, existing roster metadata, scoped primary literature, independent CPU algebra",
+    "core_comparison": "point-only vs true relations vs shuffled relations, direct moments and unseen-encoder pair-aware transfer",
+    "math_scope": "fixed-feature quadratic centroid risk, not full longitudinal or all-visit-pair risk",
+    "new_patient_pixels": 0,
+    "new_model_inference": 0,
+    "new_training": 0,
+    "new_synthetic_images": 0,
+    "new_dp_releases": 0,
+    "expert_final_opened": false,
+    "reserved_opened": false,
+    "final_ready": false,
+    "cpu_check": "spec_sources/relation_distillation_design_review_20260918.json"
+  },
+  "two_design_disagreement_reassessment_20260918": {
+    "report": "TRACK1_PATIENT_RELATION_DISTILLATION_COMPARISON_20260918.md",
+    "section": 10,
+    "recommendation": "patient relation distillation preferred as contribution-oriented design; cache adaptation preferred only under a different implementation-continuity priority",
+    "empirical_dominance": "not established for either",
+    "execution_contract_frozen": false,
+    "counterexamples": "spec_sources/two_design_inference_limits_20260918.json",
+    "new_models": 0,
+    "new_patient_pixels": 0,
+    "new_gpu": 0,
+    "new_dp": 0,
+    "final_ready": false
+  },
+  "relation_distillation_prior_refinement_20260918": {
+    "report": "TRACK1_PATIENT_RELATION_DISTILLATION_COMPARISON_20260918.md",
+    "section": 11,
+    "recommendation": "patient relation distillation retained; cached condition-contrast adaptation deferred",
+    "closest_prior_added": "CovMatch, NeurIPS 2025, arxiv:2510.18583",
+    "standard_delta_moment_matching_equivalence_acknowledged": true,
+    "infeasible_noisy_target_does_not_invalidate_matching": true,
+    "synthetic_risk_and_raw_noisy_predictor_psd_requirements_distinguished": true,
+    "new_metadata_reads": 0,
+    "new_patient_pixels": 0,
+    "new_models": 0,
+    "new_gpu": 0,
+    "new_dp_releases": 0,
+    "execution_contract_frozen": false,
+    "final_ready": false,
+    "review_scope": "primary source reading, algebraic comparison and documentation corrections only"
+  },
+  "relation_distillation_preparation_20260918": {
+    "report": "TRACK1_PATIENT_RELATION_DISTILLATION_PROTOCOL_20260918.md",
+    "record": "spec_sources\\relation_distillation_preparation_record_20260918.json",
+    "plan_sha256": "05519afbb0afd0f31cccfcfd64d1239f0454a3155591d8b33c9349e95db8f7b4",
+    "verification_sha256": "18c59643a84be2f405bb8a75af5ec7d8b9eb9110559dce7084a605fe319cd3b2",
+    "status": "prepared_metadata_and_feature_core_runtime_pending",
+    "preferred_design": "patient relation preserving distillation",
+    "E1": "public DINOv2 ViT-B/14, public-only PCA16",
+    "E2": "ImageNet ResNet18, pair-aware fixed-feature reuse",
+    "banks": 12,
+    "secondary_BCE_runs": 36,
+    "core_tests_passed": 10,
+    "new_pixel_decode": 0,
+    "new_encoder_forward": 0,
+    "new_training": 0,
+    "new_synthetic_images": 0,
+    "new_dp_release": 0,
+    "runtime_ready": false,
+    "final_ready": false,
+    "expert_opened": false,
+    "reserved_opened": false
+  }
 }

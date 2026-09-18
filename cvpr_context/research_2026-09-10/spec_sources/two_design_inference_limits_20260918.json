@@ -1,0 +1,27 @@
+{
+  "scope": "Two mathematical counterexamples, not patient efficacy estimates",
+  "cached_condition": {
+    "examples": [
+      {
+        "w": 0.0,
+        "correct_condition_error": 0.0,
+        "wrong_condition_error": 0.0,
+        "objective_with_anchor": 0.9192831812627559
+      },
+      {
+        "w": 2.0,
+        "correct_condition_error": 0.0,
+        "wrong_condition_error": 4.0,
+        "objective_with_anchor": 0.07401114610161943
+      }
+    ],
+    "conclusion": "Objective decrease does not imply correct-condition output improvement"
+  },
+  "relational_distillation": {
+    "E1_moment_max_difference": 0.0,
+    "E2_real_readout_auc_on_toy_real": 1.0,
+    "E2_synthetic_readout_auc_on_toy_real": 0.0,
+    "conclusion": "Exact E1 point and relation moments do not imply E2 transfer"
+  },
+  "interpretation": "Neither exact caching nor exact surrogate preservation establishes medical utility or ranks success probabilities."
+}

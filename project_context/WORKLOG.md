@@ -1,5 +1,54 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 156-RELATION-DISTILLATION-EXECUTION-PREPARATION (2026-09-18 KST)
+
+- 주력 관계 증류와 캐시안 비병행이라는 최신 검토를 실제 실행 명세로 구체화했다. A/B/C/D3bank, public-only PCA16 DINOv2, 별도 ImageNet ResNet18 관계 활용, direct readout, secondary BCE36run을 설정JSON에 기록했다.
+- 환자별 point/relation query·svec·감도3/√6·public/private 합계 정규화·optional moment repair·ridge readout·Gaussian scale과 전체bank feature gradient 코드를 새 독립 패키지에 구현했다. 기존 실험코드는 변경하지 않았다.
+- 기존5910장 학습/5047장 개발 metadata의 binding과 공개 weight 파일SHA를 확인했다. Private102명 derangement와384개 예정public 초기화cell을 고정했으며 원 환자 역할표는 변경하지 않았다.
+- 독립 배열10개 검사와 준비산출물 결속 검산이 통과했다. 직접 위험/이차식, 방문 수 가중, 공개/사적 경계, 노이즈 목표/직접readout 구분, 두-pass gradient를 확인했다. 실제 image/encoder 연결 또는 효용 검증은 아니다.
+- 현재새pixel decode/encoder forward/학습/합성/DP0. Runtime_ready=false,final_ready=false. 후속은 같은명세의public-only profile과실제runner연결이며 expert/reserved·Rwide/LoRAactual결과보존. 원격확인/push없음.
+
+## 155-RELATION-PRIOR-MOMENT-REFINEMENT (2026-09-18 KST)
+
+- 사용자가 전달한 GPT 최신 재검토의 CovMatch와 noisy 모멘트 지적을 원문·수식에 대조했다. 관계 증류 권고는 유지하며 후보를 다시 교체하지 않았다.
+- CovMatch를 근접 선행에 추가했다. 기존 δ-feature moment matching과 제안의 관계 연산이 동일할 수 있음을 도출하고, 동일 연산을 독립적인 새 알고리즘/약한 baseline으로 세지 않도록 했다.
+- 이전 §4.3의 의무적 모멘트 보정 표현을 정정했다. 불가능한 noisy 목표에도 matching은 정의되며 실제 synthetic H는 PSD다. 직접 noisy H readout의 안정성은 별도로 명세한다.
+- C−B 전체 방법 효과, C−D 대응 정보 효과, 같은 C의 관계 손실 효과, 선택에 쓰지 않은 E2 전이를 구분했다. 수정 범위는 기존 비교 문서 §4.3/6/7/11 및 상태 기록이다.
+- 새 환자 metadata/pixel/model/GPU/학습/생성/DP0. 원격 commit 확인·push 없음. 이전 실제 결과·환자 역할표·expert532/reserved4213 보존.
+
+## 154-TWO-DESIGN-DISAGREEMENT-REVIEW (2026-09-18 KST)
+
+- GPT가 캐시 조건 대조안을 추천한 긴 반대 검토문을 받아 실제 로컬안·기존 cached DP 결과·DPT/HardNeg/LGM 원문과 대조했다.
+- 캐시의 정확한 비선형 학습과 구현 연속성은 인정했다. 다만 Q80→Qwide 자료 변경, 직접 DP predictor 반론의 양쪽 적용, 이미 존재하는 backbone0 cached same-head 경로를 비교에 반영했다.
+- 관계 위험 보존만으로 다른 encoder 효용을 보장할 수 없다는 이전 판단의 과장을 정정했다. 양쪽 내부목적과 효용 사이의 비함의를 임의 CPU 배열 두 예로 확인했다. 실제 의료/환자 성능의 음성 실험이 아니다.
+- 논문 기여 중심의 정성적 권고는 관계 증류로 유지했다. 성공 확률/효용 우위는 미판정이며 user execution contract가 아니다. 반대 글의 제안만으로 6개 Qwide generator arm을 시작하지 않았다.
+- 동일 비교 문서 §10에 판정 기준·인정한 장점·비대칭·권고 변경 근거를 추가했다. 새 모델·픽셀·GPU·합성·DP0이며 과거 모든 실제 결과와 expert/reserved를 보존했다.
+
+## 153-PATIENT-RELATION-DISTILLATION-COMPARISON (2026-09-18 KST)
+
+- 사용자가 GPT의 관계 보존 증류 v2와 직전 assistant 조건 대조 diffusion 안을 철저히 비교해 달라고 요청했다.
+- 주력은 관계 증류로 권고했다. 목적을 환자 class-centroid 대조 위험으로 좁히고 pair-aware cross-encoder 재사용과 direct moments를 핵심 대조로 정리했다. GPU 실행 계약은 아직 동결하지 않았다.
+- Pair shuffle의 delta 평균 불변/2차 모멘트 변화, centroid와 방문쌍 위험의 차이, PSD/count 후처리, bank rank 한계를 도출했다. 별도 CPU 코드로 검산했다.
+- 기존 명부를 재집계해 private-origin2027/mixed102, public672/mixed3을 확인했다. 원본 픽셀 접근은 없었다. 감도3, d16좌표459, Gaussian 합계 sigma1.800687, 관계 RMS L2 .217651을 재현했다.
+- DP-KIP/Dosser/PATH 및 LGM/PSG/DP-NTK/pairwise/의료·시각 distillation primary sources를 대조했다. 전체 신규성이나 성능 성공으로 확대하지 않았다.
+- 현재 결정·설계 포인터만 새 비교 문서로 갱신하고 모든 completed 실험객체와 실제 Rwide/LoRA 결과 포인터는 동일하게 보존했다. 새 모델·GPU·학습·합성·DP0, expert/reserved 미사용.
+
+## 152-CACHED-CONDITION-CONTRAST-DESIGN (2026-09-18 KST)
+
+- 사용자는 관련연구·자료를 보유하고도 구체 기여를 만들지 못하고 진단만 연장하는 답변을 지적했다. 직전 문구가 기여 설계가 아니라 연구 목표의 반복이었음을 인정했다.
+- 하나의 제안으로 영상별 동일 noise의 두 조건 energy를 A/B/Q로 저장하고, 정답 denoising+상대 조건 softplus+공개 anchor를 캐시에서 학습하는 구성을 도출했다. 환자 평균 gradient clipping/noise와 표준 accounting을 적용하는 설계다. 새 DP 정리나 one-shot 보호 주장이 아니다.
+- Diffusion Classifier, HardNeg-DiffusionITM, DPT, DP-LoRA를 대조했다. 대조 학습 자체와 캐시 자체는 기존 개념이며, 제안의 가치는 실제 조건별 합성 효용과 동일 환자 보호의 총비용 절충에서 확인해야 한다.
+- 임의 CPU FP64 tensor에서 직접/캐시 energy·loss·gradient 등가성만 확인했다. 의료 성능/원인/신규성 검증으로 세지 않는다. 새 GPU·환자영상·checkpoint·DP0.
+- 제안 문서와 planning 상태만 추가했다. 사용자 채택 또는 GPU 실행 예약으로 간주하지 않는다. 기존 실제 결과/실험객체/역할·expert532/reserved4213 보존.
+
+## 151-CONTRIBUTION-DIRECTION-AUDIT (2026-09-18 KST)
+
+- 사용자는 처음부터 전체 연구가 기여를 만드는 방향인지 재검토하라고 요청했다. 원래 보호 목표, 공격 탐색, 두 v0, frozen residual/초기DP, 의료 backbone/head, 측정·downstream·LoRA·일반화·Rwide 경로를 추적했다.
+- 판단: 개별 진단은 유효하지만 현재 흐름을 CVPR 기여에 수렴 중이라고 평가할 근거는 부족하다. 초기 SSP의 same-head DP-SGD 대비 음성 결과와 전체비용 경계를 재포함했다. Rwide 실자료 범위 개선은 private synthetic/DP 효용을 구제하지 않는다.
+- DP-LoRA/DP-LDM, DP-MEPF, Private Evolution, PDA-DPMD, DPImageBench와 사용자단위 보호의 근접 범위를 공식·저자자료로 확인했다. 원리 중복만으로 응용 기여를 배제하지 않고, 실제 추가 가치·동일 접근·보호·총비용을 함께 요구한다.
+- 새 알고리즘/주제 변경/추가 GPU를 선택하지 않았다. 기존 실패·실험객체·실제 결과 포인터와 expert/reserved를 보존했다. 새 문서와 상태의 의사결정 필드만 갱신했다. 새 학습/추론/생성/환자영상접근/DP0.
+- 전체 원본·checkpoint 재실행은 없고, 이번 확인은 주요 기록과 최신 Rwide result, 문헌 및 새 문서 연결 범위다. 검산 항목 수를 새로운 성능 증거로 추가하지 않았다.
+
 ## 150-REAL-PATIENT-SUPPORT-DIAGNOSTIC-EXECUTION (2026-09-17 KST)
 
 - 사용자 승인 명세대로 구현·실행·검산했다. 시작 예상30–50분, 실제 원본검사와4update를 통과한 뒤 3seed×400 본학습을 수행했다. 과거data_v2/train_v2 수정0, 독립 새provider만 연결했다.

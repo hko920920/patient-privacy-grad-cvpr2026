@@ -1,0 +1,35 @@
+{
+  "report": "TRACK1_PATIENT_RELATION_DISTILLATION_PROTOCOL_20260918.md",
+  "report_sha256": "fbf9476dbe178c699834b7bb3f4293c78ea78556d5447615ef97fc0f2b6ff7b7",
+  "plan": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\relation_distillation_plan_20260918_v1\\plan.json",
+  "plan_sha256": "05519afbb0afd0f31cccfcfd64d1239f0454a3155591d8b33c9349e95db8f7b4",
+  "verification": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\relation_distillation_plan_20260918_v1\\verification.json",
+  "verification_sha256": "18c59643a84be2f405bb8a75af5ec7d8b9eb9110559dce7084a605fe319cd3b2",
+  "code_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\relation_distillation",
+  "status": "prepared_metadata_and_feature_core_runtime_pending",
+  "counts": {
+    "public": {
+      "patients": 672,
+      "images": 813,
+      "positive_patients": 6,
+      "mixed": 3
+    },
+    "private": {
+      "patients": 2027,
+      "images": 5097,
+      "positive_patients": 114,
+      "mixed": 102
+    },
+    "development": {
+      "patients": 2026,
+      "images": 5047,
+      "positive_patients": 114,
+      "mixed": 104
+    }
+  },
+  "tests": 10,
+  "runtime_ready": false,
+  "final_ready": false,
+  "new_model_work": 0,
+  "no_original_role_or_result_files_changed": true
+}

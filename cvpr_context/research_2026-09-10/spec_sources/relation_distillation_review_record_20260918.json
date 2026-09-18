@@ -1,0 +1,19 @@
+{
+  "report": "TRACK1_PATIENT_RELATION_DISTILLATION_COMPARISON_20260918.md",
+  "report_sha256": "c8755c74eefa381d10f5dc701ae594b6097333de27389d20d750d70a29ae9906",
+  "prior_completed_records_unchanged": true,
+  "actual_result_pointers": {
+    "current_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+    "last_actual_model_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+    "last_efficacy_result_report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
+    "last_real_generalization_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md"
+  },
+  "scope": "design recommendation and CPU algebra/old metadata; no new model execution",
+  "local_links_exist": true,
+  "pre_reassessment_report_sha256": "f2d3a3fb53329756ce75139babbe0db3617c538a693569795f6abb964a156a01",
+  "reassessment_added": true,
+  "completed_results_preserved_after_reassessment": true,
+  "pre_covmatch_refinement_report_sha256": "10ec800ef21b3968171cd12bf74ff6705385675610220589204e6846d266925c",
+  "covmatch_noisy_moment_refinement_added": true,
+  "all_preexisting_state_values_unchanged_after_refinement": true
+}

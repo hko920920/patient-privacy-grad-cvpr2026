@@ -1,0 +1,290 @@
+{
+  "schema": "patient-relation-distillation-settings-v1",
+  "created_date": "2026-09-18",
+  "stage": 2,
+  "claim": "Protected patient class-centroid correspondence carried by synthetic images and pair metadata can add utility for a learner excluded from distillation and selection.",
+  "scope": {
+    "non_dp_first": true,
+    "parallel_cached_diffusion": false,
+    "expert_final_allowed": false,
+    "reserved_confirmation_allowed": false,
+    "auto_dp": false,
+    "full_runtime_implemented": false
+  },
+  "data": {
+    "training_manifest": "_reports/real_support_plan_20260917_v1/expanded_training_manifest_private.csv",
+    "development_manifest": "_reports/real_support_plan_20260917_v1/method_development_unchanged_private.csv",
+    "previous_plan": "_reports/real_support_plan_20260917_v1/plan.json",
+    "bootstrap": "_reports/downstream_development_20260917_v1/cluster_bootstrap.npz",
+    "public_namespace": "real/public",
+    "private_namespace": "diagnostic_real/former_classifier_selection",
+    "public_expected": {
+      "patients": 672,
+      "images": 813,
+      "positive_patients": 6,
+      "mixed": 3
+    },
+    "private_expected": {
+      "patients": 2027,
+      "images": 5097,
+      "positive_patients": 114,
+      "mixed": 102
+    },
+    "development_expected": {
+      "patients": 2026,
+      "images": 5047,
+      "positive_patients": 114
+    },
+    "private_origin_remains": "private_train; previously used for classifier selection and Rwide diagnostic training"
+  },
+  "encoders": {
+    "E1": {
+      "name": "DINOv2 ViT-B/14 without registers",
+      "constructor": "timm.create_model('vit_base_patch14_dinov2', pretrained=False, num_classes=0, img_size=518, dynamic_img_size=True)",
+      "checkpoint": "dinov2_vitb14_pretrain.pth",
+      "sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+      "raw_dim": 768,
+      "allowed_unexpected_state_keys": [
+        "mask_token"
+      ],
+      "pretraining_scope": "LVD-142M public release; no patient-level pretraining exclusion certificate",
+      "projection": {
+        "kind": "public patient-uniform PCA",
+        "dimension": 16,
+        "raw_l2_normalize": true,
+        "center": true,
+        "whiten": false,
+        "sign_rule": "largest-absolute loading positive",
+        "projected_norm_rule": "divide by max(l2 norm,1e-6)",
+        "fit_on": "public813 only, unlabelled, patient-uniform image weights",
+        "freeze_before_private_features": true
+      }
+    },
+    "E2": {
+      "name": "ImageNet ResNet18 IMAGENET1K_V1",
+      "constructor": "torchvision.models.resnet18(weights=None); strict local load; fc=Identity",
+      "checkpoint": "resnet18-f37072fd.pth",
+      "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "raw_dim": 512,
+      "projection": "none; full feature L2 normalization",
+      "role": "fixed-feature pair-aware reuse, excluded from synthetic objective and all bank/hyperparameter selection",
+      "history": "architecture used in earlier branch; only distillation/selection exclusion in this branch is claimed"
+    }
+  },
+  "preprocess": {
+    "size": 224,
+    "aspect_preserving": true,
+    "mode": "L repeated to RGB",
+    "resize": "PIL bilinear letterbox",
+    "padding": 0,
+    "normalize_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalize_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "matching_augmentation": "none; same fixed preprocessing defines real and synthetic risks",
+    "encoder_mode": "eval; all parameters and buffers frozen",
+    "encoder_precision": "FP32; TF32 off",
+    "moment_precision": "float64"
+  },
+  "arms": {
+    "A": {
+      "source": "public",
+      "point_images": 128,
+      "relation_pairs": 0,
+      "readout_beta": 0
+    },
+    "B": {
+      "source": "public+private",
+      "point_images": 128,
+      "relation_pairs": 0,
+      "readout_beta": 0
+    },
+    "C": {
+      "source": "public+private",
+      "point_images": 64,
+      "relation_pairs": 32,
+      "readout_beta": 1
+    },
+    "D": {
+      "source": "public+private",
+      "point_images": 64,
+      "relation_pairs": 32,
+      "readout_beta": 1,
+      "shuffle": "private mixed102 negative centroids only; public mixed3 fixed; nonDP only"
+    }
+  },
+  "bank": {
+    "total_images": 128,
+    "seeds": [
+      101,
+      211,
+      307
+    ],
+    "point_only_negative": [
+      0,
+      64
+    ],
+    "point_only_positive": [
+      64,
+      128
+    ],
+    "relation_arm_point_negative": [
+      0,
+      32
+    ],
+    "relation_arm_point_positive": [
+      64,
+      96
+    ],
+    "relation_negative": [
+      32,
+      64
+    ],
+    "relation_positive": [
+      96,
+      128
+    ],
+    "initialization": "same public image for cell j and j+64; 64 hash-selected distinct public patients per bank; label-independent image choice; common across A/B/C/D",
+    "pyramid_resolutions": [
+      28,
+      56,
+      112
+    ],
+    "pyramid_sum_scale": "1/sqrt(3)",
+    "jitter_std": 0.01,
+    "jitter_independent_per_image": true,
+    "pixel_range": [
+      0,
+      1
+    ],
+    "output": "canonical uint8 grayscale PNG; final readouts recomputed from decoded PNG",
+    "permutation_seed": 202609181,
+    "permutation_rule": "fixed private-patient derangement, shared by all D banks"
+  },
+  "optimization": {
+    "optimizer": "Adam",
+    "learning_rate": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-8,
+    "weight_decay": 0,
+    "steps": 500,
+    "checkpoint": "last successful step only",
+    "matching": "0.5 * sum_class(||m_s-m_t||^2+||A_s-A_t||_F^2) + beta*(||delta_s-delta_t||^2+||C_s-C_t||_F^2)",
+    "beta": 1,
+    "tv_weight": 0.001,
+    "anchor_weight": 0.001,
+    "tv": "mean absolute horizontal plus vertical pixel difference",
+    "anchor": "mean squared pixel difference from the common jittered initialization",
+    "microbatch": 4,
+    "gradient": "whole-bank feature loss followed by frozen-encoder replay VJP; not an average of per-microbatch moment losses",
+    "result_based_selection": false,
+    "early_stopping": false,
+    "nonfinite": "technical abort; no parameter/step reduction based on utility"
+  },
+  "readout": {
+    "objective": "patient-balanced class-centroid quadratic risk",
+    "ridge": 0.01,
+    "bias": false,
+    "primary_train": "synthetic banks only; no private pixels; C/D use declared point and pair roles",
+    "reference": "E1 and E2 exact real-data point/relation readouts, diagnostic only; DP comparator uses E1 released moments",
+    "C_D_relation_off": "same 64 point images, beta=0, do not silently add relation images to point bank"
+  },
+  "evaluation": {
+    "primary_encoder": "E2",
+    "primary_comparisons": [
+      "C-B",
+      "C-D"
+    ],
+    "contextual": [
+      "B-A",
+      "C-A"
+    ],
+    "metrics": [
+      "AUROC",
+      "AP"
+    ],
+    "prediction": "raw linear score",
+    "banks": 3,
+    "aggregation": "metric per bank, then mean; not ensemble prediction",
+    "bootstrap": "reuse existing 2000 patient-cluster counts, paired across arms and banks; 95 percent intervals, exploratory development",
+    "gate": {
+      "mean_AUROC_delta_at_least": 0.01,
+      "positive_banks_at_least": 2,
+      "mean_AP_delta_at_least": 0,
+      "comparisons": [
+        "C-B",
+        "C-D"
+      ],
+      "interpretation": "development investment signal only, not final significance or DP success"
+    },
+    "seal_before_development": true,
+    "E2_never_used_for_selection": true,
+    "compatibility": {
+      "enabled": true,
+      "primary": false,
+      "model": "same corrected ResNet18 BCE kernel as historical branch",
+      "steps": 400,
+      "learning_rate": 0.0001,
+      "batch": 32,
+      "classifier_seeds": [
+        11,
+        23,
+        37
+      ],
+      "real_per_batch": 16,
+      "synthetic_per_batch": 16,
+      "runs": 36,
+      "synthetic_labels": "assigned objective labels, not expert radiological ground truth",
+      "pooled_BCE_uses_all_128_images": true
+    }
+  },
+  "dp_future": {
+    "enabled": false,
+    "epsilon": 8,
+    "delta": 0.00001,
+    "adjacency": "add/remove one patient",
+    "private_query_only": true,
+    "point_sensitivity": "sqrt(6)",
+    "relation_sensitivity": 3,
+    "point_coordinates": 306,
+    "relation_coordinates": 459,
+    "counts": "protected in joint query; add public exact sums then normalize",
+    "noisy_count_rule": "floor class counts at1; relation count clipped to [1,min(class counts)]",
+    "moment_repair": "fixed unit-mean / PSD covariance / trace-cap postprocessing for direct and synthetic targets; optional design chosen prospectively, not mathematical necessity",
+    "noise_calibration": "analytic Gaussian",
+    "private_randomness": "future runtime must implement protected independent noise; deterministic public seeds are not a privacy release",
+    "composition": "separate summaries/releases require joint accounting; synthetic banks sharing one summary are postprocessing",
+    "D_DP": false,
+    "raw_private_diagnostics_publish": false
+  },
+  "runtime": {
+    "phases": [
+      "bind_inputs",
+      "public_only_profile",
+      "extract_E1_training_and_public_PCA",
+      "form_A_B_C_D_targets",
+      "distill_all_12_banks",
+      "seal_banks",
+      "evaluate_E1_E2_and_direct_controls",
+      "compatibility_BCE_36_runs",
+      "verify"
+    ],
+    "profile_public_only": true,
+    "profile_max_bank_updates": 4,
+    "profile_max_minutes": 20,
+    "profile_changes_allowed": "microbatch/IO only with full-bank gradient parity; no objective/arms/hyperparameters based on efficacy",
+    "measured_ETA_required_before_main": true,
+    "overwrite": false,
+    "resume": "unchanged contract; exact optimizer/RNG state and completed-artifact hashes; no best checkpoint choice",
+    "main_model_execution_this_preparation": false
+  }
+}
