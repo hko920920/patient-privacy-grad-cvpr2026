@@ -1,5 +1,7 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-18 PRRD 첫 비DP 시작 계약 고정:** [실행 계약](PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md)에 상대 반경0.1·w0ᵀMw0, beta1(A/B0)/ridge0.1/eta1, 30bank 목록과 코드·공개 산출물·목표 규칙 hash를 결속했다. 큰 연구단계2 안의 계약 작성이며 실제 방법 효용/논문 완성은 아니다. C 실측 기반32.65시간은 합성만의 동일 속도 가정이며 승인 예산이 아니다. 허용 bank와 숫자 시간 상한, main 실행기·동일 상태 재개/PNG 연결, 허용 후 Q 목표 hash가 미완료다. 추가 profile 없이 기록만 끝냈고 새 GPU/pixel/recipient/DP/final0, 기존 Rwide/LoRA 효용 포인터 유지.
+
 **2026-09-18 PRRD 공개 C128 비용 측정 완료:** [실측 결과](PRRD_C128_PUBLIC_PROFILE_RESULTS_20260918.md). Microbatch4, warm-up5+측정10의 전체128장 update는 평균7.8364초이고 GPU allocated peak1732.42MiB다. 측정용15회 갱신은 정상이며 encoder/target은 불변이다. 이는 큰 연구단계2 안의 실행 비용 확인으로, 방법 효용이나 본실험 설정의 확정이 아니다. 사용자 요청대로 단일 공개C만 측정하고 중단했다. 계수·본 규모/예산은 이후 판단으로 남긴다.
 
 **2026-09-18 PRRD 사용자3단계 완료:** [새 목적의 실제 gradient 결과](PRRD_STEP3_GUARDED_OBJECTIVE_RESULTS_20260918.md). 기존 source point/raw 경로에서 통계→guarded learner→고정 target 기능loss→이미지gradient를 연결했다. 구성배열6+core6와 공개실제BioViL19조건이 기존기준을통과했다. 기능항은clean에만적용되고 모델/target은고정이다. 큰연구단계2안의구현검증이며, 환자관계효용·다른encoder전이·DP성능은미평가다. 계수는수치검사용이고optimizer0, P고유4장만사용했다. 요청대로여기서멈췄으며 전체128profile/계수·예산동결은다음단계로남긴다.

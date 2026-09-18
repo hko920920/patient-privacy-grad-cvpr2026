@@ -231,3 +231,13 @@ Cold/warm 준비, public/raw feature, private summary, 합성, PNG, recipient, �
 Beta1/ridge.1/kappa.1/eta1은3단계 기본 수치 검사용 설정을 유지했다. 검증된 새 two-pass 목적에서 모든128장 forward/global statistics/function/backward와 optimizer 갱신을 매번 포함했다. 평균7.8364초/update, allocated1732.42MiB/reserved1852MiB를 측정했고15회 모두 finite 및 실제 갱신·고정 source/target 불변을 확인했다.
 
 본실험 계수나30bank 규모·전체시간 상한은 아직 미확정이다. 이번 측정용 상태는 본 bank로 export하거나 재사용하지 않았다. 다른arm/수신자/DP/final을 진행하지 않았고 여기서 멈췄다. 다음 판단은 이 비용을 바탕으로 한 본 계수·규모·예산이며 자동 실행은 없다.
+
+## 14. 첫 비DP 실행 계약 고정 — 실행은 미승인
+
+사용자 후속 요청에 따라 [단일 실행 계약](PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md)에서 첫 시작값과30bank 범위를 확정했다. Beta1(A/B0),ridge0.1,kappa0.1의 상대 반경,eta1,128장/500회,seeds101/202/303을 사용한다. 이전 ‘미확정/검사용’ 문장은 각 단계 당시 상태이며, 이번 선택은 성능 최적값 검증이 아닌 prospective recipe 결정이다.
+
+C128실측의 단순 환산은 C500=65.30분,30bank=32.65시간이다. 전체 비용이나 승인된 시간 상한이 아니다. 기존 실측만 사용했으며 다른 profile은 추가하지 않았다.
+
+30개 ID·code/public/target-rule SHA 및 bank별 checkpoint/resume/최종 PNG 규칙은 위 계약을 따른다. recipe는 고정됐으나 image runtime 전체가 준비된 것은 아니다. main runner와 동일 상태 resume/export 연결, 허용 bank/숫자 시간 상한, 허용된 준비 후 Q feature/target 실제 hash가 남았다. 사용자3단계 gradient와 C128 profile의 PASS 범위를 확대하지 않는다.
+
+이번에는 계약·상태 기록만 수행했다. 모든 실행 승인false, DP/Expert/Reserved 잠금,profile bank 재사용 금지와 기존 실제 효용 결과를 유지한다. source가 약하면 모든 합성을 자동 중단하는 새 조건도 추가하지 않는다.

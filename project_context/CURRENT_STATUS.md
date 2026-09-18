@@ -1,5 +1,7 @@
 # 현재 상태와 기록 권위
 
+**2026-09-18 PRRD 첫 비DP 실행 계약 작성 완료:** [단일 계약 문서](CVPR%20주제%20탐색/research_2026-09-10/PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md)에 beta1(A/B0), ridge0.1, rho²=0.1·w0ᵀMw0, eta1과 128장·500회·101/202/303, 기본21+제거9=30bank를 첫 시작값으로 고정했다. 최적값/효용 검증은 아니다. 코드·공개 산출물·목표 생성 규칙 hash, bank별 재개 및 중간 효용에 따른 변경 금지를 결속했다. C 실측 단순 환산은 bank당65.30분/30bank32.65시간으로 준비·전체 평가 및 arm 차이를 포함한 총시간이 아니다. 실행 승인·숫자 시간 상한, main runner/resume/PNG 연결, 허용 후 Q 산출물 hash가 남았다. 이번은 문서·기록만이며 새 코드 변경·학습·profile·픽셀·수신자·DP·final 실행0이다. 측정 bank 재사용 금지와 기존 결과를 유지하고 중단했다.
+
 **2026-09-18 공개 C128 비용 측정 완료:** [실측 보고서](CVPR%20주제%20탐색/research_2026-09-10/PRRD_C128_PUBLIC_PROFILE_RESULTS_20260918.md). Microbatch4, warm-up5+측정10으로128장 전체 two-pass 및 optimizer 갱신을 측정했다. 평균7.8364초/update, GPU peak allocated1732.42MiB/reserved1852MiB. 15회 모두 유한한 손실·gradient와 실제 parameter 변경을 확인했고 encoder/target은 불변이다. 이번은 비용 측정만이며 계수·본실험 규모·예산은 미확정이다. Q/V·수신자·DP·final은 사용하지 않았고, 측정 bank를 export하지 않았다. 결과 기록 후 중단했다.
 
 **2026-09-18 PRRD 3단계 완료 — 새 목적의 실제 이미지 gradient 통과:** [관계 개입 제한·기능 정합 연결 결과](CVPR%20주제%20탐색/research_2026-09-10/PRRD_STEP3_GUARDED_OBJECTIVE_RESULTS_20260918.md). 목표/합성의 동일 guarded learner와 고정 target M_T 기능 loss를 연결했고, 기능 항은 무증강에만 한 번 적용했다. CPU6+기존core6 및 실제 BioViL19조건이 기존 기준을 통과했다. Encoder 입력 픽셀 VJP 차이0, renderer gradient 최대 상대L2 차이2.27e-7이며 기능 단독 이미지 gradient도 확인했다. 계수는 검사 전용, optimizer0/Q·V pixels0/수신자0/DP0/expert·reserved0이다. 결과와 계획을 기록하고3단계에서 멈췄다. 전체128장 profile·본실험 계수/예산·full runtime·환자 효용은 아직이다. 아래 각 기록은 해당 시점의 이력이다.

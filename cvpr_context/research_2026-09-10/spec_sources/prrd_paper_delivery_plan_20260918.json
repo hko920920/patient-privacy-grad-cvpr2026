@@ -1,6 +1,6 @@
 {
   "schema": "prrd.paper-delivery-plan/20260918",
-  "status": "PUBLIC_C128_COST_MEASURED_MAIN_SETTINGS_AND_SCOPE_PENDING",
+  "status": "FIRST_NONDP_RECIPE_FIXED_EXECUTION_NOT_AUTHORIZED",
   "report": "PRRD_PAPER_DELIVERY_PLAN_20260918.md",
   "basis": "Consolidated sections19-20; user requests stepwise implementation through manuscript and reproducibility completion",
   "method": "PRRD",
@@ -57,7 +57,7 @@
     }
   ],
   "learning_policy": {
-    "status": "PROPOSED_NOT_MAIN_FROZEN_USED_ONLY_FOR_NUMERICAL_CHECKS_AND_C128_PROFILE",
+    "status": "FIRST_NONDP_START_VALUES_FIXED_NOT_EFFICACY_VALIDATED",
     "beta": 1,
     "ridge": 0.1,
     "point_beta": 0,
@@ -73,7 +73,8 @@
     "target_synthetic_recipient_rule": "Same learning policy, each using its own moments",
     "chosen_from_patient_performance": false,
     "DP_radius_input": "Already protected summary only",
-    "performance_driven_silent_changes_allowed": false
+    "performance_driven_silent_changes_allowed": false,
+    "decision_source": "User 2026-09-18 first nonDP contract-only instruction; previous numerical checks not retroactively optimal"
   },
   "data_roles": {
     "P": {
@@ -124,7 +125,7 @@
       0.9,
       0.999
     ],
-    "precision": "FP32 images; declared small-system precision to bind in S2",
+    "precision": "FP32 encoder/images; FP64 moments and readout; no AMP",
     "point_matching": 0.25,
     "relation_matching": 0.5,
     "anchor": 0.01,
@@ -133,7 +134,8 @@
     "final_step_only": true,
     "export": "8-bit grayscale224PNG",
     "prior": "Public templates only",
-    "template_and_permutation_hashes": "Pending S2 bind; existing public template choices reused when compatible"
+    "template_and_permutation_hashes": "Bound in PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md; existing P template/permutation files preserved",
+    "microbatch": 4
   },
   "run_matrix": "spec_sources/prrd_non_dp_guarded_functional_runs_20260918.json",
   "counts": {
@@ -227,7 +229,13 @@
       "backward_calls": 960,
       "backward_images": 3840
     },
-    "C128_profile_optimizer_updates": 15
+    "C128_profile_optimizer_updates": 15,
+    "starting_recipe_frozen": true,
+    "authorized_run_ids": [],
+    "additional_profile_required_by_this_contract": false,
+    "main_runner_ready": false,
+    "current_contract_new_gpu_runs": 0,
+    "current_contract_new_patient_pixel_access": 0
   },
   "paper": {
     "manuscript": "paper_prrd/manuscript.md",
@@ -235,7 +243,7 @@
     "complete": false,
     "results_pending": true
   },
-  "next_unit": "User review of measured C128 cost, then main coefficients/scope/budget decision; no further execution scheduled",
+  "next_unit": "Contract recorded; no execution scheduled. Main runner/resume/PNG wiring, allowed bank IDs/numeric time cap and authorized Q feature/target bindings remain before first applicable bank.",
   "run_matrix_sha256": "44bb94d64516f821cf3379595e6cc93336f88163045df4804eacdec02ac6bdd4",
   "implementation_evidence": {
     "verification": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_guarded_core_20260918\\verification_v1.json",
@@ -296,10 +304,11 @@
     "previous_receipt_is_current_runtime_verification": false
   },
   "document_sha256": {
-    "PRRD_PAPER_DELIVERY_PLAN_20260918.md": "1348e22e230bfe639cfde5e35dbf82443086d90fc757d8a280c2e85b6800910c",
+    "PRRD_PAPER_DELIVERY_PLAN_20260918.md": "c8e4b90f299f9218ecbdc6d07cfcfbefb950f3ea6b30256420feaa6492c4ee01",
     "PRRD_CONSOLIDATED_DESIGN_20260918.md": "afd00131e41593a45a29b69c43d67322f431b739309f3a7eb41c8921222139c9",
     "paper_prrd/manuscript.md": "b282921fb3a36f72d60d7cc24617bb68616c47e105b4392fa50799144d7deec3",
-    "paper_prrd/claims_evidence.md": "1e0eb1467134888d260fc91778fafa4c4940c21a992d65bc4389541aef51652d"
+    "paper_prrd/claims_evidence.md": "1e0eb1467134888d260fc91778fafa4c4940c21a992d65bc4389541aef51652d",
+    "PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md": "63b4c6ca0f8a76490202797dfd0dcee1c8aa8e82f028ad0b7763c29459fe5590"
   },
   "existing_W1_repair_evidence": {
     "schema": "prrd.w1-existing-objective-repair/20260918",
@@ -394,6 +403,15 @@
       "date": "2026-09-18T13:32:25.731510+00:00",
       "prior_plan_sha256": "b34ca545c1d43364e17653f6024123c005868e64f50b51345a84cba792f2d3b8",
       "reason": "User requested only C128 public cost measurement; predeclared microbatch4 and5+10 updates. No main coefficient/scope/budget selection."
+    },
+    {
+      "date": "2026-09-18",
+      "unit": "first_nonDP_contract_only",
+      "previous_status": "PUBLIC_C128_COST_MEASURED_MAIN_SETTINGS_AND_SCOPE_PENDING",
+      "contract": "PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md",
+      "new_model_runs": 0,
+      "new_pixel_access": 0,
+      "scope": "Prospective settings,30bank list,hash binding,cost proxy,resume rules; no execution"
     }
   ],
   "feature_paths_evidence": {
@@ -665,5 +683,13 @@
     "remote_upload": false,
     "full_W1_passed": false,
     "next_task": "User review of measured C128 cost, then main coefficients/scope/budget decision; no further execution scheduled"
+  },
+  "first_non_dp_execution_contract": {
+    "path": "PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md",
+    "sha256": "63b4c6ca0f8a76490202797dfd0dcee1c8aa8e82f028ad0b7763c29459fe5590",
+    "recipe_fixed": true,
+    "execution_authorized": false,
+    "authorized_run_ids": [],
+    "runtime_cap_seconds": null
   }
 }

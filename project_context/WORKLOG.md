@@ -1,5 +1,15 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 166-PRRD-FIRST-NONDP-EXECUTION-CONTRACT (2026-09-18 KST)
+
+- 사용자는 809ff05 비용 보고 검토 이후 첫 비DP 실행 계약만 작성하도록 요청했다. 원격 commit은 사용자 제공 출처이며 이번에 조회하지 않았다. 로컬 코드·저장 metadata와 공개 feature/model 파일 bytes를 읽었고 새 픽셀은 읽지 않았다.
+- [단일 실행 계약](CVPR%20주제%20탐색/research_2026-09-10/PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md)에 첫 시작값 beta1(A/B0), ridge0.1, 상대 rho²=0.1·w0ᵀMw0, eta1을 고정했다. 과거 검사/profile 당시의 검사용 설정을 성능 검증값으로 바꾸지 않았다.
+- 기존 7arm×3seed=21bank와 C의 no_guard/no_func/neither 각3개를 합친30개 ID,128장/500회,101/202/303을 유지했다. 코드25개·기존 dependency15개, 공개 특징·명부·template/permutation·목표 생성 규칙을 hash 결속했다. 실행 코드 파일은 수정하지 않았다.
+- C128 mean7.83636381초로 단순 계산한 C500=65.303분,30bank=32.6515시간이다. 다른arm/초기 준비/PNG·IO/평가가 포함된 총시간·상한·승인시간이 아니다. 새 profile0.
+- 실제 run.py/fit_banks.py·main resume/export 연결이 아직 없음을 명시했다. 계약에 bank별 25-update checkpoint 및 정상 중단/동일 상태 재개 규칙을 적었으나 구현/통과로 표시하지 않았다. 미생성 Q feature/target SHA는 null이며 target 생성 규칙 SHA와 구분했다.
+- 전체30bank 미승인,authorized IDs=[],시간 상한null,새 학습·Q/V 픽셀·수신자·DP·Expert/Reserved·업로드0. 모든 bank 봉인 전 효용 미열람,중간 계수/arm/checkpoint 변경 금지,profile 산출물 본학습 재사용 금지를 유지했다.
+- 기존 보고서·소스·30run 제안 파일·실측 기록은 보존했다. 기록 전 backup과 metadata 검산은 code_working/_reports/prrd_non_dp_contract_20260918_v1에 저장했다. 실행은 예약하지 않고 여기서 멈춘다.
+
 ## 165-PRRD-PUBLIC-C128-COST-PROFILE (2026-09-18 KST)
 
 - 사용자는4단계 전체가 아닌 공개 C128 비용 측정 하나만 요청했다. Microbatch4, warm-up5/측정10, seed101과 계수를 GPU 실행 전에 별도 계약에 기록했다. 이전20/30회는 과거 제안으로 보존했다.

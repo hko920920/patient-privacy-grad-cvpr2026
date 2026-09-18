@@ -24,7 +24,7 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "User review of measured C128 cost, then main coefficients/scope/budget decision; no further execution scheduled",
+  "next_task": "Contract recorded; no execution scheduled. Main runner/resume/PNG wiring, allowed bank IDs/numeric time cap and authorized Q feature/target bindings remain before first applicable bank.",
   "next_task_output": "C128 cost report complete; stopped before main coefficient/scope/budget decisions or further execution.",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
@@ -199,7 +199,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "Source feature paths verified; full W1 and fixed method comparison remain pending",
+    "latest_planning_status": "First nonDP recipe and30bank scope recorded; launch not authorized, production orchestration still pending",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -2496,6 +2496,28 @@
       "remote_upload": false,
       "full_W1_passed": false,
       "next_task": "User review of measured C128 cost, then main coefficients/scope/budget decision; no further execution scheduled"
+    },
+    "completed_prrd_first_non_dp_contract": {
+      "report": "PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md",
+      "sha256": "63b4c6ca0f8a76490202797dfd0dcee1c8aa8e82f028ad0b7763c29459fe5590",
+      "status": "RECIPE_FIXED_EXECUTION_NOT_AUTHORIZED",
+      "target_rule_sha256": "6713ab1811be9d6dece26caf33d2a9ca17e84fc1177cb964723ca8b987bcdb31",
+      "planned_banks": 30,
+      "planned_images": 3840,
+      "planned_updates": 15000,
+      "execution_authorized": false,
+      "allowed_run_ids": [],
+      "time_cap_seconds": null,
+      "Q_targets_bound": false,
+      "main_runner_ready": false,
+      "new_gpu_runs": 0,
+      "new_pixel_access": 0,
+      "new_optimizer_updates": 0,
+      "new_recipient_runs": 0,
+      "new_DP_releases": 0,
+      "expert_reserved_access": false,
+      "remote_upload": false,
+      "next_task": "Contract recorded; no execution scheduled. Main runner/resume/PNG wiring, allowed bank IDs/numeric time cap and authorized Q feature/target bindings remain before first applicable bank."
     }
   },
   "updated_utc": "2026-09-18T13:32:25.750367+00:00",
@@ -6476,7 +6498,7 @@
     }
   },
   "latest_prrd_w1_repair_report": "PRRD_W1_GRADIENT_REPAIR_RESULTS_20260918.md",
-  "current_prrd_delivery_plan_sha256": "e65b680dd08b751221c621da4f6e289f3fc42a23256cca6e1c4b44fff6828cb7",
+  "current_prrd_delivery_plan_sha256": "05d1f48d41eb001e835edaba19c4a4e937ab82da44cb702ded0b4835aa2df045",
   "completed_prrd_step2_feature_paths_20260918": {
     "schema": "prrd.step2.feature-paths/20260918",
     "status": "PASS_PUBLIC_RAW_POINT_PATHS_AND_PATIENT_STATISTICS_ONLY",
@@ -6749,5 +6771,7 @@
     "full_W1_passed": false,
     "next_task": "User review of measured C128 cost, then main coefficients/scope/budget decision; no further execution scheduled"
   },
-  "latest_prrd_C128_cost_report": "PRRD_C128_PUBLIC_PROFILE_RESULTS_20260918.md"
+  "latest_prrd_C128_cost_report": "PRRD_C128_PUBLIC_PROFILE_RESULTS_20260918.md",
+  "latest_prrd_execution_contract": "PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md",
+  "latest_prrd_execution_contract_sha256": "63b4c6ca0f8a76490202797dfd0dcee1c8aa8e82f028ad0b7763c29459fe5590"
 }
