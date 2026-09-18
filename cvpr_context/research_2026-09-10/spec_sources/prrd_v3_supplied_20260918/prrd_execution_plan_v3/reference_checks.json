@@ -1,0 +1,84 @@
+{
+  "status": "PASS_TOY_ALGEBRA_ONLY",
+  "scope": "Constructed arrays only. No patient data, encoder weights, medical utility, or production privacy certification.",
+  "patient_count_in_toy": 35,
+  "risk_expansion_max_abs_error": 8.881784197001252e-16,
+  "norm_and_dimension_checks": {
+    "point": {
+      "dimension": 306,
+      "observed_max": 2.449489742783178,
+      "analytic_add_remove_bound": 2.449489742783178
+    },
+    "relation": {
+      "dimension": 459,
+      "observed_max": 2.8354280524151028,
+      "analytic_add_remove_bound": 3.0
+    },
+    "joint_pair": {
+      "dimension": 867,
+      "observed_max": 3.0,
+      "analytic_add_remove_bound": 3.0
+    }
+  },
+  "shuffle_delta_max_abs_error": 1.0408340855860843e-17,
+  "shuffle_relation_frobenius_difference": 0.06166891586299142,
+  "solution_difference_identity_max_abs_error": 1.0061396160665481e-16,
+  "joint_pair_to_difference_moments": "EXACT_TO_NUMERICAL_TOLERANCE; not a distinct invention",
+  "two_pass_gradient": {
+    "max_abs_error": 0.0,
+    "scope": "toy differentiable features; no image model"
+  },
+  "noise_calibration": {
+    "point": {
+      "4": {
+        "sigma_abs": 2.648294860688312,
+        "sensitivity": 2.449489742783178,
+        "delta": 1e-05,
+        "calibration_delta": 1.0000000000000434e-05
+      },
+      "8": {
+        "sigma_abs": 1.470254955671596,
+        "sensitivity": 2.449489742783178,
+        "delta": 1e-05,
+        "calibration_delta": 9.9999999999998e-06
+      }
+    },
+    "relation": {
+      "4": {
+        "sigma_abs": 3.2434855485607135,
+        "sensitivity": 3.0,
+        "delta": 1e-05,
+        "calibration_delta": 1.0000000000000434e-05
+      },
+      "8": {
+        "sigma_abs": 1.8006872165968555,
+        "sensitivity": 3.0,
+        "delta": 1e-05,
+        "calibration_delta": 9.9999999999998e-06
+      }
+    },
+    "joint_pair": {
+      "4": {
+        "sigma_abs": 3.2434855485607135,
+        "sensitivity": 3.0,
+        "delta": 1e-05,
+        "calibration_delta": 1.0000000000000434e-05
+      },
+      "8": {
+        "sigma_abs": 1.8006872165968555,
+        "sensitivity": 3.0,
+        "delta": 1e-05,
+        "calibration_delta": 9.9999999999998e-06
+      }
+    }
+  },
+  "production_noise_sampled": false,
+  "new_patient_training": 0,
+  "expert_or_reserved_access": 0,
+  "warnings": [
+    "Source-encoder moment preservation does not guarantee cross-encoder transfer.",
+    "Patient bootstrap does not account automatically for optimization/DP noise variation.",
+    "Publishing several DP releases requires joint composition; public reproducible DP noise is prohibited.",
+    "This code is a mathematical reference, not a secure implementation of a Gaussian sampler."
+  ]
+}

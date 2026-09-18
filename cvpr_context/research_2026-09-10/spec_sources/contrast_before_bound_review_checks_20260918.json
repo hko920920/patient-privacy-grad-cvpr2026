@@ -1,0 +1,105 @@
+{
+  "status": "PASS_CONSTRUCTED_ARRAY_LOGIC_ONLY",
+  "scope": "No patient/model utility evidence",
+  "symmetric_example_recalibration": [
+    {
+      "M": 1,
+      "endpoint_first_norm": 0.7071067811865475,
+      "after_unit_recalibration": [
+        0.0,
+        1.0
+      ],
+      "contrast_first": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "M": 10,
+      "endpoint_first_norm": 0.09950371902099892,
+      "after_unit_recalibration": [
+        0.0,
+        1.0
+      ],
+      "contrast_first": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "M": 100,
+      "endpoint_first_norm": 0.009999500037496875,
+      "after_unit_recalibration": [
+        0.0,
+        1.0
+      ],
+      "contrast_first": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "M": 1000,
+      "endpoint_first_norm": 0.000999999500000375,
+      "after_unit_recalibration": [
+        0.0,
+        1.0
+      ],
+      "contrast_first": [
+        0.0,
+        1.0
+      ]
+    }
+  ],
+  "irreversible_radial_collision": {
+    "positive": [
+      11.0,
+      0.0
+    ],
+    "negative": [
+      9.0,
+      0.0
+    ],
+    "normalized_delta": [
+      0.0,
+      0.0
+    ],
+    "raw_delta": [
+      1.0,
+      0.0
+    ],
+    "flipped_label_raw_delta": [
+      -1.0,
+      0.0
+    ],
+    "normalized_release_distributions": "identical under either label-direction world",
+    "restriction": "not all feature maps, clipping thresholds, or patient-level methods"
+  },
+  "direction_error_after_recalibration_degrees": 44.99427042212526,
+  "below_endpoint_cap_difference_is_linear": true,
+  "fixed_public_transform_shift_invariance_max_abs_error": 2.6367796834847468e-15,
+  "relation_only_query_dimension_d16": 153,
+  "relation_only_sensitivity_bound": 1.7320508075688772,
+  "observed_max_query_norm": 1.7320508075688776,
+  "patient_balanced_squared_gradient_at_zero_equals_minus_delta_max_error": 0.0,
+  "perfect_relation_summary_not_high_single_image_AUC": [
+    {
+      "background_range": 10.0,
+      "exact_delta": 1.0,
+      "single_image_AUC": 0.6799999999999999
+    },
+    {
+      "background_range": 100.0,
+      "exact_delta": 1.0,
+      "single_image_AUC": 0.5198
+    },
+    {
+      "background_range": 1000.0,
+      "exact_delta": 1.0,
+      "single_image_AUC": 0.501998
+    }
+  ],
+  "new_patient_pixels": 0,
+  "model_forward": 0,
+  "DP_noise_releases": 0
+}

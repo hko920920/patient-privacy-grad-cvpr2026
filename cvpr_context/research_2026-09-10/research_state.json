@@ -24,8 +24,8 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "Implement the fixed A/B/C/D runtime, pass public-only image/encoder/global-gradient wiring and measure total cost before the planned nonDP package; no cached-diffusion parallel run or automatic DP/final access.",
-  "next_task_output": "Bound runtime with measured public-only profile; preserve the prospective settings and all old actual outcomes.",
+  "next_task": "Next implementation scope, not executed by this record: bind permitted-data rho/eta rules and the guarded learner plus fixed-target functional loss; verify actual public gradient parity and measure full-bank cost before any expanded W2.",
+  "next_task_output": "A versioned runtime contract matching section19 with exact ablation units and measured cost; preserve receiver independence, prior results and DP/expert/reserved boundaries.",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
     "Support, repetition, cohort composition and weak labels are not causally separated",
@@ -62,7 +62,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Relation distillation settings, metadata bindings and feature core prepared; runtime/public-only profile pending",
+  "step2_active_task": "Latest design recorded: bounded relational intervention plus statistical/functional synthesis matching. Implementation unchanged; rho/eta and run amendments unbound; actual public W1 parity unresolved.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -81,7 +81,7 @@
     "last_completed_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
     "additional_execution_contract_fixed": true,
     "stage2_completion_claim": false,
-    "latest_design_review": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_PLAN_REVIEW_20260917.md",
+    "latest_design_review": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
     "new_two_track_experiment_started": true,
     "new_two_track_experiment_status": "fixed_classifier_diagnostic_complete_generalization_gap_observed",
     "latest_cpu_outputs": [
@@ -2128,9 +2128,28 @@
       "result_sha256": "5cdeac09d236a23fe5b2142e4dfa6de1a3c1e756802d3b38d848549fa44017ee",
       "verification_sha256": "5d6c73dd6e01d8034a82d975e4a53507366365fc8c27e5a90969173054e2352f",
       "public_record": "spec_sources/real_support_diagnostic_record_20260917.json"
-    }
+    },
+    "prrd_v3_runtime_record": "spec_sources/prrd_v3_public_runtime_partial_record_20260918.json",
+    "prrd_consolidation": {
+      "status": "DESIGN_CONSOLIDATED_NOT_RUNTIME_FROZEN",
+      "report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
+      "plan": "spec_sources/prrd_consolidated_plan_20260918.json",
+      "report_sha256": "0cb072aab2406a144cef5d52735a0199ad2c34e9c59f266be2d4c2e18890f2cd",
+      "plan_sha256": "3d67028337c03d57546414b97c966fb63b4647d3b34087ea6d3cbfb65fcbc2de",
+      "new_gpu_executions": 0,
+      "expanded_W2_authorized": false,
+      "W1_passed": false,
+      "prior_document_hashes": [
+        {
+          "report_sha256": "6596867e8f4e0178562596e8648fbf01b924af20a95aeb1a6728a8a13ad13ff1",
+          "plan_sha256": "118feacdd85d02a26389bdcc665c0f93e0e4d54b76d10c4d12e2491fdef41b9c",
+          "revision_reason": "Record accepted review clarifications only"
+        }
+      ]
+    },
+    "latest_record_only_update": "spec_sources/prrd_review_record_only_20260918.json"
   },
-  "updated_utc": "2026-09-18T06:02:44.600950+00:00",
+  "updated_utc": "2026-09-18T08:26:47.385003+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -3583,7 +3602,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "TRACK1_PATIENT_RELATION_DISTILLATION_PROTOCOL_20260918.md",
+  "next_task_plan_report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -4057,7 +4076,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "TRACK1_PATIENT_RELATION_DISTILLATION_PROTOCOL_20260918.md",
+  "current_planning_report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -5068,7 +5087,7 @@
       0.4166666666666667
     ]
   },
-  "current_decision_report": "TRACK1_PATIENT_RELATION_DISTILLATION_COMPARISON_20260918.md",
+  "current_decision_report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
   "current_head_branch_closure_20260917": {
     "report": "TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md",
     "record": "spec_sources\\current_head_branch_closure_20260917.json",
@@ -5888,5 +5907,88 @@
     "final_ready": false,
     "expert_opened": false,
     "reserved_opened": false
+  },
+  "pre_prrd_v3_runtime_20260918": {
+    "next_task": "Implement the fixed A/B/C/D runtime, pass public-only image/encoder/global-gradient wiring and measure total cost before the planned nonDP package; no cached-diffusion parallel run or automatic DP/final access.",
+    "next_task_output": "Bound runtime with measured public-only profile; preserve the prospective settings and all old actual outcomes.",
+    "step2_active_task": "Relation distillation settings, metadata bindings and feature core prepared; runtime/public-only profile pending",
+    "current_decision_report": "TRACK1_PATIENT_RELATION_DISTILLATION_COMPARISON_20260918.md",
+    "next_task_plan_report": "TRACK1_PATIENT_RELATION_DISTILLATION_PROTOCOL_20260918.md"
+  },
+  "latest_prrd_v3_public_runtime": "spec_sources/prrd_v3_public_runtime_partial_record_20260918.json",
+  "latest_contrast_order_review": {
+    "report": "PRRD_CONTRAST_BEFORE_BOUND_REVIEW_20260918.md",
+    "checks": "spec_sources/contrast_before_bound_review_checks_20260918.json",
+    "status": "REVIEW_COMPLETE_NOT_ADOPTED",
+    "new_patient_experiments_for_review": 0
+  },
+  "completed_prrd_design_consolidation_20260918": {
+    "status": "DESIGN_CONSOLIDATED_NOT_RUNTIME_FROZEN",
+    "report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
+    "plan": "spec_sources/prrd_consolidated_plan_20260918.json",
+    "report_sha256": "a7bdc647aa70dad89357b534883d37f850e740a7fdcf9a20d10bfc24061cd20a",
+    "plan_sha256": "ce92ea3b9251f1d8a372f325ffee9ea950713a70312d5b2eb13a07dfaffe9cff",
+    "new_gpu_executions": 0,
+    "expanded_W2_authorized": false,
+    "W1_passed": false,
+    "prior_document_hashes": [
+      {
+        "report_sha256": "6596867e8f4e0178562596e8648fbf01b924af20a95aeb1a6728a8a13ad13ff1",
+        "plan_sha256": "118feacdd85d02a26389bdcc665c0f93e0e4d54b76d10c4d12e2491fdef41b9c",
+        "revision_reason": "Record accepted review clarifications only"
+      },
+      {
+        "report_sha256": "0cb072aab2406a144cef5d52735a0199ad2c34e9c59f266be2d4c2e18890f2cd",
+        "plan_sha256": "3d67028337c03d57546414b97c966fb63b4647d3b34087ea6d3cbfb65fcbc2de",
+        "revision_reason": "Record adoption of bounded relational intervention and joint statistical/functional synthesis; supersede metric-only decision"
+      }
+    ]
+  },
+  "completed_prrd_review_record_only_20260918": {
+    "record": "spec_sources/prrd_review_record_only_20260918.json",
+    "status": "DOCUMENTATION_ONLY_VERIFIED",
+    "scope": {
+      "status": "DOCUMENTATION_ONLY_RECORDED",
+      "source": "User requested incorporation and records only",
+      "report_section": 18,
+      "accepted_clarifications": [
+        "Identical point features cannot be separated by changing w using a raw relation auxiliary",
+        "Recipients recompute relations in their own public feature transforms; no source16-vector transfer",
+        "E_R proposed q95 is based on the three public mixed patients; runtime values and hashes remain unbound",
+        "R_joint linearly maps already-bounded joint u; nonlinear bounding is not commuted with L",
+        "Smaller query dimension alone does not establish smaller projected relation noise"
+      ],
+      "analysis_metrics_only": [
+        "Closed-form w_beta minus w_0",
+        "Score and rank changes",
+        "Functional discrepancy with a declared valid evaluation matrix"
+      ],
+      "not_adopted": [
+        "Additional J_func synthesis loss",
+        "Raw single-image scoring replacement",
+        "Point-block clipping and weighted-mass replacement",
+        "Source-only automatic stop gate",
+        "Additional arms, encoders or success conditions"
+      ],
+      "existing_executable_plan_changed": false,
+      "implementation_changed": false,
+      "new_model_or_GPU_execution": 0,
+      "new_private_pixel_access": 0,
+      "new_DP_releases": 0,
+      "remote_upload": false
+    }
+  },
+  "completed_prrd_guarded_functional_design_record_20260918": {
+    "record": "spec_sources/prrd_guarded_functional_design_record_20260918.json",
+    "status": "DESIGN_ADOPTION_RECORDED_ONLY",
+    "report_section": 19,
+    "design_revision_field": "adopted_guarded_functional_design_20260918",
+    "rho": null,
+    "eta": null,
+    "implementation_changed": false,
+    "runtime_frozen": false,
+    "W1_passed": false,
+    "new_model_runs": 0,
+    "new_DP_releases": 0
   }
 }

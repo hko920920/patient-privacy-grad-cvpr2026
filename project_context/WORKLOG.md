@@ -1,5 +1,39 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 160-PRRD-GUARDED-FUNCTIONAL-DESIGN-RECORD (2026-09-18 KST)
+
+- 사용자의 ‘그럼 다시 기록’ 요청으로 최신 채택 결정을 종합 설계 §19와 계획 JSON·현재 상태·인수인계에 반영했다. §18/entry159의 J_func 지표 전용 권고는 당시 이력으로 보존하고 이번 수정이 우선함을 명시했다.
+- 다음 버전은 기존 PRRD + 관계 개입 제한 + 통계·기능 공동 정합이다. target/합성/수신자에 같은 제한 학습 규칙을 적용하고, 기능 loss의 M_T는 고정 target SPD 행렬로 사용한다. 반영량 rho와 전달 오차 e_dist의 결합 상한은 source 점별 이차 목적에 한정한다.
+- B에도 기능 정합을, 관계 비교군에도 같은 제한을 적용한다. 기존 통계 정합·point 특징/환자 가중치/query는 유지한다. raw 점수 전환·관계-only·source-only 자동 중단은 채택하지 않았다.
+- rho/eta·허용 정보 기반 선택 규칙·최소 제거 비교의 정확한 run/비용은 아직 동결하지 않았다. 기존21bank 제안을 자동 확대하거나 이번 보강까지 구현된 계약으로 표시하지 않는다.
+- 문서 기록만 수행했다. 실행 코드/원본 runtime 계약/기존 run 목록과 실제 Rwide/LoRA 결과는 보존했고, 새 수학 검산·모델/환자영상/GPU/합성/DP 실행·원격 업로드0이다. 공개 W1 실제 gradient parity 미통과, Expert/Reserved 닫힘 상태는 변하지 않는다.
+
+## 159-PRRD-REVIEW-RECORD-ONLY (2026-09-18 KST)
+
+- 사용자의 ‘반영하고 기록만’ 요청에 따라 종합 설계서 §18과 계획 JSON·현재 상태·인수인계 기록을 갱신했다.
+- 점별 특징이 같으면 raw 관계 보조항만으로 그 영상쌍을 판별할 수 없다는 한계를 명시했다. 수신자는 자신의 raw/point 특징·P-only PCA128·scale을 사용한다. E_R는 공개 mixed3 norm의 q95 제안이고, R_joint의 L 변환은 제한 후 u에 적용된다는 범위를 기록했다.
+- 이전 보완안의 Delta-w와 기능 차이는 분석 지표 참고로만 남겼다. J_func loss, raw point score 전환, point-block clipping 재가중, source-only 자동 중단, 추가 arm/gate는 넣지 않았다.
+- 코드와 실행 계획의 기존 arm/seed/loss/update/gate 필드가 변하지 않았는지 해시·JSON 대조로 확인했다. 새 수학/모델/환자영상/GPU/DP 실험이나 원격 업로드는 하지 않았다.
+- W1 actual-model parity 미통과, 수치·해시 runtime 미동결, W2/DP/final 미실행 상태와 Rwide/LoRA 실제 효용 포인터는 그대로 유지한다.
+
+## 158-PRRD-CONSOLIDATED-DESIGN (2026-09-18 KST)
+
+- 사용자의 ‘다시 종합 정리’ 요청에 맞춰 PRRD_CONSOLIDATED_DESIGN_20260918.md와 spec_sources/prrd_consolidated_plan_20260918.json을 작성했다. 원격 main은0243f8b223d5df8f97f0ab62a2937304fd6b1d8a로 재확인했다.
+- 주력과 P/Q/V 역할을 유지하고, 사적 point 정보를 버리지 않는다. 원래 endpoint 순서 E, 공개 재보정 E_R, raw contrast-first C와 shuffle D를 구분했다. Source raw feature는 기존 wrapper F.normalize 이전으로 정의하고, point 경로/공개 PCA축은 유지한다.
+- 관계 항을 실제 정규화 영상 score 차이라고 부르지 않는 명시적 보조 위험으로 정의했다. Clipping 후 shuffle에서는 mean과 second가 모두 바뀜을 반영했다. Raw joint-bound R 비교, P-only 관계 scale 규칙은 이번 구체화 제안이지 기존 실행 사실이 아니다.
+- 비교 전체는7조건×3=21bank/2,688 PNG/10,500updates, synthetic solves72/real references18/RN18 63run으로 계산했다. 조건부 DP는B/E_R/C/R×3noise×3init=36bank,12release다. 기존15/27bank 계약은 보존했고 확장 실행을 승인된 것으로 처리하지 않았다.
+- 선행 LGM/CovMatch/analytic Gaussian 원문과 실제 공개 runtime 기록을 대조했다. 새 환자/model/GPU/합성/DP 실행과 코드 변경은0. 실제W1 parity 미통과, 전체bank 시간 미측정, W2 숫자 예산 미정, expert/reserved 닫힘. 실제 Rwide/LoRA 결과 변경 없음.
+
+## 157-PRRD-V3-PUBLIC-RUNTIME-AND-CONTRAST-ORDER-REVIEW (2026-09-18 KST)
+
+- 사용자 제공 v3 ZIP의 SHA256을 검증하고 원본을 research/spec_sources에 보존했다. 원격 main 관측값은 0243f8b223d5df8f97f0ab62a2937304fd6b1d8a이며 로컬 작업 폴더는 Git checkout이 아니다. 기존 v1/성과 파일을 변경하지 않고 code_working/prrd_v3 패키지를 추가했다.
+- 기존 역할/명부·모델·공개 template를 결속하고, 제공 대수 코드와 새 CPU 검사 6개를 통과했다. 공개 P 813장의 BioViL-T와 DenseNet121 특징 및 별도 PCA16/PCA128을 생성했다. Q/V 픽셀 추출은 하지 않았다.
+- 실제 source input gradient는 존재하지만 one-pass/two-pass 대응이 설정 tolerance를 넘었다. 동일 microbatch 비교의 최대 gradient 오차 5.1300536e-5, peak 0.04923643. 원인은 아직 분리하지 않았으며 기준을 낮춰 통과 처리하지 않았다. full128 profile·PNG witness·RN18 runtime replay 전에 종료됐고 본 synthetic optimizer update는 0이다.
+- 사용자의 새 ‘환자 대조 후 크기 제한’ 제안에 대해 원문·코드와 구성 배열을 검토했다. 대조 불변성/감도 sqrt(3)는 조건부로 맞다. 대표 대칭 예는 DP 전 재정규화로 복구되지만, (11,0)/(9,0)의 정규화 충돌은 복구 불가능한 제한 정보 손실이다. 반면 완벽한 대조에도 다른 환자의 단일 영상 AUROC가 .5198인 구성이 있어 요약 불변성을 판별력 보장으로 확대하지 않았다.
+- 환자별 제곱손실의 w=0 gradient가 -delta임을 확인했고, 환자 집계 후 clipping 선행과 동일 연산 가능성을 기록했다. Private 점별 통계를 버리는 변경은 별도이며 새 방법으로 자동 채택하지 않았다.
+- 새 검토는 PRRD_CONTRAST_BEFORE_BOUND_REVIEW_20260918.md, 구성 배열 결과는 spec_sources/contrast_before_bound_review_checks_20260918.json. 이번 검토 자체의 새 환자/모델 실행은 0이고, 그 전 공개 W1 실행과 구분한다.
+- 현재 실행 중 없음. W1 미완료·W2 시간 상한 미정·15bank/45run 미실행. DP/expert/reserved 비허용 유지. 원격 push/commit 없음; Rwide/LoRA 실제 효용 결과 변경 없음.
+
 ## 156-RELATION-DISTILLATION-EXECUTION-PREPARATION (2026-09-18 KST)
 
 - 주력 관계 증류와 캐시안 비병행이라는 최신 검토를 실제 실행 명세로 구체화했다. A/B/C/D3bank, public-only PCA16 DINOv2, 별도 ImageNet ResNet18 관계 활용, direct readout, secondary BCE36run을 설정JSON에 기록했다.

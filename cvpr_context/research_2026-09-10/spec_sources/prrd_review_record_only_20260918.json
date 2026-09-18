@@ -1,0 +1,56 @@
+{
+  "schema": "prrd.review-record-only.v1",
+  "recorded_utc": "2026-09-18T08:26:47.385003+00:00",
+  "status": "DOCUMENTATION_ONLY_VERIFIED",
+  "report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
+  "plan": "spec_sources/prrd_consolidated_plan_20260918.json",
+  "before": {
+    "report_sha256": "6596867e8f4e0178562596e8648fbf01b924af20a95aeb1a6728a8a13ad13ff1",
+    "plan_sha256": "118feacdd85d02a26389bdcc665c0f93e0e4d54b76d10c4d12e2491fdef41b9c",
+    "implementation_digest": "9a70eaa1f9653269adaf577f90a9f16d58acdcdb0885cec072e19cac6f949f8b",
+    "executable_plan_digest": "27ce28e2bee3e074276cb91f3b7cb4872e192d89a067dd8f15913ed37db84f06"
+  },
+  "after": {
+    "report_sha256": "0cb072aab2406a144cef5d52735a0199ad2c34e9c59f266be2d4c2e18890f2cd",
+    "plan_sha256": "3d67028337c03d57546414b97c966fb63b4647d3b34087ea6d3cbfb65fcbc2de",
+    "implementation_digest": "9a70eaa1f9653269adaf577f90a9f16d58acdcdb0885cec072e19cac6f949f8b",
+    "executable_plan_digest": "27ce28e2bee3e074276cb91f3b7cb4872e192d89a067dd8f15913ed37db84f06"
+  },
+  "unchanged": {
+    "implementation": true,
+    "executable_plan_fields": true,
+    "efficacy_results": true,
+    "W1_passed": false,
+    "DP_expert_reserved_authorization": false
+  },
+  "scope": {
+    "status": "DOCUMENTATION_ONLY_RECORDED",
+    "source": "User requested incorporation and records only",
+    "report_section": 18,
+    "accepted_clarifications": [
+      "Identical point features cannot be separated by changing w using a raw relation auxiliary",
+      "Recipients recompute relations in their own public feature transforms; no source16-vector transfer",
+      "E_R proposed q95 is based on the three public mixed patients; runtime values and hashes remain unbound",
+      "R_joint linearly maps already-bounded joint u; nonlinear bounding is not commuted with L",
+      "Smaller query dimension alone does not establish smaller projected relation noise"
+    ],
+    "analysis_metrics_only": [
+      "Closed-form w_beta minus w_0",
+      "Score and rank changes",
+      "Functional discrepancy with a declared valid evaluation matrix"
+    ],
+    "not_adopted": [
+      "Additional J_func synthesis loss",
+      "Raw single-image scoring replacement",
+      "Point-block clipping and weighted-mass replacement",
+      "Source-only automatic stop gate",
+      "Additional arms, encoders or success conditions"
+    ],
+    "existing_executable_plan_changed": false,
+    "implementation_changed": false,
+    "new_model_or_GPU_execution": 0,
+    "new_private_pixel_access": 0,
+    "new_DP_releases": 0,
+    "remote_upload": false
+  }
+}

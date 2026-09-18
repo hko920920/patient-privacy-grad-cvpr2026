@@ -1,5 +1,13 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-18 후속 설계 결정 기록 — §19 우선:** [관계 개입 제한과 통계·기능 공동 정합](PRRD_CONSOLIDATED_DESIGN_20260918.md#19-관계-개입-제한과-통계기능-공동-정합-채택--2026-09-18-후속-기록)을 채택한다. 관계 수정량을 점별 목적의 거리에서 제한하고, 기존 모멘트 정합에 고정 target 행렬의 기능 정합을 더한다. 이전 지표 전용 권고는 이력으로 보존한다. 동일 learner 규칙·강한 비교군의 동일 보강·source 상한의 범위를 기록했으며, 계수와 runtime은 미동결이다. 이번은 기록만, 코드/환자/GPU/DP 실행0; 큰 단계2와 실제 효용 포인터·final 경계 유지.
+
+**2026-09-18 의견 반영 기록:** [종합 설계 §18](PRRD_CONSOLIDATED_DESIGN_20260918.md#18-추가-의견의-반영-범위--기록만-2026-09-18). 사용자 요청대로 문서·상태에만 반영했다. 점별 표현의 동일 입력은 관계 보조항만으로 구분할 수 없으며, 수신자는 자신의 공개 변환으로 관계를 재계산한다. E_R와 R_joint의 명세 범위, 추가 기능 보완안의 채택/보류를 기록했다. 기존 비교·loss·query·gates는 유지하고 새 실행0. 큰 단계2·기존 실제 효용 포인터·final 보존 유지.
+
+**2026-09-18 PRRD 종합 설계:** [종합문서](PRRD_CONSOLIDATED_DESIGN_20260918.md)와 [실행량 제안 JSON](spec_sources/prrd_consolidated_plan_20260918.json). PRRD를 유지하며 전체 Q point 정보와 mixed relation 정보를 함께 보존한다. 관계 연산별 보조 위험, clipping 후 shuffle의 mean/second 변화, 순서 비교와 privacy/최종평가를 명시했다. 이 설계는 논리적으로 구현 가능하지만 아직 실제 효용 결과가 없다.21bank 통합안·조건부36bank DP는 변경 제안이고, numeric budget·runtime freeze·W1 PASS가 없다. 새 GPU0, 큰 단계2/기존 실제 결과 포인터 유지.
+
+**2026-09-18 v3 공개 실행 및 순서 가설 검토:** [검토 보고서](PRRD_CONTRAST_BEFORE_BOUND_REVIEW_20260918.md). 주력 PRRD는 유지하며 새 relation-only 안을 자동 채택하지 않았다. 대조 전 비선형 정규화의 정보 손실과 대조 후 보호의 조건부 불변성은 구분 가능한 연산 주장이다. 환자 집계 후 clipping하는 선행과 동일해질 수 있고, 학습 요약 불변성과 단일 영상 분류 개선은 다르다. 공개 P의 source/recipient 특징·projection 생성은 완료했으나 실제 모델 global-gradient parity는 허용오차 미통과; W1/전체 profile 미완료, W2 미실행이다. Q/V 픽셀·새 환자 성능·DP·expert/reserved는 열지 않았다. 큰 단계2, 기존 실제 효용 포인터, 사용 이력을 보존한다.
+
 **2026-09-18 관계 증류 실행 준비:** [첫 통합 패키지 명세](TRACK1_PATIENT_RELATION_DISTILLATION_PROTOCOL_20260918.md)와 `code_working/relation_distillation/`의 feature-level 핵심 코드를 작성했다. A/B/C/D×3bank, 직접 readout, 증류/선택에 쓰지 않는 E2 관계 활용, secondary BCE를 같은 설정에 묶었다. 환자 통계·감도·risk·두-pass gradient의10개 CPU 검산과 준비 metadata 결속이 통과했다. 실제 모델/pixel/학습/합성/DP0이며 runtime은 연결 전이다. 큰 단계2와 과거 실제 결과 포인터, expert532/reserved4213은 유지한다. 주력은 관계 증류이고 캐시 적응을 병행하지 않는다.
 
 **2026-09-18 CovMatch·모멘트 보정 정정:** [관계 증류 비교 §11](TRACK1_PATIENT_RELATION_DISTILLATION_COMPARISON_20260918.md). 관계 증류 주력 권고·캐시 적응 보류를 유지한다. CovMatch의 관계 통계 정합·전이 선행을 추가했으며 δ의 표준 moment matching과 동일한 연산을 새 알고리즘으로 세지 않는다. 불가능한 noisy 목표에도 이미지 matching은 정의되고, 직접 noisy 통계 분류기의 안정화와는 별개다. 다른 encoder는 최적화뿐 아니라 선택에도 쓰지 않아야 한다. 이번은 문헌·설계 수정이며 새 모델/pixel/GPU/DP0, 실제 Rwide/LoRA 결과와 expert/reserved는 그대로다.

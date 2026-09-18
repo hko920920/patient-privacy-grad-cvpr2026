@@ -1,0 +1,469 @@
+{
+  "schema": "prrd-consolidation/proposed-amendment-20260918",
+  "status": "DESIGN_CONSOLIDATED_NOT_RUNTIME_FROZEN",
+  "report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
+  "basis": "User requested comprehensive synthesis, not new execution",
+  "remote_main_read": "0243f8b223d5df8f97f0ab62a2937304fd6b1d8a",
+  "same_method_name": "PRRD",
+  "cached_diffusion_parallel": false,
+  "private_pointwise_information_retained": true,
+  "source": "BioViL-T image",
+  "recipient": "DenseNet121 ImageNet1K V1",
+  "confirmation_recipient": "ViT-B/16 ImageNet1K V1",
+  "source_dim": 16,
+  "recipient_dim": 128,
+  "point_path": "Keep locally prepared v3 point normalization/P-only PCA/bounded scale common across arms",
+  "relation_linear_axis": "Apply the SAME saved public PCA axes to pre-wrapper-normalization embeddings; do not relabel normalized cache as raw",
+  "relation_readout_semantics": "Arm-specific auxiliary quadratic risk, not the actual difference of normalized single-image prediction scores",
+  "shuffle_mean_invariance": "Only before relation bounding. Both post-bound first and second moments may change.",
+  "public_relation_scale": "Proposed P-mixed empirical q95, floor1e-12, independent of Q/V outcomes; not yet measured/bound",
+  "E_R_scope": "Public-q95 reclip; does not represent all possible rescaling or unconditional unit normalization",
+  "joint_comparator_change": "Proposed raw linear endpoints with joint bounding; differs from archived original v3 z-endpoint target",
+  "risk": {
+    "beta": 1,
+    "ridge": 0.1,
+    "beta_ablation": 0,
+    "intercept": false
+  },
+  "arms": [
+    {
+      "id": "A",
+      "point": "P",
+      "relation": "none",
+      "marginal_images": 128,
+      "relation_pairs": 0,
+      "default_beta": 0,
+      "dimension": 306
+    },
+    {
+      "id": "B",
+      "point": "P+Q",
+      "relation": "none",
+      "marginal_images": 128,
+      "relation_pairs": 0,
+      "default_beta": 0,
+      "dimension": 306
+    },
+    {
+      "id": "E",
+      "point": "P+Q",
+      "relation": "endpoint_first",
+      "marginal_images": 64,
+      "relation_pairs": 32,
+      "default_beta": 1,
+      "dimension": 459
+    },
+    {
+      "id": "E_R",
+      "point": "P+Q",
+      "relation": "endpoint_first_public_q95_rebound",
+      "marginal_images": 64,
+      "relation_pairs": 32,
+      "default_beta": 1,
+      "dimension": 459
+    },
+    {
+      "id": "C",
+      "point": "P+Q",
+      "relation": "raw_linear_contrast_first_public_q95_bound",
+      "marginal_images": 64,
+      "relation_pairs": 32,
+      "default_beta": 1,
+      "dimension": 459
+    },
+    {
+      "id": "D",
+      "point": "P+Q",
+      "relation": "C_with_Q_centroid_derangement_before_bound",
+      "marginal_images": 64,
+      "relation_pairs": 32,
+      "default_beta": 1,
+      "dp_allowed": false,
+      "dimension": null
+    },
+    {
+      "id": "R_joint",
+      "point": "P+Q",
+      "relation": "raw_linear_endpoint_joint_bound",
+      "marginal_images": 64,
+      "relation_pairs": 32,
+      "default_beta": 1,
+      "dimension": 867
+    }
+  ],
+  "non_dp": {
+    "arms": 7,
+    "banks": 21,
+    "images": 2688,
+    "synthetic_updates": 10500,
+    "synthetic_readouts": 72,
+    "trusted_real_readouts": 18,
+    "RN18_runs": 63,
+    "RN18_updates": 25200
+  },
+  "non_dp_runs": [
+    {
+      "id": "nonDP_A_101",
+      "arm": "A",
+      "initialization_seed": 101,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_A_202",
+      "arm": "A",
+      "initialization_seed": 202,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_A_303",
+      "arm": "A",
+      "initialization_seed": 303,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_B_101",
+      "arm": "B",
+      "initialization_seed": 101,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_B_202",
+      "arm": "B",
+      "initialization_seed": 202,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_B_303",
+      "arm": "B",
+      "initialization_seed": 303,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_E_101",
+      "arm": "E",
+      "initialization_seed": 101,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_E_202",
+      "arm": "E",
+      "initialization_seed": 202,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_E_303",
+      "arm": "E",
+      "initialization_seed": 303,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_E_R_101",
+      "arm": "E_R",
+      "initialization_seed": 101,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_E_R_202",
+      "arm": "E_R",
+      "initialization_seed": 202,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_E_R_303",
+      "arm": "E_R",
+      "initialization_seed": 303,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_C_101",
+      "arm": "C",
+      "initialization_seed": 101,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_C_202",
+      "arm": "C",
+      "initialization_seed": 202,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_C_303",
+      "arm": "C",
+      "initialization_seed": 303,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_D_101",
+      "arm": "D",
+      "initialization_seed": 101,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_D_202",
+      "arm": "D",
+      "initialization_seed": 202,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_D_303",
+      "arm": "D",
+      "initialization_seed": 303,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_R_joint_101",
+      "arm": "R_joint",
+      "initialization_seed": 101,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_R_joint_202",
+      "arm": "R_joint",
+      "initialization_seed": 202,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    },
+    {
+      "id": "nonDP_R_joint_303",
+      "arm": "R_joint",
+      "initialization_seed": 303,
+      "updates": 500,
+      "images": 128,
+      "status": "PLANNED_NOT_EXECUTED",
+      "runtime_contract_frozen": false
+    }
+  ],
+  "dp_primary": {
+    "arms": [
+      "B",
+      "E_R",
+      "C",
+      "R_joint"
+    ],
+    "epsilon": 8,
+    "delta": 1e-05,
+    "independent_releases_per_arm": 3,
+    "synthetic_initializations_per_release": 3,
+    "distinct_private_releases": 12,
+    "banks": 36,
+    "images": 4608,
+    "synthetic_updates": 18000,
+    "authorization": false,
+    "execution_status": "CONDITIONAL_NOT_STARTED",
+    "epsilon4_is_separate_conditional_stage": true,
+    "joint_composition_epsilon": "NOT_PER_MODEL_EPSILON_NEEDS_LEDGER"
+  },
+  "execution": {
+    "new_model_runs_in_this_consolidation": 0,
+    "implementation_changed": false,
+    "old_run_matrices_modified": false,
+    "W1_passed": false,
+    "W2_budget_hours": null,
+    "W2_authorized_for_expanded_plan": false,
+    "DP_authorized": false,
+    "expert_authorized": false,
+    "reserved_authorized": false
+  },
+  "prospective_gates": {
+    "relation": "C-B mean AUROC >= .01, C-D mean AUROC > 0; positive in >=2/3 paired banks for both; C AP >= B",
+    "order": "Proposed before execution: C-E_R mean AUROC >0, >=2/3 paired banks positive, C AP>=E_R",
+    "interpretation": "Engineering evidence rules, not clinical significance or universal method superiority"
+  },
+  "final_family_if_order_is_primary": {
+    "size": 4,
+    "comparisons": [
+      "E_t2 nonDP C-B",
+      "E_t2 nonDP C-D",
+      "E_t2 nonDP C-E_R",
+      "E_t2 eps8 C-strong pointwise DP baseline"
+    ],
+    "bonferroni_two_sided_confidence": 0.9875,
+    "patient_draws": 10000,
+    "authorization": false
+  },
+  "review_disposition_20260918": {
+    "status": "DOCUMENTATION_ONLY_RECORDED",
+    "source": "User requested incorporation and records only",
+    "report_section": 18,
+    "accepted_clarifications": [
+      "Identical point features cannot be separated by changing w using a raw relation auxiliary",
+      "Recipients recompute relations in their own public feature transforms; no source16-vector transfer",
+      "E_R proposed q95 is based on the three public mixed patients; runtime values and hashes remain unbound",
+      "R_joint linearly maps already-bounded joint u; nonlinear bounding is not commuted with L",
+      "Smaller query dimension alone does not establish smaller projected relation noise"
+    ],
+    "analysis_metrics_only": [
+      "Closed-form w_beta minus w_0",
+      "Score and rank changes",
+      "Functional discrepancy with a declared valid evaluation matrix"
+    ],
+    "not_adopted": [
+      "Additional J_func synthesis loss",
+      "Raw single-image scoring replacement",
+      "Point-block clipping and weighted-mass replacement",
+      "Source-only automatic stop gate",
+      "Additional arms, encoders or success conditions"
+    ],
+    "existing_executable_plan_changed": false,
+    "implementation_changed": false,
+    "new_model_or_GPU_execution": 0,
+    "new_private_pixel_access": 0,
+    "new_DP_releases": 0,
+    "remote_upload": false
+  },
+  "adopted_guarded_functional_design_20260918": {
+    "status": "ADOPTED_FOR_NEXT_DESIGN_NOT_IMPLEMENTED_OR_RUNTIME_FROZEN",
+    "source": "User requested recording the latest two-design-reinforcement recommendation",
+    "report_section": 19,
+    "supersedes": {
+      "record_section": 18,
+      "decision": "J_func metric only; synthesis loss deferred",
+      "scope": "Functional synthesis loss is now adopted; other data/feature/selection boundaries retained"
+    },
+    "adopted": [
+      "Bounded relational intervention relative to each learner's point optimum",
+      "Statistics plus functional synthesis matching; retain existing moment and image regularization"
+    ],
+    "guarded_learner": {
+      "point_matrix_clean": "M=G+lambda I, positive definite",
+      "point_solution": "w0=solve(M,v0)",
+      "relational_solution_clean": "w1=solve(M+beta*C,v0+beta*mu_r)",
+      "delta": "d=w1-w0",
+      "alpha": "1 when d^T M d=0; otherwise min(1,rho/sqrt(d^T M d))",
+      "output": "w_guard=w0+alpha*d",
+      "rule_consistency": "Same rule for target, synthetic and recipients; each computes its own point/relational moments",
+      "bound": "F0(w_guard)-F0(w0)<=rho^2/2",
+      "rho": null,
+      "rho_selection_rule": null
+    },
+    "synthesis": {
+      "objective": "L_statistics+eta*J_func+L_image_regularization",
+      "J_func": "(w_S-w_target_guard)^T M_target (w_S-w_target_guard)",
+      "metric_matrix": "FIXED target SPD M_target, never optimized synthetic M_S",
+      "synthetic_learner": "Use the same guarded learning rule on synthetic moments; its internal cap uses M_S",
+      "preserve_statistical_matching": true,
+      "eta": null,
+      "eta_selection_rule": null
+    },
+    "combined_bound": {
+      "error": "e_dist=sqrt(J_func)",
+      "inequality": "F0_target(w_S)-F0_target(w0)<=0.5*(rho+e_dist)^2",
+      "scope": "Same target SPD quadratic objective only; no held-out AUROC or recipient guarantee"
+    },
+    "baseline_fairness": {
+      "point_arms": "Each receives functional matching to its own target",
+      "relational_arms": "Each receives the same relational intervention cap",
+      "minimal_ablation_components": [
+        "Original",
+        "Cap only",
+        "Functional matching only",
+        "Both"
+      ],
+      "exact_ablation_run_matrix": null,
+      "auto_multiply_existing_plan": false
+    },
+    "dp_contract": {
+      "use_only_protected_summary_and_public_information": true,
+      "fixed_spd_repair_consistency": "Target point optimum, cap distance, functional metric and bound use the same declared stabilized objective",
+      "guarantee_scope": "Noisy surrogate, not clean population risk",
+      "no_privacy_refund_when_alpha_zero": true,
+      "own_noisy_point_reference_not_separate_B_release": true,
+      "prior_composition_and_selection_boundaries_retained": true
+    },
+    "retained": [
+      "All-Q point information",
+      "Existing point feature path and patient weighting/query",
+      "Arm-specific raw relational auxiliary",
+      "PNG labels virtual pairs learning contract",
+      "Recipient exclusion from synthesis and selection",
+      "Expert/reserved boundaries and previous efficacy records"
+    ],
+    "excluded": [
+      "Raw point-score replacement",
+      "Point-block clipping and weighted-mass replacement",
+      "Relation-only main direction",
+      "Source-only automatic stop gate",
+      "New topic or encoder"
+    ],
+    "runtime_pending": [
+      "rho and eta plus permitted-data selection rules",
+      "Differentiable guarded solve including zero/boundary cases",
+      "Actual one-pass/two-pass parity",
+      "Exact minimal ablation units and total measured cost"
+    ],
+    "execution": {
+      "record_only": true,
+      "implementation_changed": false,
+      "existing_run_matrices_changed": false,
+      "new_math_experiment": false,
+      "new_model_or_gpu_runs": 0,
+      "new_patient_pixel_access": 0,
+      "new_dp_releases": 0,
+      "W1_passed": false,
+      "W2_expansion_authorized": false,
+      "DP_authorized": false,
+      "expert_authorized": false,
+      "reserved_authorized": false,
+      "remote_upload": false
+    }
+  }
+}

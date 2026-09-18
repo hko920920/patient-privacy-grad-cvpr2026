@@ -1,0 +1,158 @@
+{
+  "schema": "prrd.guarded-functional-design-record.v1",
+  "recorded_utc": "2026-09-18T08:50:39.253976+00:00",
+  "status": "DESIGN_ADOPTION_RECORDED_DOCUMENTATION_ONLY",
+  "report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
+  "report_section": 19,
+  "plan": "spec_sources/prrd_consolidated_plan_20260918.json",
+  "before_document_sha256": {
+    "report": "0cb072aab2406a144cef5d52735a0199ad2c34e9c59f266be2d4c2e18890f2cd",
+    "plan": "3d67028337c03d57546414b97c966fb63b4647d3b34087ea6d3cbfb65fcbc2de",
+    "state": "6489d5431c7e8074a1fefaa5a5de48d5784bd3bcc188696813058d554a367285",
+    "agents": "d83326f06c7f32e7a36f320f1139f9a233071596762446c42ef5b25caf043172",
+    "current": "e9e4a2d1f503072870a4c5413a6b5019f09ce3eb45679483e1e42a857b9c1b7a",
+    "framework": "55fad711aeb7166c40fb3f2f17bdec265f1c293fcca31905dc031388f09e4dc4",
+    "worklog": "ff0953d0564a09ee3f851cde84bf6a52a16331c6b6272d17ac1019059efd6470"
+  },
+  "after_document_sha256": {
+    "report": "a7bdc647aa70dad89357b534883d37f850e740a7fdcf9a20d10bfc24061cd20a",
+    "plan": "ce92ea3b9251f1d8a372f325ffee9ea950713a70312d5b2eb13a07dfaffe9cff",
+    "state": "9acb864d5b670526a110c1907fd576f3878c2e3411b25fe260bd57774dea1070",
+    "agents": "f91d41c030e69d11e592289bd129ec689b90e3c4f5fb3238fb6c0cf316b81a92",
+    "current": "5cecbd9c77b4b002d5fa40dba23e41bb4fbcf123a2c4e8c2c8cba8554212fdac",
+    "framework": "19eaf9a2b25b2f259071bc39e5b6d9dbef752ea09c0c74b6f831d8b2de3c950c",
+    "worklog": "a95d0e3b5e4d9ef64c10c233459e22898c9683532820f738025574ee75debbe1"
+  },
+  "preserved_files_sha256": {
+    "code_working/prrd_v3/__init__.py": "88b8a1a908246fec87b198f0e6512b977c66eecf5bd5f3ab34f60c1a0995905f",
+    "code_working/prrd_v3/contracts.py": "7ffc0c914aedcbcf917e304c801e680e041db67640421cac5f80be43f1cf87e7",
+    "code_working/prrd_v3/datasets.py": "dbaa0ce9067933d148f07cd62f5d8e7692429329c35553038e5932bb2983742e",
+    "code_working/prrd_v3/encoders.py": "6a7e1cc1043f6fa47bbea8621cc9a2654c6f4d69ae4707ba3af9839a6bbd513c",
+    "code_working/prrd_v3/objectives.py": "d559c4bef9a9d13852cd6be054313a72ca0d21d01b8112a4c6400aba60a7aea7",
+    "code_working/prrd_v3/patient_moments.py": "0786f6008bdcd7636d242a566e09fb3cb0fccde72a2c7fa3ecd7d7c121720205",
+    "code_working/prrd_v3/prepare.py": "cfd46b6ea31edae9b144dfaf0d96d7a2d6f3fdd2ab0961e15aaf3d8582ed0004",
+    "code_working/prrd_v3/profile.py": "9858b867312dcf858dfb240d3da64b2ab5be2ed47596614b3efcb6017c81f1de",
+    "code_working/prrd_v3/public_setup.py": "0c6778dc07837344c144cbc2339454a340ea094ef4b6f0ec513ab13a9b94adb0",
+    "code_working/prrd_v3/render.py": "080bef27b5ddfebc2699d23db3219fc3f08248248be44dfcf3285c422b4aa0c1",
+    "code_working/prrd_v3/resampling.py": "11c83201079b52363a3bd27556fb4fc7cb90418c84ff8d64a598e370320221cd",
+    "code_working/prrd_v3/test_core.py": "7168b3a299a67f73a206a59c59fe91b2dd0a1f3d1ebfe99f82a48716cfd31457",
+    "code_working/prrd_v3/transfer_rn18.py": "8ec3a1c9da3582eb5b7b46685848ea0bb00cb42af664ccd9a9f768f7ded84a96",
+    "code_working/_reports/prrd_v3_20260918_w01/run_matrix_non_dp.json": "8d486be38105751ea237fef88254f593fe0e9cbd92920302e94a7a3e0105a293",
+    "code_working/_reports/prrd_v3_20260918_w01/w0_bindings.json": "6d253bea4f75eada535cdc3856115db76e8d4c8f6169dd4f34a4faef1cafd3b2",
+    "CVPR 주제 탐색/research_2026-09-10/TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md": "0d65dbecc8b841404f401293a8872522d98061290ca983fc2192ca37aa1c171d",
+    "CVPR 주제 탐색/research_2026-09-10/TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md": "2d71a254082c5f15a284c8aac489608cef6a4204d422e9aba755d9d5273bea36",
+    "CVPR 주제 탐색/research_2026-09-10/spec_sources/prrd_review_record_only_20260918.json": "22fa223f2c436a9d1a5a4bceadc7e9be78a9d5feb15706730c1a01759356cb40"
+  },
+  "previous_state_pointers": {
+    "current_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+    "last_efficacy_result_report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
+    "latest_prrd_v3_public_runtime": "spec_sources/prrd_v3_public_runtime_partial_record_20260918.json",
+    "current_decision_report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
+    "next_task": "Bind a prospective implementation amendment for the consolidated PRRD auxiliary relation risk and post-bound shuffle semantics; complete public W1 before presenting measured cost for any expanded W2.",
+    "next_task_output": "Runtime-verified, hash-bound amended contract and real full-bank cost; no unapproved21-bank expansion or automatic DP/expert/reserved.",
+    "step2_active_task": "PRRD consolidated design feedback recorded only; no method, loss, arms, gates or execution change. Public W1 parity remains unresolved."
+  },
+  "verification": {
+    "implementation_and_preserved_files_unchanged": true,
+    "old_plan_fields_unchanged": true,
+    "new_design_is_separate_amendment": true,
+    "prior_record_preserved": true,
+    "actual_result_pointers_unchanged": true
+  },
+  "design_revision": {
+    "status": "ADOPTED_FOR_NEXT_DESIGN_NOT_IMPLEMENTED_OR_RUNTIME_FROZEN",
+    "source": "User requested recording the latest two-design-reinforcement recommendation",
+    "report_section": 19,
+    "supersedes": {
+      "record_section": 18,
+      "decision": "J_func metric only; synthesis loss deferred",
+      "scope": "Functional synthesis loss is now adopted; other data/feature/selection boundaries retained"
+    },
+    "adopted": [
+      "Bounded relational intervention relative to each learner's point optimum",
+      "Statistics plus functional synthesis matching; retain existing moment and image regularization"
+    ],
+    "guarded_learner": {
+      "point_matrix_clean": "M=G+lambda I, positive definite",
+      "point_solution": "w0=solve(M,v0)",
+      "relational_solution_clean": "w1=solve(M+beta*C,v0+beta*mu_r)",
+      "delta": "d=w1-w0",
+      "alpha": "1 when d^T M d=0; otherwise min(1,rho/sqrt(d^T M d))",
+      "output": "w_guard=w0+alpha*d",
+      "rule_consistency": "Same rule for target, synthetic and recipients; each computes its own point/relational moments",
+      "bound": "F0(w_guard)-F0(w0)<=rho^2/2",
+      "rho": null,
+      "rho_selection_rule": null
+    },
+    "synthesis": {
+      "objective": "L_statistics+eta*J_func+L_image_regularization",
+      "J_func": "(w_S-w_target_guard)^T M_target (w_S-w_target_guard)",
+      "metric_matrix": "FIXED target SPD M_target, never optimized synthetic M_S",
+      "synthetic_learner": "Use the same guarded learning rule on synthetic moments; its internal cap uses M_S",
+      "preserve_statistical_matching": true,
+      "eta": null,
+      "eta_selection_rule": null
+    },
+    "combined_bound": {
+      "error": "e_dist=sqrt(J_func)",
+      "inequality": "F0_target(w_S)-F0_target(w0)<=0.5*(rho+e_dist)^2",
+      "scope": "Same target SPD quadratic objective only; no held-out AUROC or recipient guarantee"
+    },
+    "baseline_fairness": {
+      "point_arms": "Each receives functional matching to its own target",
+      "relational_arms": "Each receives the same relational intervention cap",
+      "minimal_ablation_components": [
+        "Original",
+        "Cap only",
+        "Functional matching only",
+        "Both"
+      ],
+      "exact_ablation_run_matrix": null,
+      "auto_multiply_existing_plan": false
+    },
+    "dp_contract": {
+      "use_only_protected_summary_and_public_information": true,
+      "fixed_spd_repair_consistency": "Target point optimum, cap distance, functional metric and bound use the same declared stabilized objective",
+      "guarantee_scope": "Noisy surrogate, not clean population risk",
+      "no_privacy_refund_when_alpha_zero": true,
+      "own_noisy_point_reference_not_separate_B_release": true,
+      "prior_composition_and_selection_boundaries_retained": true
+    },
+    "retained": [
+      "All-Q point information",
+      "Existing point feature path and patient weighting/query",
+      "Arm-specific raw relational auxiliary",
+      "PNG labels virtual pairs learning contract",
+      "Recipient exclusion from synthesis and selection",
+      "Expert/reserved boundaries and previous efficacy records"
+    ],
+    "excluded": [
+      "Raw point-score replacement",
+      "Point-block clipping and weighted-mass replacement",
+      "Relation-only main direction",
+      "Source-only automatic stop gate",
+      "New topic or encoder"
+    ],
+    "runtime_pending": [
+      "rho and eta plus permitted-data selection rules",
+      "Differentiable guarded solve including zero/boundary cases",
+      "Actual one-pass/two-pass parity",
+      "Exact minimal ablation units and total measured cost"
+    ],
+    "execution": {
+      "record_only": true,
+      "implementation_changed": false,
+      "existing_run_matrices_changed": false,
+      "new_math_experiment": false,
+      "new_model_or_gpu_runs": 0,
+      "new_patient_pixel_access": 0,
+      "new_dp_releases": 0,
+      "W1_passed": false,
+      "W2_expansion_authorized": false,
+      "DP_authorized": false,
+      "expert_authorized": false,
+      "reserved_authorized": false,
+      "remote_upload": false
+    }
+  }
+}
