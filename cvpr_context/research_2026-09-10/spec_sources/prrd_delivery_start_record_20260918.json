@@ -1,0 +1,40 @@
+{
+  "schema": "prrd.delivery-start-record.v1",
+  "recorded_utc": "2026-09-18T10:16:52.689962+00:00",
+  "status": "PLAN_AND_CPU_CORE_COMPLETE_IMAGE_RUNTIME_PENDING",
+  "previous_state_pointers": {
+    "current_decision_report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
+    "current_planning_report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
+    "next_task_plan_report": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
+    "next_task": "Next implementation scope, not executed by this record: bind permitted-data rho/eta rules and the guarded learner plus fixed-target functional loss; verify actual public gradient parity and measure full-bank cost before any expanded W2.",
+    "next_task_output": "A versioned runtime contract matching section19 with exact ablation units and measured cost; preserve receiver independence, prior results and DP/expert/reserved boundaries.",
+    "step2_active_task": "Latest design recorded: bounded relational intervention plus statistical/functional synthesis matching. Implementation unchanged; rho/eta and run amendments unbound; actual public W1 parity unresolved.",
+    "current_result_report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md",
+    "last_efficacy_result_report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md"
+  },
+  "report": "PRRD_PAPER_DELIVERY_PLAN_20260918.md",
+  "plan_sha256": "1e4e2443137baf104d4190bd9d841a0a13e9176d2acd29301811ea862d1eba63",
+  "run_matrix_sha256": "44bb94d64516f821cf3379595e6cc93336f88163045df4804eacdec02ac6bdd4",
+  "verification_sha256": "e0bcc34bda838e96c8aa0c68c72ecc7854edc257d174dc628b7cf427dd26a477",
+  "new_implementation_files": {
+    "test_guarded_readout.py": "15bc3d2fca153f3869488e31a38f4c95969567c30613867c3a03e4fc38de0d2d",
+    "guarded_readout.py": "cd934c2098dc9e823673effdf21942986b68070e37ef98778aa3f3f1d5eb84c2"
+  },
+  "preexisting_receipt_drift": [
+    {
+      "file": "contracts.py",
+      "content_matches_start_of_this_turn": true,
+      "current_sha256": "bd5679b3269fd02de618d581d0649177f003b5a27496931bfaa2e8bdca70f376"
+    },
+    {
+      "file": "patient_moments.py",
+      "content_matches_start_of_this_turn": true,
+      "current_sha256": "a548092ac02d007a95ec08ca9e0b52014e3094056ac02095e0550cd5bcc7d616"
+    }
+  ],
+  "new_gpu": 0,
+  "new_patient_pixels": 0,
+  "new_DP_releases": 0,
+  "actual_result_pointers_preserved": true,
+  "remote_upload": false
+}

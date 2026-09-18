@@ -1,5 +1,23 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 162-PRRD-EXISTING-W1-GRADIENT-REPAIR (2026-09-18 KST)
+
+- 사용자 제공8단계의 당장 작업을 기존 W1 수리로 한정했다. 새 관계 개입 제한·기능 손실을 같이 넣지 않았다.
+- 원 seed101/A/step500/공개4slot/micro1 실패를5.1300768973e-5로 재현했다. 최초 차이는 renderer residual resize의 batched FP32 계산이며 최종 픽셀 차이는5.9604644775e-8이었다. encoder만 나눈 reference와 전체 경로를 나눈 replay가 다른 입력을 비교하고 있었다.
+- objectives.one_pass에 전체 경로 microbatch 옵션을 넣고 profile reference를 수정했다. 전체 bank 모멘트와 분모는 유지했고 production two_pass/손실/renderer/resampling/모델은 그대로다. 원 실패·source 사본·fixture/경계tensor를 보존했다.
+- 같은 fixture에서 gradient 차이1.4901161194e-8. 별도 공개 fixture를 포함한2seed×기존A/C/R×micro1/2/4=18조건 모두 기존 기준 PASS; 전체 최대절대1.3224780560e-7/상대L2 2.1091048701e-7. 동일 upstream의 pixel/renderer VJP는exact, 독립 FP64 모멘트 gradient 오차1.11e-16, source state 불변이다.
+- Fresh Adam probe36회: 경로 간 갱신후 parameter 최대차3.8727419451e-5와 상대L2 최대1.0752055600e-5를 기록했다. 각각의 실제 갱신은 독립 FP64 Adam식과3.1135125346e-9 이내로 일치했다. Bitwise trajectory 보장은 하지 않는다.
+- 실제 재검증 약25.967초, 계측292F/184B calls(472/304image presentations); 최초 경계 loop약6초 별도. 두 도구의 공개decode12slot/고유4영상. 기존CPU6검사2.977초 PASS. 본128장 bank나 신규 환자 성능은 없다.
+- PRRD_W1_GRADIENT_REPAIR_RESULTS_20260918.md와원본JSON,단계별계획/상태를 갱신했다. 전체 W1/runtime_ready는false, 새학습규칙/full128/W2/DP/final은미실행이다. 요청대로1단계에서멈췄고 다음은raw/point관계통계연결이다. 첨부고정rho/profile규모를로컬설정에자동덮어쓰지않았다. 기존Rwide/LoRA효용·역할·Expert/Reserved·remote보존.
+
+## 161-PRRD-DELIVERY-PLAN-AND-GUARDED-CORE (2026-09-18 KST)
+
+- 사용자의 단계별 실제 구현·논문 완성 계획 요청으로 PRRD_PAPER_DELIVERY_PLAN_20260918.md와 machine plan/run 목록, working manuscript·claim ledger를 작성했다. 큰 단계2·기존 보호 역할은 유지했다.
+- 허용량은 rho²=.1*w0^T*M*w0, 기능 손실 eta1을 시작 규칙으로 지정했다. 검증된 최적값으로 소급하지 않는다. 핵심21bank에 C-only 최소 제거9bank를 추가한30bank 제안이며 실행·숫자 시간 예산 결속 전이다.
+- guarded_readout.py와 test_guarded_readout.py를 추가했다. NumPy 해·점별 목적 악화 상한·고정 target 기능 loss·결합 상한·active cap 유한차분·microbatch replay 및 zero/invalid 상태의6개 CPU 검사가 모두 통과했다. 직접 quadratic 최대 오차6.97e-16, 기능 오차8.67e-19, toy replay 차이0, 약0.600초다.
+- 실제 image runner는 아직 새 core를 쓰지 않는다. 이전 BioViL W1 실패를 취소하지 않았고 실제 모델/GPU·환자영상·합성 optimizer·DP·final 실행0이다. 다음 S2는 실제 raw/point/arm/functional 연결과 공개 gradient 불일치 수정, 전체128장 처리량 측정이다.
+- 기존 source 중 contracts.py/patient_moments.py의 hash가 직전 receipt와 이미 달랐으나 이 작업 시작의 읽기 내용과 동일하다. 두 파일을 수정·복원하지 않고 현재 해시와 이 차이를 기록했다. 기존 실제 Rwide/LoRA 결과는 보존한다.
+
 ## 160-PRRD-GUARDED-FUNCTIONAL-DESIGN-RECORD (2026-09-18 KST)
 
 - 사용자의 ‘그럼 다시 기록’ 요청으로 최신 채택 결정을 종합 설계 §19와 계획 JSON·현재 상태·인수인계에 반영했다. §18/entry159의 J_func 지표 전용 권고는 당시 이력으로 보존하고 이번 수정이 우선함을 명시했다.

@@ -1,5 +1,9 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-18 PRRD W1의 기존 gradient 연결 수리:** [수리 결과](PRRD_W1_GRADIENT_REPAIR_RESULTS_20260918.md). 전체 batch renderer와 microbatch renderer의 FP32 입력 차이를 원인 경계로 확인하고, retained reference의 전체 연산 분할을 replay와 맞췄다. 실제 BioViL 공개18조건·기존 CPU6검사 PASS, 허용오차·기존 목적 유지. 큰 단계2 안의 기술 진전이며 연구 효용 증거는 아니다. 사용자의 현재1단계만 완료하고 멈췄으며 새 관계/학습 규칙 연결·full128 profile·W2는 남았다. 실제 효용 포인터와 final 경계를 보존한다.
+
+**2026-09-18 단계별 구현·원고 작업 시작:** [PRRD delivery plan](PRRD_PAPER_DELIVERY_PLAN_20260918.md)에서 구현·비DP·근접 대조·DP·final·원고의 완료 조건을 연결했다. Guarded quadratic core와 fixed-target functional loss의6개 CPU 검사가 통과했다. 이는 큰 단계2 안의 구현 준비이며 환자 효용/전체 W1/논문 완성이 아니다. 다음은 실제 공개 encoder 연결·미해결 gradient 수정·full128 profile이다. 계획된30bank는 실측·기존 숫자 시간 계약 이후이며 실제 효용 포인터는 보존한다.
+
 **2026-09-18 후속 설계 결정 기록 — §19 우선:** [관계 개입 제한과 통계·기능 공동 정합](PRRD_CONSOLIDATED_DESIGN_20260918.md#19-관계-개입-제한과-통계기능-공동-정합-채택--2026-09-18-후속-기록)을 채택한다. 관계 수정량을 점별 목적의 거리에서 제한하고, 기존 모멘트 정합에 고정 target 행렬의 기능 정합을 더한다. 이전 지표 전용 권고는 이력으로 보존한다. 동일 learner 규칙·강한 비교군의 동일 보강·source 상한의 범위를 기록했으며, 계수와 runtime은 미동결이다. 이번은 기록만, 코드/환자/GPU/DP 실행0; 큰 단계2와 실제 효용 포인터·final 경계 유지.
 
 **2026-09-18 의견 반영 기록:** [종합 설계 §18](PRRD_CONSOLIDATED_DESIGN_20260918.md#18-추가-의견의-반영-범위--기록만-2026-09-18). 사용자 요청대로 문서·상태에만 반영했다. 점별 표현의 동일 입력은 관계 보조항만으로 구분할 수 없으며, 수신자는 자신의 공개 변환으로 관계를 재계산한다. E_R와 R_joint의 명세 범위, 추가 기능 보완안의 채택/보류를 기록했다. 기존 비교·loss·query·gates는 유지하고 새 실행0. 큰 단계2·기존 실제 효용 포인터·final 보존 유지.

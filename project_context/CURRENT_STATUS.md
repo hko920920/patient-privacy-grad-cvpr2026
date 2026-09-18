@@ -1,5 +1,9 @@
 # 현재 상태와 기록 권위
 
+**2026-09-18 W1 1단계 수리 완료 — 기술 연결에는 긍정적, 방법 효용은 미평가:** [실제 BioViL gradient 수리 결과](CVPR%20주제%20탐색/research_2026-09-10/PRRD_W1_GRADIENT_REPAIR_RESULTS_20260918.md). 비교용 reference의 renderer·augmentation 분할이 replay와 달랐다. 같은 분할로 수정해 원 실패5.13e-5를1.49e-8로 줄였고, 별도 공개 fixture 포함18조건이 기존 허용오차를 통과했다. Adam 갱신 잔차도 숨기지 않고 독립 계산식과 대조했다. CPU6검사 PASS. 새 raw 관계·guard/function 연결과 전체128장 profile은 아직이며 전체 W1/runtime_ready는 false다. 요청대로 1단계에서 멈췄다. Q/V pixel·성능·본 bank·DP·expert/reserved·remote upload0. 다음은 정해진 raw/point·환자통계 구현이다.
+
+**2026-09-18 단계별 원고 완성 계획·첫 core 구현:** [실행·집필 계획](CVPR%20주제%20탐색/research_2026-09-10/PRRD_PAPER_DELIVERY_PLAN_20260918.md)에 S0–S7 완료 조건을 고정했다. 관계 허용량은 점별 목적 개선량의10% 기준(kappa.1), 기능 가중치는eta1을 사전 시작값으로 정했다. 새 guarded learner/기능 loss의 CPU 검사6개가 통과했으나 의료 runtime PASS는 아니다. 핵심21+최소 제거9=30bank는 실측·예산 결속 전 제안이며 미실행이다. 원고 초안·claim ledger를 만들었고, 다음은 실제 공개 이미지 gradient 연결 S2다. 기존 W1 미통과·Rwide/LoRA 결과·expert/reserved를 유지한다.
+
 **2026-09-18 두 보강 채택·기록 완료 — 최신 결정:** [종합 설계서 §19](CVPR%20주제%20탐색/research_2026-09-10/PRRD_CONSOLIDATED_DESIGN_20260918.md#19-관계-개입-제한과-통계기능-공동-정합-채택--2026-09-18-후속-기록)에 관계 개입 제한과 통계·기능 공동 정합을 다음 설계 버전으로 기록했다. 아래의 ‘J_func는 지표로만’ 권고는 수정 이력이다. 고정 target M_T의 기능 loss, 동일 제한 학습 규칙, 결합 상한과 비교군의 동일 보강을 명시했다. 기존 point 정보·특징·query는 유지한다. rho/eta·최소 제거 비교·비용은 미동결이며 새 구현·모델/GPU/환자영상/DP 실행0. 실제 W1 미통과, Rwide/LoRA 결과와 expert/reserved 보존은 그대로다.
 
 **2026-09-18 추가 의견 반영·기록만 완료:** [종합 설계서 §18](CVPR%20주제%20탐색/research_2026-09-10/PRRD_CONSOLIDATED_DESIGN_20260918.md#18-추가-의견의-반영-범위--기록만-2026-09-18)에 점별 표현 충돌의 한계, 수신자 자체 특징·PCA·scale, 공개 mixed3 q95, 제한 후 R_joint 선형 변환의 범위를 명시했다. 분류기 변화·기능 차이는 분석 지표로만 참고하며 새 loss·raw 점수 전환·point query 재가중·source-only 중단 규칙은 넣지 않는다. 방법·실행 코드·arm·학습량·판정 기준은 유지했다. 이번 모델/GPU/환자영상/DP 실행0, 원격 업로드0이며 W1 미통과·expert/reserved 보존 상태도 그대로다.

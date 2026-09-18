@@ -465,5 +465,34 @@
       "reserved_authorized": false,
       "remote_upload": false
     }
+  },
+  "delivery_plan_20260918": {
+    "report": "PRRD_PAPER_DELIVERY_PLAN_20260918.md",
+    "plan": "spec_sources/prrd_paper_delivery_plan_20260918.json",
+    "plan_sha256": "1e4e2443137baf104d4190bd9d841a0a13e9176d2acd29301811ea862d1eba63",
+    "authority": "Latest stepwise execution proposal; supersedes null coefficient policy via section20, preserves prior history",
+    "learning_policy": {
+      "status": "PREDECLARED_STARTING_POLICY_NOT_IMAGE_RUNTIME_FROZEN",
+      "beta": 1,
+      "ridge": 0.1,
+      "point_beta": 0,
+      "intercept": false,
+      "radius_policy": "rho_squared=kappa*w0^T*M*w0",
+      "kappa": 0.1,
+      "eta": 1,
+      "interpretation": "Point objective degradation limited to10% of F0(0)-F0(w0); not held-out AUROC",
+      "zero_point_rule": "rho=0; guarded relation correction is zero",
+      "functional_metric": "FIXED target point SPD matrix including ridge",
+      "functional_placement": "Once on unaugmented learner; augmentation remains moment regularization",
+      "other_statistical_and_image_coefficients": "Unchanged from existing consolidation",
+      "target_synthetic_recipient_rule": "Same learning policy, each using its own moments",
+      "chosen_from_patient_performance": false,
+      "DP_radius_input": "Already protected summary only",
+      "performance_driven_silent_changes_allowed": false
+    },
+    "core21_plus_C_ablation9_banks": 30,
+    "runtime_frozen": false,
+    "implementation_scope": "New standalone guarded learner only, six CPU checks; image runtime not wired",
+    "W2_expansion_authorized": false
   }
 }

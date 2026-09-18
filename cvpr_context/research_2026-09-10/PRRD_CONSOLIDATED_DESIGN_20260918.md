@@ -4,6 +4,8 @@
 
 **최신 설계 결정 — §19 우선:** 관계 개입 제한과 통계·기능 공동 정합을 다음 버전에 채택한다. §18의 J_func 지표 전용 권고는 수정 이력으로 남긴다. 기존 §6의 해는 제한 전 w1, §9의 손실은 공동 정합의 기반으로 읽는다. 계수·runtime은 미동결이며 이번 작업은 기록만 수행했다.
 
+**후속 진행 — §20:** 단계별 실행·원고 계획을 작성하고 learner core를 구현·CPU 검산했다. kappa0.1 기반 허용량과 eta1을 새 시작값으로 지정했다. 실제 이미지 runtime은 아직 미동결이다. 위의 ‘기록만’ 문장은 §19 당시의 작업 범위다.
+
 현재 원격 main 재확인: 0243f8b223d5df8f97f0ab62a2937304fd6b1d8a. 로컬 작업 폴더는 Git checkout이 아니므로 이 SHA를 미공개 로컬 v3 구현의 버전으로 사용하지 않는다. 로컬 소스는 별도 해시로 결속한다.
 
 ## 1. 현재 결정
@@ -518,3 +520,17 @@ F_{0,T}(w_S)-F_{0,T}(w_0)
 공개 W1의 실제 BioViL gradient parity는 아직 미통과이며 새 보강은 미구현이다. 기존21bank/조건부36bank는 이전의 미동결 계산량 제안으로 남고 이번 변경의 비용을 자동 포함하지 않는다. W2 시간 상한·runtime freeze·DP·Expert·Reserved 실행 상태는 바꾸지 않았다.
 
 이번 작업: 문서·계획의 설계 개정 기록·상태·인수인계만 갱신. 모델/환자영상/GPU/합성 최적화/DP 실행0, 원격 업로드0. Rwide와 LoRA의 실제 결과는 그대로 보존한다.
+
+## 20. 단계별 실행·원고 계획과 첫 core 구현 — 2026-09-18
+
+사용자가 실제 구현을 한 단계씩 진행해 원고·재현물까지 완성할 계획을 요청했다. 최신 작업 순서는 [PRRD_PAPER_DELIVERY_PLAN_20260918.md](PRRD_PAPER_DELIVERY_PLAN_20260918.md)가 정한다. §19의 두 보강과 자료·평가 경계를 유지한다.
+
+이번 시작 규칙: \(\rho^2=\kappa w_0^\top M w_0,\ \kappa=0.1,\ \eta=1\). 이에 따라 점별 목적 악화 허용량은 영점 분류기 대비 목적 개선량의 10%다. Target/합성/수신자는 동일 규칙과 자기 통계를 사용하고, 기능 loss만 고정 target M_T로 측정한다. \(w_0=0\)이면 관계 수정도 막히는 보수적인 선택이다. 실제 환자 성능으로 고른 수치가 아니며, 이전 §19의 계수 미정 상태 이후 새로 사전 지정한 시작값이다.
+
+guarded_readout.py 및 test_guarded_readout.py를 추가했다. 독립 CPU 검사6개가 통과했다. 직접 목적 항등 최대 오차6.97e-16, 직접 점수 차이와 기능 loss 오차8.67e-19, toy whole/replay gradient 차이0이다. 실제 의료 encoder의 W1 PASS나 방법 효용 증거가 아니다. 기존 BioViL W1 미통과 상태는 유지한다.
+
+새 전체 비DP 계획은 핵심7조건×3=21bank와 C의 cap-only/function-only/neither 9bank, 총30bank/3,840PNG/15,000synthetic updates다. Synthetic readout108개, trusted-real 참고20개, RN18은 핵심군만63run/25,200updates다. 기존21bank/15bank 계산량을 자동 확대 실행한 것이 아니며, runtime·실측 비용·숫자 시간 상한은 아직 결속 전이다.
+
+논문 working manuscript와 claim–evidence ledger도 작성했다. 이번에는 새 core의 구성 배열 검사만 실행했으며 환자 pixel·실제 모델/GPU·합성 bank·DP·final은 실행하지 않았다. 기존 구현파일과 원본 계약·실제 결과를 수정하지 않았다. 다음 한 작업은 두 특징/관계 경로·기능 loss를 실제 공개 이미지에 연결하고 W1을 통과시키는 것이다.
+
+참고: 시작 시 읽은 contracts.py와 patient_moments.py는 이전 기록 receipt의 hash와 차이가 있었다. 이번 작업에서 수정하지 않았고, 작업 시작의 읽기 내용과 현재 내용이 같음을 확인했다. 과거 receipt를 현재 코드 검증으로 재사용하지 않으며 다음 runtime은 현재 source hash로 다시 결속한다.

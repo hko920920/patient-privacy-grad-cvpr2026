@@ -1,0 +1,75 @@
+{
+  "schema": "prrd.w1-existing-objective-repair/20260918",
+  "status": "PASS_EXISTING_OBJECTIVE_ACTUAL_MODEL_GRADIENT_REPAIR_ONLY",
+  "report": "PRRD_W1_GRADIENT_REPAIR_RESULTS_20260918.md",
+  "report_sha256": "b60120b9d12b21d92c15b54b8c025edbdb6830b97eaa5521f465d98b08815a9e",
+  "reproducer": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_w1_repair_20260918\\original_fixture\\w1_reproducer.json",
+  "boundary_errors": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_w1_repair_20260918\\original_fixture\\w1_boundary_errors.json",
+  "verification": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_w1_repair_20260918\\verification_v1\\w1_repair_verification.json",
+  "verification_sha256": "87ffb94654f6e43c8d8209aa76089b6f96bafe4ed47d2e557167d1f2d07dd6de",
+  "cpu_regression": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_w1_repair_20260918\\verification_v1\\cpu_regression_verification.json",
+  "original_gradient_max_abs": 5.130076897330582e-05,
+  "same_fixture_repaired_gradient_max_abs": 1.4901161193847656e-08,
+  "validated_conditions": 18,
+  "max_gradient_abs": 1.3224780559539795e-07,
+  "max_gradient_relative_l2": 2.1091048700565047e-07,
+  "max_parameter_update_abs": 3.87274194508791e-05,
+  "counts_verifier_only": {
+    "forward_calls": 292,
+    "forward_images": 472,
+    "backward_calls": 184,
+    "backward_images": 304,
+    "probe_optimizer_updates": 36
+  },
+  "access_verifier_only": {
+    "roles": [
+      "P"
+    ],
+    "decoded": {
+      "P": 8
+    },
+    "unique_sha_verified": 4,
+    "denials": 0,
+    "expert_or_reserved_pixels": 0,
+    "guard": "exact path and metadata allow-list"
+  },
+  "old_tolerances": {
+    "gradient": "2e-7+5e-4*reference_peak",
+    "loss": 2e-06
+  },
+  "production_objective_unchanged": true,
+  "old_failure_preserved": true,
+  "step1_completed": true,
+  "full_W1_passed": false,
+  "new_method_image_runtime_wired": false,
+  "full128_profile_performed": false,
+  "new_W2_banks": 0,
+  "new_private_pixels": 0,
+  "new_DP_releases": 0,
+  "expert_reserved_access": false,
+  "remote_upload": false,
+  "next_task": "User step2 raw/point feature paths and patient statistics; not started in this bounded repair",
+  "proposal_differences_not_adopted": {
+    "rho": "Pasted absolute .1 differs from local relative rho_squared=.1*w0^T*M*w0",
+    "profile": "Pasted5+10 differs from local20+30; neither run now"
+  },
+  "source_sha256": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\__init__.py": "88b8a1a908246fec87b198f0e6512b977c66eecf5bd5f3ab34f60c1a0995905f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\contracts.py": "bd5679b3269fd02de618d581d0649177f003b5a27496931bfaa2e8bdca70f376",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\datasets.py": "dbaa0ce9067933d148f07cd62f5d8e7692429329c35553038e5932bb2983742e",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\encoders.py": "6a7e1cc1043f6fa47bbea8621cc9a2654c6f4d69ae4707ba3af9839a6bbd513c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\guarded_readout.py": "cd934c2098dc9e823673effdf21942986b68070e37ef98778aa3f3f1d5eb84c2",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\objectives.py": "3b7c109a8fc525902e2433576c6f1aa399a0017a0629675081843e334a84cb88",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\patient_moments.py": "a548092ac02d007a95ec08ca9e0b52014e3094056ac02095e0550cd5bcc7d616",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\prepare.py": "cfd46b6ea31edae9b144dfaf0d96d7a2d6f3fdd2ab0961e15aaf3d8582ed0004",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\profile.py": "91967621e004c2edb21c309c7b307fc3b649228e52f7fe2edf6ce42c823ceee4",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\public_setup.py": "0c6778dc07837344c144cbc2339454a340ea094ef4b6f0ec513ab13a9b94adb0",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\render.py": "080bef27b5ddfebc2699d23db3219fc3f08248248be44dfcf3285c422b4aa0c1",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\resampling.py": "11c83201079b52363a3bd27556fb4fc7cb90418c84ff8d64a598e370320221cd",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\test_core.py": "7168b3a299a67f73a206a59c59fe91b2dd0a1f3d1ebfe99f82a48716cfd31457",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\test_guarded_readout.py": "15bc3d2fca153f3869488e31a38f4c95969567c30613867c3a03e4fc38de0d2d",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\transfer_rn18.py": "8ec3a1c9da3582eb5b7b46685848ea0bb00cb42af664ccd9a9f768f7ded84a96",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\w1_boundary_debug.py": "e7aedbea3bb0b503ed18e689411d7cbce53382f59dfb3d804f28d364dd5b518f",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\w1_repair_verify.py": "1d7f7153509fea78209f4c3c255025b1cbdac4536875d5bad012e4a04b69b52a"
+  }
+}
