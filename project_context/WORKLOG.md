@@ -1,5 +1,14 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 165-PRRD-PUBLIC-C128-COST-PROFILE (2026-09-18 KST)
+
+- 사용자는4단계 전체가 아닌 공개 C128 비용 측정 하나만 요청했다. Microbatch4, warm-up5/측정10, seed101과 계수를 GPU 실행 전에 별도 계약에 기록했다. 이전20/30회는 과거 제안으로 보존했다.
+- 검증된 guarded_objectives와 encoder/renderer/learner를 변경하지 않고 전용 profile runner만 추가했다. P-only target과 고유P영상64장으로128slot을 초기화했다. 6개 pyramid level 전체를 활성화했으며 활성 설정500은 실제500회 학습이 아니다.
+- 전체128장 특징 계산→전역 통계/기능loss→two-pass backward→AdamW 완료까지 평균7.8364초, 중앙7.8321초, 범위7.7720–7.9343초. GPU peak allocated1732.42MiB/reserved1852MiB, RTX3070. 준비/IO/추가 검증은 별도로 기록했다.
+- 측정용15회 모두 finite loss/gradient/optimizer state 및 실제 parameter 갱신 확인. Source weights/buffers/projection과 target hash 불변, source parameter gradient 없음. 총1920F/960B calls,7680F/3840B image presentations. 고유P64장 decode64회, Q/V0.
+- 본500회 학습·다른arm·계수탐색·수신자·DP·expert/reserved·원격업로드0. 최종 parameter/PNG export 없이 PROFILE_ONLY 표식과 계약/비용/검증 로그만 보존했다. 본 bank 재사용 금지.
+- 결과·계획·상태에 기록하고 여기서 멈췄다. 본 계수/실행 규모/예산은 아직 미확정이며 비용 실측을 받은 뒤의 결정으로 남긴다. 기존 gradient검증·Rwide/LoRA 효용·환자 역할은 보존했다.
+
 ## 164-PRRD-STEP3-GUARDED-OBJECTIVE-INTEGRATION (2026-09-18 KST)
 
 - 사용자 요청대로3단계만 수행했다. Stage2의 기존 z/raw a와 공개 통계·scale을 재사용해 새 guarded_objectives.py에 target/synthetic 공통 learner, 고정 M_T 기능 정합, clean/aug 통계 및 기존 영상 규제를 연결했다. 기능 loss는clean에만1회; synthetic cap은M_S, metric은M_T다.

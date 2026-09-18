@@ -1,5 +1,7 @@
 # PRRD 단계별 구현·논문 완성 계획 — 2026-09-18
 
+**2026-09-18 C128 비용 측정 갱신:** [공개 C bank128장 실측](PRRD_C128_PUBLIC_PROFILE_RESULTS_20260918.md)을 완료했다. Microbatch4, warm-up5/측정10에서 전체 update 평균7.8364초, allocated peak1732.42MiB. 이번은4단계 중 이 측정 하나만이며 계수·본실험 규모·예산은 동결하지 않았다. 현재 상태는 §13이 우선한다.
+
 **2026-09-18 3단계 후속 갱신:** [관계 개입 제한·기능 정합 연결](PRRD_STEP3_GUARDED_OBJECTIVE_RESULTS_20260918.md)을 완료했다. 실제 BioViL19조건이 기존 gradient/loss 기준을 통과했다. 계수는 수치 검사 전용이며 본실험 선택이 아니다. 이번에는3단계에서 멈췄고 전체128장 profile·계수/예산 동결·본 합성은 진행하지 않았다. 현재 진행 상태는 §12가 우선하며 이전 단계 문구는 이력이다.
 
 **2026-09-18 2단계 후속 갱신:** [공개 두 특징 경로](PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md)와 환자 통계 연결을 완료했다. 기존 점별 출력은 정확히 유지했고 raw 특징은 새로 추출했다. 이번에는 여기서 멈췄으며 다음은 사용자3단계의 학습 규칙 연결이다. 계수·30bank는 제안 상태이고 전체 runtime/W1은 미동결이다. 현재 진행 상태는 §11이 우선한다.
@@ -221,3 +223,11 @@ Cold/warm 준비, public/raw feature, private summary, 합성, PNG, recipient, �
 사용자단계별상태는1단계기존gradient수리완료→2단계두특징/환자통계완료→3단계새목적연결완료→4단계계수·full128profile·실행량동결예정이다. 이문서의상위S2는남은profile/export/resume/runner/수신자연결범위를포함하므로전체완료로바꾸지않는다.
 
 검사에서beta1/ridge.1/eta1/kappa.1및edge용rho0/100을썼지만본실험계수를선정한것은아니다. P고유4장/8decode,460F/308Bimagepresentations,optimizer0. 수신자/Q·V성능/DP/final을실행하지않았다.30bank는기존제안상태다. 여기서중단했으며다음단계를자동실행하거나예약하지않는다.
+
+## 13. 공개 C128 전체 update 비용 측정 완료
+
+사용자는4단계 전체 대신 공개자료의 C128 profile 하나를 지정했다. [사전 계약 및 실측 결과](PRRD_C128_PUBLIC_PROFILE_RESULTS_20260918.md), [기록 JSON](spec_sources/prrd_c128_public_profile_record_20260918.json)을 기준으로 한다. Microbatch4, warm-up5+측정10은 이번 측정 전에 고정한 별도 실행 범위이며, 이전 전체 profile20/30 제안을 실행했다고 표시하지 않는다.
+
+Beta1/ridge.1/kappa.1/eta1은3단계 기본 수치 검사용 설정을 유지했다. 검증된 새 two-pass 목적에서 모든128장 forward/global statistics/function/backward와 optimizer 갱신을 매번 포함했다. 평균7.8364초/update, allocated1732.42MiB/reserved1852MiB를 측정했고15회 모두 finite 및 실제 갱신·고정 source/target 불변을 확인했다.
+
+본실험 계수나30bank 규모·전체시간 상한은 아직 미확정이다. 이번 측정용 상태는 본 bank로 export하거나 재사용하지 않았다. 다른arm/수신자/DP/final을 진행하지 않았고 여기서 멈췄다. 다음 판단은 이 비용을 바탕으로 한 본 계수·규모·예산이며 자동 실행은 없다.
