@@ -1,6 +1,6 @@
 {
   "schema": "prrd.paper-delivery-plan/20260918",
-  "status": "OLD_OBJECTIVE_W1_GRADIENT_REPAIRED_NEW_METHOD_IMAGE_INTEGRATION_PENDING",
+  "status": "SOURCE_RAW_POINT_PATHS_VERIFIED_NEW_LEARNER_INTEGRATION_PENDING",
   "report": "PRRD_PAPER_DELIVERY_PLAN_20260918.md",
   "basis": "Consolidated sections19-20; user requests stepwise implementation through manuscript and reproducibility completion",
   "method": "PRRD",
@@ -22,7 +22,7 @@
     {
       "id": "S2",
       "name": "Actual public image integration",
-      "status": "PARTIAL_OLD_OBJECTIVE_GRADIENT_REPAIR_PASS_ONLY",
+      "status": "PARTIAL_OLD_GRADIENT_AND_SOURCE_FEATURE_PATHS_PASS_ONLY",
       "acceptance": "Actual BioViL gradient parity, arm wiring, PNG/resume/legacy compatibility and full128 timing"
     },
     {
@@ -57,7 +57,7 @@
     }
   ],
   "learning_policy": {
-    "status": "PREDECLARED_STARTING_POLICY_NOT_IMAGE_RUNTIME_FROZEN",
+    "status": "PROPOSED_VALUES_NOT_RUNTIME_FROZEN_NO_SELECTION_IN_STEP2",
     "beta": 1,
     "ridge": 0.1,
     "point_beta": 0,
@@ -197,13 +197,20 @@
       4
     ],
     "S2_estimate_is_gpu_measurement": false,
-    "actual_new_gpu_runs": 2,
-    "actual_new_patient_pixel_access": 12,
+    "actual_new_gpu_runs": 3,
+    "actual_new_patient_pixel_access": 827,
     "old_objective_gradient_repair_passed": true,
     "new_method_actual_gradient_passed": false,
-    "actual_new_gpu_runs_definition": "Documented public boundary diagnostic and actual-model repair verifier invocations; not efficacy runs",
-    "patient_pixel_access_definition": "Public P decode slots across the two tools,4 unique public files; private pixels0",
-    "latest_scoped_verification": "spec_sources/prrd_w1_gradient_repair_record_20260918.json"
+    "actual_new_gpu_runs_definition": "Documented step1 boundary+repair (2) and step2 public feature paths (1); no efficacy runs",
+    "patient_pixel_access_definition": "Step1 P decode slots12 plus step2 P decode slots815; private pixels0",
+    "latest_scoped_verification": "spec_sources\\prrd_step2_feature_paths_record_20260918.json",
+    "source_raw_point_paths_passed": true,
+    "step2_execution_counts": {
+      "forward_calls": 206,
+      "forward_images": 817,
+      "backward_calls": 3,
+      "backward_images": 6
+    }
   },
   "paper": {
     "manuscript": "paper_prrd/manuscript.md",
@@ -211,7 +218,7 @@
     "complete": false,
     "results_pending": true
   },
-  "next_unit": "User step2 raw/point feature paths and patient statistics; not started in this bounded repair",
+  "next_unit": "User step3 guarded learner and functional matching integration; not started during step2",
   "run_matrix_sha256": "44bb94d64516f821cf3379595e6cc93336f88163045df4804eacdec02ac6bdd4",
   "implementation_evidence": {
     "verification": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_guarded_core_20260918\\verification_v1.json",
@@ -272,7 +279,7 @@
     "previous_receipt_is_current_runtime_verification": false
   },
   "document_sha256": {
-    "PRRD_PAPER_DELIVERY_PLAN_20260918.md": "418c289c874c1c60fa744eacdad305905d5b3a9c6845502ba4407df30ec49447",
+    "PRRD_PAPER_DELIVERY_PLAN_20260918.md": "6600ea9d2441fdd317cb4ec0ce2c7c23eb1a9ab5f69057d102fe7428374dd4bc",
     "PRRD_CONSOLIDATED_DESIGN_20260918.md": "afd00131e41593a45a29b69c43d67322f431b739309f3a7eb41c8921222139c9",
     "paper_prrd/manuscript.md": "b282921fb3a36f72d60d7cc24617bb68616c47e105b4392fa50799144d7deec3",
     "paper_prrd/claims_evidence.md": "f987a203f8e63b0047b0b0e1dff8f34963733570062afdac145d389043bfb680"
@@ -356,6 +363,80 @@
     {
       "previous_plan_sha256": "1e4e2443137baf104d4190bd9d841a0a13e9176d2acd29301811ea862d1eba63",
       "reason": "Record user step1 bounded old-objective repair only; preserve method parameters and run budget"
+    },
+    {
+      "previous_plan_sha256": "f3e7ce6fa8f74043a78ff18a8beaee7b9b7ba65734eaf3e761c122c872e5711e",
+      "reason": "User step2 P-only source feature/statistic paths complete; no new learner integration or coefficient selection"
     }
-  ]
+  ],
+  "feature_paths_evidence": {
+    "schema": "prrd.step2.feature-paths/20260918",
+    "status": "PASS_PUBLIC_RAW_POINT_PATHS_AND_PATIENT_STATISTICS_ONLY",
+    "report": "PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md",
+    "report_sha256": "9d4cc88536ff60d5e2e958d29e18d0ff8b7b2c16bf746cb302d2e212af9abdcb",
+    "result": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_step2_paths_20260918_v1\\public_paths\\public_feature_paths_result.json",
+    "result_sha256": "42db7abad34d6af2239569810317e16015868722695af04844b8093672d057d3",
+    "independent_verification": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_step2_paths_20260918_v1\\public_paths\\independent_feature_statistics_verification.json",
+    "independent_verification_sha256": "b399b39a78b19ecdf6081a72889a1a809993beee3d4a833640743ac3336abd4e",
+    "contract": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_step2_paths_20260918_v1\\public_paths\\feature_path_contract.json",
+    "contract_sha256": "44a7369a22706c600a07bfd8e6f7bfed6aff57a9c08f0659b86af8d3e36bea7d",
+    "point_output_preserved_exact": true,
+    "point_patient_statistics_preserved_exact": true,
+    "same_PCA_axes": true,
+    "raw_extraction_site": "BioViL ImageModel.forward_post_encoder projected_global_embedding, before wrapper F.normalize",
+    "source_raw_cache_freshly_extracted": true,
+    "new_raw_P_images": 813,
+    "new_raw_P_patients": 672,
+    "public_mixed": 3,
+    "scales": {
+      "E_R": 0.29153658488143597,
+      "C": 0.2650091310071505,
+      "R_joint": 1.2582928166602765
+    },
+    "counts": {
+      "forward_calls": 206,
+      "forward_images": 817,
+      "backward_calls": 3,
+      "backward_images": 6
+    },
+    "access": {
+      "roles": [
+        "P"
+      ],
+      "decoded": {
+        "P": 815
+      },
+      "unique_sha_verified": 813,
+      "denials": 0,
+      "expert_or_reserved_pixels": 0,
+      "guard": "exact path and metadata allow-list"
+    },
+    "max_independent_statistic_abs": 1.3877787807814457e-16,
+    "public_input_gradient_witness": {
+      "images": [
+        "00013458_000.png",
+        "00013458_002.png"
+      ],
+      "point_output_exact": true,
+      "point_gradient_exact": true,
+      "point_gradient_norm": 6.091747283935547,
+      "raw_relation_gradient_norm": 5.516018390655518,
+      "raw_relation_gradient_max_abs": 0.42889997363090515,
+      "scalar_is_probe_not_training_loss": true,
+      "new_loss_or_optimizer_updates": 0
+    },
+    "source_state_unchanged": true,
+    "step2_source_paths_complete": true,
+    "full_W1_passed": false,
+    "guard_function_image_integration": false,
+    "rho_eta_selection": false,
+    "bank30_status": "PROPOSAL_NOT_FROZEN_OR_RUN",
+    "new_synthesis_updates": 0,
+    "Q_V_pixels": 0,
+    "DP_releases": 0,
+    "expert_reserved_access": false,
+    "recipient_model_execution": 0,
+    "remote_upload": false,
+    "next_task": "User step3 guarded learner and functional matching integration; not started during step2"
+  }
 }

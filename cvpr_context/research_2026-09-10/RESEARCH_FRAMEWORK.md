@@ -1,5 +1,7 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-18 PRRD 공개 두 특징 경로 연결 완료:** [2단계 결과](PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md). 실제 BioViL 정규화 전 h와 기존 z를 같은 forward에서 분리하고 같은 공개 PCA축의 선형 a로 환자 대조를 계산했다. P813의 기존 point 출력·환자 질량은 동일, 독립 저장 통계 재계산 및 raw 입력 gradient 확인 완료. 큰 단계2의 구현 진전이며 환자 판별·전이·DP 효용 결과가 아니다. 새 학습 규칙 연결·수신자 실검증·전체 profile·본 비교는 남았고, 요청대로 이번2단계까지만 마쳤다.
+
 **2026-09-18 PRRD W1의 기존 gradient 연결 수리:** [수리 결과](PRRD_W1_GRADIENT_REPAIR_RESULTS_20260918.md). 전체 batch renderer와 microbatch renderer의 FP32 입력 차이를 원인 경계로 확인하고, retained reference의 전체 연산 분할을 replay와 맞췄다. 실제 BioViL 공개18조건·기존 CPU6검사 PASS, 허용오차·기존 목적 유지. 큰 단계2 안의 기술 진전이며 연구 효용 증거는 아니다. 사용자의 현재1단계만 완료하고 멈췄으며 새 관계/학습 규칙 연결·full128 profile·W2는 남았다. 실제 효용 포인터와 final 경계를 보존한다.
 
 **2026-09-18 단계별 구현·원고 작업 시작:** [PRRD delivery plan](PRRD_PAPER_DELIVERY_PLAN_20260918.md)에서 구현·비DP·근접 대조·DP·final·원고의 완료 조건을 연결했다. Guarded quadratic core와 fixed-target functional loss의6개 CPU 검사가 통과했다. 이는 큰 단계2 안의 구현 준비이며 환자 효용/전체 W1/논문 완성이 아니다. 다음은 실제 공개 encoder 연결·미해결 gradient 수정·full128 profile이다. 계획된30bank는 실측·기존 숫자 시간 계약 이후이며 실제 효용 포인터는 보존한다.

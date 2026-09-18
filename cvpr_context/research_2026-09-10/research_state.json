@@ -24,8 +24,8 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "User step2 raw/point feature paths and patient statistics; not started in this bounded repair",
-  "next_task_output": "Raw/point tensor and public scales with correct arm-specific patient statistics; then new learner integration. Full runtime and W2 remain pending.",
+  "next_task": "User step3 guarded learner and functional matching integration; not started during step2",
+  "next_task_output": "Connect the shared guarded learner and fixed-target functional term, then verify its actual image gradients; current step2 stopped.",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
     "Support, repetition, cohort composition and weak labels are not causally separated",
@@ -62,7 +62,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "User step1 old-objective BioViL gradient repair complete; stopped at requested boundary. No new utility result.",
+  "step2_active_task": "User implementation step2 P-only source raw/point and patient-statistic paths complete; new learner integration and utility remain pending.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -199,7 +199,7 @@
         "Private data added value, actual generation utility, novelty and SOTA superiority remain unestablished."
       ]
     },
-    "latest_planning_status": "Old gradient comparison repaired; raw relation and new learner image integration remain pending",
+    "latest_planning_status": "Source feature paths verified; full W1 and fixed method comparison remain pending",
     "historical_pre_pooled_last_completed": {
       "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\frozen_residual_patient_dp_20260916_v1",
       "last_completed_report": "TRACK1_PATIENT_DP_RESULTS_20260916.md",
@@ -1457,7 +1457,7 @@
     },
     "current_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1",
     "current_protocol": "TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md",
-    "current_scope": "Completed bounded PRRD old-objective BioViL gradient repair; stopped after requested user step1",
+    "current_scope": "Completed user step2 P-only feature/statistic wiring and stopped; next learner integration not executed",
     "planned_next_protocol": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
     "lora_transfer_plan": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
@@ -2223,10 +2223,80 @@
         "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\prrd_v3\\w1_repair_verify.py": "1d7f7153509fea78209f4c3c255025b1cbdac4536875d5bad012e4a04b69b52a"
       }
     },
-    "last_completed_implementation_report": "PRRD_W1_GRADIENT_REPAIR_RESULTS_20260918.md",
-    "last_completed_implementation_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_w1_repair_20260918\\verification_v1"
+    "last_completed_implementation_report": "PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md",
+    "last_completed_implementation_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_step2_paths_20260918_v1\\public_paths",
+    "prrd_step2_feature_paths": {
+      "schema": "prrd.step2.feature-paths/20260918",
+      "status": "PASS_PUBLIC_RAW_POINT_PATHS_AND_PATIENT_STATISTICS_ONLY",
+      "report": "PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md",
+      "report_sha256": "9d4cc88536ff60d5e2e958d29e18d0ff8b7b2c16bf746cb302d2e212af9abdcb",
+      "result": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_step2_paths_20260918_v1\\public_paths\\public_feature_paths_result.json",
+      "result_sha256": "42db7abad34d6af2239569810317e16015868722695af04844b8093672d057d3",
+      "independent_verification": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_step2_paths_20260918_v1\\public_paths\\independent_feature_statistics_verification.json",
+      "independent_verification_sha256": "b399b39a78b19ecdf6081a72889a1a809993beee3d4a833640743ac3336abd4e",
+      "contract": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_step2_paths_20260918_v1\\public_paths\\feature_path_contract.json",
+      "contract_sha256": "44a7369a22706c600a07bfd8e6f7bfed6aff57a9c08f0659b86af8d3e36bea7d",
+      "point_output_preserved_exact": true,
+      "point_patient_statistics_preserved_exact": true,
+      "same_PCA_axes": true,
+      "raw_extraction_site": "BioViL ImageModel.forward_post_encoder projected_global_embedding, before wrapper F.normalize",
+      "source_raw_cache_freshly_extracted": true,
+      "new_raw_P_images": 813,
+      "new_raw_P_patients": 672,
+      "public_mixed": 3,
+      "scales": {
+        "E_R": 0.29153658488143597,
+        "C": 0.2650091310071505,
+        "R_joint": 1.2582928166602765
+      },
+      "counts": {
+        "forward_calls": 206,
+        "forward_images": 817,
+        "backward_calls": 3,
+        "backward_images": 6
+      },
+      "access": {
+        "roles": [
+          "P"
+        ],
+        "decoded": {
+          "P": 815
+        },
+        "unique_sha_verified": 813,
+        "denials": 0,
+        "expert_or_reserved_pixels": 0,
+        "guard": "exact path and metadata allow-list"
+      },
+      "max_independent_statistic_abs": 1.3877787807814457e-16,
+      "public_input_gradient_witness": {
+        "images": [
+          "00013458_000.png",
+          "00013458_002.png"
+        ],
+        "point_output_exact": true,
+        "point_gradient_exact": true,
+        "point_gradient_norm": 6.091747283935547,
+        "raw_relation_gradient_norm": 5.516018390655518,
+        "raw_relation_gradient_max_abs": 0.42889997363090515,
+        "scalar_is_probe_not_training_loss": true,
+        "new_loss_or_optimizer_updates": 0
+      },
+      "source_state_unchanged": true,
+      "step2_source_paths_complete": true,
+      "full_W1_passed": false,
+      "guard_function_image_integration": false,
+      "rho_eta_selection": false,
+      "bank30_status": "PROPOSAL_NOT_FROZEN_OR_RUN",
+      "new_synthesis_updates": 0,
+      "Q_V_pixels": 0,
+      "DP_releases": 0,
+      "expert_reserved_access": false,
+      "recipient_model_execution": 0,
+      "remote_upload": false,
+      "next_task": "User step3 guarded learner and functional matching integration; not started during step2"
+    }
   },
-  "updated_utc": "2026-09-18T10:31:50.419161+00:00",
+  "updated_utc": "2026-09-18T10:51:31.935013+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -6127,7 +6197,7 @@
     "new_DP": 0,
     "paper_complete": false
   },
-  "latest_prrd_implementation_evidence": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_w1_repair_20260918\\verification_v1\\w1_repair_verification.json",
+  "latest_prrd_implementation_evidence": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_step2_paths_20260918_v1\\public_paths\\independent_feature_statistics_verification.json",
   "completed_prrd_existing_w1_gradient_repair_20260918": {
     "schema": "prrd.w1-existing-objective-repair/20260918",
     "status": "PASS_EXISTING_OBJECTIVE_ACTUAL_MODEL_GRADIENT_REPAIR_ONLY",
@@ -6204,5 +6274,76 @@
     }
   },
   "latest_prrd_w1_repair_report": "PRRD_W1_GRADIENT_REPAIR_RESULTS_20260918.md",
-  "current_prrd_delivery_plan_sha256": "f3e7ce6fa8f74043a78ff18a8beaee7b9b7ba65734eaf3e761c122c872e5711e"
+  "current_prrd_delivery_plan_sha256": "d912a938f2195a8f1b0335bd450eb00332ec290fb70c7a9ea5d129a2589e051a",
+  "completed_prrd_step2_feature_paths_20260918": {
+    "schema": "prrd.step2.feature-paths/20260918",
+    "status": "PASS_PUBLIC_RAW_POINT_PATHS_AND_PATIENT_STATISTICS_ONLY",
+    "report": "PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md",
+    "report_sha256": "9d4cc88536ff60d5e2e958d29e18d0ff8b7b2c16bf746cb302d2e212af9abdcb",
+    "result": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_step2_paths_20260918_v1\\public_paths\\public_feature_paths_result.json",
+    "result_sha256": "42db7abad34d6af2239569810317e16015868722695af04844b8093672d057d3",
+    "independent_verification": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_step2_paths_20260918_v1\\public_paths\\independent_feature_statistics_verification.json",
+    "independent_verification_sha256": "b399b39a78b19ecdf6081a72889a1a809993beee3d4a833640743ac3336abd4e",
+    "contract": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_step2_paths_20260918_v1\\public_paths\\feature_path_contract.json",
+    "contract_sha256": "44a7369a22706c600a07bfd8e6f7bfed6aff57a9c08f0659b86af8d3e36bea7d",
+    "point_output_preserved_exact": true,
+    "point_patient_statistics_preserved_exact": true,
+    "same_PCA_axes": true,
+    "raw_extraction_site": "BioViL ImageModel.forward_post_encoder projected_global_embedding, before wrapper F.normalize",
+    "source_raw_cache_freshly_extracted": true,
+    "new_raw_P_images": 813,
+    "new_raw_P_patients": 672,
+    "public_mixed": 3,
+    "scales": {
+      "E_R": 0.29153658488143597,
+      "C": 0.2650091310071505,
+      "R_joint": 1.2582928166602765
+    },
+    "counts": {
+      "forward_calls": 206,
+      "forward_images": 817,
+      "backward_calls": 3,
+      "backward_images": 6
+    },
+    "access": {
+      "roles": [
+        "P"
+      ],
+      "decoded": {
+        "P": 815
+      },
+      "unique_sha_verified": 813,
+      "denials": 0,
+      "expert_or_reserved_pixels": 0,
+      "guard": "exact path and metadata allow-list"
+    },
+    "max_independent_statistic_abs": 1.3877787807814457e-16,
+    "public_input_gradient_witness": {
+      "images": [
+        "00013458_000.png",
+        "00013458_002.png"
+      ],
+      "point_output_exact": true,
+      "point_gradient_exact": true,
+      "point_gradient_norm": 6.091747283935547,
+      "raw_relation_gradient_norm": 5.516018390655518,
+      "raw_relation_gradient_max_abs": 0.42889997363090515,
+      "scalar_is_probe_not_training_loss": true,
+      "new_loss_or_optimizer_updates": 0
+    },
+    "source_state_unchanged": true,
+    "step2_source_paths_complete": true,
+    "full_W1_passed": false,
+    "guard_function_image_integration": false,
+    "rho_eta_selection": false,
+    "bank30_status": "PROPOSAL_NOT_FROZEN_OR_RUN",
+    "new_synthesis_updates": 0,
+    "Q_V_pixels": 0,
+    "DP_releases": 0,
+    "expert_reserved_access": false,
+    "recipient_model_execution": 0,
+    "remote_upload": false,
+    "next_task": "User step3 guarded learner and functional matching integration; not started during step2"
+  },
+  "latest_prrd_feature_paths_report": "PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md"
 }

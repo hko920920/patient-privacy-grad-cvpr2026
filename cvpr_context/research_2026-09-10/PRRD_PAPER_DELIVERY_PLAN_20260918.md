@@ -1,5 +1,7 @@
 # PRRD 단계별 구현·논문 완성 계획 — 2026-09-18
 
+**2026-09-18 2단계 후속 갱신:** [공개 두 특징 경로](PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md)와 환자 통계 연결을 완료했다. 기존 점별 출력은 정확히 유지했고 raw 특징은 새로 추출했다. 이번에는 여기서 멈췄으며 다음은 사용자3단계의 학습 규칙 연결이다. 계수·30bank는 제안 상태이고 전체 runtime/W1은 미동결이다. 현재 진행 상태는 §11이 우선한다.
+
 **2026-09-18 후속 갱신:** 사용자의 1단계인 기존 목적 W1 gradient 수리를 완료했다. [수리 결과](PRRD_W1_GRADIENT_REPAIR_RESULTS_20260918.md)의 공개 18조건이 기존 기준을 통과했다. 새 방법의 전체 W1은 아직이며 이번에는 여기서 멈췄다. 아래 최초 계획의 미통과 표시는 당시 상태이며 현재 순서는 §10이 우선한다.
 
 상태: 실행 계획 작성 및 첫 learner core 구현 완료. 전체 runtime 동결·합성 효용·DP 성능·논문 완성을 보고하는 문서가 아니다.
@@ -198,3 +200,12 @@ Cold/warm 준비, public/raw feature, private summary, 합성, PNG, recipient, �
 후속 순서는 기존 목적 수리(완료) → raw/point·환자통계 경로(다음) → guarded learner와 기능 loss 연결 → 전체 128장 profile/실행 계약 결속이다. 이번 작업은 1단계 완료 후 중단했으며, 새 목적을 동시에 넣지 않았다.
 
 첨부의 절대 rho=.1 및 profile5+10은 현재 상대 반경·profile20+30과 다른 권고값이다. 이번에는 계수/처리량 계획을 바꾸지 않았다. 30bank 및 수신자/DP/final 실행 승인 범위도 늘리지 않았다. 새 환자 성능은 없고 실제 Rwide/LoRA 결과는 보존한다.
+
+
+## 11. 공개 점별·raw 관계 경로 연결 완료
+
+사용자가 지정한2단계만 구현·검증했다. BioViL projected_global_embedding을 wrapper의 외부 L2 전에 추출하고, 기존 point PCA16·전처리·bound는 그대로 유지했다. P813장의 정규화 cache·point 출력·환자 point 통계가 기존과 정확히 같았다. 같은 공개 PCA축의 raw 선형 특징에서 환자 대조를 만든 뒤 제한하는 경로와 저장 특징의 독립 검산이 통과했다.
+
+[실제 결과](PRRD_STEP2_FEATURE_PATHS_RESULTS_20260918.md)와 [기록 JSON](spec_sources/prrd_step2_feature_paths_record_20260918.json)을 기준으로 한다. Raw 중심은 label-free 환자 균등 P 평균이며, 관계 scale은 공개 mixed3명의 inverse-CDF q95/no interpolation이다. 이 수치 결속은 learner의 rho/eta 선택과 다르다.
+
+전체 S2 가운데 기존 gradient 수리와 source 두 특징 경로까지 완료했다. 다음은 사용자3단계의 guarded learner·기능 손실 연결이며 이번에는 수행하지 않았다. 수신자 실검증·전체 bank gradient/profile·Q/V 본 비교는 남아 있다. 기존 계수/30bank 값은 제안으로 보존하며 실행 계약 동결로 표시하지 않는다.

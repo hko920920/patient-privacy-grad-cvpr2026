@@ -1,5 +1,15 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## 163-PRRD-STEP2-PUBLIC-RAW-POINT-PATHS (2026-09-18 KST)
+
+- 사용자는1단계 완료를 인정하고2단계인 P-only 두 특징 경로·환자 통계만 구현/검증 후 멈추도록 했다. 그 범위로 실행했다.
+- Encoder의 기존 raw()가 source L2 이후 값을 반환함을 유지하고, 실제 projected_global_embedding의 spatial mean에서 pre_normalized/raw_and_point/forward_paths를 추가했다. point PCA·전처리·norm cap은 그대로다. P 환자 균등 raw 중심과 동일 PCA축을 결속했다.
+- 새 relation_paths.py는 환자 class 평균→차분→bound, E/E_R/C/D/raw-joint 통계와 P-only scale을 구현한다. D의 실제 Q 입력은 읽지 않았고 구성 배열에서 공개쌍 고정·제한 전 평균 불변/제한 후 변화만 확인했다. 기존 objective/guarded core 및 patient_moments는 보존했다.
+- 실제 P813장 h 추출25.686초, 전체 경로/통계/witness31.338초. 기존 normalized cache·전체P point z·환자 point 평균/2차 모멘트 exact. 고정 공개 witness의 point값/gradient도exact, raw관계gradient norm5.5160으로 유한·비영이다. Source model/BN 불변.
+- 독립 NumPy 저장 feature 검산: point z1.26e-7/raw a2.39e-7 차이(FP32대FP64), 환자 통계/scale 최대1.39e-16. 구성 배열6검사0.449초, 기존CPU6검사2.868초 PASS. 저장raw를 옛 normalized cache로 재명명하지 않았다.
+- P-only mixed3명 inverse-CDF q95/no interpolation/floor1e-12: E_R .291536584881436, C .265009131007151, R_joint1.258292816660277. 이것은 관계 scale이며 rho/eta를 선택한 것이 아니다. 적은 공개 집단의 최적성은 주장하지 않는다.
+- 실제206F/3B 호출(817/6image presentations),815pixel decode/813고유P영상, optimizer/분류기/성능/수신자/DP0. Q/V pixels·expert/reserved·remote0. rho/eta·30bank는제안상태, fullW1false. 이번2단계까지만마쳤고 다음3단계연결은미실행이다. 기존Rwide/LoRA결과·자료역할·W1원실패/수리기록보존.
+
 ## 162-PRRD-EXISTING-W1-GRADIENT-REPAIR (2026-09-18 KST)
 
 - 사용자 제공8단계의 당장 작업을 기존 W1 수리로 한정했다. 새 관계 개입 제한·기능 손실을 같이 넣지 않았다.

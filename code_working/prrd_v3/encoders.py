@@ -67,8 +67,11 @@ class Encoder(nn.Module):
         self.register_buffer('center',torch.empty(0,device=device))
         self.register_buffer('basis',torch.empty(0,device=device))
         self.register_buffer('scale',torch.ones((),device=device))
+        self.register_buffer('raw_center',torch.empty(0,device=device))
+        self.point_projection_sha256=None
         self.eval()
     def raw(self, prepared):
+        """Legacy point input: SOURCE IS ALREADY L2-NORMALIZED here."""
         require(not self.model.training and not any(p.requires_grad for p in self.model.parameters()), 'Encoder not fixed')
         y=self.model(prepared)
         if self.kind=='source': y=torch.nn.functional.normalize(y.projected_global_embedding,dim=-1)
@@ -78,11 +81,48 @@ class Encoder(nn.Module):
         a=(y-self.center)@self.basis
         return a/torch.maximum(a.norm(dim=-1,keepdim=True),self.scale.clamp_min(1e-12))
     def forward(self,x): return self.project(self.raw(preprocess(x,self.kind)))
+    def pre_normalized(self,prepared):
+        """Actual model output before this wrapper's external normalization.
+
+        BioViL: mean(projected_patch_embeddings, spatial axes), 128 channels.
+        This does not bypass nonlinear operations inside the pretrained model.
+        """
+        require(not self.model.training and not any(p.requires_grad for p in self.model.parameters()), 'Encoder not fixed')
+        output=self.model(prepared)
+        return output.projected_global_embedding if self.kind=='source' else output
+    def raw_and_point(self,prepared):
+        """A single model forward; keep legacy point arithmetic unchanged."""
+        h=self.pre_normalized(prepared)
+        point_input=torch.nn.functional.normalize(h,dim=-1) if self.kind=='source' else h
+        return {'h':h,'point_input':point_input,'z':self.project(point_input)}
+    def project_relation(self,h):
+        require(self.raw_center.shape==self.center.shape and self.raw_center.numel()>0,
+                'Public raw center not bound')
+        # The SAME stored point-PCA axes; no raw PCA fit and no endpoint cap.
+        return (h-self.raw_center)@self.basis
+    def forward_paths(self,x):
+        result=self.raw_and_point(preprocess(x,self.kind))
+        result['a']=self.project_relation(result['h'])
+        return result
+    def use_relation_projection(self,path):
+        with np.load(path,allow_pickle=False) as d:
+            require(str(d['role'])==self.kind,'Raw-center/encoder mismatch')
+            require(str(d['point_projection_sha256'])==self.point_projection_sha256,
+                    'Raw path is bound to a different point projection')
+            basis=torch.as_tensor(d['basis'],dtype=self.basis.dtype,device=self.device_name)
+            require(torch.equal(basis,self.basis),'Raw path must reuse point-PCA axes')
+            center=torch.as_tensor(d['raw_center'],dtype=torch.float32,device=self.device_name)
+            require(center.shape==self.center.shape and torch.isfinite(center).all(),'Invalid raw center')
+            self.raw_center=center
+        return self
     def use_projection(self,path):
         d=np.load(path,allow_pickle=False)
         require(str(d['role'])==self.kind,'Projection/encoder mismatch')
         for key in ('center','basis','scale'):
             setattr(self,key,torch.as_tensor(d[key],dtype=torch.float32,device=self.device_name))
+        self.point_projection_sha256=sha(path)
+        # A newly selected point projection invalidates any previous raw binding.
+        self.raw_center=torch.empty(0,device=self.device_name)
         return self
 
 def extract_public(encoder, group, access, microbatch=4):
