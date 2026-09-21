@@ -241,3 +241,11 @@ C128실측의 단순 환산은 C500=65.30분,30bank=32.65시간이다. 전체 �
 30개 ID·code/public/target-rule SHA 및 bank별 checkpoint/resume/최종 PNG 규칙은 위 계약을 따른다. recipe는 고정됐으나 image runtime 전체가 준비된 것은 아니다. main runner와 동일 상태 resume/export 연결, 허용 bank/숫자 시간 상한, 허용된 준비 후 Q feature/target 실제 hash가 남았다. 사용자3단계 gradient와 C128 profile의 PASS 범위를 확대하지 않는다.
 
 이번에는 계약·상태 기록만 수행했다. 모든 실행 승인false, DP/Expert/Reserved 잠금,profile bank 재사용 금지와 기존 실제 효용 결과를 유지한다. source가 약하면 모든 합성을 자동 중단하는 새 조건도 추가하지 않는다.
+
+## 15. 본 실행기·저장·프로세스 재개·PNG 연결 완료 — 2026-09-19
+
+[실제 검증 보고서](PRRD_BANK_RUNTIME_CONNECTION_RESULTS_20260919.md)와 [기록](spec_sources/prrd_bank_runtime_connection_record_20260919.json)에 이번 사용자 범위를 결속했다. 기존25개 소스와 첫 실행 계약을 변경하지 않고 bank_runtime/fit_banks/run 및 검사2개를 추가했다.
+
+공개 C4에서84회 연속과82회 저장·프로세스 종료+새 프로세스2회를 비교했다. 전체 parameter/optimizer/RNG/step/pyramid와 loss 차이0, PNG4장의 픽셀/label/pair/hash도 exact다. 중간 checkpoint는 final이 아니며 검사 산출물은 본실험에 재사용하지 않는다. 사전 허용오차는 그대로다.
+
+이번168회는 작은 공개 연결 검사다. 정식128장×500회·30bank/새profile/환자효용/수신자/DP/final은 수행하지 않았다. Main runner는 존재하고 이번 경로 검증은 통과했지만 실행 권한은 여전히false이며, 허용bank·숫자시간상한·Q 준비권한/실제feature-target hash가 남는다. 전체 평가 runtime이나 본실험 PASS로 확대하지 않는다.

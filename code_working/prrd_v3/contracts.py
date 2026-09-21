@@ -11,7 +11,11 @@ import yaml
 
 CODE = Path(__file__).resolve().parents[1]
 PACKAGE = Path(__file__).resolve().parent
-RESEARCH = next(CODE.parent.glob('CVPR */research_2026-09-10'))
+_RESEARCH_CANDIDATES = list(CODE.parent.glob('CVPR */research_2026-09-10'))
+_RELEASE_RESEARCH = CODE.parent / 'cvpr_context' / 'research_2026-09-10'
+if _RELEASE_RESEARCH.exists():
+    _RESEARCH_CANDIDATES.append(_RELEASE_RESEARCH)
+RESEARCH = next(iter(_RESEARCH_CANDIDATES))
 SUPPLIED = RESEARCH/'spec_sources/prrd_v3_supplied_20260918/prrd_execution_plan_v3'
 OUT = CODE/'_reports/prrd_v3_20260918_w01'
 ARMS = ('A', 'B', 'C', 'D', 'R_joint')

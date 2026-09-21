@@ -1,5 +1,9 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-21 PRRD 첫 관계 전이 예비 비교 완료:** [PRRD_ABCD101_DEVELOPMENT_RESULTS_20260921.md](PRRD_ABCD101_DEVELOPMENT_RESULTS_20260921.md). 큰 단계2의 개발 근거 확인으로 고정A/B/C/D·seed101을 모두 완료한 뒤 DenseNet121에서 비교했다. C−B AUROC -0.059134, C−D -0.093984, 예비 신호=False. 단일seed/재사용V이며 단계2전체완료·독립final·DP기여를 선언하지 않는다. 남은26bank 자동확대 없이 결과검토를 다음으로 둔다.
+
+**2026-09-19 PRRD 실행기·프로세스 재개·PNG 연결 통과:** [결과](PRRD_BANK_RUNTIME_CONNECTION_RESULTS_20260919.md). 큰 연구단계2 안에서 고정 목적의 실행 연결을 완료했다. 실제 BioViL 공개C4의84회 연속 대82+2 새 프로세스 재개는 전체 상태·loss 차이0, PNG·label·pair·hash exact였다. CPU 파일 검사6개도 통과했다. 기술 검사168update이며 본학습·새profile·private/recipient/DP/final 실행은 아니다. 남은 main 허용 bank·시간 상한·Q 준비/목표 hash는 별도로 유지한다. 실행기 연결 완료를 환자 효용·전이 성공으로 확대하지 않고 기존 실제 결과 포인터를 보존한다.
+
 **2026-09-18 PRRD 첫 비DP 시작 계약 고정:** [실행 계약](PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md)에 상대 반경0.1·w0ᵀMw0, beta1(A/B0)/ridge0.1/eta1, 30bank 목록과 코드·공개 산출물·목표 규칙 hash를 결속했다. 큰 연구단계2 안의 계약 작성이며 실제 방법 효용/논문 완성은 아니다. C 실측 기반32.65시간은 합성만의 동일 속도 가정이며 승인 예산이 아니다. 허용 bank와 숫자 시간 상한, main 실행기·동일 상태 재개/PNG 연결, 허용 후 Q 목표 hash가 미완료다. 추가 profile 없이 기록만 끝냈고 새 GPU/pixel/recipient/DP/final0, 기존 Rwide/LoRA 효용 포인터 유지.
 
 **2026-09-18 PRRD 공개 C128 비용 측정 완료:** [실측 결과](PRRD_C128_PUBLIC_PROFILE_RESULTS_20260918.md). Microbatch4, warm-up5+측정10의 전체128장 update는 평균7.8364초이고 GPU allocated peak1732.42MiB다. 측정용15회 갱신은 정상이며 encoder/target은 불변이다. 이는 큰 연구단계2 안의 실행 비용 확인으로, 방법 효용이나 본실험 설정의 확정이 아니다. 사용자 요청대로 단일 공개C만 측정하고 중단했다. 계수·본 규모/예산은 이후 판단으로 남긴다.

@@ -1,6 +1,6 @@
 {
   "schema": "prrd.paper-delivery-plan/20260918",
-  "status": "FIRST_NONDP_RECIPE_FIXED_EXECUTION_NOT_AUTHORIZED",
+  "status": "MAIN_RUNNER_PUBLIC_RESUME_PNG_PASS_MAIN_AUTHORITY_AND_Q_BINDINGS_PENDING",
   "report": "PRRD_PAPER_DELIVERY_PLAN_20260918.md",
   "basis": "Consolidated sections19-20; user requests stepwise implementation through manuscript and reproducibility completion",
   "method": "PRRD",
@@ -22,7 +22,7 @@
     {
       "id": "S2",
       "name": "Actual public image integration",
-      "status": "PARTIAL_NEW_GRADIENT_AND_C128_COST_PASS_MAIN_RUNTIME_PENDING",
+      "status": "PARTIAL_RUNNER_RESUME_PNG_PASS_PRIVATE_BINDINGS_AND_EVALUATION_PENDING",
       "acceptance": "Actual BioViL gradient parity, arm wiring, PNG/resume/legacy compatibility and full128 timing"
     },
     {
@@ -200,13 +200,13 @@
       4
     ],
     "S2_estimate_is_gpu_measurement": false,
-    "actual_new_gpu_runs": 5,
-    "actual_new_patient_pixel_access": 899,
+    "actual_new_gpu_runs": 8,
+    "actual_new_patient_pixel_access": 911,
     "old_objective_gradient_repair_passed": true,
     "new_method_actual_gradient_passed": true,
-    "actual_new_gpu_runs_definition": "Step1 boundary+repair2, step2 feature paths1, step3 gradient1, publicC128 profile1; no efficacy runs",
-    "patient_pixel_access_definition": "P decode slots: step1 12 + step2 815 + step3 8 + C128 profile64; private pixels0",
-    "latest_scoped_verification": "spec_sources\\prrd_c128_public_profile_record_20260918.json",
+    "actual_new_gpu_runs_definition": "Step1 boundary+repair2, step2 feature paths1, step3 gradient1, publicC128 profile1; no efficacy runs; actual public process-resume verification3 child processes",
+    "patient_pixel_access_definition": "P decode slots: step1 12 + step2 815 + step3 8 + C128 profile64; private pixels0; bank runtime public4 repeated across3 workers adds12 decode slots",
+    "latest_scoped_verification": "spec_sources/prrd_bank_runtime_connection_record_20260919.json",
     "source_raw_point_paths_passed": true,
     "step2_execution_counts": {
       "forward_calls": 206,
@@ -233,9 +233,18 @@
     "starting_recipe_frozen": true,
     "authorized_run_ids": [],
     "additional_profile_required_by_this_contract": false,
-    "main_runner_ready": false,
+    "main_runner_ready": true,
     "current_contract_new_gpu_runs": 0,
-    "current_contract_new_patient_pixel_access": 0
+    "current_contract_new_patient_pixel_access": 0,
+    "bank_checkpoint_process_resume_PNG_passed": true,
+    "bank_checkpoint_process_resume_PNG_scope": "P4 C84 continuous vs82+2 distinct processes; not main128x500 or efficacy",
+    "bank_runtime_technical_optimizer_updates": 168,
+    "bank_runtime_execution_counts": {
+      "forward_calls": 672,
+      "forward_images": 2688,
+      "backward_calls": 336,
+      "backward_images": 1344
+    }
   },
   "paper": {
     "manuscript": "paper_prrd/manuscript.md",
@@ -243,7 +252,7 @@
     "complete": false,
     "results_pending": true
   },
-  "next_unit": "Contract recorded; no execution scheduled. Main runner/resume/PNG wiring, allowed bank IDs/numeric time cap and authorized Q feature/target bindings remain before first applicable bank.",
+  "next_unit": "Runner connection verified; stop. Main allowed bank IDs/numeric time cap, separate Q-preparation authority and actual feature/target receipts remain; no execution scheduled.",
   "run_matrix_sha256": "44bb94d64516f821cf3379595e6cc93336f88163045df4804eacdec02ac6bdd4",
   "implementation_evidence": {
     "verification": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_guarded_core_20260918\\verification_v1.json",
@@ -304,11 +313,12 @@
     "previous_receipt_is_current_runtime_verification": false
   },
   "document_sha256": {
-    "PRRD_PAPER_DELIVERY_PLAN_20260918.md": "c8e4b90f299f9218ecbdc6d07cfcfbefb950f3ea6b30256420feaa6492c4ee01",
+    "PRRD_PAPER_DELIVERY_PLAN_20260918.md": "c568c5e1fd166d7aadae1f7758b9656061b5cb63d0b1ddd210bd08d2dde645eb",
     "PRRD_CONSOLIDATED_DESIGN_20260918.md": "afd00131e41593a45a29b69c43d67322f431b739309f3a7eb41c8921222139c9",
     "paper_prrd/manuscript.md": "b282921fb3a36f72d60d7cc24617bb68616c47e105b4392fa50799144d7deec3",
     "paper_prrd/claims_evidence.md": "1e0eb1467134888d260fc91778fafa4c4940c21a992d65bc4389541aef51652d",
-    "PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md": "63b4c6ca0f8a76490202797dfd0dcee1c8aa8e82f028ad0b7763c29459fe5590"
+    "PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md": "63b4c6ca0f8a76490202797dfd0dcee1c8aa8e82f028ad0b7763c29459fe5590",
+    "PRRD_BANK_RUNTIME_CONNECTION_RESULTS_20260919.md": "7f57734f343a1037e61f100e45b5dba78bbf5897046c88272eea4b79a858e967"
   },
   "existing_W1_repair_evidence": {
     "schema": "prrd.w1-existing-objective-repair/20260918",
@@ -412,6 +422,16 @@
       "new_model_runs": 0,
       "new_pixel_access": 0,
       "scope": "Prospective settings,30bank list,hash binding,cost proxy,resume rules; no execution"
+    },
+    {
+      "date": "2026-09-19",
+      "unit": "main_runner_public_resume_PNG_connection",
+      "record": "spec_sources/prrd_bank_runtime_connection_record_20260919.json",
+      "new_GPU_worker_processes": 3,
+      "P_decode_slots": 12,
+      "technical_optimizer_updates": 168,
+      "main_banks": 0,
+      "objective_or_recipe_changed": false
     }
   ],
   "feature_paths_evidence": {
@@ -691,5 +711,12 @@
     "execution_authorized": false,
     "authorized_run_ids": [],
     "runtime_cap_seconds": null
+  },
+  "bank_runtime_connection_evidence": {
+    "record": "spec_sources/prrd_bank_runtime_connection_record_20260919.json",
+    "record_sha256": "271688764d348987a7e2f9d7cefebc4269493f013d37a688aac27bc2a6563680",
+    "verification_sha256": "0c35731bcdd4f3849faa5a349e184894bd4bae90af912171fb5552fe3e0bc5c8",
+    "status": "PASS_PUBLIC_PROCESS_RESUME_AND_PNG_ONLY",
+    "scope": "public small process checkpoint/restart/final PNG only"
   }
 }

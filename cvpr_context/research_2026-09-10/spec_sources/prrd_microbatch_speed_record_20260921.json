@@ -1,0 +1,73 @@
+{
+  "status": "COMPLETE_PUBLIC_SPEED_CHECK",
+  "created": "2026-09-21T07:19:53.299494+00:00",
+  "selected_microbatch": 16,
+  "profiles": [
+    {
+      "tag": "original_mb4",
+      "microbatch": 4,
+      "mean_seconds": 8.079146219976247,
+      "median_seconds": 8.016475999960676,
+      "min_seconds": 7.983946099993773,
+      "max_seconds": 8.212198100052774,
+      "peak_allocated_bytes": 1857535488,
+      "peak_reserved_bytes": 1998585856
+    },
+    {
+      "tag": "original_mb8",
+      "microbatch": 8,
+      "mean_seconds": 7.215809460007586,
+      "median_seconds": 7.222824200056493,
+      "min_seconds": 7.1854011999676,
+      "max_seconds": 7.241023099981248,
+      "peak_allocated_bytes": 3269500416,
+      "peak_reserved_bytes": 3485466624
+    },
+    {
+      "tag": "deferred_mb8",
+      "microbatch": 8,
+      "mean_seconds": 7.251408080011606,
+      "median_seconds": 7.229822600027546,
+      "min_seconds": 7.2092483000596985,
+      "max_seconds": 7.3161617000587285,
+      "peak_allocated_bytes": 3269500928,
+      "peak_reserved_bytes": 3485466624
+    },
+    {
+      "tag": "original_mb16",
+      "microbatch": 16,
+      "mean_seconds": 5.981979659991339,
+      "median_seconds": 5.973822399973869,
+      "min_seconds": 5.957471000030637,
+      "max_seconds": 6.008242200012319,
+      "peak_allocated_bytes": 6048047104,
+      "peak_reserved_bytes": 6643777536
+    }
+  ],
+  "within_partition_gradient_cases_passed": 9,
+  "max_parameter_gradient_abs": 1.1920928955078125e-07,
+  "max_parameter_gradient_relative_l2": 2.1055453000525416e-07,
+  "max_pixel_gradient_abs": 0.0,
+  "max_loss_abs": 1.1368683772161603e-13,
+  "time_reduction_fraction_vs_same_session_mb4": 0.25957774533149536,
+  "runtime_amendment": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\spec_sources\\prrd_runtime_microbatch_amendment_20260921.json",
+  "verification_extension": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_microbatch_speed_20260921_v1\\runtime_verification_extension.json",
+  "production_files_changed": [
+    "fit_banks.py",
+    "run.py"
+  ],
+  "guarded_objective_changed": false,
+  "full128_profile_updates": 32,
+  "public_unique_templates": 64,
+  "public_decode_count_across_attempts": 192,
+  "interrupted_CPU_reference_attempt_preserved": true,
+  "Q_V_pixels": 0,
+  "main_banks": 0,
+  "recipient_runs": 0,
+  "DP_releases": 0,
+  "expert_reserved": false,
+  "new_process_resume_at_mb16": false,
+  "prior_process_resume_evidence_inherited": true,
+  "no_remaining_gpu_execution": true,
+  "report": "PRRD_MICROBATCH_SPEED_RESULTS_20260921.md"
+}

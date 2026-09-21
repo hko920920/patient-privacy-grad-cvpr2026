@@ -1,0 +1,66 @@
+{
+  "schema": "prrd.runtime-microbatch-amendment/v1",
+  "id": "PRRD-RUNTIME-MB16-20260921",
+  "created": "2026-09-21T07:19:52.841531+00:00",
+  "base_contract": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\PRRD_FIRST_NONDP_EXECUTION_CONTRACT_20260918.md",
+  "base_contract_sha256": "63b4c6ca0f8a76490202797dfd0dcee1c8aa8e82f028ad0b7763c29459fe5590",
+  "microbatch": 16,
+  "previous_microbatch": 4,
+  "images": 128,
+  "updates": 500,
+  "precision": "FP32 encoder and renderer; FP64 small moments/readout; no AMP/TF32",
+  "method_coefficients_arms_seeds_unchanged": true,
+  "all_pyramid_levels_profiled": true,
+  "verification_evidence": [
+    {
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_microbatch_speed_20260921_v1\\checkpoint_reference\\speed_check_result.json",
+      "sha256": "c466517b6a9885d004795d70ad979f92a6f14e06a2b6c20b0ba25f5876f4c216"
+    },
+    {
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_microbatch_speed_20260921_v1\\mb16_followup\\mb16_result.json",
+      "sha256": "19ef4153a5e88e9f8d7a5e69b5b596eb1e028695ff6c62a4c30b02c565d17217"
+    },
+    {
+      "path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_microbatch_speed_20260921_v1\\checkpoint_reference\\predeclared_contract.json",
+      "sha256": "ea9488a43c34fe588f2250c7fce708513f356d7a1d5dfb3a9baa6b13e6195d41"
+    }
+  ],
+  "same_partition_parity_cases": 9,
+  "same_partition_tolerances_unchanged": true,
+  "cross_partition_bitwise_equivalence_claim": false,
+  "selection_policy_revision_after_measurement": {
+    "initial_script": "An EXTRA conservative cross-microbatch gradient filter excluded16 after A. Its within-partition check passed.",
+    "correction": "Use the user-requested existing one-pass/two-pass criteria WITHIN each partition; do not promote a cross-partition difference into an extra correctness gate.",
+    "scope": "Numerical/runtime rule correction, explicitly post-measurement. No tolerance raised, no patient utility measured.",
+    "retained_cross_difference": {
+      "gradient": {
+        "max_abs": 0.00042420916724950075,
+        "relative_l2": 0.0011766952512807397,
+        "reference_peak": 0.06696587800979614,
+        "exact": false
+      },
+      "loss_abs": 2.0468167827303319e-07,
+      "within_existing_thresholds": false
+    },
+    "initial_automatic_selection": "original_mb8",
+    "final_selection": "original_mb16"
+  },
+  "regularization_cpu_sync_candidate_adopted": false,
+  "regularization_sync_result": "Same gradients/loss; no measured gain in the short matched mb8 comparison.",
+  "mean_seconds_per_full128_C_update": 5.981979659991339,
+  "median_seconds_per_full128_C_update": 5.973822399973869,
+  "peak_allocated_bytes": 6048047104,
+  "peak_reserved_bytes": 6643777536,
+  "estimated_500_update_C_minutes": 49.849830499927826,
+  "estimated_30_bank_synthesis_hours_at_C_speed": 24.924915249963913,
+  "cost_scope": "Short P-only C timing; estimates exclude private extraction, other-arm differences, checkpoint/export/evaluation.",
+  "main_execution_authorized": false,
+  "allowed_run_ids": [],
+  "runtime_cap_seconds": null,
+  "Q_V_pixels": false,
+  "recipient": false,
+  "DP": false,
+  "expert_reserved": false,
+  "resume_rule": "Never change microbatch on an existing checkpoint; run_spec and job hash bind it. No main bank exists yet.",
+  "profile_artifact_reuse_as_main": false
+}

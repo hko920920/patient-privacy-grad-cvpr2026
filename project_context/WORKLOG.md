@@ -1,5 +1,46 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+### ABCD101 기술 수정·용량 정리 기록
+
+- amendment_02: A500 학습·PNG 완료 후 Windows 임시 영수증 경로 길이 오류만 수정했다. A 재학습 없이 기록을 복구했고 수학적 목적은 유지했다.
+- amendment_03: V 특징과 기존 bootstrap의 환자ID 문자열/정수 정렬 차이를 고쳤다. 환자 집합·영상별 환자 대응·2,000 draw는 그대로이며 저장 특징으로 CPU 평가만 복구했다. 새 영상·모델 forward·합성 update0. 세 수정의 실패 기록과 원계약·seal은 모두 보존했다.
+- 사용자 요청에 따라 중복 중간 checkpoint72개,6.663GiB를 정리했다. 각 bank 초기/최근2개(최종 포함), 모든 hash 영수증·전체 update trace·최종PNG·과거 결과는 보존했다. 상세는 결과 보고서와 checkpoint_retention_log.jsonl에 기록했다.
+
+## 170-PRRD-ABCD101-PILOT-RESULTS (2026-09-21 KST)
+
+- 요청한 seed101 A/B/C/D 네 bank 각각128장·500회·microbatch16 완료. 방법·계수 유지, 총512장·2,000update. 모두 동결한 뒤 DenseNet121 개발 V의 AUROC/AP와2,000paired 환자구간을 계산했다.
+- 실제 AUROC/AP A 0.506707/0.045155, B 0.567975/0.060098, C 0.508841/0.048571, D 0.602826/0.059409; C−B AUROC -0.059134, C−D -0.093984. 예비 투자 신호=False. 한seed에 조건부인 예비 개발 결과이며 full3seed/final/DP 판정이 아니다.
+- Q source특징5,097장을 한 번 추출하고 저장특징의 환자별 목표를 독립 재계산했다. Q norm 한장의 FP32반올림 경계오류는 원본을 보존하고 P/Q 집계 입력의 FP64unit-ball 복원으로 고쳤다. 검사허용오차·encoder·목적은 유지했다. 근거와 이전계약은 amendment_01에 보존했다.
+- 실제 campaign 3.558시간. PNG/source 전달오차·최종학습trace·cost·조건부구간·모든예측은 내부산출물에 기록했다. 남은26bank/extra seeds/강한대조/보강제거/RN18/ViT/DP/Expert/Reserved/upload0, 다음실행 예약0.
+- 상세 PRRD_ABCD101_DEVELOPMENT_RESULTS_20260921.md; code_working/_reports/prrd_pilot_abcd101_20260921_v1. 과거head·LoRA실패/Rwide/Q80기록은 덮어쓰지 않았다.
+
+## 169-PRRD-ABCD101-PILOT-START (2026-09-21 KST)
+
+- 사용자 최신 요청에 따라 전체30bank를 보류하고 A/B/C/D seed101 총4bank와 동결 후 DenseNet121 V 평가만 사전 계약으로 고정했다. 기존128/500/계수 유지, mb16 적용.
+- Q source 특징·환자 목표 준비, bank별 실행/저장, 전체4개 동결 후 평가를 연속 진행한다. 일부 효용을 보고 변경하거나 남은26bank로 자동 확대하지 않는다.
+- 새 준비/수신/paired bootstrap helper CPU 검산PASS: 통계 최대4.16e-17, bootstrap1.11e-16. 실제 Q/V나 합성 효용 검증을 뜻하지 않는다. 실행기는 기존 검증을 상속하며 마지막 mb4-only 검사 한 줄만 고쳤다.
+- 공개 캐시로 DenseNet의 P-only raw 중심/동일 PCA128축/관계scale을 사전 생성했다. 새 모델/환자 성능을 보고 선택하지 않았다. 선언 검사 첫 실패는 파일 끝 빈 줄 차이였고 기록을 보존했다.
+- 합성 예상3시간20분+준비/평가, 운영 상한6시간은 assistant가 제시한 예산이다. 결과는 완료 후 별도 보고하며 DP/final/reserved/remote upload 금지 유지.
+
+## 168-PRRD-MICROBATCH-SPEED (2026-09-21 KST)
+
+- 사용자 요청에 따라 최대20분 공개4/8/16 속도·대응 검사를 수행했다. 고정128장/FP32/목적/optimizer를 유지하고 설정당3warm-up+5측정, sync 감소 후보를 포함해32회 실제 profile update를 수행했다.
+- A/C/R_joint 각분할 one-pass/two-pass9조건은 기존 기준PASS. 초기 CPU-offload reference는 host RAM 부족으로 중단하고 activation checkpointing reference로 대체했다. 최초 스크립트의 분할 간 추가 gradient 조건은 요청의 합격 조건과 구분하여 정정했으며, 최초8 선택과16의 분할 간 차이는 보존했다.
+- 평균4=8.079초,8=7.216초,16=5.982초로16 채택. CPU sync 감소는7.251초로 추가 이득 없어 미채택. Encoder/목적/계수/학습량을 바꾸지 않았다.
+- fit_banks.py/run.py에 SHA로 결속된 runtime microbatch 전달을 연결하고 원계약의 별도 추가 계약을 작성했다. CPU6검사와 메타데이터 전용16/128/500 연결·미승인 실행 차단PASS. 기존 실제 프로세스 재개·PNG 증거는 상속하며 새로운16 재개 실험은 하지 않았다.
+- C속도 단순 환산500회49.85분/30bank24.92시간, 준비·다른arm·평가비용 제외. Q/V pixels/main/recipient/DP/Expert·Reserved0. 상세 PRRD_MICROBATCH_SPEED_RESULTS_20260921.md 및 code_working/_reports/prrd_microbatch_speed_20260921_v1. 이전 잘못 착수한12-update budget diagnostic과 실제 Rwide/LoRA 효용 기록은 그대로다.
+
+## 167-PRRD-BANK-RUNTIME-RESUME-PNG (2026-09-19 KST)
+
+- 사용자 범위는 고정 계약/guarded objective의 실행기·저장·실제 프로세스 종료 후 재개·PNG 연결이었다. 새profile/계수탐색/정식500회/Q·V/수신자/DP/Expert·Reserved는 제외했다. b306c5a는 사용자 제공 원격 출처로만 기록했으며 로컬 파일 SHA를 결속했다.
+- 시작 전에 공개4장,C,micro4,84회 연속 대82회 저장·종료+2회 재개,허용오차를 기록했다. Checkpoint 복원은 exact,후속 parameter/optimizer atol1e-7/rtol1e-6,loss atol1e-8/rtol1e-6으로 미리 정했으며 확대하지 않았다.
+- bank_runtime.py/fit_banks.py/run.py/test_bank_runtime.py/verify_bank_runtime.py와 BANK_RUNTIME.md를 추가했다. 기존25개 소스·계수·30bank·목표규칙·원계약은 보존했다. 25-update checkpoint,step/RNG/optimizer/pyramid 복원,해시 결속,완료 출력 봉인과 본실행 권한 거부를 연결했다.
+- 구성 배열 CPU6검사 PASS(1.251초). 실제 세 프로세스 PID41108/8764/34716은84/82/2update 후 종료했다. 저장 후 재개 parameter·optimizer·난수·step·pyramid와 loss trace 최대차이0,16tensor/1283scalar exact. 활성 경계81을 거쳤으며 최종 optimizer step은84/4, 다음step85다.
+- 연속·재개 각4 PNG의 224L/uint8/독립픽셀양자화/label/virtualpair/hash 확인PASS. 82회 상태는 final이 아니고 완료 산출물/기존 파일 덮어쓰기는 차단된다. 8개 검사 PNG는 TECHNICAL_TEST_ONLY,본실험 재사용금지다.
+- 실제 P고유4장/12decode,672F·336B modelcalls,2688F·1344B imagepresentations,168검사용optimizerupdates. 자식프로세스 wall합82.25초는 검사 실행량이고 새로운 full128profile이 아니다. 원 source/target 불변이다.
+- [결과](CVPR%20주제%20탐색/research_2026-09-10/PRRD_BANK_RUNTIME_CONNECTION_RESULTS_20260919.md) 및 spec_sources/prrd_bank_runtime_connection_record_20260919.json을 기록했다. 코드/사전계획/실제검산은 code_working/_reports/prrd_bank_runtime_20260919_v1에 보존했다. 다음 본실행의 허용bank·시간상한과 별도Q 준비/실제목표hash는 미결속이다. 새 main0,profile0,Q/V0,recipient0,DP0,final0,upload0.
+- 전체 연구단계2와 Rwide/LoRA 실제효용포인터를 유지했다. 요청한 연결 검증 뒤 멈췄으며 다음 단계 실행을 예약하지 않는다.
+
 ## 166-PRRD-FIRST-NONDP-EXECUTION-CONTRACT (2026-09-18 KST)
 
 - 사용자는 809ff05 비용 보고 검토 이후 첫 비DP 실행 계약만 작성하도록 요청했다. 원격 commit은 사용자 제공 출처이며 이번에 조회하지 않았다. 로컬 코드·저장 metadata와 공개 feature/model 파일 bytes를 읽었고 새 픽셀은 읽지 않았다.
