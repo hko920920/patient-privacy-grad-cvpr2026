@@ -74,9 +74,10 @@ class BoundObjective:
     moments: object
     target_readout: object
     functional_target: object
+    aug_moments: object = None
 
 
-def bind_objective(target, arm, scales, policy, *, eta, device='cpu'):
+def bind_objective(target, arm, scales, policy, *, eta, device='cpu', aug_target=None):
     """Make detached COPIES once. Callers must not mutate this bound target.
 
     Target and synthetic learners use the SAME policy but their OWN moments.
@@ -103,8 +104,16 @@ def bind_objective(target, arm, scales, policy, *, eta, device='cpu'):
     with torch.no_grad():
         readout = policy.solve(moments)
         fixed = freeze_functional_target(readout)
+    augmented = None
+    if aug_target is not None:
+        require(arm in ('A', 'B'), 'Separate augmented target is pointwise only')
+        augmented = {k: torch.as_tensor(aug_target[k], dtype=torch.float64, device=device)
+                     .detach().clone() for k in ('m', 'A')}
+        require(all(v.shape == moments[k].shape and bool(torch.isfinite(v).all())
+                    for k, v in augmented.items()), 'Invalid augmented target shape or values')
+        augmented = MappingProxyType(augmented)
     return BoundObjective(arm, MappingProxyType(scales), policy, float(eta),
-                          MappingProxyType(moments), readout, fixed)
+                          MappingProxyType(moments), readout, fixed, augmented)
 
 
 def feature_objective(clean, augmented, objective):
@@ -113,7 +122,8 @@ def feature_objective(clean, augmented, objective):
     aug_moments = bank_moments(augmented, objective.arm, objective.scales)
     readout = objective.policy.solve(moments)
     stats = statistical_loss(moments, objective.moments, objective.arm)
-    aug_stats = statistical_loss(aug_moments, objective.moments, objective.arm)
+    aug_target = objective.moments if objective.aug_moments is None else objective.aug_moments
+    aug_stats = statistical_loss(aug_moments, aug_target, objective.arm)
     func = functional_loss(readout.weight, objective.functional_target)
     return {'loss': stats + .1 * aug_stats + objective.eta * func,
             'statistics': stats, 'augmentation_matching': aug_stats,

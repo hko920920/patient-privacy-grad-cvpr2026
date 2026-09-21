@@ -24,8 +24,8 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "Bind the new extraction/runtime contract, prepare and independently verify full P/Q K4 augmented targets, then consider the bounded B comparison; no automatic C/D, additional seeds, DP or final.",
-  "next_task_output": "PRRD_B_AUGMENTED_TARGET_IMPLEMENTATION_RESULTS_20260921.md",
+  "next_task": "User review of the frozen PRRD post-hoc failure analysis. No automatic new training or design changes.",
+  "next_task_output": "PRRD_FAILURE_MECHANISM_ANALYSIS_20260921.md",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
     "Support, repetition, cohort composition and weak labels are not causally separated",
@@ -65,25 +65,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "B augmented-target first implementation and public image-gradient verification complete; actual cross-encoder efficacy remains untested.",
-  "latest_B_augmentation_target_specification": {
-    "report": "PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md",
-    "evidence_directory": "spec_sources/prrd_b_aug_target_review_20260921",
-    "status": "SPECIFIED_NOT_IMPLEMENTED_OR_EXECUTED",
-    "candidate": "B_augmean_k4",
-    "planned_real_augmented_forward_images": 23640,
-    "planned_banks": 1,
-    "planned_seed": 101,
-    "planned_images_per_bank": 128,
-    "planned_updates": 500,
-    "augmentation_mean_is_not_conditioned_matching": true,
-    "automatic_relation_restart_after_B_improvement": false,
-    "production_code_changed": false,
-    "new_feature_extraction": false,
-    "new_training_or_evaluation": false,
-    "execution_authorized_by_this_review": false,
-    "DP_Expert_Reserved_access": false
-  },
+  "step2_active_task": "Frozen PRRD pilot mechanism analysis complete; relation utility and cross-encoder reuse remain unestablished.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -98,11 +80,11 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_b_aug_implementation_20260921_v1",
-    "last_completed_report": "PRRD_B_AUGMENTED_TARGET_IMPLEMENTATION_RESULTS_20260921.md",
-    "additional_execution_contract_fixed": false,
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_failure_analysis_20260921_v1",
+    "last_completed_report": "PRRD_FAILURE_MECHANISM_ANALYSIS_20260921.md",
+    "additional_execution_contract_fixed": true,
     "stage2_completion_claim": false,
-    "latest_design_review": "PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md",
+    "latest_design_review": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
     "new_two_track_experiment_started": true,
     "new_two_track_experiment_status": "fixed_classifier_diagnostic_complete_generalization_gap_observed",
     "latest_cpu_outputs": [
@@ -3198,8 +3180,7 @@
       "DP_expert_reserved": false,
       "recipe_changed": false,
       "next_run_scheduled": false
-    },
-    "historical_additional_execution_contract_fixed_before_B_aug_impl": true
+    }
   },
   "updated_utc": "2026-09-18T13:32:25.750367+00:00",
   "completed_u_comparison": {
@@ -7460,26 +7441,5 @@
   "latest_prrd_budget_scope_correction": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_budget_audit_20260921_v1\\STOPPED_ANALYSIS_ONLY.json",
   "latest_prrd_microbatch_speed_report": "PRRD_MICROBATCH_SPEED_RESULTS_20260921.md",
   "latest_prrd_runtime_amendment": "spec_sources/prrd_runtime_microbatch_amendment_20260921.json",
-  "latest_prrd_runtime_verification_extension": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_microbatch_speed_20260921_v1\\runtime_verification_extension.json",
-  "latest_B_augmentation_target_implementation": {
-    "status": "PASS_IMPLEMENTATION_AND_PUBLIC_CONNECTION_ONLY",
-    "report": "PRRD_B_AUGMENTED_TARGET_IMPLEMENTATION_RESULTS_20260921.md",
-    "report_sha256": "792f9ed2977bd7234bdd1f59c2ff5370296f71d88a61b5c7a70cb5ceb49f87b4",
-    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_b_aug_implementation_20260921_v1",
-    "CPU_checks": 13,
-    "actual_image_gradient_conditions": 2,
-    "first_identity_check_failed_and_preserved": true,
-    "numerical_amendment": "canonical FP32 sampler parity, not ideal exact identity; original gradient thresholds unchanged",
-    "actual_source_image_forwards": 100,
-    "actual_source_image_backwards": 36,
-    "public_unique_images": 4,
-    "optimizer_updates": 0,
-    "full_P_Q_augmented_targets_prepared": false,
-    "main_campaign_binding_complete": false,
-    "main_training_started": false,
-    "recipient_or_new_V_efficacy": false,
-    "Q_V_pixels": 0,
-    "DP_Expert_Reserved_access": false,
-    "automatic_C_D_restart": false
-  }
+  "latest_prrd_runtime_verification_extension": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_microbatch_speed_20260921_v1\\runtime_verification_extension.json"
 }

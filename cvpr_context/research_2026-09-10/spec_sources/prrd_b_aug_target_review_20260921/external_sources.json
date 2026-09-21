@@ -1,0 +1,32 @@
+﻿[
+    {
+        "file":  "lgm_linear_gm.py",
+        "url":  "https://raw.githubusercontent.com/GeorgeCazenavette/linear-gradient-matching/33d004b8c16d9ab8e39aec780f9edad767f6f033/src/distillation/linear_gm.py",
+        "sha256":  "bbc062c638c6882e15d1b49f9ee861dcfc216a9e6ff64a640e3671eb8baee69b",
+        "bytes":  11165
+    },
+    {
+        "file":  "lgm_standard_aug.py",
+        "url":  "https://raw.githubusercontent.com/GeorgeCazenavette/linear-gradient-matching/33d004b8c16d9ab8e39aec780f9edad767f6f033/src/augmentation/standard_aug.py",
+        "sha256":  "bbf80f4766aaaac3fcc24550ea5f69ec38c52c6a649545abb011164e0473cc84",
+        "bytes":  491
+    },
+    {
+        "file":  "lgm_pyramid.py",
+        "url":  "https://raw.githubusercontent.com/GeorgeCazenavette/linear-gradient-matching/33d004b8c16d9ab8e39aec780f9edad767f6f033/src/synsets/pyramid.py",
+        "sha256":  "2529d34a231c9cc91696c92060e96c42d67493f20cf0137cedb6ad6f48eb82ef",
+        "bytes":  5001
+    },
+    {
+        "file":  "dosser.py",
+        "url":  "https://raw.githubusercontent.com/humansensinglab/Dosser/dff0c57f6f22f66d500a66bad4a9db757e5f714a/dosser.py",
+        "sha256":  "f794b1d2987efea83723b1ede0d99fed5a3aaa9c17bf3e3b397efdb98742c606",
+        "bytes":  38565
+    },
+    {
+        "file":  "dosser_utils.py",
+        "url":  "https://raw.githubusercontent.com/humansensinglab/Dosser/dff0c57f6f22f66d500a66bad4a9db757e5f714a/utils.py",
+        "sha256":  "ab7e66073febdbbddf50a3f08c8db2396538777010a6a75082ad6d8dcc54264a",
+        "bytes":  32707
+    }
+]

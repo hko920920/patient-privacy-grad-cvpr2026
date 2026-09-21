@@ -337,6 +337,30 @@ def export_artifact(directory, renderer, spec, signature, checkpoint):
     return report
 
 
+def objective_target_state(objective):
+    state = {'moments': dict(objective.moments),
+             'M': objective.functional_target.matrix,
+             'w': objective.functional_target.weight}
+    if objective.aug_moments is not None:
+        state['aug_moments'] = dict(objective.aug_moments)
+    return state
+
+
+def check_augmented_target_binding(objective, spec):
+    """Bind content as well as provenance before checkpoint creation/replay."""
+    augmented = getattr(objective, 'aug_moments', None)
+    keys = ('aug_target_sha256', 'aug_target_rule_sha256', 'aug_target_digest')
+    if augmented is None:
+        require(not any(k in spec for k in keys), 'Augmented target binding without target')
+        return
+    require(objective.arm in ('A', 'B'), 'Augmented target requires a pointwise arm')
+    require(all(isinstance(spec.get(k), str) and len(spec[k]) == 64
+                and all(c in '0123456789abcdef' for c in spec[k]) for k in keys),
+            'Missing or invalid augmented target binding')
+    require(tree_digest(dict(augmented)) == spec['aug_target_digest'],
+            'Augmented target content differs from run binding')
+
+
 def run_bank(directory, renderer, encoder, objective, optimizer, spec, *,
              resume=False, stop_after=None, deadline=None, on_step=None):
     """Execute one immutable bank. Loader and authorization remain outside."""
@@ -353,6 +377,7 @@ def run_bank(directory, renderer, encoder, objective, optimizer, spec, *,
         require(spec['images'] <= 8 and spec['updates'] <= 84, 'Technical check expanded')
     stop = spec['updates'] if stop_after is None else stop_after
     require(0 <= stop <= spec['updates'], 'Invalid stop boundary')
+    check_augmented_target_binding(objective, spec)
     signature = digest(spec)
     if not resume:
         directory.mkdir(parents=True, exist_ok=False)
@@ -373,9 +398,7 @@ def run_bank(directory, renderer, encoder, objective, optimizer, spec, *,
         attempt = uuid.uuid4().hex
         start = time.monotonic(); last_duration = 0.; stopped_for_budget = False
         source_before = state_hash(encoder)
-        target_before = tree_digest({'moments': dict(objective.moments),
-                                     'M': objective.functional_target.matrix,
-                                     'w': objective.functional_target.weight})
+        target_before = tree_digest(objective_target_state(objective))
         prior_completed = completed
         while completed < stop:
             if deadline is not None and time.monotonic() + max(15., last_duration*1.25) >= deadline:
@@ -407,9 +430,7 @@ def run_bank(directory, renderer, encoder, objective, optimizer, spec, *,
         require(state_hash(encoder) == source_before, 'Fixed encoder weights/buffers/projections changed')
         require(all(p.grad is None and not p.requires_grad for p in encoder.parameters()),
                 'Gradient leaked into fixed encoder')
-        require(tree_digest({'moments': dict(objective.moments),
-                             'M': objective.functional_target.matrix,
-                             'w': objective.functional_target.weight}) == target_before,
+        require(tree_digest(objective_target_state(objective)) == target_before,
                 'Fixed target changed')
         final = completed == spec['updates']
         png = None

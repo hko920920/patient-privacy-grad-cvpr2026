@@ -1,10 +1,5 @@
 # CVPR 연구의 네 단계와 현재 위치
 
-**2026-09-21 B 증강 target 첫 구현 완료:** [PRRD_B_AUGMENTED_TARGET_IMPLEMENTATION_RESULTS_20260921.md](PRRD_B_AUGMENTED_TARGET_IMPLEMENTATION_RESULTS_20260921.md). 큰 단계2 안의 기술 연결 검사다. CPU13개 및 실제 P4 BioViL gradient2조건이 통과했다. Native 항등 FP32 수치 검사 정정과 최초 실패를 보존했다. Full P/Q 추출·본 합성·전이 효용은 아직 미실행이며 관계 중심 확대는 계속 보류한다.
-
-**2026-09-21 B 증강 target 검토·명세:** [검토와 명세](PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md). 큰 단계2의 개발안이며 관계 중심 PRRD-C 확대를 보류한다. 기존 B에서 증강 목표 평균 하나만 바꾸는 후보를 선행/코드에 근거해 구체화했다. 평균 target은 변환별 정합과 다르고 전이 개선은 미확인이다. B가 좋아져도 관계 기여·C/D 복귀는 별도로 판단한다. 명세만 작성했으며 구현·실행·DP/final은 하지 않았다.
-
-
 **2026-09-21 PRRD 사후 실패 분석:** [PRRD_FAILURE_MECHANISM_ANALYSIS_20260921.md](PRRD_FAILURE_MECHANISM_ANALYSIS_20260921.md). 큰 단계2의 고정 pilot 설명 분석이다. Source 기능 재현과 relation/global-rank/recipient 전달은 다른 문제이며, 현재 음성 주결과를 유지한다. Guard의 수신자 기준 및 class 방향 불일치를 실제 저장 수치로 확인했다. 새 recipe·계수 채택/학습/DP/final은 없다.
 
 **2026-09-21 source 기능 비교 완료:** [PRRD_SOURCE_TARGET_PNG_DIAGNOSTIC_20260921.md](PRRD_SOURCE_TARGET_PNG_DIAGNOSTIC_20260921.md). Source target C−B AUROC +0.000140, C−D -0.005577; PNG source·기존 DenseNet을 같은 표에서 비교했다. 새 학습·DP·final 없음. 기존 음성 pilot을 뒤집는 독립 확인 결과가 아니라 원래 기능 정합의 대상을 확인한 후속 개발 분석이다.

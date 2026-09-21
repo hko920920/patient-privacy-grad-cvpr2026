@@ -44,6 +44,24 @@ def seed_all(seed):
         torch.cuda.manual_seed_all(seed)
 
 
+def load_augmented_target(job):
+    keys = ('aug_target_file', 'aug_target_sha256', 'aug_target_prefix',
+            'aug_target_rule_sha256')
+    if not any(k in job for k in keys):
+        return None
+    require(all(k in job for k in keys), 'Incomplete augmented target job')
+    require(job['arm'] in ('A', 'B'), 'Augmented target job must be pointwise')
+    for key in ('aug_target_sha256', 'aug_target_rule_sha256'):
+        value = job[key]
+        require(isinstance(value, str) and len(value) == 64
+                and all(c in '0123456789abcdef' for c in value), 'Invalid augmented target hash')
+    require(sha(job['aug_target_file']) == job['aug_target_sha256'], 'Augmented target file changed')
+    with np.load(job['aug_target_file'], allow_pickle=False) as data:
+        require(str(data['rule_sha256']) == job['aug_target_rule_sha256'],
+                'Augmented target rule changed')
+        return {k: data[job['aug_target_prefix']+k].copy() for k in ('m', 'A')}
+
+
 def execute_bound_job(job, bank_directory, *, resume=False, stop_after=None, deadline=None,
                       perturb_rng_before_resume=False):
     """Both technical verification and authorized main runs call this path."""
@@ -55,6 +73,7 @@ def execute_bound_job(job, bank_directory, *, resume=False, stop_after=None, dea
     check_frozen_inputs(base)
     require(source_hashes() == job['implementation_source_sha256'], 'Implementation changed')
     require(sha(job['target_file']) == job['target_sha256'], 'Target file changed')
+    aug_target = load_augmented_target(job)
     if job['artifact_kind'] == 'TECHNICAL_TEST_ONLY':
         require(microbatch == 4, 'Historical small resume fixture uses microbatch4')
         require(job['images'] == 4 and job['updates'] == 84 and job['arm'] == 'C',
@@ -88,7 +107,8 @@ def execute_bound_job(job, bank_directory, *, resume=False, stop_after=None, dea
     require(target['m'].shape == (2, 16) and target['A'].shape == (2, 16, 16),
             'Unexpected target coordinate system')
     scales = json.loads((PATHS/'source_P_relation_scales.json').read_text(encoding='utf-8'))['scales']
-    objective = bind_objective(target, job['arm'], scales, policy, eta=job['eta'], device='cuda')
+    objective = bind_objective(target, job['arm'], scales, policy, eta=job['eta'], device='cuda',
+                               aug_target=aug_target)
     renderer = Renderer(template, job['arm'], job['seed'])
     optimizer = torch.optim.AdamW(renderer.parameters(), lr=.01, weight_decay=0.,
                                  betas=(.9, .999), eps=1e-8, foreach=False)
@@ -104,6 +124,10 @@ def execute_bound_job(job, bank_directory, *, resume=False, stop_after=None, dea
         'learner_policy': asdict(policy), 'eta': job['eta'],
         'scales': scales,
     }
+    if aug_target is not None:
+        spec.update(aug_target_sha256=job['aug_target_sha256'],
+                    aug_target_rule_sha256=job['aug_target_rule_sha256'],
+                    aug_target_digest=tree_digest(dict(objective.aug_moments)))
     seed_all(job['seed'])
     # Deliberately different startup RNG proves the resumed state is restored.
     if resume and perturb_rng_before_resume:
