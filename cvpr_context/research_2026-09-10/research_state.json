@@ -24,8 +24,8 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "Review the completed single-seed ABCD101 developmental comparison; decide whether evidence warrants repetitions/strong controls. No automatic additional execution.",
-  "next_task_output": "PRRD_ABCD101_DEVELOPMENT_RESULTS_20260921.md",
+  "next_task": "Review completed source target/PNG diagnostic alongside the unchanged negative DenseNet pilot. No automatic further study.",
+  "next_task_output": "PRRD_SOURCE_TARGET_PNG_DIAGNOSTIC_20260921.md",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
     "Support, repetition, cohort composition and weak labels are not causally separated",
@@ -57,13 +57,14 @@
     "Fixed12classifier checkpoint inference on actually seen training images: high training discrimination vs weak development, unchanged parameters/BN; no retraining or new efficacy",
     "Metadata-only prospective Rwide real-support comparison:2699patients5910images120positivepatients; original R1 sampler and38400 planned slots checked; no new model/pixel execution",
     "Rwide: same classifier400steps x3; expanded5910real-image pool; development AUROC delta +0.134825; independent raw/sampler/metric verification; original failures and final resources preserved",
-    "PRRD ABCD101:4banks512PNG2000updates, post-seal DenseNet V paired patient bootstrap; C−B AUROC -0.059134, C−D -0.093984; provisional signal=False, single-seed development only."
+    "PRRD ABCD101:4banks512PNG2000updates, post-seal DenseNet V paired patient bootstrap; C−B AUROC -0.059134, C−D -0.093984; provisional signal=False, single-seed development only.",
+    "PRRD B/C/D source target/PNG V diagnostic; target C−B +0.000140, C−D -0.005577; prior DenseNet reused, no new training."
   ],
   "candidate_R_status": "Expansion on hold; not a reason to terminate step 2 or the research goal",
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "PRRD four-bank developmental pilot complete; full relational transfer, strong-baseline and patient-DP claims remain unconfirmed.",
+  "step2_active_task": "Source target/PNG/recipient linkage comparison complete; interpret evidence without automatic extra training.",
   "learned_baseline_inventory_correction": "U CDI and E/U four-cell comparison completed. Patient-cluster reference Welch8 completed as adaptation, not original full experiment. MoFit actual kernel completed only for the stated one-patient scope.",
   "completed_kernel": {
     "report": "CDI_KERNEL_RESULTS.md",
@@ -78,8 +79,8 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_pilot_abcd101_20260921_v1",
-    "last_completed_report": "PRRD_ABCD101_DEVELOPMENT_RESULTS_20260921.md",
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_source_readout_20260921_v1",
+    "last_completed_report": "PRRD_SOURCE_TARGET_PNG_DIAGNOSTIC_20260921.md",
     "additional_execution_contract_fixed": true,
     "stage2_completion_claim": false,
     "latest_design_review": "PRRD_CONSOLIDATED_DESIGN_20260918.md",
@@ -2892,6 +2893,277 @@
     "historical_pre_prrd_last_completed": {
       "output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\real_support_20260917_v1",
       "report": "TRACK1_REAL_SUPPORT_DIAGNOSTIC_RESULTS_20260917.md"
+    },
+    "prrd_source_readout_diagnostic": {
+      "status": "COMPLETE",
+      "output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_source_readout_20260921_v1",
+      "scope": "B/C/D existing target and PNG source V readouts; missing source V only; existing DenseNet reused",
+      "new_training": 0,
+      "new_synthesis": 0,
+      "DP_expert_reserved": false,
+      "start": "2026-09-21T11:56:36.795084+00:00",
+      "finished": "2026-09-21T12:01:56.059085+00:00",
+      "result_file": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_source_readout_20260921_v1\\result.json",
+      "metrics": {
+        "B_target": {
+          "AUROC": 0.7777907919297384,
+          "AP": 0.12790746937855557,
+          "AUROC_patient_cluster_95": [
+            0.7389053499681076,
+            0.8126795375254657
+          ],
+          "AP_patient_cluster_95": [
+            0.09601406549160445,
+            0.17239343383216715
+          ]
+        },
+        "B_PNG": {
+          "AUROC": 0.777577917586953,
+          "AP": 0.1277079486613286,
+          "AUROC_patient_cluster_95": [
+            0.7386738131853604,
+            0.8124597579066529
+          ],
+          "AP_patient_cluster_95": [
+            0.09562397362536877,
+            0.1720800233655405
+          ]
+        },
+        "C_target": {
+          "AUROC": 0.7779311588544572,
+          "AP": 0.1260721175172859,
+          "AUROC_patient_cluster_95": [
+            0.7379710224538485,
+            0.8134315527866559
+          ],
+          "AP_patient_cluster_95": [
+            0.0944405133916618,
+            0.1692064256668425
+          ]
+        },
+        "C_PNG": {
+          "AUROC": 0.7780566524626493,
+          "AP": 0.12603125212933292,
+          "AUROC_patient_cluster_95": [
+            0.7380375814788614,
+            0.8135806364433206
+          ],
+          "AP_patient_cluster_95": [
+            0.09453795197949336,
+            0.1690834512722696
+          ]
+        },
+        "D_target": {
+          "AUROC": 0.7835086525518893,
+          "AP": 0.1716327116967423,
+          "AUROC_patient_cluster_95": [
+            0.7426789151192449,
+            0.8210047127792238
+          ],
+          "AP_patient_cluster_95": [
+            0.12372775081762763,
+            0.23767797498772045
+          ]
+        },
+        "D_PNG": {
+          "AUROC": 0.7811075415151447,
+          "AP": 0.1601706539915171,
+          "AUROC_patient_cluster_95": [
+            0.7403748359531253,
+            0.8185477367742576
+          ],
+          "AP_patient_cluster_95": [
+            0.11589734828340913,
+            0.22315882170951193
+          ]
+        },
+        "DenseNet_B": {
+          "AUROC": 0.5679747748551711,
+          "AP": 0.060098191350275,
+          "AUROC_patient_cluster_95": [
+            0.5141729754695397,
+            0.6240657405987011
+          ],
+          "AP_patient_cluster_95": [
+            0.04614917389249491,
+            0.08257608558896394
+          ]
+        },
+        "DenseNet_C": {
+          "AUROC": 0.5088412570927128,
+          "AP": 0.04857131090295241,
+          "AUROC_patient_cluster_95": [
+            0.45616879664367255,
+            0.562259324539907
+          ],
+          "AP_patient_cluster_95": [
+            0.037509332511233395,
+            0.06672256024317949
+          ]
+        },
+        "DenseNet_D": {
+          "AUROC": 0.6028257442235757,
+          "AP": 0.05940935864110371,
+          "AUROC_patient_cluster_95": [
+            0.5502099828808742,
+            0.6551054245108315
+          ],
+          "AP_patient_cluster_95": [
+            0.047536849144250236,
+            0.0763535039274583
+          ]
+        }
+      },
+      "comparisons": {
+        "B_PNG minus B_target": {
+          "AUROC": {
+            "delta": -0.0002128743427853852,
+            "patient_cluster_95": [
+              -0.00046648588520104006,
+              5.700984859162408e-05
+            ]
+          },
+          "AP": {
+            "delta": -0.00019952071722698084,
+            "patient_cluster_95": [
+              -0.0012821094839876278,
+              0.0022077519893242544
+            ]
+          }
+        },
+        "C_PNG minus C_target": {
+          "AUROC": {
+            "delta": 0.00012549360819213984,
+            "patient_cluster_95": [
+              -0.00019683286725424853,
+              0.000491985936449052
+            ]
+          },
+          "AP": {
+            "delta": -4.086538795297634e-05,
+            "patient_cluster_95": [
+              -0.0007069804471535664,
+              0.001123308457120957
+            ]
+          }
+        },
+        "D_PNG minus D_target": {
+          "AUROC": {
+            "delta": -0.002401111036744563,
+            "patient_cluster_95": [
+              -0.004557209903378148,
+              -0.0002816911812373433
+            ]
+          },
+          "AP": {
+            "delta": -0.01146205770522521,
+            "patient_cluster_95": [
+              -0.019441369666662843,
+              -0.005231985786340226
+            ]
+          }
+        },
+        "C_target minus B_target": {
+          "AUROC": {
+            "delta": 0.0001403669247187489,
+            "patient_cluster_95": [
+              -0.006667073760683306,
+              0.00658279967229037
+            ]
+          },
+          "AP": {
+            "delta": -0.0018353518612696795,
+            "patient_cluster_95": [
+              -0.017957041698133672,
+              0.010851046785471122
+            ]
+          }
+        },
+        "C_PNG minus B_PNG": {
+          "AUROC": {
+            "delta": 0.00047873487569627393,
+            "patient_cluster_95": [
+              -0.006465169902201503,
+              0.0071796287703942635
+            ]
+          },
+          "AP": {
+            "delta": -0.001676696531995675,
+            "patient_cluster_95": [
+              -0.01821960970355718,
+              0.011711819610117916
+            ]
+          }
+        },
+        "C_target minus D_target": {
+          "AUROC": {
+            "delta": -0.005577493697432101,
+            "patient_cluster_95": [
+              -0.013775082249435865,
+              0.0027950085852064175
+            ]
+          },
+          "AP": {
+            "delta": -0.045560594179456404,
+            "patient_cluster_95": [
+              -0.07932758778252566,
+              -0.02214812208144627
+            ]
+          }
+        },
+        "C_PNG minus D_PNG": {
+          "AUROC": {
+            "delta": -0.003050889052495398,
+            "patient_cluster_95": [
+              -0.011174907100538742,
+              0.005431868080296587
+            ]
+          },
+          "AP": {
+            "delta": -0.03413940186218417,
+            "patient_cluster_95": [
+              -0.06467845431996391,
+              -0.013379441535486574
+            ]
+          }
+        },
+        "DenseNet_C minus DenseNet_B": {
+          "AUROC": {
+            "delta": -0.05913351776245834,
+            "patient_cluster_95": [
+              -0.10246916923483239,
+              -0.014318141326843292
+            ]
+          },
+          "AP": {
+            "delta": -0.011526880447322592,
+            "patient_cluster_95": [
+              -0.02494904273183409,
+              0.0020298311745936817
+            ]
+          }
+        },
+        "DenseNet_C minus DenseNet_D": {
+          "AUROC": {
+            "delta": -0.09398448713086294,
+            "patient_cluster_95": [
+              -0.15633422633075847,
+              -0.03592806773372841
+            ]
+          },
+          "AP": {
+            "delta": -0.0108380477381513,
+            "patient_cluster_95": [
+              -0.023762642343197974,
+              0.004994111610364814
+            ]
+          }
+        }
+      },
+      "new_recipient_forward": 0,
+      "source_V_images": 5047,
+      "interpretation": "Source B/C discrimination is preserved by final PNGs; true-relation incremental utility is already unestablished at the target level, and existing DenseNet reuse is unsuccessful in this pilot. Neither target uselessness nor a transfer-only cause is established.",
+      "next_run_scheduled": false
     }
   },
   "updated_utc": "2026-09-18T13:32:25.750367+00:00",

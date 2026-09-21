@@ -1,5 +1,7 @@
 # 현재 상태와 기록 권위
 
+**2026-09-21 source 목표 기능·PNG 비교 완료:** [PRRD_SOURCE_TARGET_PNG_DIAGNOSTIC_20260921.md](CVPR%20주제%20탐색/research_2026-09-10/PRRD_SOURCE_TARGET_PNG_DIAGNOSTIC_20260921.md). AUROC B:target0.777791,PNG0.777578,DenseNet0.567975; C:target0.777931,PNG0.778057,DenseNet0.508841; D:target0.783509,PNG0.781108,DenseNet0.602826. 기존 통계·PNG를 재사용하고 BioViL V 특징만 추가 추출했다. 재학습·재합성·계수 변경·DP·Expert/Reserved0. 기존 DenseNet 음성 결과와 원기록 유지, 추가 실행 예약0.
+
 **2026-09-21 PRRD A/B/C/D·seed101 예비 비교 완료:** [전체 결과](CVPR%20주제%20탐색/research_2026-09-10/PRRD_ABCD101_DEVELOPMENT_RESULTS_20260921.md). 고정4bank·512장·2,000update 후 DenseNet121의 기존 개발V를 함께 평가했다. AUROC/AP는 A 0.506707/0.045155, B 0.567975/0.060098, C 0.508841/0.048571, D 0.602826/0.059409; C−B AUROC -0.059134, C−D -0.093984. 예비 투자 신호는 미충족이다. 단일 합성seed·기존 개발자료의 결과로, 독립 확인·최종 기여·DP 성공을 뜻하지 않는다. 2,000회 paired 환자bootstrap과 PNG·목표·수신자 산술 검산 완료. Campaign 실측 3.558시간. 남은26bank·RN18·ViT·DP·Expert/Reserved·upload는 실행하지 않았고 추가 실행 예약도 없다. 기존실패·자료역할·사용이력은 보존했다.
 
 **2026-09-21 PRRD A/B/C/D·seed101 예비 비교 착수:** 사용자가 Q 준비→고정 4bank→네 산출물 동결 후 DenseNet121 개발 V 평가를 한 묶음으로 승인했다. [새 계약](CVPR%20주제%20탐색/research_2026-09-10/PRRD_ABCD101_DEVELOPMENT_CONTRACT_20260921.md)에 128장·500회·microbatch16·기존 계수와 입력/코드 hash를 사전 결속했다. 기존30bank 전부 완료 후 평가 규칙은 이번4bank 평가로 명시적으로 개정했다. 합성 예상3시간20분, 준비/평가 포함 운영 상한6시간(assistant 예산)이며 추가 bank 자동 확대는 없다. 새 목표/통계 helper의 CPU 검산만 완료했고 아직 환자 효용 결과는 없다. DP·Expert/Reserved·RN18·추가seed는 닫혀 있다. 마지막 실행기의 남은 microbatch4 제한만 수정했으며 기존 목적과 완료된 재개 검증은 재실행하지 않는다.

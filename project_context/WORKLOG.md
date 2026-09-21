@@ -1,5 +1,12 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## PRRD-SOURCE-TARGET-PNG-DIAGNOSTIC (2026-09-21)
+
+- 사용자 요청한 B/C/D source target/PNG 및 기존 DenseNet 한 표 비교 완료. B:target0.777791,PNG0.777578,DenseNet0.567975; C:target0.777931,PNG0.778057,DenseNet0.508841; D:target0.783509,PNG0.781108,DenseNet0.602826.
+- 원료 target/PNG 특징/learner·계수 유지. BioViL V5047 point feature만 추출하고 기존 환자bootstrap으로 조건부 구간 계산. 새 학습·합성·수신자실행·DP·Expert/Reserved0.
+- 최초 hash 중단은 contracts.py의 연구 문서 폴더 fallback 추가였다. 옛 원본과 비교·동일 폴더 해석을 확인해 새 진단에만 결속했다. 과거 계약·결과와 현재 사용자 수정은 덮어쓰지 않았다.
+- 상세 PRRD_SOURCE_TARGET_PNG_DIAGNOSTIC_20260921.md; C:\Users\SOGANG\Documents\카톨릭대\졸업관련 260720\고한경_박사학위논문_작업본\code_working\_reports\prrd_source_readout_20260921_v1. 후속 실험 자동 실행 없음.
+
 ### ABCD101 기술 수정·용량 정리 기록
 
 - amendment_02: A500 학습·PNG 완료 후 Windows 임시 영수증 경로 길이 오류만 수정했다. A 재학습 없이 기록을 복구했고 수학적 목적은 유지했다.

@@ -1,5 +1,7 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-21 source 기능 비교 완료:** [PRRD_SOURCE_TARGET_PNG_DIAGNOSTIC_20260921.md](PRRD_SOURCE_TARGET_PNG_DIAGNOSTIC_20260921.md). Source target C−B AUROC +0.000140, C−D -0.005577; PNG source·기존 DenseNet을 같은 표에서 비교했다. 새 학습·DP·final 없음. 기존 음성 pilot을 뒤집는 독립 확인 결과가 아니라 원래 기능 정합의 대상을 확인한 후속 개발 분석이다.
+
 **2026-09-21 PRRD 첫 관계 전이 예비 비교 완료:** [PRRD_ABCD101_DEVELOPMENT_RESULTS_20260921.md](PRRD_ABCD101_DEVELOPMENT_RESULTS_20260921.md). 큰 단계2의 개발 근거 확인으로 고정A/B/C/D·seed101을 모두 완료한 뒤 DenseNet121에서 비교했다. C−B AUROC -0.059134, C−D -0.093984, 예비 신호=False. 단일seed/재사용V이며 단계2전체완료·독립final·DP기여를 선언하지 않는다. 남은26bank 자동확대 없이 결과검토를 다음으로 둔다.
 
 **2026-09-19 PRRD 실행기·프로세스 재개·PNG 연결 통과:** [결과](PRRD_BANK_RUNTIME_CONNECTION_RESULTS_20260919.md). 큰 연구단계2 안에서 고정 목적의 실행 연결을 완료했다. 실제 BioViL 공개C4의84회 연속 대82+2 새 프로세스 재개는 전체 상태·loss 차이0, PNG·label·pair·hash exact였다. CPU 파일 검사6개도 통과했다. 기술 검사168update이며 본학습·새profile·private/recipient/DP/final 실행은 아니다. 남은 main 허용 bank·시간 상한·Q 준비/목표 hash는 별도로 유지한다. 실행기 연결 완료를 환자 효용·전이 성공으로 확대하지 않고 기존 실제 결과 포인터를 보존한다.
