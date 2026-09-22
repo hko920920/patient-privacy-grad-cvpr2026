@@ -1,3 +1,9 @@
+**2026-09-21 B_augmean_k4 단일 비교 완료: DenseNet AUROC 0.487381/AP 0.046223; 기존B 대비 -0.080594/-0.013875, 사전 개발 기준 미충족. Source PNG AUROC 0.777800. 128장·500회·seed101, 합성 49.39분. 평균 증강target만 변경, 최종PNG 고정 후 기존V/2000환자draw 재사용. 독립 확인/사적 추가효용/관계 성공 아님. 추가 실행 없음.** [결과](CVPR%20주제%20탐색/research_2026-09-10/PRRD_B_AUGMEAN_K4_101_COMPARISON_RESULTS_20260921.md).
+
+**2026-09-21 수정 B 단일 비교 진행 중:** 사용자 승인에 따라 dev_B_augmean_k4_101, 공개 fresh 초기화128장/500회/seed101/microbatch16을 실행한다. 증강 통계target만 변경하고 최종PNG seal 후 기존 BioViL/DenseNet V 특징과 2000환자draw를 재사용한다. 추가 profile/계수/seed/A/C/D/DP/final은 없다. 실행 범위: code_working/_reports/prrd_b_augmean_k4_101_20260921_v1/campaign_contract.json. 예상55–70분, 운영상한90분(assistant 예산).
+
+**2026-09-21 B K4 증강 target 준비 완료: P813/Q5097의23,640 특징을 추출하고 환자별 집계·변환 매핑·실제target loader를 독립 검산했다(max 7.11e-15). 추출 5.82분, 프로그램 7.11분. Clean 특징/PCA/scale/target/코드 보존. 새target은 비DP 내부 평균 증강 통계이며 변환별 반응 정합이 아니다. 합성학습/V/수신자/C·D/DP/final0. 목표 준비 차단 없음; 다음 범위는 새hash를 결속한 수정B 한bank이며 이번에는 미착수.** [결과](CVPR%20주제%20탐색/research_2026-09-10/PRRD_B_AUGMENTED_TARGET_PREPARATION_RESULTS_20260921.md).
+
 **2026-09-21 B 증강 target 첫 구현·공개 검사 통과:** [결과](CVPR%20주제%20탐색/research_2026-09-10/PRRD_B_AUGMENTED_TARGET_IMPLEMENTATION_RESULTS_20260921.md). 증강 target만 분리하고 환자별K4 집계·hash 결속을 구현했다. CPU13검사와 실제P4 BioViL gradient2조건 통과(parameter max5.22e-8, pixel0). 첫 native 항등 검사 실패는 FP32 기준 연산 차이로 확인해 명시적 검사 정정·재검증했다. 기존 생산 증강/gradient 기준 유지. 본학습/Q·V/수신자/DP/final0; 다음은 전체 P/Q 증강 목표 결속·추출·검산. 현재 실행 종료, 관계 확대 보류.
 
 **2026-09-21 B 증강 target 검토·명세 완료:** [검토 및 한 bank 비교 명세](CVPR%20주제%20탐색/research_2026-09-10/PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md). 현재 C 추가 실행을 보류하고, 기존 B의 증강 통계 target만 바꾸는 개발 후보를 기록했다. 고정4회/영상·추가23,640forward 계획이며 아직 추출·구현·학습하지 않았다. 평균 증강 target은 변환별 반응 정합과 다르다. B 개선만으로 C/D를 자동 재개하거나 private 효용/논문 기여를 선언하지 않는다. 기존 코드·결과·역할/DP/final 경계 보존, 새 실행 예약0.

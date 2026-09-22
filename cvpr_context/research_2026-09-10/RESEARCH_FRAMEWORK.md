@@ -1,5 +1,9 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-21 B_augmean_k4 단일 비교 완료: DenseNet AUROC 0.487381/AP 0.046223; 기존B 대비 -0.080594/-0.013875, 사전 개발 기준 미충족. Source PNG AUROC 0.777800. 128장·500회·seed101, 합성 49.39분. 평균 증강target만 변경, 최종PNG 고정 후 기존V/2000환자draw 재사용. 독립 확인/사적 추가효용/관계 성공 아님. 추가 실행 없음.** [결과](PRRD_B_AUGMEAN_K4_101_COMPARISON_RESULTS_20260921.md). 큰 연구단계2의 개발 비교이며 단계전체 완료로 처리하지 않는다.
+
+**2026-09-21 B K4 증강 target 준비 완료: P813/Q5097의23,640 특징을 추출하고 환자별 집계·변환 매핑·실제target loader를 독립 검산했다(max 7.11e-15). 추출 5.82분, 프로그램 7.11분. Clean 특징/PCA/scale/target/코드 보존. 새target은 비DP 내부 평균 증강 통계이며 변환별 반응 정합이 아니다. 합성학습/V/수신자/C·D/DP/final0. 목표 준비 차단 없음; 다음 범위는 새hash를 결속한 수정B 한bank이며 이번에는 미착수.** [결과](PRRD_B_AUGMENTED_TARGET_PREPARATION_RESULTS_20260921.md). 큰 단계2 전체 완료나 연구 효용 입증을 의미하지 않는다.
+
 **2026-09-21 B 증강 target 첫 구현 완료:** [PRRD_B_AUGMENTED_TARGET_IMPLEMENTATION_RESULTS_20260921.md](PRRD_B_AUGMENTED_TARGET_IMPLEMENTATION_RESULTS_20260921.md). 큰 단계2 안의 기술 연결 검사다. CPU13개 및 실제 P4 BioViL gradient2조건이 통과했다. Native 항등 FP32 수치 검사 정정과 최초 실패를 보존했다. Full P/Q 추출·본 합성·전이 효용은 아직 미실행이며 관계 중심 확대는 계속 보류한다.
 
 **2026-09-21 B 증강 target 검토·명세:** [검토와 명세](PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md). 큰 단계2의 개발안이며 관계 중심 PRRD-C 확대를 보류한다. 기존 B에서 증강 목표 평균 하나만 바꾸는 후보를 선행/코드에 근거해 구체화했다. 평균 target은 변환별 정합과 다르고 전이 개선은 미확인이다. B가 좋아져도 관계 기여·C/D 복귀는 별도로 판단한다. 명세만 작성했으며 구현·실행·DP/final은 하지 않았다.

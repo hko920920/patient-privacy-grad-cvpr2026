@@ -24,7 +24,7 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "Bind the new extraction/runtime contract, prepare and independently verify full P/Q K4 augmented targets, then consider the bounded B comparison; no automatic C/D, additional seeds, DP or final.",
+  "next_task": "Review this completed single-seed B augmentation-mean target comparison; no automatic additional seed/A/C/D/DP/final execution. Any later scope must follow the actual effect and uncertainty.",
   "next_task_output": "PRRD_B_AUGMENTED_TARGET_IMPLEMENTATION_RESULTS_20260921.md",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
@@ -98,8 +98,8 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_b_aug_implementation_20260921_v1",
-    "last_completed_report": "PRRD_B_AUGMENTED_TARGET_IMPLEMENTATION_RESULTS_20260921.md",
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_b_augmean_k4_101_20260921_v1",
+    "last_completed_report": "PRRD_B_AUGMEAN_K4_101_COMPARISON_RESULTS_20260921.md",
     "additional_execution_contract_fixed": false,
     "stage2_completion_claim": false,
     "latest_design_review": "PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md",
@@ -1476,7 +1476,6 @@
         "logging_resume": "c768938e49e754a6901f26c8bfd61480852bdf09336d2433b9a91feceb970d85"
       }
     },
-    "current_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\downstream_development_20260917_v1",
     "current_protocol": "TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md",
     "current_scope": "Completed explicitly authorized20-minute public speed check; no Q/main/recipient/DP/final execution.",
     "planned_next_protocol": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
@@ -7481,5 +7480,187 @@
     "Q_V_pixels": 0,
     "DP_Expert_Reserved_access": false,
     "automatic_C_D_restart": false
+  },
+  "latest_B_augmentation_target_preparation": {
+    "status": "PASS_FULL_P_Q_K4_TARGET_PREPARATION_ONLY",
+    "completed": "2026-09-21T13:32:00.443583+00:00",
+    "report": "PRRD_B_AUGMENTED_TARGET_PREPARATION_RESULTS_20260921.md",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_b_aug_targets_20260921_v1",
+    "actual_source_image_forwards": 23640,
+    "original_images": 5910,
+    "patients": 2699,
+    "views_per_image": 4,
+    "extraction_seconds": 348.9209134001285,
+    "program_seconds": 426.3530071999412,
+    "verification_max_abs": 7.105427357601002e-15,
+    "target_sha256": "538f3fcd3474c6f3b91a3503ce174846636b82a3e9f71aac433423b6219c8054",
+    "target_file": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_b_aug_targets_20260921_v1\\private\\B_augmean_k4_target.npz",
+    "clean_target_and_code_unchanged": true,
+    "full_P_Q_augmented_targets_prepared": true,
+    "target_preparation_blockers": [],
+    "main_campaign_binding_complete": false,
+    "main_training_started": false,
+    "V_recipient_C_D_DP_Expert_Reserved_executed": false,
+    "next_scope": "one modified B bank; no automatic expansion",
+    "interpretation": "finite real augmentation mean, not per-transform response matching",
+    "report_sha256": "623e2ad1fadf18e7f0f7ca1daaed3d130111764abdc74ba4df674ee2adc488ce"
+  },
+  "latest_B_augmean_k4_development_comparison": {
+    "status": "COMPLETE_REQUESTED_ONE_BANK_BUNDLE",
+    "report": "PRRD_B_AUGMEAN_K4_101_COMPARISON_RESULTS_20260921.md",
+    "report_sha256": "0e31af563f7aa9c6b9465a4175d9bcb13cdf02be559f45d2ac3ebde361b000be",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\prrd_b_augmean_k4_101_20260921_v1",
+    "run_id": "dev_B_augmean_k4_101",
+    "metrics": {
+      "BioViL_target": {
+        "AUROC": 0.7777907919297384,
+        "AP": 0.12790746937855557,
+        "AUROC_patient_cluster_95": [
+          0.7389053499681076,
+          0.8126795375254657
+        ],
+        "AP_patient_cluster_95": [
+          0.09601406549160445,
+          0.17239343383216715
+        ]
+      },
+      "BioViL_B_old": {
+        "AUROC": 0.777577917586953,
+        "AP": 0.1277079486613286,
+        "AUROC_patient_cluster_95": [
+          0.7386738131853604,
+          0.8124597579066529
+        ],
+        "AP_patient_cluster_95": [
+          0.09562397362536877,
+          0.1720800233655405
+        ]
+      },
+      "BioViL_B_aug": {
+        "AUROC": 0.7778000877525675,
+        "AP": 0.1285309142833907,
+        "AUROC_patient_cluster_95": [
+          0.7387255456637786,
+          0.8126769295555699
+        ],
+        "AP_patient_cluster_95": [
+          0.0962356869413666,
+          0.17329784463418363
+        ]
+      },
+      "DenseNet_B_old": {
+        "AUROC": 0.5679747748551711,
+        "AP": 0.060098191350275,
+        "AUROC_patient_cluster_95": [
+          0.5141729754695397,
+          0.6240657405987011
+        ],
+        "AP_patient_cluster_95": [
+          0.04614917389249491,
+          0.08257608558896394
+        ]
+      },
+      "DenseNet_B_aug": {
+        "AUROC": 0.48738092050955983,
+        "AP": 0.0462228203622971,
+        "AUROC_patient_cluster_95": [
+          0.43769500677892204,
+          0.537589815796077
+        ],
+        "AP_patient_cluster_95": [
+          0.03503343293249584,
+          0.0631557414331787
+        ]
+      },
+      "DenseNet_P_real": {
+        "AUROC": 0.6180086116502689,
+        "AP": 0.06494123824262954,
+        "AUROC_patient_cluster_95": [
+          0.5673718233055167,
+          0.668282343010554
+        ],
+        "AP_patient_cluster_95": [
+          0.04992904676429032,
+          0.08548880528944092
+        ]
+      }
+    },
+    "comparisons": {
+      "BioViL_B_aug minus BioViL_B_old": {
+        "AUROC": {
+          "delta": 0.0002221701656144326,
+          "patient_cluster_95": [
+            -0.00012560370824851174,
+            0.0005656021753152024
+          ]
+        },
+        "AP": {
+          "delta": 0.0008229656220621051,
+          "patient_cluster_95": [
+            -0.001571248537364968,
+            0.0018981543827108272
+          ]
+        }
+      },
+      "BioViL_B_aug minus BioViL_target": {
+        "AUROC": {
+          "delta": 9.295822829047395e-06,
+          "patient_cluster_95": [
+            -0.0003401094304449848,
+            0.00035740958117279884
+          ]
+        },
+        "AP": {
+          "delta": 0.0006234449048351243,
+          "patient_cluster_95": [
+            -0.0002349968239917559,
+            0.001472105490443954
+          ]
+        }
+      },
+      "DenseNet_B_aug minus DenseNet_B_old": {
+        "AUROC": {
+          "delta": -0.08059385434561128,
+          "patient_cluster_95": [
+            -0.13177001546901362,
+            -0.029003189924573278
+          ]
+        },
+        "AP": {
+          "delta": -0.013875370987977899,
+          "patient_cluster_95": [
+            -0.028147911592306934,
+            -0.0018063302121867266
+          ]
+        }
+      },
+      "DenseNet_B_aug minus DenseNet_P_real": {
+        "AUROC": {
+          "delta": -0.13062769114070905,
+          "patient_cluster_95": [
+            -0.19093987873160784,
+            -0.06902068266711926
+          ]
+        },
+        "AP": {
+          "delta": -0.01871841788033244,
+          "patient_cluster_95": [
+            -0.03450293874853408,
+            -0.00487079325237766
+          ]
+        }
+      }
+    },
+    "provisional_investment_signal": false,
+    "new_banks": 1,
+    "updates": 500,
+    "synthesis_seconds": 2963.4220000000205,
+    "evaluation_seconds": 5.640000000130385,
+    "initial_state_matches_original_B": true,
+    "new_Q_V_pixel_access": 0,
+    "current_source_code_changed": false,
+    "automatic_followup": false,
+    "additional_seed_A_C_D_DP_Expert_Reserved_executed": false,
+    "independent_confirmation_or_private_added_value_established": false
   }
 }

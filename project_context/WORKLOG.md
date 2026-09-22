@@ -1,5 +1,19 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## B 증강 평균 target 단일 비교 완료 (2026-09-21)
+
+B_augmean_k4 단일 비교 완료: DenseNet AUROC 0.487381/AP 0.046223; 기존B 대비 -0.080594/-0.013875, 사전 개발 기준 미충족. Source PNG AUROC 0.777800. 128장·500회·seed101, 합성 49.39분. 평균 증강target만 변경, 최종PNG 고정 후 기존V/2000환자draw 재사용. 독립 확인/사적 추가효용/관계 성공 아님. 추가 실행 없음.
+
+DenseNet AUROC는 기존B 대비 -0.080594(감소), AP는 -0.013875(감소)다. 사전 개발 투자 기준은 미충족이다. AUROC 차이의 환자 조건부95% 구간은0을 포함하지 않는다. 이는 고정seed101·재사용 개발V의 비교이며 독립 확인이나 seed 반복성, 사적 추가 효용 또는 논문 기여 확정이 아니다.
+
+[전체 표·구간·비용](CVPR%20주제%20탐색/research_2026-09-10/PRRD_B_AUGMEAN_K4_101_COMPARISON_RESULTS_20260921.md).
+
+## B P/Q 증강 target 준비 완료 (2026-09-21)
+
+2026-09-21 B K4 증강 target 준비 완료: P813/Q5097의23,640 특징을 추출하고 환자별 집계·변환 매핑·실제target loader를 독립 검산했다(max 7.11e-15). 추출 5.82분, 프로그램 7.11분. Clean 특징/PCA/scale/target/코드 보존. 새target은 비DP 내부 평균 증강 통계이며 변환별 반응 정합이 아니다. 합성학습/V/수신자/C·D/DP/final0. 목표 준비 차단 없음; 다음 범위는 새hash를 결속한 수정B 한bank이며 이번에는 미착수.
+
+[결과](CVPR%20주제%20탐색/research_2026-09-10/PRRD_B_AUGMENTED_TARGET_PREPARATION_RESULTS_20260921.md). Target SHA256 `538f3fcd3474c6f3b91a3503ce174846636b82a3e9f71aac433423b6219c8054`. 이전 구현/실험 결과와 사용 이력은 유지한다.
+
 ## B 증강 target 첫 구현·공개 연결 완료 (2026-09-21)
 
 - 증강 목표만 별도 결속하는 코드, K4 native 변환/환자 집계, 파일·rule·내용 hash 및 재개 거부를 구현했다. 기존 clean/readout/function/renderer는 유지했다.
