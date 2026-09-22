@@ -1,5 +1,10 @@
 # 박사학위논문 작업기록 및 세션 인수인계
 
+## RECEIVER-CONDITION-SIGNAL-STEP1 — 2026-09-22
+
+2026-09-22 Receiver 조건별 gradient 첫 구현 완료: CPU9개 및 실제 P4 BioViL microbatch1/4 통과, parameter 최대오차1.49e-8·pixel/loss차이0. 기존 PRRD33파일 불변. 새 K4 fixed condition/head·환자/class 가중 signal을 별도 구현. 116F/68B, optimizer0, Q/V·DINO·수신자·DP/final0. A1/A2는 개발 feasibility이며 DenseNet은 개발 receiver다. 관계C/augmean 확대 보류; DP-aware 기여는 아직 미구현. 다음은 A1 target/실행 계약 연결이며 main 계수·비용·효용 기준은 미동결. 전체 작업 기록 시점 14.6분; CPU0.80초, 실제 모델11.45초. 이번 기술 검사는 첫 시도 통과했다. 새 조건별 signal을 실제 환자-DP로 소급하지 않는다. 계획·결과·state·상태 기록을 갱신했다.
+
+
 ## B 증강 평균 target 단일 비교 완료 (2026-09-21)
 
 B_augmean_k4 단일 비교 완료: DenseNet AUROC 0.487381/AP 0.046223; 기존B 대비 -0.080594/-0.013875, 사전 개발 기준 미충족. Source PNG AUROC 0.777800. 128장·500회·seed101, 합성 49.39분. 평균 증강target만 변경, 최종PNG 고정 후 기존V/2000환자draw 재사용. 독립 확인/사적 추가효용/관계 성공 아님. 추가 실행 없음.

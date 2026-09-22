@@ -1,5 +1,8 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**2026-09-22 Receiver 조건별 gradient 첫 구현 완료: CPU9개 및 실제 P4 BioViL microbatch1/4 통과, parameter 최대오차1.49e-8·pixel/loss차이0. 기존 PRRD33파일 불변. 새 K4 fixed condition/head·환자/class 가중 signal을 별도 구현. 116F/68B, optimizer0, Q/V·DINO·수신자·DP/final0. A1/A2는 개발 feasibility이며 DenseNet은 개발 receiver다. 관계C/augmean 확대 보류; DP-aware 기여는 아직 미구현. 다음은 A1 target/실행 계약 연결이며 main 계수·비용·효용 기준은 미동결.** [RECEIVER_CONDITION_SIGNAL_STEP1_RESULTS_20260922.md](RECEIVER_CONDITION_SIGNAL_STEP1_RESULTS_20260922.md). 큰 단계2의 구현 진전이며 논문 기여/성능 확인이 아니다.
+
+
 **2026-09-21 B_augmean_k4 단일 비교 완료: DenseNet AUROC 0.487381/AP 0.046223; 기존B 대비 -0.080594/-0.013875, 사전 개발 기준 미충족. Source PNG AUROC 0.777800. 128장·500회·seed101, 합성 49.39분. 평균 증강target만 변경, 최종PNG 고정 후 기존V/2000환자draw 재사용. 독립 확인/사적 추가효용/관계 성공 아님. 추가 실행 없음.** [결과](PRRD_B_AUGMEAN_K4_101_COMPARISON_RESULTS_20260921.md). 큰 연구단계2의 개발 비교이며 단계전체 완료로 처리하지 않는다.
 
 **2026-09-21 B K4 증강 target 준비 완료: P813/Q5097의23,640 특징을 추출하고 환자별 집계·변환 매핑·실제target loader를 독립 검산했다(max 7.11e-15). 추출 5.82분, 프로그램 7.11분. Clean 특징/PCA/scale/target/코드 보존. 새target은 비DP 내부 평균 증강 통계이며 변환별 반응 정합이 아니다. 합성학습/V/수신자/C·D/DP/final0. 목표 준비 차단 없음; 다음 범위는 새hash를 결속한 수정B 한bank이며 이번에는 미착수.** [결과](PRRD_B_AUGMENTED_TARGET_PREPARATION_RESULTS_20260921.md). 큰 단계2 전체 완료나 연구 효용 입증을 의미하지 않는다.
