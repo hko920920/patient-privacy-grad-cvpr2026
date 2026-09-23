@@ -8253,8 +8253,8 @@
     },
     "automatic_followup": false
   },
-  "latest_receiver_feasibility_result_report": "RECEIVER_SEED202_REPLICATION_RESULTS_20260923.md",
-  "receiver_feasibility_next_action": "허용된 seed202 DINO/A2 두 bank의 학습·저장·개발 평가와 기록을 완료했다. 이번 양성 결과를 보존하며 추가 seed·학습 연장·새 loss·DP·Expert·Reserved·final receiver로 자동 확대하지 않는다. 다음 연구 판단에서는 확인된 결합 이득과 아직 미확인인 사적 추가 효용·보호 후 효용을 구분한다.",
+  "latest_receiver_feasibility_result_report": "RECEIVER_A2_PUBLIC_CONTROL_RESULTS_20260923.md",
+  "receiver_feasibility_next_action": "이번에 허용된 공개전용 A2 한 bank의 준비·학습·저장·개발 평가와 기록을 완료했다. 두 source 결합의 반복 이득에 이어 현재 P/Q 설정에서 Q의 추가 효용 근거를 확보했다. 다음 연구 판단은 이 추가 효용을 환자 수준 DP 아래 유지할 방법과 비교 범위를 구체화하는 것이며, 이번 결과만으로 DP·추가 seed·학습 연장·Expert·Reserved·확인용 receiver를 자동 실행하지 않는다.",
   "receiver_DINO_only_s200_control": {
     "status": "COMPLETE",
     "started": "2026-09-23T04:25:51.484697+00:00",
@@ -8553,5 +8553,113 @@
       "summary": "seed202 DINO/A2 각128장·200회 완료. DenseNet AUROC/AP DINO 0.597164/0.060585, A2 0.670355/0.080022. A2−DINO AUROC +0.073192(CI[+0.024720,+0.121602]), AP +0.019437(CI[+0.004241,+0.034900]). seed101/202 둘 다 AUROC/AP 점추정 양수, 평균 차이 +0.054574/+0.013493. A2 BioViL AUROC 0.728906. 새 합성·저장 총108.99분(DINO34.43/A274.56), 평가10.34초. 동일 초기상태·PNG·기존 자료/코드 보존 검증 통과. 두 seed의 비DP 개발 반복이며 독립 확인·효율 우위·사적 추가 효용·논문 기여 완료는 아님. 추가 실행 없음."
     },
     "A2_worker_seconds": 4473.875
+  },
+  "receiver_public_a2_control": {
+    "status": "COMPLETE",
+    "started": "2026-09-23T07:22:20.088790+00:00",
+    "contract": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_a2_public_s200_20260923_v1\\campaign_contract.json",
+    "bank_id": "dev_A2_P_condk4_101_s200",
+    "new_target_extractions": 0,
+    "development_evaluation_opened": true,
+    "automatic_followup": false,
+    "updated": "2026-09-23T08:38:03.964657+00:00",
+    "target_selection_verified": true,
+    "paired_initialization_exact": true,
+    "finished": "2026-09-23T08:37:05.574734+00:00",
+    "report": "RECEIVER_A2_PUBLIC_CONTROL_RESULTS_20260923.md",
+    "metrics": {
+      "BioViL_A2_PQ": {
+        "AUROC": 0.725230350489704,
+        "AP": 0.07615537570509125,
+        "AUROC_patient_cluster_95": [
+          0.6911591870836802,
+          0.7580313588966211
+        ],
+        "AP_patient_cluster_95": [
+          0.060405236909384534,
+          0.09466773279000765
+        ]
+      },
+      "DenseNet_A2_PQ": {
+        "AUROC": 0.6717338196907838,
+        "AP": 0.07856524994379702,
+        "AUROC_patient_cluster_95": [
+          0.6206568317799345,
+          0.7205664613745563
+        ],
+        "AP_patient_cluster_95": [
+          0.06159532404444485,
+          0.10174925709131198
+        ]
+      },
+      "BioViL_A2_P": {
+        "AUROC": 0.7146451970342608,
+        "AP": 0.07779048402605962,
+        "AUROC_patient_cluster_95": [
+          0.6796572489102722,
+          0.7490220632988388
+        ],
+        "AP_patient_cluster_95": [
+          0.0609615664041759,
+          0.10311929316576648
+        ]
+      },
+      "DenseNet_A2_P": {
+        "AUROC": 0.5426687563676387,
+        "AP": 0.05383771559213643,
+        "AUROC_patient_cluster_95": [
+          0.49671381253438834,
+          0.5875784467688229
+        ],
+        "AP_patient_cluster_95": [
+          0.040000036444251354,
+          0.07389603713731922
+        ]
+      }
+    },
+    "comparisons": {
+      "BioViL_PQ_minus_P": {
+        "AUROC": {
+          "delta": 0.010585153455443197,
+          "patient_cluster_95": [
+            -0.010778154109996566,
+            0.031693117184964856
+          ]
+        },
+        "AP": {
+          "delta": -0.001635108320968373,
+          "patient_cluster_95": [
+            -0.014650439767634152,
+            0.006235270261990737
+          ]
+        }
+      },
+      "DenseNet_PQ_minus_P": {
+        "AUROC": {
+          "delta": 0.12906506332314516,
+          "patient_cluster_95": [
+            0.08811181006765875,
+            0.1740879398182587
+          ]
+        },
+        "AP": {
+          "delta": 0.024727534351660585,
+          "patient_cluster_95": [
+            0.008428441383319687,
+            0.04164403660052445
+          ]
+        }
+      }
+    },
+    "synthesis_seconds": {
+      "A2_P": 4461.264999999898,
+      "A2_PQ": 4434.9529999999795
+    },
+    "interpretation": {
+      "assessment": "동일 A2·seed101·공개 초기상태·200회 일정에서 Q를 추가한 개발 효용이 관측됐다. DenseNet AUROC는 공개 P-only 0.542669에서 P+Q 0.671734로 +0.129065이며, 고정된 두 bank에 조건부인 환자 bootstrap 95% 구간은 [+0.088112,+0.174088]이다. AP도 0.053838에서 0.078565로 +0.024728, 구간 [+0.008428,+0.041644]이다. 따라서 이번 고정 조건에서는 두 source의 결합만으로 같은 성능이 나온 것이 아니라 Q의 정보를 추가한 목표가 개발 receiver에서 추가 가치를 제공했다. 앞선 두 seed의 결합 이득과 이번 자료 범위 대조는 서로 다른 질문에 답한다.",
+      "boundary": "사적 추가 효용 대조는 seed101 한 번이며, 앞선 DINO 대 A2 두 seed 반복이 P-only 대 P+Q의 반복까지 대신하지 않는다. DenseNet/V는 이미 사용해 온 개발 자원이고 구간은 합성 seed 불확실성을 포함하지 않는다. BioViL AUROC 차이 +0.010585의 구간 [-0.010778,+0.031693]과 AP 차이 -0.001635의 구간 [-0.014650,+0.006235]는 모두0을 포함한다. BioViL 개선까지 확정하거나 독립 수신자 일반화를 주장하지 않는다. 공개 P의 class-present 양성 환자는6명, Q는114명이며 이번 비교는 현재 P에 Q를 추가한 가치다. 더 큰/다른 공개자료 대비 사적 정보의 필수성이나 DP 후 효용을 입증한 것은 아니다. 환자-DP·강한 선행 대비 차별성·독립 확인은 아직 수행하지 않았다.",
+      "next_scope": "이번에 허용된 공개전용 A2 한 bank의 준비·학습·저장·개발 평가와 기록을 완료했다. 두 source 결합의 반복 이득에 이어 현재 P/Q 설정에서 Q의 추가 효용 근거를 확보했다. 다음 연구 판단은 이 추가 효용을 환자 수준 DP 아래 유지할 방법과 비교 범위를 구체화하는 것이며, 이번 결과만으로 DP·추가 seed·학습 연장·Expert·Reserved·확인용 receiver를 자동 실행하지 않는다.",
+      "summary": "A2 P-only128장·200회·seed101 완료. DenseNet AUROC/AP P 0.542669/0.053838 대 P+Q 0.671734/0.078565. Q 추가 차이 +0.129065(CI[+0.088112,+0.174088]) / +0.024728(CI[+0.008428,+0.041644]). BioViL P 0.714645/0.077790, P+Q 차이 구간은AUROC/AP 모두0포함. P 분모669/6 검산오차0·기존 초기상태 exact·최종PNG 검사 통과. 합성74.35분, 평가11.13초. Q 추가 가치의 긍정적 단일seed 비DP 개발 근거이며 DP/독립 확인은 미실행. 기존 결과 보존, 추가 실행 없음."
+    }
   }
 }
