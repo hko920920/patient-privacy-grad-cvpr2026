@@ -274,3 +274,12 @@ A2 첫 환자-DP 비교 완료: CLIP/DP8 각128장·200회·seed101, Q 보호 qu
 [RECEIVER_PATIENT_DP_FIRST_COMPARISON_RESULTS_20260923.md](RECEIVER_PATIENT_DP_FIRST_COMPARISON_RESULTS_20260923.md)
 
 연구 단계2는 계속 in_progress다. 이번 허용 작업 묶음은 COMPLETE이며 논문 전체·잡음 반복·강한 선행 대비·독립 확인 완료를 뜻하지 않는다. 동일 보호 요약의 후처리와 추가 Q release를 구분하고, 현재 추가 작업은 예약하지 않는다.
+
+
+## 2026-09-23 독립 DP 잡음 반복 완료
+
+A2 환자-DP 독립 잡음2 반복 완료. 동일 ε8/δ1e-5·seed101·128장·200회. DenseNet DP1 0.658184/0.076739, DP2 0.645283/0.074946(AUROC/AP). DP2−공개전용 AUROC +0.102614,95% CI[+0.058154, +0.150166]; AP +0.021108. 두 번째 독립 잡음에서도 사전 개발 기준을 충족했다. 새 bank 합성·저장 74.07분. A2 보호 요약은 누적2회,공동 공개 기본 상한16/2e-5. 두 고정 bank에 조건부인 개발 반복이며 추가 release/seed/final 실행 없음.
+
+[RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md](RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md)
+
+연구 단계2는 in_progress다. 동일 합성 초기화에서 독립 잡음 한 번을 추가한 개발 결과이며 독립 수신자·강한 선행 대비·논문 전체 완료로 해석하지 않는다.

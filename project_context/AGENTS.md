@@ -1,5 +1,13 @@
 # Project instructions
 
+**A2 환자-DP 독립 잡음 반복 완료 (2026-09-23):** A2 환자-DP 독립 잡음2 반복 완료. 동일 ε8/δ1e-5·seed101·128장·200회. DenseNet DP1 0.658184/0.076739, DP2 0.645283/0.074946(AUROC/AP). DP2−공개전용 AUROC +0.102614,95% CI[+0.058154, +0.150166]; AP +0.021108. 두 번째 독립 잡음에서도 사전 개발 기준을 충족했다. 새 bank 합성·저장 74.07분. A2 보호 요약은 누적2회,공동 공개 기본 상한16/2e-5. 두 고정 bank에 조건부인 개발 반복이며 추가 release/seed/final 실행 없음.
+
+[결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md>)
+
+이번 한 bank·새 요약1회 범위는 완료됐다. 이전 첫 비교 결과도 그대로 보존한다. 추가 실행은 예약하지 않았다.
+
+A2 환자-DP 독립 잡음 반복 실행 착수: 동일한 기전의 새 독립 ε8/δ1e-5 Gaussian Q 요약1회(release02)로 A2 seed101·128장·200회 bank1개를 실행한다. 기존 P/비DP/CLIP/DP1 결과는 재사용한다. 대상 재구성과 target/job 연결 확인 후 새 합성을 실행한다. 예상 80~95분, bank120분·전체180분 상한(2026-09-23 17:00:15 UTC). 두 release 공동 공개 시 기본 상한은 16/2e-5로 기록한다. 추가 release/seed/final 없음.
+
 **A2 첫 환자-DP 비교 완료 (2026-09-23):** A2 첫 환자-DP 비교 완료: CLIP/DP8 각128장·200회·seed101, Q 보호 query1회(ε8/δ1e-5). DenseNet AUROC 공개전용0.542669, 비DP0.671734, 제한-only0.634691, DP0.658184. DP−공개전용 +0.115515,95% CI[+0.068791, +0.165723]; AP 차이 +0.022901. 사전에 정한 긍정적 개발 기준을 충족했다. 두 PNG 동결 후 동일 V/2000환자draw 평가. 단일 합성seed·한 잡음의 개발 비교이며 추가 release/seed/Expert/Reserved/확인용 수신자 실행 없음.
 
 [결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_PATIENT_DP_FIRST_COMPARISON_RESULTS_20260923.md>)
