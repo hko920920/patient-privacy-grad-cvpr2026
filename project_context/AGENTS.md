@@ -1,5 +1,9 @@
 # Project instructions
 
+**DINO 환자-DP 잡음 반복 완료 (2026-09-24):** DINO 환자-DP 잡음2 반복 완료. DenseNet DP1 0.672935/0.080814, DP2 0.624128/0.067322(AUROC/AP). 두 잡음 DINO/A2 AUROC 기술평균 0.648531/0.651733. 새 합성·저장35.13분; 새 요약1회·bank1개. 네 요약 공동 공개 기본 상한32/4e-5. 고정 seed·개발 수신자의 두 잡음 비교이며 추가 실행 없음.
+
+[결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md>)
+
 **DINO 단독 환자-DP 대조 완료 (2026-09-24):** DINO 단독 환자-DP 대조 완료. ε8/δ1e-5·274좌표 독자 query·seed101·128장·200회. DenseNet DINO DP AUROC/AP 0.672935/0.080814; A2 DP1/DP2 AUROC 0.658184/0.645283. 판정 MIXED_OR_NO_CLEAR_A2_ADVANTAGE. 새 합성·저장35.11분. 한 DINO 잡음과 기존 두 A2 잡음의 개발 비교이며 추가 실행 없음. 세 보호 요약 공동 공개 기본 상한24/3e-5.
 
 [결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md>)

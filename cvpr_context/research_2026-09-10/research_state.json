@@ -24,8 +24,8 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "완료 결과 해석 이후 후속 범위는 미동결. 추가 실험은 자동 실행하지 않는다.",
-  "next_task_output": "Completed DINO-only patient-DP matched comparison",
+  "next_task": "완료 결과 해석 후 후속 범위를 정한다. 추가 실험 자동 실행 없음.",
+  "next_task_output": "Completed DINO independent-noise repeat with both A2 and both DINO outcomes",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
     "Support, repetition, cohort composition and weak labels are not causally separated",
@@ -65,7 +65,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "DINO-only patient-DP control COMPLETE; both A2 DP outcomes compared",
+  "step2_active_task": "DINO DP noise02 repetition COMPLETE; all two-by-two results retained",
   "latest_B_augmentation_target_specification": {
     "report": "PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md",
     "evidence_directory": "spec_sources/prrd_b_aug_target_review_20260921",
@@ -1477,7 +1477,7 @@
       }
     },
     "current_protocol": "TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md",
-    "current_scope": "DINO patient-DP one-bank comparison COMPLETE",
+    "current_scope": "DINO independent-noise one-bank repetition COMPLETE",
     "planned_next_protocol": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
     "lora_transfer_plan": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
@@ -1497,7 +1497,7 @@
       "images_planned": 256,
       "classifier_runs_planned": 6
     },
-    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_dino_dp8_20260924_v1",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_dino_dp8_noise_repeat_20260924_v1",
     "next_execution_scheduled": false,
     "completed_lora_transfer_comparison": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
@@ -3331,10 +3331,10 @@
     },
     "scope": "Authorized one Q release + CLIP/DP8 seed101 banks + fixed V comparison completed",
     "no_automatic_followup": true,
-    "finished": "2026-09-23T16:21:47.569490+00:00",
+    "finished": "2026-09-23T17:11:23.080894+00:00",
     "automatic_followup": false
   },
-  "updated_utc": "2026-09-23T16:22:44.996876+00:00",
+  "updated_utc": "2026-09-23T17:14:52.091912+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -3385,7 +3385,7 @@
       55
     ]
   },
-  "current_result_report": "RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md",
+  "current_result_report": "RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -5616,7 +5616,7 @@
     }
   },
   "pre_chexzero_review_result_report_20260917": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
-  "last_actual_model_result_report": "RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md",
+  "last_actual_model_result_report": "RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md",
   "completed_chexzero_review_20260917": {
     "status": "POSITIVE_SINGLE_ALTERNATIVE_READINESS_NOT_EFFICACY",
     "completed_utc": "2026-09-17T05:49:39.987145+00:00",
@@ -5987,7 +5987,7 @@
     "step2_active_task": "Downstream master design and metadata inventory completed; non-DP and DP development precede any expert final performance evaluation."
   },
   "pre_downstream_profile_actual_result": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
-  "last_efficacy_result_report": "RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md",
+  "last_efficacy_result_report": "RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md",
   "completed_downstream_profile_20260917": {
     "report": "TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md",
     "completed_utc": "2026-09-17T09:06:45.683260+00:00",
@@ -8384,7 +8384,7 @@
     "automatic_followup": false
   },
   "latest_receiver_feasibility_result_report": "RECEIVER_A2_PUBLIC_SEED202_RESULTS_20260923.md",
-  "receiver_feasibility_next_action": "No automatic additional release, seed, budget, or final access",
+  "receiver_feasibility_next_action": "No further release/seed/budget/final run scheduled",
   "receiver_DINO_only_s200_control": {
     "status": "COMPLETE",
     "started": "2026-09-23T04:25:51.484697+00:00",
@@ -9196,5 +9196,43 @@
     "development_judgment": "MIXED_OR_NO_CLEAR_A2_ADVANTAGE",
     "new_updates": 200,
     "whole_task_minutes": 43.659491499999994
+  },
+  "receiver_DINO_patient_dp_noise_repeat": {
+    "status": "COMPLETE",
+    "updated": "2026-09-23T17:11:23.110816+00:00",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_dino_dp8_noise_repeat_20260924_v1",
+    "absolute_deadline_utc": "2026-09-23T17:46:15+00:00",
+    "new_private_releases": 1,
+    "development_evaluation_opened": true,
+    "result": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_dino_dp8_noise_repeat_20260924_v1\\evaluation\\result.json",
+    "automatic_followup": false,
+    "finished": "2026-09-23T17:11:23.080894+00:00",
+    "report": "RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md",
+    "report_sha256": "5aa784c5d5248dd1ce50cadbca46539349dd3e39f5e10df2b526f7fecb20bc5f",
+    "summary": "DINO 환자-DP 잡음2 반복 완료. DenseNet DP1 0.672935/0.080814, DP2 0.624128/0.067322(AUROC/AP). 두 잡음 DINO/A2 AUROC 기술평균 0.648531/0.651733. 새 합성·저장35.13분; 새 요약1회·bank1개. 네 요약 공동 공개 기본 상한32/4e-5. 고정 seed·개발 수신자의 두 잡음 비교이며 추가 실행 없음.",
+    "new_updates": 200,
+    "two_noise_point_means": {
+      "BioViL": {
+        "A2": {
+          "AUROC": 0.7277086168559296,
+          "AP": 0.07830076295014099
+        },
+        "DINO": {
+          "AUROC": 0.6774340182495593,
+          "AP": 0.07510268649510593
+        }
+      },
+      "DenseNet": {
+        "A2": {
+          "AUROC": 0.6517333920829336,
+          "AP": 0.07584238006141067
+        },
+        "DINO": {
+          "AUROC": 0.6485314459094661,
+          "AP": 0.074067934504955
+        }
+      }
+    },
+    "same_Q_recorded_releases": 4
   }
 }

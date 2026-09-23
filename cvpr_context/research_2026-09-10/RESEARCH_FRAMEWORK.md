@@ -298,3 +298,15 @@ DINO 단독 환자-DP 대조 완료. ε8/δ1e-5·274좌표 독자 query·seed101
 
 
 [RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md](RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md)
+
+
+DINO 환자-DP 독립 잡음2 반복 착수 기록 (2026-09-24): 사용자 지시로 기존274좌표·P-only clipping·ε8/δ1e-5·후처리를 유지하고 새 독립 보호 요약1회와 seed101·128장·200회 bank1개를 실행하는 범위로 시작했다. 기존 DINO DP1/A2 DP1·DP2는 모두 재사용했다. 설정·코드 동일성 검사를 통과하고 새 목표에서 초기화해 학습을 진행했다. 예상40~50분, bank60분·전체75분 상한(2026-09-23 17:46:15 UTC)을 둔 착수 기록이다. 네 요약 공동 공개 기본 상한32/4e-5를 기록한다. 추가 noise/seed/수신자/Expert/Reserved는 자동 실행하지 않는 계약이었다. 연구 단계2는 in_progress다.
+
+
+## 2026-09-24 DINO DP 독립 잡음2 완료
+
+DINO 환자-DP 잡음2 반복 완료. DenseNet DP1 0.672935/0.080814, DP2 0.624128/0.067322(AUROC/AP). 두 잡음 DINO/A2 AUROC 기술평균 0.648531/0.651733. 새 합성·저장35.13분; 새 요약1회·bank1개. 네 요약 공동 공개 기본 상한32/4e-5. 고정 seed·개발 수신자의 두 잡음 비교이며 추가 실행 없음.
+
+DINO 잡음2의 DenseNet AUROC는 잡음1보다 0.048807 낮아져, 이번에는 A2 두 bank보다 낮았다. 두 잡음의 AUROC 기술평균은 DINO 0.648531, A2 0.651733다. DINO의 점추정 우위는 반복되지 않았다. 네 A2−DINO 교차 비교의 AUROC/AP 환자 구간은 모두 0을 포함한다. 따라서 DINO가 항상 낫다는 결론도, A2의 일반적 우위를 확보했다는 결론도 지지하지 않는다. 현재 DINO를 강한 직접 대조로 유지하며, 두 잡음만으로 안정성 차이를 확정하지 않는다.
+
+[RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md](RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md)
