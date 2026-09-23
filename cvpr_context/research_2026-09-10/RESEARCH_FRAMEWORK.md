@@ -265,3 +265,12 @@ E/U 지정 비교와 CDI 환자군 reference 확장은 완료했지만, MoFit �
 원시 결과·점수·계약·코드와 hash가 결속된 과거 Markdown은 보존하고, 이 정정과 HTML의 상단 안내를 적용한다. 당시 단계 메타데이터는 역사적 오류이지 현재 상태의 기준이 아니다. 미래의 단계 번호는 이 문서의 1–4만 사용한다.
 
 [현재 상태 JSON](research_state.json) · [이전 사례에서 확인한 설계상의 요구](RESEARCH_DESIGN_CASE_AUDIT_2026-09-14.md)
+
+
+## 2026-09-23 첫 환자-DP 비교 완료 기록
+
+A2 첫 환자-DP 비교 완료: CLIP/DP8 각128장·200회·seed101, Q 보호 query1회(ε8/δ1e-5). DenseNet AUROC 공개전용0.542669, 비DP0.671734, 제한-only0.634691, DP0.658184. DP−공개전용 +0.115515,95% CI[+0.068791, +0.165723]; AP 차이 +0.022901. 사전에 정한 긍정적 개발 기준을 충족했다. 두 PNG 동결 후 동일 V/2000환자draw 평가. 단일 합성seed·한 잡음의 개발 비교이며 추가 release/seed/Expert/Reserved/확인용 수신자 실행 없음.
+
+[RECEIVER_PATIENT_DP_FIRST_COMPARISON_RESULTS_20260923.md](RECEIVER_PATIENT_DP_FIRST_COMPARISON_RESULTS_20260923.md)
+
+연구 단계2는 계속 in_progress다. 이번 허용 작업 묶음은 COMPLETE이며 논문 전체·잡음 반복·강한 선행 대비·독립 확인 완료를 뜻하지 않는다. 동일 보호 요약의 후처리와 추가 Q release를 구분하고, 현재 추가 작업은 예약하지 않는다.

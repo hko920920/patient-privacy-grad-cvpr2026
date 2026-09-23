@@ -5871,3 +5871,17 @@ A2 환자-DP 목표 경로 설계·구현·검산 완료. class별 환자 gradie
 다음 후보는 seed101 clipping-only A2 한 bank와 ε8 보호 A2 한 bank의 대응 비교다. 기존 공개전용/P+Q 결과를 재사용하며 새 보호 query는1개. 합성 참고148분, 준비·연결·평가 포함155~180분. 첫 비교 범위·시간 상한 동결 및 별도 DP job/기록 adapter 결속 후 실행한다. 이번 작업은 구현·검산까지만 완료했고 실제 release와 학습은 실행하지 않았다. 추가 seed·budget 탐색·Expert/Reserved·확인용 수신자 자동확대 없음.
 
 [결과](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_PATIENT_DP_TARGET_RESULTS_20260923.md>)
+
+
+## 2026-09-23 — 첫 A2 환자-DP 비교 착수
+
+A2 첫 환자-DP 비교 진행 중: 사용자 지시로 ε8/δ1e-5의 Q 요약1회와 CLIP/DP8 두 bank(128장·200회·seed101)를 실행한다. Target/job 연결 PASS, 두 PNG 동결 후 V 평가. bank120분·전체5시간 상한(2026-09-23 16:08:39 UTC), 추가 release/seed/final 없음.
+
+
+## 2026-09-23T13:50:27.965261+00:00 — 첫 A2 환자-DP 비교 완료
+
+A2 첫 환자-DP 비교 완료: CLIP/DP8 각128장·200회·seed101, Q 보호 query1회(ε8/δ1e-5). DenseNet AUROC 공개전용0.542669, 비DP0.671734, 제한-only0.634691, DP0.658184. DP−공개전용 +0.115515,95% CI[+0.068791, +0.165723]; AP 차이 +0.022901. 사전에 정한 긍정적 개발 기준을 충족했다. 두 PNG 동결 후 동일 V/2000환자draw 평가. 단일 합성seed·한 잡음의 개발 비교이며 추가 release/seed/Expert/Reserved/확인용 수신자 실행 없음.
+
+보고서: RECEIVER_PATIENT_DP_FIRST_COMPARISON_RESULTS_20260923.md
+
+실행 시작→평가 완료 160.74분, 새 두 bank 합성·저장 150.63분. 추가 실행 없음.

@@ -1,5 +1,11 @@
 # 현재 상태
 
+**A2 첫 환자-DP 비교 완료 (2026-09-23):** A2 첫 환자-DP 비교 완료: CLIP/DP8 각128장·200회·seed101, Q 보호 query1회(ε8/δ1e-5). DenseNet AUROC 공개전용0.542669, 비DP0.671734, 제한-only0.634691, DP0.658184. DP−공개전용 +0.115515,95% CI[+0.068791, +0.165723]; AP 차이 +0.022901. 사전에 정한 긍정적 개발 기준을 충족했다. 두 PNG 동결 후 동일 V/2000환자draw 평가. 단일 합성seed·한 잡음의 개발 비교이며 추가 release/seed/Expert/Reserved/확인용 수신자 실행 없음.
+
+[결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_PATIENT_DP_FIRST_COMPARISON_RESULTS_20260923.md>)
+
+이번 두 bank·한 release 실행 범위는 완료됐다. 아래 이전 단계의 미실행/금지 설명은 당시 기록이며, 현재 결과와 실행 범위는 이 최신 기록과 결과 보고서를 따른다. 과거 비DP 개발·대조·평가 전체를 DP로 주장하지 않는다. 후속 실험은 아직 시작하지 않았다.
+
 **A2 환자-DP 목표 경로 구현·검산 완료:** A2 환자-DP 목표 경로 설계·구현·검산 완료. class별 환자 gradient와 private count를 함께 546좌표·add/remove 감도1의 한 query로 정의했다. P-only q95 제한 기준 및 ε8/δ1e-5 analytic Gaussian σ0.600229를 명세했다. CPU15검사·기존 pooled target 재현(max1.11e-16)·공개 모의 target/gradient 연결 PASS. 실제 Q clipping 음성5.856%/양성4.386%. 새 Q noise/release·합성·V효용·Expert/Reserved/확인용 수신자 실행0. 최초 합산오차 실패를 보존하고 math.fsum으로 수리했으며 허용오차는 유지했다.
 
 [결과](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_PATIENT_DP_TARGET_RESULTS_20260923.md>)
