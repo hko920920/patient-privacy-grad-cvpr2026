@@ -5862,3 +5862,12 @@ A2 공개전용 seed202 128장·200회·microbatch16 학습/PNG/개발 평가 �
 같은 A2 구성에서 Q를 추가한 DenseNet 개발 AUROC 이득이 두 합성 초기화에서 반복됐다. seed101은 P 0.542669 → P+Q 0.671734 (Δ+0.129065), seed202는 P 0.563388 → P+Q 0.670355 (Δ+0.106967)이다. 각 고정 bank 쌍의 환자 bootstrap AUROC 차이95% 구간은 모두 양수다. 두 seed 평균 차이는 +0.118016이다. DenseNet AP 차이는 +0.024728/+0.021118로 모두 양수지만, seed202 AP 차이95% 구간[-0.001204,+0.041792]은0을 포함하므로 AP까지 반복적으로 유의한 우위라고 결론내리지 않는다.
 
 보고서: RECEIVER_A2_PUBLIC_SEED202_RESULTS_20260923.md
+
+
+## 2026-09-23 — A2 환자-DP 목표 경로
+
+A2 환자-DP 목표 경로 설계·구현·검산 완료. class별 환자 gradient와 private count를 함께 546좌표·add/remove 감도1의 한 query로 정의했다. P-only q95 제한 기준 및 ε8/δ1e-5 analytic Gaussian σ0.600229를 명세했다. CPU15검사·기존 pooled target 재현(max1.11e-16)·공개 모의 target/gradient 연결 PASS. 실제 Q clipping 음성5.856%/양성4.386%. 새 Q noise/release·합성·V효용·Expert/Reserved/확인용 수신자 실행0. 최초 합산오차 실패를 보존하고 math.fsum으로 수리했으며 허용오차는 유지했다.
+
+다음 후보는 seed101 clipping-only A2 한 bank와 ε8 보호 A2 한 bank의 대응 비교다. 기존 공개전용/P+Q 결과를 재사용하며 새 보호 query는1개. 합성 참고148분, 준비·연결·평가 포함155~180분. 첫 비교 범위·시간 상한 동결 및 별도 DP job/기록 adapter 결속 후 실행한다. 이번 작업은 구현·검산까지만 완료했고 실제 release와 학습은 실행하지 않았다. 추가 seed·budget 탐색·Expert/Reserved·확인용 수신자 자동확대 없음.
+
+[결과](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_PATIENT_DP_TARGET_RESULTS_20260923.md>)
