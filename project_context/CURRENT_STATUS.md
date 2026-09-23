@@ -1,5 +1,9 @@
 # 현재 상태
 
+**seed202 대응 반복 완료:** seed202 DINO/A2 각128장·200회 완료. DenseNet AUROC/AP DINO 0.597164/0.060585, A2 0.670355/0.080022. A2−DINO AUROC +0.073192(CI[+0.024720,+0.121602]), AP +0.019437(CI[+0.004241,+0.034900]). seed101/202 둘 다 AUROC/AP 점추정 양수, 평균 차이 +0.054574/+0.013493. A2 BioViL AUROC 0.728906. 새 합성·저장 총108.99분(DINO34.43/A274.56), 평가10.34초. 동일 초기상태·PNG·기존 자료/코드 보존 검증 통과. 두 seed의 비DP 개발 반복이며 독립 확인·효율 우위·사적 추가 효용·논문 기여 완료는 아님. 추가 실행 없음.
+
+[결과](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_SEED202_REPLICATION_RESULTS_20260923.md>)
+
 **DINO 단독 대조 완료:** DINO 단독128장·200회·seed101 완료. DenseNet AUROC/AP 0.635777/0.071016, BioViL 0.565009/0.055268. A2−DINO Dense AUROC +0.035957, CI[+0.003202,+0.070914]; AP +0.007549, CI는0포함. A2 Bio AUROC +0.160221. 결합의 추가 개발 가치를 지지하나 한seed·비DP이며 비용 A2 73.92분 대 DINO34.71분. 기존A1/A2 재학습 없음. 추가실험/DP/final 없음.
 
 [결과](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_DINO_ONLY_CONTROL_RESULTS_20260923.md>)
