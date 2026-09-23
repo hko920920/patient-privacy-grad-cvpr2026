@@ -1,5 +1,9 @@
 # 현재 상태
 
+**DINO 단독 환자-DP 대조 완료 (2026-09-24):** DINO 단독 환자-DP 대조 완료. ε8/δ1e-5·274좌표 독자 query·seed101·128장·200회. DenseNet DINO DP AUROC/AP 0.672935/0.080814; A2 DP1/DP2 AUROC 0.658184/0.645283. 판정 MIXED_OR_NO_CLEAR_A2_ADVANTAGE. 새 합성·저장35.11분. 한 DINO 잡음과 기존 두 A2 잡음의 개발 비교이며 추가 실행 없음. 세 보호 요약 공동 공개 기본 상한24/3e-5.
+
+[결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md>)
+
 **A2 환자-DP 독립 잡음 반복 완료 (2026-09-23):** A2 환자-DP 독립 잡음2 반복 완료. 동일 ε8/δ1e-5·seed101·128장·200회. DenseNet DP1 0.658184/0.076739, DP2 0.645283/0.074946(AUROC/AP). DP2−공개전용 AUROC +0.102614,95% CI[+0.058154, +0.150166]; AP +0.021108. 두 번째 독립 잡음에서도 사전 개발 기준을 충족했다. 새 bank 합성·저장 74.07분. A2 보호 요약은 누적2회,공동 공개 기본 상한16/2e-5. 두 고정 bank에 조건부인 개발 반복이며 추가 release/seed/final 실행 없음.
 
 [결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md>)

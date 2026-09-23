@@ -24,8 +24,8 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "독립 DP 잡음 두 결과 검토 이후의 후속 범위는 미동결. 추가 실험은 자동 실행하지 않는다.",
-  "next_task_output": "Completed independent DP-noise repetition report; no further run scheduled",
+  "next_task": "완료 결과 해석 이후 후속 범위는 미동결. 추가 실험은 자동 실행하지 않는다.",
+  "next_task_output": "Completed DINO-only patient-DP matched comparison",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
     "Support, repetition, cohort composition and weak labels are not causally separated",
@@ -65,7 +65,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "A2 patient-DP independent noise release02 and single seed101 bank COMPLETE",
+  "step2_active_task": "DINO-only patient-DP control COMPLETE; both A2 DP outcomes compared",
   "latest_B_augmentation_target_specification": {
     "report": "PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md",
     "evidence_directory": "spec_sources/prrd_b_aug_target_review_20260921",
@@ -96,7 +96,7 @@
     "independent_verification": "PASS for stored 104 feature scalars, source/seed bindings and existing SecMI equality; not an independent GPU Jacobian rerun"
   },
   "active_execution": {
-    "status": "completed_patient_dp_noise_repeat",
+    "status": "no_running_execution",
     "current_step": 2,
     "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_dp8_noise_repeat_20260923_v1",
     "last_completed_report": "RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md",
@@ -1477,7 +1477,7 @@
       }
     },
     "current_protocol": "TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md",
-    "current_scope": "Completed one independent DP release02, one bank and fixed V comparison",
+    "current_scope": "DINO patient-DP one-bank comparison COMPLETE",
     "planned_next_protocol": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
     "lora_transfer_plan": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
@@ -1497,7 +1497,7 @@
       "images_planned": 256,
       "classifier_runs_planned": 6
     },
-    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_dp8_noise_repeat_20260923_v1",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_dino_dp8_20260924_v1",
     "next_execution_scheduled": false,
     "completed_lora_transfer_comparison": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
@@ -3330,9 +3330,11 @@
       "next_action": "다음 후보는 seed101 clipping-only A2 한 bank와 ε8 보호 A2 한 bank의 대응 비교다. 기존 공개전용/P+Q 결과를 재사용하며 새 보호 query는1개. 합성 참고148분, 준비·연결·평가 포함155~180분. 첫 비교 범위·시간 상한 동결 및 별도 DP job/기록 adapter 결속 후 실행한다. 이번 작업은 구현·검산까지만 완료했고 실제 release와 학습은 실행하지 않았다. 추가 seed·budget 탐색·Expert/Reserved·확인용 수신자 자동확대 없음."
     },
     "scope": "Authorized one Q release + CLIP/DP8 seed101 banks + fixed V comparison completed",
-    "no_automatic_followup": true
+    "no_automatic_followup": true,
+    "finished": "2026-09-23T16:21:47.569490+00:00",
+    "automatic_followup": false
   },
-  "updated_utc": "2026-09-23T15:23:33.465908+00:00",
+  "updated_utc": "2026-09-23T16:22:44.996876+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -3383,7 +3385,7 @@
       55
     ]
   },
-  "current_result_report": "RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md",
+  "current_result_report": "RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -5614,7 +5616,7 @@
     }
   },
   "pre_chexzero_review_result_report_20260917": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
-  "last_actual_model_result_report": "RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md",
+  "last_actual_model_result_report": "RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md",
   "completed_chexzero_review_20260917": {
     "status": "POSITIVE_SINGLE_ALTERNATIVE_READINESS_NOT_EFFICACY",
     "completed_utc": "2026-09-17T05:49:39.987145+00:00",
@@ -5985,7 +5987,7 @@
     "step2_active_task": "Downstream master design and metadata inventory completed; non-DP and DP development precede any expert final performance evaluation."
   },
   "pre_downstream_profile_actual_result": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
-  "last_efficacy_result_report": "RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md",
+  "last_efficacy_result_report": "RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md",
   "completed_downstream_profile_20260917": {
     "report": "TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md",
     "completed_utc": "2026-09-17T09:06:45.683260+00:00",
@@ -8382,7 +8384,7 @@
     "automatic_followup": false
   },
   "latest_receiver_feasibility_result_report": "RECEIVER_A2_PUBLIC_SEED202_RESULTS_20260923.md",
-  "receiver_feasibility_next_action": "Review two fixed-noise A2 outcomes; no automatic new release/seed/final access",
+  "receiver_feasibility_next_action": "No automatic additional release, seed, budget, or final access",
   "receiver_DINO_only_s200_control": {
     "status": "COMPLETE",
     "started": "2026-09-23T04:25:51.484697+00:00",
@@ -9176,5 +9178,23 @@
     "last_efficacy_result_report": "RECEIVER_PATIENT_DP_FIRST_COMPARISON_RESULTS_20260923.md",
     "step2_active_task": "Authorized A2 patient-DP independent-noise repeat, fixed synthesis seed101",
     "next_task": "이번 두 bank·한 release 개발 비교 완료. 결과 검토 이후의 후속 범위는 미동결이며 추가 실험은 자동 실행하지 않는다."
+  },
+  "receiver_DINO_patient_dp_control": {
+    "status": "COMPLETE",
+    "updated": "2026-09-23T16:21:47.610690+00:00",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_dino_dp8_20260924_v1",
+    "absolute_deadline_utc": "2026-09-23T17:08:08+00:00",
+    "new_private_releases": 1,
+    "new_banks": 1,
+    "development_evaluation_opened": true,
+    "result": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_dino_dp8_20260924_v1\\evaluation\\result.json",
+    "automatic_followup": false,
+    "finished": "2026-09-23T16:21:47.569490+00:00",
+    "report": "RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md",
+    "report_sha256": "aa34a9f55d4438281ad2ddb82f8853c27df3792c3e5f2ab3db8aa178434a1afb",
+    "summary": "DINO 단독 환자-DP 대조 완료. ε8/δ1e-5·274좌표 독자 query·seed101·128장·200회. DenseNet DINO DP AUROC/AP 0.672935/0.080814; A2 DP1/DP2 AUROC 0.658184/0.645283. 판정 MIXED_OR_NO_CLEAR_A2_ADVANTAGE. 새 합성·저장35.11분. 한 DINO 잡음과 기존 두 A2 잡음의 개발 비교이며 추가 실행 없음. 세 보호 요약 공동 공개 기본 상한24/3e-5.",
+    "development_judgment": "MIXED_OR_NO_CLEAR_A2_ADVANTAGE",
+    "new_updates": 200,
+    "whole_task_minutes": 43.659491499999994
   }
 }

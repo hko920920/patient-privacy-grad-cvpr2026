@@ -283,3 +283,18 @@ A2 환자-DP 독립 잡음2 반복 완료. 동일 ε8/δ1e-5·seed101·128장·2
 [RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md](RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md)
 
 연구 단계2는 in_progress다. 동일 합성 초기화에서 독립 잡음 한 번을 추가한 개발 결과이며 독립 수신자·강한 선행 대비·논문 전체 완료로 해석하지 않는다.
+
+
+DINO 단독 환자-DP 대조 착수 기록 (2026-09-24): 최신 사용자 지시에 따라 독자적인274좌표 query와 P-only q95 clipping을 연결했다. add/remove 환자 감도1·ε8/δ10⁻⁵, 새 보호 요약1회와 seed101·128장·200회 bank1개만 수행하는 범위로 시작했다. 기존 DINO 학습 bytecode·A2와 같은 초기상태를 유지했고, P/Q 재추출 없이 목표 검산 PASS 후 보호 요약과 학습을 진행했다. 기존 A2 DP 두 결과 모두와 비교하며 추가 release/seed/final은 실행하지 않는 계약이었다. 예상50~70분, bank60분·전체90분 상한(2026-09-23 17:08:08 UTC)을 둔 착수 기록이다. 연구 단계2는 in_progress다.
+
+
+## 2026-09-24 DINO 단독 환자-DP 비교 완료
+
+DINO 단독 환자-DP 대조 완료. ε8/δ1e-5·274좌표 독자 query·seed101·128장·200회. DenseNet DINO DP AUROC/AP 0.672935/0.080814; A2 DP1/DP2 AUROC 0.658184/0.645283. 판정 MIXED_OR_NO_CLEAR_A2_ADVANTAGE. 새 합성·저장35.11분. 한 DINO 잡음과 기존 두 A2 잡음의 개발 비교이며 추가 실행 없음. 세 보호 요약 공동 공개 기본 상한24/3e-5.
+
+2026-09-24 KST. DINO 단독 DP의 DenseNet AUROC/AP는0.672935/0.080814로 기존 A2 DP 두 결과보다 점추정이 높았다. 두 A2−DINO 차이 구간은 모두0을 포함하므로 DINO의 우위를 확정하지 않는다. 이번 비교에서 A2 결합의 DP 아래 추가 우위는 확인되지 않았다. 결과에 따라 잡음을 다시 뽑지 않았다.
+
+이번 범위는 DINO 전용 보호 경로 검산 → 독립 Q 요약1회 →128장·200회·seed101 bank1개 →최종PNG 고정 →기존 V 개발 비교까지 완료다. 연구 단계2는 in_progress이며 논문 전체·독립 수신자·강한 선행 비교 완료는 아니다.
+
+
+[RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md](RECEIVER_DINO_PATIENT_DP_RESULTS_20260924.md)
