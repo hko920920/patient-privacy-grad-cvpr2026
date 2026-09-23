@@ -1,5 +1,9 @@
 # 현재 상태
 
+**DINO 단독 대조 완료:** DINO 단독128장·200회·seed101 완료. DenseNet AUROC/AP 0.635777/0.071016, BioViL 0.565009/0.055268. A2−DINO Dense AUROC +0.035957, CI[+0.003202,+0.070914]; AP +0.007549, CI는0포함. A2 Bio AUROC +0.160221. 결합의 추가 개발 가치를 지지하나 한seed·비DP이며 비용 A2 73.92분 대 DINO34.71분. 기존A1/A2 재학습 없음. 추가실험/DP/final 없음.
+
+[결과](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_DINO_ONLY_CONTROL_RESULTS_20260923.md>)
+
 **A1/A2 첫 비교 완료:** 2026-09-22 A1/A2 첫200회·128장·seed101 비교 완료. DenseNet AUROC/AP A1 0.536456/0.047955, A2 0.671734/0.078565; ΔAUROC +0.135277, CI[+0.088795, +0.182515]. 추가 독립 bank 반복을 검토할 개발 신호 충족. 합성worker A1 40.1분/A2 73.9분. 두PNG 동결 후 기존V/2000환자draw 평가. DenseNet은 개발receiver, 단일seed 조건부 결과. 추가실험/DP/Expert/Reserved/final 없음.
 
 [전체 결과](CVPR%20주제%20탐색/research_2026-09-10/RECEIVER_A1_A2_S200_RESULTS_20260922.md)

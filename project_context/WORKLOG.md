@@ -5826,3 +5826,12 @@ noise/condition에서 synthetic images를 만들며, 생성물은 외부 연구,
 - 초기96장계획에서DP16heads×각1장의혼합분포문제를찾아정정했다. 방법별manifestindex0의고정head하나로16장을생성하는탐색으로제안하며최고seed선택이아니다. 향후head별충분생성→metric→DPseed간요약한다. KIDsubset50는방법당16장에불가이며기존설정최소50은통계적충분성보장이아니다. 방법간영상을합쳐표본수를채우지않는다.
 - 다음패키지에평가기연결·참조분리추가30–60분을반영해총2.5–5시간으로조정했다. 과거448전체54.595초에근거한새355장추론·metric5–15분은아직계획치다. 새배치의점수는연결·탐색이지privateutilitygate통과가아니다. 두state/AGENTS/CURRENT_STATUS/RESEARCH_FRAMEWORK/HTML과현재계획§8을동기화했다. 완료된실험객체·actualresultpointer·동결코드/계약/가중치는그대로다.
 - 검증:1113로컬링크/221PDF앵커/깨진링크0,79편장부/75PDF유지,두state핵심필드동기화PASS. spec_sources/gate_review_plan_verification_20260916.json에기록했다. 15:55:33–16:07경KST약12분,초기예상10–20분범위내. 이번새GPU/학습/생성/품질score실행0이며현재실행중작업은없다.
+
+
+## 2026-09-23 — DINO-only matched control
+
+DINO 단독128장·200회·seed101 완료. DenseNet AUROC/AP 0.635777/0.071016, BioViL 0.565009/0.055268. A2−DINO Dense AUROC +0.035957, CI[+0.003202,+0.070914]; AP +0.007549, CI는0포함. A2 Bio AUROC +0.160221. 결합의 추가 개발 가치를 지지하나 한seed·비DP이며 비용 A2 73.92분 대 DINO34.71분. 기존A1/A2 재학습 없음. 추가실험/DP/final 없음.
+
+DINO 단독보다 A2가 DenseNet AUROC를 더 높이면서 BioViL 판별력도 유지했다. DINO 단독의 DenseNet AUROC/AP는 0.635777/0.071016이고 A2는 0.671734/0.078565다. A2−DINO AUROC +0.035957의 동일 환자 bootstrap 95% 구간은 [+0.003202, +0.070914]로 양수다. BioViL AUROC는 DINO 단독 0.565009에서 A2 0.725230으로 +0.160221이며 구간은 [+0.102444, +0.218886]이다. 이번 고정된 recipe에서는 DINO만 쓰는 것으로 A2의 두 평가 결과를 설명할 수 없고, 두 source를 결합하는 실제 추가 가치가 관측됐다.
+
+보고서: RECEIVER_DINO_ONLY_CONTROL_RESULTS_20260923.md. 합성34.71분, 평가10.80초. 기존코드/목표/결과 보존.
