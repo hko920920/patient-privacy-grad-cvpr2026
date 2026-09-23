@@ -1,5 +1,9 @@
 # Project instructions
 
+**ResNet18 추가 개발 평가 완료 (2026-09-24):** ResNet18 추가 개발 평가 완료. A2 DP AUROC 0.615920/0.591600, DINO DP 0.610225/0.621542; A2 P 0.509843, P실영상 0.586100. 평가2.77분, 준비부터10.22분. 새 합성/Q query0; DenseNet 이전 결과와 네 보호요약 회계 보존. 추가 실행 없음.
+
+[결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_RESNET18_REUSE_RESULTS_20260924.md>)
+
 **DINO 환자-DP 잡음 반복 완료 (2026-09-24):** DINO 환자-DP 잡음2 반복 완료. DenseNet DP1 0.672935/0.080814, DP2 0.624128/0.067322(AUROC/AP). 두 잡음 DINO/A2 AUROC 기술평균 0.648531/0.651733. 새 합성·저장35.13분; 새 요약1회·bank1개. 네 요약 공동 공개 기본 상한32/4e-5. 고정 seed·개발 수신자의 두 잡음 비교이며 추가 실행 없음.
 
 [결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md>)

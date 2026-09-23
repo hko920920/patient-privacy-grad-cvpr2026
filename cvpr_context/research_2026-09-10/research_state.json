@@ -24,7 +24,7 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "완료 결과 해석 후 후속 범위를 정한다. 추가 실험 자동 실행 없음.",
+  "next_task": "해당 수신자와 기존 DenseNet의 효용·비용을 함께 해석한다. 추가 실험 자동 실행 없음.",
   "next_task_output": "Completed DINO independent-noise repeat with both A2 and both DINO outcomes",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
@@ -65,7 +65,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "DINO DP noise02 repetition COMPLETE; all two-by-two results retained",
+  "step2_active_task": "ResNet18 fixed additional development evaluation COMPLETE",
   "latest_B_augmentation_target_specification": {
     "report": "PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md",
     "evidence_directory": "spec_sources/prrd_b_aug_target_review_20260921",
@@ -1477,7 +1477,7 @@
       }
     },
     "current_protocol": "TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md",
-    "current_scope": "DINO independent-noise one-bank repetition COMPLETE",
+    "current_scope": "ResNet18 additional development evaluation COMPLETE",
     "planned_next_protocol": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
     "lora_transfer_plan": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
@@ -3331,10 +3331,12 @@
     },
     "scope": "Authorized one Q release + CLIP/DP8 seed101 banks + fixed V comparison completed",
     "no_automatic_followup": true,
-    "finished": "2026-09-23T17:11:23.080894+00:00",
-    "automatic_followup": false
+    "finished": "2026-09-23T17:38:03.401961+00:00",
+    "automatic_followup": false,
+    "started": "2026-09-23T17:27:50+00:00",
+    "absolute_deadline_utc": "2026-09-23T18:12:50+00:00"
   },
-  "updated_utc": "2026-09-23T17:14:52.091912+00:00",
+  "updated_utc": "2026-09-23T17:39:16.171175+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -3385,7 +3387,7 @@
       55
     ]
   },
-  "current_result_report": "RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md",
+  "current_result_report": "RECEIVER_RESNET18_REUSE_RESULTS_20260924.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -5616,7 +5618,7 @@
     }
   },
   "pre_chexzero_review_result_report_20260917": "TRACK1_PADCHEST_VALIDATION_RESULTS_20260917.md",
-  "last_actual_model_result_report": "RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md",
+  "last_actual_model_result_report": "RECEIVER_RESNET18_REUSE_RESULTS_20260924.md",
   "completed_chexzero_review_20260917": {
     "status": "POSITIVE_SINGLE_ALTERNATIVE_READINESS_NOT_EFFICACY",
     "completed_utc": "2026-09-17T05:49:39.987145+00:00",
@@ -5987,7 +5989,7 @@
     "step2_active_task": "Downstream master design and metadata inventory completed; non-DP and DP development precede any expert final performance evaluation."
   },
   "pre_downstream_profile_actual_result": "TRACK1_CHEXZERO_VALIDATION_RESULTS_20260917.md",
-  "last_efficacy_result_report": "RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md",
+  "last_efficacy_result_report": "RECEIVER_RESNET18_REUSE_RESULTS_20260924.md",
   "completed_downstream_profile_20260917": {
     "report": "TRACK1_DOWNSTREAM_PROFILE_RESULTS_20260917.md",
     "completed_utc": "2026-09-17T09:06:45.683260+00:00",
@@ -8384,7 +8386,7 @@
     "automatic_followup": false
   },
   "latest_receiver_feasibility_result_report": "RECEIVER_A2_PUBLIC_SEED202_RESULTS_20260923.md",
-  "receiver_feasibility_next_action": "No further release/seed/budget/final run scheduled",
+  "receiver_feasibility_next_action": "No extra bank/noise/receiver/final evaluation scheduled",
   "receiver_DINO_only_s200_control": {
     "status": "COMPLETE",
     "started": "2026-09-23T04:25:51.484697+00:00",
@@ -9234,5 +9236,108 @@
       }
     },
     "same_Q_recorded_releases": 4
+  },
+  "receiver_resnet18_reuse": {
+    "status": "COMPLETE",
+    "created": "2026-09-23T17:35:08.771542+00:00",
+    "root": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1",
+    "contract": "RECEIVER_RESNET18_REUSE_CONTRACT_20260924.md",
+    "contract_sha256": "6ef925216b788a463363ef30eaf61d73dd3ae205e0328899f9f56462c14a1b48",
+    "new_DP_queries": 0,
+    "new_synthesis_updates": 0,
+    "estimated_minutes": [
+      20,
+      40
+    ],
+    "automatic_followup": false,
+    "finished": "2026-09-23T17:38:03.401961+00:00",
+    "report": "RECEIVER_RESNET18_REUSE_RESULTS_20260924.md",
+    "report_sha256": "06b958c240b80dd3e2b3f65f37d62f1b3c4d321b5b45c0076b4b78d1b56582d2",
+    "summary": "ResNet18 추가 개발 평가 완료. A2 DP AUROC 0.615920/0.591600, DINO DP 0.610225/0.621542; A2 P 0.509843, P실영상 0.586100. 평가2.77분, 준비부터10.22분. 새 합성/Q query0; DenseNet 이전 결과와 네 보호요약 회계 보존. 추가 실행 없음.",
+    "interpretation": "이번 ResNet18에서도 bank에 따라 A2와 DINO의 순위가 달랐다. 모든 관측을 보존하며 좋은 bank 하나로 방법의 우위를 정하지 않는다. 두 잡음 AUROC 산술평균은 A2 0.603760, DINO 0.615884다. 이 추가 개발 수신자에서도 A2의 약 두 배 제작비용을 정당화할 효용 우위는 확인하지 못했다.",
+    "metrics": {
+      "A2_DP1": {
+        "AUROC": 0.6159198402605803,
+        "AP": 0.0667214783426401,
+        "AUROC_patient_cluster_95": [
+          0.577325072244667,
+          0.6563483755081893
+        ],
+        "AP_patient_cluster_95": [
+          0.04932772133405753,
+          0.09525434644105596
+        ]
+      },
+      "A2_DP2": {
+        "AUROC": 0.5916001085752106,
+        "AP": 0.05736997817643037,
+        "AUROC_patient_cluster_95": [
+          0.5469956511155628,
+          0.6352238686714223
+        ],
+        "AP_patient_cluster_95": [
+          0.04476321722127083,
+          0.08020341136427775
+        ]
+      },
+      "DINO_DP1": {
+        "AUROC": 0.6102252191955023,
+        "AP": 0.06669521137055215,
+        "AUROC_patient_cluster_95": [
+          0.5654914163512348,
+          0.6562776468087244
+        ],
+        "AP_patient_cluster_95": [
+          0.04956953557883723,
+          0.09520915696150538
+        ]
+      },
+      "DINO_DP2": {
+        "AUROC": 0.621541953907592,
+        "AP": 0.06149463343618094,
+        "AUROC_patient_cluster_95": [
+          0.5801697465070624,
+          0.6615833107454047
+        ],
+        "AP_patient_cluster_95": [
+          0.048383628507261946,
+          0.08287122354363292
+        ]
+      },
+      "A2_P": {
+        "AUROC": 0.5098433467936848,
+        "AP": 0.04782314579620418,
+        "AUROC_patient_cluster_95": [
+          0.4645650558092005,
+          0.5604686225664502
+        ],
+        "AP_patient_cluster_95": [
+          0.03647274277664419,
+          0.06826276597151618
+        ]
+      },
+      "P_real_point": {
+        "AUROC": 0.5860997702072597,
+        "AP": 0.06184985796485204,
+        "AUROC_patient_cluster_95": [
+          0.5414304592823407,
+          0.6330262382485995
+        ],
+        "AP_patient_cluster_95": [
+          0.046609567292663176,
+          0.09144823670660171
+        ]
+      }
+    },
+    "two_noise_point_means": {
+      "A2": {
+        "AUROC": 0.6037599744178954,
+        "AP": 0.062045728259535235
+      },
+      "DINO": {
+        "AUROC": 0.6158835865515472,
+        "AP": 0.06409492240336655
+      }
+    }
   }
 }

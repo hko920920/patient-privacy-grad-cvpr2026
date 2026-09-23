@@ -5924,3 +5924,15 @@ DINO 환자-DP 잡음2 반복 완료. DenseNet DP1 0.672935/0.080814, DP2 0.6241
 DINO 잡음2의 DenseNet AUROC는 잡음1보다 0.048807 낮아져, 이번에는 A2 두 bank보다 낮았다. 두 잡음의 AUROC 기술평균은 DINO 0.648531, A2 0.651733다. DINO의 점추정 우위는 반복되지 않았다. 네 A2−DINO 교차 비교의 AUROC/AP 환자 구간은 모두 0을 포함한다. 따라서 DINO가 항상 낫다는 결론도, A2의 일반적 우위를 확보했다는 결론도 지지하지 않는다. 현재 DINO를 강한 직접 대조로 유지하며, 두 잡음만으로 안정성 차이를 확정하지 않는다.
 
 [RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md](RECEIVER_DINO_DP_NOISE_REPEAT_RESULTS_20260924.md)
+
+
+**ResNet18 추가 개발 평가 진행 (2026-09-24):** 사용자 실행 지시로 기존 A2 DP1/DP2·DINO DP1/DP2·A2 공개전용 seed101의 최종 PNG와 공개 P 실영상 readout을 비교한다. ResNet18 ImageNet 고정 특징/P-only PCA128·q95/ridge0.1, P813+V5047+PNG640=6500forward, 공개 feature 경로 검산16forward 추가. 새 합성학습·Q query·잡음·Q 픽셀0. 예상20~40분, 준비 시작부터45분 상한18:12:50 UTC. DenseNet 결과 보존, 추가 개발 평가이며 final 아님. Expert/Reserved/확인용 수신자 닫힘. 정상 구간은 평가·기록까지 연속 진행하며 추가 실험 없음.
+
+
+## 2026-09-24 ResNet18 추가 개발 평가 완료
+
+ResNet18 추가 개발 평가 완료. A2 DP AUROC 0.615920/0.591600, DINO DP 0.610225/0.621542; A2 P 0.509843, P실영상 0.586100. 평가2.77분, 준비부터10.22분. 새 합성/Q query0; DenseNet 이전 결과와 네 보호요약 회계 보존. 추가 실행 없음.
+
+이번 ResNet18에서도 bank에 따라 A2와 DINO의 순위가 달랐다. 모든 관측을 보존하며 좋은 bank 하나로 방법의 우위를 정하지 않는다. 두 잡음 AUROC 산술평균은 A2 0.603760, DINO 0.615884다. 이 추가 개발 수신자에서도 A2의 약 두 배 제작비용을 정당화할 효용 우위는 확인하지 못했다.
+
+[결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_RESNET18_REUSE_RESULTS_20260924.md>)
