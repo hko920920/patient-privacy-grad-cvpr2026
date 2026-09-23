@@ -1,5 +1,17 @@
 # Project instructions
 
+- Latest FIRST A1/A2 S200 COMPLETE: 2026-09-22 A1/A2 첫200회·128장·seed101 비교 완료. DenseNet AUROC/AP A1 0.536456/0.047955, A2 0.671734/0.078565; ΔAUROC +0.135277, CI[+0.088795, +0.182515]. 추가 독립 bank 반복을 검토할 개발 신호 충족. 합성worker A1 40.1분/A2 73.9분. 두PNG 동결 후 기존V/2000환자draw 평가. DenseNet은 개발receiver, 단일seed 조건부 결과. 추가실험/DP/Expert/Reserved/final 없음. Read RECEIVER_A1_A2_S200_RESULTS_20260922.md. Preserve earlier negative evidence. No automatic expansion.
+
+
+- Latest FIRST A1/A2 EXECUTION IN PROGRESS: 2026-09-22 A1/A2 각128장·200회·seed101 실제 실행 중. 사용자 시작 지시에 따라 DINO P-only PCA16/q95와 P/Q 조건별 목표 준비 완료(24453F, 검산2.27e-13); 실제 두-source gradient max1.49e-8 통과. A2 비용 측정 뒤 A1/A2 순차학습·두PNG 동결·기존V 평가까지 연속 실행. 합성상한 A1 60분/A2 120분, 추가seed/500연장/DP/final 없음. 미완료를 효용 결과로 읽지 말 것.
+
+
+- Latest FIRST FEASIBILITY BUDGET: 2026-09-22 첫A1/A2 예산 결정: 각128장·200회·seed101,총2bank. Pyramid 활성1/33/65/97/129/161로압축,224수준40회. A1합성예상39.3분; A2미측정. 합성worker상한A160분/A2120분(준비·평가별도). 개발신호는DenseNet ΔAUROC≥.02/AP비감소/BioViL감소≤.02 모두충족; 한seedCI는별도보고하며자동500연장·seed/DP/final확대없음. 기록만했으며현재runtime200일정은아직미연결. A1목표재사용,old500job실행금지. Read RECEIVER_FEASIBILITY_BUDGET_20260922.md.
+
+
+- Latest A1 TARGET AND RUNTIME READY: 2026-09-22 A1 조건별 목표·실행 연결 완료: P813/Q5097×K4=23640F, 독립 검산최대4.55e-13, 실제 [4,34] target/조건/head/전처리 hash 결속. CPU6개와 공개P4 연속3 대2+1 프로세스재개 상태·PNG exact, loss차이0. 공개128 full update 평균11.781초/peak5.599GiB,500회 합성 추정98.2분(평가별도). 기술10update만 실행; 정식학습·A2·V/수신자·DP/final0. 기존 PRRD33파일/clean자료 보존. A1 기술 차단없음; main 범위·시간상한·개발 판정은 아직 미동결. Read RECEIVER_A1_TARGET_RUNTIME_RESULTS_20260922.md and RECEIVER_A1_TARGET_RUNTIME_CONTRACT_20260922.md. Reuse prepared targets and verified runtime; do not repeat extraction/checks without a changed dependency.
+
+
 - Latest RECEIVER CONDITION SIGNAL STEP1 COMPLETE: 2026-09-22 Receiver 조건별 gradient 첫 구현 완료: CPU9개 및 실제 P4 BioViL microbatch1/4 통과, parameter 최대오차1.49e-8·pixel/loss차이0. 기존 PRRD33파일 불변. 새 K4 fixed condition/head·환자/class 가중 signal을 별도 구현. 116F/68B, optimizer0, Q/V·DINO·수신자·DP/final0. A1/A2는 개발 feasibility이며 DenseNet은 개발 receiver다. 관계C/augmean 확대 보류; DP-aware 기여는 아직 미구현. 다음은 A1 target/실행 계약 연결이며 main 계수·비용·효용 기준은 미동결. Read RECEIVER_CONDITION_SIGNAL_STEP1_RESULTS_20260922.md and RECEIVER_DISTILLATION_DEVELOPMENT_PLAN_20260922.md. Preserve historical negative results and production contracts.
 
 

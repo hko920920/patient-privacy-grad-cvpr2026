@@ -24,8 +24,8 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "prepare_A1_condition_targets_and_bind_main_runner_recipe_cost_then_matched_A2",
-  "next_task_output": "A1 condition-specific targets and bound runner contract; no automatic main run or A2/DP/final expansion.",
+  "next_task": "Implement only compressed200 schedule/job binding and logical-step restore; prepare A2 without redoing A1 target extraction.",
+  "next_task_output": "Schedule-bound A1/A2 feasibility run contract with frozen development thresholds and measured A2 cost.",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
     "Support, repetition, cohort composition and weak labels are not causally separated",
@@ -65,7 +65,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Receiver condition-gradient public implementation complete; A1/A2 main feasibility and patient-DP method remain untested.",
+  "step2_active_task": "A1/A2 first seed101 pair fixed at128 images and200 updates; schedule adaptation and A2 pending, no main training yet.",
   "latest_B_augmentation_target_specification": {
     "report": "PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md",
     "evidence_directory": "spec_sources/prrd_b_aug_target_review_20260921",
@@ -98,8 +98,8 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_condition_step1_20260922_v1",
-    "last_completed_report": "RECEIVER_CONDITION_SIGNAL_STEP1_RESULTS_20260922.md",
+    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_a1_targets_runtime_20260922_v1",
+    "last_completed_report": "RECEIVER_A1_TARGET_RUNTIME_RESULTS_20260922.md",
     "additional_execution_contract_fixed": false,
     "stage2_completion_claim": false,
     "latest_design_review": "RECEIVER_DISTILLATION_DEVELOPMENT_PLAN_20260922.md",
@@ -3199,9 +3199,12 @@
       "next_run_scheduled": false
     },
     "historical_additional_execution_contract_fixed_before_B_aug_impl": true,
-    "receiver_main_execution_contract_fixed": false
+    "receiver_main_execution_contract_fixed": false,
+    "receiver_A1_targets_and_runtime_ready": true,
+    "latest_budget_decision_report": "RECEIVER_FEASIBILITY_BUDGET_20260922.md",
+    "receiver_200_schedule_wired": false
   },
-  "updated_utc": "2026-09-22T07:38:18.252013+00:00",
+  "updated_utc": "2026-09-22T08:09:16.094796+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -5128,7 +5131,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "RECEIVER_DISTILLATION_DEVELOPMENT_PLAN_20260922.md",
+  "current_planning_report": "RECEIVER_FEASIBILITY_BUDGET_20260922.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -6139,7 +6142,7 @@
       0.4166666666666667
     ]
   },
-  "current_decision_report": "RECEIVER_DISTILLATION_DEVELOPMENT_PLAN_20260922.md",
+  "current_decision_report": "RECEIVER_FEASIBILITY_BUDGET_20260922.md",
   "current_head_branch_closure_20260917": {
     "report": "TRACK1_CURRENT_HEAD_BRANCH_CLOSURE_20260917.md",
     "record": "spec_sources\\current_head_branch_closure_20260917.json",
@@ -7820,10 +7823,436 @@
     "main_training_started": false,
     "additional_seeds_automatic": false,
     "relation_and_augmean_expansion": "paused_preserve_negative_results",
-    "next_step": "prepare_A1_condition_targets_and_bind_main_runner_recipe_cost_then_matched_A2",
+    "next_step": "wire compressed200 logical-step schedule and prepare matched A2; reuse A1 targets",
     "next_step_not_started": true,
     "turn_started_utc": "2026-09-22T07:23:43+00:00",
     "recorded_utc": "2026-09-22T07:38:18.252013+00:00",
-    "elapsed_work_seconds_at_record": 875.252013
-  }
+    "elapsed_work_seconds_at_record": 875.252013,
+    "latest_A1_preparation_report": "RECEIVER_A1_TARGET_RUNTIME_RESULTS_20260922.md",
+    "current_status": "first_pair_budget_fixed_200_schedule_adapter_pending"
+  },
+  "pre_A1_target_runtime_20260922": {
+    "next_task": "prepare_A1_condition_targets_and_bind_main_runner_recipe_cost_then_matched_A2",
+    "next_task_output": "A1 condition-specific targets and bound runner contract; no automatic main run or A2/DP/final expansion.",
+    "step2_active_task": "Receiver condition-gradient public implementation complete; A1/A2 main feasibility and patient-DP method remain untested.",
+    "current_planning_report": "RECEIVER_DISTILLATION_DEVELOPMENT_PLAN_20260922.md",
+    "current_decision_report": "RECEIVER_DISTILLATION_DEVELOPMENT_PLAN_20260922.md"
+  },
+  "receiver_A1_target_runtime_20260922": {
+    "status": "A1_targets_and_single_encoder_runtime_ready_no_main_run",
+    "report": "RECEIVER_A1_TARGET_RUNTIME_RESULTS_20260922.md",
+    "contract": "RECEIVER_A1_TARGET_RUNTIME_CONTRACT_20260922.md",
+    "output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_a1_targets_runtime_20260922_v1",
+    "started_utc": "2026-09-22T07:42:18+00:00",
+    "recorded_utc": "2026-09-22T07:59:49.204903+00:00",
+    "task_elapsed_seconds_at_record": 1051.204903,
+    "target_preparation": {
+      "status": "PASS_A1_P_Q_CONDITION_TARGETS_READY",
+      "images": 5910,
+      "patients": 2699,
+      "conditions": 4,
+      "gradient_shape": [
+        4,
+        34
+      ],
+      "per_role_seconds": {
+        "P": 49.02426450001076,
+        "Q": 297.40804730006494
+      },
+      "elapsed_seconds": 353.5507879999932,
+      "counts": {
+        "forward_images": 23640,
+        "backward_images": 0
+      },
+      "access": {
+        "roles": [
+          "P",
+          "Q"
+        ],
+        "decoded": {
+          "P": 813,
+          "Q": 5097
+        },
+        "unique_sha_verified": 5910,
+        "denials": 0,
+        "expert_or_reserved_pixels": 0,
+        "guard": "exact path and metadata allow-list"
+      },
+      "verification": {
+        "status": "PASS_STORED_CONDITION_SIGNAL_AND_PATIENT_WEIGHTS",
+        "maximum_abs": 4.547473508864641e-13,
+        "criteria_atol": 1e-12,
+        "metadata_order_exact": true,
+        "counts": {
+          "P": [
+            669,
+            6
+          ],
+          "Q": [
+            2015,
+            114
+          ],
+          "pooled": [
+            2684,
+            120
+          ]
+        },
+        "conditions_separate": 4,
+        "independent_encoder_rerun": false
+      },
+      "loader_exact": true,
+      "source_fixed": true,
+      "legacy_and_clean_inputs_unchanged": true,
+      "target_sha256": "4901a5122e552d2bd3af0ec96f7ced13e92dd2527497a5b8ae06d5f86f42cf58",
+      "handoff_sha256": "c0a5ccc88b5ed66c28c1146d2a304cecd44aa6254cad49ab4c719d76d9f67efc",
+      "peak_allocated_MiB": 1884.271484375,
+      "peak_reserved_MiB": 2650.0,
+      "stored_bytes": 2123365,
+      "free_bytes": 11705847808,
+      "optimizer_updates": 0,
+      "V_recipient_DP_final": false
+    },
+    "runtime_verification": {
+      "status": "PASS_A1_TARGET_RUNTIME_CONNECTION_AND_PUBLIC_COST_ONLY",
+      "whole_state_digest_exact": true,
+      "loss_max_abs": 0.0,
+      "resumed_next_step": 3,
+      "PNG_checks": [
+        {
+          "status": "PASS_FINAL_PNG_LABEL_PAIR_HASH",
+          "images": 4,
+          "pairs": 0,
+          "expected_pixel_arrays_exact": 0,
+          "artifact_kind": "TECHNICAL_TEST_ONLY",
+          "files_verified": 8
+        },
+        {
+          "status": "PASS_FINAL_PNG_LABEL_PAIR_HASH",
+          "images": 4,
+          "pairs": 0,
+          "expected_pixel_arrays_exact": 0,
+          "artifact_kind": "TECHNICAL_TEST_ONLY",
+          "files_verified": 8
+        }
+      ],
+      "counts": {
+        "forward_images": 4288,
+        "backward_images": 2144
+      },
+      "technical_optimizer_updates": 10,
+      "Q_V_pixels": 0,
+      "recipient_A2_DP_expert_reserved": false,
+      "public_unique_templates_technical": 4,
+      "public_unique_templates_cost": 64,
+      "cost": {
+        "full128_update_seconds": [
+          11.788278199965134,
+          11.790102400118485,
+          11.765557899838313
+        ],
+        "mean_seconds": 11.781312833307311,
+        "min_seconds": 11.765557899838313,
+        "max_seconds": 11.790102400118485,
+        "warmup_seconds": 12.605000299867243,
+        "peak_allocated_MiB": 5733.53955078125,
+        "peak_reserved_MiB": 6352.0,
+        "500_update_synthesis_only_estimate_seconds": 5890.6564166536555,
+        "planning_range_seconds": [
+          4712.525133322924,
+          7363.320520817069
+        ],
+        "planning_range_is_not_statistical_CI": true,
+        "includes": "full128 renderer, K4 source forward, global signal loss, replay backward, optimizer, finite checks",
+        "excludes": "P/Q preparation, model startup, periodic checkpoint IO, PNG export, receiver evaluation",
+        "pyramid": "all six levels for every measured update; actual schedule starts with one",
+        "no_main_bank_created": true
+      },
+      "elapsed_seconds": 93.50064669991843,
+      "main_job_digest": "1257b4665c76c8f2b451444020800fba6c6a40cf127076b3862b42475755777e",
+      "main_started": false,
+      "pending": [
+        "formal main execution scope and numeric time cap",
+        "freeze the development interpretation rule before utility evaluation",
+        "A2 second encoder implementation and matched inputs remain separate"
+      ],
+      "stored_bytes": 13928851
+    },
+    "cpu_changed_path": {
+      "status": "PASS",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 0.9341519000008702,
+      "GPU_model_forward": 0,
+      "patient_pixels": 0
+    },
+    "target_sha256": "4901a5122e552d2bd3af0ec96f7ced13e92dd2527497a5b8ae06d5f86f42cf58",
+    "condition_rule_sha256": "32529b98265afdabf5ab3ae69dc0dc0a0b04555a180420e2565edfbc10dc1412",
+    "main_job_file": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_a1_targets_runtime_20260922_v1\\runtime_attempt1\\main_proposal_job.json",
+    "main_job_digest": "1257b4665c76c8f2b451444020800fba6c6a40cf127076b3862b42475755777e",
+    "main_recipe_proposal": {
+      "images": 128,
+      "updates": 500,
+      "seed": 101,
+      "microbatch": 16,
+      "conditions": 4,
+      "optimizer": {
+        "name": "AdamW",
+        "lr": 0.01,
+        "weight_decay": 0.0,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "foreach": false
+      }
+    },
+    "main_executed": false,
+    "main_numeric_time_cap_fixed": false,
+    "utility_gate_fixed": false,
+    "A2_ready": false,
+    "technical_blockers": [],
+    "next_task": "bind A1 main scope/time cap and development interpretation before formal bank/evaluation",
+    "efficacy_established": false,
+    "DP_applied": false
+  },
+  "receiver_first_feasibility_budget_20260922": {
+    "schema": "receiver.feasibility-budget/v1",
+    "created_utc": "2026-09-22T08:09:16.094796+00:00",
+    "decision": "FIRST_MATCHED_A1_A2_200_UPDATES",
+    "purpose": "limited development feasibility, not paper validation",
+    "bank_ids": [
+      "dev_A1_condk4_101_s200",
+      "dev_A2_condk4_101_s200"
+    ],
+    "images_per_bank": 128,
+    "negative_images": 64,
+    "positive_images": 64,
+    "updates_per_bank": 200,
+    "seeds": [
+      101
+    ],
+    "number_of_banks": 2,
+    "conditions": 4,
+    "microbatch": 16,
+    "pyramid_levels": [
+      8,
+      16,
+      32,
+      64,
+      112,
+      224
+    ],
+    "activation_updates": [
+      1,
+      33,
+      65,
+      97,
+      129,
+      161
+    ],
+    "phase_lengths": [
+      32,
+      32,
+      32,
+      32,
+      32,
+      40
+    ],
+    "final_level_updates": 40,
+    "optimizer": {
+      "name": "AdamW",
+      "lr": 0.01,
+      "weight_decay": 0.0,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "foreach": false
+    },
+    "matching": "fixed-condition CE gradient cosine; equal encoder mean",
+    "anchor_coefficient": 0.01,
+    "TV_coefficient": 0.0001,
+    "relation_loss": false,
+    "functional_loss": false,
+    "A1_point_space": "existing BioViL bounded P-only PCA16/q95; no whitening",
+    "A1_target_handoff": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_a1_targets_runtime_20260922_v1\\targets\\private\\target_handoff.json",
+    "A1_target_handoff_sha256": "c0a5ccc88b5ed66c28c1146d2a304cecd44aa6254cad49ab4c719d76d9f67efc",
+    "A1_target_sha256": "4901a5122e552d2bd3af0ec96f7ced13e92dd2527497a5b8ae06d5f86f42cf58",
+    "A1_condition_rule_sha256": "32529b98265afdabf5ab3ae69dc0dc0a0b04555a180420e2565edfbc10dc1412",
+    "shared_A1_A2": [
+      "public templates and initialization",
+      "labels",
+      "BioViL target and fixed heads",
+      "augmentation conditions",
+      "patient/class weighting",
+      "200 update schedule",
+      "optimizer and penalties"
+    ],
+    "A2_aggregation": "equal-weight encoder mean; no smooth-max",
+    "equal_update_budget_not_equal_FLOPs": true,
+    "A1_counts": {
+      "forward_per_update": 1024,
+      "backward_per_update": 512,
+      "forward_200_updates": 204800,
+      "backward_200_updates": 102400
+    },
+    "A2_counts": {
+      "forward_per_encoder": 204800,
+      "backward_per_encoder": 102400,
+      "aggregate_forward_two_encoders": 409600,
+      "aggregate_backward_two_encoders": 204800
+    },
+    "cost": {
+      "A1_seconds_per_update_measured": 11.781312833307311,
+      "A1_synthesis_only_estimated_seconds": 2356.262566661462,
+      "A1_planning_range_seconds": [
+        1885.0100533291698,
+        2945.3282083268277
+      ],
+      "A2_estimated_seconds": null,
+      "A2_cost_status": "unmeasured; measure once after adapter connection, no speed search",
+      "bank_wall_caps_seconds": {
+        "A1": 3600,
+        "A2": 7200
+      },
+      "cap_scope": "each synthesis worker startup, updates, periodic saves and final PNG export",
+      "excludes_from_caps": [
+        "missing A2 model/target preparation",
+        "receiver evaluation"
+      ],
+      "combined_synthesis_cap_seconds": 10800,
+      "caps_are_not_measured_total_cost": true
+    },
+    "development_gate": {
+      "evaluation_after": "both 200-update banks and final PNGs sealed",
+      "primary": "DenseNet development AUROC(A2)-AUROC(A1)",
+      "continue_signal_all_required": {
+        "delta_DenseNet_AUROC_min": 0.02,
+        "delta_DenseNet_AP_min": 0.0,
+        "delta_BioViL_AUROC_min": -0.02
+      },
+      "uncertainty": "reuse same patient bootstrap draws; report CI conditional on seed101 banks",
+      "CI_is_not_a_second_conflicting_stop_rule": true,
+      "positive_gate_label": "signal worth considering for independent-bank confirmation, not efficacy proof",
+      "if_any_condition_fails": "criterion unmet/mixed for this 200-update recipe; no automatic extension or tuning",
+      "historical_B500_and_public_real": "context only, not matched-budget causal comparisons"
+    },
+    "no_automatic": [
+      "500-update continuation",
+      "additional seeds",
+      "C/D/augmean",
+      "smooth-max",
+      "DP",
+      "final receivers",
+      "Expert",
+      "Reserved"
+    ],
+    "schedule_implementation_status": "not yet wired; existing verified runtime still requires 500",
+    "implementation_delta": [
+      "schedule-aware renderer set_step and restore at logical200-update count",
+      "200-update job schema/signature and logical-step logging",
+      "CPU checks of activation boundaries and checkpoint restore near32/33",
+      "A2 adapter/target and one bounded actual cost measurement"
+    ],
+    "reuse": [
+      "all existing A1 condition targets",
+      "legacy renderer math",
+      "checkpoint/RNG/PNG primitives",
+      "valid gradient evidence"
+    ],
+    "existing_500_main_proposal": "preserved as historical; not current first experiment",
+    "this_action": "decision and records only",
+    "new_GPU_or_pixel_or_training_operations": 0,
+    "execution_started": false,
+    "report": "RECEIVER_FEASIBILITY_BUDGET_20260922.md",
+    "budget_path": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feasibility_budget_20260922_v1\\budget.json"
+  },
+  "receiver_A1_A2_first200_execution": {
+    "status": "COMPLETE",
+    "started": "2026-09-22T08:18:54.982697+00:00",
+    "contract": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_a1a2_s200_20260922_v1\\campaign_contract.json",
+    "bank_ids": [
+      "dev_A1_condk4_101_s200",
+      "dev_A2_condk4_101_s200"
+    ],
+    "updates": 200,
+    "final_evaluation_opened": false,
+    "DP_final_opened": false,
+    "second_target_report": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_a1a2_s200_20260922_v1\\second_targets\\result.json",
+    "actual_gradient_report": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_a1a2_s200_20260922_v1\\changed_path_verification\\result.json",
+    "updated": "2026-09-22T09:10:09.809895+00:00",
+    "A1_worker_seconds": 2405.4529999999795,
+    "A1_PNG_pass": "PASS_FINAL_PNG_LABEL_PAIR_HASH",
+    "development_evaluation_opened": true,
+    "finished": "2026-09-22T10:24:05.543758+00:00",
+    "result_report": "RECEIVER_A1_A2_S200_RESULTS_20260922.md",
+    "evaluation_result": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_a1a2_s200_20260922_v1\\evaluation\\result.json",
+    "investment_signal": true,
+    "DenseNet_A1": {
+      "AUROC": 0.5364563579709822,
+      "AP": 0.04795513041491735,
+      "AUROC_patient_cluster_95": [
+        0.4850777984704377,
+        0.5868715796768967
+      ],
+      "AP_patient_cluster_95": [
+        0.03827002112059393,
+        0.06044467481415111
+      ]
+    },
+    "DenseNet_A2": {
+      "AUROC": 0.6717338196907838,
+      "AP": 0.07856524994379702,
+      "AUROC_patient_cluster_95": [
+        0.6206568317799345,
+        0.7205664613745563
+      ],
+      "AP_patient_cluster_95": [
+        0.06159532404444485,
+        0.10174925709131198
+      ]
+    },
+    "DenseNet_delta": {
+      "AUROC": {
+        "delta": 0.1352774617198016,
+        "patient_cluster_95": [
+          0.0887954242220429,
+          0.18251468674042334
+        ]
+      },
+      "AP": {
+        "delta": 0.030610119528879667,
+        "patient_cluster_95": [
+          0.018457880598431425,
+          0.04686925550191727
+        ]
+      }
+    },
+    "source_delta": {
+      "AUROC": {
+        "delta": -0.0064020331823690935,
+        "patient_cluster_95": [
+          -0.010739968545497783,
+          -0.0017773301689420601
+        ]
+      },
+      "AP": {
+        "delta": -0.002906213081311698,
+        "patient_cluster_95": [
+          -0.005713401070282647,
+          -0.0009724725429987059
+        ]
+      }
+    },
+    "synthesis_seconds": {
+      "A1": 2405.4529999999795,
+      "A2": 4434.9529999999795
+    },
+    "automatic_followup": false
+  },
+  "latest_receiver_feasibility_result_report": "RECEIVER_A1_A2_S200_RESULTS_20260922.md",
+  "receiver_feasibility_next_action": "Interpret fixed 200-update development comparison; no automatic extra execution"
 }
