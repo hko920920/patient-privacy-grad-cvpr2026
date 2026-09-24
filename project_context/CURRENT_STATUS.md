@@ -1,5 +1,10 @@
 # 현재 상태
 
+**Feature 공개전용·독립 잡음 반복 완료 (2026-09-24):** Feature 공개전용+독립DP2 묶음 완료. DenseNet AUROC 공개전용0.511293, DP1 0.650018, DP2 0.596743. 두 DP bank의 공개전용 대비 AUROC 구간 전체 양수=True, AP=False. 새 bank2개/400updates, 새 보호요약1회, 기존 Feature DP1·Gradient DP1/DP2 재사용. 여섯 요약 공동 공개 기본 상한48/6e-5. 고정 bank 개발 비교이며 일반 원리·동등성·CVPR 기여 완료 아님. 추가 실행 없음.
+
+[결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_FEATURE_FOLLOWUP_RESULTS_20260924.md>)
+
+
 **Feature 환자-DP 대조 완료 (2026-09-24):** 환자-DP feature-mean/L2 대조 한 bank 완료. DenseNet AUROC/AP 0.650018/0.080832; 기존 gradient DP1/DP2 AUROC 0.672935/0.624128. 합성·저장35.07분. 판정 MIXED_OR_NO_CLEAR_RECIPE_ADVANTAGE. 전체 구성의 고정 bank 개발 비교이며 추가 실행 없음.
 
 [결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_FEATURE_PATIENT_DP_RESULTS_20260924.md>)

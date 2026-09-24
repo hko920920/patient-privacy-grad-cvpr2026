@@ -1,5 +1,12 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+## 2026-09-24 — Feature 공개전용·독립DP2 개발 비교
+
+Feature 공개전용+독립DP2 묶음 완료. DenseNet AUROC 공개전용0.511293, DP1 0.650018, DP2 0.596743. 두 DP bank의 공개전용 대비 AUROC 구간 전체 양수=True, AP=False. 새 bank2개/400updates, 새 보호요약1회, 기존 Feature DP1·Gradient DP1/DP2 재사용. 여섯 요약 공동 공개 기본 상한48/6e-5. 고정 bank 개발 비교이며 일반 원리·동등성·CVPR 기여 완료 아님. 추가 실행 없음.
+
+[결과](RECEIVER_FEATURE_FOLLOWUP_RESULTS_20260924.md)
+
+
 ## 2026-09-23 — 환자-DP 목표 경로 구현·검산
 
 A2 환자-DP 목표 경로 설계·구현·검산 완료. class별 환자 gradient와 private count를 함께 546좌표·add/remove 감도1의 한 query로 정의했다. P-only q95 제한 기준 및 ε8/δ1e-5 analytic Gaussian σ0.600229를 명세했다. CPU15검사·기존 pooled target 재현(max1.11e-16)·공개 모의 target/gradient 연결 PASS. 실제 Q clipping 음성5.856%/양성4.386%. 새 Q noise/release·합성·V효용·Expert/Reserved/확인용 수신자 실행0. 최초 합산오차 실패를 보존하고 math.fsum으로 수리했으며 허용오차는 유지했다.

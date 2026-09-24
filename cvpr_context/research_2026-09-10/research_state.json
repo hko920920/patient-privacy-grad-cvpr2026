@@ -24,8 +24,8 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "해당 수신자와 기존 DenseNet의 효용·비용을 함께 해석한다. 추가 실험 자동 실행 없음.",
-  "next_task_output": "Completed DINO independent-noise repeat with both A2 and both DINO outcomes",
+  "next_task": "완료된 feature 공개전용·독립DP2 비교를 해석한다. 추가 실행 자동 예약 없음.",
+  "next_task_output": "RECEIVER_FEATURE_FOLLOWUP_RESULTS_20260924.md",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
     "Support, repetition, cohort composition and weak labels are not causally separated",
@@ -65,7 +65,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Feature-mean patient-DP one-bank comparison complete; no automatic execution",
+  "step2_active_task": "Feature public/noise follow-up: COMPLETE",
   "latest_B_augmentation_target_specification": {
     "report": "PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md",
     "evidence_directory": "spec_sources/prrd_b_aug_target_review_20260921",
@@ -1477,7 +1477,7 @@
       }
     },
     "current_protocol": "TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md",
-    "current_scope": "Completed one feature-mean DP bank and fixed comparison; no pending jobs",
+    "current_scope": "Feature two-bank follow-up COMPLETE; no automatic expansion",
     "planned_next_protocol": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
     "lora_transfer_plan": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
@@ -1497,7 +1497,7 @@
       "images_planned": 256,
       "classifier_runs_planned": 6
     },
-    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_dp8_20260924_v1",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_followup_20260924_v1",
     "next_execution_scheduled": false,
     "completed_lora_transfer_comparison": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
@@ -3336,7 +3336,7 @@
     "started": "2026-09-23T17:27:50+00:00",
     "absolute_deadline_utc": "2026-09-23T18:12:50+00:00"
   },
-  "updated_utc": "2026-09-24T04:20:09.123338+00:00",
+  "updated_utc": "2026-09-24T09:51:06.983725+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -9387,5 +9387,19 @@
     "report": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\RECEIVER_FEATURE_PATIENT_DP_RESULTS_20260924.md",
     "development_judgment": "MIXED_OR_NO_CLEAR_RECIPE_ADVANTAGE",
     "total_seconds_through_record": 3203.079121
+  },
+  "receiver_feature_followup": {
+    "status": "COMPLETE",
+    "updated": "2026-09-24T09:50:18.318051+00:00",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_followup_20260924_v1",
+    "absolute_deadline_utc": "2026-09-24T10:30:40+00:00",
+    "new_private_releases": 1,
+    "development_evaluation_opened": true,
+    "result": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\evaluation\\result.json",
+    "automatic_followup": false,
+    "report": "RECEIVER_FEATURE_FOLLOWUP_RESULTS_20260924.md",
+    "completed_scope": "Feature 공개전용+독립DP2 묶음 완료. DenseNet AUROC 공개전용0.511293, DP1 0.650018, DP2 0.596743. 두 DP bank의 공개전용 대비 AUROC 구간 전체 양수=True, AP=False. 새 bank2개/400updates, 새 보호요약1회, 기존 Feature DP1·Gradient DP1/DP2 재사용. 여섯 요약 공동 공개 기본 상한48/6e-5. 고정 bank 개발 비교이며 일반 원리·동등성·CVPR 기여 완료 아님. 추가 실행 없음.",
+    "dense_private_increment_both_auroc_ci_positive": true,
+    "dense_private_increment_both_ap_ci_positive": false
   }
 }
