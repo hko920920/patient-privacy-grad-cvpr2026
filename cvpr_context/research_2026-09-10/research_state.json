@@ -65,7 +65,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "ResNet18 fixed additional development evaluation COMPLETE",
+  "step2_active_task": "Feature-mean patient-DP one-bank comparison complete; no automatic execution",
   "latest_B_augmentation_target_specification": {
     "report": "PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md",
     "evidence_directory": "spec_sources/prrd_b_aug_target_review_20260921",
@@ -1477,7 +1477,7 @@
       }
     },
     "current_protocol": "TRACK1_DOWNSTREAM_DEVELOPMENT_PROTOCOL_20260917.md",
-    "current_scope": "ResNet18 additional development evaluation COMPLETE",
+    "current_scope": "Completed one feature-mean DP bank and fixed comparison; no pending jobs",
     "planned_next_protocol": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
     "lora_transfer_plan": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_PROTOCOL_20260917.md",
@@ -1497,7 +1497,7 @@
       "images_planned": 256,
       "classifier_runs_planned": 6
     },
-    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_dino_dp8_noise_repeat_20260924_v1",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_dp8_20260924_v1",
     "next_execution_scheduled": false,
     "completed_lora_transfer_comparison": {
       "report": "TRACK1_LORA_TRANSFER_COMPARISON_RESULTS_20260917.md",
@@ -3336,7 +3336,7 @@
     "started": "2026-09-23T17:27:50+00:00",
     "absolute_deadline_utc": "2026-09-23T18:12:50+00:00"
   },
-  "updated_utc": "2026-09-23T17:39:16.171175+00:00",
+  "updated_utc": "2026-09-24T04:20:09.123338+00:00",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -3387,7 +3387,7 @@
       55
     ]
   },
-  "current_result_report": "RECEIVER_RESNET18_REUSE_RESULTS_20260924.md",
+  "current_result_report": "RECEIVER_FEATURE_PATIENT_DP_RESULTS_20260924.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -9339,5 +9339,53 @@
         "AP": 0.06409492240336655
       }
     }
+  },
+  "latest_review_report": "DOSSER_PATIENT_DP_OPERATION_COMPARISON_20260924.md",
+  "completed_patient_dp_audit_review_20260924": {
+    "report": "PATIENT_DP_AUDIT_REPORT_REVIEW_20260924.md",
+    "scope": "Code, existing artifacts and primary-literature review only",
+    "actual_result_unchanged": "RECEIVER_RESNET18_REUSE_RESULTS_20260924.md",
+    "new_model_runs": 0,
+    "new_synthesis_banks": 0,
+    "new_private_releases": 0,
+    "new_evaluations": 0,
+    "large_repeat_plan_adopted": false,
+    "novelty_confirmed": false,
+    "stage2_complete": false,
+    "automatic_followup": false,
+    "completed_utc": "2026-09-24T00:35:12.289936+00:00"
+  },
+  "completed_dosser_operation_comparison_20260924": {
+    "review": "DOSSER_PATIENT_DP_OPERATION_COMPARISON_20260924.md",
+    "created_utc": "2026-09-24T03:18:53.043686+00:00",
+    "local_sources": {
+      "receiver_distillation/signals.py": "8ec86f05df7c678a92753c30a7453f4cf65780cba46671ca7c3bb6eadf4248d2",
+      "receiver_distillation/second_source.py": "f30601ef3d7e06cef74de69242150fe18684d86c0f70d9fd23f107af34edaebe",
+      "receiver_distillation/patient_dp_dino.py": "6ca66022c1ed3e2fcba6b1242bc835cd8c63eab8419efb619a76ea600adad10c",
+      "receiver_distillation/objectives.py": "16c37cafdfab8ed13658c982acc2303040b793d2451421a6360b39fc6c9ecbf0",
+      "receiver_distillation/prepare_second.py": "da920691c36bb26e68e804053239d460c37da96c8505c32efa1cbe8859a9f5db",
+      "prrd_v3/encoders.py": "d4f432be4e7bbbe7cdb11928c88f2b4190c4692b19d353e7b0bcec0ea4310c4a"
+    },
+    "official_commit": "dff0c57f6f22f66d500a66bad4a9db757e5f714a",
+    "new_gpu_runs": 0,
+    "new_Q_releases": 0,
+    "new_evaluations": 0,
+    "official_code_executed": false,
+    "comparison_status": "operation_card_only_not_execution_contract",
+    "baseline_scope": "matched_signal_recipe_not_whole_Dosser_superiority",
+    "automatic_followup": false
+  },
+  "receiver_feature_patient_dp_control": {
+    "status": "COMPLETE",
+    "updated": "2026-09-24T04:18:08.686303+00:00",
+    "output_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_dp8_20260924_v1",
+    "absolute_deadline_utc": "2026-09-24T05:26:46+00:00",
+    "new_private_releases": 1,
+    "automatic_followup": false,
+    "development_evaluation_opened": true,
+    "result": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_dp8_20260924_v1\\evaluation\\result.json",
+    "report": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\RECEIVER_FEATURE_PATIENT_DP_RESULTS_20260924.md",
+    "development_judgment": "MIXED_OR_NO_CLEAR_RECIPE_ADVANTAGE",
+    "total_seconds_through_record": 3203.079121
   }
 }

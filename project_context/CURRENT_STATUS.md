@@ -1,5 +1,9 @@
 # 현재 상태
 
+**Feature 환자-DP 대조 완료 (2026-09-24):** 환자-DP feature-mean/L2 대조 한 bank 완료. DenseNet AUROC/AP 0.650018/0.080832; 기존 gradient DP1/DP2 AUROC 0.672935/0.624128. 합성·저장35.07분. 판정 MIXED_OR_NO_CLEAR_RECIPE_ADVANTAGE. 전체 구성의 고정 bank 개발 비교이며 추가 실행 없음.
+
+[결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_FEATURE_PATIENT_DP_RESULTS_20260924.md>)
+
 **ResNet18 추가 개발 평가 완료 (2026-09-24):** ResNet18 추가 개발 평가 완료. A2 DP AUROC 0.615920/0.591600, DINO DP 0.610225/0.621542; A2 P 0.509843, P실영상 0.586100. 평가2.77분, 준비부터10.22분. 새 합성/Q query0; DenseNet 이전 결과와 네 보호요약 회계 보존. 추가 실행 없음.
 
 [결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_RESNET18_REUSE_RESULTS_20260924.md>)

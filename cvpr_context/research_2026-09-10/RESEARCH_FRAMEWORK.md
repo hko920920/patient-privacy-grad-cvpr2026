@@ -322,3 +322,25 @@ ResNet18 추가 개발 평가 완료. A2 DP AUROC 0.615920/0.591600, DINO DP 0.6
 이번 ResNet18에서도 bank에 따라 A2와 DINO의 순위가 달랐다. 모든 관측을 보존하며 좋은 bank 하나로 방법의 우위를 정하지 않는다. 두 잡음 AUROC 산술평균은 A2 0.603760, DINO 0.615884다. 이 추가 개발 수신자에서도 A2의 약 두 배 제작비용을 정당화할 효용 우위는 확인하지 못했다.
 
 [결과 보고서](RECEIVER_RESNET18_REUSE_RESULTS_20260924.md)
+
+## 2026-09-24 외부 감사·CVPR 전략 보고서 검토
+
+실제 코드·기존 기록·DP-NTK/Dosser/LGM 원문을 대조했다. 보호된 Q 추가효용과 DP에서의 A2 우위 미확정은 유지한다. 다만 one-release/reuse 주장을 재명명하는 것만으로 신규성을 확보하지 않는다. 실제 class별 clipping 및 정규화된 patient query는 보고서의 raw global-clipping 예제와 다르며, 기존 sigma·bootstrap·분할·noise seed 비공개 검증 기록을 재사용한다. 8개 seed/40개 shadow 잡음/대규모 baseline 실행은 채택하거나 시작하지 않았다. 다음 권고는 가장 가까운 선행 대비 차이와 이를 판별할 강한 대조 하나를 구체화하는 것이다. stage2=in_progress, 실제 효용 결과 포인터는 ResNet18 완료 보고서로 유지하며 추가 모델·release·평가 실행은 0이다.
+
+[검토 기록](PATIENT_DP_AUDIT_REPORT_REVIEW_20260924.md)
+
+## 2026-09-24 Dosser 연산 대응 완료
+
+현재 DINO 단독과 Dosser 원문·공식 revision dff0c57f6f22를 비교표로 결속했다. 조건 보존·보호 신호 재사용은 공통이며, Dosser의 일반 틀도 gradient를 허용한다. 선형 gradient/cosine은 LGM 선행이므로 그 자체를 신규성으로 세지 않는다. 후보 대조는 같은 DINO·P/Q·환자-DP 조건의 현재 gradient/cosine 구성 대 class별 feature-mean/L2 구성이다. 제한된 신호 구성 비교이며 Dosser 전체/최강 variant 비교를 대신하지 않는다. 공식 코드의 noise 적용 위치 및 증강 RNG 결합 가능성을 원문과 구분했다. 코드 차이를 우리 기여로 세지 않는다. 실행 전 필요한 loss 단위·규제 상대크기 및 clipping 미분 정의는 아직 동결 전이다. 새 학습·보호 요약·평가0, 현재 실제 결과와 stage2 진행 상태 보존, 자동 실행 없음.
+
+[비교표와 범위](DOSSER_PATIENT_DP_OPERATION_COMPARISON_20260924.md)
+
+
+## 2026-09-24 feature-mean patient-DP control started
+
+One130-coordinate protected target and one128-image/200-update/seed101 bank. Public one-pass/two-pass gradient max7.45e-9 passed unchanged tolerance; cached P/Q patient-class aggregation checked independently. Pre-sampling Python keyword-default failure preserved and repaired before the first actual DP draw. Full recipe comparison against both DINO gradient-DP banks, not a gradient-only effect or full Dosser baseline. Absolute cap05:26:46UTC; no automatic followup.
+
+
+## 2026-09-24 feature-mean 환자-DP 대조 완료
+
+환자-DP feature-mean/L2 대조 한 bank 완료. DenseNet AUROC/AP 0.650018/0.080832; 기존 gradient DP1/DP2 AUROC 0.672935/0.624128. 합성·저장35.07분. 판정 MIXED_OR_NO_CLEAR_RECIPE_ADVANTAGE. 전체 구성의 고정 bank 개발 비교이며 추가 실행 없음.

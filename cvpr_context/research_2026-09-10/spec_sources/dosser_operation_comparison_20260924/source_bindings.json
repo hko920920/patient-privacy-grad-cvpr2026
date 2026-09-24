@@ -1,0 +1,17 @@
+{
+  "review": "DOSSER_PATIENT_DP_OPERATION_COMPARISON_20260924.md",
+  "created_utc": "2026-09-24T03:18:53.043686+00:00",
+  "local_sources": {
+    "receiver_distillation/signals.py": "8ec86f05df7c678a92753c30a7453f4cf65780cba46671ca7c3bb6eadf4248d2",
+    "receiver_distillation/second_source.py": "f30601ef3d7e06cef74de69242150fe18684d86c0f70d9fd23f107af34edaebe",
+    "receiver_distillation/patient_dp_dino.py": "6ca66022c1ed3e2fcba6b1242bc835cd8c63eab8419efb619a76ea600adad10c",
+    "receiver_distillation/objectives.py": "16c37cafdfab8ed13658c982acc2303040b793d2451421a6360b39fc6c9ecbf0",
+    "receiver_distillation/prepare_second.py": "da920691c36bb26e68e804053239d460c37da96c8505c32efa1cbe8859a9f5db",
+    "prrd_v3/encoders.py": "d4f432be4e7bbbe7cdb11928c88f2b4190c4692b19d353e7b0bcec0ea4310c4a"
+  },
+  "official_commit": "dff0c57f6f22f66d500a66bad4a9db757e5f714a",
+  "new_gpu_runs": 0,
+  "new_Q_releases": 0,
+  "new_evaluations": 0,
+  "official_code_executed": false
+}

@@ -1,0 +1,37 @@
+{
+  "repository": "https://github.com/humansensinglab/Dosser",
+  "commit": "dff0c57f6f22f66d500a66bad4a9db757e5f714a",
+  "retrieved_utc": "2026-09-24T03:12:47.832323+00:00",
+  "files": {
+    "README.md": {
+      "sha256": "6a68d329b14ac1f7ee32f2016bfe71369c630d0b7768fe7433afd9b6e6de10c9",
+      "bytes": 1634,
+      "url": "https://raw.githubusercontent.com/humansensinglab/Dosser/dff0c57f6f22f66d500a66bad4a9db757e5f714a/README.md"
+    },
+    "dosser.py": {
+      "sha256": "f794b1d2987efea83723b1ede0d99fed5a3aaa9c17bf3e3b397efdb98742c606",
+      "bytes": 38565,
+      "url": "https://raw.githubusercontent.com/humansensinglab/Dosser/dff0c57f6f22f66d500a66bad4a9db757e5f714a/dosser.py"
+    },
+    "pca.py": {
+      "sha256": "6452c86de5fb903d56dc56d34608a702cff2d69e48513ae7a35913b680738e03",
+      "bytes": 2577,
+      "url": "https://raw.githubusercontent.com/humansensinglab/Dosser/dff0c57f6f22f66d500a66bad4a9db757e5f714a/pca.py"
+    },
+    "compute_sigma_with_fixed_budget.py": {
+      "sha256": "805cac7e9d7b90a50089cf24c1f795e9290da1c8d06fc803dc8e9e792c728e5c",
+      "bytes": 2969,
+      "url": "https://raw.githubusercontent.com/humansensinglab/Dosser/dff0c57f6f22f66d500a66bad4a9db757e5f714a/compute_sigma_with_fixed_budget.py"
+    },
+    "privacy_analysis.py": {
+      "sha256": "37caf4d8e538b5c53d37efbfa8e9aff62f2d7d1ce5c8f428f165c17e977e4316",
+      "bytes": 7905,
+      "url": "https://raw.githubusercontent.com/humansensinglab/Dosser/dff0c57f6f22f66d500a66bad4a9db757e5f714a/privacy_analysis.py"
+    },
+    "utils.py": {
+      "sha256": "ab7e66073febdbbddf50a3f08c8db2396538777010a6a75082ad6d8dcc54264a",
+      "bytes": 32707,
+      "url": "https://raw.githubusercontent.com/humansensinglab/Dosser/dff0c57f6f22f66d500a66bad4a9db757e5f714a/utils.py"
+    }
+  }
+}

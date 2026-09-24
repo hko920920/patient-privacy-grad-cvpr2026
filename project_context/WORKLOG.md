@@ -60,14 +60,14 @@ DenseNet AUROC는 기존B 대비 -0.080594(감소), AP는 -0.013875(감소)다. 
 - 사용자 요청에 따라 설계·실제 코드·저장 목표/PNG/예측/trace를 대조하고 독립 CPU 재계산했다.
 - Source relation updates corrected22,958 and worsened22,807 positive-negative rankings; target C-B +0.000140. B/C PNG source scores closely reproduce targets. DenseNet C point-only .486687, internal unguarded .561616, guarded .508841(alpha .195127). C synthetic/real class-direction cosine is source .978978 vs recipient .014165. Recipient bound-boundary V5.17% vs C94.53%. Post-hoc within-patient C-B improvement does not replace failed primary/global/true-vs-shuffle results.
 - 결과와 구현의 불일치, source 재현, relation utility, recipient geometry, guard의 기준을 구분했다. 새 모델실행·학습·합성·계수 탐색·원영상·DP·final0.
-- 결과: PRRD_FAILURE_MECHANISM_ANALYSIS_20260921.md; 내부 상세 C:\Users\SOGANG\Documents\카톨릭대\졸업관련 260720\고한경_박사학위논문_작업본\code_working\_reports\prrd_failure_analysis_20260921_v1. 이전 보고서와 frozen 입력은 보존했다.
+- 결과: PRRD_FAILURE_MECHANISM_ANALYSIS_20260921.md; 내부 상세 code_working/_reports/prrd_failure_analysis_20260921_v1. 이전 보고서와 frozen 입력은 보존했다.
 
 ## PRRD-SOURCE-TARGET-PNG-DIAGNOSTIC (2026-09-21)
 
 - 사용자 요청한 B/C/D source target/PNG 및 기존 DenseNet 한 표 비교 완료. B:target0.777791,PNG0.777578,DenseNet0.567975; C:target0.777931,PNG0.778057,DenseNet0.508841; D:target0.783509,PNG0.781108,DenseNet0.602826.
 - 원료 target/PNG 특징/learner·계수 유지. BioViL V5047 point feature만 추출하고 기존 환자bootstrap으로 조건부 구간 계산. 새 학습·합성·수신자실행·DP·Expert/Reserved0.
 - 최초 hash 중단은 contracts.py의 연구 문서 폴더 fallback 추가였다. 옛 원본과 비교·동일 폴더 해석을 확인해 새 진단에만 결속했다. 과거 계약·결과와 현재 사용자 수정은 덮어쓰지 않았다.
-- 상세 PRRD_SOURCE_TARGET_PNG_DIAGNOSTIC_20260921.md; C:\Users\SOGANG\Documents\카톨릭대\졸업관련 260720\고한경_박사학위논문_작업본\code_working\_reports\prrd_source_readout_20260921_v1. 후속 실험 자동 실행 없음.
+- 상세 PRRD_SOURCE_TARGET_PNG_DIAGNOSTIC_20260921.md; code_working/_reports/prrd_source_readout_20260921_v1. 후속 실험 자동 실행 없음.
 
 ### ABCD101 기술 수정·용량 정리 기록
 
@@ -517,11 +517,11 @@ Found and downloaded a public derived copy without contact after the user challe
 
 ## 2. 핵심 경로
 
-- 작업본 루트: `C:\Users\SOGANG\Documents\카톨릭대\졸업관련 260720\고한경_박사학위논문_작업본`
+- 작업본 루트: `<local thesis working root>`
 - 최신 상태·기록 감사 정정: `CURRENT_STATUS.md`
-- 원본 Technology 템플릿: `C:\Users\SOGANG\Documents\카톨릭대\졸업관련 260720\Technology_v1.14\Technology\Template_Doctor_Dissertation`
-- 구조 참고 박사논문: `C:\Users\SOGANG\Documents\카톨릭대\졸업관련 260720\김태훈 교수님_박사졸논 자료\학위논문_최종.pdf`
-- 연구논문 폴더: `C:\Users\SOGANG\Documents\카톨릭대\졸업관련 260720\포함 SCI 연구들`
+- 원본 Technology 템플릿: `<local Technology dissertation template>`
+- 구조 참고 박사논문: `<local reference dissertation PDF>`
+- 연구논문 폴더: `<local SCI reference folder>`
 - 최신 조판본: `build\thesis.pdf`
 - 공통 표기: `notation.tex`
 - 용어·주장 정책: `notes\terminology_notation_claim_policy.md`
@@ -1284,7 +1284,7 @@ Chapter 2 전체 구조와 분량:
 작업 원문과 역할:
 
 - 1차 원문:
-  `C:\Users\SOGANG\Documents\카톨릭대\졸업관련 260720\포함 SCI 연구들\main_aaai27_v43_candidate.pdf`
+  `<local AAAI27 candidate PDF>`
 - 논문 내 역할: Auditable Privacy의 두 번째 핵심 연구이며,
   Chapter 2의 post-execution diagnosis를 pre-execution prevention으로 확장
 - 작업 기준표: `notes\chapter03_content_map.md`
@@ -5936,3 +5936,25 @@ ResNet18 추가 개발 평가 완료. A2 DP AUROC 0.615920/0.591600, DINO DP 0.6
 이번 ResNet18에서도 bank에 따라 A2와 DINO의 순위가 달랐다. 모든 관측을 보존하며 좋은 bank 하나로 방법의 우위를 정하지 않는다. 두 잡음 AUROC 산술평균은 A2 0.603760, DINO 0.615884다. 이 추가 개발 수신자에서도 A2의 약 두 배 제작비용을 정당화할 효용 우위는 확인하지 못했다.
 
 [결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_RESNET18_REUSE_RESULTS_20260924.md>)
+
+## 2026-09-24 환자-DP 감사 보고서 검토
+
+사용자 전달 보고서를 현재 코드·metadata·결과와 가까운 primary literature로 대조했다. Q 추가효용과 A2 DP 우위 미확정은 인정하되, 기존 one-release/post-processing 원리를 새 CVPR 기여로 확정하지 않는다. 실제 clipping·분모 안정화와 보고서의 일반 예제 차이, 이미 존재하는 감사 기록, 조건부 개인정보 합성 상한을 정정했다. 권고된 8개 seed·40개 shadow 잡음 등은 자동 실행하지 않는다. 기존 코드·bank·실제 효용 결과 보존, 새 GPU/합성/보호 요약/평가 0.
+
+[검토 기록](<CVPR 주제 탐색/research_2026-09-10/PATIENT_DP_AUDIT_REPORT_REVIEW_20260924.md>)
+
+## 2026-09-24 DINO 환자-DP / Dosser 연산 비교
+
+공식 공개 소스 6개를 revision/hash와 보관하고 현재 신호·projection·환자 query·loss를 대조했다. 현재 gradient/cosine은 가까운 기존 원리의 구성이고, feature-mean/L2 대조는 그 구성의 실용적 가치를 묻는 제한된 비교다. 이를 Dosser 전체 대비 우위로 부르지 않는다. 원문과 코드의 noise 처리 순서 차이 및 augmentation RNG 연동 가능성도 기록했다. 새 실행 코드는 만들지 않았으며 GPU·Q release·합성·V 평가0. 과거 실제 효용 결과는 보존한다.
+
+[비교표](<CVPR 주제 탐색/research_2026-09-10/DOSSER_PATIENT_DP_OPERATION_COMPARISON_20260924.md>)
+
+
+## 2026-09-24 feature-mean patient-DP control started
+
+One130-coordinate protected target and one128-image/200-update/seed101 bank. Public one-pass/two-pass gradient max7.45e-9 passed unchanged tolerance; cached P/Q patient-class aggregation checked independently. Pre-sampling Python keyword-default failure preserved and repaired before the first actual DP draw. Full recipe comparison against both DINO gradient-DP banks, not a gradient-only effect or full Dosser baseline. Absolute cap05:26:46UTC; no automatic followup.
+
+
+## 2026-09-24 feature-mean 환자-DP 대조 완료
+
+환자-DP feature-mean/L2 대조 한 bank 완료. DenseNet AUROC/AP 0.650018/0.080832; 기존 gradient DP1/DP2 AUROC 0.672935/0.624128. 합성·저장35.07분. 판정 MIXED_OR_NO_CLEAR_RECIPE_ADVANTAGE. 전체 구성의 고정 bank 개발 비교이며 추가 실행 없음.
