@@ -1,0 +1,370 @@
+{
+  "scope": "Exploratory joint DINO/ResNet18 functional soft-label compiler; DenseNet excluded from construction loss.",
+  "new_Q_access": 0,
+  "new_releases": 0,
+  "new_pixels": 0,
+  "Expert_Reserved": false,
+  "fits": {
+    "DP1": {
+      "relative_public_RMSE_DINO": 0.1292278856120717,
+      "relative_public_RMSE_ResNet18": 0.15924527761827176,
+      "original_joint_residual": 0.8117462441558493,
+      "final_joint_residual": 0.14501535240016333,
+      "regularizer": 2.740523160384887e-06,
+      "optimality": 4.09563374489445e-15,
+      "at_bound": 85
+    },
+    "DP2": {
+      "relative_public_RMSE_DINO": 0.15930386687326534,
+      "relative_public_RMSE_ResNet18": 0.1974911709640707,
+      "original_joint_residual": 0.6492757301970723,
+      "final_joint_residual": 0.17941639363438178,
+      "regularizer": 3.485669433282826e-06,
+      "optimality": 1.8045483712795885e-13,
+      "at_bound": 87
+    }
+  },
+  "metrics": {
+    "DP1_JOINT_eval_DenseNet": {
+      "AUROC": 0.6863700927351285,
+      "AP": 0.08126358885403234
+    },
+    "DP1_ORIGINAL_eval_DenseNet": {
+      "AUROC": 0.6500178479798318,
+      "AP": 0.08083207678139484
+    },
+    "DP1_DIRECT_SOURCE_PSEUDOLABEL_eval_DenseNet": {
+      "AUROC": 0.6536831909213277,
+      "AP": 0.07475206578616084
+    },
+    "DP1_SOURCE_LABEL_SOLVE_eval_DenseNet": {
+      "AUROC": 0.6716166923231377,
+      "AP": 0.083324002604689
+    },
+    "DP1_RESNET_ONLY_eval_DenseNet": {
+      "AUROC": 0.7135640928392418,
+      "AP": 0.08641455761036106
+    },
+    "DP1_JOINT_eval_ResNet18": {
+      "AUROC": 0.6987967486930073,
+      "AP": 0.08363087771419492
+    },
+    "DP1_ORIGINAL_eval_ResNet18": {
+      "AUROC": 0.6018645561430516,
+      "AP": 0.07273703172146696
+    },
+    "DP1_DIRECT_SOURCE_PSEUDOLABEL_eval_ResNet18": {
+      "AUROC": 0.6724784150993909,
+      "AP": 0.07684460107913892
+    },
+    "DP1_SOURCE_LABEL_SOLVE_eval_ResNet18": {
+      "AUROC": 0.6966336107206865,
+      "AP": 0.08818123949752968
+    },
+    "DP1_RESNET_ONLY_eval_ResNet18": {
+      "AUROC": 0.6974934743323742,
+      "AP": 0.08327215150321504
+    },
+    "DP2_JOINT_eval_DenseNet": {
+      "AUROC": 0.663403832853669,
+      "AP": 0.07446326158855011
+    },
+    "DP2_ORIGINAL_eval_DenseNet": {
+      "AUROC": 0.596743487346526,
+      "AP": 0.0641880166137236
+    },
+    "DP2_DIRECT_SOURCE_PSEUDOLABEL_eval_DenseNet": {
+      "AUROC": 0.6140550982010724,
+      "AP": 0.06243280460822381
+    },
+    "DP2_SOURCE_LABEL_SOLVE_eval_DenseNet": {
+      "AUROC": 0.6133625594003078,
+      "AP": 0.06038228161227245
+    },
+    "DP2_RESNET_ONLY_eval_DenseNet": {
+      "AUROC": 0.6482302612498048,
+      "AP": 0.07038913225218957
+    },
+    "DP2_JOINT_eval_ResNet18": {
+      "AUROC": 0.7070421435423778,
+      "AP": 0.08455633020145066
+    },
+    "DP2_ORIGINAL_eval_ResNet18": {
+      "AUROC": 0.6105068826272226,
+      "AP": 0.06372384544510676
+    },
+    "DP2_DIRECT_SOURCE_PSEUDOLABEL_eval_ResNet18": {
+      "AUROC": 0.6571533215834133,
+      "AP": 0.07173305557551546
+    },
+    "DP2_SOURCE_LABEL_SOLVE_eval_ResNet18": {
+      "AUROC": 0.6676585309625267,
+      "AP": 0.07501631400899865
+    },
+    "DP2_RESNET_ONLY_eval_ResNet18": {
+      "AUROC": 0.7031035034097077,
+      "AP": 0.0841523474999819
+    }
+  },
+  "comparisons": {
+    "DP1_JOINT_eval_DenseNet_minus_ORIGINAL": {
+      "AUROC": {
+        "delta": 0.03635224475529675,
+        "patient_cluster_95": [
+          0.002859362391939013,
+          0.07058652761189967
+        ]
+      },
+      "AP": {
+        "delta": 0.00043151207263750213,
+        "patient_cluster_95": [
+          -0.01942492890271648,
+          0.016859047722962938
+        ]
+      }
+    },
+    "DP1_JOINT_eval_DenseNet_minus_DIRECT_SOURCE_PSEUDOLABEL": {
+      "AUROC": {
+        "delta": 0.03268690181380085,
+        "patient_cluster_95": [
+          0.011241356005590286,
+          0.055273837882330056
+        ]
+      },
+      "AP": {
+        "delta": 0.006511523067871505,
+        "patient_cluster_95": [
+          -0.0038253105511514606,
+          0.014389467019941229
+        ]
+      }
+    },
+    "DP1_JOINT_eval_DenseNet_minus_SOURCE_LABEL_SOLVE": {
+      "AUROC": {
+        "delta": 0.014753400411990802,
+        "patient_cluster_95": [
+          -0.0026361592085398814,
+          0.032334613970619284
+        ]
+      },
+      "AP": {
+        "delta": -0.002060413750656659,
+        "patient_cluster_95": [
+          -0.019551200440424642,
+          0.007288822747299237
+        ]
+      }
+    },
+    "DP1_JOINT_eval_DenseNet_minus_RESNET_ONLY": {
+      "AUROC": {
+        "delta": -0.027194000104113325,
+        "patient_cluster_95": [
+          -0.053643804061815806,
+          -0.0018817107056678826
+        ]
+      },
+      "AP": {
+        "delta": -0.005150968756328714,
+        "patient_cluster_95": [
+          -0.01620595608326077,
+          0.0056331287376345145
+        ]
+      }
+    },
+    "DP1_JOINT_eval_ResNet18_minus_ORIGINAL": {
+      "AUROC": {
+        "delta": 0.09693219254995578,
+        "patient_cluster_95": [
+          0.04264030279386688,
+          0.15497132102533923
+        ]
+      },
+      "AP": {
+        "delta": 0.010893845992727955,
+        "patient_cluster_95": [
+          -0.016160091504353654,
+          0.03498884481501416
+        ]
+      }
+    },
+    "DP1_JOINT_eval_ResNet18_minus_DIRECT_SOURCE_PSEUDOLABEL": {
+      "AUROC": {
+        "delta": 0.02631833359361646,
+        "patient_cluster_95": [
+          0.005682815938229791,
+          0.047394523715628384
+        ]
+      },
+      "AP": {
+        "delta": 0.006786276635056002,
+        "patient_cluster_95": [
+          -0.0009498643392806232,
+          0.016567081052051062
+        ]
+      }
+    },
+    "DP1_JOINT_eval_ResNet18_minus_SOURCE_LABEL_SOLVE": {
+      "AUROC": {
+        "delta": 0.0021631379723208166,
+        "patient_cluster_95": [
+          -0.015830435158827344,
+          0.020962725056836707
+        ]
+      },
+      "AP": {
+        "delta": -0.004550361783334761,
+        "patient_cluster_95": [
+          -0.020273958172835196,
+          0.004985665784615587
+        ]
+      }
+    },
+    "DP1_JOINT_eval_ResNet18_minus_RESNET_ONLY": {
+      "AUROC": {
+        "delta": 0.0013032743606331554,
+        "patient_cluster_95": [
+          -0.0042165966496210015,
+          0.006916952723280957
+        ]
+      },
+      "AP": {
+        "delta": 0.0003587262109798761,
+        "patient_cluster_95": [
+          -0.0031814621238018576,
+          0.004960176241267555
+        ]
+      }
+    },
+    "DP2_JOINT_eval_DenseNet_minus_ORIGINAL": {
+      "AUROC": {
+        "delta": 0.06666034550714295,
+        "patient_cluster_95": [
+          0.027892965325170934,
+          0.10905873805981109
+        ]
+      },
+      "AP": {
+        "delta": 0.010275244974826514,
+        "patient_cluster_95": [
+          -0.005480733391950974,
+          0.02561887809347162
+        ]
+      }
+    },
+    "DP2_JOINT_eval_DenseNet_minus_DIRECT_SOURCE_PSEUDOLABEL": {
+      "AUROC": {
+        "delta": 0.04934873465259659,
+        "patient_cluster_95": [
+          0.030679878566676,
+          0.06897620860015552
+        ]
+      },
+      "AP": {
+        "delta": 0.012030456980326301,
+        "patient_cluster_95": [
+          0.005903171109189686,
+          0.021317569320979893
+        ]
+      }
+    },
+    "DP2_JOINT_eval_DenseNet_minus_SOURCE_LABEL_SOLVE": {
+      "AUROC": {
+        "delta": 0.05004127345336118,
+        "patient_cluster_95": [
+          0.024707371708116897,
+          0.07609923474402262
+        ]
+      },
+      "AP": {
+        "delta": 0.014080979976277663,
+        "patient_cluster_95": [
+          0.005662814306741501,
+          0.02838839444669897
+        ]
+      }
+    },
+    "DP2_JOINT_eval_DenseNet_minus_RESNET_ONLY": {
+      "AUROC": {
+        "delta": 0.015173571603864233,
+        "patient_cluster_95": [
+          -0.013283409223424818,
+          0.044077393061441685
+        ]
+      },
+      "AP": {
+        "delta": 0.004074129336360546,
+        "patient_cluster_95": [
+          -0.010905900574221866,
+          0.019033549611887367
+        ]
+      }
+    },
+    "DP2_JOINT_eval_ResNet18_minus_ORIGINAL": {
+      "AUROC": {
+        "delta": 0.09653526091515519,
+        "patient_cluster_95": [
+          0.04330137266007003,
+          0.14746659286559516
+        ]
+      },
+      "AP": {
+        "delta": 0.020832484756343903,
+        "patient_cluster_95": [
+          -0.004469598575006057,
+          0.04489891007224213
+        ]
+      }
+    },
+    "DP2_JOINT_eval_ResNet18_minus_DIRECT_SOURCE_PSEUDOLABEL": {
+      "AUROC": {
+        "delta": 0.04988882195896449,
+        "patient_cluster_95": [
+          0.026653588756803865,
+          0.07617293053020366
+        ]
+      },
+      "AP": {
+        "delta": 0.012823274625935202,
+        "patient_cluster_95": [
+          0.00450187830886297,
+          0.023397565717133577
+        ]
+      }
+    },
+    "DP2_JOINT_eval_ResNet18_minus_SOURCE_LABEL_SOLVE": {
+      "AUROC": {
+        "delta": 0.039383612579851124,
+        "patient_cluster_95": [
+          0.01306323579842315,
+          0.06740879961443681
+        ]
+      },
+      "AP": {
+        "delta": 0.009540016192452011,
+        "patient_cluster_95": [
+          -0.00018007729764332248,
+          0.023554956440767803
+        ]
+      }
+    },
+    "DP2_JOINT_eval_ResNet18_minus_RESNET_ONLY": {
+      "AUROC": {
+        "delta": 0.00393864013267009,
+        "patient_cluster_95": [
+          -0.003727405164139913,
+          0.010898847652725682
+        ]
+      },
+      "AP": {
+        "delta": 0.00040398270146875526,
+        "patient_cluster_95": [
+          -0.0032614234654442936,
+          0.004733331582192024
+        ]
+      }
+    }
+  },
+  "seconds": 13.5,
+  "plan_sha256": "eb0d45b40a7de326be726205f52edfd4d316b8d9b3297c5168da8c62c7001a5c",
+  "script_sha256": "570086a20a390aa9917206f997f14fd3d24787ac9dbe659555b74194efe19f8d"
+}

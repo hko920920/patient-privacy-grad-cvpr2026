@@ -1,0 +1,103 @@
+{
+  "scope": "EXPLORATORY_SUMMARY_TRANSPORT_NOT_SYNTHETIC_IMAGE_RESULT",
+  "new_private_queries": 0,
+  "new_synthesis": 0,
+  "new_encoders": 0,
+  "Reserved_Expert": false,
+  "P_patients": 672,
+  "P_patient_class_rows": 675,
+  "receivers": {
+    "DenseNet": {
+      "public_cross_validation": [
+        {
+          "class_clip": 0,
+          "relative_ridge": 3.0107448502066288e-05,
+          "patient_cv_R2": 0.18362282377495076,
+          "weighted_cv_squared_error": 0.48488781134604525,
+          "constant_error": 0.5939507196761428
+        },
+        {
+          "class_clip": 1,
+          "relative_ridge": 2.836862823850081e-05,
+          "patient_cv_R2": 0.18485868238755754,
+          "weighted_cv_squared_error": 0.48415377223366945,
+          "constant_error": 0.5939507196761428
+        }
+      ],
+      "metrics": {
+        "PUBLIC": {
+          "AUROC": 0.5554384281879094,
+          "AP": 0.05291109428888105
+        },
+        "DP1": {
+          "AUROC": 0.663362931233221,
+          "AP": 0.07565991235950073
+        },
+        "DP2": {
+          "AUROC": 0.6842999129910984,
+          "AP": 0.07734112644493236
+        },
+        "DIRECT_REAL_P": {
+          "AUROC": 0.6180086116502689,
+          "AP": 0.06494123824262954
+        }
+      },
+      "DP_minus_matched_public": {
+        "DP1": {
+          "AUROC": 0.10792450304531154,
+          "AP": 0.02274881807061968
+        },
+        "DP2": {
+          "AUROC": 0.12886148480318893,
+          "AP": 0.024430032156051315
+        }
+      }
+    },
+    "ResNet18": {
+      "public_cross_validation": [
+        {
+          "class_clip": 0,
+          "relative_ridge": 3.0107448502066288e-05,
+          "patient_cv_R2": 0.1798626511534851,
+          "weighted_cv_squared_error": 0.5046438024474214,
+          "constant_error": 0.6153162066782831
+        },
+        {
+          "class_clip": 1,
+          "relative_ridge": 2.836862823850081e-05,
+          "patient_cv_R2": 0.18242834422753285,
+          "weighted_cv_squared_error": 0.5030650899175976,
+          "constant_error": 0.6153162066782831
+        }
+      ],
+      "metrics": {
+        "PUBLIC": {
+          "AUROC": 0.5816247610973532,
+          "AP": 0.06708567751830745
+        },
+        "DP1": {
+          "AUROC": 0.6956036335512275,
+          "AP": 0.08099578059684735
+        },
+        "DP2": {
+          "AUROC": 0.6975436717756509,
+          "AP": 0.08286404764960734
+        },
+        "DIRECT_REAL_P": {
+          "AUROC": 0.5860997702072597,
+          "AP": 0.06184985796485204
+        }
+      },
+      "DP_minus_matched_public": {
+        "DP1": {
+          "AUROC": 0.11397887245387428,
+          "AP": 0.013910103078539904
+        },
+        "DP2": {
+          "AUROC": 0.11591891067829774,
+          "AP": 0.015778370131299888
+        }
+      }
+    }
+  }
+}

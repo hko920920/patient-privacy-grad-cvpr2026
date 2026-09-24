@@ -1,0 +1,99 @@
+{
+  "scope": "Exploratory soft-label correction on existing 128 PNGs. No new pixels or Q queries.",
+  "results": {
+    "DP1_fit_DenseNet": {
+      "calibration_receiver": "DenseNet",
+      "draw": "DP1",
+      "regularizer": 3.171336140222053e-08,
+      "public_target_relative_RMSE": 0.09463414476836944,
+      "hard_label_relative_RMSE": 0.8683387550602807,
+      "soft_label_min": -0.9999999999999999,
+      "soft_label_max": 0.9999999999999999,
+      "labels_at_bound": 80,
+      "solver_optimality": 6.251629799367664e-15,
+      "receivers": {
+        "DenseNet": {
+          "AUROC": 0.6640443150465907,
+          "AP": 0.07582085832970664,
+          "used_for_label_fit": true
+        },
+        "ResNet18": {
+          "AUROC": 0.6543710818106776,
+          "AP": 0.07723845064140014,
+          "used_for_label_fit": false
+        }
+      }
+    },
+    "DP1_fit_ResNet18": {
+      "calibration_receiver": "ResNet18",
+      "draw": "DP1",
+      "regularizer": 3.0791243504064445e-08,
+      "public_target_relative_RMSE": 0.07738939209724156,
+      "hard_label_relative_RMSE": 1.0432667705806433,
+      "soft_label_min": -0.9999999999999999,
+      "soft_label_max": 0.9999999999999999,
+      "labels_at_bound": 73,
+      "solver_optimality": 5.494694095974465e-15,
+      "receivers": {
+        "DenseNet": {
+          "AUROC": 0.7135640928392418,
+          "AP": 0.08641455761036106,
+          "used_for_label_fit": false
+        },
+        "ResNet18": {
+          "AUROC": 0.6974934743323742,
+          "AP": 0.08327215150321504,
+          "used_for_label_fit": true
+        }
+      }
+    },
+    "DP2_fit_DenseNet": {
+      "calibration_receiver": "DenseNet",
+      "draw": "DP2",
+      "regularizer": 3.232615965965437e-08,
+      "public_target_relative_RMSE": 0.11263292577148411,
+      "hard_label_relative_RMSE": 1.0326805069418445,
+      "soft_label_min": -0.9999999999999999,
+      "soft_label_max": 0.9999999999999999,
+      "labels_at_bound": 73,
+      "solver_optimality": 2.5894312049119504e-14,
+      "receivers": {
+        "DenseNet": {
+          "AUROC": 0.686906461712365,
+          "AP": 0.07760576457650223,
+          "used_for_label_fit": true
+        },
+        "ResNet18": {
+          "AUROC": 0.6896617435988964,
+          "AP": 0.08714274802712307,
+          "used_for_label_fit": false
+        }
+      }
+    },
+    "DP2_fit_ResNet18": {
+      "calibration_receiver": "ResNet18",
+      "draw": "DP2",
+      "regularizer": 3.1088504756451266e-08,
+      "public_target_relative_RMSE": 0.11059801443978239,
+      "hard_label_relative_RMSE": 0.8229679570127107,
+      "soft_label_min": -0.9999999999999999,
+      "soft_label_max": 0.9999999999999999,
+      "labels_at_bound": 69,
+      "solver_optimality": 1.7784992267978772e-13,
+      "receivers": {
+        "DenseNet": {
+          "AUROC": 0.6482302612498048,
+          "AP": 0.07038913225218957,
+          "used_for_label_fit": false
+        },
+        "ResNet18": {
+          "AUROC": 0.7031035034097077,
+          "AP": 0.0841523474999819,
+          "used_for_label_fit": true
+        }
+      }
+    }
+  },
+  "seconds": 1.422000000020489,
+  "plan_sha256": "80466535be34a9e777af8bc62977ac8cc0a69983ee5632227fbc6e62f236f43b"
+}

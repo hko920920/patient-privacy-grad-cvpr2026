@@ -1,0 +1,206 @@
+{
+  "scope": "geometry diagnostic; public P and fixed synthetic outputs only; no V efficacy",
+  "new_private_queries": 0,
+  "new_synthesis": 0,
+  "ridge": 0.1,
+  "receivers": {
+    "DenseNet": {
+      "public": {
+        "condition_number": 2.045651422592276,
+        "min_eigenvalue": 0.100345815438364,
+        "max_eigenvalue": 0.2052725601026713,
+        "public_covariance_weight_cosine": 1.0,
+        "public_covariance_relative_weight_change": 0.0,
+        "class_signal_norm": 0.13332933918211617,
+        "covariance_frobenius": 0.16059315102171035,
+        "public_covariance_distance": 0.0,
+        "identity_error": 0.0
+      },
+      "FEATURE_PUBLIC": {
+        "condition_number": 4.023725723146903,
+        "min_eigenvalue": 0.10000000231116085,
+        "max_eigenvalue": 0.40237258161416767,
+        "public_covariance_weight_cosine": 0.9674356355883029,
+        "public_covariance_relative_weight_change": 0.32799070728531243,
+        "class_signal_norm": 0.0878388507848379,
+        "covariance_frobenius": 0.3429110120065462,
+        "public_covariance_distance": 0.33716909110216864,
+        "identity_error": 1.8041124150158794e-16
+      },
+      "FEATURE_DP1": {
+        "condition_number": 3.917594296341766,
+        "min_eigenvalue": 0.1000000234189896,
+        "max_eigenvalue": 0.3917595213802767,
+        "public_covariance_weight_cosine": 0.9832676687354225,
+        "public_covariance_relative_weight_change": 0.2241544198785429,
+        "class_signal_norm": 0.09759875005132938,
+        "covariance_frobenius": 0.33273705158607375,
+        "public_covariance_distance": 0.3261272831282024,
+        "identity_error": 3.0357660829594124e-16
+      },
+      "FEATURE_DP2": {
+        "condition_number": 3.97589447335556,
+        "min_eigenvalue": 0.100000113207621,
+        "max_eigenvalue": 0.3975898974371107,
+        "public_covariance_weight_cosine": 0.9828471331090047,
+        "public_covariance_relative_weight_change": 0.25528956290847904,
+        "class_signal_norm": 0.09878896349552312,
+        "covariance_frobenius": 0.3361241762044799,
+        "public_covariance_distance": 0.33084466564055576,
+        "identity_error": 2.706168622523819e-16
+      },
+      "GRAD_DP1": {
+        "condition_number": 5.243371903880538,
+        "min_eigenvalue": 0.10000000123590354,
+        "max_eigenvalue": 0.5243371968683557,
+        "public_covariance_weight_cosine": 0.9631064070354367,
+        "public_covariance_relative_weight_change": 0.3962255565071539,
+        "class_signal_norm": 0.15480933456389248,
+        "covariance_frobenius": 0.43823522234296336,
+        "public_covariance_distance": 0.4315491301279557,
+        "identity_error": 4.163336342344337e-16
+      },
+      "GRAD_DP2": {
+        "condition_number": 5.179935069856341,
+        "min_eigenvalue": 0.10000000055098411,
+        "max_eigenvalue": 0.5179935098396959,
+        "public_covariance_weight_cosine": 0.9777039997318084,
+        "public_covariance_relative_weight_change": 0.2980184440120471,
+        "class_signal_norm": 0.15111577005313234,
+        "covariance_frobenius": 0.43275742195319283,
+        "public_covariance_distance": 0.4269070491847476,
+        "identity_error": 6.38378239159465e-16
+      },
+      "A2_DP1": {
+        "condition_number": 4.7173960830450685,
+        "min_eigenvalue": 0.10000003780279319,
+        "max_eigenvalue": 0.4717397866352554,
+        "public_covariance_weight_cosine": 0.9851695052282367,
+        "public_covariance_relative_weight_change": 0.32558903735464484,
+        "class_signal_norm": 0.17201229782333097,
+        "covariance_frobenius": 0.3893760122445518,
+        "public_covariance_distance": 0.38312434220087166,
+        "identity_error": 3.0531133177191805e-16
+      },
+      "A2_DP2": {
+        "condition_number": 4.3686110535138,
+        "min_eigenvalue": 0.10000022640467102,
+        "max_eigenvalue": 0.4368620944253284,
+        "public_covariance_weight_cosine": 0.9917043966494282,
+        "public_covariance_relative_weight_change": 0.23250125106937236,
+        "class_signal_norm": 0.1353667054805426,
+        "covariance_frobenius": 0.3574133760594697,
+        "public_covariance_distance": 0.3531351485410246,
+        "identity_error": 3.7470027081099033e-16
+      }
+    },
+    "ResNet18": {
+      "public": {
+        "condition_number": 2.1494995747527685,
+        "min_eigenvalue": 0.10026771793114406,
+        "max_eigenvalue": 0.21552541705442468,
+        "public_covariance_weight_cosine": 1.0,
+        "public_covariance_relative_weight_change": 0.0,
+        "class_signal_norm": 0.16060775777935912,
+        "covariance_frobenius": 0.17443278389388275,
+        "public_covariance_distance": 0.0,
+        "identity_error": 0.0
+      },
+      "FEATURE_PUBLIC": {
+        "condition_number": 6.092670903115565,
+        "min_eigenvalue": 0.10000001142085682,
+        "max_eigenvalue": 0.6092671598950785,
+        "public_covariance_weight_cosine": 0.9880983196476505,
+        "public_covariance_relative_weight_change": 0.19182949888419934,
+        "class_signal_norm": 0.07904799012894566,
+        "covariance_frobenius": 0.519265586306105,
+        "public_covariance_distance": 0.49809980161526296,
+        "identity_error": 3.469446951953614e-16
+      },
+      "FEATURE_DP1": {
+        "condition_number": 6.061335533625935,
+        "min_eigenvalue": 0.10000000275930912,
+        "max_eigenvalue": 0.606133570087692,
+        "public_covariance_weight_cosine": 0.9811645569018634,
+        "public_covariance_relative_weight_change": 0.2337251113510816,
+        "class_signal_norm": 0.07496906444800855,
+        "covariance_frobenius": 0.5173984905750348,
+        "public_covariance_distance": 0.49342852197923226,
+        "identity_error": 2.5500435096859064e-16
+      },
+      "FEATURE_DP2": {
+        "condition_number": 5.952349470133796,
+        "min_eigenvalue": 0.10000006728010034,
+        "max_eigenvalue": 0.5952353474880492,
+        "public_covariance_weight_cosine": 0.9895699557307628,
+        "public_covariance_relative_weight_change": 0.16581934171908708,
+        "class_signal_norm": 0.08010164652589796,
+        "covariance_frobenius": 0.5063174194637385,
+        "public_covariance_distance": 0.48396851399322155,
+        "identity_error": 1.6306400674181987e-16
+      },
+      "GRAD_DP1": {
+        "condition_number": 5.720920347543802,
+        "min_eigenvalue": 0.10000000811437834,
+        "max_eigenvalue": 0.5720920811760923,
+        "public_covariance_weight_cosine": 0.9788096085396583,
+        "public_covariance_relative_weight_change": 0.30669133674917176,
+        "class_signal_norm": 0.15081206049617685,
+        "covariance_frobenius": 0.48321443578716533,
+        "public_covariance_distance": 0.46487748363320286,
+        "identity_error": 3.885780586188048e-16
+      },
+      "GRAD_DP2": {
+        "condition_number": 6.028321241674434,
+        "min_eigenvalue": 0.10000000944224326,
+        "max_eigenvalue": 0.602832181088319,
+        "public_covariance_weight_cosine": 0.9856486201075237,
+        "public_covariance_relative_weight_change": 0.28863900817951055,
+        "class_signal_norm": 0.15430366690885816,
+        "covariance_frobenius": 0.5133646491201853,
+        "public_covariance_distance": 0.4926628766210304,
+        "identity_error": 3.2612801348363973e-16
+      },
+      "A2_DP1": {
+        "condition_number": 5.821265180596865,
+        "min_eigenvalue": 0.10000003236124029,
+        "max_eigenvalue": 0.5821267064430478,
+        "public_covariance_weight_cosine": 0.9781565317884033,
+        "public_covariance_relative_weight_change": 0.308449015136837,
+        "class_signal_norm": 0.1625454819445132,
+        "covariance_frobenius": 0.49270775460375177,
+        "public_covariance_distance": 0.4733940592189269,
+        "identity_error": 5.412337245047638e-16
+      },
+      "A2_DP2": {
+        "condition_number": 5.837919766637708,
+        "min_eigenvalue": 0.1000000013085129,
+        "max_eigenvalue": 0.5837919843027641,
+        "public_covariance_weight_cosine": 0.983413248433351,
+        "public_covariance_relative_weight_change": 0.21585215635413468,
+        "class_signal_norm": 0.10124294224799099,
+        "covariance_frobenius": 0.4938933634295369,
+        "public_covariance_distance": 0.4730814554027922,
+        "identity_error": 3.7383290907300193e-16
+      }
+    }
+  },
+  "input_hashes": {
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\prrd_pilot_abcd101_20260921_v1\\public\\recipient_P_dual_features.npz": "7b093a2112a711e942acc49519d400e14b9a43923739efd68cd838f65629466f",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\evaluation\\DenseNet_FEATURE_PUBLIC_PNG_features.npz": "79ba39fdd5617547a2a1c3587952e324355a4482ef98c2183b91045257393378",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_dp8_20260924_v1\\evaluation\\DenseNet_PNG_features.npz": "ff9ea22d79410a8c0da69c901c4469367ec80ccdea8aa6396d84b99a1b613f9a",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\evaluation\\DenseNet_FEATURE_DP2_PNG_features.npz": "d1eaebd9bd8935c61726ebdf0c1e352074e5a76275de2030dcb7e0a0e702753c",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_dino_dp8_20260924_v1\\evaluation\\DenseNet_DINO_DP_PNG_features.npz": "af4ee1136b9e13bf245083f655b4d6b3ed88c1dd0a8aadf7dbd17870f7d6dd36",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_dino_dp8_noise_repeat_20260924_v1\\evaluation\\DenseNet_DINO_DP2_PNG_features.npz": "9e77b19b978dc3a5f25bf9691cf25ce54ee041125f40ee1f525ea1c598ef2fdc",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_dp8_first_20260923_v1\\evaluation\\DenseNet_DP8_PNG_features.npz": "fd9d552eb26cb3d968ac3f21deb34492c9583e38c98a9cce5b96130cc0168c4b",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_dp8_noise_repeat_20260923_v1\\evaluation\\DenseNet_DP2_PNG_features.npz": "5424b50858622786275b088a3f5bce85eb7ee5bf1162e4bffc5ba04df947f538",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1\\P_projected_features.npz": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\evaluation\\ResNet18_FEATURE_PUBLIC_PNG_features.npz": "072bf3b7a028f2b85cd02c0d543471ee33a7c134116d92102c866e85adef7e99",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_dp8_20260924_v1\\evaluation\\ResNet18_PNG_features.npz": "130bc355c498c5fd4826f9de127036ac5f40f57738818194417d0d9578c958f9",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\evaluation\\ResNet18_FEATURE_DP2_PNG_features.npz": "892e981233193c5d4bc467670b1b086792714270a9b83a05c8858d87db373117",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1\\DINO_DP1_features.npz": "a8cc37e4f3267103ac50b5a87dd77f43ce69613567c4fdb6e3659003425f9db2",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1\\DINO_DP2_features.npz": "b18efd0e31551c463d7c224b5997563b352e24ef194debec373cbfec611c7bba",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1\\A2_DP1_features.npz": "7d100d20c84151e0b87968b73e8c037b2f76e16cb846af29dab93c785f180d72",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1\\A2_DP2_features.npz": "22b75cb365f71430ce0493b644963effc21992f648dd73b35561cbe9913f701b"
+  }
+}

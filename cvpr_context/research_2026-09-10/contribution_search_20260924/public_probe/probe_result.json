@@ -1,0 +1,62 @@
+{
+  "status": "PUBLIC_OPERATOR_PROBE_COMPLETE",
+  "seconds": 17.031999999890104,
+  "scope": "local finite differences, public P only, no utility evaluation",
+  "private_queries": 0,
+  "synthesis_updates": 0,
+  "V_Expert_Reserved_access": false,
+  "image_count": 8,
+  "coefficient_dimension": 16,
+  "source_dimension": 128,
+  "finite_difference_step": 0.01,
+  "half_step_checks": {
+    "source": {
+      "0": 0.012557642188362592,
+      "8": 0.09169236402286908,
+      "15": 0.05013515969676568
+    },
+    "DenseNet": {
+      "0": 0.015888135935887844,
+      "8": 0.01832704015984946,
+      "15": 0.0399951388723253
+    },
+    "ResNet18": {
+      "0": 0.01981326126664412,
+      "8": 0.010564131982152355,
+      "15": 0.026269951580151465
+    }
+  },
+  "source_singular_values": [
+    1.094781940852267,
+    0.4111776535633926,
+    0.3589537655527674,
+    0.33802982164816603,
+    0.32197923885698476,
+    0.25273976353063354,
+    0.24856691017926294,
+    0.22066451244970434,
+    0.19328553974202525,
+    0.1659948617037544,
+    0.1342012830220497,
+    0.11904030721769161,
+    0.11788768157820861,
+    0.09658238178175474,
+    0.08616151550522327,
+    0.07792820008586628
+  ],
+  "pixel_access": {
+    "roles": [
+      "P"
+    ],
+    "decoded": {
+      "P": 8
+    },
+    "unique_sha_verified": 8,
+    "denials": 0,
+    "expert_or_reserved_pixels": 0,
+    "guard": "exact path and metadata allow-list"
+  },
+  "source_noise": "no noise generated here; downstream mathematical analysis uses illustrative noise",
+  "plan_sha256": "87eceb93f3830ce06e965db777c8262039ca6f7f2bbca315e4130981087816ba",
+  "script_sha256": "5a82478d158b4dedc915b96a6e51677cc1b5e858b56e7bb333295d7a6661b88d"
+}

@@ -1,0 +1,459 @@
+{
+  "scope": "EXPLORATORY_FIXED_BANK_EXISTING_V_DIAGNOSTIC",
+  "private_queries": 0,
+  "new_synthesis": 0,
+  "new_encoder_forwards": 0,
+  "new_receivers": 0,
+  "Reserved_Expert": false,
+  "ridge": 0.1,
+  "receivers": {
+    "DenseNet": {
+      "replacement": {
+        "public": {
+          "original": {
+            "AUROC": 0.6180086116502689,
+            "AP": 0.06494123824262954
+          },
+          "public_covariance": {
+            "AUROC": 0.6180086116502689,
+            "AP": 0.06494123824262954
+          },
+          "change": {
+            "AUROC": 0.0,
+            "AP": 0.0
+          }
+        },
+        "FEATURE_PUBLIC": {
+          "original": {
+            "AUROC": 0.5112934951550171,
+            "AP": 0.048805982576245646
+          },
+          "public_covariance": {
+            "AUROC": 0.5349931954576892,
+            "AP": 0.05157873723947771
+          },
+          "change": {
+            "AUROC": 0.0236997003026721,
+            "AP": 0.002772754663232062
+          }
+        },
+        "FEATURE1": {
+          "original": {
+            "AUROC": 0.6500178479798318,
+            "AP": 0.08083207678139484
+          },
+          "public_covariance": {
+            "AUROC": 0.6406355739984682,
+            "AP": 0.0782029103882422
+          },
+          "change": {
+            "AUROC": -0.009382273981363598,
+            "AP": -0.0026291663931526377
+          }
+        },
+        "FEATURE2": {
+          "original": {
+            "AUROC": 0.596743487346526,
+            "AP": 0.0641880166137236
+          },
+          "public_covariance": {
+            "AUROC": 0.6080351233369774,
+            "AP": 0.06518653047822216
+          },
+          "change": {
+            "AUROC": 0.011291635990451354,
+            "AP": 0.0009985138644985625
+          }
+        },
+        "GRAD1": {
+          "original": {
+            "AUROC": 0.6729348400002975,
+            "AP": 0.08081393255193225
+          },
+          "public_covariance": {
+            "AUROC": 0.6782111490380682,
+            "AP": 0.08330565636149888
+          },
+          "change": {
+            "AUROC": 0.0052763090377707655,
+            "AP": 0.0024917238095666233
+          }
+        },
+        "GRAD2": {
+          "original": {
+            "AUROC": 0.6241280518186347,
+            "AP": 0.06732193645797774
+          },
+          "public_covariance": {
+            "AUROC": 0.6287155403847726,
+            "AP": 0.06924105797433266
+          },
+          "change": {
+            "AUROC": 0.004587488566137887,
+            "AP": 0.001919121516354927
+          }
+        },
+        "A21": {
+          "original": {
+            "AUROC": 0.6581842283351552,
+            "AP": 0.07673869732624031
+          },
+          "public_covariance": {
+            "AUROC": 0.6623896585830191,
+            "AP": 0.08037152002169835
+          },
+          "change": {
+            "AUROC": 0.004205430247863906,
+            "AP": 0.003632822695458046
+          }
+        },
+        "A22": {
+          "original": {
+            "AUROC": 0.6452825558307118,
+            "AP": 0.07494606279658103
+          },
+          "public_covariance": {
+            "AUROC": 0.6362907064081684,
+            "AP": 0.07306319967271054
+          },
+          "change": {
+            "AUROC": -0.008991849422543385,
+            "AP": -0.0018828631238704957
+          }
+        }
+      },
+      "crossed": {
+        "FEATURE": {
+          "cells": {
+            "mean1_cov1": {
+              "AUROC": 0.6500178479798318,
+              "AP": 0.08083207678139484
+            },
+            "mean1_cov2": {
+              "AUROC": 0.6531514698555057,
+              "AP": 0.08277486982943841
+            },
+            "mean2_cov1": {
+              "AUROC": 0.5851311454684723,
+              "AP": 0.062050400794770935
+            },
+            "mean2_cov2": {
+              "AUROC": 0.596743487346526,
+              "AP": 0.0641880166137236
+            }
+          },
+          "decomposition": {
+            "AUROC": {
+              "total_change": -0.053274360633305706,
+              "mean_contribution": -0.06064734251016951,
+              "second_moment_contribution": 0.0073729818768638045
+            },
+            "AP": {
+              "total_change": -0.01664406016767124,
+              "mean_contribution": -0.018684264601169356,
+              "second_moment_contribution": 0.002040204433498116
+            }
+          }
+        },
+        "GRAD": {
+          "cells": {
+            "mean1_cov1": {
+              "AUROC": 0.6729348400002975,
+              "AP": 0.08081393255193225
+            },
+            "mean1_cov2": {
+              "AUROC": 0.6663515382727617,
+              "AP": 0.07822359513636871
+            },
+            "mean2_cov1": {
+              "AUROC": 0.6110897307186043,
+              "AP": 0.06457885766274019
+            },
+            "mean2_cov2": {
+              "AUROC": 0.6241280518186347,
+              "AP": 0.06732193645797774
+            }
+          },
+          "decomposition": {
+            "AUROC": {
+              "total_change": -0.04880678818166273,
+              "mean_contribution": -0.052034297867910084,
+              "second_moment_contribution": 0.003227509686247354
+            },
+            "AP": {
+              "total_change": -0.013491996093954517,
+              "mean_contribution": -0.013568366783791523,
+              "second_moment_contribution": 7.637068983700618e-05
+            }
+          }
+        },
+        "A2": {
+          "cells": {
+            "mean1_cov1": {
+              "AUROC": 0.6581842283351552,
+              "AP": 0.07673869732624031
+            },
+            "mean1_cov2": {
+              "AUROC": 0.6624203347983549,
+              "AP": 0.07838708111427127
+            },
+            "mean2_cov1": {
+              "AUROC": 0.6258691594345165,
+              "AP": 0.06968640377000423
+            },
+            "mean2_cov2": {
+              "AUROC": 0.6452825558307118,
+              "AP": 0.07494606279658103
+            }
+          },
+          "decomposition": {
+            "AUROC": {
+              "total_change": -0.012901672504443407,
+              "mean_contribution": -0.02472642393414093,
+              "second_moment_contribution": 0.011824751429697522
+            },
+            "AP": {
+              "total_change": -0.001792634529659276,
+              "mean_contribution": -0.005246655936963156,
+              "second_moment_contribution": 0.0034540214073038797
+            }
+          }
+        }
+      }
+    },
+    "ResNet18": {
+      "replacement": {
+        "public": {
+          "original": {
+            "AUROC": 0.5860997702072597,
+            "AP": 0.06184985796485204
+          },
+          "public_covariance": {
+            "AUROC": 0.5860997702072597,
+            "AP": 0.06184985796485204
+          },
+          "change": {
+            "AUROC": 0.0,
+            "AP": 0.0
+          }
+        },
+        "FEATURE_PUBLIC": {
+          "original": {
+            "AUROC": 0.5216564784448461,
+            "AP": 0.05130891606741008
+          },
+          "public_covariance": {
+            "AUROC": 0.5378730413701299,
+            "AP": 0.05361831632962029
+          },
+          "change": {
+            "AUROC": 0.01621656292528384,
+            "AP": 0.002309400262210208
+          }
+        },
+        "FEATURE1": {
+          "original": {
+            "AUROC": 0.6018645561430516,
+            "AP": 0.07273703172146696
+          },
+          "public_covariance": {
+            "AUROC": 0.5761736905903962,
+            "AP": 0.06702470527814369
+          },
+          "change": {
+            "AUROC": -0.025690865552655318,
+            "AP": -0.005712326443323271
+          }
+        },
+        "FEATURE2": {
+          "original": {
+            "AUROC": 0.6105068826272226,
+            "AP": 0.06372384544510676
+          },
+          "public_covariance": {
+            "AUROC": 0.5898943250860793,
+            "AP": 0.06266378002258877
+          },
+          "change": {
+            "AUROC": -0.020612557541143328,
+            "AP": -0.0010600654225179917
+          }
+        },
+        "GRAD1": {
+          "original": {
+            "AUROC": 0.6102252191955023,
+            "AP": 0.06669521137055215
+          },
+          "public_covariance": {
+            "AUROC": 0.6238752054376845,
+            "AP": 0.06708089163245849
+          },
+          "change": {
+            "AUROC": 0.013649986242182166,
+            "AP": 0.0003856802619063432
+          }
+        },
+        "GRAD2": {
+          "original": {
+            "AUROC": 0.621541953907592,
+            "AP": 0.06149463343618094
+          },
+          "public_covariance": {
+            "AUROC": 0.6184018249559379,
+            "AP": 0.062134724721327854
+          },
+          "change": {
+            "AUROC": -0.003140128951654164,
+            "AP": 0.0006400912851469154
+          }
+        },
+        "A21": {
+          "original": {
+            "AUROC": 0.6159198402605803,
+            "AP": 0.0667214783426401
+          },
+          "public_covariance": {
+            "AUROC": 0.6155582327525303,
+            "AP": 0.06320715798409328
+          },
+          "change": {
+            "AUROC": -0.0003616075080500325,
+            "AP": -0.0035143203585468186
+          }
+        },
+        "A22": {
+          "original": {
+            "AUROC": 0.5916001085752106,
+            "AP": 0.05736997817643037
+          },
+          "public_covariance": {
+            "AUROC": 0.5764832414906037,
+            "AP": 0.0546920419542713
+          },
+          "change": {
+            "AUROC": -0.01511686708460691,
+            "AP": -0.0026779362221590747
+          }
+        }
+      },
+      "crossed": {
+        "FEATURE": {
+          "cells": {
+            "mean1_cov1": {
+              "AUROC": 0.6018645561430516,
+              "AP": 0.07273703172146696
+            },
+            "mean1_cov2": {
+              "AUROC": 0.603244985833166,
+              "AP": 0.07383983661500033
+            },
+            "mean2_cov1": {
+              "AUROC": 0.6053067993366501,
+              "AP": 0.06435645974090168
+            },
+            "mean2_cov2": {
+              "AUROC": 0.6105068826272226,
+              "AP": 0.06372384544510676
+            }
+          },
+          "decomposition": {
+            "AUROC": {
+              "total_change": 0.00864232648417107,
+              "mean_contribution": 0.005352069993827591,
+              "second_moment_contribution": 0.0032902564903434794
+            },
+            "AP": {
+              "total_change": -0.009013186276360205,
+              "mean_contribution": -0.00924828157522943,
+              "second_moment_contribution": 0.00023509529886922564
+            }
+          }
+        },
+        "GRAD": {
+          "cells": {
+            "mean1_cov1": {
+              "AUROC": 0.6102252191955023,
+              "AP": 0.06669521137055215
+            },
+            "mean1_cov2": {
+              "AUROC": 0.5991966549911132,
+              "AP": 0.06317830533445043
+            },
+            "mean2_cov1": {
+              "AUROC": 0.6145775234440651,
+              "AP": 0.05974951699210146
+            },
+            "mean2_cov2": {
+              "AUROC": 0.621541953907592,
+              "AP": 0.06149463343618094
+            }
+          },
+          "decomposition": {
+            "AUROC": {
+              "total_change": 0.011316734712089715,
+              "mean_contribution": 0.01334880158252083,
+              "second_moment_contribution": -0.002032066870431115
+            },
+            "AP": {
+              "total_change": -0.00520057793437121,
+              "mean_contribution": -0.0043146831383600905,
+              "second_moment_contribution": -0.0008858947960111198
+            }
+          }
+        },
+        "A2": {
+          "cells": {
+            "mean1_cov1": {
+              "AUROC": 0.6159198402605803,
+              "AP": 0.0667214783426401
+            },
+            "mean1_cov2": {
+              "AUROC": 0.6304213238739041,
+              "AP": 0.06780734030956838
+            },
+            "mean2_cov1": {
+              "AUROC": 0.5728402085238977,
+              "AP": 0.05369061405272139
+            },
+            "mean2_cov2": {
+              "AUROC": 0.5916001085752106,
+              "AP": 0.05736997817643037
+            }
+          },
+          "decomposition": {
+            "AUROC": {
+              "total_change": -0.024319731685369717,
+              "mean_contribution": -0.04095042351768807,
+              "second_moment_contribution": 0.016630691832318356
+            },
+            "AP": {
+              "total_change": -0.009351500166209725,
+              "mean_contribution": -0.011734113211528358,
+              "second_moment_contribution": 0.002382613045318633
+            }
+          }
+        }
+      }
+    }
+  },
+  "input_hashes": {
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\prrd_pilot_abcd101_20260921_v1\\public\\recipient_P_dual_features.npz": "7b093a2112a711e942acc49519d400e14b9a43923739efd68cd838f65629466f",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\prrd_pilot_abcd101_20260921_v1\\evaluation\\recipient_V_features.npz": "da34ed522d6b81ca3f4fe4955476f879a3bbe7feab1a35a0a230ee01d98dbdf0",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\evaluation\\DenseNet_FEATURE_PUBLIC_PNG_features.npz": "79ba39fdd5617547a2a1c3587952e324355a4482ef98c2183b91045257393378",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_dp8_20260924_v1\\evaluation\\DenseNet_PNG_features.npz": "ff9ea22d79410a8c0da69c901c4469367ec80ccdea8aa6396d84b99a1b613f9a",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\evaluation\\DenseNet_FEATURE_DP2_PNG_features.npz": "d1eaebd9bd8935c61726ebdf0c1e352074e5a76275de2030dcb7e0a0e702753c",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_dino_dp8_20260924_v1\\evaluation\\DenseNet_DINO_DP_PNG_features.npz": "af4ee1136b9e13bf245083f655b4d6b3ed88c1dd0a8aadf7dbd17870f7d6dd36",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_dino_dp8_noise_repeat_20260924_v1\\evaluation\\DenseNet_DINO_DP2_PNG_features.npz": "9e77b19b978dc3a5f25bf9691cf25ce54ee041125f40ee1f525ea1c598ef2fdc",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_dp8_first_20260923_v1\\evaluation\\DenseNet_DP8_PNG_features.npz": "fd9d552eb26cb3d968ac3f21deb34492c9583e38c98a9cce5b96130cc0168c4b",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_dp8_noise_repeat_20260923_v1\\evaluation\\DenseNet_DP2_PNG_features.npz": "5424b50858622786275b088a3f5bce85eb7ee5bf1162e4bffc5ba04df947f538",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1\\P_projected_features.npz": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1\\V_features.npz": "f4137af1db1096384f50ed974f7deef4239c6705066d69538f228703f2d3b4ae",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\evaluation\\ResNet18_FEATURE_PUBLIC_PNG_features.npz": "072bf3b7a028f2b85cd02c0d543471ee33a7c134116d92102c866e85adef7e99",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_dp8_20260924_v1\\evaluation\\ResNet18_PNG_features.npz": "130bc355c498c5fd4826f9de127036ac5f40f57738818194417d0d9578c958f9",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\evaluation\\ResNet18_FEATURE_DP2_PNG_features.npz": "892e981233193c5d4bc467670b1b086792714270a9b83a05c8858d87db373117",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1\\DINO_DP1_features.npz": "a8cc37e4f3267103ac50b5a87dd77f43ce69613567c4fdb6e3659003425f9db2",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1\\DINO_DP2_features.npz": "b18efd0e31551c463d7c224b5997563b352e24ef194debec373cbfec611c7bba",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1\\A2_DP1_features.npz": "7d100d20c84151e0b87968b73e8c037b2f76e16cb846af29dab93c785f180d72",
+    "C:\\Users\\SOGANG\\Documents\\\uce74\ud1a8\ub9ad\ub300\\\uc878\uc5c5\uad00\ub828 260720\\\uace0\ud55c\uacbd_\ubc15\uc0ac\ud559\uc704\ub17c\ubb38_\uc791\uc5c5\ubcf8\\code_working\\_reports\\receiver_resnet18_reuse_20260924_v1\\A2_DP2_features.npz": "22b75cb365f71430ce0493b644963effc21992f648dd73b35561cbe9913f701b"
+  }
+}

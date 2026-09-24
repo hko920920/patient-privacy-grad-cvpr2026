@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETE_BOUNDED_CONTRIBUTION_SEARCH_WITH_TESTED_CANDIDATE",
+  "started_UTC": "2026-09-24T11:23:56+00:00",
+  "finished_UTC": "2026-09-24T12:44:16.096142+00:00",
+  "elapsed_minutes": 80.3349357,
+  "new_private_Q_access": 0,
+  "new_private_releases": 0,
+  "new_full_synthetic_training_banks": 0,
+  "Expert_Reserved_access": false,
+  "existing_V_exploratory_analysis": true,
+  "local_only_no_upload": true,
+  "candidate": "Public cross-encoder target transport and functional soft-label compilation of fixed patient-DP image banks",
+  "paper_novelty_confirmed": false,
+  "report_sha256": "6eaa5b97ab0ee72e5bba6a1532958ca0fe6f0d2ff6a2f1b3bac0a06bd97ad3ac",
+  "artifact_manifest_sha256": "d4ab9eda272d304e15aa407363c17795555dd16a6b949d7cce192d2ca8437b15",
+  "source_files": {
+    "compiler_controls.py": "160600f0747e8e1d60707a1c590f3cae3ea41e5911b3917e4bf1b37a11317dd0",
+    "covariance_intervention.py": "037f0a7b25e0499cf10551bb5f84597f70c080bd471c13b0eee6eca216f4c2ca",
+    "fixed_image_compilation.py": "0d208461dce6a749ef580f72f5f637de126b20e9c2d0e19998fae4f23a6bbc6d",
+    "geometry_diagnostic.py": "e9fc0a6ebfa025b75a67f3697010ad2b075a14e74b77e6b75b28146de626b370",
+    "inverse_risk_analysis.py": "987914b9850212c49fc9f205183b23099a36e8d1df61914c93bc0c8c97173521",
+    "joint_compiler.py": "570086a20a390aa9917206f997f14fd3d24787ac9dbe659555b74194efe19f8d",
+    "plot_contribution_results.py": "0a90009da7770c408e9e64458c3ac78fc7e011b89863873809f8e9a4cdc4cb7a",
+    "public_nonlinear_check.py": "8dbe574aa09415267d2453b50b66993c1851cf45e6efec0a9ac0a8e0e2650956",
+    "public_operator_probe.py": "5a82478d158b4dedc915b96a6e51677cc1b5e858b56e7bb333295d7a6661b88d",
+    "public_transport_probe.py": "73ead179998cccd993a40dd146e7c445a7d52b1623542d0da4d274bc1b332914",
+    "seal_research_artifacts.py": "a62607eade434ffc887bb49a6f5013666d9ff231a6e33f56fd14a0f2f3ef71d5",
+    "source_label_baselines.py": "bfb2e38c8a7b4452b33b2b0dd9c46c6626fb42a287bcf7f915e8472e34b363a5",
+    "validate_public_transport.py": "6bb463a0d2d28f773becae64ad7cbc77e1d97de4546d140aaf06683dbd0d4fba"
+  }
+}

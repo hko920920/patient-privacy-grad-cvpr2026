@@ -1,0 +1,123 @@
+{
+  "status": "EXPLORATORY_LOCAL_PACKET_READY",
+  "not_a_confirmatory_result": true,
+  "construction_models": [
+    "DINOv2",
+    "ResNet18"
+  ],
+  "DenseNet_in_label_objective": false,
+  "new_Q_access": 0,
+  "new_DP_release": 0,
+  "pixel_updates": 0,
+  "Expert_Reserved": false,
+  "artifact": "Existing DP PNG images plus a new 128-vector of bounded soft labels; no pixel changes.",
+  "privacy_scope": "For the fixed public maps/algorithm, each packet is post-processing of its original feature-DP release. This does not retroactively privatize algorithm selection, V, or prior non-DP development. No reduction of the existing joint transcript bound is claimed.",
+  "readout": "Uniform 1/128 sample weights; frozen receiver features; solve (Z.T Z/128+0.1 I)w=Z.T regression_target/128; no intercept; do not hard-threshold labels or reweight by their argmax.",
+  "software": {
+    "python": "3.11.5",
+    "numpy": "1.26.4",
+    "scipy": "1.16.1"
+  },
+  "packets": {
+    "DP1": {
+      "images_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_dp8_20260924_v1\\protected_png",
+      "soft_labels_csv": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\contribution_search_20260924\\label_packets\\DP1_soft_labels.csv",
+      "soft_labels_sha256": "aa8a4c0f279c785fd56a2ccacb3a992210fa5fce648c19eaf82240d253f7de29",
+      "target_sha256": "9250eb88952a9a60ecdec6cf2e6c817619fd745d947052b55d6dd74d0d68772b",
+      "target_mechanism": {
+        "schema": "receiver.patient-dp-feature-mean/v1",
+        "epsilon": 8.0,
+        "delta": 1e-05,
+        "adjacency": "add_remove_one_patient",
+        "sensitivity": 1.0,
+        "dimension": 130,
+        "class_bounds": [
+          1.9061329951133719,
+          1.5917066731966771
+        ],
+        "sigma": 0.6002290722589745,
+        "calibration": "Balle-Wang analytic; conservative1e-10 multiplicative margin",
+        "query": "full class-conditional K4 feature sums and two class masses",
+        "private_queries": 1,
+        "subsampling": false,
+        "count_noise_std": 1.200458144517949,
+        "class_feature_sum_noise_std": [
+          2.288232878518239,
+          1.9107772395225204
+        ]
+      },
+      "original_pixel_hashes_verified": 128,
+      "labels_changed_sign": 39
+    },
+    "DP2": {
+      "images_directory": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\protected_png",
+      "soft_labels_csv": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\CVPR 주제 탐색\\research_2026-09-10\\contribution_search_20260924\\label_packets\\DP2_soft_labels.csv",
+      "soft_labels_sha256": "500de8f23018947aa745a61bbf8969b4cc2394b3f78900158ab8ed1189dd3e2c",
+      "target_sha256": "f8eba56e756ffe653fc39a92f852111ea2dc75c8b496c18dd36761a71ca822cb",
+      "target_mechanism": {
+        "schema": "receiver.patient-dp-feature-mean/v1",
+        "epsilon": 8.0,
+        "delta": 1e-05,
+        "adjacency": "add_remove_one_patient",
+        "sensitivity": 1.0,
+        "dimension": 130,
+        "class_bounds": [
+          1.9061329951133719,
+          1.5917066731966771
+        ],
+        "sigma": 0.6002290722589745,
+        "calibration": "Balle-Wang analytic; conservative1e-10 multiplicative margin",
+        "query": "full class-conditional K4 feature sums and two class masses",
+        "private_queries": 1,
+        "subsampling": false,
+        "count_noise_std": 1.200458144517949,
+        "class_feature_sum_noise_std": [
+          2.288232878518239,
+          1.9107772395225204
+        ]
+      },
+      "original_pixel_hashes_verified": 128,
+      "labels_changed_sign": 36
+    }
+  },
+  "file_hashes": {
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_dp8_20260924_v1\\evaluation\\DenseNet_PNG_features.npz": "ff9ea22d79410a8c0da69c901c4469367ec80ccdea8aa6396d84b99a1b613f9a",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_dp8_20260924_v1\\evaluation\\ResNet18_PNG_features.npz": "130bc355c498c5fd4826f9de127036ac5f40f57738818194417d0d9578c958f9",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\evaluation\\DenseNet_FEATURE_DP2_PNG_features.npz": "d1eaebd9bd8935c61726ebdf0c1e352074e5a76275de2030dcb7e0a0e702753c",
+    "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_feature_followup_20260924_v1\\evaluation\\ResNet18_FEATURE_DP2_PNG_features.npz": "892e981233193c5d4bc467670b1b086792714270a9b83a05c8858d87db373117",
+    "compiler_controls.py": "160600f0747e8e1d60707a1c590f3cae3ea41e5911b3917e4bf1b37a11317dd0",
+    "COMPILER_CONTROLS_PLAN.md": "47427e314956d46a9e6ffcebcbf1412a573a42521fe89801a0018525a7ce4c76",
+    "compiler_control_results.json": "7087b1b7fb803408e55b6572443fd4eaa4598d3a8e9f4394a3171cc86f580756",
+    "covariance_intervention.py": "037f0a7b25e0499cf10551bb5f84597f70c080bd471c13b0eee6eca216f4c2ca",
+    "COVARIANCE_INTERVENTION_PLAN.md": "158bd7a531b4bcc4e15072fd109bf611b5c5bc0ab15a4871b6547dc573aec9f7",
+    "covariance_intervention_results.json": "f0eec260160cf97c525f1256b8b56b9da7e743f2ab3c1e326fea7c2c874ad5e4",
+    "fixed_image_compilation.py": "0d208461dce6a749ef580f72f5f637de126b20e9c2d0e19998fae4f23a6bbc6d",
+    "FIXED_IMAGE_COMPILATION_PLAN.md": "80466535be34a9e777af8bc62977ac8cc0a69983ee5632227fbc6e62f236f43b",
+    "fixed_image_compilation_results.json": "0356bfc1f8638ae1d0085ffb8891e655cc4db845ff5811f0ea4f4373807ed4f3",
+    "geometry_diagnostic.py": "e9fc0a6ebfa025b75a67f3697010ad2b075a14e74b77e6b75b28146de626b370",
+    "geometry_results.json": "2d116fe7fd9f639baa22a3ea08e212b691b8506a437e866889e51bec165b056e",
+    "inverse_risk_analysis.py": "987914b9850212c49fc9f205183b23099a36e8d1df61914c93bc0c8c97173521",
+    "joint_compiler.py": "570086a20a390aa9917206f997f14fd3d24787ac9dbe659555b74194efe19f8d",
+    "JOINT_COMPILER_PLAN.md": "eb0d45b40a7de326be726205f52edfd4d316b8d9b3297c5168da8c62c7001a5c",
+    "joint_compiler_results.json": "2a65bc127c86b9717e47b4379aa6a8726cd74db05870dfbfb7851aab23d043b1",
+    "public_nonlinear_check.py": "8dbe574aa09415267d2453b50b66993c1851cf45e6efec0a9ac0a8e0e2650956",
+    "PUBLIC_NONLINEAR_PLAN.md": "d4278a4374ca4347bd8f2e8eb4cca13fcc22b2881e06cef092102cdc969e3c9e",
+    "public_operator_probe.py": "5a82478d158b4dedc915b96a6e51677cc1b5e858b56e7bb333295d7a6661b88d",
+    "PUBLIC_PROBE_PLAN.md": "87eceb93f3830ce06e965db777c8262039ca6f7f2bbca315e4130981087816ba",
+    "PUBLIC_TRANSPORT_PLAN.md": "d6e310258a043f0450ce55c4c6794d5465dbafe2ef97efa34bb4f450d394ba18",
+    "public_transport_probe.py": "73ead179998cccd993a40dd146e7c445a7d52b1623542d0da4d274bc1b332914",
+    "public_transport_results.json": "40d82d3adcc17668dbaf43e04a8b6218cfe51f060995c03ae8bdaef2efa2855d",
+    "seal_research_artifacts.py": "a62607eade434ffc887bb49a6f5013666d9ff231a6e33f56fd14a0f2f3ef71d5",
+    "source_label_baselines.py": "bfb2e38c8a7b4452b33b2b0dd9c46c6626fb42a287bcf7f915e8472e34b363a5",
+    "SOURCE_LABEL_BASELINE_PLAN.md": "6a94de020a69750cd79785be864d08b09eca2975f6033fe8dfe644e124bb7463",
+    "source_label_baseline_results.json": "8919638091e9edf08d7cbc50526a38b89c253bb9644bb4f03f24d0c3319d5d5d",
+    "transport_validation_results.json": "973522c6011bae584e8ba0fc18eb46ef5b08f1771e640ab0d0af7b3b240c8f8e",
+    "validate_public_transport.py": "6bb463a0d2d28f773becae64ad7cbc77e1d97de4546d140aaf06683dbd0d4fba"
+  },
+  "verification": {
+    "primal_dual_score_max_abs_error": 4.996003610813204e-16,
+    "independent_bootstrap_max_abs_error": 1.1102230246251565e-16,
+    "CSV_roundtrip_exact": true,
+    "PNG_hashes_verified": 256
+  }
+}

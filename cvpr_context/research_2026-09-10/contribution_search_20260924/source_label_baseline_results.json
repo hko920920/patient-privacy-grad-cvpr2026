@@ -1,0 +1,73 @@
+{
+  "scope": "Two source-only label baselines; exploratory, no raw Q, no new release or pixel updates.",
+  "DINO_synthetic_condition_forwards": 1024,
+  "real_image_forwards": 0,
+  "new_Q_access": 0,
+  "new_releases": 0,
+  "Expert_Reserved": false,
+  "results": {
+    "DP1_DIRECT_SOURCE_PSEUDOLABEL": {
+      "source_public_relative_RMSE": 0.35979563403863796,
+      "label_min": -0.641725012868858,
+      "label_max": 1.0,
+      "receivers": {
+        "DenseNet": {
+          "AUROC": 0.6536831909213277,
+          "AP": 0.07475206578616084
+        },
+        "ResNet18": {
+          "AUROC": 0.6724784150993909,
+          "AP": 0.07684460107913892
+        }
+      }
+    },
+    "DP1_SOURCE_LABEL_SOLVE": {
+      "source_public_relative_RMSE": 0.038437201513999056,
+      "label_min": -0.9999999999999999,
+      "label_max": 0.9999999999999999,
+      "receivers": {
+        "DenseNet": {
+          "AUROC": 0.6716166923231377,
+          "AP": 0.083324002604689
+        },
+        "ResNet18": {
+          "AUROC": 0.6966336107206865,
+          "AP": 0.08818123949752968
+        }
+      }
+    },
+    "DP2_DIRECT_SOURCE_PSEUDOLABEL": {
+      "source_public_relative_RMSE": 0.35498069207157934,
+      "label_min": -0.8677885085554184,
+      "label_max": 1.0,
+      "receivers": {
+        "DenseNet": {
+          "AUROC": 0.6140550982010724,
+          "AP": 0.06243280460822381
+        },
+        "ResNet18": {
+          "AUROC": 0.6571533215834133,
+          "AP": 0.07173305557551546
+        }
+      }
+    },
+    "DP2_SOURCE_LABEL_SOLVE": {
+      "source_public_relative_RMSE": 0.06413729577316946,
+      "label_min": -0.9999999999999999,
+      "label_max": 0.9999999999999999,
+      "receivers": {
+        "DenseNet": {
+          "AUROC": 0.6133625594003078,
+          "AP": 0.06038228161227245
+        },
+        "ResNet18": {
+          "AUROC": 0.6676585309625267,
+          "AP": 0.07501631400899865
+        }
+      }
+    }
+  },
+  "seconds": 13.875,
+  "plan_sha256": "6a94de020a69750cd79785be864d08b09eca2975f6033fe8dfe644e124bb7463",
+  "script_sha256": "bfb2e38c8a7b4452b33b2b0dd9c46c6626fb42a287bcf7f915e8472e34b363a5"
+}

@@ -1,0 +1,187 @@
+{
+  "scope": "local linearized public operator experiment; NOT patient-DP/X-ray utility",
+  "coefficient_prior_sd": 0.02,
+  "illustrative_query_noise_sd": 0.001034875130479324,
+  "rank_budget": 8,
+  "selected_source_indices": [
+    8,
+    0,
+    4,
+    7,
+    6,
+    2,
+    3,
+    1
+  ],
+  "receiver_risk_selects_same_as_source": false,
+  "weights": [
+    0.13310664826695187,
+    0.045289232375803144,
+    0.07688581760376235,
+    0.07342814216133234,
+    0.11950805170486391,
+    0.03385727851481451,
+    0.0825328392423958,
+    0.09364849972662068,
+    0.14403309158425998,
+    0.039828080984261785,
+    0.04425773381365216,
+    0.015134274476887203,
+    0.038547602790450476,
+    0.020573253920132838,
+    0.023539384246002965,
+    0.015830068587807798
+  ],
+  "benefit": [
+    5.31237213704812e-05,
+    1.782880530052749e-05,
+    3.0115261927370915e-05,
+    2.8683035091322117e-05,
+    4.6568646108548525e-05,
+    1.2975261203333675e-05,
+    3.15825428186482e-05,
+    3.539966305894446e-05,
+    5.34842882422512e-05,
+    1.4383214442628657e-05,
+    1.507130046558507e-05,
+    4.909911538023793e-06,
+    1.2448494156163986e-05,
+    5.867284319740347e-06,
+    6.019936211102701e-06,
+    3.5403231933843403e-06
+  ],
+  "methods": {
+    "source_singular_top8": {
+      "per_receiver": {
+        "DenseNet": {
+          "bias": 8.46471120827726e-05,
+          "variance": 5.471926862295954e-06,
+          "total": 9.011903894506856e-05,
+          "monte_carlo": 9.122512103629846e-05,
+          "relative_MC_error": 0.012273567319155632
+        },
+        "ResNet18": {
+          "bias": 8.278009216928668e-05,
+          "variance": 3.3505454894866383e-06,
+          "total": 8.613063765877332e-05,
+          "monte_carlo": 8.716234210441014e-05,
+          "relative_MC_error": 0.011978367671259482
+        }
+      },
+      "public_mean_normalized_risk": {
+        "bias": 0.00013669739616138212,
+        "variance": 7.0256669594412665e-06,
+        "total": 0.00014372306312082338
+      }
+    },
+    "receiver_risk_top8": {
+      "per_receiver": {
+        "DenseNet": {
+          "bias": 6.307796179101782e-05,
+          "variance": 7.3369769049537204e-06,
+          "total": 7.041493869597155e-05,
+          "monte_carlo": 7.078081493337603e-05,
+          "relative_MC_error": 0.005196003066681776
+        },
+        "ResNet18": {
+          "bias": 5.148093480947812e-05,
+          "variance": 5.781418666517704e-06,
+          "total": 5.7262353475995823e-05,
+          "monte_carlo": 5.7838626839011156e-05,
+          "relative_MC_error": 0.010063738704992442
+        }
+      },
+      "public_mean_normalized_risk": {
+        "bias": 9.262707093360393e-05,
+        "variance": 1.0586965148301928e-05,
+        "total": 0.00010321403608190586
+      }
+    },
+    "all16": {
+      "per_receiver": {
+        "DenseNet": {
+          "bias": 2.1759766429683487e-34,
+          "variance": 1.8515335540491715e-05,
+          "total": 1.8515335540491715e-05,
+          "monte_carlo": 1.8355163602576185e-05,
+          "relative_MC_error": 0.008650771549089442
+        },
+        "ResNet18": {
+          "bias": 1.9038189022056225e-34,
+          "variance": 1.6005424903223504e-05,
+          "total": 1.6005424903223504e-05,
+          "monte_carlo": 1.592909225929221e-05,
+          "relative_MC_error": 0.004769173226755186
+        }
+      },
+      "public_mean_normalized_risk": {
+        "bias": 3.3110949650951244e-34,
+        "variance": 2.799831055194326e-05,
+        "total": 2.799831055194326e-05
+      }
+    },
+    "anchor_no_update": {
+      "per_receiver": {
+        "DenseNet": {
+          "bias": 0.0002740898661008202,
+          "variance": 0.0,
+          "total": 0.0002740898661008202,
+          "monte_carlo": 0.00027724060957656896,
+          "relative_MC_error": 0.01149529357130552
+        },
+        "ResNet18": {
+          "bias": 0.0002209488866430315,
+          "variance": 0.0,
+          "total": 0.0002209488866430315,
+          "monte_carlo": 0.00022188939069492993,
+          "relative_MC_error": 0.0042566589322439174
+        }
+      },
+      "public_mean_normalized_risk": {
+        "bias": 0.0003999999999999999,
+        "variance": 0.0,
+        "total": 0.0003999999999999999
+      }
+    },
+    "public_signal_PCA8": {
+      "per_receiver": {
+        "DenseNet": {
+          "bias": 0.00011313270859160938,
+          "variance": 3.3609271824521845e-05,
+          "total": 0.00014674198041613124,
+          "monte_carlo": 0.00014715511814989416,
+          "relative_MC_error": 0.002815402467592154
+        },
+        "ResNet18": {
+          "bias": 9.548134724524702e-05,
+          "variance": 2.5338260991627853e-05,
+          "total": 0.00012081960823687487,
+          "monte_carlo": 0.00012130657998699661,
+          "relative_MC_error": 0.004030568855735828
+        }
+      },
+      "public_mean_normalized_risk": {
+        "bias": 0.00016897999268428393,
+        "variance": 4.746012935548893e-05,
+        "total": 0.00021644012203977285
+      }
+    }
+  },
+  "linear_gaussian_source_addition_examples": {
+    "duplicate": {
+      "single_noise_risk": 100.99999999999999,
+      "joint_noise_risk": 100.99999999999999,
+      "coordinate_noise_variance_ratio": 2.0
+    },
+    "redundant": {
+      "single_noise_risk": 100.99999999999999,
+      "joint_noise_risk": 200.99999999999997,
+      "coordinate_noise_variance_ratio": 2.0
+    },
+    "complementary": {
+      "single_noise_risk": 100.99999999999999,
+      "joint_noise_risk": 3.9603960396039604,
+      "coordinate_noise_variance_ratio": 2.0
+    }
+  }
+}
