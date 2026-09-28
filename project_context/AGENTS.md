@@ -1,5 +1,9 @@
 # Project instructions
 
+**공개 모델 전달·DP 라벨 최적화 판단 기록 (2026-09-28):** 사용자가 상세 근거와 전략을 확인한 뒤 기록을 요청했다. 현재 후보는 기존 DINO feature-DP summary를 공개 P로 다른 encoder 목표에 전달하고 기존 PNG의 soft label을 재계산하는 방식이다. 2026-09-24 실행에서 DenseNet AUROC 0.650018→0.686370 / 0.596743→0.663404. DINO-only label solve 대비 DP1 우위는 불확실, DP2는 AUROC/AP 양의 조건부 구간이다. 최종 joint loss는 DINO+ResNet18, DenseNet은 재사용된 개발 receiver다. 큰 단계2 유지, 선행 대비 독자적 가치·독립 재현·CVPR 기여 미확정. 다음 우선순위는 (1) 통상적 공개자료 지식증류와 대수/연산·공정한 효용 비교, (2) 공개 이미지128장+동일 라벨 최적화 대조다. KIP/Label Solve·KME·POST 및 CVPR2026 soft-label 분석을 인정하며 같은 연산을 별도 신규 방법으로 명명하지 않는다. 통과한 경우에만 재현과 동결 후 독립 평가로 연결한다. 이번은 기록만 수행했고 새 실험은 시작하지 않았다.
+
+[판단·전략](<CVPR 주제 탐색/research_2026-09-10/PUBLIC_TRANSFER_LABEL_STRATEGY_20260928.md>) · [실제 후보 실행 결과](<CVPR 주제 탐색/research_2026-09-10/CONTRIBUTION_SEARCH_RESULTS_20260924.md>)
+
 **Feature 공개전용·독립 잡음 반복 완료 (2026-09-24):** Feature 공개전용+독립DP2 묶음 완료. DenseNet AUROC 공개전용0.511293, DP1 0.650018, DP2 0.596743. 두 DP bank의 공개전용 대비 AUROC 구간 전체 양수=True, AP=False. 새 bank2개/400updates, 새 보호요약1회, 기존 Feature DP1·Gradient DP1/DP2 재사용. 여섯 요약 공동 공개 기본 상한48/6e-5. 고정 bank 개발 비교이며 일반 원리·동등성·CVPR 기여 완료 아님. 추가 실행 없음.
 
 [결과 보고서](<CVPR 주제 탐색/research_2026-09-10/RECEIVER_FEATURE_FOLLOWUP_RESULTS_20260924.md>)

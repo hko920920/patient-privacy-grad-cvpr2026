@@ -1,5 +1,70 @@
 {
   "schema": "cvpr-research-state/v1",
+  "public_transfer_label_strategy_20260928": {
+    "recorded_utc": "2026-09-28T02:05:34Z",
+    "report": "PUBLIC_TRANSFER_LABEL_STRATEGY_20260928.md",
+    "user_request": "오케이 이거 기록",
+    "action": "documentation_only_no_new_experiment",
+    "current_step": 2,
+    "evidence_report": "CONTRIBUTION_SEARCH_RESULTS_20260924.md",
+    "evidence_json": "contribution_search_20260924/joint_compiler_results.json",
+    "candidate": "Public cross-encoder transport of an existing patient-DP feature summary, then functional soft-label optimization on fixed PNGs.",
+    "assessment": "Positive implemented development candidate; superiority over strong prior adaptations, independent replication and paper novelty remain unconfirmed.",
+    "DenseNet_AUROC": {
+      "original": [
+        0.6500178479798318,
+        0.596743487346526
+      ],
+      "DINO_only_label_solve": [
+        0.6716166923231377,
+        0.6133625594003078
+      ],
+      "joint": [
+        0.6863700927351285,
+        0.663403832853669
+      ]
+    },
+    "evidence_limits": [
+      "DP1 gain over DINO-only label solve is uncertain; DP2 has positive conditional AUROC/AP intervals.",
+      "Metrics are image-level with paired patient-cluster bootstrap, conditional on current banks.",
+      "DenseNet is a reused development receiver; ResNet18 participates in label construction.",
+      "Search is adaptive; independent confirmation and novel value remain open."
+    ],
+    "next_priorities": [
+      {
+        "order": 1,
+        "task": "Check algebraic/operational equivalence to ordinary public-data knowledge distillation, then fairly compare any remaining difference.",
+        "status": "not_started"
+      },
+      {
+        "order": 2,
+        "task": "Public 128-image carrier with the same protected targets and functional label solver.",
+        "status": "not_started"
+      },
+      {
+        "order": 3,
+        "task": "Fixed-protocol repetition beyond current banks if direct controls support extra value.",
+        "status": "conditional_not_started"
+      },
+      {
+        "order": 4,
+        "task": "Independent evaluation after method/control/analysis freeze.",
+        "status": "conditional_not_started"
+      }
+    ],
+    "new_experiments_this_record": 0,
+    "new_Q_access_this_record": 0,
+    "new_DP_releases_this_record": 0,
+    "Expert_Reserved_access": false,
+    "previous_current_pointers": {
+      "current_result_report": "RECEIVER_FEATURE_PATIENT_DP_RESULTS_20260924.md",
+      "current_planning_report": "RECEIVER_PATIENT_DP_TARGET_SPEC_20260923.md",
+      "latest_review_report": "DOSSER_PATIENT_DP_OPERATION_COMPARISON_20260924.md",
+      "latest_design_report": "RECEIVER_DISTILLATION_DEVELOPMENT_PLAN_20260922.md",
+      "next_task_plan_report": "PRRD_PAPER_DELIVERY_PLAN_20260918.md",
+      "active_last_completed_report": "RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md"
+    }
+  },
   "authority": "User-confirmed four-stage research framework; RESEARCH_FRAMEWORK.md",
   "current_step": 2,
   "steps": [
@@ -24,8 +89,8 @@
       "meaning": "Both development studies completed; failure causes not isolated; expert final and reserved remain closed."
     }
   ],
-  "next_task": "완료된 feature 공개전용·독립DP2 비교를 해석한다. 추가 실행 자동 예약 없음.",
-  "next_task_output": "RECEIVER_FEATURE_FOLLOWUP_RESULTS_20260924.md",
+  "next_task": "공개 모델 전달·라벨 최적화 후보의 우선 대조: 통상적 공개자료 지식증류와의 대수/연산·효용 비교, 이어 공개 이미지128장+동일 라벨 최적화. 이번은 기록만 완료했고 비교 실행은 미착수.",
+  "next_task_output": "PUBLIC_TRANSFER_LABEL_STRATEGY_20260928.md",
   "step2_open_items": [
     "Expanded real-data diagnostic is complete; it is NONDP and not a replacement public baseline",
     "Support, repetition, cohort composition and weak labels are not causally separated",
@@ -65,7 +130,7 @@
   "historical_stage_correction": "Earlier large_stage=1 labels for method/diagnostic work mean current step 2 and are historical numbering errors",
   "claim_not_established_is_not_disproof": true,
   "additional_approval_required_for_every_subtask": false,
-  "step2_active_task": "Feature public/noise follow-up: COMPLETE",
+  "step2_active_task": "Public-transfer/functional-label candidate assessment and strategy recorded; decisive controls not started.",
   "latest_B_augmentation_target_specification": {
     "report": "PRRD_B_AUGMENTED_TARGET_REVIEW_SPEC_20260921.md",
     "evidence_directory": "spec_sources/prrd_b_aug_target_review_20260921",
@@ -98,11 +163,11 @@
   "active_execution": {
     "status": "no_running_execution",
     "current_step": 2,
-    "last_completed_output": "C:\\Users\\SOGANG\\Documents\\카톨릭대\\졸업관련 260720\\고한경_박사학위논문_작업본\\code_working\\_reports\\receiver_dp8_noise_repeat_20260923_v1",
-    "last_completed_report": "RECEIVER_PATIENT_DP_NOISE_REPEAT_RESULTS_20260923.md",
+    "last_completed_output": "contribution_search_20260924",
+    "last_completed_report": "CONTRIBUTION_SEARCH_RESULTS_20260924.md",
     "additional_execution_contract_fixed": true,
     "stage2_completion_claim": false,
-    "latest_design_review": "RECEIVER_DISTILLATION_DEVELOPMENT_PLAN_20260922.md",
+    "latest_design_review": "PUBLIC_TRANSFER_LABEL_STRATEGY_20260928.md",
     "new_two_track_experiment_started": true,
     "new_two_track_experiment_status": "fixed_classifier_diagnostic_complete_generalization_gap_observed",
     "latest_cpu_outputs": [
@@ -3336,7 +3401,7 @@
     "started": "2026-09-23T17:27:50+00:00",
     "absolute_deadline_utc": "2026-09-23T18:12:50+00:00"
   },
-  "updated_utc": "2026-09-24T09:51:06.983725+00:00",
+  "updated_utc": "2026-09-28T02:05:34Z",
   "completed_u_comparison": {
     "status": "completed_U_patient_comparison_only",
     "started_utc": "2026-09-14T15:39:00+00:00",
@@ -3387,7 +3452,7 @@
       55
     ]
   },
-  "current_result_report": "RECEIVER_FEATURE_PATIENT_DP_RESULTS_20260924.md",
+  "current_result_report": "CONTRIBUTION_SEARCH_RESULTS_20260924.md",
   "completed_rank_decomposition": {
     "status": "completed_and_independently_verified",
     "scope": "20 fixed scorers,800 patient records,8000 pair ranks,4 comparisons",
@@ -4588,7 +4653,7 @@
     "auxiliary_information": "Our CDI U-fitting result is observed; operational access and solution boundary incomplete",
     "protection_observation": "Recorded candidate plus restricted local clipping evidence; patient MIA/protection-choice link incomplete"
   },
-  "latest_design_report": "RECEIVER_DISTILLATION_DEVELOPMENT_PLAN_20260922.md",
+  "latest_design_report": "PUBLIC_TRANSFER_LABEL_STRATEGY_20260928.md",
   "latest_user_scope_20260916": {
     "thesis_goal_may_change": true,
     "priority": "A defensible paper contribution; develop both protection-design efficiency and protection-evaluation improvement",
@@ -4789,7 +4854,7 @@
     "final_test_used": false,
     "verifier_timing_correction": "verification_metadata_correction.json"
   },
-  "next_task_plan_report": "PRRD_PAPER_DELIVERY_PLAN_20260918.md",
+  "next_task_plan_report": "PUBLIC_TRANSFER_LABEL_STRATEGY_20260928.md",
   "track1_dp_comparison_design_20260916": {
     "status": "executed_and_verified",
     "report": "TRACK1_PATIENT_DP_COMPARISON_PLAN_20260916.md",
@@ -4911,7 +4976,7 @@
     "finalnextquestion": "Does the observed restricted-head denoising gain survive a fair patient-DP comparison, given the full64 statistic dimension2336 versus static16 dimension200 and only0.4467% extra nonprivate MSE reduction?"
   },
   "current_paper_problem_fixed": false,
-  "research_question_status": "Observed source fidelity / recipient utility gap; multi-encoder premise and DP-aware clipping/noise advantage are candidates, not established contributions.",
+  "research_question_status": "A fixed patient-DP summary and PNG bank gained development utility through public cross-encoder functional soft-label optimization. Extra value over ordinary public knowledge distillation and public-image label solve remains untested; independent confirmation and paper novelty remain open.",
   "new_dp_principle_required": false,
   "new_solver_required_for_application_contribution": false,
   "realistic_replan_20260916": {
@@ -5263,7 +5328,7 @@
     "P_policy": "Same data-independent seeded projection can be retained; fresh backbone-dependent statistics and W required.",
     "first_gate_unit": "generated inputs; reserved real-patient reference sets not evaluated yet"
   },
-  "current_planning_report": "RECEIVER_PATIENT_DP_TARGET_SPEC_20260923.md",
+  "current_planning_report": "PUBLIC_TRANSFER_LABEL_STRATEGY_20260928.md",
   "pre_public_backbone_execution_current_result_report_20260916": "TRACK1_LORA_POSITIVE_CONTROL_RESULTS_20260916.md",
   "completed_public_medical_backbone_execution_20260916": {
     "report": "TRACK1_PUBLIC_MEDICAL_BACKBONE_RESULTS_20260916.md",
@@ -9340,7 +9405,7 @@
       }
     }
   },
-  "latest_review_report": "DOSSER_PATIENT_DP_OPERATION_COMPARISON_20260924.md",
+  "latest_review_report": "PUBLIC_TRANSFER_LABEL_STRATEGY_20260928.md",
   "completed_patient_dp_audit_review_20260924": {
     "report": "PATIENT_DP_AUDIT_REPORT_REVIEW_20260924.md",
     "scope": "Code, existing artifacts and primary-literature review only",
