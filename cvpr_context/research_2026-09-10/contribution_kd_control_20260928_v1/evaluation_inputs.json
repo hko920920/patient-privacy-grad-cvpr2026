@@ -1,0 +1,67 @@
+{
+  "historical_MT_labels": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/joint_compiler_soft_labels.npz",
+    "sha256": "bb2a72d6c3fd5fc459e5811f8fa3e2d80f93f711cf3395ba8936fffde088caa0",
+    "kind": "existing_DP_label_postprocessing"
+  },
+  "historical_MT_predictions": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/joint_compiler_predictions_private.npz",
+    "sha256": "e9e20b9653fd679fd60003a993ade62e253ac885b88e3014716cd64898471555",
+    "kind": "historical_V_evaluation"
+  },
+  "historical_MT_bootstrap": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/joint_compiler_bootstrap.npz",
+    "sha256": "c9ffd76b19076dbab16e21c3115e8b8a212b3f1bb685d6f9899f0db5ba25171d",
+    "kind": "historical_V_evaluation"
+  },
+  "historical_MT_results": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/joint_compiler_results.json",
+    "sha256": "2a65bc127c86b9717e47b4379aa6a8726cd74db05870dfbfb7851aab23d043b1",
+    "kind": "historical_V_evaluation"
+  },
+  "historical_transport_predictions": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/transport_predictions_private.npz",
+    "sha256": "0552fa3e0957b3c1257e5bb51662e592b8a553cde55513f03b987d135769cce6",
+    "kind": "historical_V_evaluation"
+  },
+  "historical_transport_bootstrap": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/transport_paired_bootstrap.npz",
+    "sha256": "6e35f0e7652d95a18d24cda3f7678accf632312489316a499cae624acb993610",
+    "kind": "historical_V_evaluation"
+  },
+  "patient_bootstrap": {
+    "path": "code_working/_reports/downstream_development_20260917_v1/cluster_bootstrap.npz",
+    "sha256": "00ac9762c5903b2a448de2af60c05a6350c0d7f80e8a07ce0e936514bb34c377",
+    "kind": "V_patient_resampling"
+  },
+  "V_DenseNet": {
+    "path": "code_working/_reports/prrd_pilot_abcd101_20260921_v1/evaluation/recipient_V_features.npz",
+    "sha256": "da34ed522d6b81ca3f4fe4955476f879a3bbe7feab1a35a0a230ee01d98dbdf0",
+    "kind": "V_cached_features"
+  },
+  "DP1_synthetic_DN": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/evaluation/DenseNet_PNG_features.npz",
+    "sha256": "ff9ea22d79410a8c0da69c901c4469367ec80ccdea8aa6396d84b99a1b613f9a",
+    "kind": "existing_DP_PNG_features"
+  },
+  "DP2_synthetic_DN": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/evaluation/DenseNet_FEATURE_DP2_PNG_features.npz",
+    "sha256": "d1eaebd9bd8935c61726ebdf0c1e352074e5a76275de2030dcb7e0a0e702753c",
+    "kind": "existing_DP_PNG_features"
+  },
+  "V_ResNet18": {
+    "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/V_features.npz",
+    "sha256": "f4137af1db1096384f50ed974f7deef4239c6705066d69538f228703f2d3b4ae",
+    "kind": "V_cached_features"
+  },
+  "DP1_synthetic_RN": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/evaluation/ResNet18_PNG_features.npz",
+    "sha256": "130bc355c498c5fd4826f9de127036ac5f40f57738818194417d0d9578c958f9",
+    "kind": "existing_DP_PNG_features"
+  },
+  "DP2_synthetic_RN": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/evaluation/ResNet18_FEATURE_DP2_PNG_features.npz",
+    "sha256": "892e981233193c5d4bc467670b1b086792714270a9b83a05c8858d87db373117",
+    "kind": "existing_DP_PNG_features"
+  }
+}

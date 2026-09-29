@@ -1,0 +1,356 @@
+{
+  "item": "2-4B",
+  "scope": "Public-input mechanism and label prototype; NOT a private release or clinical utility experiment",
+  "status": "IMPLEMENTED_PUBLIC_COMPARISON_AWAITING_INDEPENDENT_VERIFICATION",
+  "data": {
+    "P_patients": 672,
+    "P_images": 813,
+    "P_patient_classes": 675,
+    "class_patient_counts": [
+      669,
+      6
+    ],
+    "both_class_patients": 3
+  },
+  "geometry": {
+    "nullspace_dim": 64,
+    "compatible_dim": 64,
+    "M_condition": 9.278606630324498,
+    "PCA_retained_covariance_fraction": 0.8904378188761626,
+    "U_PCA_overlap_trace": 43.00045810391039,
+    "common_public_center_norm": 0.0033049317316305
+  },
+  "privacy_simulation": {
+    "sigma_numerator": 1.1159370386960168,
+    "sigma_source": 1.1159370386960168,
+    "count_noise_SD": 2.2318740773920336,
+    "sensitivity": 1.0,
+    "budget_specification": {
+      "numerator_epsilon": 4.0,
+      "numerator_delta": 5e-06,
+      "shared_source_epsilon": 4.0,
+      "shared_source_delta": 5e-06,
+      "shared_counts": "simulate the count coordinates of a normalized .5*[class0,class1,indicator0,indicator1] source release; count noise SD=2*sigma_source",
+      "prospective_basic_total": [
+        8.0,
+        1e-05
+      ],
+      "not_actual_release_contract": true,
+      "fixed_public_source_baseline": "No source-noise efficacy modeled; y0 is P-only. Shared-count stress is conditional on fixed y0; does not model source-label/count correlation.",
+      "warning": "Cannot append this mechanism to a historical epsilon8 source and call the result epsilon8."
+    },
+    "actual_Q_accesses": 0,
+    "actual_private_releases": 0
+  },
+  "simulation": {
+    "draws": 512,
+    "seed": 2026092901,
+    "count_floor_hits_by_class": [
+      0,
+      9
+    ],
+    "joint_releases": false,
+    "all_label_variants_are_public_numeric_stress_cases_not_clinical_banks": true
+  },
+  "reference": {
+    "source_public_label_solve": {
+      "models": [
+        "DINO"
+      ],
+      "target_RMS": {
+        "DINO": 0.3631548154632375
+      },
+      "eta": 1.791551344349207e-06,
+      "anchor": "zero",
+      "initial_objective_zero_label": 1.0,
+      "final_objective": 0.0011295884336137534,
+      "relative_target_RMSE": {
+        "DINO": 0.03072973628147573
+      },
+      "iterations": 41,
+      "solver_status": 1,
+      "solver_optimality": 3.8930296000297686e-18,
+      "solver_method": "bvls",
+      "box_roundoff_canonicalization_max_abs": 0.0,
+      "independent_projected_gradient_max_abs": 3.469446951953614e-18,
+      "ridge_primal_dual_max_abs": 5.204170427930421e-17,
+      "labels_at_bound": 96,
+      "labels_positive": 59
+    },
+    "source_preserving_exact_target_alpha": 0.14964380742666872,
+    "source_preserving_exact_target_full_H_error": 0.009004621377942943,
+    "inaccessible_constant": 0.009004621377942936,
+    "unconstrained_full_H_error": 1.1669654457654048e-30,
+    "unconstrained_alpha": 0.12053568960051005,
+    "unconstrained_source_head_change_before_scale": 0.505463573845763,
+    "source_baseline_full_H_error": 0.10959433754460465,
+    "comparison_note": "Unconstrained reference breaks source preservation; not a competing algorithm satisfying the same constraints."
+  },
+  "methods": {
+    "FULL__shared_full_q95": {
+      "signal_dimension_per_class": 128,
+      "patient_numerator_query_dimension": 256,
+      "caps": [
+        2.780369205110769,
+        2.0500536132203875
+      ],
+      "clipped_patient_class_counts": [
+        34,
+        1
+      ],
+      "max_patient_query_norm": 0.8078101097571596,
+      "retained_aggregate_bias_squared": 1.2521038559092172e-05,
+      "retained_noise_variance": 4.65287677125143,
+      "analytic_retained_target_MSE_true_counts": 4.652889292289989,
+      "analytic_full_H_objective_true_counts": 4.661893913667932,
+      "row_error_patient_equal_mean": 0.004570413297248635,
+      "fixed_true_count_simulated_MSE": 4.6656395709240766,
+      "noisy_count_simulated_MSE": 10.602043221587948,
+      "noisy_count_simulated_MSE_SE": 1.0842599927188623,
+      "noisy_count_conditionally_integrated_MSE": 10.60414113546571,
+      "noisy_count_MSE_quantiles": [
+        1.0417580373691442,
+        2.955783712729912,
+        4.56685582664938,
+        8.461702170507214,
+        31.408468431806252,
+        202.54416507939936
+      ],
+      "alpha_quantiles": [
+        0.0023338276180799285,
+        0.013132879291468398,
+        0.017993348534999072,
+        0.023644437111108432,
+        0.04898430353656293
+      ],
+      "raw_label_norm_mean": 269.9646272928945,
+      "compiler_max_abs_error": 1.2101430968414206e-14,
+      "source_head_max_abs_error": 2.5227484015496815e-14,
+      "source_scaled_head_max_abs_error": 1.5829351718288365e-16,
+      "note": "Raw/de-scaled head objective. Scaling guarantees linear score ranks, not target magnitudes or clinical accuracy."
+    },
+    "FULL__own_q95": {
+      "signal_dimension_per_class": 128,
+      "patient_numerator_query_dimension": 256,
+      "caps": [
+        2.780369205110769,
+        2.0500536132203875
+      ],
+      "clipped_patient_class_counts": [
+        34,
+        1
+      ],
+      "max_patient_query_norm": 0.8078101097571596,
+      "retained_aggregate_bias_squared": 1.2521038559092172e-05,
+      "retained_noise_variance": 4.65287677125143,
+      "analytic_retained_target_MSE_true_counts": 4.652889292289989,
+      "analytic_full_H_objective_true_counts": 4.661893913667932,
+      "row_error_patient_equal_mean": 0.004570413297248635,
+      "fixed_true_count_simulated_MSE": 4.6656395709240766,
+      "noisy_count_simulated_MSE": 10.602043221587948,
+      "noisy_count_simulated_MSE_SE": 1.0842599927188623,
+      "noisy_count_conditionally_integrated_MSE": 10.60414113546571,
+      "noisy_count_MSE_quantiles": [
+        1.0417580373691442,
+        2.955783712729912,
+        4.56685582664938,
+        8.461702170507214,
+        31.408468431806252,
+        202.54416507939936
+      ],
+      "alpha_quantiles": [
+        0.0023338276180799285,
+        0.013132879291468398,
+        0.017993348534999072,
+        0.023644437111108432,
+        0.04898430353656293
+      ],
+      "raw_label_norm_mean": 269.9646272928945,
+      "compiler_max_abs_error": 1.2101430968414206e-14,
+      "source_head_max_abs_error": 2.5227484015496815e-14,
+      "source_scaled_head_max_abs_error": 1.5829351718288365e-16,
+      "note": "Raw/de-scaled head objective. Scaling guarantees linear score ranks, not target magnitudes or clinical accuracy."
+    },
+    "COMPAT__shared_full_q95": {
+      "signal_dimension_per_class": 64,
+      "patient_numerator_query_dimension": 128,
+      "caps": [
+        2.780369205110769,
+        2.0500536132203875
+      ],
+      "clipped_patient_class_counts": [
+        1,
+        0
+      ],
+      "max_patient_query_norm": 0.7204600965710742,
+      "retained_aggregate_bias_squared": 5.056051253363341e-10,
+      "retained_noise_variance": 4.652876771251431,
+      "analytic_retained_target_MSE_true_counts": 4.652876771757036,
+      "analytic_full_H_objective_true_counts": 4.661881393134979,
+      "row_error_patient_equal_mean": 4.477056490551782e-05,
+      "fixed_true_count_simulated_MSE": 4.665643632670818,
+      "noisy_count_simulated_MSE": 10.60282164712468,
+      "noisy_count_simulated_MSE_SE": 1.084369833515536,
+      "noisy_count_conditionally_integrated_MSE": 10.605090968777223,
+      "noisy_count_MSE_quantiles": [
+        1.0409629780569158,
+        2.955136268164936,
+        4.5668077860349285,
+        8.458273003417654,
+        31.39375298206799,
+        202.5751288190697
+      ],
+      "alpha_quantiles": [
+        0.0023339033604247283,
+        0.013130675198080815,
+        0.01799870433926904,
+        0.023643505872294416,
+        0.04898437751083754
+      ],
+      "raw_label_norm_mean": 269.9737818001924,
+      "compiler_max_abs_error": 1.3766765505351941e-14,
+      "source_head_max_abs_error": 2.550856057233286e-14,
+      "source_scaled_head_max_abs_error": 1.192622389734055e-16,
+      "note": "Raw/de-scaled head objective. Scaling guarantees linear score ranks, not target magnitudes or clinical accuracy."
+    },
+    "COMPAT__own_q95": {
+      "signal_dimension_per_class": 64,
+      "patient_numerator_query_dimension": 128,
+      "caps": [
+        2.4737036795889047,
+        1.9198421464101822
+      ],
+      "clipped_patient_class_counts": [
+        34,
+        1
+      ],
+      "max_patient_query_norm": 0.7831415235230953,
+      "retained_aggregate_bias_squared": 3.188477790124934e-05,
+      "retained_noise_variance": 4.080523633666626,
+      "analytic_retained_target_MSE_true_counts": 4.080555518444528,
+      "analytic_full_H_objective_true_counts": 4.089560139822471,
+      "row_error_patient_equal_mean": 0.0064759168336285325,
+      "fixed_true_count_simulated_MSE": 4.091669294374192,
+      "noisy_count_simulated_MSE": 9.308380742456402,
+      "noisy_count_simulated_MSE_SE": 0.9528323159953905,
+      "noisy_count_conditionally_integrated_MSE": 9.312043305531219,
+      "noisy_count_MSE_quantiles": [
+        0.9161449524602496,
+        2.5929947682343304,
+        4.004964168169147,
+        7.4185669608089855,
+        27.58460119143013,
+        178.01316725267873
+      ],
+      "alpha_quantiles": [
+        0.0024849930775604507,
+        0.014017278184021771,
+        0.019211923770085442,
+        0.025278715887815235,
+        0.052300014585039974
+      ],
+      "raw_label_norm_mean": 252.9315756495759,
+      "compiler_max_abs_error": 1.2323475573339238e-14,
+      "source_head_max_abs_error": 3.370108840131066e-14,
+      "source_scaled_head_max_abs_error": 1.2880321809127793e-16,
+      "note": "Raw/de-scaled head objective. Scaling guarantees linear score ranks, not target magnitudes or clinical accuracy."
+    },
+    "PCA__shared_full_q95": {
+      "signal_dimension_per_class": 64,
+      "patient_numerator_query_dimension": 128,
+      "caps": [
+        2.780369205110769,
+        2.0500536132203875
+      ],
+      "clipped_patient_class_counts": [
+        8,
+        0
+      ],
+      "max_patient_query_norm": 0.7553048847955289,
+      "retained_aggregate_bias_squared": 0.00875480792625244,
+      "retained_noise_variance": 3.1261848853883594,
+      "analytic_retained_target_MSE_true_counts": 3.1349396933146116,
+      "analytic_full_H_objective_true_counts": 3.1439443146925545,
+      "row_error_patient_equal_mean": 0.0003864198850381379,
+      "fixed_true_count_simulated_MSE": 3.1709290567563446,
+      "noisy_count_simulated_MSE": 7.046581888228663,
+      "noisy_count_simulated_MSE_SE": 0.6980837717107747,
+      "noisy_count_conditionally_integrated_MSE": 7.152347377352273,
+      "noisy_count_MSE_quantiles": [
+        0.6166850970910178,
+        1.9899607406048956,
+        3.009912084825393,
+        5.613006051118941,
+        19.83640173955636,
+        153.7513726887894
+      ],
+      "alpha_quantiles": [
+        0.003730006282133497,
+        0.01870479663337303,
+        0.025827926845010188,
+        0.0331586418628335,
+        0.07497071301297986
+      ],
+      "raw_label_norm_mean": 189.6039049766541,
+      "compiler_max_abs_error": 7.993605777301127e-15,
+      "source_head_max_abs_error": 1.3332602351343242e-14,
+      "source_scaled_head_max_abs_error": 1.1405806854547507e-16,
+      "note": "Raw/de-scaled head objective. Scaling guarantees linear score ranks, not target magnitudes or clinical accuracy."
+    },
+    "PCA__own_q95": {
+      "signal_dimension_per_class": 64,
+      "patient_numerator_query_dimension": 128,
+      "caps": [
+        2.651088620166723,
+        1.8884773673518314
+      ],
+      "clipped_patient_class_counts": [
+        34,
+        1
+      ],
+      "max_patient_query_norm": 0.8105882061092481,
+      "retained_aggregate_bias_squared": 0.008822035676886492,
+      "retained_noise_variance": 2.6528480600935787,
+      "analytic_retained_target_MSE_true_counts": 2.6616700957704653,
+      "analytic_full_H_objective_true_counts": 2.670674717148408,
+      "row_error_patient_equal_mean": 0.003655315143568248,
+      "fixed_true_count_simulated_MSE": 2.6921259865162117,
+      "noisy_count_simulated_MSE": 5.992347329955473,
+      "noisy_count_simulated_MSE_SE": 0.5945887417074464,
+      "noisy_count_conditionally_integrated_MSE": 6.083570857853166,
+      "noisy_count_MSE_quantiles": [
+        0.5300671363996969,
+        1.6908314726025921,
+        2.5542664517830653,
+        4.766778623218372,
+        16.87441945250435,
+        130.71011181645935
+      ],
+      "alpha_quantiles": [
+        0.004037506119562527,
+        0.020258715782539113,
+        0.028061447423995765,
+        0.03600391314373536,
+        0.0805136398891896
+      ],
+      "raw_label_norm_mean": 174.85745509577532,
+      "compiler_max_abs_error": 7.993605777301127e-15,
+      "source_head_max_abs_error": 1.3314153251954432e-14,
+      "source_scaled_head_max_abs_error": 1.1188966420050406e-16,
+      "note": "Raw/de-scaled head objective. Scaling guarantees linear score ranks, not target magnitudes or clinical accuracy."
+    }
+  },
+  "no_clipping_same_cap_coupled_target_max_abs": 1.2878587085651816e-14,
+  "practical_primary_support_within_P": false,
+  "decision_limit": "No Q utility / unseen transfer / independent-method novelty established.",
+  "data_access_log": [
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/public128_selection.npz",
+    "code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+    "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz"
+  ],
+  "seconds": 0.5316309998743236,
+  "clinical_readouts": 0,
+  "model_forwards": 0,
+  "pixel_updates": 0,
+  "contract_sha256": "4872667e175d9f4173ceca544e2876e4ea8e2054c0ce72100fe0055b58c54484"
+}

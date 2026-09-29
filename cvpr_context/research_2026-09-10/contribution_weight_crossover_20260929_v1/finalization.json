@@ -1,0 +1,32 @@
+{
+  "item": "2-2R2",
+  "status": "complete_shared_hypothesis_failed",
+  "started_utc": "2026-09-29T06:27:27+00:00",
+  "completed_utc": "2026-09-29T06:44:08.501653+00:00",
+  "elapsed_minutes": 16.69169421666667,
+  "time_basis": "First tool timestamp after user-facing estimate, including adapter preparation",
+  "report": "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_2_2R2_WEIGHT_CROSSOVER_RESULTS_20260929.md",
+  "report_sha256": "f290d5256a146f4cbbc07f9dd6a64c33ca9b2a0044563b447267341c30a83805",
+  "verification_sha256": "ed19457fb81bb9f6605e44ef768369ef3856f28044a9042f4df211bb3b392bdc",
+  "completion_sha256": "9a67066974c3e4712a058a904ae6123f8bcb0342871fbe302a2e604701f6f046",
+  "sealed_runtime_outputs_unchanged": true,
+  "new_labels": 4,
+  "new_readouts": 8,
+  "reused_readouts": 12,
+  "new_private_queries": 0,
+  "new_private_releases": 0,
+  "next_item": "2-1R3",
+  "next_status": "proposed_design_not_executed",
+  "next_eta_minutes": [
+    15,
+    25
+  ],
+  "status_files": {
+    "project_source/AGENTS.md": "bc1ba062aa9c6af049670a192811cf1fb6b07f478d35ebe3fb5639eeadf115af",
+    "project_source/CURRENT_STATUS.md": "4f2c4f315deea00b6c07f5713a072b0db085ea89bb703260adc4140268feabfe",
+    "project_source/WORKLOG.md": "6fb3c8041371beaed943850c321ce4da68e610f02656263aa8d80c6babc7010e",
+    "cvpr_context/research_2026-09-10/RESEARCH_FRAMEWORK.md": "5c021bc2301991ca6aad15a626926d5a62c4b22f8bc8a2e557291a7bb5f68359",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_NUMBERED_PLAN_20260928.md": "414ca403996f95b1008b8193da59983ca07f0c88ec481aded3d80715b19c7c07",
+    "cvpr_context/research_2026-09-10/research_state.json": "daf55964f76905b8c7d6fcfdb2d698faaa6d629474dc57f948a36128b1446316"
+  }
+}

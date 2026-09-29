@@ -1,0 +1,205 @@
+{
+  "code_root": "project_source/code_working",
+  "historical_code_dir": "cvpr_context/research_2026-09-10/contribution_search_20260924",
+  "step3_dir": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1",
+  "criteria": {
+    "both_AUROC_positive": true,
+    "mean_AUROC_min": 0.01,
+    "mean_AP_min": 0,
+    "mean_AUROC_CI_lower_positive": true
+  },
+  "schema": "public128-source-1-5/v1",
+  "item": "1-5",
+  "whole_project_stage": 2,
+  "authorization": "User requested sequential numbered execution with mandatory pre-run ETA and post-run reports, then continue with next scoped item",
+  "started_utc": "2026-09-28T08:04:48.706254+00:00",
+  "frozen_utc": "2026-09-28T08:08:09.832045+00:00",
+  "deadline_utc": "2026-09-28T08:49:48.706254+00:00",
+  "estimated_minutes": [
+    15,
+    30
+  ],
+  "new_labels": 2,
+  "releases": [
+    "DP1",
+    "DP2"
+  ],
+  "carrier": "frozen public128",
+  "label_anchor": "zero",
+  "ridge": 0.1,
+  "label_bounds": [
+    -1,
+    1
+  ],
+  "eta_rule": "0.001*||A||_F^2/128",
+  "target_scaling": "P-weighted RMS, single DINO block weight1",
+  "solver": {
+    "method": "bvls",
+    "tol": 1e-12,
+    "max_iter": 500,
+    "KKT_max": 1e-07
+  },
+  "primary_receiver": "DenseNet",
+  "construction_reference": "ResNet18",
+  "metric_unit": "image",
+  "bootstrap": "2000 paired patient-cluster draws, conditional fixed labels/releases",
+  "main_contrasts": [
+    "MT_RN_ONLY-DINO_ONLY",
+    "MT_JOINT-DINO_ONLY"
+  ],
+  "reference_contrasts": [
+    "KD_RN_ONLY-DINO_ONLY",
+    "KD_JOINT-DINO_ONLY"
+  ],
+  "inputs": {
+    "P_DINO": {
+      "path": "code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+      "kind": "public_P",
+      "phases": [
+        "construct"
+      ],
+      "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+    },
+    "P_RN": {
+      "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+      "kind": "public_P",
+      "phases": [
+        "evaluate"
+      ],
+      "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+    },
+    "P_DN": {
+      "path": "code_working/_reports/prrd_pilot_abcd101_20260921_v1/public/recipient_P_dual_features.npz",
+      "sha256": "7b093a2112a711e942acc49519d400e14b9a43923739efd68cd838f65629466f",
+      "kind": "public_P_evaluation_features",
+      "phases": [
+        "evaluate"
+      ]
+    },
+    "prior_target_weights": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/target_weights.npz",
+      "sha256": "5f1475e9b5782fcbec5c5adeda2d54b9b9e899e68cc545c8dde3ff909b3fdc83",
+      "kind": "public_and_existing_DP_postprocessing",
+      "phases": [
+        "construct"
+      ]
+    },
+    "prior_label_seal": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/label_seal.json",
+      "sha256": "ff99750ea62578d8bc3dd783421158bc5c4399fa95c5522f422a406d0148ac08",
+      "kind": "prior_provenance",
+      "phases": [
+        "construct"
+      ]
+    },
+    "patient_bootstrap": {
+      "path": "code_working/_reports/downstream_development_20260917_v1/cluster_bootstrap.npz",
+      "kind": "V_patient_resampling",
+      "phases": [
+        "evaluate"
+      ],
+      "sha256": "00ac9762c5903b2a448de2af60c05a6350c0d7f80e8a07ce0e936514bb34c377"
+    },
+    "V_DenseNet": {
+      "path": "code_working/_reports/prrd_pilot_abcd101_20260921_v1/evaluation/recipient_V_features.npz",
+      "kind": "V_cached_features",
+      "phases": [
+        "evaluate"
+      ],
+      "sha256": "da34ed522d6b81ca3f4fe4955476f879a3bbe7feab1a35a0a230ee01d98dbdf0"
+    },
+    "V_ResNet18": {
+      "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/V_features.npz",
+      "kind": "V_cached_features",
+      "phases": [
+        "evaluate"
+      ],
+      "sha256": "f4137af1db1096384f50ed974f7deef4239c6705066d69538f228703f2d3b4ae"
+    },
+    "old_selection": {
+      "path": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/public128_selection.npz",
+      "sha256": "7e49a9ba1ab1ea10ecb7ae6f8cd91792ccd458e14cb1da1534b31154370de3c4",
+      "kind": "frozen_Step3_public128_selection.npz",
+      "phases": [
+        "construct",
+        "evaluate"
+      ]
+    },
+    "old_manifest": {
+      "path": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/public128_manifest.json",
+      "sha256": "a413c49e1f5f6bdaefc4bd5e98426d15646c88f69cbb249be4ab2d4ea489b00d",
+      "kind": "frozen_Step3_public128_manifest.json",
+      "phases": [
+        "construct"
+      ]
+    },
+    "comparison_results": {
+      "path": "cvpr_context/research_2026-09-10/contribution_public128_kd_20260928_v1/results.json",
+      "sha256": "e28283715272f12bfe6510c28beb328227058f2b1f910c75f715dc6be0af88d3",
+      "kind": "frozen_1-4_output",
+      "phases": [
+        "evaluate"
+      ]
+    },
+    "comparison_predictions": {
+      "path": "cvpr_context/research_2026-09-10/contribution_public128_kd_20260928_v1/predictions_private.npz",
+      "sha256": "7218a3c38d70c5d8bb01e95aeed7890c037050db5e38c0249e6d952ebb8f30db",
+      "kind": "frozen_1-4_output",
+      "phases": [
+        "evaluate"
+      ]
+    },
+    "comparison_bootstrap": {
+      "path": "cvpr_context/research_2026-09-10/contribution_public128_kd_20260928_v1/paired_bootstrap.npz",
+      "sha256": "22da373602990718ae287636556f07e91b2df52be809f33a8cabeebeb353ac47",
+      "kind": "frozen_1-4_output",
+      "phases": [
+        "evaluate"
+      ]
+    },
+    "comparison_completion": {
+      "path": "cvpr_context/research_2026-09-10/contribution_public128_kd_20260928_v1/completion.json",
+      "sha256": "17d87348a1779d57735c508d7365cff3f5ae5a0989b555ba0fc24a91a5a15527",
+      "kind": "frozen_1-4_output",
+      "phases": [
+        "evaluate"
+      ]
+    }
+  },
+  "implementation": {
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/carrier_common.py": "5a371bcffc525f4ecf700269814291c1a28ec2897372f7cde2d53c03c8865768",
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/construct_labels.py": "d7fe9be4c56db5a49e6929d838268164179d39bcb1253773c44db16ae9a6c90f",
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/evaluate_carriers.py": "0af733e2a9479754c8e0da22713fcf82b6305ba68cde29f15d39a7a02d4beadf",
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/initialize_contract.py": "6ec50117b6e04a0864d4f356c57c4a21a2cc7e6a634a79f4144a70ebf070ed88",
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/select_public128.py": "9f286510ce3f70bb98af0dc9e923bf9ed058193cec90afb789f9537cb892b8b0",
+    "cvpr_context/research_2026-09-10/contribution_search_20260924/fixed_image_compilation.py": "0d208461dce6a749ef580f72f5f637de126b20e9c2d0e19998fae4f23a6bbc6d",
+    "cvpr_context/research_2026-09-10/contribution_search_20260924/geometry_diagnostic.py": "e9fc0a6ebfa025b75a67f3697010ad2b075a14e74b77e6b75b28146de626b370",
+    "code_working/prrd_pilot_20260921/common.py": "397a7b7596b8d2614460be5a76f8ed0ce91389439a201bf9d568aeba42b5fcce",
+    "code_working/prrd_v3/contracts.py": "d9a52ad5f594412f884579308f3de087585fa51bf16541c904198b5cb5325247",
+    "code_working/prrd_v3/encoders.py": "d4f432be4e7bbbe7cdb11928c88f2b4190c4692b19d353e7b0bcec0ea4310c4a",
+    "code_working/prrd_v3/resampling.py": "11c83201079b52363a3bd27556fb4fc7cb90418c84ff8d64a598e370320221cd",
+    "code_working/receiver_distillation/second_source.py": "f30601ef3d7e06cef74de69242150fe18684d86c0f70d9fd23f107af34edaebe",
+    "code_working/receiver_distillation/signals.py": "8ec86f05df7c678a92753c30a7453f4cf65780cba46671ca7c3bb6eadf4248d2",
+    "code_working/receiver_distillation/prepare_second.py": "da920691c36bb26e68e804053239d460c37da96c8505c32efa1cbe8859a9f5db",
+    "code_working/receiver_resnet_eval_20260924/run.py": "1bec824e772108508c8e52e83bc6404a5963b3db51a95f0472db9b90694e5768",
+    "code_working/prrd_pilot_20260921/declare.py": "6ff8cf2af52c4e23a89c322bbbcd3a2806eded8d8e458e88f3f4bfd47e28b726",
+    "code_working/receiver_distillation/evaluate_feature_followup.py": "70b756edadbb462e58e4c84dc20dc069fc032d25e9b51b91d509890b44356173",
+    "cvpr_context/research_2026-09-10/contribution_public128_kd_20260928_v1/initialize.py": "b07928dd1be7bfb52c1a270b329d0f5a6761a2991abac427efb183e2aa399b99",
+    "cvpr_context/research_2026-09-10/contribution_public128_kd_20260928_v1/run_comparison.py": "15d67439ddb881d302bfb00ef98d6bec6d9c46f329d51120eb465e16c22c7a11",
+    "cvpr_context/research_2026-09-10/contribution_public128_source_20260928_v1/initialize.py": "6f5927bfb2519a38393a89d500cda10f09ccea7b26d1acaf605acf288e79bc2e",
+    "cvpr_context/research_2026-09-10/contribution_public128_source_20260928_v1/run_source_control.py": "3f0376c9fe793a6ad8554aa094792683710c72987dfc01ec867ab62b20d75fb3"
+  },
+  "human_contract_sha256": "f52d1bf0cf6772a263c9a7086d6de7beaddb756fef57e3b4de04e226a804f0b9",
+  "historical_result_hashes": {
+    "cvpr_context/research_2026-09-10/CONTRIBUTION_SEARCH_RESULTS_20260924.md": "6eaa5b97ab0ee72e5bba6a1532958ca0fe6f0d2ff6a2f1b3bac0a06bd97ad3ac",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_KD_CONTROL_RESULTS_20260928.md": "a2a49a38abc0cf02c75257f397c2cb652f79f915c62761f3eca426755da87e75",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_STEP2_EXISTING_CONTROL_RESULTS_20260928.md": "adc3b34fe77ed9871efea5eaf7323089e5d90e03deb835a58f84f5e3da67512a",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_PUBLIC128_CONTROL_RESULTS_20260928.md": "e309fd8d396feff7df1793a3104598372bc0e4dd29dcbbce42c2f9de21324a3a",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_PUBLIC128_KD_RESULTS_20260928.md": "22d328222917eaf5f6323379bd46410c46810018728d342a5d77954178393687"
+  },
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "new_pixel_training": 0,
+  "new_encoder_forwards": 0,
+  "Expert_Reserved": false
+}

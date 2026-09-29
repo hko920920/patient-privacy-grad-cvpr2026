@@ -1,0 +1,22 @@
+{
+  "DP1_MT_RN_ONLY": {
+    "source": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/soft_labels.npz",
+    "key": "DP1_PUBLIC_RN_ONLY",
+    "source_sha256": "55c470159da1281988b85f9383d627ab7f4ff1f9c99f9f28c5e51fe5cdd567d6"
+  },
+  "DP1_MT_JOINT": {
+    "source": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/soft_labels.npz",
+    "key": "DP1_PUBLIC_JOINT",
+    "source_sha256": "55c470159da1281988b85f9383d627ab7f4ff1f9c99f9f28c5e51fe5cdd567d6"
+  },
+  "DP2_MT_RN_ONLY": {
+    "source": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/soft_labels.npz",
+    "key": "DP2_PUBLIC_RN_ONLY",
+    "source_sha256": "55c470159da1281988b85f9383d627ab7f4ff1f9c99f9f28c5e51fe5cdd567d6"
+  },
+  "DP2_MT_JOINT": {
+    "source": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/soft_labels.npz",
+    "key": "DP2_PUBLIC_JOINT",
+    "source_sha256": "55c470159da1281988b85f9383d627ab7f4ff1f9c99f9f28c5e51fe5cdd567d6"
+  }
+}

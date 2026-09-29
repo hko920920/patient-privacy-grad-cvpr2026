@@ -1,0 +1,16 @@
+{
+  "status": "ALL_LABELS_SEALED_BEFORE_NEW_KD_EVALUATION",
+  "utc": "2026-09-28T07:47:11.841210+00:00",
+  "contract_sha256": "2c0b1260eb671859e702f773b2951bf519ca09669427066cac8cbbdaa357039a",
+  "files": {
+    "soft_labels.npz": "5bbecc0410b13b2650d2c244f115de3eb2171fd30624209dafb222edcd08c853",
+    "label_aliases.json": "85cc371753607ce06a938a8d6a878226a1390ade3b315ebd7210ede393d1c2f0",
+    "construction_results.json": "f98a60ba6ebdeb0fcc01fafef4606ef4c7485c853c527e441f99ae301b4aeda9",
+    "construction_inputs.json": "da6e5e5ff3885fda23057e2860c2fa2acf909ccde17b3b572d90e44ca95532af",
+    "label_packets/DP1_KD_RN_ONLY.csv": "281aee699220efdede0876530266811142319a8b9b731cda31716f637b1c80b1",
+    "label_packets/DP1_KD_JOINT.csv": "d72249fd831b2c638fd594253d8473a7aea28807fe4521ea3791587c64765599",
+    "label_packets/DP2_KD_RN_ONLY.csv": "74414770a854a9ae394f4af1f8ea064d26eb5cb4724c2ba7c1dc02b9c4266adc",
+    "label_packets/DP2_KD_JOINT.csv": "70cdf6d0f130faad1a47159a8d098ddd95882031ac1cb339d74d8c1b8836e3f6"
+  },
+  "reused_selection_sha256": "7e49a9ba1ab1ea10ecb7ae6f8cd91792ccd458e14cb1da1534b31154370de3c4"
+}

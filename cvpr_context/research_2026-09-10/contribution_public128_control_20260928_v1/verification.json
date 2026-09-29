@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-09-28T07:30:57.972792+00:00",
+  "input_files_unchanged": 21,
+  "implementation_files_unchanged": 17,
+  "historical_reports_unchanged": 3,
+  "public_patient_and_image_count": 128,
+  "public_source_images_hash_verified": 128,
+  "label_packets": 8,
+  "all_label_CSV_roundtrips_exact": true,
+  "all_bound_image_hashes_unchanged": true,
+  "phase_access_allowlists_respected": true,
+  "first_V_read_after_all_eight_label_seal": true,
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "new_model_forwards": 0,
+  "storage_MiB_including_archived_numerical_attempt": 3.4483137130737305,
+  "historical_anchor_context_descriptive_only": {
+    "DP1_RN_ONLY": {
+      "historical_hard_anchor": 0.7135640928392418,
+      "current_zero_anchor": 0.7121334657058503,
+      "delta": -0.0014306271333914822
+    },
+    "DP1_JOINT": {
+      "historical_hard_anchor": 0.6863700927351285,
+      "current_zero_anchor": 0.6862557541143312,
+      "delta": -0.00011433862079734958
+    },
+    "DP2_RN_ONLY": {
+      "historical_hard_anchor": 0.6482302612498048,
+      "current_zero_anchor": 0.6482609374651406,
+      "delta": 3.0676215335811996e-05
+    },
+    "DP2_JOINT": {
+      "historical_hard_anchor": 0.663403832853669,
+      "current_zero_anchor": 0.6634428753095509,
+      "delta": 3.904245588193245e-05
+    }
+  }
+}

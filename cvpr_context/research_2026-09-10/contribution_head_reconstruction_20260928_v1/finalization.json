@@ -1,0 +1,24 @@
+{
+  "item": "2-2",
+  "status": "COMPLETE",
+  "report_sha256": "9c34842d9d95180315fc829c5987018f05c4c401e9a08b0ca8a801d6108a202d",
+  "verification": {
+    "status": "PASS",
+    "inputs_unchanged": 16,
+    "implementation_unchanged": 23,
+    "historical_reports_unchanged": 7,
+    "old_predictions_exact": 20,
+    "old_bootstraps_exact": 20,
+    "contrast_max_abs": 0.0,
+    "evaluation_after_label_seal": true,
+    "elapsed_minutes": 5.721497383333333,
+    "time_basis": "Creation of execution contract, including subsequent adapter preparation",
+    "new_label_KKT_max_abs": 5.551115123125783e-17,
+    "ridge_primal_dual_max_abs": 3.3306690738754696e-16,
+    "bootstrap_sklearn_max_abs": 1.1102230246251565e-16,
+    "output_MiB_before_report": 3.4287519454956055
+  },
+  "next_item": "2-3",
+  "next_item_status": "deferred_gate_unmet",
+  "finalizer_sha256": "1a6bed27c4c93cd9dda38005fa704273c964d60c524c6ff321e7eece9e1b5bba"
+}

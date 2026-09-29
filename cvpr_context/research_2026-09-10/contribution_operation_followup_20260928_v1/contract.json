@@ -1,0 +1,40 @@
+{
+  "item": "2-1R1",
+  "display_name": "2-1 보완",
+  "parent_item": "2-1",
+  "started_utc": "2026-09-28T08:37:02+00:00",
+  "eta_minutes": [
+    40,
+    60
+  ],
+  "authorization": "User requested continuing after clarification that2-3 is deferred but research/design continues. ETA40-60min announced before tools.",
+  "goal": "Separate public anchoring and transfer geometry from extra protected information; closest strong alternatives and one bounded discriminating design.",
+  "allowed": [
+    "Read existing code/reports and primary papers",
+    "Public-only and existing-DP-output linear algebra",
+    "Derive a fair next contrast and gate before evaluating it"
+  ],
+  "forbidden": [
+    "New V efficacy/readout during this design item",
+    "New labels during this design item",
+    "Raw Q",
+    "New DP noise/release",
+    "Pixel/model forward",
+    "Expert/Reserved"
+  ],
+  "prior_state": "2-2 complete;2-3 original consistency gate unmet, not an entire-research stop",
+  "numbering_policy": "R1 is a visible supplement, not replacement/renumbering of completed2-1 or2-2. A subsequent new contrast, if justified, is2-2R1; original2-3 remains deferred.",
+  "records_before": {
+    "project_source/AGENTS.md": "3cb96c6beb5d018e391e8fffbe416708983a805bacf6c95155a7c3302abf4c45",
+    "project_source/CURRENT_STATUS.md": "5d29ca6a487b3cba618f9bd804705ad363eb643651e83ffd520e73657d52c982",
+    "project_source/WORKLOG.md": "bb1a06f8e582acc6834655b782f2c44a8f56858da52fcaf84b534e8fd200de74",
+    "cvpr_context/research_2026-09-10/RESEARCH_FRAMEWORK.md": "ccfed1fdc082b5fd28bc3a416b1be10ac65a83f3146103d2fed783e06ebca74c",
+    "cvpr_context/research_2026-09-10/research_state.json": "d0117b1cc61b4ba280c7dbac81ab22278d72b60c87d3525dbb6a6735497908c8",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_NUMBERED_PLAN_20260928.md": "7b7b29d0414b57c40fd41d0f1eee850b3f41330ddd07c05613804328eb176fcb"
+  },
+  "previous_results": {
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_1_5_SOURCE_CONTROL_RESULTS_20260928.md": "66ee4c71765af6248efe5719d71ce12c008d53863137e1def0210136f9321f53",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_2_1_OPERATION_COMPARISON_20260928.md": "7fd61188016d70c12ce50df50810b8ed67890f8a66ce6244bb470985ba39e15b",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_2_2_HEAD_RECONSTRUCTION_RESULTS_20260928.md": "9c34842d9d95180315fc829c5987018f05c4c401e9a08b0ca8a801d6108a202d"
+  }
+}

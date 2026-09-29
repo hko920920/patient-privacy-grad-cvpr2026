@@ -1,0 +1,15 @@
+{
+  "status": "2-2_COMPLETE",
+  "utc": "2026-09-28T08:30:06.858471+00:00",
+  "contract_sha256": "e1b8a6170ac2761c3ab21d9d2abc7e51ff244c9f08e834f8b00860496b564913",
+  "files": {
+    "contract.json": "e1b8a6170ac2761c3ab21d9d2abc7e51ff244c9f08e834f8b00860496b564913",
+    "label_seal.json": "36efb7ce7c6eadc17d02aba0430d56d5b6bf34b72e8920d14bddb250fe5cd500",
+    "results.json": "a85b49adc105d9d2b54e8166f5b74ac9f7b7cb3b9a08bfb6a4511cafe3a76615",
+    "evaluation_inputs.json": "02fa7e2ec9239179ed18415311b8aafbc3c2b3d9e662e6aa80e06b06617ae811",
+    "predictions_private.npz": "dc05d8ff4997c2fe4d4b1b12c6c36a2988096ab1c41f4c59e16ce3706c2bdeb5",
+    "paired_bootstrap.npz": "d8bb5c0c8b3b3b2fdd2feb33ffdb3d2af6fe533eaed0fa3d9c46ce4de91d658b",
+    "contrast_bootstrap.npz": "1396c26606c932eeca1d1965c994dced8c4491f5026e69118bbb5e5e95ac179e",
+    "new_readout_weights.npz": "f0a5c606cd57a4798e44dadf9fa0ff9e7c370200d169765416c8df30e9abbb52"
+  }
+}

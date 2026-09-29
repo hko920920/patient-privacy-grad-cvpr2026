@@ -1,0 +1,10 @@
+{
+  "status": "COMPLETE_EXISTING_STEP2_ANALYSIS",
+  "files": {
+    "contract.json": "1f530d3bbc8470ceadf056c608d5f5dcedb995349ab3b5d86aa55f639fbad34b",
+    "analyze_existing_controls.py": "39965be93c7b18b69ffae4522d12c112074175e0b40ebb6832270d5d09cda28f",
+    "results.json": "534ce41cd0f97f0785803d9f3a91aebb18a90372090e4ddd3206db2ff48312f8",
+    "derived_contrast_bootstrap.npz": "7690c3cf288de2ab29f863cb652a0c047ac96cb03d22fb06512d2dbead13fcbd",
+    "input_receipts.json": "b440ad82639c6dd82ca43c908dcdd503eb2dd6d9dc4fcacc9c432bb41a7c916d"
+  }
+}

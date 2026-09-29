@@ -1,0 +1,106 @@
+{
+  "scope": "Step1 KD target construction; no V efficacy read",
+  "created": "2026-09-28T06:39:48.669712+00:00",
+  "fits": {
+    "DP1": {
+      "KD": {
+        "public_target_RMS": {
+          "DINO": 0.25878460360010924,
+          "ResNet18": 0.04049789608882803
+        },
+        "regularizer": 1.0831168439400244e-05,
+        "source_public_relative_RMSE": 0.25613539098270993,
+        "receiver_public_relative_RMSE": 0.22544656510090758,
+        "initial_full_objective": 1.2901610723031036,
+        "final_full_objective": 0.0596667348493714,
+        "solver_status": 1,
+        "solver_iterations": 50,
+        "solver_optimality": 3.812307819652416e-15,
+        "projected_gradient_max_abs": 8.179337207536719e-10,
+        "labels_at_bound": 76,
+        "labels_changed_sign": 38
+      },
+      "MT_reproduction": {
+        "public_target_RMS": {
+          "DINO": 0.25878460360010924,
+          "ResNet18": 0.10897247352563784
+        },
+        "regularizer": 2.740523160384887e-06,
+        "source_public_relative_RMSE": 0.1292278856120717,
+        "receiver_public_relative_RMSE": 0.15924527761827176,
+        "initial_full_objective": 0.6589319649011276,
+        "final_full_objective": 0.021411688039668822,
+        "solver_status": 1,
+        "solver_iterations": 32,
+        "solver_optimality": 4.095633918456659e-15,
+        "projected_gradient_max_abs": 1.0479540124563869e-08,
+        "labels_at_bound": 85,
+        "labels_changed_sign": 39
+      }
+    },
+    "DP2": {
+      "KD": {
+        "public_target_RMS": {
+          "DINO": 0.27007423994293805,
+          "ResNet18": 0.050038915837161184
+        },
+        "regularizer": 7.551582664215976e-06,
+        "source_public_relative_RMSE": 0.264255424797779,
+        "receiver_public_relative_RMSE": 0.21935360412916646,
+        "initial_full_objective": 1.127619361707412,
+        "final_full_objective": 0.05988232615832091,
+        "solver_status": 1,
+        "solver_iterations": 39,
+        "solver_optimality": 2.6994963987483153e-16,
+        "projected_gradient_max_abs": 5.890621324056156e-11,
+        "labels_at_bound": 77,
+        "labels_changed_sign": 38
+      },
+      "MT_reproduction": {
+        "public_target_RMS": {
+          "DINO": 0.27007423994293805,
+          "ResNet18": 0.08518497265152841
+        },
+        "regularizer": 3.485669433282825e-06,
+        "source_public_relative_RMSE": 0.1593038668732588,
+        "receiver_public_relative_RMSE": 0.1974911709640759,
+        "initial_full_objective": 0.4215589738229413,
+        "final_full_objective": 0.03262383130537656,
+        "solver_status": 1,
+        "solver_iterations": 39,
+        "solver_optimality": 1.8044625323435602e-13,
+        "projected_gradient_max_abs": 4.1848496223906295e-08,
+        "labels_at_bound": 87,
+        "labels_changed_sign": 36
+      }
+    }
+  },
+  "verification": {
+    "DP1": {
+      "KD_augmented_lstsq_max_abs": 1.8041124150158794e-16,
+      "KD_normal_equation_max_abs": 7.806255641895632e-18,
+      "MT_signed_public_labels_max_abs": 9.769962616701378e-15,
+      "historical_MT_label_reproduction_max_abs": 1.6986412276764895e-14,
+      "KD_MT_receiver_public_prediction_max_abs": 0.26644187520410534,
+      "KD_MT_receiver_target_relative_L2": 0.7146828724274645,
+      "teacher_score_clipped": false,
+      "MT_and_KD_are_identical_at_1e-10": false
+    },
+    "DP2": {
+      "KD_augmented_lstsq_max_abs": 2.7755575615628914e-16,
+      "KD_normal_equation_max_abs": 6.938893903907228e-18,
+      "MT_signed_public_labels_max_abs": 2.220446049250313e-15,
+      "historical_MT_label_reproduction_max_abs": 1.990740905455368e-12,
+      "KD_MT_receiver_public_prediction_max_abs": 0.19324011047265088,
+      "KD_MT_receiver_target_relative_L2": 0.8209851591841635,
+      "teacher_score_clipped": false,
+      "MT_and_KD_are_identical_at_1e-10": false
+    }
+  },
+  "new_Q_access": 0,
+  "new_releases": 0,
+  "new_pixel_updates": 0,
+  "new_label_packets": 2,
+  "historical_reproduction_solves": 2,
+  "seconds": 1.781999999890104
+}

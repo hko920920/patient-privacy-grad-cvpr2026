@@ -1,0 +1,29 @@
+{
+  "eta": 4.284240653505142e-06,
+  "target_RMS": 0.08518497265152841,
+  "V_read": false,
+  "trf": {
+    "success": true,
+    "status": 1,
+    "iterations": 73,
+    "reported_optimality": 4.239234553564505e-13,
+    "projected_gradient_max_abs": 1.9155980457430388e-07,
+    "cost": 0.012592226477894715,
+    "max_coordinate_index": 123,
+    "coordinate_label": 0.9999985922263755,
+    "coordinate_gradient": -1.9155980461625997e-07,
+    "seconds": 0.10900000017136335
+  },
+  "bvls": {
+    "success": true,
+    "status": 1,
+    "iterations": 79,
+    "reported_optimality": 1.023639316756822e-17,
+    "projected_gradient_max_abs": 2.220446049250313e-16,
+    "cost": 0.012592226477333816,
+    "max_coordinate_index": 53,
+    "coordinate_label": 1.0000000000000002,
+    "coordinate_gradient": -1.1332145270397409e-05,
+    "seconds": 0.14099999982863665
+  }
+}

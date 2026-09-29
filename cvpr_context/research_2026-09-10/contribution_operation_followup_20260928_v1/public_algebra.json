@@ -1,0 +1,51 @@
+{
+  "item": "2-1R1",
+  "status": "PASS",
+  "checks": {
+    "HR_anchor_plus_update_max_abs": 3.608224830031759e-16,
+    "old_KD_max_abs": 2.220446049250313e-16,
+    "corrected_dual_formula_max_abs": 1.0880185641326534e-14
+  },
+  "public_raw_covariance_ridge": 3.0478093248587158e-05,
+  "public_source_covariance_eigenvalue_min_max": [
+    0.0001018068891389752,
+    0.3816392134641623
+  ],
+  "source_score_shrink_eigenvalue_min_max": [
+    0.0010170334812409985,
+    0.792375709442851
+  ],
+  "corrected_score_filter_min_max": [
+    0.7696027719964927,
+    0.9999201453667327
+  ],
+  "mapped_vs_actual_public_RN_anchor_prediction_RMS": 0.1759064322504994,
+  "cases": {
+    "DP1": {
+      "HR_public_prediction_RMS": 0.1082295099105529,
+      "HR_minus_KD_public_prediction_RMS": 0.07689931332441935,
+      "mapped_anchor_correction_RMS": 0.073030083399522,
+      "operator_change_on_update_RMS": 0.08883171669480891,
+      "signed_cross_term_in_squared_RMS": -0.007310962582520713,
+      "source_update_public_prediction_RMS": 0.3764376100036459,
+      "corrected_vs_KD_public_prediction_RMS": 0.09528699340348834,
+      "scope": "No AUROC/AP, no labels or V. Terms are not utility contributions."
+    },
+    "DP2": {
+      "HR_public_prediction_RMS": 0.08440954849354518,
+      "HR_minus_KD_public_prediction_RMS": 0.06856588165719422,
+      "mapped_anchor_correction_RMS": 0.073030083399522,
+      "operator_change_on_update_RMS": 0.062063289928709194,
+      "signed_cross_term_in_squared_RMS": -0.004483964910687789,
+      "source_update_public_prediction_RMS": 0.33212891121310834,
+      "corrected_vs_KD_public_prediction_RMS": 0.04242905344797955,
+      "scope": "No AUROC/AP, no labels or V. Terms are not utility contributions."
+    }
+  },
+  "new_labels": 0,
+  "new_V_evaluations": 0,
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "Expert_Reserved": false,
+  "seconds": 0.8119999999180436
+}

@@ -1,0 +1,30 @@
+{
+  "script_sha256": "22e8303f3f2692928e0c3522444d19ca5fc69a4a3e5d72dd8930d128e9f7c0fc",
+  "contract_sha256": "720120288da5004299ee8346596029095d8d20c67ac9056b27293985c28ed2af",
+  "inputs": {
+    "P_DINO": {
+      "path": "code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+      "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+    },
+    "P_RN": {
+      "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+      "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+    },
+    "P_target": {
+      "path": "code_working/_reports/receiver_feature_followup_20260924_v1/public_target/target.npz",
+      "sha256": "e50ac1fad0e16dd746e82a7a9808135b709a469a8dc0b0aada9258872ad40f7e"
+    },
+    "old_targets": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/target_weights.npz",
+      "sha256": "5f1475e9b5782fcbec5c5adeda2d54b9b9e899e68cc545c8dde3ff909b3fdc83"
+    },
+    "public_maps": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/transport_public_maps_and_dp_weights.npz",
+      "sha256": "a26b3deaa8084afafad3880bb98996b3b06f3d6d05fd1dbcd68ada2947a33266"
+    },
+    "HR_targets": {
+      "path": "cvpr_context/research_2026-09-10/contribution_head_reconstruction_20260928_v1/HR_target_weights.npz",
+      "sha256": "5344524b460f5ad639f220b58da6022e376e2bceaafe3e72d49ca5ea9b8827a1"
+    }
+  }
+}

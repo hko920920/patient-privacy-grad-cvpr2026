@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "inputs_unchanged": 20,
+  "implementation_unchanged": 28,
+  "historical_reports_unchanged": 10,
+  "reused_predictions_exact": 12,
+  "reused_bootstraps_exact": 12,
+  "new_targets_exact_to_design": 4,
+  "new_labels": 4,
+  "new_readouts": 8,
+  "all_contrast_reconstruction_max_abs": 0.0,
+  "evaluation_after_label_seal": true,
+  "label_KKT_max_abs": 2.220446049250313e-16,
+  "ridge_primal_dual_max_abs": 3.608224830031759e-16,
+  "bootstrap_sklearn_max_abs": 1.1102230246251565e-16,
+  "output_MiB": 4.357677459716797
+}

@@ -1,0 +1,18 @@
+{
+  "item": "2-1R1",
+  "status": "COMPLETE",
+  "utc": "2026-09-28T08:49:59.388751+00:00",
+  "elapsed_minutes": 12.956479183333332,
+  "report": "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_2_1R1_ANCHOR_GEOMETRY_DESIGN_20260928.md",
+  "report_sha256": "640b112668fa12d43c1dfbe806ba66ae079fe28906eddb0ea5e520500a17125d",
+  "new_labels": 0,
+  "new_V_evaluations": 0,
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "files": {
+    "contract.json": "720120288da5004299ee8346596029095d8d20c67ac9056b27293985c28ed2af",
+    "audit_public_transfer.py": "22e8303f3f2692928e0c3522444d19ca5fc69a4a3e5d72dd8930d128e9f7c0fc",
+    "algebra_inputs.json": "f11f06909e3c1861871fc9fc79db0afc23bb992a49e09e0da6dac2ddae06010c",
+    "public_algebra.json": "6c4a6d972d176ebc0bc2cb3a2bf32303470e8dad94b77447ad310635dee8134c"
+  }
+}

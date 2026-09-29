@@ -1,0 +1,118 @@
+{
+  "task": "Step2 existing-control analysis only",
+  "authorized_user_message": "진행",
+  "scope": "Existing Joint minus DINO-only and Joint minus transported RN-only; mean paired-bootstrap contrasts conditional on two frozen releases",
+  "start_local": "2026-09-28T16:01:22.0983498+09:00",
+  "frozen_utc": "2026-09-28T07:07:55.398842+00:00",
+  "stage": 2,
+  "estimated_total_minutes": [
+    10,
+    20
+  ],
+  "analysis_script_sha256": "39965be93c7b18b69ffae4522d12c112074175e0b40ebb6832270d5d09cda28f",
+  "inputs": {
+    "joint_results": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/joint_compiler_results.json",
+      "sha256": "2a65bc127c86b9717e47b4379aa6a8726cd74db05870dfbfb7851aab23d043b1"
+    },
+    "source_results": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/source_label_baseline_results.json",
+      "sha256": "8919638091e9edf08d7cbc50526a38b89c253bb9644bb4f03f24d0c3319d5d5d"
+    },
+    "compiler_results": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/compiler_control_results.json",
+      "sha256": "7087b1b7fb803408e55b6572443fd4eaa4598d3a8e9f4394a3171cc86f580756"
+    },
+    "historical_manifest": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/research_artifact_manifest.json",
+      "sha256": "d4ab9eda272d304e15aa407363c17795555dd16a6b949d7cce192d2ca8437b15"
+    },
+    "step1_evaluation_inputs": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/evaluation_inputs.json",
+      "sha256": "294c17fa0582363d5efda68a3491a4a81232230b060f82c1e10e3f9b32f17392"
+    },
+    "joint_code": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/joint_compiler.py",
+      "sha256": "570086a20a390aa9917206f997f14fd3d24787ac9dbe659555b74194efe19f8d"
+    },
+    "source_code": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/source_label_baselines.py",
+      "sha256": "bfb2e38c8a7b4452b33b2b0dd9c46c6626fb42a287bcf7f915e8472e34b363a5"
+    },
+    "compiler_code": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/compiler_controls.py",
+      "sha256": "160600f0747e8e1d60707a1c590f3cae3ea41e5911b3917e4bf1b37a11317dd0"
+    },
+    "joint_predictions": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/joint_compiler_predictions_private.npz",
+      "sha256": "e9e20b9653fd679fd60003a993ade62e253ac885b88e3014716cd64898471555"
+    },
+    "joint_bootstrap": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/joint_compiler_bootstrap.npz",
+      "sha256": "c9ffd76b19076dbab16e21c3115e8b8a212b3f1bb685d6f9899f0db5ba25171d"
+    },
+    "source_predictions": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/source_label_baseline_predictions_private.npz",
+      "sha256": "96c0789b18f612a32ef1968cd957c582e3f1edf8e5ce652d88d84e1eaf7327f2"
+    },
+    "compiler_predictions": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/compiler_control_predictions_private.npz",
+      "sha256": "5d3528300d307ce29a48f9f6ed2ed183fff4ea3a4fd6cee55cf8b0b688e8ba94"
+    },
+    "transport_bootstrap": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/transport_paired_bootstrap.npz",
+      "sha256": "6e35f0e7652d95a18d24cda3f7678accf632312489316a499cae624acb993610"
+    },
+    "patient_schedule": {
+      "path": "code_working/_reports/downstream_development_20260917_v1/cluster_bootstrap.npz",
+      "sha256": "00ac9762c5903b2a448de2af60c05a6350c0d7f80e8a07ce0e936514bb34c377"
+    },
+    "joint_labels": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/joint_compiler_soft_labels.npz",
+      "sha256": "bb2a72d6c3fd5fc459e5811f8fa3e2d80f93f711cf3395ba8936fffde088caa0"
+    },
+    "source_labels": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/source_label_baseline_soft_labels.npz",
+      "sha256": "f62fd93245513a70b614460d9657abe1b49811c57806299a3e900853a3a0e15b"
+    },
+    "compiler_labels": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/compiler_control_soft_labels.npz",
+      "sha256": "2ac3849838f9ea28be2dcf03059612f47e458fe05917de324ed93144ed929ae7"
+    },
+    "plan": {
+      "path": "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_STEP2_EXISTING_CONTROL_PLAN_20260928.md",
+      "sha256": "46c23b54c2a241acc2549e41a7db9d50cfec74c2802b901545b9d245fafd8f22"
+    },
+    "historical_report": {
+      "path": "cvpr_context/research_2026-09-10/CONTRIBUTION_SEARCH_RESULTS_20260924.md",
+      "sha256": "6eaa5b97ab0ee72e5bba6a1532958ca0fe6f0d2ff6a2f1b3bac0a06bd97ad3ac"
+    }
+  },
+  "new_label_solves": 0,
+  "new_training": 0,
+  "new_model_forwards": 0,
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "public128": false,
+  "Expert_Reserved": false,
+  "step3_started": false,
+  "bootstrap": {
+    "draws": 2000,
+    "unit": "patient cluster",
+    "paired_across_methods_and_releases": true,
+    "new_draws": false,
+    "interval": "percentile 95% for rowwise arithmetic mean of two release differences",
+    "scope": "conditional on existing fixed releases; not mechanism-noise inference or preregistered confirmation"
+  },
+  "metrics": {
+    "primary": "DenseNet image AUROC",
+    "secondary": "image AP"
+  },
+  "development_hurdle": {
+    "both_AUROC_differences_positive": true,
+    "mean_AUROC_min": 0.01,
+    "mean_AP_min": 0.0,
+    "conditional_mean_AUROC_CI_lower_positive": true
+  },
+  "stopping": "Finish report and records; do not extend comparison or start Step3"
+}

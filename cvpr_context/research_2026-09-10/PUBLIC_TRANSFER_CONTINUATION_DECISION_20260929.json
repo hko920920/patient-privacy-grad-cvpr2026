@@ -1,0 +1,52 @@
+{
+  "action": "review_and_execution_recommendation_revision",
+  "report": "PUBLIC_TRANSFER_CONTINUATION_DECISION_20260929.md",
+  "report_sha256": "b60db02ac6edf596b0df9d8b1793d10c94e464e7425f9c0951f1ecd50e68776d",
+  "recorded_utc": "2026-09-29T09:14:45.045996+00:00",
+  "elapsed_minutes": 3.3340999333333334,
+  "time_basis": "First recorded review clock through decision-record write; final hash confirmation follows.",
+  "prior_next_recommendation": {
+    "current_planning_report": "contribution_weight_crossover_20260929_v1/EXECUTION_CONTRACT.md",
+    "latest_review_report": "PUBLIC_TRANSFER_KD_CONTROL_RESULTS_20260928.md",
+    "next_task_plan_report": "PUBLIC_TRANSFER_2_1R2_WEIGHT_SEPARATION_DESIGN_20260929.md",
+    "next_task": "2-1R3 design only: decompose matched-weight HR and ACKD into source-contrast transport and public reference term; identify known CME/POST components and whether one remaining contrast is justified. Do not automatically run labels or V.",
+    "next_task_output": "Operation decomposition, existing-prior overlap, at most one necessary bounded control design; no new V/labels/Q/release/receiver. ETA15-25min.",
+    "step2_active_task": "2-2R2 complete: shared weight hypothesis failed; HR advantage at matched U remains. Next proposed 2-1R3 design only."
+  },
+  "prior_2_1R3": {
+    "status": "proposed_design_not_executed",
+    "question": "Separate the public reference and source-contrast operator at matched weights before specifying any further contrast.",
+    "scope": "Existing public matrices, protected heads, prior operation review; no new labels/V/Q/release/receiver",
+    "eta_minutes": [
+      15,
+      25
+    ],
+    "automatic_next_experiment": false
+  },
+  "evidence_hashes": {
+    "PUBLIC_TRANSFER_2_1_OPERATION_COMPARISON_20260928.md": "7fd61188016d70c12ce50df50810b8ed67890f8a66ce6244bb470985ba39e15b",
+    "PUBLIC_TRANSFER_2_2_HEAD_RECONSTRUCTION_RESULTS_20260928.md": "9c34842d9d95180315fc829c5987018f05c4c401e9a08b0ca8a801d6108a202d",
+    "PUBLIC_TRANSFER_2_1R1_ANCHOR_GEOMETRY_DESIGN_20260928.md": "640b112668fa12d43c1dfbe806ba66ae079fe28906eddb0ea5e520500a17125d",
+    "PUBLIC_TRANSFER_2_2R1_KD_CORRECTIONS_RESULTS_20260928.md": "f06193df90be9172777d6fd9cef9a3744e0675f6405035f258832a86c947f353",
+    "PUBLIC_TRANSFER_2_3R1_SELECTION_REPEAT_RESULTS_20260928.md": "8db5aacee1331167855ae66313f8df9f515fe4ed4b375e6aeec6a6d1f900bbb7",
+    "PUBLIC_TRANSFER_2_1R2_WEIGHT_SEPARATION_DESIGN_20260929.md": "55a5fe3d38434fdc4f6a5d4c15b79570d096e8f089cce2229b25cc4f78da4e20",
+    "PUBLIC_TRANSFER_2_2R2_WEIGHT_CROSSOVER_RESULTS_20260929.md": "f290d5256a146f4cbbc07f9dd6a64c33ca9b2a0044563b447267341c30a83805"
+  },
+  "new_experiments": 0,
+  "new_labels": 0,
+  "new_V_evaluation": 0,
+  "new_Q_queries": 0,
+  "new_DP_releases": 0,
+  "candidate_declared_impossible": false,
+  "user_requested_project_abandonment": false,
+  "withdrawn": "Automatic additional HR ablations and mandatory2-1R3 recommendation",
+  "preserved": "All empirical results, incomplete contribution status, upper3/final-evaluation boundaries",
+  "status_files_sha256": {
+    "project_context/AGENTS.md": "d9e6aa12daf41d7a3388e57d3b3bcd8e2db2eb689b82a3ae6f3dd08a9f22e69a",
+    "project_context/CURRENT_STATUS.md": "6b0afb075184c5878cb9d6addc11a3f10a89b79d7efdbde2a69bbc9aaee6b997",
+    "project_context/WORKLOG.md": "6fe5ca6680378d1831567510cf65c6faad0d75942a4f2c7325aeafcc6f444a12",
+    "cvpr_context/research_2026-09-10/RESEARCH_FRAMEWORK.md": "aed3aac9b75194dfe02d6e7f2072d81afed1283923d09afa7d2124b04a03490c",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_NUMBERED_PLAN_20260928.md": "f9da1640f00c933de54d38280ac3b27871ccfdeb86488cb209f1c2c39471de51",
+    "cvpr_context/research_2026-09-10/research_state.json": "bec3964fc90c801d452a7e09c594bf006c65342bf6a4caf4d838cb61ae3801d7"
+  }
+}

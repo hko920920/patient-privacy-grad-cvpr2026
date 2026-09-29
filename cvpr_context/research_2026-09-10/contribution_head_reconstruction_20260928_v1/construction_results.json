@@ -1,0 +1,62 @@
+{
+  "item": "2-2",
+  "status": "LABELS_READY",
+  "fits": {
+    "DP1_HR_RN_ONLY": {
+      "models": [
+        "ResNet18"
+      ],
+      "target_RMS": {
+        "ResNet18": 0.10822950991055294
+      },
+      "eta": 4.3703085560183506e-06,
+      "anchor": "zero",
+      "initial_objective_zero_label": 0.9999999999999998,
+      "final_objective": 0.0012133117641827187,
+      "relative_target_RMSE": {
+        "ResNet18": 0.030340879063666053
+      },
+      "iterations": 19,
+      "solver_status": 1,
+      "solver_optimality": 3.031785028107317e-17,
+      "solver_method": "bvls",
+      "box_roundoff_canonicalization_max_abs": 0.0,
+      "independent_projected_gradient_max_abs": 5.551115123125783e-17,
+      "ridge_primal_dual_max_abs": 3.8163916471489756e-17,
+      "labels_at_bound": 42,
+      "labels_positive": 79
+    },
+    "DP2_HR_RN_ONLY": {
+      "models": [
+        "ResNet18"
+      ],
+      "target_RMS": {
+        "ResNet18": 0.08440954849354518
+      },
+      "eta": 7.184893411267553e-06,
+      "anchor": "zero",
+      "initial_objective_zero_label": 1.0000000000000002,
+      "final_objective": 0.0014751244164394233,
+      "relative_target_RMSE": {
+        "ResNet18": 0.03277577895492442
+      },
+      "iterations": 16,
+      "solver_status": 1,
+      "solver_optimality": 4.689788494886566e-17,
+      "solver_method": "bvls",
+      "box_roundoff_canonicalization_max_abs": 0.0,
+      "independent_projected_gradient_max_abs": 5.551115123125783e-17,
+      "ridge_primal_dual_max_abs": 3.8163916471489756e-17,
+      "labels_at_bound": 30,
+      "labels_positive": 74
+    }
+  },
+  "P_target_reconstruction_max_abs": 4.5102810375396984e-17,
+  "source_head_recovery_max_abs": 2.220446049250313e-16,
+  "independent_target_formula_max_abs": 3.469446951953614e-17,
+  "new_labels": 2,
+  "private_class_midpoint_used": false,
+  "V_access": false,
+  "new_private_releases": 0,
+  "seconds": 0.8900000001303852
+}

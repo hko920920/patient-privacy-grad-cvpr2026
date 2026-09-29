@@ -1,0 +1,110 @@
+{
+  "item": "2-2R2",
+  "status": "designed_not_executed",
+  "parent_item": "2-2",
+  "question": "Does using task-class-balanced weights for public cross-encoder correspondence explain part of the HR versus strengthened-KD gap?",
+  "primary_hypothesis": "In the current sparse-positive public cohort, separating patient-equal correspondence calibration from class-balanced task readouts improves downstream transfer. This predicts positive U-minus-B effects within BOTH HR and ACKD, not merely superiority of the existing HR package.",
+  "selection_basis": "Selected from2-1R2 public-only operation diagnostics before any new labels or V efficacy. This remains adaptive development.",
+  "next_estimated_minutes": [
+    20,
+    30
+  ],
+  "max_elapsed_minutes": 45,
+  "carrier": "Frozen first public128 from contribution_public128_control_20260928_v1/public128_selection.npz; no reselection.",
+  "releases": [
+    "existing DP1 source head",
+    "existing DP2 source head"
+  ],
+  "matrix": [
+    {
+      "recipe": "HR",
+      "map_weights": "U_patient_equal",
+      "status": "reuse_existing",
+      "new_labels": 0
+    },
+    {
+      "recipe": "HR",
+      "map_weights": "B_class_balanced",
+      "status": "new",
+      "new_labels": 2
+    },
+    {
+      "recipe": "ACKD",
+      "map_weights": "B_class_balanced",
+      "status": "reuse_existing",
+      "new_labels": 0
+    },
+    {
+      "recipe": "ACKD",
+      "map_weights": "U_patient_equal",
+      "status": "new",
+      "new_labels": 2
+    }
+  ],
+  "new_labels": 4,
+  "new_readouts": 8,
+  "reused_required_readouts": 12,
+  "receivers": {
+    "primary": "DenseNet development",
+    "reference": "ResNet18 construction model"
+  },
+  "new_private_queries": 0,
+  "new_private_releases": 0,
+  "forbidden": [
+    "Q",
+    "new noise",
+    "pixel optimization",
+    "encoder forwards",
+    "new carrier",
+    "Expert",
+    "Reserved",
+    "coefficient search"
+  ],
+  "fixed": {
+    "task_weights": "Existing image weights Omega: 0.5 per class, equal patients within class and visits within patient/class.",
+    "HR_public_source_midpoint": "Same public clipped class means.",
+    "HR_map_lambda": [
+      0.000030107448502066288,
+      0.00002836862823850081
+    ],
+    "ACKD_map_lambda": 0.000030478093248587158,
+    "ACKD_actual_public_receiver_anchor": "Existing wRP; unchanged",
+    "source_and_receiver_task_hessians": "Existing H_D(Omega), H_R(Omega), ridge0.1",
+    "solver": "Same public128 RN-only zero-anchor BVLS, bounds[-1,1], eta=.001*||A||F^2/128, RMS normalization, tol1e-12,maxiter500,KKT<=1e-7",
+    "bootstraps": 2000,
+    "metric": "Image AUROC primary, AP secondary, paired patient-cluster bootstrap"
+  },
+  "treatment_detail": "U vs B changes ONLY correspondence fitting weights. HR fitted centering/intercepts and implied mapped public anchor are re-estimated as consequences of that weight change. Do not claim slope-only or pure class-imbalance information removal. ACKD geometry uses U or B while its task Hessians and actual public anchor remain fixed.",
+  "contrasts": [
+    "PRIMARY: HR_U minus HR_B",
+    "PRIMARY: ACKD_U minus ACKD_B",
+    "RESIDUAL: HR_U minus ACKD_U",
+    "SECONDARY: HR_B minus ACKD_B",
+    "SECONDARY INTERACTION: (HR_U-HR_B)-(ACKD_U-ACKD_B)",
+    "REFERENCE: each new variant minus fixed DINO-only"
+  ],
+  "analysis": "Within every bootstrap replicate, calculate each release metric difference, then average the two differences. Do not average predictions, pool releases as independent patients, or pair independent noise draws across mechanisms.",
+  "strong_support_gate": {
+    "for_each_of_two_primary_contrasts": {
+      "both_release_AUROC_point_differences_positive": true,
+      "mean_AUROC_gain_at_least": 0.01,
+      "mean_AUROC_95_lower_positive": true,
+      "mean_AP_nonnegative": true,
+      "no_single_release_AP_CI_wholly_negative": true
+    },
+    "requires_both_primary_contrasts": true,
+    "interpretation": "Existing engineering hurdle, not a clinical threshold. Failure is insufficient evidence, not equality/disproof of every weighting effect."
+  },
+  "decision_rules": [
+    "Both primary contrasts pass: support the scoped calibration-weight mechanism; this does not establish new general weighting theory or a CVPR contribution.",
+    "ACKD_U closes the statistically supported HR advantage: accept the stronger standard baseline; do not call an overlapping interval equivalence.",
+    "Only one primary contrast passes or signs conflict: no shared calibration-weight mechanism claim; report the recipe-specific result without selecting a new headline.",
+    "HR remains better at matched U weights: residual package difference remains, but this result alone does not identify clipping/centering as its cause.",
+    "No result triggers a new DP draw, new receiver, weight grid, or Expert/Reserved. Original2-3 gate and2-3R1 mixed result remain."
+  ],
+  "freeze_sequence": [
+    "Validate target schema/hashes and exact reproduction of existing HR_U and ACKD_B.",
+    "Construct all four labels; seal targets, labels, solver settings and hashes before any V evaluation.",
+    "Evaluate all new labels under the frozen two receivers, reuse the12 existing comparisons, and report all predeclared contrasts."
+  ]
+}

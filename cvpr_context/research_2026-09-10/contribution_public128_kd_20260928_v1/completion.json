@@ -1,0 +1,15 @@
+{
+  "status": "PUBLIC128_KD_COMPARISON_COMPLETE",
+  "utc": "2026-09-28T07:47:27.852176+00:00",
+  "contract_sha256": "2c0b1260eb671859e702f773b2951bf519ca09669427066cac8cbbdaa357039a",
+  "files": {
+    "contract.json": "2c0b1260eb671859e702f773b2951bf519ca09669427066cac8cbbdaa357039a",
+    "label_seal.json": "f573a2eed6431b4e5a7e3e4fb763229f4f4ed892a977ec9e61a02817a91f5739",
+    "results.json": "e28283715272f12bfe6510c28beb328227058f2b1f910c75f715dc6be0af88d3",
+    "evaluation_inputs.json": "3fa70514f6ffcc4755b287e32cd78e9861d47cff2eac89efd9127f26f1bbe519",
+    "predictions_private.npz": "7218a3c38d70c5d8bb01e95aeed7890c037050db5e38c0249e6d952ebb8f30db",
+    "paired_bootstrap.npz": "22da373602990718ae287636556f07e91b2df52be809f33a8cabeebeb353ac47",
+    "contrast_bootstrap.npz": "871ed01bb4ed4f2014c2edebfce3bdc968fbac0cd3f61cc4485e832bb8f28721",
+    "readout_weights.npz": "9e0f53f108907579f1421e1b9fd68e6aa22903b50c8a47568f0ddd7dc14c8fae"
+  }
+}

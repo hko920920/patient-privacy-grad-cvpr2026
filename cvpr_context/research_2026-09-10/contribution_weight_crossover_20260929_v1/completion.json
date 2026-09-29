@@ -1,0 +1,15 @@
+{
+  "status": "2-2R2_COMPLETE",
+  "utc": "2026-09-29T06:33:59.600773+00:00",
+  "contract_sha256": "b4eb72516a906802a56bf2e104c343523ea8e951821d8980a042138a352e9b42",
+  "files": {
+    "contract.json": "b4eb72516a906802a56bf2e104c343523ea8e951821d8980a042138a352e9b42",
+    "label_seal.json": "e1a8aa3f98a044f130d2ef7748d59b3fdf2426d9ded658f853e8fd233214d32e",
+    "results.json": "a1ddc497b69cd212c616197de24d31a32cc3528bd2027d40d8dbd41f308ce362",
+    "evaluation_inputs.json": "2ca345ccacd71f1e632ec775bbeefb2984c390d8e250db0efc622c5571978479",
+    "predictions_private.npz": "f6b8e8773ea73577c0a554270e42f26a864ef478ba92286812dd0931e3f45e8a",
+    "paired_bootstrap.npz": "765a51086ef51e0ddb45ecc9dfeca6ee2b1ad6b647445e8107a14a77f0f9d5f8",
+    "contrast_bootstrap.npz": "46ae1694651869802d1978ae7ff5ae17c1bf6a64cea0d54d1c1361f715e94b3c",
+    "new_readout_weights.npz": "78b162212b44652ae2b228f37e8b865d6a6e97a4a74f7a8a26a941c9b912bb7c"
+  }
+}

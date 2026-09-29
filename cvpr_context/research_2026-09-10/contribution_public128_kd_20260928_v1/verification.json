@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "inputs_unchanged": 17,
+  "implementation_unchanged": 19,
+  "historical_reports_unchanged": 4,
+  "new_label_packets": 4,
+  "reused_MT_labels_exact": 4,
+  "contrast_reconstruction_max_abs": 0.0,
+  "evaluation_after_label_seal": true,
+  "new_label_KKT_max_abs": 1.942890293094024e-16,
+  "new_ridge_primal_dual_max_abs": 2.498001805406602e-16,
+  "bootstrap_sklearn_max_abs": 1.1102230246251565e-16,
+  "reused_MT_prediction_max_abs": 0.0,
+  "reused_MT_metric_max_abs": 0.0,
+  "contract_to_finalization_minutes": 4.065850966666667,
+  "scope_size_MiB_before_report": 2.7923097610473633
+}

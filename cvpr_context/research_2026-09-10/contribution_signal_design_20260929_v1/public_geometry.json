@@ -1,0 +1,49 @@
+{
+  "scope": "PUBLIC_GEOMETRY_DESIGN_ONLY_NOT_EFFICACY",
+  "P_patients": 672,
+  "P_images": 813,
+  "P_patient_class_rows": 675,
+  "carrier_images": 128,
+  "DINO_feature_rank": 64,
+  "source_preserving_label_dimensions": 64,
+  "receiver_compatible_dimensions": 64,
+  "M_singular_max": 0.03817766438949167,
+  "M_singular_min": 0.004114590251592171,
+  "M_condition_number": 9.278606630324498,
+  "patient_equal_retained_norm_energy_fraction": 0.7270890834017388,
+  "public_norm_q95_full": 2.777564272856775,
+  "public_norm_q95_reduced": 2.472715329427528,
+  "public_q95_definition": "Unweighted empirical quantile over 675 patient/class rows, descriptive only.",
+  "same_C_preprojection_clipped_rows": 34,
+  "same_C_postprojection_clipped_rows": 1,
+  "patient_weighted_per_row_projection_bias_before": 0.004610257126046036,
+  "patient_weighted_per_row_projection_bias_after": 4.7846565333307425e-05,
+  "source_nullspace_max_abs": 6.182913367159876e-16,
+  "receiver_range_projection_max_abs": 2.0816681711721685e-17,
+  "retained_noise_covariance_identity_max_abs": 2.55351295663786e-15,
+  "per_patient_bias_inequality_checked": true,
+  "raw_Q_reads": 0,
+  "V_reads": 0,
+  "DP_release_reads": 0,
+  "new_DP_releases": 0,
+  "label_solves": 0,
+  "model_forwards": 0,
+  "receiver_evaluations": 0,
+  "Expert_Reserved_reads": 0,
+  "inputs": {
+    "selection": {
+      "path": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/public128_selection.npz",
+      "sha256": "7e49a9ba1ab1ea10ecb7ae6f8cd91792ccd458e14cb1da1534b31154370de3c4"
+    },
+    "DINO_P": {
+      "path": "code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+      "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+    },
+    "RN_P": {
+      "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+      "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+    }
+  },
+  "warning": "No clinical utility, general transfer, Q-tail behavior, or novelty is established.",
+  "seconds": 0.125
+}

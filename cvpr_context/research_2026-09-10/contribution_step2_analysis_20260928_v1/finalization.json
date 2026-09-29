@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETE_RECORDED",
+  "finished_utc": "2026-09-28T07:11:04.512460+00:00",
+  "started_local": "2026-09-28T16:01:22.0983498+09:00",
+  "wall_time_minutes_including_preparation_and_records": 9.706901850000001,
+  "numerical_analysis_seconds": 0.06200000015087426,
+  "input_files_unchanged": 19,
+  "completion_artifact_hashes_verified": true,
+  "historical_report_hash_unchanged": true,
+  "prior_metadata_text_preserved": true,
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "step3_started": false,
+  "report": {
+    "path": "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_STEP2_EXISTING_CONTROL_RESULTS_20260928.md",
+    "sha256": "adc3b34fe77ed9871efea5eaf7323089e5d90e03deb835a58f84f5e3da67512a"
+  },
+  "records": {
+    "project_source/AGENTS.md": "9c513c9d8423e7dd0e6d9e1850952f6bd8a55657db3f0afdbd8731a2d77f7478",
+    "project_source/CURRENT_STATUS.md": "d6585e6d690c3cc6109a8df0c1dd0b6b9d1d81bff8a9cda10c3e66addfdef20c",
+    "project_source/WORKLOG.md": "22ec0fea4482bb00a5d8223a9e939252747c0bd632f0bf235ea451586c4ad0ac",
+    "cvpr_context/research_2026-09-10/RESEARCH_FRAMEWORK.md": "d799c979ad6b6fa85b0a7283a369209be8cdb72eaf7fa08087a4bed29fbc557b",
+    "cvpr_context/research_2026-09-10/research_state.json": "bb1f30d19aa7c4798a1f1be2538ae473a8a9115d9e180f0669beb9f1e970d02b"
+  }
+}

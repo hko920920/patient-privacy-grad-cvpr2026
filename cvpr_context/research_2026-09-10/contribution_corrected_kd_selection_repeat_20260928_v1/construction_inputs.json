@@ -1,0 +1,77 @@
+{
+  "P_DINO": {
+    "path": "code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+    "kind": "public_P",
+    "phases": [
+      "select",
+      "construct"
+    ],
+    "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+  },
+  "P_RN": {
+    "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+    "kind": "public_P",
+    "phases": [
+      "select",
+      "construct",
+      "evaluate"
+    ],
+    "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+  },
+  "prior_label_seal": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/label_seal.json",
+    "sha256": "ff99750ea62578d8bc3dd783421158bc5c4399fa95c5522f422a406d0148ac08",
+    "kind": "prior_provenance",
+    "phases": [
+      "construct"
+    ]
+  },
+  "prior_target_weights": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/target_weights.npz",
+    "sha256": "5f1475e9b5782fcbec5c5adeda2d54b9b9e899e68cc545c8dde3ff909b3fdc83",
+    "kind": "public_and_existing_DP_postprocessing",
+    "phases": [
+      "construct"
+    ]
+  },
+  "HR_label_seal": {
+    "path": "cvpr_context/research_2026-09-10/contribution_head_reconstruction_20260928_v1/label_seal.json",
+    "sha256": "36efb7ce7c6eadc17d02aba0430d56d5b6bf34b72e8920d14bddb250fe5cd500",
+    "kind": "frozen_head_only_seal",
+    "phases": [
+      "construct"
+    ]
+  },
+  "HR_targets": {
+    "path": "cvpr_context/research_2026-09-10/contribution_head_reconstruction_20260928_v1/HR_target_weights.npz",
+    "sha256": "5344524b460f5ad639f220b58da6022e376e2bceaafe3e72d49ca5ea9b8827a1",
+    "kind": "frozen_head_only_targets",
+    "phases": [
+      "construct"
+    ]
+  },
+  "correction_label_seal": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/label_seal.json",
+    "sha256": "cbefcad4d9759d3ca637cedaa82e5ba1e94dcea2292f901d21ebb8ccf8bdd1a6",
+    "kind": "frozen_correction_seal",
+    "phases": [
+      "construct"
+    ]
+  },
+  "correction_targets": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/corrected_target_weights.npz",
+    "sha256": "23bc9e50b593105a1ff76847597288bfe1c0184d975068085061583dfc7c2d7b",
+    "kind": "frozen_correction_targets",
+    "phases": [
+      "construct"
+    ]
+  },
+  "old_selection": {
+    "path": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/public128_selection.npz",
+    "sha256": "7e49a9ba1ab1ea10ecb7ae6f8cd91792ccd458e14cb1da1534b31154370de3c4",
+    "kind": "frozen_Step3_public128_selection.npz",
+    "phases": [
+      "construct"
+    ]
+  }
+}

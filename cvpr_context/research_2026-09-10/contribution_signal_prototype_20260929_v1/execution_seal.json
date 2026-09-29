@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-09-29T10:17:00.021410+00:00",
+  "files": {
+    "contract.json": "4872667e175d9f4173ceca544e2876e4ea8e2054c0ce72100fe0055b58c54484",
+    "prototype.py": "1a4e4d85a51e9673f11c985d8c59dc2b63b582cf3a4db5f0eb6fb9e107009dc8",
+    "public_arrays.npz": "ec37f6168533e0ea8ac25e31f9813a8492d22fc8ca3e33699e00c72ef90d93fd",
+    "results.json": "8123db8d97f2c0ca615b0fc5c62e3777148d780203ee9236c966dd674d355bcf"
+  },
+  "phase": "PUBLIC_RESULT_SEALED_BEFORE_INDEPENDENT_VERIFICATION"
+}

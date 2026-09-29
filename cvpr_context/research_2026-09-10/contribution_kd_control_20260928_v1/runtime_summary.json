@@ -1,0 +1,13 @@
+{
+  "first_explicit_clock_observation_utc": "2026-09-28T06:32:27.436402+00:00",
+  "documentation_completed_utc": "2026-09-28T06:44:59.968743+00:00",
+  "observed_interval_minutes": 12.542205683333332,
+  "interval_limit": "Initial inspection before the first explicit clock observation is not included; do not call numerical-worker duration total task time.",
+  "contract_frozen_utc": "2026-09-28T06:38:50.366962+00:00",
+  "evaluation_complete_utc": "2026-09-28T06:40:11.348204+00:00",
+  "construction_seconds": 1.781999999890104,
+  "evaluation_seconds": 9.906999999890104,
+  "numeric_worker_seconds_sum": 11.688999999780208,
+  "output_MiB_before_final_receipt": 1.9482049942016602,
+  "startup_failure": "threadpoolctl Windows enumeration; preserved; fixed only environment, before data reads"
+}

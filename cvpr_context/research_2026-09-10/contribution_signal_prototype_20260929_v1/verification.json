@@ -1,0 +1,95 @@
+{
+  "item": "2-4B",
+  "status": "PASS",
+  "created_utc": "2026-09-29T10:19:45.827334+00:00",
+  "independent_formulations": [
+    "patient/class fsum aggregation",
+    "primal/dual ridge",
+    "KKT equality-constrained Label Solve",
+    "Gaussian privacy profile",
+    "covariance via per-class linear maps"
+  ],
+  "H_input_max_abs": 0.0,
+  "source_nullspace_max_abs": 6.182913367159876e-16,
+  "analytic_Gaussian_delta_at_sigma": 4.99999998873849e-06,
+  "requested_delta": 5e-06,
+  "all_patient_remove_cases": 4032,
+  "max_add_remove_l2": 0.8105882061092484,
+  "saturated_multi_class_neighbor_pass": true,
+  "invalid_inputs_rejected": 9,
+  "negative_count_floor_pass": true,
+  "same_cap_row_clipping_inequality_max_violation": 0.0,
+  "no_clip_coupled_target_max_abs": 5.329070518200751e-15,
+  "no_clip_noise_covariance_identity_max_abs": 2.55351295663786e-15,
+  "generic_workload_U_query_max_abs": 1.6653345369377348e-16,
+  "KKT_all_labels_max_abs": 8.355982572538778e-12,
+  "public_source_score_scale_max_abs": 2.5569824035898137e-15,
+  "public_source_substantive_rank_inversions": 0,
+  "max_numeric_rank_inversion": 0.0,
+  "checked_ridge_values": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "checked_label_configurations": 3072,
+  "per_configuration": {
+    "FULL__shared_full_q95": {
+      "query_independent_max_abs": 2.220446049250313e-16,
+      "add_remove_l2_max": 0.8078101097571654,
+      "KKT_label_max_abs": 8.355982572538778e-12,
+      "public_source_score_scale_max_abs": 2.411265631607762e-15,
+      "max_numerical_rank_inversion": -0.0,
+      "analytic_MSE": 4.652889292289987,
+      "simulated_MSE": 10.602043221587948
+    },
+    "FULL__own_q95": {
+      "query_independent_max_abs": 2.220446049250313e-16,
+      "add_remove_l2_max": 0.8078101097571654,
+      "KKT_label_max_abs": 8.355982572538778e-12,
+      "public_source_score_scale_max_abs": 2.411265631607762e-15,
+      "max_numerical_rank_inversion": -0.0,
+      "analytic_MSE": 4.652889292289987,
+      "simulated_MSE": 10.602043221587948
+    },
+    "COMPAT__shared_full_q95": {
+      "query_independent_max_abs": 1.6653345369377348e-16,
+      "add_remove_l2_max": 0.7204600965710725,
+      "KKT_label_max_abs": 7.190692485892214e-12,
+      "public_source_score_scale_max_abs": 2.447694824603275e-15,
+      "max_numerical_rank_inversion": -0.0,
+      "analytic_MSE": 4.652876771757033,
+      "simulated_MSE": 10.60282164712468
+    },
+    "COMPAT__own_q95": {
+      "query_independent_max_abs": 1.6653345369377348e-16,
+      "add_remove_l2_max": 0.7831415235230957,
+      "KKT_label_max_abs": 7.58859641791787e-12,
+      "public_source_score_scale_max_abs": 2.3869795029440866e-15,
+      "max_numerical_rank_inversion": -0.0,
+      "analytic_MSE": 4.080555518444526,
+      "simulated_MSE": 9.308380742456404
+    },
+    "PCA__shared_full_q95": {
+      "query_independent_max_abs": 2.7755575615628914e-16,
+      "add_remove_l2_max": 0.7553048847955318,
+      "KKT_label_max_abs": 3.396394276933279e-12,
+      "public_source_score_scale_max_abs": 2.5569824035898137e-15,
+      "max_numerical_rank_inversion": -0.0,
+      "analytic_MSE": 3.1349396933146108,
+      "simulated_MSE": 7.046581888228663
+    },
+    "PCA__own_q95": {
+      "query_independent_max_abs": 2.7755575615628914e-16,
+      "add_remove_l2_max": 0.8105882061092484,
+      "KKT_label_max_abs": 3.8475889141409425e-12,
+      "public_source_score_scale_max_abs": 2.4702462297909733e-15,
+      "max_numerical_rank_inversion": -0.0,
+      "analytic_MSE": 2.6616700957704653,
+      "simulated_MSE": 5.992347329955473
+    }
+  },
+  "input_and_historical_evidence_unchanged": true,
+  "Q_V_DP_release_Expert_Reserved_accesses": 0,
+  "limitations": "Public P only; no Q efficacy, no private output, no general novelty. Public rank checks are algebra validation, not clinical AUROC/AP evaluation.",
+  "seconds": 1.0590729999821633
+}

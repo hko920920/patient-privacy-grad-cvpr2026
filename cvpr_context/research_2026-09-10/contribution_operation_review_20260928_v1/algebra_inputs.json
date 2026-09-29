@@ -1,0 +1,34 @@
+{
+  "contract_sha256": "65e07bb84ec6f45cfcdf5cdd65104514a96a27ebd3e0c6afb1056b2113d7db0f",
+  "script_sha256": "7462e2061d527bf71fe84d491dc76a59926b131c2a35bbef43333ea877a20b1a",
+  "inputs": {
+    "P_DINO": {
+      "path": "project_source/code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+      "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+    },
+    "P_RN": {
+      "path": "project_source/code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+      "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+    },
+    "P_target": {
+      "path": "project_source/code_working/_reports/receiver_feature_followup_20260924_v1/public_target/target.npz",
+      "sha256": "e50ac1fad0e16dd746e82a7a9808135b709a469a8dc0b0aada9258872ad40f7e"
+    },
+    "DP1": {
+      "path": "project_source/code_working/_reports/receiver_feature_dp8_20260924_v1/one_release/protected_target/target.npz",
+      "sha256": "9250eb88952a9a60ecdec6cf2e6c817619fd745d947052b55d6dd74d0d68772b"
+    },
+    "DP2": {
+      "path": "project_source/code_working/_reports/receiver_feature_followup_20260924_v1/one_release/protected_target/target.npz",
+      "sha256": "f8eba56e756ffe653fc39a92f852111ea2dc75c8b496c18dd36761a71ca822cb"
+    },
+    "old_targets": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/target_weights.npz",
+      "sha256": "5f1475e9b5782fcbec5c5adeda2d54b9b9e899e68cc545c8dde3ff909b3fdc83"
+    },
+    "old_maps": {
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/transport_public_maps_and_dp_weights.npz",
+      "sha256": "a26b3deaa8084afafad3880bb98996b3b06f3d6d05fd1dbcd68ada2947a33266"
+    }
+  }
+}

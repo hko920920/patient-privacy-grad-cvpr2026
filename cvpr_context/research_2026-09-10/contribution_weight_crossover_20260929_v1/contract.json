@@ -1,0 +1,366 @@
+{
+  "code_root": "project_source/code_working",
+  "historical_code_dir": "cvpr_context/research_2026-09-10/contribution_search_20260924",
+  "step3_dir": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1",
+  "criteria": {
+    "both_AUROC_positive": true,
+    "mean_AUROC_min": 0.01,
+    "mean_AP_min": 0,
+    "mean_AUROC_CI_lower_positive": true
+  },
+  "solver": {
+    "method": "bvls",
+    "tol": 1e-12,
+    "max_iter": 500,
+    "KKT_max": 1e-07
+  },
+  "item": "2-2R2",
+  "schema": "public-correspondence-weight-crossover/v1",
+  "whole_project_stage": 2,
+  "started_utc": "2026-09-29T06:27:27+00:00",
+  "deadline_utc": "2026-09-29T07:12:27+00:00",
+  "time_basis": "First tool timestamp after user-facing estimate, including adapter preparation",
+  "estimated_minutes": [
+    20,
+    30
+  ],
+  "authorization": "User explicitly said proceed after design2-1R2; ETA20-30min announced before tools.",
+  "inputs": {
+    "P_DINO": {
+      "path": "code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+      "kind": "public_P",
+      "phases": [
+        "construct"
+      ],
+      "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+    },
+    "P_RN": {
+      "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+      "kind": "public_P",
+      "phases": [
+        "construct",
+        "evaluate"
+      ],
+      "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+    },
+    "P_DN": {
+      "path": "code_working/_reports/prrd_pilot_abcd101_20260921_v1/public/recipient_P_dual_features.npz",
+      "sha256": "7b093a2112a711e942acc49519d400e14b9a43923739efd68cd838f65629466f",
+      "kind": "public_P_evaluation_features",
+      "phases": [
+        "evaluate"
+      ]
+    },
+    "prior_target_weights": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/target_weights.npz",
+      "sha256": "5f1475e9b5782fcbec5c5adeda2d54b9b9e899e68cc545c8dde3ff909b3fdc83",
+      "kind": "public_and_existing_DP_postprocessing",
+      "phases": [
+        "construct"
+      ]
+    },
+    "prior_label_seal": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/label_seal.json",
+      "sha256": "ff99750ea62578d8bc3dd783421158bc5c4399fa95c5522f422a406d0148ac08",
+      "kind": "prior_provenance",
+      "phases": [
+        "construct"
+      ]
+    },
+    "patient_bootstrap": {
+      "path": "code_working/_reports/downstream_development_20260917_v1/cluster_bootstrap.npz",
+      "kind": "V_patient_resampling",
+      "phases": [
+        "evaluate"
+      ],
+      "sha256": "00ac9762c5903b2a448de2af60c05a6350c0d7f80e8a07ce0e936514bb34c377"
+    },
+    "V_DenseNet": {
+      "path": "code_working/_reports/prrd_pilot_abcd101_20260921_v1/evaluation/recipient_V_features.npz",
+      "kind": "V_cached_features",
+      "phases": [
+        "evaluate"
+      ],
+      "sha256": "da34ed522d6b81ca3f4fe4955476f879a3bbe7feab1a35a0a230ee01d98dbdf0"
+    },
+    "V_ResNet18": {
+      "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/V_features.npz",
+      "kind": "V_cached_features",
+      "phases": [
+        "evaluate"
+      ],
+      "sha256": "f4137af1db1096384f50ed974f7deef4239c6705066d69538f228703f2d3b4ae"
+    },
+    "old_selection": {
+      "path": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/public128_selection.npz",
+      "sha256": "7e49a9ba1ab1ea10ecb7ae6f8cd91792ccd458e14cb1da1534b31154370de3c4",
+      "kind": "frozen_Step3_public128_selection.npz",
+      "phases": [
+        "construct",
+        "evaluate"
+      ]
+    },
+    "old_manifest": {
+      "path": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/public128_manifest.json",
+      "sha256": "a413c49e1f5f6bdaefc4bd5e98426d15646c88f69cbb249be4ab2d4ea489b00d",
+      "kind": "frozen_Step3_public128_manifest.json",
+      "phases": [
+        "construct"
+      ]
+    },
+    "public_target": {
+      "path": "code_working/_reports/receiver_feature_followup_20260924_v1/public_target/target.npz",
+      "sha256": "e50ac1fad0e16dd746e82a7a9808135b709a469a8dc0b0aada9258872ad40f7e",
+      "kind": "public_P_only_target",
+      "phases": [
+        "construct"
+      ]
+    },
+    "comparison_results": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/results.json",
+      "sha256": "424c4f74d705961b9c63efb669f22eeb10eae525ba48ba635909f693839c2f81",
+      "kind": "prior_frozen_evaluation",
+      "phases": [
+        "evaluate"
+      ]
+    },
+    "comparison_predictions": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/predictions_private.npz",
+      "sha256": "bd76b49f6f8f95809b206a8f847d9acd4194b153e6777a5feea7b3af23fee88e",
+      "kind": "prior_frozen_evaluation",
+      "phases": [
+        "evaluate"
+      ]
+    },
+    "comparison_bootstrap": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/paired_bootstrap.npz",
+      "sha256": "096c87ac06455d227acf20de157f5b5997d8f228fea4e8683d348d5cefb2b28d",
+      "kind": "prior_frozen_evaluation",
+      "phases": [
+        "evaluate"
+      ]
+    },
+    "comparison_completion": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/completion.json",
+      "sha256": "187c77b4266526529beba884e86d5c8452a23234c153fe00332755a0a04f977c",
+      "kind": "prior_seal",
+      "phases": [
+        "evaluate"
+      ]
+    },
+    "bridge_targets": {
+      "path": "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/weight_bridge_targets_NOT_LABELS.npz",
+      "sha256": "410bd817ff49117e6d077ad863fd188ec183a432ed36328cee45987af342d018",
+      "kind": "public_existing_DP_head_postprocessing",
+      "phases": [
+        "construct"
+      ]
+    },
+    "design_completion": {
+      "path": "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/completion.json",
+      "sha256": "5ea34b8b5b979f20a9a219d81b4eaf05f27cb9bfa1fcc9d13377021619d8812f",
+      "kind": "prior_design_seal",
+      "phases": [
+        "construct"
+      ]
+    },
+    "old_public_operators": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/public_operators.npz",
+      "sha256": "818a092af391fd4791db09dc49625b7ad654bb528b1bbb4231e312060cf5b7dc",
+      "kind": "public",
+      "phases": [
+        "construct"
+      ]
+    },
+    "old_HR_targets": {
+      "path": "cvpr_context/research_2026-09-10/contribution_head_reconstruction_20260928_v1/HR_target_weights.npz",
+      "sha256": "5344524b460f5ad639f220b58da6022e376e2bceaafe3e72d49ca5ea9b8827a1",
+      "kind": "frozen_existing_DP_postprocessing",
+      "phases": [
+        "construct"
+      ]
+    },
+    "old_ACKD_targets": {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/corrected_target_weights.npz",
+      "sha256": "23bc9e50b593105a1ff76847597288bfe1c0184d975068085061583dfc7c2d7b",
+      "kind": "frozen_existing_DP_postprocessing",
+      "phases": [
+        "construct"
+      ]
+    }
+  },
+  "implementation": {
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/carrier_common.py": "5a371bcffc525f4ecf700269814291c1a28ec2897372f7cde2d53c03c8865768",
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/construct_labels.py": "d7fe9be4c56db5a49e6929d838268164179d39bcb1253773c44db16ae9a6c90f",
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/evaluate_carriers.py": "0af733e2a9479754c8e0da22713fcf82b6305ba68cde29f15d39a7a02d4beadf",
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/initialize_contract.py": "6ec50117b6e04a0864d4f356c57c4a21a2cc7e6a634a79f4144a70ebf070ed88",
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/select_public128.py": "9f286510ce3f70bb98af0dc9e923bf9ed058193cec90afb789f9537cb892b8b0",
+    "cvpr_context/research_2026-09-10/contribution_search_20260924/fixed_image_compilation.py": "0d208461dce6a749ef580f72f5f637de126b20e9c2d0e19998fae4f23a6bbc6d",
+    "cvpr_context/research_2026-09-10/contribution_search_20260924/geometry_diagnostic.py": "e9fc0a6ebfa025b75a67f3697010ad2b075a14e74b77e6b75b28146de626b370",
+    "code_working/prrd_pilot_20260921/common.py": "397a7b7596b8d2614460be5a76f8ed0ce91389439a201bf9d568aeba42b5fcce",
+    "code_working/prrd_v3/contracts.py": "d9a52ad5f594412f884579308f3de087585fa51bf16541c904198b5cb5325247",
+    "code_working/prrd_v3/encoders.py": "d4f432be4e7bbbe7cdb11928c88f2b4190c4692b19d353e7b0bcec0ea4310c4a",
+    "code_working/prrd_v3/resampling.py": "11c83201079b52363a3bd27556fb4fc7cb90418c84ff8d64a598e370320221cd",
+    "code_working/receiver_distillation/second_source.py": "f30601ef3d7e06cef74de69242150fe18684d86c0f70d9fd23f107af34edaebe",
+    "code_working/receiver_distillation/signals.py": "8ec86f05df7c678a92753c30a7453f4cf65780cba46671ca7c3bb6eadf4248d2",
+    "code_working/receiver_distillation/prepare_second.py": "da920691c36bb26e68e804053239d460c37da96c8505c32efa1cbe8859a9f5db",
+    "code_working/receiver_resnet_eval_20260924/run.py": "1bec824e772108508c8e52e83bc6404a5963b3db51a95f0472db9b90694e5768",
+    "code_working/prrd_pilot_20260921/declare.py": "6ff8cf2af52c4e23a89c322bbbcd3a2806eded8d8e458e88f3f4bfd47e28b726",
+    "code_working/receiver_distillation/evaluate_feature_followup.py": "70b756edadbb462e58e4c84dc20dc069fc032d25e9b51b91d509890b44356173",
+    "cvpr_context/research_2026-09-10/contribution_public128_kd_20260928_v1/initialize.py": "b07928dd1be7bfb52c1a270b329d0f5a6761a2991abac427efb183e2aa399b99",
+    "cvpr_context/research_2026-09-10/contribution_public128_kd_20260928_v1/run_comparison.py": "15d67439ddb881d302bfb00ef98d6bec6d9c46f329d51120eb465e16c22c7a11",
+    "cvpr_context/research_2026-09-10/contribution_public128_source_20260928_v1/initialize.py": "6f5927bfb2519a38393a89d500cda10f09ccea7b26d1acaf605acf288e79bc2e",
+    "cvpr_context/research_2026-09-10/contribution_public128_source_20260928_v1/run_source_control.py": "3f0376c9fe793a6ad8554aa094792683710c72987dfc01ec867ab62b20d75fb3",
+    "cvpr_context/research_2026-09-10/contribution_head_reconstruction_20260928_v1/initialize.py": "4e9e654540b05342e832c81ed096235c76bb6054e15099adc27c462db7c2d651",
+    "cvpr_context/research_2026-09-10/contribution_head_reconstruction_20260928_v1/run_control.py": "4cd9ab1b3f5d270898b43ce966f380b8751889dcc2eff157688af99db5844aeb",
+    "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/initialize.py": "04005e9dc2312ec634559bcf3a04fd75aacc024e4b70f73b3b2c6b72eb89955a",
+    "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/run_control.py": "d9ebff3a4c96df82444642f1535e11e92983ce2515b80bd1666f32493dd73d79",
+    "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/analyze_public_maps.py": "36fdafc75c906fbd52d5893751b82b6c392ded57fe629ed100d374e53362f34f",
+    "cvpr_context/research_2026-09-10/contribution_weight_crossover_20260929_v1/initialize.py": "f29501f1d8c08dc254fb3e221a60f14101fbf95f9d54850c3134fc27cd7e8096",
+    "cvpr_context/research_2026-09-10/contribution_weight_crossover_20260929_v1/run_crossover.py": "66100ac055b5bf130808a6bc26b9c458ad4f4a3676f5bb05bd970a55577e92af"
+  },
+  "design_dir": "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1",
+  "design": {
+    "item": "2-2R2",
+    "status": "designed_not_executed",
+    "parent_item": "2-2",
+    "question": "Does using task-class-balanced weights for public cross-encoder correspondence explain part of the HR versus strengthened-KD gap?",
+    "primary_hypothesis": "In the current sparse-positive public cohort, separating patient-equal correspondence calibration from class-balanced task readouts improves downstream transfer. This predicts positive U-minus-B effects within BOTH HR and ACKD, not merely superiority of the existing HR package.",
+    "selection_basis": "Selected from2-1R2 public-only operation diagnostics before any new labels or V efficacy. This remains adaptive development.",
+    "next_estimated_minutes": [
+      20,
+      30
+    ],
+    "max_elapsed_minutes": 45,
+    "carrier": "Frozen first public128 from contribution_public128_control_20260928_v1/public128_selection.npz; no reselection.",
+    "releases": [
+      "existing DP1 source head",
+      "existing DP2 source head"
+    ],
+    "matrix": [
+      {
+        "recipe": "HR",
+        "map_weights": "U_patient_equal",
+        "status": "reuse_existing",
+        "new_labels": 0
+      },
+      {
+        "recipe": "HR",
+        "map_weights": "B_class_balanced",
+        "status": "new",
+        "new_labels": 2
+      },
+      {
+        "recipe": "ACKD",
+        "map_weights": "B_class_balanced",
+        "status": "reuse_existing",
+        "new_labels": 0
+      },
+      {
+        "recipe": "ACKD",
+        "map_weights": "U_patient_equal",
+        "status": "new",
+        "new_labels": 2
+      }
+    ],
+    "new_labels": 4,
+    "new_readouts": 8,
+    "reused_required_readouts": 12,
+    "receivers": {
+      "primary": "DenseNet development",
+      "reference": "ResNet18 construction model"
+    },
+    "new_private_queries": 0,
+    "new_private_releases": 0,
+    "forbidden": [
+      "Q",
+      "new noise",
+      "pixel optimization",
+      "encoder forwards",
+      "new carrier",
+      "Expert",
+      "Reserved",
+      "coefficient search"
+    ],
+    "fixed": {
+      "task_weights": "Existing image weights Omega: 0.5 per class, equal patients within class and visits within patient/class.",
+      "HR_public_source_midpoint": "Same public clipped class means.",
+      "HR_map_lambda": [
+        3.0107448502066288e-05,
+        2.836862823850081e-05
+      ],
+      "ACKD_map_lambda": 3.0478093248587158e-05,
+      "ACKD_actual_public_receiver_anchor": "Existing wRP; unchanged",
+      "source_and_receiver_task_hessians": "Existing H_D(Omega), H_R(Omega), ridge0.1",
+      "solver": "Same public128 RN-only zero-anchor BVLS, bounds[-1,1], eta=.001*||A||F^2/128, RMS normalization, tol1e-12,maxiter500,KKT<=1e-7",
+      "bootstraps": 2000,
+      "metric": "Image AUROC primary, AP secondary, paired patient-cluster bootstrap"
+    },
+    "treatment_detail": "U vs B changes ONLY correspondence fitting weights. HR fitted centering/intercepts and implied mapped public anchor are re-estimated as consequences of that weight change. Do not claim slope-only or pure class-imbalance information removal. ACKD geometry uses U or B while its task Hessians and actual public anchor remain fixed.",
+    "contrasts": [
+      "PRIMARY: HR_U minus HR_B",
+      "PRIMARY: ACKD_U minus ACKD_B",
+      "RESIDUAL: HR_U minus ACKD_U",
+      "SECONDARY: HR_B minus ACKD_B",
+      "SECONDARY INTERACTION: (HR_U-HR_B)-(ACKD_U-ACKD_B)",
+      "REFERENCE: each new variant minus fixed DINO-only"
+    ],
+    "analysis": "Within every bootstrap replicate, calculate each release metric difference, then average the two differences. Do not average predictions, pool releases as independent patients, or pair independent noise draws across mechanisms.",
+    "strong_support_gate": {
+      "for_each_of_two_primary_contrasts": {
+        "both_release_AUROC_point_differences_positive": true,
+        "mean_AUROC_gain_at_least": 0.01,
+        "mean_AUROC_95_lower_positive": true,
+        "mean_AP_nonnegative": true,
+        "no_single_release_AP_CI_wholly_negative": true
+      },
+      "requires_both_primary_contrasts": true,
+      "interpretation": "Existing engineering hurdle, not a clinical threshold. Failure is insufficient evidence, not equality/disproof of every weighting effect."
+    },
+    "decision_rules": [
+      "Both primary contrasts pass: support the scoped calibration-weight mechanism; this does not establish new general weighting theory or a CVPR contribution.",
+      "ACKD_U closes the statistically supported HR advantage: accept the stronger standard baseline; do not call an overlapping interval equivalence.",
+      "Only one primary contrast passes or signs conflict: no shared calibration-weight mechanism claim; report the recipe-specific result without selecting a new headline.",
+      "HR remains better at matched U weights: residual package difference remains, but this result alone does not identify clipping/centering as its cause.",
+      "No result triggers a new DP draw, new receiver, weight grid, or Expert/Reserved. Original2-3 gate and2-3R1 mixed result remain."
+    ],
+    "freeze_sequence": [
+      "Validate target schema/hashes and exact reproduction of existing HR_U and ACKD_B.",
+      "Construct all four labels; seal targets, labels, solver settings and hashes before any V evaluation.",
+      "Evaluate all new labels under the frozen two receivers, reuse the12 existing comparisons, and report all predeclared contrasts."
+    ]
+  },
+  "design_json_sha256": "885dc3cf3ea08f442f21c54b667ef75c15ac3f95fea70cddad7ba999ffb4c94d",
+  "design_report": "PUBLIC_TRANSFER_2_1R2_WEIGHT_SEPARATION_DESIGN_20260929.md",
+  "design_report_sha256": "55a5fe3d38434fdc4f6a5d4c15b79570d096e8f089cce2229b25cc4f78da4e20",
+  "human_contract_sha256": "d2d5a642907198e987d21a273cea73fcf8c20da6259a84dab6e7db87e8c21210",
+  "new_labels": 4,
+  "new_readouts": 8,
+  "reused_readouts": 12,
+  "label_models": [
+    "ResNet18"
+  ],
+  "ridge": 0.1,
+  "bounds": [
+    -1,
+    1
+  ],
+  "anchor": "zero",
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "new_encoder_forwards": 0,
+  "new_pixel_training": 0,
+  "Expert_Reserved": false,
+  "historical_result_hashes": {
+    "cvpr_context/research_2026-09-10/CONTRIBUTION_SEARCH_RESULTS_20260924.md": "6eaa5b97ab0ee72e5bba6a1532958ca0fe6f0d2ff6a2f1b3bac0a06bd97ad3ac",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_KD_CONTROL_RESULTS_20260928.md": "a2a49a38abc0cf02c75257f397c2cb652f79f915c62761f3eca426755da87e75",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_STEP2_EXISTING_CONTROL_RESULTS_20260928.md": "adc3b34fe77ed9871efea5eaf7323089e5d90e03deb835a58f84f5e3da67512a",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_PUBLIC128_CONTROL_RESULTS_20260928.md": "e309fd8d396feff7df1793a3104598372bc0e4dd29dcbbce42c2f9de21324a3a",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_PUBLIC128_KD_RESULTS_20260928.md": "22d328222917eaf5f6323379bd46410c46810018728d342a5d77954178393687",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_1_5_SOURCE_CONTROL_RESULTS_20260928.md": "66ee4c71765af6248efe5719d71ce12c008d53863137e1def0210136f9321f53",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_2_1_OPERATION_COMPARISON_20260928.md": "7fd61188016d70c12ce50df50810b8ed67890f8a66ce6244bb470985ba39e15b",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_2_2_HEAD_RECONSTRUCTION_RESULTS_20260928.md": "9c34842d9d95180315fc829c5987018f05c4c401e9a08b0ca8a801d6108a202d",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_2_2R1_KD_CORRECTIONS_RESULTS_20260928.md": "f06193df90be9172777d6fd9cef9a3744e0675f6405035f258832a86c947f353",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_2_3R1_SELECTION_REPEAT_RESULTS_20260928.md": "8db5aacee1331167855ae66313f8df9f515fe4ed4b375e6aeec6a6d1f900bbb7"
+  }
+}

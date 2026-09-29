@@ -1,0 +1,111 @@
+{
+  "P_DINO": {
+    "path": "code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+    "kind": "public_P",
+    "phases": [
+      "select",
+      "construct"
+    ],
+    "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+  },
+  "P_RN": {
+    "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+    "kind": "public_P",
+    "phases": [
+      "select",
+      "construct",
+      "evaluate"
+    ],
+    "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+  },
+  "prior_target_weights": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/target_weights.npz",
+    "sha256": "5f1475e9b5782fcbec5c5adeda2d54b9b9e899e68cc545c8dde3ff909b3fdc83",
+    "kind": "public_and_existing_DP_postprocessing",
+    "phases": [
+      "construct"
+    ]
+  },
+  "prior_label_seal": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/label_seal.json",
+    "sha256": "ff99750ea62578d8bc3dd783421158bc5c4399fa95c5522f422a406d0148ac08",
+    "kind": "prior_provenance",
+    "phases": [
+      "construct"
+    ]
+  },
+  "synthetic_DINO": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/existing_png_dino_K4_features.npz",
+    "kind": "existing_DP_PNG_features",
+    "phases": [
+      "construct"
+    ],
+    "sha256": "3708fb678fd6602478110d90806954a9cdfafa67a1a8cd45169e0b8d81635c81"
+  },
+  "DP1_target": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/one_release/protected_target/target.npz",
+    "kind": "existing_protected_summary",
+    "phases": [
+      "construct"
+    ],
+    "sha256": "9250eb88952a9a60ecdec6cf2e6c817619fd745d947052b55d6dd74d0d68772b"
+  },
+  "DP1_synthetic_RN": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/evaluation/ResNet18_PNG_features.npz",
+    "kind": "existing_DP_PNG_features",
+    "phases": [
+      "construct",
+      "evaluate"
+    ],
+    "sha256": "130bc355c498c5fd4826f9de127036ac5f40f57738818194417d0d9578c958f9"
+  },
+  "DP1_PNG_csv": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/protected_png/images.csv",
+    "kind": "existing_PNG_index",
+    "phases": [
+      "construct"
+    ],
+    "sha256": "94c0582819eb9ea502be7287c2f2a0532efd5e40c8af87c3442ffd732f18a56d"
+  },
+  "DP1_PNG_manifest": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/protected_png/release_manifest.json",
+    "kind": "existing_PNG_manifest",
+    "phases": [
+      "construct"
+    ],
+    "sha256": "5b1e2794c30aa7539757345e285df258d55789fd2a14df48fa23606e583a78dd"
+  },
+  "DP2_target": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/one_release/protected_target/target.npz",
+    "kind": "existing_protected_summary",
+    "phases": [
+      "construct"
+    ],
+    "sha256": "f8eba56e756ffe653fc39a92f852111ea2dc75c8b496c18dd36761a71ca822cb"
+  },
+  "DP2_synthetic_RN": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/evaluation/ResNet18_FEATURE_DP2_PNG_features.npz",
+    "kind": "existing_DP_PNG_features",
+    "phases": [
+      "construct",
+      "evaluate"
+    ],
+    "sha256": "892e981233193c5d4bc467670b1b086792714270a9b83a05c8858d87db373117"
+  },
+  "DP2_PNG_csv": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/protected_png/images.csv",
+    "kind": "existing_PNG_index",
+    "phases": [
+      "construct"
+    ],
+    "sha256": "3ad70607eb35451e807c5fcae562e938ff4ee2a0d8818e6b3c79ecf0c0b2ba63"
+  },
+  "DP2_PNG_manifest": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/protected_png/release_manifest.json",
+    "kind": "existing_PNG_manifest",
+    "phases": [
+      "construct"
+    ],
+    "sha256": "f5d74e40f026edbb1a21fbbbed82265feb8e910f8edc2c6afca771cedebfb881"
+  }
+}

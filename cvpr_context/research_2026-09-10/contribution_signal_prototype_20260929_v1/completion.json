@@ -1,0 +1,49 @@
+{
+  "item": "2-4B",
+  "status": "PUBLIC_PROTOTYPE_VERIFIED_PRACTICAL_SUPPORT_NOT_ESTABLISHED",
+  "report": "PUBLIC_TRANSFER_2_4B_PUBLIC_PROTOTYPE_RESULTS_20260929.md",
+  "report_sha256": "db4a00650da9db86c50757447f10ec7751d5365bd85b40bbb2addada1c2359a9",
+  "start_utc": "2026-09-29T10:06:57+00:00",
+  "completed_utc": "2026-09-29T10:27:27.469127+00:00",
+  "elapsed_minutes": 20.507818783333335,
+  "eta_minutes": [
+    60,
+    90
+  ],
+  "compute_seconds": 0.5316309998743236,
+  "verify_seconds": 1.0590729999821633,
+  "implementation_verified": true,
+  "practical_primary_support_within_P": false,
+  "Q_utility_tested": false,
+  "novelty_established": false,
+  "private_releases": 0,
+  "V_evaluations": 0,
+  "Expert_Reserved_access": false,
+  "actual_latest_clinical_result": "2-2R2",
+  "next_item": null,
+  "next_status": "NO_AUTOMATIC_PRIVATE_OR_TUNING_EXECUTION",
+  "preserved_evidence": {
+    "PUBLIC_TRANSFER_2_1_OPERATION_COMPARISON_20260928.md": "7fd61188016d70c12ce50df50810b8ed67890f8a66ce6244bb470985ba39e15b",
+    "PUBLIC_TRANSFER_2_2_HEAD_RECONSTRUCTION_RESULTS_20260928.md": "9c34842d9d95180315fc829c5987018f05c4c401e9a08b0ca8a801d6108a202d",
+    "PUBLIC_TRANSFER_2_1R1_ANCHOR_GEOMETRY_DESIGN_20260928.md": "640b112668fa12d43c1dfbe806ba66ae079fe28906eddb0ea5e520500a17125d",
+    "PUBLIC_TRANSFER_2_2R1_KD_CORRECTIONS_RESULTS_20260928.md": "f06193df90be9172777d6fd9cef9a3744e0675f6405035f258832a86c947f353",
+    "PUBLIC_TRANSFER_2_3R1_SELECTION_REPEAT_RESULTS_20260928.md": "8db5aacee1331167855ae66313f8df9f515fe4ed4b375e6aeec6a6d1f900bbb7",
+    "PUBLIC_TRANSFER_2_1R2_WEIGHT_SEPARATION_DESIGN_20260929.md": "55a5fe3d38434fdc4f6a5d4c15b79570d096e8f089cce2229b25cc4f78da4e20",
+    "PUBLIC_TRANSFER_2_2R2_WEIGHT_CROSSOVER_RESULTS_20260929.md": "f290d5256a146f4cbbc07f9dd6a64c33ca9b2a0044563b447267341c30a83805",
+    "PUBLIC_TRANSFER_2_4A_SIGNAL_DESIGN_20260929.md": "8af0452b9ae797334b19fe52e9cad33d3d2dba381f8b2bc4afb922bf2ba0df4d"
+  },
+  "files": {
+    "contract.json": "4872667e175d9f4173ceca544e2876e4ea8e2054c0ce72100fe0055b58c54484",
+    "contract_seal.json": "332bce927b7ca59b42aeb586e30387567facc3343e2e56c53666a317c9c6a23c",
+    "prototype.py": "1a4e4d85a51e9673f11c985d8c59dc2b63b582cf3a4db5f0eb6fb9e107009dc8",
+    "verify_independent.py": "c8abd0338160a640141a1e3b1041a570a8afc27dc834dd7330dc10f4f026236a",
+    "results.json": "8123db8d97f2c0ca615b0fc5c62e3777148d780203ee9236c966dd674d355bcf",
+    "verification.json": "696e5ace6197d218e87e1861c8f4bbebc612287971a0a6aa8d0bdf92b75cf7d6",
+    "comparison.csv": "046e1c6d6dfc307aa1dc8cca41aa33dbace8784714c279d68b71f1c6c6ef4ad2",
+    "public_arrays.npz": "ec37f6168533e0ea8ac25e31f9813a8492d22fc8ca3e33699e00c72ef90d93fd",
+    "execution_seal.json": "c20ff0303fbb207fd617383afac09507364d8d86edb0c7ff73d465999a40e657",
+    "freeze_contract.py": "2b74a856153e45c9da33efc28c5b9f208699e5e1cd91e92b9cc602e2ba216c78",
+    "finalize_report.py": "5bf43ae9f4a024de9d45b7c90a33beb44e93e052e90fc776f012e99516961c0a"
+  },
+  "artifact_bytes": 14107286
+}

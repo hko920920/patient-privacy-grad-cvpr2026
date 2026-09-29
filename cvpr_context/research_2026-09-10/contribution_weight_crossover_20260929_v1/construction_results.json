@@ -1,0 +1,113 @@
+{
+  "item": "2-2R2",
+  "status": "LABELS_READY",
+  "fits": {
+    "DP1_HR_B_RN_ONLY": {
+      "models": [
+        "ResNet18"
+      ],
+      "target_RMS": {
+        "ResNet18": 0.12911353344059023
+      },
+      "eta": 3.0708595298848476e-06,
+      "anchor": "zero",
+      "initial_objective_zero_label": 0.9999999999999998,
+      "final_objective": 0.00124623959401469,
+      "relative_target_RMSE": {
+        "ResNet18": 0.031938328754419154
+      },
+      "iterations": 23,
+      "solver_status": 1,
+      "solver_optimality": 2.1920789158467666e-17,
+      "solver_method": "bvls",
+      "box_roundoff_canonicalization_max_abs": 0.0,
+      "independent_projected_gradient_max_abs": 1.3877787807814457e-17,
+      "ridge_primal_dual_max_abs": 3.8163916471489756e-17,
+      "labels_at_bound": 52,
+      "labels_positive": 75
+    },
+    "DP1_ACKD_U_RN_ONLY": {
+      "models": [
+        "ResNet18"
+      ],
+      "target_RMS": {
+        "ResNet18": 0.2246051538726543
+      },
+      "eta": 1.0147616574541203e-06,
+      "anchor": "zero",
+      "initial_objective_zero_label": 0.9999999999999997,
+      "final_objective": 0.0427628529204317,
+      "relative_target_RMSE": {
+        "ResNet18": 0.20650040021229374
+      },
+      "iterations": 51,
+      "solver_status": 1,
+      "solver_optimality": 2.2667660459709145e-18,
+      "solver_method": "bvls",
+      "box_roundoff_canonicalization_max_abs": 4.440892098500626e-16,
+      "independent_projected_gradient_max_abs": 1.1102230246251565e-16,
+      "ridge_primal_dual_max_abs": 3.8163916471489756e-17,
+      "labels_at_bound": 114,
+      "labels_positive": 64
+    },
+    "DP2_HR_B_RN_ONLY": {
+      "models": [
+        "ResNet18"
+      ],
+      "target_RMS": {
+        "ResNet18": 0.0759602512350184
+      },
+      "eta": 8.872187251699315e-06,
+      "anchor": "zero",
+      "initial_objective_zero_label": 0.9999999999999997,
+      "final_objective": 0.0025499744456339633,
+      "relative_target_RMSE": {
+        "ResNet18": 0.044817513948013955
+      },
+      "iterations": 28,
+      "solver_status": 1,
+      "solver_optimality": 3.665535079242985e-17,
+      "solver_method": "bvls",
+      "box_roundoff_canonicalization_max_abs": 0.0,
+      "independent_projected_gradient_max_abs": 5.551115123125783e-17,
+      "ridge_primal_dual_max_abs": 3.8163916471489756e-17,
+      "labels_at_bound": 35,
+      "labels_positive": 77
+    },
+    "DP2_ACKD_U_RN_ONLY": {
+      "models": [
+        "ResNet18"
+      ],
+      "target_RMS": {
+        "ResNet18": 0.20241407249007487
+      },
+      "eta": 1.2494591982909087e-06,
+      "anchor": "zero",
+      "initial_objective_zero_label": 0.9999999999999997,
+      "final_objective": 0.03370867700580493,
+      "relative_target_RMSE": {
+        "ResNet18": 0.18320764609621354
+      },
+      "iterations": 59,
+      "solver_status": 1,
+      "solver_optimality": 2.4107616470041456e-18,
+      "solver_method": "bvls",
+      "box_roundoff_canonicalization_max_abs": 0.0,
+      "independent_projected_gradient_max_abs": 2.220446049250313e-16,
+      "ridge_primal_dual_max_abs": 3.8163916471489756e-17,
+      "labels_at_bound": 109,
+      "labels_positive": 66
+    }
+  },
+  "verification": {
+    "independent_affine_fit": 2.3991919562149633e-13,
+    "existing_targets_max_abs": 2.914335439641036e-16,
+    "design_targets_max_abs": 0.0,
+    "independent_target_ridge_max_abs": 1.071365218763276e-14
+  },
+  "new_labels": 4,
+  "V_access": false,
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "seconds": 1.3120000001508743
+}

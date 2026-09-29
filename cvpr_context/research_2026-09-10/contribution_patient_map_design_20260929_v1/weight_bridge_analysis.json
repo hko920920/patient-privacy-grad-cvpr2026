@@ -1,0 +1,163 @@
+{
+  "item": "2-1R2",
+  "scope": "Public calibration-weight bridge; no labels/readouts/V/Q.",
+  "read_log": [
+    {
+      "path": "project_source/code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+      "role": "P_DINO",
+      "keys": [
+        "z",
+        "roles",
+        "image_ids",
+        "patient_ids",
+        "labels"
+      ],
+      "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+    },
+    {
+      "path": "project_source/code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+      "role": "P_RN",
+      "keys": [
+        "z",
+        "roles",
+        "image_ids",
+        "patient_ids",
+        "labels"
+      ],
+      "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+    },
+    {
+      "path": "project_source/code_working/_reports/receiver_feature_followup_20260924_v1/public_target/target.npz",
+      "role": "P_TARGET",
+      "keys": [
+        "target"
+      ],
+      "sha256": "e50ac1fad0e16dd746e82a7a9808135b709a469a8dc0b0aada9258872ad40f7e"
+    },
+    {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/target_weights.npz",
+      "role": "HEADS",
+      "keys": [
+        "DP1_DINO",
+        "DP2_DINO"
+      ],
+      "sha256": "5f1475e9b5782fcbec5c5adeda2d54b9b9e899e68cc545c8dde3ff909b3fdc83"
+    },
+    {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/public_operators.npz",
+      "role": "OPS",
+      "keys": [
+        "AK",
+        "AC",
+        "wDP",
+        "wRP",
+        "lambda_C"
+      ],
+      "sha256": "818a092af391fd4791db09dc49625b7ad654bb528b1bbb4231e312060cf5b7dc"
+    },
+    {
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/corrected_target_weights.npz",
+      "role": "REF",
+      "keys": [
+        "DP1_ACKD_RN_ONLY",
+        "DP2_ACKD_RN_ONLY"
+      ],
+      "sha256": "23bc9e50b593105a1ff76847597288bfe1c0184d975068085061583dfc7c2d7b"
+    }
+  ],
+  "checks": {
+    "operator_association_B": 4.7406523151494184e-14,
+    "operator_association_U": 1.7763568394002505e-14,
+    "AC_operator_reproduction": 0.0,
+    "source_public_anchor": 0.0,
+    "receiver_public_anchor": 0.0,
+    "ACKD_reproduction_DP1": 0.0,
+    "ACKD_reproduction_DP2": 0.0,
+    "weighted_ridge_perturbation_cap0": 1.8385293287792592e-13,
+    "weighted_ridge_perturbation_cap1": 1.9739765377835283e-13
+  },
+  "fixed_CKD_lambda": 3.0478093248587158e-05,
+  "fixed_HR_lambdas": [
+    3.0107448502066288e-05,
+    2.836862823850081e-05
+  ],
+  "public_target_weight_swap": {
+    "HR_DP1": {
+      "U_minus_B_score_RMS": 0.0418327317393172,
+      "relative_to_U_score_RMS": 0.38651872094671913
+    },
+    "HR_DP2": {
+      "U_minus_B_score_RMS": 0.04538430052692469,
+      "relative_to_U_score_RMS": 0.537667850816608
+    },
+    "ACKD_DP1": {
+      "U_minus_B_score_RMS": 0.1336366464806061,
+      "relative_to_U_score_RMS": 0.5949847729512692
+    },
+    "ACKD_DP2": {
+      "U_minus_B_score_RMS": 0.12454051940300186,
+      "relative_to_U_score_RMS": 0.6152759927751987
+    }
+  },
+  "leave_one_positive_public_patient_out_map_sensitivity": {
+    "U": {
+      "DP1": {
+        "mean_public_target_score_RMS": 0.001587085044133887,
+        "max_public_target_score_RMS": 0.003252855981793257,
+        "all_six_RMS": [
+          0.003252855981793257,
+          0.0017639584213446351,
+          0.0007412619288756859,
+          0.000641179689346518,
+          0.002255030358059932,
+          0.0008682238853832958
+        ]
+      },
+      "DP2": {
+        "mean_public_target_score_RMS": 0.0014684701076046226,
+        "max_public_target_score_RMS": 0.0033813989295605395,
+        "all_six_RMS": [
+          0.0033813989295605395,
+          0.001454956413442006,
+          0.00026521751088190974,
+          9.075063869104466e-05,
+          0.0015044705719238758,
+          0.00211402658112836
+        ]
+      }
+    },
+    "B": {
+      "DP1": {
+        "mean_public_target_score_RMS": 0.014990358220347532,
+        "max_public_target_score_RMS": 0.040619622160977864,
+        "all_six_RMS": [
+          0.040619622160977864,
+          0.014705728556813624,
+          0.010984814361960837,
+          0.001395184439347335,
+          0.01632423166676908,
+          0.00591256813621646
+        ]
+      },
+      "DP2": {
+        "mean_public_target_score_RMS": 0.01673149291296915,
+        "max_public_target_score_RMS": 0.03232282678206885,
+        "all_six_RMS": [
+          0.023457423459661605,
+          0.0176761760057885,
+          0.006403098402354286,
+          0.0030761637969786166,
+          0.017453269030963028,
+          0.03232282678206885
+        ]
+      }
+    }
+  },
+  "notes": [
+    "Deletion diagnostics use all six public positives, never private patients.",
+    "Kish effective sample size and mapping-CV errors do not estimate downstream AUROC or prove the cause of existing HR gains.",
+    "Next efficacy design is selected using these public diagnostics, so it is exploratory development, not an untouched confirmatory test.",
+    "Proposed2x2 swaps only correspondence-map weights. Task/source/receiver head weights, protected head, public source midpoint, actual ACKD receiver anchor, lambda numbers and label solver remain fixed. HR fitted means/intercepts and its implied mapped public anchor change as a consequence of map weighting; this is not a slope-only ablation."
+  ],
+  "calculation_seconds": 0.508117200108245
+}

@@ -1,0 +1,10 @@
+{
+  "utc": "2026-09-28T06:39:44.752483+00:00",
+  "phase": "before_run_before_any_dataset_read",
+  "exception": "AttributeError: NoneType object has no attribute split",
+  "source": "threadpoolctl Windows get_config returned None",
+  "new_label_packets": 0,
+  "V_read": false,
+  "fix": "Use four-thread BLAS environment configuration before Python imports; remove failing runtime enumerator",
+  "scientific_changes": false
+}

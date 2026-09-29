@@ -1,0 +1,195 @@
+{
+  "status": "COMPLETE_EXISTING_STEP2_ANALYSIS",
+  "completed_utc": "2026-09-28T07:08:04.512265+00:00",
+  "question_2A": "Adding publicly transported RN target versus DINO-only",
+  "question_2A_decision": "POSITIVE_CONDITIONAL_DEVELOPMENT_SUPPORT",
+  "question_2B": "Joint target versus publicly transported RN-only",
+  "question_2B_decision": "JOINT_NECESSITY_NOT_ESTABLISHED",
+  "primary_receiver": "DenseNet",
+  "metric_unit": "image",
+  "uncertainty_unit": "paired_patient_cluster",
+  "table": {
+    "DP1": {
+      "Joint": {
+        "AUROC": 0.6863700927351285,
+        "AP": 0.08126358885403234
+      },
+      "DINO_only": {
+        "AUROC": 0.6716166923231377,
+        "AP": 0.083324002604689
+      },
+      "RN_only": {
+        "AUROC": 0.7135640928392418,
+        "AP": 0.08641455761036106
+      }
+    },
+    "DP2": {
+      "Joint": {
+        "AUROC": 0.663403832853669,
+        "AP": 0.07446326158855011
+      },
+      "DINO_only": {
+        "AUROC": 0.6133625594003078,
+        "AP": 0.06038228161227245
+      },
+      "RN_only": {
+        "AUROC": 0.6482302612498048,
+        "AP": 0.07038913225218957
+      }
+    }
+  },
+  "method_metric_means": {
+    "DINO_only": {
+      "AUROC": 0.6424896258617228,
+      "AP": 0.07185314210848073
+    },
+    "RN_only": {
+      "AUROC": 0.6808971770445233,
+      "AP": 0.0784018449312753
+    },
+    "Joint": {
+      "AUROC": 0.6748869627943987,
+      "AP": 0.07786342522129122
+    }
+  },
+  "per_release_contrasts": {
+    "DP1_Joint_minus_DINO_only": {
+      "AUROC": {
+        "delta": 0.014753400411990802,
+        "patient_cluster_95": [
+          -0.0026361592085398814,
+          0.032334613970619284
+        ]
+      },
+      "AP": {
+        "delta": -0.002060413750656659,
+        "patient_cluster_95": [
+          -0.019551200440424642,
+          0.007288822747299237
+        ]
+      }
+    },
+    "DP1_Joint_minus_RN_only": {
+      "AUROC": {
+        "delta": -0.027194000104113325,
+        "patient_cluster_95": [
+          -0.053643804061815806,
+          -0.0018817107056678826
+        ]
+      },
+      "AP": {
+        "delta": -0.005150968756328714,
+        "patient_cluster_95": [
+          -0.01620595608326077,
+          0.0056331287376345145
+        ]
+      }
+    },
+    "DP2_Joint_minus_DINO_only": {
+      "AUROC": {
+        "delta": 0.05004127345336118,
+        "patient_cluster_95": [
+          0.024707371708116897,
+          0.07609923474402262
+        ]
+      },
+      "AP": {
+        "delta": 0.014080979976277663,
+        "patient_cluster_95": [
+          0.005662814306741501,
+          0.02838839444669897
+        ]
+      }
+    },
+    "DP2_Joint_minus_RN_only": {
+      "AUROC": {
+        "delta": 0.015173571603864233,
+        "patient_cluster_95": [
+          -0.013283409223424818,
+          0.044077393061441685
+        ]
+      },
+      "AP": {
+        "delta": 0.004074129336360546,
+        "patient_cluster_95": [
+          -0.010905900574221866,
+          0.019033549611887367
+        ]
+      }
+    }
+  },
+  "fixed_two_release_mean_contrasts": {
+    "DINO_only": {
+      "AUROC": {
+        "mean_delta": 0.03239733693267599,
+        "fixed_two_release_patient_cluster_95": [
+          0.01870462748553275,
+          0.04688422381144748
+        ]
+      },
+      "AP": {
+        "mean_delta": 0.006010283112810502,
+        "fixed_two_release_patient_cluster_95": [
+          -0.00020297477737935514,
+          0.012020549985581533
+        ]
+      },
+      "development_investment_checks": {
+        "both_AUROC_point_differences_positive": true,
+        "mean_AUROC_at_least_0_01": true,
+        "mean_AP_nonnegative": true,
+        "conditional_mean_AUROC_CI_positive": true
+      },
+      "passes_all_development_checks": true,
+      "not_an_ensemble": true,
+      "not_independent_confirmation": true
+    },
+    "RN_only": {
+      "AUROC": {
+        "mean_delta": -0.006010214250124546,
+        "fixed_two_release_patient_cluster_95": [
+          -0.027337656305810677,
+          0.015115890419458199
+        ]
+      },
+      "AP": {
+        "mean_delta": -0.0005384197099840837,
+        "fixed_two_release_patient_cluster_95": [
+          -0.009704385450548421,
+          0.009351682997511985
+        ]
+      },
+      "development_investment_checks": {
+        "both_AUROC_point_differences_positive": false,
+        "mean_AUROC_at_least_0_01": false,
+        "mean_AP_nonnegative": false,
+        "conditional_mean_AUROC_CI_positive": false
+      },
+      "passes_all_development_checks": false,
+      "not_an_ensemble": true,
+      "not_independent_confirmation": true
+    }
+  },
+  "verification": {
+    "historical_score_column_max_abs": 0.0,
+    "historical_point_difference_max_abs": 0.0,
+    "historical_CI_max_abs": 0.0,
+    "manual_quantile_max_abs": 0.0,
+    "same_patient_schedule": true,
+    "bootstrap_draws": 2000,
+    "new_patient_metric_evaluations": 0,
+    "new_bootstrap_resampling": 0
+  },
+  "historical_results_reused": true,
+  "new_model_forwards": 0,
+  "new_label_solves": 0,
+  "new_pixel_training": 0,
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "Expert_Reserved": false,
+  "public128": false,
+  "step3_started": false,
+  "analysis_seconds": 0.06200000015087426,
+  "contract_sha256": "1f530d3bbc8470ceadf056c608d5f5dcedb995349ab3b5d86aa55f639fbad34b",
+  "analysis_script_sha256": "39965be93c7b18b69ffae4522d12c112074175e0b40ebb6832270d5d09cda28f"
+}

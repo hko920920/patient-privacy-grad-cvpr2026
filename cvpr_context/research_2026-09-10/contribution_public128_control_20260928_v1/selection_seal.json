@@ -1,0 +1,25 @@
+{
+  "status": "PUBLIC128_SEALED_BEFORE_TARGET_ACCESS",
+  "utc": "2026-09-28T07:25:48.565768+00:00",
+  "contract_sha256": "8bfdc53868ec701eeac29b8aa221df517177b1ba671b2606babc94043965cca1",
+  "files": {
+    "public128_selection.npz": "7e49a9ba1ab1ea10ecb7ae6f8cd91792ccd458e14cb1da1534b31154370de3c4",
+    "public128_manifest.json": "a413c49e1f5f6bdaefc4bd5e98426d15646c88f69cbb249be4ab2d4ea489b00d",
+    "selection_inputs.json": "89bc051501a64157634eedbc87af07630656b0dc77543241a7f11bb48f952aea"
+  },
+  "selection_original_contract_sha256": "02e9581bdbef2aec40993e335a12558527e7fa65535c4c53515c4bd49bbe7b21",
+  "unchanged_selection_under_implementation_amendment": {
+    "utc": "2026-09-28T07:28:22.411759+00:00",
+    "reason": "TRF reported convergence but independent projected-gradient exceeded 1e-7 before V; uniform BVLS solves same bounded convex problem",
+    "previous_contract_sha256": "02e9581bdbef2aec40993e335a12558527e7fa65535c4c53515c4bd49bbe7b21",
+    "prior_attempt": "attempts/00_trf_projected_gradient_failure",
+    "objective_changed": false,
+    "tolerance_changed": false,
+    "hyperparameters_changed": false,
+    "label_bounds_changed": false,
+    "V_evaluated_before_amendment": false,
+    "selection_changed": false,
+    "method": "bvls",
+    "box_machine_roundoff_max": 1e-12
+  }
+}

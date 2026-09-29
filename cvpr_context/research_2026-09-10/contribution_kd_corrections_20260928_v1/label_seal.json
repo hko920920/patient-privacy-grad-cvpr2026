@@ -1,0 +1,18 @@
+{
+  "status": "SIX_CORRECTION_LABELS_SEALED_BEFORE_EVALUATION",
+  "utc": "2026-09-28T08:54:09.452335+00:00",
+  "contract_sha256": "11bb4401e0524cc882a7ce7a1c4f70faf2eb18ed02b92dcab1fafad3e4297545",
+  "files": {
+    "soft_labels.npz": "081556f6c84d30ff4b45cdf35e24990862d387c2b68bd222b0f82c07f92b44c2",
+    "corrected_target_weights.npz": "23bc9e50b593105a1ff76847597288bfe1c0184d975068085061583dfc7c2d7b",
+    "public_operators.npz": "818a092af391fd4791db09dc49625b7ad654bb528b1bbb4231e312060cf5b7dc",
+    "construction_results.json": "2290f21f16bf84dbdc8f5ff7915caebf4bd678d24d794d04934ee9028e86e8d0",
+    "construction_inputs.json": "313a5b54da49a8e098f7e3df9bcd4d10411c10303866d7061f79f890d5759cbd",
+    "label_packets/DP1_AKD_RN_ONLY.csv": "45001b43994a7a376bf938747c3505a83998d3ed7d66bae76e6ed7cd4f8fff88",
+    "label_packets/DP1_CKD_RN_ONLY.csv": "4e4dda3c11283ddeaecf4f04a22ab8a15497e707687e7e4530ff57bbb15f2271",
+    "label_packets/DP1_ACKD_RN_ONLY.csv": "b3b9f9de14fc264419e2db6dcedfc4c7f80ec993571c80537a647abb0a4d1162",
+    "label_packets/DP2_AKD_RN_ONLY.csv": "b89269acb62b20370115e70e4cccb0a53502858d991a39de79ab47985132ac62",
+    "label_packets/DP2_CKD_RN_ONLY.csv": "f8ce8c17837761e33f98f420f772595e36b0eee52a76f64a4a1566df1408151d",
+    "label_packets/DP2_ACKD_RN_ONLY.csv": "7f04b6f6ac7f145d649887dd7474dafdd7bf678effc5f3f77d55097da97b3c5a"
+  }
+}

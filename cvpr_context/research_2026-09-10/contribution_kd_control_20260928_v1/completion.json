@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETE_STEP1_KD_CONTROL",
+  "completed_utc": "2026-09-28T06:40:11.350691+00:00",
+  "files": {
+    "common.py": "b163b88019254be41bcfa268572385a53267eeefb10f3152e42ca192d3bb4ad7",
+    "construction_inputs.json": "db0f5f37f306177a3387b81b3bbee0e8d4feb6cf3b7860943a18de83aef591c8",
+    "construction_results.json": "8af8cf83f91f904c76107ac10d4bf833dd084aa687d8373900de795e6a241088",
+    "contract.json": "a71085153bed3c2b72eb8a232cd932e26293d44cf87351546fbd66acc3b96a2d",
+    "evaluate_kd_control.py": "6b4d7ad7e5581160e18be5a8eccb62184fc892476c701d012fc462c5d32f6abb",
+    "evaluation_inputs.json": "294c17fa0582363d5efda68a3491a4a81232230b060f82c1e10e3f9b32f17392",
+    "EXECUTION_CONTRACT.md": "be3c95d053cc6567592599be8f7de63d800d538c73477ef51bc28a35153f6160",
+    "initialize_contract.py": "dc7f2d9ba6f4082b04a2455eb98c0b4d48831f8251b666ff6ffff8297021a203",
+    "KD_soft_labels.npz": "5e0fc14e5a72919300d656400205b812ba795bd5e207d70c0a3812c605a536a5",
+    "label_seal.json": "ff99750ea62578d8bc3dd783421158bc5c4399fa95c5522f422a406d0148ac08",
+    "paired_bootstrap.npz": "e627c56e808d2de116850ea46eb094945a1bcf833a912ca2307227e4f779fbe3",
+    "predictions_private.npz": "946dbd0530ef7757badbea5c0af869bce14e5c860612972d29c47f0a40ce2d94",
+    "prepare_kd_control.py": "1c8a279f765557da9558b8fabe9ff822db25a1525d7e47665616b1b58b908432",
+    "results.json": "0e02b35deaff49317912385b3dfc143383e20636600698c12cd9875347fc22ed",
+    "target_weights.npz": "5f1475e9b5782fcbec5c5adeda2d54b9b9e899e68cc545c8dde3ff909b3fdc83"
+  },
+  "output_bytes": 2038464
+}

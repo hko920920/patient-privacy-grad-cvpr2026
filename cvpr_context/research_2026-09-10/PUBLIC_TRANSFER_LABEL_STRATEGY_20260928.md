@@ -95,3 +95,25 @@ ResNet18 joint AUROC는 DP1 0.698797 / DP2 0.707042다. 이 모델은 라벨 계
 
 현재 단계의 완료 표시는 “구현된 긍정적 개발 후보와 다음 대조 우선순위를 기록함”이다. CVPR 기여·독립 검증·방법론 우위 완료로 표시하지 않는다.
 
+## 2026-09-28 보완: arXiv 링크와 실제 출판 상태
+
+사용자가 arXiv 링크를 주로 사용한 이유와 정식 출판 여부를 질문하여 확인했다. arXiv는 논문 공유 저장소이며 자체적으로 동료심사를 수행하지 않는다. 정식 게재 논문도 저자 공개본을 arXiv에 유지할 수 있으므로, 열람 URL과 출판 상태를 구분한다. [arXiv 공식 설명](https://info.arxiv.org/about/index.html)
+
+이전 표의 arXiv 링크는 본문 열람용이었다. 아래는 학회·출판 기록 또는 저자 소속기관의 공식 기록으로 확인한 출판 상태다. 아카이브 버전과 최종 게재본의 내용이 모든 부분에서 동일하다는 뜻은 아니다.
+
+| 논문 | 확인된 출판 상태 | 공식 확인 링크 |
+|---|---|---|
+| DP-NTK | Journal of Artificial Intelligence Research, 81:683–700, 2024 | [저자 소속 DTU의 게재 기록과 최종본](https://orbit.dtu.dk/en/publications/differentially-private-neural-tangent-kernels-dp-ntk-for-privacy-/), DOI 10.1613/jair.1.15985 |
+| Dosser | ICCV 2025 본학회, 4838–4847 | [CVF proceedings](https://openaccess.thecvf.com/content/ICCV2025/html/Zheng_Improving_Noise_Efficiency_in_Privacy-preserving_Dataset_Distillation_ICCV_2025_paper.html) |
+| LGM | NeurIPS 2025 Main Conference Track | [NeurIPS proceedings](https://proceedings.neurips.cc/paper_files/paper/2025/hash/5709163243753c9c9ab7f4b4e5a8766d-Abstract-Conference.html) |
+| KIP / Label Solve | ICLR 2021 | [저자 기관 Google Research의 게재 기록](https://research.google/pubs/dataset-meta-learning-from-kernel-ridge-regression/) |
+| DPPL | AAAI 2025 Technical Track, 39(20):20991–20999 | [AAAI proceedings](https://ojs.aaai.org/index.php/AAAI/article/view/35395) |
+| POST | ICML 2025, PMLR 267:64998–65019 | [PMLR proceedings](https://proceedings.mlr.press/v267/wang25ds.html) |
+| Balog et al., DP Kernel Mean Embeddings | ICML 2018, PMLR 80:414–422 | [PMLR proceedings](https://proceedings.mlr.press/v80/balog18a.html) |
+| Hard Truths about Soft Labels | CVPR 2026, 178–187 | [CVF proceedings](https://openaccess.thecvf.com/content/CVPR2026/html/Dey_Rethinking_Dataset_Distillation_Hard_Truths_about_Soft_Labels_CVPR_2026_paper.html) |
+| Flexible Dataset Distillation | NeurIPS 2020 Meta-Learning Workshop 채택·발표. NeurIPS 본학회 논문으로 표기하지 않음 | [워크숍 공식 채택 목록](https://meta-learn.github.io/2020/#accepted-papers), [저자 기관 게재 기록](https://www.research.ed.ac.uk/en/publications/flexible-dataset-distillation-learn-labels-instead-of-images/) |
+
+앞으로 근접연구 표에는 출판처·연도·본학회/저널/워크숍/미확인 프리프린트 상태를 함께 표시한다. 공식 proceedings/저널을 우선 링크하고 arXiv는 공개 본문·버전 확인용으로 병기한다. 핵심 연산과 주장은 최종 게재본을 기준으로 대조하고 다른 버전만 확인했으면 그 범위를 명시한다. 프리프린트도 관련 선행으로 검토하되 심사·게재가 확인된 연구처럼 표현하지 않는다.
+
+이 표는 현재 전략의 근접연구 목록에 대한 확인이다. 과거 확장 검색에 등장한 모든 논문의 출판 상태까지 한꺼번에 보증하는 것은 아니다. 이번 보완은 문헌 메타데이터 정리이며 새 실험은 수행하지 않았다.
+

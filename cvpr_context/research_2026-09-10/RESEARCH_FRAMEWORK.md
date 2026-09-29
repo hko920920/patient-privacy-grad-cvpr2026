@@ -1,5 +1,201 @@
 # CVPR 연구의 네 단계와 현재 위치
 
+**최신 판단 기록 — 단계2의 HR 기여 후보 (2026-09-29)**
+
+문제·실제 개선 결과·구현된 접근이 연결된 HR와 공개 영상 라벨 최적화 후보를 주력 검증 대상으로 다룰 근거가 있다. 선행연구 대비 우위와 CVPR 기여의 크기는 공정한 비교 및 추가 평가로 확인한다. 현재는 사용자 요청에 따른 기록 완료이며 새 실행0, 단계2·기여 미확정 상태다. 과거 완료 실험과 혼합·실패 판정은 보존한다.
+
+[판단·근거·다음 비교](<PUBLIC_TRANSFER_CONTRIBUTION_ASSESSMENT_20260929.md>)
+
+**2-4B 완료 — 구현 통과 / 공개 대조의 추가 이득 미확보 (2026-09-29)**
+
+공개 P와 고정128 영상으로 source 보존 라벨·patient query·공유 count 복원 구현 완료. 독립 KKT/source순위/환자감도/잡음귀무 검산 통과. 같은cap의 retained-target MSE: 전체4.652889,새공간4.652877,PCA3.134940; 자기cap:새공간4.080556,PCA2.661670. 행별clipping bias 감소는 있지만 표준PCA보다 낮은 총오차 근거는 없다. 공개 양성6명의 모의 오차이며 Q/AUROC 결과가 아니다. 노이즈 없는 source보존 표현 능력은 확인됐고 기존HR의 실제 양성결과는 보존한다.
+
+예상60~90분 대비 실제20.51분(캐시·폐쇄형 계산). 실제Q/release/V/DenseNet/Expert/Reserved/새forward0. 공개 모의512회와 수치라벨 검산은 실제bank·DP release가 아니다. 2-4B완료,상위2기여미확정,상위3미착수. 새cap/rank/encoder/Q의 자동후속 없음. 2-1R3미실행·권고철회 유지. 실제 최신 효용 결과는2-2R2다.
+
+[2-4B 결과](<PUBLIC_TRANSFER_2_4B_PUBLIC_PROTOTYPE_RESULTS_20260929.md>)
+
+
+**2-4A 완료 — 새 보호 신호 설계 후보, 성능 검증 전 (2026-09-29)**
+
+기존 HR 가중치·기준값 대조의 자동 후속은 중단 유지. 새 후보는 ‘기존 source의 순위를 보존하는 라벨 변경 공간에서 receiver로 전달 가능한 성분을 구하고, 그 성분을 환자 clipping 전에 선택해 보호’하는 설계다. 공개128/P만으로 source 보존 차원64·receiver 변경 rank64를 확인했다. 설명용 동일 cap에서 공개 환자/class 제한 행34→1은 기하 검산이며 Q/V 효용 결과가 아니다. 차원 감소만의 noise 이득은 주장하지 않는다. KIP/GEP/Dosser/Common Mechanism/workload DP의 알려진 원리를 인정하며 독자성·최종 효용은 미확정이다.
+
+2-4A는 설계·공개 계산 완료, 새 labels/V/Q/release/Expert/Reserved0. 기존 결과와2-1R3 미실행·권고 철회 보존. 다음2-4B는 공개 입력 구현/표준 부분공간 대조 한 묶음(예상60~90분), **계획만·미실행**이다. 새 receiver private query가 필요한 설계이므로 기존ε8 요약의 무료 후처리라고 부르지 않으며, 실제 Q 실행은 별도 보호 계약이 필요하다. 상위2 기여 검증 미완료·상위3 미착수.
+
+[2-4A 설계와 근거](<PUBLIC_TRANSFER_2_4A_SIGNAL_DESIGN_20260929.md>)
+
+
+**상위2 실행 권고 수정 — 2026-09-29**
+
+현재 HR 후보에 원인 대조를 계속 추가하는 권고를 철회한다. 다음2-1R3의 기본 기준값+전달 연산 분해는2-1R1에서 이미 확인됐고, 새 가중치로의 확장 자체가 기여 공백을 해결하지 않는다. 2-1R3는 미실행·자동 후속 권고 철회, 추가 성능 대조/반복은 예약하지 않는다. 기존 HR의 긍정 결과와 최근 가설 실패를 모두 보존한다. 현재 구현의 유용성은 남지만 CVPR 중심 기여는 미확정이다. 연구 전체 포기/불가능 판정이 아니며, 완벽한 원인 증명을 요구하는 것도 아니다. 구체적 선행 한계→설계 변경→검증 예측을 제시하지 못한 상태에서 작은 실험을 계속 권하지 않는다. 상위2 미완료·상위3 미착수·Expert/Reserved 보존. 이번은 문서 재판정이며 새 실험0.
+
+[진행 재판정](<PUBLIC_TRANSFER_CONTINUATION_DECISION_20260929.md>)
+
+**2-2R2 COMPLETE / COMMON WEIGHT HYPOTHESIS FAILED — 2026-09-29**
+
+공개 대응 가중치 교차 완료. DenseNet 두 고정 release 평균 AUROC에서 HR의 환자균등−class균형 +0.028012, CI[+0.014857,+0.042020]; ACKD의 같은 대비 −0.025069, CI[−0.047561,−0.001852]. 두 방식 모두 환자균등에서 개선된다는 사전 가설은 실패했다. 같은 환자균등에서 HR−ACKD +0.060416, CI[+0.033064,+0.088087]의 이득은 남았다. AP의 평균 구간은0을 포함한다. 더 강했던 기존 ACKD-B와 과거 혼합 결과를 보존한다.
+
+새4라벨·8평가, 기존12평가 재사용, 독립 검산 통과. 실측16.69분. 새 Q/noise/release/pixel/forward/Expert/Reserved0. 현재 실행 없음. 원래2-3 보류·2-3R1 혼합·상위3 미착수·연구 단계2 유지. 기여 완료나 일반 가중치 원리로 승격하지 않는다.
+
+**다음 제안2-1R3(미실행):** 같은 가중치에서 공개 기준값 항과 source 차이 전달 연산을 수식으로 분리하고, 기존 CME/POST로 설명되는 부분과 남는 차이를 정리한다. 필요할 경우에만 대조 하나의 설계를 제시한다. 설계만15~25분; 새 라벨/V/Q/release/수신자0.
+
+[2-2R2 결과](<PUBLIC_TRANSFER_2_2R2_WEIGHT_CROSSOVER_RESULTS_20260929.md>)
+
+**2-2R2 STARTED — 2026-09-29**
+
+예상20~30분 안내 후 공개 대응 가중치 교차 진행. HR-B/ACKD-U×기존DP1·DP2=새4labels/8readouts,기존HR-U/ACKD-B/DINO의12readouts재사용. 최초public128,질환class균형·ridge·기준값·solver고정. 네labels봉인후V. 두주대비모두보고. Q/noise/release/pixel/forward/Expert/Reserved0. 기존혼합gate유지.
+
+
+**2-1R2 COMPLETE / NEXT 2-2R2 WEIGHT CROSSOVER — 2026-09-29**
+
+공개 대응 가중치 차이를 다음 가설로 선택. class-balanced 대응은 공개 양성6명에50%질량, 환자균등은양성행0.67%; 공개 목표 차이38.65%/53.77%,clip순서0.85%/1.63%. 공개 회귀/삭제 민감도 근거이며 AUROC 원인 입증 아님. 환자 평균·중심화·가중회귀의 선행을 인정. 다음2-2R2는 HR에class-balanced·ACKD에patient-equal 대응가중치를 교차: 기존첫public128/DP1·DP2,새4labels/8readouts,기존12재사용,20~30분. 이번 새label/V/Q/release/Expert/Reserved0. 기존2-3보류와2-3R1혼합 유지,Stage2. 실제19.43분.
+
+[설계·공개 검산](<PUBLIC_TRANSFER_2_1R2_WEIGHT_SEPARATION_DESIGN_20260929.md>)
+
+
+**2-1R2 STARTED ? 2026-09-29**
+
+ETA30-45min announced before execution. Compare patient/class aggregation, clipping order, centering and public weighting against corrected KD and primary literature. Public-only algebra; one falsifiable hypothesis and bounded2-2R2 design. No new labels/V efficacy/Q/releases/Expert/Reserved. Previous mixed gates remain. Research stage2.
+
+
+**2-3R1 COMPLETE / PRIMARY REPEATED, ALL-CONTROL GATE MIXED — 2026-09-28**
+
+새public128 HR−ACKD DenseNet평균AUROC+0.033434 CI[+0.016395,+0.051698],HR−CKD+0.021664 CI양수. HR−AKD+0.030019이나CI0포함으로전체반복gate미충족. HR−DINO이번선정+0.025617 CI양수/두draw양수,기존선정DP2음수유지. 환자97/영상95겹침,독립cohort/noise아님. 새10labels/20readouts,기존36재사용. 다음2-1R2는patient/class/clipping연산차이와선행대조설계30~45분,추가성능반복아님. Stage2유지.
+
+[Results](<PUBLIC_TRANSFER_2_3R1_SELECTION_REPEAT_RESULTS_20260928.md>)
+
+
+**2-3 보완(2-3R1) STARTED — 2026-09-28**
+
+예상20~35분을보고하고강화KD차이의공개carrier반복1회진행. 기존선정규칙+고정salt202,HR/AKD/CKD/ACKD/DINO-only×기존DP1/DP2=10labels·20readouts. 기존36재사용. 목표재추출/수정없음. 새선정·모든labels봉인후V. 원래2-3source-onlygate와과거혼합결과보존. Q/noise/release/Expert/Reserved0.
+
+
+**2-2R1 COMPLETE / STRENGTHENED-KD CONTROL POSITIVE — 2026-09-28**
+
+HR−ACKD DenseNet평균AUROC+0.035346 CI[+0.018043,+0.052953],HR−CKD+0.028844 CI양수,HR−AKD+0.059421 CI양수. HR가세새보정모두개발hurdle통과. CKD−KD+0.026522로표준보정도일부개선. 특정원인/POST전체우위/논문기여완료아님. 원래2-3source-onlygate는계속미충족. 다음2-3R1은강화KD차이의공개carrier반복1회(10labels/20readouts,예상20~35분),과거gate변경없음. 새Q/release/Expert/Reserved0.
+
+[Results](<PUBLIC_TRANSFER_2_2R1_KD_CORRECTIONS_RESULTS_20260928.md>)
+
+
+**2-2 보완(2-2R1) STARTED — 2026-09-28**
+
+예상20~35분을 먼저 보고했다. 공개기준값보존AKD/공분산보정CKD/둘다ACKD×기존DP1/DP2의6labels,12readouts;기존24재사용. 모두봉인후V. 공개RN실제labelhead를기준값으로허용. λ는고정P trace규칙. HR추가차별효용과요소대조를함께보고. Q/noise/release/pixel/forward/Expert/Reserved0. 원래2-3gate와보류유지.
+
+
+**2-1 보완(2-1R1) COMPLETE / NEXT 2-2R1 — 2026-09-28**
+
+HR=공개기준값+source head 변화량의 공개전달, 일치3.61e-16. POST/NeurIPS2020 regularization/CME/ICLR2024 transfer와 겹침확인. 기존KD에 공개RN기준값보존/공분산보정/둘다를 허용하는2×2대조 설계완료. 새3종×기존2release=6라벨/12readout,기존24재사용,다음예상20~35분. 이번보완에서새라벨/V0,새Q/release/Expert/Reserved0. 기존2-3 gate와보류상태유지,기여완료아님.
+
+[Design](<PUBLIC_TRANSFER_2_1R1_ANCHOR_GEOMETRY_DESIGN_20260928.md>)
+
+
+**2-1 보완(2-1R1) STARTED — 2026-09-28**
+
+사용자 계속 진행 지시에 따라 설계를 이어간다. 예상40~60분을 먼저 보고했다. 2-2에서 같은DINO head의 공개처리로KD개선이 남았으므로, 공개anchor/전달연산 차이를 선행과 대조하고 구별할 예측 하나를 설계한다. 공개·기존DP 대수만 허용,새label/V효용/Q/release/Expert/Reserved0. 기존2-1/2-2결과와2-3보류는보존. 별도보완 식별자R1이며 과거번호를 바꾸지 않는다. Stage2유지.
+
+
+**2-2 COMPLETE / 2-3 DEFERRED BY PREDECLARED GATE — 2026-09-28**
+
+2-2 HR RN-only(head차이유지·공통평균P) DenseNetAUROC0.697190/0.692352. MT−HR 평균−0.002083 CI[−0.003922,−0.000328]: 추가보호공통성분 필요성미확인. HR−KD 평균+0.055366 CI양수; 같은head 공개처리로기존KD개선유지. HR−DINO 평균+0.022776 CI양수이나DP2−0.002719로두release모두개선 기준미충족. 사전계약대로2-3보류,3번미착수. 1-5/2-1/2-2완료를논문기여확정으로바꾸지않음. 새라벨2/readout4·기존20재사용,새Q/release/Expert/Reserved0. Stage2유지. 현재실행없음.
+
+[Results](<PUBLIC_TRANSFER_2_2_HEAD_RECONSTRUCTION_RESULTS_20260928.md>)
+
+
+**2-2 HEAD RECONSTRUCTION CONTROL STARTED — 2026-09-28**
+
+예상20~40분을 먼저 안내하고2-2 진행. 기존DINO head에서 class차이 복구, class공통평균만 P로 대체. 같은 MT지도/solver의 RN-only2라벨, DenseNet/RN4새readout,기존20재사용. 라벨 봉인 후V. MT−HR/HR−KD/HR−DINO 판정. 새Q/noise/release/pixel/forward/Expert/Reserved0. 2-3은source-only 대비기존 투자hurdle 충족 시만. Stage2 유지.
+
+
+**2-1 COMPLETE / NEXT2-2 HEAD RECONSTRUCTION CONTROL — 2026-09-28**
+
+2-1 완료. MT의 signed-public-label ridge 동치1.03e-14, Label Solve/KME/POST/soft-label 선행4편과 연산 대조. KD와 MT는 정보뿐 아니라 공개 가중/제한/중심화/regularizer도 다름. source head에서 class 차이 정확 복구 가능. 별도 class 공통 평균을 P로 바꿀 때 공개 목표 예측 차이2.53%/3.51%; downstream 필요성 미검증. 다음2-2는 같은 MT 지도·solver에서 공통 평균만 P로 대체한 HR RN-only 라벨2개/평가4개(기존20재사용),예상20~40분. MT/KME 동치를 별도 baseline으로 재실행하지 않음. 새Q/release/Expert/Reserved0. Stage2 유지.
+
+[Comparison](<PUBLIC_TRANSFER_2_1_OPERATION_COMPARISON_20260928.md>)
+
+
+**2-1 OPERATION / PRIOR REVIEW STARTED — 2026-09-28**
+
+2-1 연산·근접연구 비교 진행. 예상1~2시간을 먼저 안내했다. MT/KD/DINO-only/public signed-weight 연산과 직접 선행3~4편을 같은 정보 접근 조건에서 대응한다. 기존 대수 검산을 재사용하며 새 bank·V 효용평가·Q·release·Expert/Reserved는 없다. 산출물은 비교표와 구별되는2-2의 필요성/설계 판단. 1-5 혼합 결과와 상위1 현재범위 완료를 유지한다.
+
+
+**1-5 COMPLETE / UPPER1 SCOPED CONTROLS CLOSED — 2026-09-28**
+
+1-5 혼합: 공개128 DINO-only DenseNet AUROC DP1 0.648920/DP2 0.695071. MT RN-only−DINO 평균 +0.020693, CI[+0.000009,+0.042601]이나 DP2 점차이 음수. MT Joint 평균 +0.003851, CI0 포함; DP2는 유의하게 낮음. 두 MT 모두 사전 반복 투자 기준 미충족. KD 대비 기존 양성은 보존. 새 라벨2·평가4, 기존16재사용, Q/release/pixel/forward/Expert/Reserved0. 상위1 현재범위 완료; 원안 보류항목은 미완료 유지. 다음2-1 연산·근접연구 대조. 완료 및 다음설계/ETA 보고 후 이어간다. Stage2 유지.
+
+[Results](<PUBLIC_TRANSFER_1_5_SOURCE_CONTROL_RESULTS_20260928.md>)
+
+
+**1-5 PUBLIC128 SOURCE CONTROL STARTED — 2026-09-28**
+
+1-5: two new DINO-only zero-anchor label packets on the fixed public128 and existing DP1/DP2. Frozen MT/KD labels and scores reused. ETA15-30minutes; cap45minutes. No Q/noise/release/pixel/encoder forward/Expert/Reserved. Both labels sealed before V evaluation. Stage2 retained. Next2-1 only after reporting this result and announcing its design/scale/ETA.
+
+
+**EXECUTION PLAN NUMBERING FIXED — 2026-09-28**
+
+사용자 요청으로 실행계획 번호를 다시 고정했다. 상위1=공정한 기본 대조, 상위2=재현과 선행 대비 기여 검증, 상위3=독립 평가와 논문 판정. 하위 번호는1-1처럼 쓴다. 상위1의1-1~1-4는 완료됐지만1-5 공개128 DINO-only(기존DP1/DP2·zero-anchor 라벨2개)는 미실행이다. 다음 실행 후보는1-5(예상15~30분), 이번은 계획 정리만 수행했다. 원안의 합성쪽 zero-anchor 잔여4칸/nullspace 진단은 완료가 아니라 보류로 명시했다. 연구의 큰 단계2와 최신 공개128 KD 양성 결과는 유지. 현재 실행 없음; 새 label/학습/평가/Q/release/Expert·Reserved0.
+
+[Numbered plan](<PUBLIC_TRANSFER_NUMBERED_PLAN_20260928.md>)
+
+
+**PUBLIC128 KD CONTROL COMPLETE — 2026-09-28**
+
+공개128 KD 대조는 긍정적. 같은 기존DP1/DP2·공개128·zero-anchor에서 MT−KD DenseNet 평균 AUROC: RN-only +0.053284, CI[+0.030382,+0.076880]; Joint +0.068250, CI[+0.045708,+0.092791]. 두 recipe 평균 AP 구간도 양수. 각release AUROC4개 모두 양의 구간이나 RN-only DP2 AP는0 포함. 정의한 teacher-score KD 대비 공개 carrier의 추가 개발 효용. 결합/합성영상 필요성·선행 전체 우위·CVPR 기여 확정 아님. 새 KD라벨4개, MT4개재사용; Q/release/pixel/forward/Expert/Reserved0. 모든 검산 통과. Stage2 유지, 실행 종료, 자동 후속 없음.
+
+[Results](<PUBLIC_TRANSFER_PUBLIC128_KD_RESULTS_20260928.md>)
+
+
+**PUBLIC128 KD CONTROL STARTED — 2026-09-28**
+
+공개128에서 KD와 MT를 같은 zero-anchor 규칙으로 비교한다. RN-only/Joint 각각 DP1/DP2, 새 KD 라벨4개. 기존 MT 라벨/평가 재사용. 예상20~40분. Q/release/pixel/forward/Expert/Reserved0. Stage2 유지. 새 KD 결과 전 계약과 모든 라벨을 고정한다.
+
+
+**STEP3 PUBLIC128 COMPARISON COMPLETE — 2026-09-28**
+
+3번 공개128 대조 완료. 기존 두 DP 요약 × 합성/공개128 × RN-only/Joint의 최종8개 라벨을 같은 zero-anchor 규칙으로 계산했다. DenseNet 합성−공개 평균 AUROC: RN-only −0.012491, CI [−0.035938,+0.009671]; Joint −0.000997, CI [−0.024772,+0.022057]. 두 recipe 모두 합성영상 추가 투자 기준 미충족. 공개128에도 DP 요약으로 계산한 라벨을 붙였으므로 완전한 public-only가 아니다. 1번 KD 대비 양성 근거·2번 결합 필요성 미확인 보존. 최초 TRF의 KKT 검사 실패를 성능 평가 전에 같은 목적함수의 BVLS로 보정했고 원본·실패를 보존했다. 최종 검산 통과. 새 Q/DP/pixel/model forward/Expert/Reserved0. 기존 캐시 재사용, 추가 저장 약3.5MiB. Stage2 유지, 실행 종료, 자동 후속 없음.
+
+[Results](<PUBLIC_TRANSFER_PUBLIC128_CONTROL_RESULTS_20260928.md>)
+
+
+**STEP3 PUBLIC128 COMPARISON STARTED — 2026-09-28**
+
+사용자 ‘진행’에 따라 기존 DP1/DP2 × 합성128/공개128 × 전달 RN-only/Joint의 8개 라벨 대조를 수행한다. 같은 zero-centered regularizer를 쓰며 공개128은 P의 DINO/RN 특징만으로 사전 선정한다. 모든 라벨 고정 후 DenseNet 주평가·RN 참고평가와 같은 환자 bootstrap을 적용한다. 예상 약1시간, 새 pixel 학습·Q query·DP release·Expert/Reserved 없음. Stage2 유지, 후속 자동 확대 없음.
+
+
+**STEP2 EXISTING-CONTROL ANALYSIS COMPLETE — 2026-09-28**
+
+2번 기존 대조 분석 완료. 2A(결합−DINO-only)는 DenseNet AUROC 평균 +0.032397, 조건부 환자 CI [+0.018705,+0.046884]로 개발 기준 충족. 평균 AP +0.006010이나 CI는 0 포함. 2B(결합−공개 전달 RN-only)는 AUROC 평균 −0.006010, CI [−0.027338,+0.015116]로 결합 필요성 미확인. RN-only는 새 사적 RN query가 아니라 동일 DINO-DP 요약의 공개 전달 목표다. 기존 네 비교·예측 일치 오차 0, 동일 2,000회 환자 bootstrap 재사용. 1번 KD 대비 양성 근거 보존. 새 라벨·학습·forward·Q·release·공개128·Expert/Reserved 0. 3번 자동 실행 없음. Stage2 유지, 현재 실행 없음.
+
+[Results](<PUBLIC_TRANSFER_STEP2_EXISTING_CONTROL_RESULTS_20260928.md>)
+
+
+**STEP2 EXISTING-CONTROL ANALYSIS STARTED — 2026-09-28**
+
+사용자 ‘진행’에 따라 2번의 기존 DINO-only/RN-only/Joint 결과를 분석한다. 결합−DINO와 결합−RN을 별도로 판정하고, 같은 환자 bootstrap 회차에서 두 release 차이를 평균한다. 기존 bank에 조건부인 사후 개발 분석이며 새 학습·라벨·model forward·Q 접근·DP release·public128·Expert/Reserved는 없다. 예상 10~20분, 3번 자동 실행 없음. Stage2 유지.
+
+
+**STEP2 EXISTING-CONTROL PLAN ONLY - 2026-09-28**
+
+다음은 2번의 기존 단독 대조 분석이다. 9월24일 DINO-only/RN-only/Joint 두 release 결과가 이미 있고, 단독 목표 RMS 정규화는 목적함수 전체의 상수배로 상쇄되므로 재학습하지 않는다. Joint−DINO와 Joint−RN을 구분해 기존 점수·구간·고정 두-release 평균 차이를 정리할 계획(10~20분). RN-only 대비는 기존 결과가 혼합적이므로 결합 필요성 통과로 선언하지 않는다. 이번에는 코드·저장 결과 JSON 조회와 계획 기록만 수행. 새 label/학습/V 재평가/DP release/공개128/Expert·Reserved 없음. 현재 실행 없음, 실제 최신 결과는 1번 KD 대조.
+
+[Next analysis plan](<PUBLIC_TRANSFER_STEP2_EXISTING_CONTROL_PLAN_20260928.md>)
+
+**STEP1 KD CONTROL COMPLETE - 2026-09-28**
+
+1번 일반 KD 대조 완료. 기존 DP1/DP2·PNG·hard-anchor 라벨 solver를 유지하고 RN 목표 생성만 바꿨다. DenseNet AUROC: KD 0.618654/0.627710 대 현재 MT 0.686370/0.663404, 차이 +0.067716/+0.035694이며 두 환자 bootstrap CI 양수. AP 점추정은 개선됐으나 두 구간은0포함. 정의한 KD 대조 대비 추가 개발 효용이며 독립 확인·선행 전체 우위·CVPR 기여 완료 아님. 새 KD 라벨2개, Q/noise/pixel/모델forward/Expert/Reserved0. 기존 라벨·예측 재현 및 독립 검산 통과. 2·3번 자동 실행 없음. 큰 단계2, 현재 실행 없음.
+
+[Results](<PUBLIC_TRANSFER_KD_CONTROL_RESULTS_20260928.md>)
+
+**STEP1 KD CONTROL STARTED - 2026-09-28**
+
+User authorized step1 only after the 30-60 minute estimate. Two existing DP summaries/PNG banks are reused; only the ResNet18 target changes to ordinary teacher-score KD. Original hard-label anchor remains. No public128/source-only expansion, no new Q access, DP release, pixel updates, or Expert/Reserved. Construction and two-label sealing precede V evaluation. Stage2 remains in progress.
+
+[Execution contract](<contribution_kd_control_20260928_v1/EXECUTION_CONTRACT.md>)
+
+**NEXT EXPERIMENT PLAN ONLY - 2026-09-28**
+
+2026-09-28 다음 실험 계획만 기록. 사용자 범위는 ‘계획만 우선’. 일반 KD·DINO-only·현재 평균 전달 × 기존 DP PNG·공개128 × 기존 DP1/DP2의 공통 비교를 설계했다. 공개 전달의 signed-public-label ridge 동치와 공정한 carrier 비교용 zero-centered regularizer를 명시했다. 코드 구현·학습·모델 forward·V 평가·Q 접근·DP release·Expert/Reserved 접근 없음. 큰 단계2 유지. 실제 최신 결과는 9월24일 contribution search이며, 첫 실행 묶음 추정60~120분은 향후 계획이다.
+
+[Experiment plan](<PUBLIC_TRANSFER_LABEL_EXPERIMENT_PLAN_20260928.md>)
+
 ## 2026-09-28 — 공개 모델 전달·DP 라벨 최적화 후보의 판단과 다음 대조 기록
 
 사용자 요청으로 [상세 판단·전략](PUBLIC_TRANSFER_LABEL_STRATEGY_20260928.md)을 기록했다. 실제 근거는 [2026-09-24 기여 탐색 실행](CONTRIBUTION_SEARCH_RESULTS_20260924.md)이다. 기존 두 feature-DP 요약과 PNG를 유지한 joint DINO/ResNet18 라벨 계산으로 DenseNet AUROC 0.650018→0.686370, 0.596743→0.663404를 얻었다. 기존 hard label 대비 두 조건부 AUROC 구간은 양수이나, 강한 DINO-only label solve 대비 첫 bank는 불확실하고 두 번째만 AUROC/AP 구간이 양수다.

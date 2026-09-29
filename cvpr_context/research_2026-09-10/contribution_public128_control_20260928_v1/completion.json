@@ -1,0 +1,16 @@
+{
+  "status": "STEP3_PUBLIC128_COMPARISON_COMPLETE",
+  "utc": "2026-09-28T07:29:05.385158+00:00",
+  "contract_sha256": "8bfdc53868ec701eeac29b8aa221df517177b1ba671b2606babc94043965cca1",
+  "files": {
+    "contract.json": "8bfdc53868ec701eeac29b8aa221df517177b1ba671b2606babc94043965cca1",
+    "selection_seal.json": "bc6b0b8e67f16b81b1d113f02a971b973cb7b627f6d4f61e64ad065d9de7e64d",
+    "label_seal.json": "867d53a99bcc4c40a73675f3b6d178da295090f27d32dd8ba3e5ddecb116e306",
+    "results.json": "3c803ee7de9534b907a4d58b16df2d974ddb42c90466de8fdda866485d469822",
+    "evaluation_inputs.json": "7be3847fbcb998779309b8ed597448b74d7127fbf0ca9ffc2e5a0db85a3b0cb0",
+    "predictions_private.npz": "32984c9478f18949c90720e0a8f28f954706e10f84e9eebea22cd532bf0c3668",
+    "paired_bootstrap.npz": "f5bb1f0d718aa04ef0744f499541f385b6083957ebb875fe6b2fd84acaaec578",
+    "contrast_bootstrap.npz": "24b34534887c08625d6a6cf1947e36dce31672bc5def798e81558fe3b1ca4c86",
+    "readout_weights.npz": "7c01c111d58db87d1cc9351c8b0f733ab381412e39f01dc4b04acb877c822ea8"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "old_selection": {
+    "path": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/public128_selection.npz",
+    "sha256": "7e49a9ba1ab1ea10ecb7ae6f8cd91792ccd458e14cb1da1534b31154370de3c4",
+    "kind": "frozen_Step3_public128_selection.npz",
+    "phases": [
+      "construct",
+      "evaluate"
+    ]
+  },
+  "old_manifest": {
+    "path": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/public128_manifest.json",
+    "sha256": "a413c49e1f5f6bdaefc4bd5e98426d15646c88f69cbb249be4ab2d4ea489b00d",
+    "kind": "frozen_Step3_public128_manifest.json",
+    "phases": [
+      "construct"
+    ]
+  },
+  "P_DINO": {
+    "path": "code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+    "kind": "public_P",
+    "phases": [
+      "construct"
+    ],
+    "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+  },
+  "P_RN": {
+    "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+    "kind": "public_P",
+    "phases": [
+      "construct",
+      "evaluate"
+    ],
+    "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+  },
+  "public_target": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/public_target/target.npz",
+    "sha256": "e50ac1fad0e16dd746e82a7a9808135b709a469a8dc0b0aada9258872ad40f7e",
+    "kind": "public_P_only_target",
+    "phases": [
+      "construct"
+    ]
+  },
+  "prior_target_weights": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/target_weights.npz",
+    "sha256": "5f1475e9b5782fcbec5c5adeda2d54b9b9e899e68cc545c8dde3ff909b3fdc83",
+    "kind": "public_and_existing_DP_postprocessing",
+    "phases": [
+      "construct"
+    ]
+  },
+  "prior_label_seal": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/label_seal.json",
+    "sha256": "ff99750ea62578d8bc3dd783421158bc5c4399fa95c5522f422a406d0148ac08",
+    "kind": "prior_provenance",
+    "phases": [
+      "construct"
+    ]
+  }
+}

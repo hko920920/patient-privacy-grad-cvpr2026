@@ -1,0 +1,2053 @@
+{
+  "status": "PUBLIC128_FROZEN",
+  "created": "2026-09-28T09:02:22.132339+00:00",
+  "selection": {
+    "salt": "public-carrier-20260928-v1-repeat202",
+    "patient_image_hash": "SHA256(salt|patient_id|image_id)",
+    "candidate": "one per P patient, positive image for any patient with positive visit",
+    "initial": 6,
+    "total": 128,
+    "method": "greedy farthest-first squared Euclidean, SHA256 order tie breaking",
+    "features": "DINO K4 flattened64 and RN128, each candidate block divided by sqrt(mean squared norm), equal weight",
+    "uses_DP_targets": false,
+    "uses_DenseNet": false,
+    "uses_V": false
+  },
+  "rows": [
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00003314_000.png",
+      "image_id": "00003314_000.png",
+      "patient_id": "3314",
+      "label": 1,
+      "sha256": "20e75961427a4e4b2c775f0824155afb3a0b9c5a01542b4b9bc9a175461088b6",
+      "cache_row": 70,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00018900_000.png",
+      "image_id": "00018900_000.png",
+      "patient_id": "18900",
+      "label": 1,
+      "sha256": "fb4cc48eb325671a00455b982b2d42501d23de69584037e726e8b3de84dcc8c2",
+      "cache_row": 489,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00027391_003.png",
+      "image_id": "00027391_003.png",
+      "patient_id": "27391",
+      "label": 1,
+      "sha256": "9367f75e94a48b01982d61f9f4914b7a51e30229e71c6c7a12b94181818d7316",
+      "cache_row": 739,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00013458_002.png",
+      "image_id": "00013458_002.png",
+      "patient_id": "13458",
+      "label": 1,
+      "sha256": "009416cfd350c5053a7bacb3fe5dc0975fdee16147d54d49df4a854dd40ab0d5",
+      "cache_row": 339,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00028493_000.png",
+      "image_id": "00028493_000.png",
+      "patient_id": "28493",
+      "label": 1,
+      "sha256": "da0000866ced9f781989af1e655c9f73307c04653c652f48f4c158fa1b111a74",
+      "cache_row": 778,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00009045_002.png",
+      "image_id": "00009045_002.png",
+      "patient_id": "9045",
+      "label": 1,
+      "sha256": "40465dbc52f0f331f361c7fe597cdb5f7e3144a437b01ae7f12b1e2e0d127c80",
+      "cache_row": 223,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00005610_000.png",
+      "image_id": "00005610_000.png",
+      "patient_id": "5610",
+      "label": 0,
+      "sha256": "97129c11271eca29af849a850ea040f7b4412b12c404d2342fd53feb3f8212a1",
+      "cache_row": 124,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00028161_000.png",
+      "image_id": "00028161_000.png",
+      "patient_id": "28161",
+      "label": 0,
+      "sha256": "fdc7b7991513469e9270a55d9ebf8efacaa99f36090d000f3a1be43b65580874",
+      "cache_row": 767,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00026286_000.png",
+      "image_id": "00026286_000.png",
+      "patient_id": "26286",
+      "label": 0,
+      "sha256": "8ffda0a212179fb60f1ee62b7896285685a14cf053c2b7a391bb256f228f855e",
+      "cache_row": 699,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00024799_000.png",
+      "image_id": "00024799_000.png",
+      "patient_id": "24799",
+      "label": 0,
+      "sha256": "04d311f4c69a382aa767c7e6ae44214c875e54dcf8cacd6ad1fc649b5fc5c5b9",
+      "cache_row": 653,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00007635_000.png",
+      "image_id": "00007635_000.png",
+      "patient_id": "7635",
+      "label": 0,
+      "sha256": "8cc6607474e5d8a14290116997de1efdf1cbc0f9554898b369bf0a228dfff471",
+      "cache_row": 170,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00005550_000.png",
+      "image_id": "00005550_000.png",
+      "patient_id": "5550",
+      "label": 0,
+      "sha256": "7a8ab02695be0b3f52f51889a5fe351dfee8ef0d118cd81bb13eef87919908de",
+      "cache_row": 122,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00028563_000.png",
+      "image_id": "00028563_000.png",
+      "patient_id": "28563",
+      "label": 0,
+      "sha256": "417bccee01d317789876bb9ffa48bb2933cf681a6003de00eab3978835b83cd7",
+      "cache_row": 779,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00026734_001.png",
+      "image_id": "00026734_001.png",
+      "patient_id": "26734",
+      "label": 0,
+      "sha256": "6c08f786ba5d16b399f75cfafaf97dbcd668913c7d5b75cc069a730122208815",
+      "cache_row": 714,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00012994_000.png",
+      "image_id": "00012994_000.png",
+      "patient_id": "12994",
+      "label": 0,
+      "sha256": "57de57fe9bb97f052f9638efa8ffcc20ba96e0240d5db1174d18b76a1a382094",
+      "cache_row": 331,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00013109_000.png",
+      "image_id": "00013109_000.png",
+      "patient_id": "13109",
+      "label": 0,
+      "sha256": "4fa98880e7f6f69d0e294048e96f182f1613e239d45a319209401a7f75a6ec28",
+      "cache_row": 332,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00022640_000.png",
+      "image_id": "00022640_000.png",
+      "patient_id": "22640",
+      "label": 0,
+      "sha256": "bd1a956a3e5b79462b74a4e9a9f98cd9215b73b6bba91d98440f3ab70f4363fe",
+      "cache_row": 597,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00009580_000.png",
+      "image_id": "00009580_000.png",
+      "patient_id": "9580",
+      "label": 0,
+      "sha256": "a9363b9bfada26356a120c094f680ed1ec0a2dbe46d11e7a336ca4c0744f0ab1",
+      "cache_row": 239,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00023582_000.png",
+      "image_id": "00023582_000.png",
+      "patient_id": "23582",
+      "label": 0,
+      "sha256": "40d84ffb97449be1688097ff1aea210049bfa55a1491314f1fdedbeffc9ff992",
+      "cache_row": 620,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00027456_000.png",
+      "image_id": "00027456_000.png",
+      "patient_id": "27456",
+      "label": 0,
+      "sha256": "6f0af8cde97113f8771172dffca8b984c7bb264db2faca22dba03cf957134d3e",
+      "cache_row": 745,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00001794_000.png",
+      "image_id": "00001794_000.png",
+      "patient_id": "1794",
+      "label": 0,
+      "sha256": "20e2893257a77fabce3d3c1c401f53fb9bd18fbe5d1d6a122665e276c073ce65",
+      "cache_row": 33,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00002444_002.png",
+      "image_id": "00002444_002.png",
+      "patient_id": "2444",
+      "label": 0,
+      "sha256": "005f80edcc589f546dc2c883b8a1a81f1be79e1019fbdd96946dfcc20520e9df",
+      "cache_row": 50,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00012113_000.png",
+      "image_id": "00012113_000.png",
+      "patient_id": "12113",
+      "label": 0,
+      "sha256": "a952483c3d7aa184fa23e9fd5d43832a7987784832bcaeb1373aeaf740b0097b",
+      "cache_row": 297,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00003547_002.png",
+      "image_id": "00003547_002.png",
+      "patient_id": "3547",
+      "label": 0,
+      "sha256": "f08688a09a89d8e36d6fa18822572e782812000ab545cc582a697c3e986df54b",
+      "cache_row": 74,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00022076_000.png",
+      "image_id": "00022076_000.png",
+      "patient_id": "22076",
+      "label": 0,
+      "sha256": "25b92e241babcc754de1c2c852681a51e782c6b2e08d292223ada20715a31bca",
+      "cache_row": 586,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00015863_001.png",
+      "image_id": "00015863_001.png",
+      "patient_id": "15863",
+      "label": 0,
+      "sha256": "745dc1bebe4287fe258a53d2653223017fb39ff435b4ca0f45178538d79c0283",
+      "cache_row": 395,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00020236_000.png",
+      "image_id": "00020236_000.png",
+      "patient_id": "20236",
+      "label": 0,
+      "sha256": "76e7ce840a0ef8acdb912739b76763c31ff36834a0630287935c2e0fee99dd03",
+      "cache_row": 534,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00019893_000.png",
+      "image_id": "00019893_000.png",
+      "patient_id": "19893",
+      "label": 0,
+      "sha256": "ba81d5fefa81d311daa52e19822459b682051169c2abff49cf8c9ec65e5c7e74",
+      "cache_row": 520,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00004322_000.png",
+      "image_id": "00004322_000.png",
+      "patient_id": "4322",
+      "label": 0,
+      "sha256": "6b3f150e204079a93872bf9be8dca0d9125f70f9270854a6c175e69002b906aa",
+      "cache_row": 90,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00006686_000.png",
+      "image_id": "00006686_000.png",
+      "patient_id": "6686",
+      "label": 0,
+      "sha256": "bddae575bde924f0b37c3720bcecdfdac0c19cdb08acae9d8880a32787af3aa8",
+      "cache_row": 148,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00026282_002.png",
+      "image_id": "00026282_002.png",
+      "patient_id": "26282",
+      "label": 0,
+      "sha256": "432733ea3bf606a7bb6986a143b9419bc7a1bda258af57e9ad1f509030dbaf80",
+      "cache_row": 698,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00016644_000.png",
+      "image_id": "00016644_000.png",
+      "patient_id": "16644",
+      "label": 0,
+      "sha256": "72bee80e2ec24f9e61f9c0eab139d9fa12a990d2e7e264010a93459276ab2fe6",
+      "cache_row": 422,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00009024_000.png",
+      "image_id": "00009024_000.png",
+      "patient_id": "9024",
+      "label": 0,
+      "sha256": "9627ce5d7dd48a87e4a8e36d741af35ae116dccdd040e05edbef2f6702cadbc3",
+      "cache_row": 219,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00009151_000.png",
+      "image_id": "00009151_000.png",
+      "patient_id": "9151",
+      "label": 0,
+      "sha256": "2615beeffa76c1a63ec3a4def9faf934387331de4a571095b867dd02924d1118",
+      "cache_row": 227,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00000932_000.png",
+      "image_id": "00000932_000.png",
+      "patient_id": "932",
+      "label": 0,
+      "sha256": "1098764787d119c1f63d5e993732d24ad01787bb657dba5bdad4a8151dfbaba1",
+      "cache_row": 17,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00023225_000.png",
+      "image_id": "00023225_000.png",
+      "patient_id": "23225",
+      "label": 0,
+      "sha256": "3698195e9af74be757d0cc08fa1eec1b13048ba6588c62251aacdf074b85a84e",
+      "cache_row": 614,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00030157_002.png",
+      "image_id": "00030157_002.png",
+      "patient_id": "30157",
+      "label": 0,
+      "sha256": "b1b3685cf33987d3f97a25de05c858f5ae4d88c0b4c6f3592e78d464dd4198d9",
+      "cache_row": 807,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00000175_000.png",
+      "image_id": "00000175_000.png",
+      "patient_id": "175",
+      "label": 0,
+      "sha256": "61ac6c1800c988de088da13897f1e6966c9535e645c6a88bb4038b42e30fb9dc",
+      "cache_row": 4,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00009883_000.png",
+      "image_id": "00009883_000.png",
+      "patient_id": "9883",
+      "label": 0,
+      "sha256": "6afdc5c6dca533362c1adfa1b44c3f65cc176777a3d125cdfbdd1a7796a9360f",
+      "cache_row": 242,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00011219_000.png",
+      "image_id": "00011219_000.png",
+      "patient_id": "11219",
+      "label": 0,
+      "sha256": "dfc94f3541b04a453a911853da26518f4d11c0609e28bcb74c9b2cd5a19838b2",
+      "cache_row": 270,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00015535_000.png",
+      "image_id": "00015535_000.png",
+      "patient_id": "15535",
+      "label": 0,
+      "sha256": "d81abbc66804fab20312b48fca857f01eecbd4d9701a8ea135fedb7f9141c06e",
+      "cache_row": 387,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00026024_001.png",
+      "image_id": "00026024_001.png",
+      "patient_id": "26024",
+      "label": 0,
+      "sha256": "9a004ba9e519f90818e8a4d413d4ef3df6907572eebd0fa722a5cf8d1056ea44",
+      "cache_row": 690,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00003988_002.png",
+      "image_id": "00003988_002.png",
+      "patient_id": "3988",
+      "label": 0,
+      "sha256": "e5296075aec3cd315187d2a621257de762e9c24e730fa70682b6b5424866a50d",
+      "cache_row": 84,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00008733_000.png",
+      "image_id": "00008733_000.png",
+      "patient_id": "8733",
+      "label": 0,
+      "sha256": "6efbf3f5dbe8f6a77606df57943d59ea7797f11e93bd857d8f7e35a530b6d505",
+      "cache_row": 205,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00022430_000.png",
+      "image_id": "00022430_000.png",
+      "patient_id": "22430",
+      "label": 0,
+      "sha256": "5fae802c6481f00e8b5d1b2e26d9558d60be0a1524f148a69bb6533b67857505",
+      "cache_row": 596,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00017826_000.png",
+      "image_id": "00017826_000.png",
+      "patient_id": "17826",
+      "label": 0,
+      "sha256": "65f0e1c21b48c03e90d13527a19c0834ce9b3820acf197642b96d34173871325",
+      "cache_row": 461,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00008432_000.png",
+      "image_id": "00008432_000.png",
+      "patient_id": "8432",
+      "label": 0,
+      "sha256": "0ce3f642826b4246eae57c84c0ee33f78c32a2304fa5cae7229837bfafaaab4b",
+      "cache_row": 194,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00009552_000.png",
+      "image_id": "00009552_000.png",
+      "patient_id": "9552",
+      "label": 0,
+      "sha256": "65ff2bd80e36b3b6b7466751d1e39394fcf568d43a2e726207acea825bd8a397",
+      "cache_row": 238,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00000046_000.png",
+      "image_id": "00000046_000.png",
+      "patient_id": "46",
+      "label": 0,
+      "sha256": "5c6d02d6a2cf5fce81390d31bcc5610d4b726add317b4411c441d9a50710c0bb",
+      "cache_row": 2,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00012164_005.png",
+      "image_id": "00012164_005.png",
+      "patient_id": "12164",
+      "label": 0,
+      "sha256": "6e02ccfc64879fdda9a9c6d812e02ef9a8198365215fcd4d1bd10a4696b9290c",
+      "cache_row": 300,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00021698_001.png",
+      "image_id": "00021698_001.png",
+      "patient_id": "21698",
+      "label": 0,
+      "sha256": "521a5ee49083ce6e14c6d0851e6a689440961d6c8e1c228e433466ab6d5c8ef8",
+      "cache_row": 580,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00028674_002.png",
+      "image_id": "00028674_002.png",
+      "patient_id": "28674",
+      "label": 0,
+      "sha256": "fda309cfd3ab3432c9d56744d5fde39ddeb6ccb4bfb50bf6fef32a2d720684f0",
+      "cache_row": 780,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00008035_000.png",
+      "image_id": "00008035_000.png",
+      "patient_id": "8035",
+      "label": 0,
+      "sha256": "d0133d7428f2c92ad7baae54c8dafdbd37443f0ff1adecc331186c04998257d4",
+      "cache_row": 176,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00018948_000.png",
+      "image_id": "00018948_000.png",
+      "patient_id": "18948",
+      "label": 0,
+      "sha256": "b24dd7632b1e16ccbb5db486f824cb9f8c211ccf269a1d6d474ceb0d750c7847",
+      "cache_row": 490,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00003761_001.png",
+      "image_id": "00003761_001.png",
+      "patient_id": "3761",
+      "label": 0,
+      "sha256": "6336eb1948d25a47b7888d6480a338c948bcd33cfca588528b0e421a717a68e9",
+      "cache_row": 79,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00017392_000.png",
+      "image_id": "00017392_000.png",
+      "patient_id": "17392",
+      "label": 0,
+      "sha256": "7695f7f6416020699d184cb7ba67107ce452563fd1e99ef4b50ead2975f6499d",
+      "cache_row": 444,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00011627_000.png",
+      "image_id": "00011627_000.png",
+      "patient_id": "11627",
+      "label": 0,
+      "sha256": "e19ccd260c693576ac48741a917c0465f26d463af1f5d3685c990d72e9d33947",
+      "cache_row": 284,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00004982_000.png",
+      "image_id": "00004982_000.png",
+      "patient_id": "4982",
+      "label": 0,
+      "sha256": "69d9a6d20a8da6e2553334c8aa504db70caa57c48e50a780b041538f121b6fdb",
+      "cache_row": 110,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00001598_000.png",
+      "image_id": "00001598_000.png",
+      "patient_id": "1598",
+      "label": 0,
+      "sha256": "6ad4d7e9f4a850937c9618f5810166b82e238baffc42d81a6c3863fb5922c13e",
+      "cache_row": 28,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00027796_000.png",
+      "image_id": "00027796_000.png",
+      "patient_id": "27796",
+      "label": 0,
+      "sha256": "23d43d0a8d3be4690a47674838b9839c0fe7d276f939cf2a11c59b7313b25fac",
+      "cache_row": 754,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00017438_000.png",
+      "image_id": "00017438_000.png",
+      "patient_id": "17438",
+      "label": 0,
+      "sha256": "16907de206dd0f670f5c548ef52d6d3c35fee6a286e5574d42fd3915d947f91d",
+      "cache_row": 445,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00026941_000.png",
+      "image_id": "00026941_000.png",
+      "patient_id": "26941",
+      "label": 0,
+      "sha256": "e7108d3ae41f235c56b1104fac3e8b43789854f51b0a93cb4879d8d9c922b1cf",
+      "cache_row": 718,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00003613_000.png",
+      "image_id": "00003613_000.png",
+      "patient_id": "3613",
+      "label": 0,
+      "sha256": "253b9cd52d48348ed9a3a68c6399d7080ff627f71c56c367c0d846c8d8f5c0c4",
+      "cache_row": 75,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00004011_000.png",
+      "image_id": "00004011_000.png",
+      "patient_id": "4011",
+      "label": 0,
+      "sha256": "a72df1d32c4a94e66cd547de2e1b1ecf40ff28eff1ad687cb8eafe55ca359024",
+      "cache_row": 85,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00019375_000.png",
+      "image_id": "00019375_000.png",
+      "patient_id": "19375",
+      "label": 0,
+      "sha256": "57332c696495e1d5b7b9a160917a994a0b0717c5a7dcb96049b775285038ccb7",
+      "cache_row": 501,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00020480_000.png",
+      "image_id": "00020480_000.png",
+      "patient_id": "20480",
+      "label": 0,
+      "sha256": "af15a3692ec9c754a31625ffe61eff453d790ba4d393032c3e547309e37c6e7d",
+      "cache_row": 544,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00024762_000.png",
+      "image_id": "00024762_000.png",
+      "patient_id": "24762",
+      "label": 0,
+      "sha256": "9427ea9b03e986b953d4574b4ee24485a40fe80a6c8bd60a391e265036873c17",
+      "cache_row": 649,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00012978_000.png",
+      "image_id": "00012978_000.png",
+      "patient_id": "12978",
+      "label": 0,
+      "sha256": "2b411275d7e6e4c0a71a71a4a5f2eded88e20d29edcee9b3e0cd17a018b01d25",
+      "cache_row": 330,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00015615_000.png",
+      "image_id": "00015615_000.png",
+      "patient_id": "15615",
+      "label": 0,
+      "sha256": "35a26d07c7d0e54743889b168355ceb4e8994f39f73abeeca2e5e79124ecc56d",
+      "cache_row": 390,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00011093_000.png",
+      "image_id": "00011093_000.png",
+      "patient_id": "11093",
+      "label": 0,
+      "sha256": "d6e56c02a8d3ee12fddf795e4280d13bd51a2c0c4e5a559434177d2aad910150",
+      "cache_row": 267,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00011878_000.png",
+      "image_id": "00011878_000.png",
+      "patient_id": "11878",
+      "label": 0,
+      "sha256": "cc467ab9f396481b4a4b4b3ea694dfda5ce46525f95c0caa56abd93f1ecf5017",
+      "cache_row": 290,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00025647_000.png",
+      "image_id": "00025647_000.png",
+      "patient_id": "25647",
+      "label": 0,
+      "sha256": "7eda216586b9ca0aaf74f17e36d4a3afe83bfa83e84e0cc5a202754dd1fd9bbb",
+      "cache_row": 672,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00020549_000.png",
+      "image_id": "00020549_000.png",
+      "patient_id": "20549",
+      "label": 0,
+      "sha256": "a8961a865cdf50cf310646de6afcc8f9dbaa75fe728ed5ad80fe13b6780d79c0",
+      "cache_row": 547,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00023479_000.png",
+      "image_id": "00023479_000.png",
+      "patient_id": "23479",
+      "label": 0,
+      "sha256": "1d69f5df1330ddfed70893a0031a2767d832685129ffc008a701d730ecfe20dc",
+      "cache_row": 619,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00019085_006.png",
+      "image_id": "00019085_006.png",
+      "patient_id": "19085",
+      "label": 0,
+      "sha256": "dd7738eded5903121de40849848b4eae4ff0ec7e8c6d0702744d426732bc4b43",
+      "cache_row": 493,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00001662_000.png",
+      "image_id": "00001662_000.png",
+      "patient_id": "1662",
+      "label": 0,
+      "sha256": "94ab4e30ec2fada510ba5b8f19786adac909f78b90e5c2a6fa7e7f2c80c4679a",
+      "cache_row": 32,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00006773_000.png",
+      "image_id": "00006773_000.png",
+      "patient_id": "6773",
+      "label": 0,
+      "sha256": "b432ab8eb18f8b002701b6a34b81df8326cc92e30d8a1e714b7239a617f3b148",
+      "cache_row": 149,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00025711_000.png",
+      "image_id": "00025711_000.png",
+      "patient_id": "25711",
+      "label": 0,
+      "sha256": "4c6b949051987c6d5d65c592b68e6969c2a332d03d35e2d07e1cc290585637c5",
+      "cache_row": 675,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00019117_000.png",
+      "image_id": "00019117_000.png",
+      "patient_id": "19117",
+      "label": 0,
+      "sha256": "c787ecdc26f94cb6389c696de8b69fc125f08380c58873e5cb89df46d792dc21",
+      "cache_row": 495,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00006308_003.png",
+      "image_id": "00006308_003.png",
+      "patient_id": "6308",
+      "label": 0,
+      "sha256": "178f5eb6e340f88e20ae80306ff00d281559394d7bf8969748b7144e8bbc34c6",
+      "cache_row": 140,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00026005_001.png",
+      "image_id": "00026005_001.png",
+      "patient_id": "26005",
+      "label": 0,
+      "sha256": "fc323152311fc29f96c5b1370e6c7e0b955e3dcb951fa6b027e8b635f46f84ce",
+      "cache_row": 688,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00001439_000.png",
+      "image_id": "00001439_000.png",
+      "patient_id": "1439",
+      "label": 0,
+      "sha256": "82509e2a19df37825b24c307cf58bc8b4e74b7f42cac099361305fb99e80ed9c",
+      "cache_row": 25,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00027433_002.png",
+      "image_id": "00027433_002.png",
+      "patient_id": "27433",
+      "label": 0,
+      "sha256": "7b7e6a4d8713958cb157ae8cc2478936e87f99746dbf3f267c1a1f5e0c5f1f09",
+      "cache_row": 744,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00016071_000.png",
+      "image_id": "00016071_000.png",
+      "patient_id": "16071",
+      "label": 0,
+      "sha256": "2fb4df92c155e54cdb2fcfac8ee8f17c85c9cd72b9609a8f4efa14df61d579ef",
+      "cache_row": 403,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00012562_000.png",
+      "image_id": "00012562_000.png",
+      "patient_id": "12562",
+      "label": 0,
+      "sha256": "f78a40b47ef66e4e630d83ce34f74d0c2b0a6f372a0da0d909102cefa7b915e3",
+      "cache_row": 319,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00020275_001.png",
+      "image_id": "00020275_001.png",
+      "patient_id": "20275",
+      "label": 0,
+      "sha256": "451c647b0cee39a34e1cbbcdfb9fc2f4348b56e67f0fc6067b48434a65cb1ab4",
+      "cache_row": 538,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00019043_000.png",
+      "image_id": "00019043_000.png",
+      "patient_id": "19043",
+      "label": 0,
+      "sha256": "0b6039912454d5bc54fa9035eb48a915a1470611ee550ce3dd45f62efb7a874e",
+      "cache_row": 491,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00000200_001.png",
+      "image_id": "00000200_001.png",
+      "patient_id": "200",
+      "label": 0,
+      "sha256": "2f25a40c9886c18daa193abce96913acfc81f24ecc2862abf60c2f60d1ff9d52",
+      "cache_row": 6,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00012781_002.png",
+      "image_id": "00012781_002.png",
+      "patient_id": "12781",
+      "label": 0,
+      "sha256": "7804a21b59c6555ee58e3c29f76d0ef9907ce753f59f25aa92197740ccbed63a",
+      "cache_row": 326,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00020241_000.png",
+      "image_id": "00020241_000.png",
+      "patient_id": "20241",
+      "label": 0,
+      "sha256": "a4a9df0dba2a4bea91fdd27e3f3c1908eeb5a460077674f7cd51bc4f96c591bb",
+      "cache_row": 535,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00003264_003.png",
+      "image_id": "00003264_003.png",
+      "patient_id": "3264",
+      "label": 0,
+      "sha256": "e35b3919e3fcb15476662e61ab7a3cae082e1bbcf7e8d0c8a8ebbb367fb245da",
+      "cache_row": 69,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00029558_000.png",
+      "image_id": "00029558_000.png",
+      "patient_id": "29558",
+      "label": 0,
+      "sha256": "4a2f3371b3cf240ad81b28ec80e602166780ee906640d6cb5088278b064d09b1",
+      "cache_row": 795,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00008910_000.png",
+      "image_id": "00008910_000.png",
+      "patient_id": "8910",
+      "label": 0,
+      "sha256": "92a03a501568da7ad784f255c65a9ba2c840ff33d560127d2917fbb814d0a8b1",
+      "cache_row": 216,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00013898_000.png",
+      "image_id": "00013898_000.png",
+      "patient_id": "13898",
+      "label": 0,
+      "sha256": "bb9b3028eeda6ba90ebf3a87004f69e322e8d3b06da22599194930ed676cc131",
+      "cache_row": 351,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00019564_000.png",
+      "image_id": "00019564_000.png",
+      "patient_id": "19564",
+      "label": 0,
+      "sha256": "6778680c6b2b28c8548d7dae8cb26cf21b16504b5dd7a17026fda9f5cd50106f",
+      "cache_row": 508,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00023924_000.png",
+      "image_id": "00023924_000.png",
+      "patient_id": "23924",
+      "label": 0,
+      "sha256": "4310a2119038f09e3cb5a901511045ee0e1735269d7370cfeec152a763acd3cd",
+      "cache_row": 630,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00007753_000.png",
+      "image_id": "00007753_000.png",
+      "patient_id": "7753",
+      "label": 0,
+      "sha256": "09a64f42a37d2316b606986c6236adcbd6c5f3987481d398db10cac4d4fd4663",
+      "cache_row": 172,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00011974_000.png",
+      "image_id": "00011974_000.png",
+      "patient_id": "11974",
+      "label": 0,
+      "sha256": "f5624047c2335f3e616db50b968098c7966d41752ce249abbdb4e75d49baafac",
+      "cache_row": 293,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00000612_000.png",
+      "image_id": "00000612_000.png",
+      "patient_id": "612",
+      "label": 0,
+      "sha256": "2fe038ce098a1a372337ca22c54f7a153ce78dd820f0f22fbe5854f83c35c6c0",
+      "cache_row": 11,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00005853_000.png",
+      "image_id": "00005853_000.png",
+      "patient_id": "5853",
+      "label": 0,
+      "sha256": "f641d9aee99866b7c390048691a4de04279b63268166d3b23a14f56ddaf9c406",
+      "cache_row": 132,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00005531_000.png",
+      "image_id": "00005531_000.png",
+      "patient_id": "5531",
+      "label": 0,
+      "sha256": "038654912ef7ea50169fb37ed39375d3cda6f1c6b6cfe928d59670d963901a9f",
+      "cache_row": 121,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00023262_000.png",
+      "image_id": "00023262_000.png",
+      "patient_id": "23262",
+      "label": 0,
+      "sha256": "da9758f92db14f1513029e845a38d6287a94b479eced1fe8caf755a35b01eef6",
+      "cache_row": 616,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00008358_000.png",
+      "image_id": "00008358_000.png",
+      "patient_id": "8358",
+      "label": 0,
+      "sha256": "73378489d6348e24acbba2a25802b1e8039f6cd4ffe8762b796e3ddf9bb4e5e8",
+      "cache_row": 190,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00001914_001.png",
+      "image_id": "00001914_001.png",
+      "patient_id": "1914",
+      "label": 0,
+      "sha256": "a181e072428a2e4d203772b42ae2b608dbdd378018580d5a50341ea1c85af611",
+      "cache_row": 36,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00010774_000.png",
+      "image_id": "00010774_000.png",
+      "patient_id": "10774",
+      "label": 0,
+      "sha256": "6c45d07e7df42f8cd5215a12153a71c66d823d8fe31fc9b5edd95ac08dad1905",
+      "cache_row": 261,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00018365_000.png",
+      "image_id": "00018365_000.png",
+      "patient_id": "18365",
+      "label": 0,
+      "sha256": "54a75f37d4520452f39f475537e1ffee9447196fb74bbb0b51538999289e2518",
+      "cache_row": 479,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00016808_000.png",
+      "image_id": "00016808_000.png",
+      "patient_id": "16808",
+      "label": 0,
+      "sha256": "c1f756f182821bd2191a6f94f2927912385fea6f2762d2a774d2e0bfaa2cb495",
+      "cache_row": 426,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00010383_000.png",
+      "image_id": "00010383_000.png",
+      "patient_id": "10383",
+      "label": 0,
+      "sha256": "8ef25f35b8b991413decefaabd6ac752379a817129384a1376271d1e4dca55b3",
+      "cache_row": 257,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00011552_000.png",
+      "image_id": "00011552_000.png",
+      "patient_id": "11552",
+      "label": 0,
+      "sha256": "7dfd132f9f240a9f4dc1f0d41b3084ff02b2985321902f2986b396330c1821a8",
+      "cache_row": 282,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00025597_001.png",
+      "image_id": "00025597_001.png",
+      "patient_id": "25597",
+      "label": 0,
+      "sha256": "83dcd1e69e5af9bf1c72d89ef77c60ff16bf63c176c7dfb28e1309695d9659ee",
+      "cache_row": 669,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00019500_001.png",
+      "image_id": "00019500_001.png",
+      "patient_id": "19500",
+      "label": 0,
+      "sha256": "5088f27ba3b8971f1755eb9be98440d35bbe5f57ae728dbd2d966ab06edd90df",
+      "cache_row": 506,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00023127_000.png",
+      "image_id": "00023127_000.png",
+      "patient_id": "23127",
+      "label": 0,
+      "sha256": "d8f700e6e715542c8689cc2436271b8bb9b684eadaca809f7e346fd45529f0a3",
+      "cache_row": 611,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00009641_011.png",
+      "image_id": "00009641_011.png",
+      "patient_id": "9641",
+      "label": 0,
+      "sha256": "a8d7f4c9a7a95830eddaedaec7a9936672bd9c9754166d090bfc64b5ddd557e8",
+      "cache_row": 240,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00017959_000.png",
+      "image_id": "00017959_000.png",
+      "patient_id": "17959",
+      "label": 0,
+      "sha256": "48349859daff5f3051ca025ab576fdb598d3364260afc6baf08d1c9532232ffe",
+      "cache_row": 463,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00018039_000.png",
+      "image_id": "00018039_000.png",
+      "patient_id": "18039",
+      "label": 0,
+      "sha256": "da4a6e3561dae79782c7e0218fce7e8555af2f3da12785a9dbce190dc5bd9020",
+      "cache_row": 466,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00020419_000.png",
+      "image_id": "00020419_000.png",
+      "patient_id": "20419",
+      "label": 0,
+      "sha256": "077082c34ca74d895f847d65621d18cd53bff0cf66b1e69bdc704af7d912fac8",
+      "cache_row": 543,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00018710_000.png",
+      "image_id": "00018710_000.png",
+      "patient_id": "18710",
+      "label": 0,
+      "sha256": "a83c13184fae3a01e1fa04174ca1a0c51a1748ee3586aef4e927abe78107e8ee",
+      "cache_row": 486,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00027990_000.png",
+      "image_id": "00027990_000.png",
+      "patient_id": "27990",
+      "label": 0,
+      "sha256": "3472e0fc2e7c021aca3e80dffdd67555f17ba84ffffbb646385224fb48811c73",
+      "cache_row": 762,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00023410_000.png",
+      "image_id": "00023410_000.png",
+      "patient_id": "23410",
+      "label": 0,
+      "sha256": "ba7b007e26e9aec2c7ba2ab10fce9c0076d8104ee19f668c9f712c6c61ee21b9",
+      "cache_row": 618,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00026853_000.png",
+      "image_id": "00026853_000.png",
+      "patient_id": "26853",
+      "label": 0,
+      "sha256": "f4eae7add42ed0df707e60a10f0c8ee34054a4bd0584a272b031d0bbc3232a1d",
+      "cache_row": 717,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00011517_000.png",
+      "image_id": "00011517_000.png",
+      "patient_id": "11517",
+      "label": 0,
+      "sha256": "5e07fb76a6ab67ee80ee554b8b47ee58c79413abd1f775fd0b15c6751af39f9e",
+      "cache_row": 281,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00021393_000.png",
+      "image_id": "00021393_000.png",
+      "patient_id": "21393",
+      "label": 0,
+      "sha256": "e18fdd47c57251ec5e2ece56f5cba0a139c3367c7f9f7962281e89d252c11d82",
+      "cache_row": 565,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00008886_000.png",
+      "image_id": "00008886_000.png",
+      "patient_id": "8886",
+      "label": 0,
+      "sha256": "b80113fc8bd124038e6068c867af827bc6664bdc450d0d72c87c45da8cb15783",
+      "cache_row": 214,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00028350_001.png",
+      "image_id": "00028350_001.png",
+      "patient_id": "28350",
+      "label": 0,
+      "sha256": "a4e44670933ed32e225642d10d08ce912d4543cd9ed3c5309d703c08a8ac80f7",
+      "cache_row": 773,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00021137_000.png",
+      "image_id": "00021137_000.png",
+      "patient_id": "21137",
+      "label": 0,
+      "sha256": "df24ebb9ba81ab056a1eb9275451174dcba7afe8b1a288e360121b61870ff723",
+      "cache_row": 557,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00006244_000.png",
+      "image_id": "00006244_000.png",
+      "patient_id": "6244",
+      "label": 0,
+      "sha256": "9e60cdb675b1b9c5854884bc7d251934d7d0c519f3271c039d4879bd8fb5dee3",
+      "cache_row": 139,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00017576_000.png",
+      "image_id": "00017576_000.png",
+      "patient_id": "17576",
+      "label": 0,
+      "sha256": "c64e28b7c9acab7ac65f1bbb031b4f4eb60ce80c4d31d10f34835eef6fc40405",
+      "cache_row": 452,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    },
+    {
+      "path": "code_working/_data/raw/nih_cxr14_pa_k10_plus_census_v1/images/00011957_000.png",
+      "image_id": "00011957_000.png",
+      "patient_id": "11957",
+      "label": 0,
+      "sha256": "69e563345c3e81197e983ff1d66ceff6291521ed6cdff5f57b2ee64e5e05cc0c",
+      "cache_row": 291,
+      "native_width": 1024,
+      "native_height": 1024,
+      "mode": "L"
+    }
+  ],
+  "public_patients": 128,
+  "positive_patients": 6,
+  "block_RMS": [
+    1.4289743796055874,
+    0.8032040773521907
+  ],
+  "trace": [
+    {
+      "step": 7,
+      "candidate_index": 476,
+      "nearest_squared_distance": 2.2524156355096077
+    },
+    {
+      "step": 8,
+      "candidate_index": 461,
+      "nearest_squared_distance": 2.247619301261704
+    },
+    {
+      "step": 9,
+      "candidate_index": 599,
+      "nearest_squared_distance": 2.2277784322347194
+    },
+    {
+      "step": 10,
+      "candidate_index": 294,
+      "nearest_squared_distance": 2.168981423256744
+    },
+    {
+      "step": 11,
+      "candidate_index": 17,
+      "nearest_squared_distance": 2.141814441461025
+    },
+    {
+      "step": 12,
+      "candidate_index": 401,
+      "nearest_squared_distance": 2.1209023041463553
+    },
+    {
+      "step": 13,
+      "candidate_index": 417,
+      "nearest_squared_distance": 2.0955867505714734
+    },
+    {
+      "step": 14,
+      "candidate_index": 620,
+      "nearest_squared_distance": 2.0484395690553687
+    },
+    {
+      "step": 15,
+      "candidate_index": 520,
+      "nearest_squared_distance": 2.00934268317952
+    },
+    {
+      "step": 16,
+      "candidate_index": 621,
+      "nearest_squared_distance": 2.0072115225734533
+    },
+    {
+      "step": 17,
+      "candidate_index": 628,
+      "nearest_squared_distance": 1.9886370486971245
+    },
+    {
+      "step": 18,
+      "candidate_index": 298,
+      "nearest_squared_distance": 1.9528513861105232
+    },
+    {
+      "step": 19,
+      "candidate_index": 182,
+      "nearest_squared_distance": 1.949820873179763
+    },
+    {
+      "step": 20,
+      "candidate_index": 353,
+      "nearest_squared_distance": 1.9328461377741715
+    },
+    {
+      "step": 21,
+      "candidate_index": 279,
+      "nearest_squared_distance": 1.9051972164965831
+    },
+    {
+      "step": 22,
+      "candidate_index": 161,
+      "nearest_squared_distance": 1.8875609562980895
+    },
+    {
+      "step": 23,
+      "candidate_index": 117,
+      "nearest_squared_distance": 1.8734647137560203
+    },
+    {
+      "step": 24,
+      "candidate_index": 15,
+      "nearest_squared_distance": 1.8618470235310147
+    },
+    {
+      "step": 25,
+      "candidate_index": 434,
+      "nearest_squared_distance": 1.8455291695755438
+    },
+    {
+      "step": 26,
+      "candidate_index": 114,
+      "nearest_squared_distance": 1.8057882055132968
+    },
+    {
+      "step": 27,
+      "candidate_index": 357,
+      "nearest_squared_distance": 1.7733978965592159
+    },
+    {
+      "step": 28,
+      "candidate_index": 433,
+      "nearest_squared_distance": 1.7148411965589745
+    },
+    {
+      "step": 29,
+      "candidate_index": 79,
+      "nearest_squared_distance": 1.7134045438572385
+    },
+    {
+      "step": 30,
+      "candidate_index": 280,
+      "nearest_squared_distance": 1.7028236278374358
+    },
+    {
+      "step": 31,
+      "candidate_index": 368,
+      "nearest_squared_distance": 1.7009303020539575
+    },
+    {
+      "step": 32,
+      "candidate_index": 109,
+      "nearest_squared_distance": 1.6840886322423658
+    },
+    {
+      "step": 33,
+      "candidate_index": 48,
+      "nearest_squared_distance": 1.6830752599573267
+    },
+    {
+      "step": 34,
+      "candidate_index": 497,
+      "nearest_squared_distance": 1.6808993456162316
+    },
+    {
+      "step": 35,
+      "candidate_index": 320,
+      "nearest_squared_distance": 1.6752236203609214
+    },
+    {
+      "step": 36,
+      "candidate_index": 151,
+      "nearest_squared_distance": 1.6667025840281278
+    },
+    {
+      "step": 37,
+      "candidate_index": 29,
+      "nearest_squared_distance": 1.6657318225296198
+    },
+    {
+      "step": 38,
+      "candidate_index": 365,
+      "nearest_squared_distance": 1.66381285624913
+    },
+    {
+      "step": 39,
+      "candidate_index": 92,
+      "nearest_squared_distance": 1.6619861948103503
+    },
+    {
+      "step": 40,
+      "candidate_index": 240,
+      "nearest_squared_distance": 1.6588092409130522
+    },
+    {
+      "step": 41,
+      "candidate_index": 502,
+      "nearest_squared_distance": 1.6580345747385463
+    },
+    {
+      "step": 42,
+      "candidate_index": 453,
+      "nearest_squared_distance": 1.6458384542450957
+    },
+    {
+      "step": 43,
+      "candidate_index": 238,
+      "nearest_squared_distance": 1.640155127821064
+    },
+    {
+      "step": 44,
+      "candidate_index": 446,
+      "nearest_squared_distance": 1.6260487016743828
+    },
+    {
+      "step": 45,
+      "candidate_index": 369,
+      "nearest_squared_distance": 1.6247213456226555
+    },
+    {
+      "step": 46,
+      "candidate_index": 126,
+      "nearest_squared_distance": 1.622960673992385
+    },
+    {
+      "step": 47,
+      "candidate_index": 405,
+      "nearest_squared_distance": 1.6152031298987908
+    },
+    {
+      "step": 48,
+      "candidate_index": 49,
+      "nearest_squared_distance": 1.6142193407020873
+    },
+    {
+      "step": 49,
+      "candidate_index": 80,
+      "nearest_squared_distance": 1.6098938517508645
+    },
+    {
+      "step": 50,
+      "candidate_index": 157,
+      "nearest_squared_distance": 1.608334955243846
+    },
+    {
+      "step": 51,
+      "candidate_index": 484,
+      "nearest_squared_distance": 1.603099489052717
+    },
+    {
+      "step": 52,
+      "candidate_index": 661,
+      "nearest_squared_distance": 1.5900570366379982
+    },
+    {
+      "step": 53,
+      "candidate_index": 224,
+      "nearest_squared_distance": 1.5899114363952296
+    },
+    {
+      "step": 54,
+      "candidate_index": 552,
+      "nearest_squared_distance": 1.5831895662425468
+    },
+    {
+      "step": 55,
+      "candidate_index": 74,
+      "nearest_squared_distance": 1.5708481099171023
+    },
+    {
+      "step": 56,
+      "candidate_index": 187,
+      "nearest_squared_distance": 1.569330671906653
+    },
+    {
+      "step": 57,
+      "candidate_index": 516,
+      "nearest_squared_distance": 1.5485780172483112
+    },
+    {
+      "step": 58,
+      "candidate_index": 444,
+      "nearest_squared_distance": 1.54211536530105
+    },
+    {
+      "step": 59,
+      "candidate_index": 606,
+      "nearest_squared_distance": 1.5317742376755934
+    },
+    {
+      "step": 60,
+      "candidate_index": 318,
+      "nearest_squared_distance": 1.5270739195544345
+    },
+    {
+      "step": 61,
+      "candidate_index": 229,
+      "nearest_squared_distance": 1.5209529413200533
+    },
+    {
+      "step": 62,
+      "candidate_index": 431,
+      "nearest_squared_distance": 1.5147116659043962
+    },
+    {
+      "step": 63,
+      "candidate_index": 634,
+      "nearest_squared_distance": 1.5138756599952055
+    },
+    {
+      "step": 64,
+      "candidate_index": 542,
+      "nearest_squared_distance": 1.5103119190396992
+    },
+    {
+      "step": 65,
+      "candidate_index": 574,
+      "nearest_squared_distance": 1.5084093965126166
+    },
+    {
+      "step": 66,
+      "candidate_index": 186,
+      "nearest_squared_distance": 1.4912326006100287
+    },
+    {
+      "step": 67,
+      "candidate_index": 367,
+      "nearest_squared_distance": 1.4895842417870175
+    },
+    {
+      "step": 68,
+      "candidate_index": 428,
+      "nearest_squared_distance": 1.485877321279119
+    },
+    {
+      "step": 69,
+      "candidate_index": 148,
+      "nearest_squared_distance": 1.4855944130333014
+    },
+    {
+      "step": 70,
+      "candidate_index": 69,
+      "nearest_squared_distance": 1.4800348822773857
+    },
+    {
+      "step": 71,
+      "candidate_index": 78,
+      "nearest_squared_distance": 1.478446597053668
+    },
+    {
+      "step": 72,
+      "candidate_index": 119,
+      "nearest_squared_distance": 1.4740760503419934
+    },
+    {
+      "step": 73,
+      "candidate_index": 472,
+      "nearest_squared_distance": 1.4644923696149075
+    },
+    {
+      "step": 74,
+      "candidate_index": 2,
+      "nearest_squared_distance": 1.4570613542083275
+    },
+    {
+      "step": 75,
+      "candidate_index": 371,
+      "nearest_squared_distance": 1.4534819974940933
+    },
+    {
+      "step": 76,
+      "candidate_index": 290,
+      "nearest_squared_distance": 1.449804200271527
+    },
+    {
+      "step": 77,
+      "candidate_index": 549,
+      "nearest_squared_distance": 1.4439012867792849
+    },
+    {
+      "step": 78,
+      "candidate_index": 273,
+      "nearest_squared_distance": 1.4434956437007378
+    },
+    {
+      "step": 79,
+      "candidate_index": 53,
+      "nearest_squared_distance": 1.4352865027243071
+    },
+    {
+      "step": 80,
+      "candidate_index": 440,
+      "nearest_squared_distance": 1.4347321050289108
+    },
+    {
+      "step": 81,
+      "candidate_index": 14,
+      "nearest_squared_distance": 1.4343334392290517
+    },
+    {
+      "step": 82,
+      "candidate_index": 360,
+      "nearest_squared_distance": 1.4324630013475024
+    },
+    {
+      "step": 83,
+      "candidate_index": 335,
+      "nearest_squared_distance": 1.4323187241845405
+    },
+    {
+      "step": 84,
+      "candidate_index": 141,
+      "nearest_squared_distance": 1.4309104347297106
+    },
+    {
+      "step": 85,
+      "candidate_index": 25,
+      "nearest_squared_distance": 1.4233143036239742
+    },
+    {
+      "step": 86,
+      "candidate_index": 514,
+      "nearest_squared_distance": 1.4179983213674237
+    },
+    {
+      "step": 87,
+      "candidate_index": 387,
+      "nearest_squared_distance": 1.4148378688307082
+    },
+    {
+      "step": 88,
+      "candidate_index": 76,
+      "nearest_squared_distance": 1.4147400532602605
+    },
+    {
+      "step": 89,
+      "candidate_index": 131,
+      "nearest_squared_distance": 1.4089352894270508
+    },
+    {
+      "step": 90,
+      "candidate_index": 412,
+      "nearest_squared_distance": 1.4071861641548282
+    },
+    {
+      "step": 91,
+      "candidate_index": 314,
+      "nearest_squared_distance": 1.402524734238679
+    },
+    {
+      "step": 92,
+      "candidate_index": 570,
+      "nearest_squared_distance": 1.4006660380384608
+    },
+    {
+      "step": 93,
+      "candidate_index": 321,
+      "nearest_squared_distance": 1.3975913217392204
+    },
+    {
+      "step": 94,
+      "candidate_index": 410,
+      "nearest_squared_distance": 1.3926186638035847
+    },
+    {
+      "step": 95,
+      "candidate_index": 607,
+      "nearest_squared_distance": 1.3917519054464875
+    },
+    {
+      "step": 96,
+      "candidate_index": 184,
+      "nearest_squared_distance": 1.3915908810819984
+    },
+    {
+      "step": 97,
+      "candidate_index": 19,
+      "nearest_squared_distance": 1.3869229303256736
+    },
+    {
+      "step": 98,
+      "candidate_index": 169,
+      "nearest_squared_distance": 1.385440788950724
+    },
+    {
+      "step": 99,
+      "candidate_index": 9,
+      "nearest_squared_distance": 1.3753789361572442
+    },
+    {
+      "step": 100,
+      "candidate_index": 4,
+      "nearest_squared_distance": 1.3740746125354844
+    },
+    {
+      "step": 101,
+      "candidate_index": 626,
+      "nearest_squared_distance": 1.3707598873024232
+    },
+    {
+      "step": 102,
+      "candidate_index": 569,
+      "nearest_squared_distance": 1.3659286012259075
+    },
+    {
+      "step": 103,
+      "candidate_index": 216,
+      "nearest_squared_distance": 1.3648931285973092
+    },
+    {
+      "step": 104,
+      "candidate_index": 236,
+      "nearest_squared_distance": 1.3645396387749862
+    },
+    {
+      "step": 105,
+      "candidate_index": 610,
+      "nearest_squared_distance": 1.3590787307919348
+    },
+    {
+      "step": 106,
+      "candidate_index": 274,
+      "nearest_squared_distance": 1.356858201459636
+    },
+    {
+      "step": 107,
+      "candidate_index": 550,
+      "nearest_squared_distance": 1.3540732768457018
+    },
+    {
+      "step": 108,
+      "candidate_index": 589,
+      "nearest_squared_distance": 1.3538543779816263
+    },
+    {
+      "step": 109,
+      "candidate_index": 306,
+      "nearest_squared_distance": 1.3513802432304467
+    },
+    {
+      "step": 110,
+      "candidate_index": 585,
+      "nearest_squared_distance": 1.3513366347603917
+    },
+    {
+      "step": 111,
+      "candidate_index": 21,
+      "nearest_squared_distance": 1.3494602578587618
+    },
+    {
+      "step": 112,
+      "candidate_index": 194,
+      "nearest_squared_distance": 1.3461630971099057
+    },
+    {
+      "step": 113,
+      "candidate_index": 421,
+      "nearest_squared_distance": 1.3447102467189749
+    },
+    {
+      "step": 114,
+      "candidate_index": 586,
+      "nearest_squared_distance": 1.340165507430676
+    },
+    {
+      "step": 115,
+      "candidate_index": 84,
+      "nearest_squared_distance": 1.3391596779901107
+    },
+    {
+      "step": 116,
+      "candidate_index": 509,
+      "nearest_squared_distance": 1.3386815388298847
+    },
+    {
+      "step": 117,
+      "candidate_index": 167,
+      "nearest_squared_distance": 1.3359724897589564
+    },
+    {
+      "step": 118,
+      "candidate_index": 598,
+      "nearest_squared_distance": 1.3357397237591235
+    },
+    {
+      "step": 119,
+      "candidate_index": 375,
+      "nearest_squared_distance": 1.3329428935314342
+    },
+    {
+      "step": 120,
+      "candidate_index": 319,
+      "nearest_squared_distance": 1.3279102749269691
+    },
+    {
+      "step": 121,
+      "candidate_index": 566,
+      "nearest_squared_distance": 1.3253964744431452
+    },
+    {
+      "step": 122,
+      "candidate_index": 386,
+      "nearest_squared_distance": 1.3229609279808838
+    },
+    {
+      "step": 123,
+      "candidate_index": 609,
+      "nearest_squared_distance": 1.3183670885008505
+    },
+    {
+      "step": 124,
+      "candidate_index": 349,
+      "nearest_squared_distance": 1.3182766405096722
+    },
+    {
+      "step": 125,
+      "candidate_index": 174,
+      "nearest_squared_distance": 1.316587832981238
+    },
+    {
+      "step": 126,
+      "candidate_index": 249,
+      "nearest_squared_distance": 1.3144711208450106
+    },
+    {
+      "step": 127,
+      "candidate_index": 591,
+      "nearest_squared_distance": 1.312671138026768
+    },
+    {
+      "step": 128,
+      "candidate_index": 189,
+      "nearest_squared_distance": 1.3111407455667574
+    }
+  ],
+  "selection_uses_DP": false,
+  "selection_uses_DenseNet": false,
+  "selection_uses_V": false,
+  "native_source_bytes_referenced": 52347861,
+  "new_image_copies": 0,
+  "new_model_forwards": 0,
+  "preprocessing": "Original native P images; same pinned tensor/condition paths as P caches and existing PNGs, not resized/exported anew",
+  "independent_full_distance_selection_identical": true,
+  "seconds": 0.375
+}

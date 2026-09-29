@@ -1,0 +1,14 @@
+{
+  "utc": "2026-09-28T07:28:22.411759+00:00",
+  "reason": "TRF reported convergence but independent projected-gradient exceeded 1e-7 before V; uniform BVLS solves same bounded convex problem",
+  "previous_contract_sha256": "02e9581bdbef2aec40993e335a12558527e7fa65535c4c53515c4bd49bbe7b21",
+  "prior_attempt": "attempts/00_trf_projected_gradient_failure",
+  "objective_changed": false,
+  "tolerance_changed": false,
+  "hyperparameters_changed": false,
+  "label_bounds_changed": false,
+  "V_evaluated_before_amendment": false,
+  "selection_changed": false,
+  "method": "bvls",
+  "box_machine_roundoff_max": 1e-12
+}

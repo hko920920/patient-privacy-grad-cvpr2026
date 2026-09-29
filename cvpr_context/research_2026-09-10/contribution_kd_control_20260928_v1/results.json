@@ -1,0 +1,263 @@
+{
+  "status": "COMPLETE_STEP1_KD_CONTROL",
+  "completed_utc": "2026-09-28T06:40:11.348204+00:00",
+  "scope": "Same two existing DP summaries and PNGs, unchanged hard-anchor joint solver; only RN target rule differs.",
+  "decision": "MT_ADDITIONAL_DEVELOPMENT_VALUE_OVER_DEFINED_KD",
+  "construction_models": [
+    "DINOv2",
+    "ResNet18"
+  ],
+  "primary_development_receiver": "DenseNet",
+  "metrics": {
+    "DP1_KD_DenseNet": {
+      "AUROC": {
+        "point": 0.6186537417546051,
+        "patient_cluster_95": [
+          0.5750251398179075,
+          0.662998282276428
+        ]
+      },
+      "AP": {
+        "point": 0.07074974350518544,
+        "patient_cluster_95": [
+          0.05183841521898794,
+          0.10331561395743138
+        ]
+      }
+    },
+    "DP1_MT_DenseNet": {
+      "AUROC": {
+        "point": 0.6863700927351285,
+        "patient_cluster_95": [
+          0.6455297951944646,
+          0.7274309114368778
+        ]
+      },
+      "AP": {
+        "point": 0.08126358885403234,
+        "patient_cluster_95": [
+          0.06194576170265636,
+          0.10813124379042385
+        ]
+      }
+    },
+    "DP2_KD_DenseNet": {
+      "AUROC": {
+        "point": 0.6277097323546691,
+        "patient_cluster_95": [
+          0.5844672106226646,
+          0.6716837474256726
+        ]
+      },
+      "AP": {
+        "point": 0.0663778973910327,
+        "patient_cluster_95": [
+          0.05081472554591944,
+          0.08860447975245339
+        ]
+      }
+    },
+    "DP2_MT_DenseNet": {
+      "AUROC": {
+        "point": 0.663403832853669,
+        "patient_cluster_95": [
+          0.6214149246399995,
+          0.7046707401436276
+        ]
+      },
+      "AP": {
+        "point": 0.07446326158855011,
+        "patient_cluster_95": [
+          0.0563803333537322,
+          0.1035861464077606
+        ]
+      }
+    },
+    "DP1_KD_ResNet18": {
+      "AUROC": {
+        "point": 0.6631658597892451,
+        "patient_cluster_95": [
+          0.6178226484475683,
+          0.7089331833936365
+        ]
+      },
+      "AP": {
+        "point": 0.07560051217321062,
+        "patient_cluster_95": [
+          0.0563471764401531,
+          0.10358083121268799
+        ]
+      }
+    },
+    "DP1_MT_ResNet18": {
+      "AUROC": {
+        "point": 0.6987967486930073,
+        "patient_cluster_95": [
+          0.6581737793737628,
+          0.7412186954615708
+        ]
+      },
+      "AP": {
+        "point": 0.08363087771419492,
+        "patient_cluster_95": [
+          0.06264661575198097,
+          0.11512006783178648
+        ]
+      }
+    },
+    "DP2_KD_ResNet18": {
+      "AUROC": {
+        "point": 0.6704007986970975,
+        "patient_cluster_95": [
+          0.627294860800207,
+          0.7137670129774996
+        ]
+      },
+      "AP": {
+        "point": 0.07573003851357107,
+        "patient_cluster_95": [
+          0.05754084759834057,
+          0.10227754527000157
+        ]
+      }
+    },
+    "DP2_MT_ResNet18": {
+      "AUROC": {
+        "point": 0.7070421435423778,
+        "patient_cluster_95": [
+          0.6686151721662396,
+          0.746943532507564
+        ]
+      },
+      "AP": {
+        "point": 0.08455633020145066,
+        "patient_cluster_95": [
+          0.06369104882326335,
+          0.11701822025908441
+        ]
+      }
+    }
+  },
+  "MT_minus_KD": {
+    "DP1_MT_minus_KD_DenseNet": {
+      "AUROC": {
+        "delta": 0.06771635098052342,
+        "patient_cluster_95": [
+          0.043046816490963924,
+          0.09371527809946344
+        ]
+      },
+      "AP": {
+        "delta": 0.010513845348846904,
+        "patient_cluster_95": [
+          -0.007547220249078576,
+          0.022903026388926134
+        ]
+      }
+    },
+    "DP2_MT_minus_KD_DenseNet": {
+      "AUROC": {
+        "delta": 0.0356941004989999,
+        "patient_cluster_95": [
+          0.006521132053970847,
+          0.06510040257157568
+        ]
+      },
+      "AP": {
+        "delta": 0.008085364197517417,
+        "patient_cluster_95": [
+          -0.0019741813692763775,
+          0.024016328014714598
+        ]
+      }
+    },
+    "DP1_MT_minus_KD_ResNet18": {
+      "AUROC": {
+        "delta": 0.0356308889037622,
+        "patient_cluster_95": [
+          0.015177701914723627,
+          0.05747839687344177
+        ]
+      },
+      "AP": {
+        "delta": 0.008030365540984297,
+        "patient_cluster_95": [
+          0.0005197525210103009,
+          0.018280269630565994
+        ]
+      }
+    },
+    "DP2_MT_minus_KD_ResNet18": {
+      "AUROC": {
+        "delta": 0.036641344845280366,
+        "patient_cluster_95": [
+          0.006890839294559132,
+          0.06588913079575735
+        ]
+      },
+      "AP": {
+        "delta": 0.008826291687879587,
+        "patient_cluster_95": [
+          -0.004626594868645895,
+          0.025698640136240847
+        ]
+      }
+    }
+  },
+  "two_fixed_release_averages": {
+    "DenseNet": {
+      "AUROC": {
+        "mean_delta": 0.05170522573976166,
+        "fixed_two_release_patient_cluster_95": [
+          0.029475012628523103,
+          0.07420924134760434
+        ]
+      },
+      "AP": {
+        "mean_delta": 0.00929960477318216,
+        "fixed_two_release_patient_cluster_95": [
+          -0.001631870843214454,
+          0.018918509760327357
+        ]
+      },
+      "not_prediction_ensemble": true
+    },
+    "ResNet18": {
+      "AUROC": {
+        "mean_delta": 0.036136116874521285,
+        "fixed_two_release_patient_cluster_95": [
+          0.012797567365344006,
+          0.06033587310141584
+        ]
+      },
+      "AP": {
+        "mean_delta": 0.008428328614431942,
+        "fixed_two_release_patient_cluster_95": [
+          -0.0013860631554928784,
+          0.021581387995069867
+        ]
+      },
+      "not_prediction_ensemble": true
+    }
+  },
+  "validation": {
+    "primal_dual_score_max_abs": 2.0122792321330962e-16,
+    "historical_MT_score_reproduction_max_abs": 1.3877787807814457e-16,
+    "independent_bootstrap_max_abs": 1.1102230246251565e-16,
+    "historical_target_weight_max_abs": 2.7755575615628914e-17
+  },
+  "public128": false,
+  "source_only_new_runs": 0,
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "new_pixel_updates": 0,
+  "new_model_forwards": 0,
+  "Expert_Reserved": false,
+  "bootstrap_repeats": 2000,
+  "metrics_unit": "images",
+  "bootstrap_unit": "patient_cluster",
+  "new_label_packets": 2,
+  "evaluation_seconds": 9.906999999890104,
+  "contract_sha256": "a71085153bed3c2b72eb8a232cd932e26293d44cf87351546fbd66acc3b96a2d",
+  "label_seal_sha256": "ff99750ea62578d8bc3dd783421158bc5c4399fa95c5522f422a406d0148ac08"
+}

@@ -1,0 +1,23 @@
+{
+  "status": "COMPLETE",
+  "item": "1-5",
+  "report": "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_1_5_SOURCE_CONTROL_RESULTS_20260928.md",
+  "report_sha256": "66ee4c71765af6248efe5719d71ce12c008d53863137e1def0210136f9321f53",
+  "verification": {
+    "status": "PASS",
+    "inputs_unchanged": 14,
+    "implementation_unchanged": 21,
+    "historical_reports_unchanged": 5,
+    "reused_predictions_exact": 16,
+    "reused_bootstrap_exact": 16,
+    "contrast_max_abs": 0.0,
+    "evaluation_after_label_seal": true,
+    "new_label_KKT_max_abs": 1.1102230246251565e-16,
+    "ridge_primal_dual_max_abs": 3.885780586188048e-16,
+    "bootstrap_sklearn_max_abs": 1.1102230246251565e-16,
+    "elapsed_minutes": 7.07604485,
+    "output_MiB_before_report": 3.3097734451293945
+  },
+  "next_item": "2-1",
+  "finalizer_sha256": "e2b60699821e96ff05b7bd013e39fce08fc6fbf98ffb876d616729ae6275fdd2"
+}

@@ -1,0 +1,65 @@
+{
+  "item": "2-1",
+  "status": "PASS",
+  "P_patients": 672,
+  "P_images": 813,
+  "patient_class_rows": 675,
+  "public_class_clip_active_rows": [
+    34,
+    124
+  ],
+  "public_map_ridge": [
+    3.0107448502066288e-05,
+    2.836862823850081e-05
+  ],
+  "public_map_difference_frobenius": 0.39436480188956774,
+  "public_map_difference_spectral": 0.17211049503694,
+  "cases": {
+    "DP1": {
+      "target_reconstruction_max_abs": 3.885780586188048e-16,
+      "signed_public_label_ridge_max_abs": 1.0325074129013956e-14,
+      "public_signed_label_range": [
+        -15.939995563616291,
+        11.242815184411747
+      ],
+      "class_weight_sums": [
+        1.0,
+        1.0000000000000004
+      ],
+      "midpoint_replacement_public_prediction_RMS_relative": 0.02529994297306337,
+      "midpoint_replacement_target_weight_relative": 0.031321665677631186,
+      "common_shift_witness_source_contrast_max_abs": 6.938893903907228e-18,
+      "common_shift_witness_MT_moment_l2": 8.605524751846353e-05,
+      "scope": "Existing DP targets only; public prediction geometry, no AUROC/AP, no label solve. Witness is algebraic, not a fresh private-data realization."
+    },
+    "DP2": {
+      "target_reconstruction_max_abs": 3.469446951953614e-16,
+      "signed_public_label_ridge_max_abs": 2.831068712794149e-15,
+      "public_signed_label_range": [
+        -8.015475063663345,
+        7.561114008588353
+      ],
+      "class_weight_sums": [
+        1.0,
+        0.9999999999999997
+      ],
+      "midpoint_replacement_public_prediction_RMS_relative": 0.035096429486574675,
+      "midpoint_replacement_target_weight_relative": 0.038017786877791566,
+      "common_shift_witness_source_contrast_max_abs": 6.938893903907228e-18,
+      "common_shift_witness_MT_moment_l2": 8.605524751847631e-05,
+      "scope": "Existing DP targets only; public prediction geometry, no AUROC/AP, no label solve. Witness is algebraic, not a fresh private-data realization."
+    }
+  },
+  "checks": {
+    "map_exact_max_abs": 2.5396351688300456e-15,
+    "MT_and_source_and_signed_label_max_abs": 1.0325074129013956e-14,
+    "class_mean_decomposition_max_abs": 1.4094628242311558e-17,
+    "source_head_inversion_max_abs": 2.7755575615628914e-17
+  },
+  "inputs_unchanged": true,
+  "new_Q_access": 0,
+  "new_releases": 0,
+  "new_labels": 0,
+  "new_V_evaluations": 0,
+  "seconds": 0.0779999999795109
+}

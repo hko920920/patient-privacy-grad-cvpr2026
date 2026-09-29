@@ -1,0 +1,15 @@
+{
+  "status": "FOUR_WEIGHT_CROSSOVER_LABELS_SEALED_BEFORE_EVALUATION",
+  "utc": "2026-09-29T06:33:20.947972+00:00",
+  "contract_sha256": "b4eb72516a906802a56bf2e104c343523ea8e951821d8980a042138a352e9b42",
+  "files": {
+    "soft_labels.npz": "a9b519269a424081d473f45e4fa0e52e8ed4d24cb188865379232d9e7ef54bf9",
+    "crossover_target_weights.npz": "c7f58bd1e30c74a9b377519e057337438ac28f0f533de49cca4cf498b169959e",
+    "construction_results.json": "ada6c57bd3485df68d050d356b224aac3cdd7188847deb02dcb38fb2a4b7e1cb",
+    "construction_inputs.json": "9fadf3e4c1f6595ee11a9ae0240513845fa01471453ca000e92f8c88679342f9",
+    "label_packets/DP1_HR_B_RN_ONLY.csv": "057b01498d9b02f8d0eff3f6e61cc89c2d56db416beff6bc9ae50ba2d53b8969",
+    "label_packets/DP1_ACKD_U_RN_ONLY.csv": "42e3acd07757fb76656ca9e8d0c25c5592d1e5985d5016c98df6680195af1595",
+    "label_packets/DP2_HR_B_RN_ONLY.csv": "c76dfdbb429db0f3cbf49e08a1545a6d5a378b20daad416ad0ca80bd9f493f1f",
+    "label_packets/DP2_ACKD_U_RN_ONLY.csv": "b0687df2519541dbe23b53c2a1584ac1c6bc1a15459d19b219525994b8f5b43e"
+  }
+}

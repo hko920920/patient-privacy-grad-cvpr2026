@@ -1,0 +1,15 @@
+{
+  "status": "1-5_COMPLETE",
+  "utc": "2026-09-28T08:08:38.219959+00:00",
+  "contract_sha256": "cc888c2a25315cf39e569982bca13d4b566077d07945ce77343c65d8048647f7",
+  "files": {
+    "contract.json": "cc888c2a25315cf39e569982bca13d4b566077d07945ce77343c65d8048647f7",
+    "label_seal.json": "a1204a70b0480fc38f0b64ef591bbb00e29fd0f774f5229f061d5061b22e3467",
+    "results.json": "7d25a81b3da18b3c20ff855f06eb070b4b708ece62a84c1256fd26d8571cb92e",
+    "evaluation_inputs.json": "879f4e76b7737e8d9537ddeaeda9b54545f71cd888fd752af6f268bbce299fa3",
+    "predictions_private.npz": "6af416b1c169218c1b8a0c12066ed6ff6995b09157f77de219b8240e6f9e95ec",
+    "paired_bootstrap.npz": "911462339f7b9327fb8e0f0571d85990b5e020f3b240e5fcdcf6c38fd3cf49bd",
+    "contrast_bootstrap.npz": "2a6de79e3597e1183d5054572d610b53102f688934827dbf1bac96c761ea0628",
+    "new_readout_weights.npz": "6d529df46a6a89d46c246b2aef74d5f491d5e4b0bf871caa3613ceb9dc96cd33"
+  }
+}

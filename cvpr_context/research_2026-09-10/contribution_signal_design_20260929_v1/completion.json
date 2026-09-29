@@ -1,0 +1,62 @@
+{
+  "item": "2-4A",
+  "status": "DESIGN_CANDIDATE_AND_PUBLIC_GEOMETRY_COMPLETE_NOT_EFFICACY",
+  "started_utc": "2026-09-29T09:27:33+00:00",
+  "recorded_utc": "2026-09-29T10:05:36.298687+00:00",
+  "eta_minutes": [
+    45,
+    60
+  ],
+  "elapsed_minutes_through_record_write": 38.05497811666667,
+  "report": "PUBLIC_TRANSFER_2_4A_SIGNAL_DESIGN_20260929.md",
+  "report_sha256": "8af0452b9ae797334b19fe52e9cad33d3d2dba381f8b2bc4afb922bf2ba0df4d",
+  "public_geometry_sha256": "469add42e5aa6c91cc64dd2543cddf9dc6fe9349fa962cb4a950ecd706fcd37d",
+  "public_geometry_code_sha256": "137412c42aeedd6a47975081d1a29b324371f0644961c4bf4c7009a32b6895aa",
+  "previous_state_sha256": "bec3964fc90c801d452a7e09c594bf006c65342bf6a4caf4d838cb61ae3801d7",
+  "preserved_evidence_sha256": {
+    "PUBLIC_TRANSFER_2_1_OPERATION_COMPARISON_20260928.md": "7fd61188016d70c12ce50df50810b8ed67890f8a66ce6244bb470985ba39e15b",
+    "PUBLIC_TRANSFER_2_2_HEAD_RECONSTRUCTION_RESULTS_20260928.md": "9c34842d9d95180315fc829c5987018f05c4c401e9a08b0ca8a801d6108a202d",
+    "PUBLIC_TRANSFER_2_1R1_ANCHOR_GEOMETRY_DESIGN_20260928.md": "640b112668fa12d43c1dfbe806ba66ae079fe28906eddb0ea5e520500a17125d",
+    "PUBLIC_TRANSFER_2_2R1_KD_CORRECTIONS_RESULTS_20260928.md": "f06193df90be9172777d6fd9cef9a3744e0675f6405035f258832a86c947f353",
+    "PUBLIC_TRANSFER_2_3R1_SELECTION_REPEAT_RESULTS_20260928.md": "8db5aacee1331167855ae66313f8df9f515fe4ed4b375e6aeec6a6d1f900bbb7",
+    "PUBLIC_TRANSFER_2_1R2_WEIGHT_SEPARATION_DESIGN_20260929.md": "55a5fe3d38434fdc4f6a5d4c15b79570d096e8f089cce2229b25cc4f78da4e20",
+    "PUBLIC_TRANSFER_2_2R2_WEIGHT_CROSSOVER_RESULTS_20260929.md": "f290d5256a146f4cbbc07f9dd6a64c33ca9b2a0044563b447267341c30a83805"
+  },
+  "candidate": "Choose patient-DP signal using the receiver space attainable by source-preserving labels on a fixed public carrier; project before clipping.",
+  "new_Q_queries": 0,
+  "new_DP_releases": 0,
+  "new_labels": 0,
+  "new_V_evaluations": 0,
+  "Expert_Reserved_access": false,
+  "production_code_changed": false,
+  "public_numeric_calculation": true,
+  "novelty_established": false,
+  "efficacy_established": false,
+  "paper_complete": false,
+  "previous_HR_followup_queue_withdrawn": true,
+  "next_item": "2-4B",
+  "next_status": "PROPOSED_NOT_EXECUTED",
+  "next_eta_minutes": [
+    60,
+    90
+  ],
+  "next_scope": "One public-input implementation and strong subspace-control package. No Q, V efficacy, final evaluation, or new private release.",
+  "new_private_release_requires_a_separate_concrete_contract": true,
+  "scope_change": "Candidate may require a new receiver-specific protected query; not a zero-additional-budget consequence of the old DINO summary.",
+  "status_files_before_sha256": {
+    "project_source/AGENTS.md": "d9e6aa12daf41d7a3388e57d3b3bcd8e2db2eb689b82a3ae6f3dd08a9f22e69a",
+    "project_source/CURRENT_STATUS.md": "6b0afb075184c5878cb9d6addc11a3f10a89b79d7efdbde2a69bbc9aaee6b997",
+    "project_source/WORKLOG.md": "6fe5ca6680378d1831567510cf65c6faad0d75942a4f2c7325aeafcc6f444a12",
+    "cvpr_context/research_2026-09-10/RESEARCH_FRAMEWORK.md": "aed3aac9b75194dfe02d6e7f2072d81afed1283923d09afa7d2124b04a03490c",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_NUMBERED_PLAN_20260928.md": "f9da1640f00c933de54d38280ac3b27871ccfdeb86488cb209f1c2c39471de51"
+  },
+  "status_files_after_sha256": {
+    "project_source/AGENTS.md": "57de468e82d941e7e8b959f163a64702e2fac6d267597c0c5faeb333a9f427c5",
+    "project_source/CURRENT_STATUS.md": "69ee26a4ce34becdb10656c5e45e280425618cf7470e138afeb2ff7449975f61",
+    "project_source/WORKLOG.md": "4e9cde160f4762916fc5d4ea0e90d3e56bbc4a34f0d9e7d51c6763340ef079a4",
+    "cvpr_context/research_2026-09-10/RESEARCH_FRAMEWORK.md": "205e51e73318f0d1ab69e58937605ca30cf848b00503e7828ffa1dfc72b217e7",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_NUMBERED_PLAN_20260928.md": "df90e8066c915691b1c32d3f7c1791d28072298982f5780cfca60d93b1bd14a9"
+  },
+  "state_after_sha256": "7af55673ebcc1fc415e690cce4c3b1bba1968a015397d351e6d260853778b0ae",
+  "historical_efficacy_reports_unchanged": true
+}

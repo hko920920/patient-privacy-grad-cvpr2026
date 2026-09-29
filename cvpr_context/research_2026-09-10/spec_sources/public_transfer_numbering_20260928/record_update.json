@@ -1,0 +1,15 @@
+{
+  "plan": "PUBLIC_TRANSFER_NUMBERED_PLAN_20260928.md",
+  "plan_sha256": "8d69bf07e866e1c627dac9a5d03a1820ff7851f200a0769895930aa233c9c15c",
+  "latest_result_preserved": "PUBLIC_TRANSFER_PUBLIC128_KD_RESULTS_20260928.md",
+  "latest_result_sha256": "22d328222917eaf5f6323379bd46410c46810018728d342a5d77954178393687",
+  "active_execution_preserved": true,
+  "plan_only": true,
+  "updated_records": [
+    "project_source/AGENTS.md",
+    "project_source/CURRENT_STATUS.md",
+    "project_source/WORKLOG.md",
+    "cvpr_context/research_2026-09-10/RESEARCH_FRAMEWORK.md",
+    "cvpr_context/research_2026-09-10/research_state.json"
+  ]
+}

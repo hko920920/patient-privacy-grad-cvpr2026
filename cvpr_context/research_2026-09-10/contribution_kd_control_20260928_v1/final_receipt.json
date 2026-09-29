@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE_RECORDED_NO_AUTOMATIC_FOLLOWUP",
+  "report": "PUBLIC_TRANSFER_KD_CONTROL_RESULTS_20260928.md",
+  "report_sha256": "a2a49a38abc0cf02c75257f397c2cb652f79f915c62761f3eca426755da87e75",
+  "results_sha256": "0e02b35deaff49317912385b3dfc143383e20636600698c12cd9875347fc22ed",
+  "implementation_hashes_unchanged_since_amendment": true,
+  "historical_result_hash_unchanged": true,
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "new_pixel_updates": 0,
+  "other_two_comparisons_started": false,
+  "documented_utc": "2026-09-28T06:44:59.968743+00:00"
+}

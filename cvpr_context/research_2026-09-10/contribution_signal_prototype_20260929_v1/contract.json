@@ -1,0 +1,116 @@
+{
+  "item": "2-4B",
+  "created_utc": "2026-09-29T10:14:02.010527+00:00",
+  "start_utc": "2026-09-29T10:06:57+00:00",
+  "eta_minutes": [
+    60,
+    90
+  ],
+  "scope": "Public-input mechanism and label prototype; NOT a private release or clinical utility experiment",
+  "inputs": {
+    "selection": {
+      "path": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/public128_selection.npz",
+      "sha256": "7e49a9ba1ab1ea10ecb7ae6f8cd91792ccd458e14cb1da1534b31154370de3c4"
+    },
+    "DINO_P": {
+      "path": "code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+      "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+    },
+    "RN_P": {
+      "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+      "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+    }
+  },
+  "preserved_evidence": {
+    "PUBLIC_TRANSFER_2_1_OPERATION_COMPARISON_20260928.md": "7fd61188016d70c12ce50df50810b8ed67890f8a66ce6244bb470985ba39e15b",
+    "PUBLIC_TRANSFER_2_2_HEAD_RECONSTRUCTION_RESULTS_20260928.md": "9c34842d9d95180315fc829c5987018f05c4c401e9a08b0ca8a801d6108a202d",
+    "PUBLIC_TRANSFER_2_1R1_ANCHOR_GEOMETRY_DESIGN_20260928.md": "640b112668fa12d43c1dfbe806ba66ae079fe28906eddb0ea5e520500a17125d",
+    "PUBLIC_TRANSFER_2_2R1_KD_CORRECTIONS_RESULTS_20260928.md": "f06193df90be9172777d6fd9cef9a3744e0675f6405035f258832a86c947f353",
+    "PUBLIC_TRANSFER_2_3R1_SELECTION_REPEAT_RESULTS_20260928.md": "8db5aacee1331167855ae66313f8df9f515fe4ed4b375e6aeec6a6d1f900bbb7",
+    "PUBLIC_TRANSFER_2_1R2_WEIGHT_SEPARATION_DESIGN_20260929.md": "55a5fe3d38434fdc4f6a5d4c15b79570d096e8f089cce2229b25cc4f78da4e20",
+    "PUBLIC_TRANSFER_2_2R2_WEIGHT_CROSSOVER_RESULTS_20260929.md": "f290d5256a146f4cbbc07f9dd6a64c33ca9b2a0044563b447267341c30a83805",
+    "PUBLIC_TRANSFER_2_4A_SIGNAL_DESIGN_20260929.md": "8af0452b9ae797334b19fe52e9cad33d3d2dba381f8b2bc4afb922bf2ba0df4d"
+  },
+  "construction_models": [
+    "DINO64",
+    "ResNet18_128"
+  ],
+  "carrier_n": 128,
+  "ridge": 0.1,
+  "rank": 64,
+  "public_geometry": "N=ker(X_DINO.T); M=H_R^.5 B_R N; U=orth(M), H_R=P_R.T Omega P_R+.1I",
+  "patient_aggregation": "mean visits within patient/class; mean patients within class; signed contrast (class1-class0)/2",
+  "public_center": "One common patient-equal mean of H_R^-.5 patient/class rows; split each patient's mass among observed classes; subtract before clipping, add after class-mean decoding. The common center cancels from the class contrast.",
+  "center_rationale": "Pre-outcome strengthening: all controls may use the same public reference; this is a fixed public affine shift, NOT a novel component or a result-selected branch. 2-4A's descriptive uncentered caps are not reused.",
+  "methods": {
+    "FULL": "128D whitened centered vector -> class cap -> one joint patient numerator query -> project U",
+    "COMPAT": "U.T centered vector -> class cap -> one joint patient numerator query",
+    "PCA": "top64 eigenvectors of patient-equal centered public covariance -> class cap -> joint query -> lift to128 -> project U"
+  },
+  "cap_policies": {
+    "shared_full_q95": "Primary: same per-class unweighted .95 quantile of full centered patient/class norms for all methods",
+    "own_q95": "Predeclared secondary: each method's own per-class .95 quantile; same quantile rule, no search"
+  },
+  "cap_floor": 1e-06,
+  "quantile_method": "linear",
+  "numerator_query": "t_i=concat(clip_C0(x_i0)/C0,clip_C1(x_i1)/C1)/sqrt(2); absent class zero; roundoff radius 1-16*float64eps; add/remove sensitivity1",
+  "illustrative_privacy_only": {
+    "numerator_epsilon": 4.0,
+    "numerator_delta": 5e-06,
+    "shared_source_epsilon": 4.0,
+    "shared_source_delta": 5e-06,
+    "shared_counts": "simulate the count coordinates of a normalized .5*[class0,class1,indicator0,indicator1] source release; count noise SD=2*sigma_source",
+    "prospective_basic_total": [
+      8.0,
+      1e-05
+    ],
+    "not_actual_release_contract": true,
+    "fixed_public_source_baseline": "No source-noise efficacy modeled; y0 is P-only. Shared-count stress is conditional on fixed y0; does not model source-label/count correlation.",
+    "warning": "Cannot append this mechanism to a historical epsilon8 source and call the result epsilon8."
+  },
+  "denominator": "One same simulated count vector per draw across all methods; max(1,noisy_count) per class; no extra norm-consistency projection. Conditional true-count analytic risk plus separate noisy-count finite stress.",
+  "analytic_primary": "Expected squared retained-target error, conditional on true public counts; exact aggregate bias plus projected Gaussian covariance trace. Also report full-H objective's inaccessible constant. Not AUROC.",
+  "simulations": {
+    "draws": 512,
+    "seed": 2026092901,
+    "generator": "numpy.default_rng PCG64",
+    "coupling": "one ambient128 Gaussian per draw/class; project same coins into U/PCA; same shared count coins. Coupling only numerical variance reduction, not a joint-release privacy claim.",
+    "public_only_seed_can_be_recorded": true
+  },
+  "source_baseline": "Existing bounded DINO Label Solve applied to PUBLIC P target only, once, unchanged solver; no prior DP labels accessed",
+  "compiler": "minnorm least squares in source nullspace; no new regularization. ell=alpha*(y0+Nv), alpha=1/max(1,max(abs(y))); report target error before scale and score-scale equality.",
+  "generic_label_solve": "Independent equality-constrained/KKT solver with same y0, query, ridge and global scaling; if equivalent, report equivalence, do not manufacture another algorithm.",
+  "unconstrained_reference": "Full-target unconstrained receiver Label Solve with same global scaling, noiseless public target only; measures source-preservation tradeoff, not a fair source-preserving competitor",
+  "tests": [
+    "patient add/remove norm bound including multi-class/extreme/absent cases",
+    "independent Gaussian privacy-profile calibration",
+    "same-cap no-clipping FULL/COMPAT target-noise-law equality",
+    "projection-before-clipping row inequality",
+    "source primal/dual head and public-score preservation before scale / proportionality after scale",
+    "independent constrained Label Solve equivalence",
+    "invalid arrays/caps/counts rejected and noisy negative counts safely floored",
+    "input/evidence hashes unchanged"
+  ],
+  "decision": "Implementation pass and public risk difference reported separately. Practical support requires lower primary analytic retained-target MSE than BOTH full and PCA, and same direction in fixed noisy-count simulation. Own-cap result cannot overwrite a failed primary. Any difference remains conditional on P with only six positive patients. No automatic Q/release/V expansion.",
+  "forbidden": [
+    "Q raw or feature access",
+    "V clinical efficacy",
+    "DenseNet features",
+    "Expert/Reserved",
+    "private summary values",
+    "new encoder forwards",
+    "new synthetic pixels",
+    "public P replication to fake Q size",
+    "outcome-driven cap/rank/noise search"
+  ],
+  "source_dependencies": {
+    "label_solve": {
+      "path": "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/construct_labels.py",
+      "sha256": "d7fe9be4c56db5a49e6929d838268164179d39bcb1253773c44db16ae9a6c90f"
+    },
+    "gaussian_calibration": {
+      "path": "code_working/relation_distillation/moments.py",
+      "sha256": "a498d5e86203355adbe968a66c9051a42cb156736711d951558dfb7dadfe4491"
+    }
+  }
+}

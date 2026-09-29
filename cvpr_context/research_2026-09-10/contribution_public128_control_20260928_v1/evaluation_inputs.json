@@ -1,0 +1,86 @@
+{
+  "patient_bootstrap": {
+    "path": "code_working/_reports/downstream_development_20260917_v1/cluster_bootstrap.npz",
+    "kind": "V_patient_resampling",
+    "phases": [
+      "evaluate"
+    ],
+    "sha256": "00ac9762c5903b2a448de2af60c05a6350c0d7f80e8a07ce0e936514bb34c377"
+  },
+  "historical_transport_bootstrap": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/transport_paired_bootstrap.npz",
+    "kind": "historical_V_evaluation",
+    "phases": [
+      "evaluate"
+    ],
+    "sha256": "6e35f0e7652d95a18d24cda3f7678accf632312489316a499cae624acb993610"
+  },
+  "P_DN": {
+    "path": "code_working/_reports/prrd_pilot_abcd101_20260921_v1/public/recipient_P_dual_features.npz",
+    "sha256": "7b093a2112a711e942acc49519d400e14b9a43923739efd68cd838f65629466f",
+    "kind": "public_P_evaluation_features",
+    "phases": [
+      "evaluate"
+    ]
+  },
+  "V_DenseNet": {
+    "path": "code_working/_reports/prrd_pilot_abcd101_20260921_v1/evaluation/recipient_V_features.npz",
+    "kind": "V_cached_features",
+    "phases": [
+      "evaluate"
+    ],
+    "sha256": "da34ed522d6b81ca3f4fe4955476f879a3bbe7feab1a35a0a230ee01d98dbdf0"
+  },
+  "DP1_synthetic_DN": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/evaluation/DenseNet_PNG_features.npz",
+    "kind": "existing_DP_PNG_features",
+    "phases": [
+      "evaluate"
+    ],
+    "sha256": "ff9ea22d79410a8c0da69c901c4469367ec80ccdea8aa6396d84b99a1b613f9a"
+  },
+  "DP2_synthetic_DN": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/evaluation/DenseNet_FEATURE_DP2_PNG_features.npz",
+    "kind": "existing_DP_PNG_features",
+    "phases": [
+      "evaluate"
+    ],
+    "sha256": "d1eaebd9bd8935c61726ebdf0c1e352074e5a76275de2030dcb7e0a0e702753c"
+  },
+  "P_RN": {
+    "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+    "kind": "public_P",
+    "phases": [
+      "select",
+      "construct",
+      "evaluate"
+    ],
+    "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+  },
+  "V_ResNet18": {
+    "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/V_features.npz",
+    "kind": "V_cached_features",
+    "phases": [
+      "evaluate"
+    ],
+    "sha256": "f4137af1db1096384f50ed974f7deef4239c6705066d69538f228703f2d3b4ae"
+  },
+  "DP1_synthetic_RN": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/evaluation/ResNet18_PNG_features.npz",
+    "kind": "existing_DP_PNG_features",
+    "phases": [
+      "construct",
+      "evaluate"
+    ],
+    "sha256": "130bc355c498c5fd4826f9de127036ac5f40f57738818194417d0d9578c958f9"
+  },
+  "DP2_synthetic_RN": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/evaluation/ResNet18_FEATURE_DP2_PNG_features.npz",
+    "kind": "existing_DP_PNG_features",
+    "phases": [
+      "construct",
+      "evaluate"
+    ],
+    "sha256": "892e981233193c5d4bc467670b1b086792714270a9b83a05c8858d87db373117"
+  }
+}

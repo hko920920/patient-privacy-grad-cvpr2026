@@ -1,0 +1,13 @@
+{
+  "status": "TWO_HR_LABELS_SEALED_BEFORE_EVALUATION",
+  "utc": "2026-09-28T08:29:51.902340+00:00",
+  "contract_sha256": "e1b8a6170ac2761c3ab21d9d2abc7e51ff244c9f08e834f8b00860496b564913",
+  "files": {
+    "soft_labels.npz": "cff059815fa73bf2d6bd18617a41318867ebfd2f93d51436bc32162161c96c4f",
+    "HR_target_weights.npz": "5344524b460f5ad639f220b58da6022e376e2bceaafe3e72d49ca5ea9b8827a1",
+    "construction_results.json": "4f1b1604a401c427b944b9e38c838262d8d926af978aa42eefb12f851b34edff",
+    "construction_inputs.json": "91a20318ceb0ca63fe54cf71a619bbaec362a56e51a655b724cc14700880113a",
+    "label_packets/DP1_HR_RN_ONLY.csv": "b05e0b689c2ca67be53545adfddf0f035152559060e9b620f57de188821dd880",
+    "label_packets/DP2_HR_RN_ONLY.csv": "406c855f93479ca4e247241789c8b4d45b35bb058a26dd4d82b28c8c3b66f8ad"
+  }
+}

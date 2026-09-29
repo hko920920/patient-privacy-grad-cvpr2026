@@ -1,0 +1,35 @@
+{
+  "item": "2-1R2",
+  "parent_item": "2-1",
+  "started_utc": "2026-09-29T06:06:21+00:00",
+  "eta_minutes": [
+    30,
+    45
+  ],
+  "authorization": "User proceeded after announced design-only scope; ETA repeated before first tool.",
+  "goal": "Compare patient aggregation, clipping order, centering and map weights; select one falsifiable mechanism hypothesis and minimal next control before efficacy evaluation.",
+  "allowed": [
+    "Existing code and aggregate reports",
+    "Primary literature",
+    "Public P feature arrays and public targets/maps",
+    "Existing protected DINO heads for public algebra only"
+  ],
+  "forbidden": [
+    "New labels",
+    "V prediction reads or efficacy evaluations",
+    "Raw Q reads",
+    "New DP noise or releases",
+    "Pixel optimization or encoder forwards",
+    "Expert/Reserved"
+  ],
+  "records_before": {
+    "project_source/AGENTS.md": "08422405b7aaf96758d2aed8c623325ee272994b81395921c6fbd02e1ba8a021",
+    "project_source/CURRENT_STATUS.md": "e7d3ceecb0f75021209b163d459665894c1baa04307d4ace373bbad5ffa77c79",
+    "project_source/WORKLOG.md": "470f66074c40300245252afa66ad1f3ee049c94cba09ae418b7591fa77a2ba57",
+    "cvpr_context/research_2026-09-10/RESEARCH_FRAMEWORK.md": "f685d5791aa596d2076e610a595192d3e4ae837c85d1fad8794bfa5874c422b6",
+    "cvpr_context/research_2026-09-10/research_state.json": "1588a5f0155a908baa282861be8b33b980224f3f7d86266b9f17316e28cec8a4",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_NUMBERED_PLAN_20260928.md": "cf3d140e9a12b250f0e5a8a6984c1f5588e2969d4a2c3c3c5b84170bb76968fe"
+  },
+  "prior_state": "2-3R1 primary HR-vs-ACKD repeated; all-control gate mixed; original2-3 deferred.",
+  "planned_output": "Public algebra verification, operation/prior table, one selected hypothesis and bounded2-2R2 design. No causal efficacy conclusion from public matrix diagnostics."
+}

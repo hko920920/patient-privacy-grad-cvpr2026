@@ -1,0 +1,44 @@
+{
+  "item": "2-1R2",
+  "status": "complete_design_and_public_algebra",
+  "started_utc": "2026-09-29T06:06:21+00:00",
+  "completed_utc": "2026-09-29T06:25:46.632645+00:00",
+  "elapsed_minutes": 19.427210749999997,
+  "reported_eta_minutes": [
+    30,
+    45
+  ],
+  "report": "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_2_1R2_WEIGHT_SEPARATION_DESIGN_20260929.md",
+  "report_sha256": "55a5fe3d38434fdc4f6a5d4c15b79570d096e8f089cce2229b25cc4f78da4e20",
+  "checks": {
+    "unique_allowed_input_files_unchanged": 8,
+    "syntax_valid_scripts": 2,
+    "next_design_lambda_exact": true,
+    "scope_and_math_pass": true,
+    "report_sha256": "55a5fe3d38434fdc4f6a5d4c15b79570d096e8f089cce2229b25cc4f78da4e20"
+  },
+  "artifact_hashes": {
+    "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/analyze_public_maps.py": "36fdafc75c906fbd52d5893751b82b6c392ded57fe629ed100d374e53362f34f",
+    "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/analyze_weight_bridge.py": "5f77ed5f3d191c19d852a75ef93f16e6eef69a18c44438fabb1cc88ca684878f",
+    "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/contract.json": "655118e1785d52da864106b31b350940cbdeb37f92d25283745c24f21e64ab11",
+    "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/NEXT_2_2R2_DESIGN.json": "885dc3cf3ea08f442f21c54b667ef75c15ac3f95fea70cddad7ba999ffb4c94d",
+    "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/public_map_analysis.json": "a5368ab3205f1d8b3f6c8fbcab0ed4e809c8899d6cc8a1ab90a9c07138e2cdb3",
+    "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/verification.json": "3407e599dcb9a1945e48e18c7ee8b51d93d35ae45f1c1f068e0d63b23e240c67",
+    "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/weight_bridge_analysis.json": "1ca7571c2bc172cbe988a57cfbd1a8d7b52633de494cacb09f9395d2c477872b",
+    "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/public_geometry_targets_NOT_LABELS.npz": "198b92ee7d081b1e47b9d9a33cc989749ea10077d06435c3a121ffef1164850b",
+    "cvpr_context/research_2026-09-10/contribution_patient_map_design_20260929_v1/weight_bridge_targets_NOT_LABELS.npz": "410bd817ff49117e6d077ad863fd188ec183a432ed36328cee45987af342d018",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_2_1R2_WEIGHT_SEPARATION_DESIGN_20260929.md": "55a5fe3d38434fdc4f6a5d4c15b79570d096e8f089cce2229b25cc4f78da4e20"
+  },
+  "new_labels": 0,
+  "new_V_evaluation": 0,
+  "new_private_queries": 0,
+  "new_private_releases": 0,
+  "Expert_Reserved_access": 0,
+  "next_item": "2-2R2",
+  "next_status": "designed_not_executed",
+  "next_eta_minutes": [
+    20,
+    30
+  ],
+  "output_MiB_before_completion": 1.2926454544067383
+}

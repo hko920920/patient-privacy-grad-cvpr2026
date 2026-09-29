@@ -1,0 +1,76 @@
+{
+  "comparison_results": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/results.json",
+    "sha256": "424c4f74d705961b9c63efb669f22eeb10eae525ba48ba635909f693839c2f81",
+    "kind": "frozen_2-2R1_output",
+    "phases": [
+      "evaluate"
+    ]
+  },
+  "comparison_predictions": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/predictions_private.npz",
+    "sha256": "bd76b49f6f8f95809b206a8f847d9acd4194b153e6777a5feea7b3af23fee88e",
+    "kind": "frozen_2-2R1_output",
+    "phases": [
+      "evaluate"
+    ]
+  },
+  "comparison_bootstrap": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/paired_bootstrap.npz",
+    "sha256": "096c87ac06455d227acf20de157f5b5997d8f228fea4e8683d348d5cefb2b28d",
+    "kind": "frozen_2-2R1_output",
+    "phases": [
+      "evaluate"
+    ]
+  },
+  "comparison_completion": {
+    "path": "cvpr_context/research_2026-09-10/contribution_kd_corrections_20260928_v1/completion.json",
+    "sha256": "187c77b4266526529beba884e86d5c8452a23234c153fe00332755a0a04f977c",
+    "kind": "frozen_2-2R1_output",
+    "phases": [
+      "evaluate"
+    ]
+  },
+  "patient_bootstrap": {
+    "path": "code_working/_reports/downstream_development_20260917_v1/cluster_bootstrap.npz",
+    "kind": "V_patient_resampling",
+    "phases": [
+      "evaluate"
+    ],
+    "sha256": "00ac9762c5903b2a448de2af60c05a6350c0d7f80e8a07ce0e936514bb34c377"
+  },
+  "P_DN": {
+    "path": "code_working/_reports/prrd_pilot_abcd101_20260921_v1/public/recipient_P_dual_features.npz",
+    "sha256": "7b093a2112a711e942acc49519d400e14b9a43923739efd68cd838f65629466f",
+    "kind": "public_P_evaluation_features",
+    "phases": [
+      "evaluate"
+    ]
+  },
+  "V_DenseNet": {
+    "path": "code_working/_reports/prrd_pilot_abcd101_20260921_v1/evaluation/recipient_V_features.npz",
+    "kind": "V_cached_features",
+    "phases": [
+      "evaluate"
+    ],
+    "sha256": "da34ed522d6b81ca3f4fe4955476f879a3bbe7feab1a35a0a230ee01d98dbdf0"
+  },
+  "P_RN": {
+    "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+    "kind": "public_P",
+    "phases": [
+      "select",
+      "construct",
+      "evaluate"
+    ],
+    "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+  },
+  "V_ResNet18": {
+    "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/V_features.npz",
+    "kind": "V_cached_features",
+    "phases": [
+      "evaluate"
+    ],
+    "sha256": "f4137af1db1096384f50ed974f7deef4239c6705066d69538f228703f2d3b4ae"
+  }
+}

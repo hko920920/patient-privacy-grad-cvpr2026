@@ -1,0 +1,77 @@
+{
+  "P_DINO": {
+    "path": "code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+    "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f",
+    "kind": "public_P"
+  },
+  "P_RN": {
+    "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+    "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274",
+    "kind": "public_P"
+  },
+  "synthetic_DINO": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/existing_png_dino_K4_features.npz",
+    "sha256": "3708fb678fd6602478110d90806954a9cdfafa67a1a8cd45169e0b8d81635c81",
+    "kind": "existing_DP_PNG_features"
+  },
+  "public_maps_and_DP_weights": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/transport_public_maps_and_dp_weights.npz",
+    "sha256": "a26b3deaa8084afafad3880bb98996b3b06f3d6d05fd1dbcd68ada2947a33266",
+    "kind": "public_maps_and_existing_DP_postprocessing"
+  },
+  "historical_MT_labels": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/joint_compiler_soft_labels.npz",
+    "sha256": "bb2a72d6c3fd5fc459e5811f8fa3e2d80f93f711cf3395ba8936fffde088caa0",
+    "kind": "existing_DP_label_postprocessing"
+  },
+  "historical_artifact_manifest": {
+    "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/research_artifact_manifest.json",
+    "sha256": "d4ab9eda272d304e15aa407363c17795555dd16a6b949d7cce192d2ca8437b15",
+    "kind": "historical_provenance"
+  },
+  "public_clipping": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/public_calibration.json",
+    "sha256": "48ac0d33c6764e2e3c38e209014ba6f59a655610970e7af8a423620d61bc5be9",
+    "kind": "public_P"
+  },
+  "DP1_target": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/one_release/protected_target/target.npz",
+    "sha256": "9250eb88952a9a60ecdec6cf2e6c817619fd745d947052b55d6dd74d0d68772b",
+    "kind": "existing_protected_summary"
+  },
+  "DP1_synthetic_RN": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/evaluation/ResNet18_PNG_features.npz",
+    "sha256": "130bc355c498c5fd4826f9de127036ac5f40f57738818194417d0d9578c958f9",
+    "kind": "existing_DP_PNG_features"
+  },
+  "DP2_target": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/one_release/protected_target/target.npz",
+    "sha256": "f8eba56e756ffe653fc39a92f852111ea2dc75c8b496c18dd36761a71ca822cb",
+    "kind": "existing_protected_summary"
+  },
+  "DP2_synthetic_RN": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/evaluation/ResNet18_FEATURE_DP2_PNG_features.npz",
+    "sha256": "892e981233193c5d4bc467670b1b086792714270a9b83a05c8858d87db373117",
+    "kind": "existing_DP_PNG_features"
+  },
+  "DP1_PNG_manifest": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/protected_png/release_manifest.json",
+    "sha256": "5b1e2794c30aa7539757345e285df258d55789fd2a14df48fa23606e583a78dd",
+    "kind": "existing_PNG_manifest"
+  },
+  "DP1_PNG_csv": {
+    "path": "code_working/_reports/receiver_feature_dp8_20260924_v1/protected_png/images.csv",
+    "sha256": "94c0582819eb9ea502be7287c2f2a0532efd5e40c8af87c3442ffd732f18a56d",
+    "kind": "existing_PNG_index"
+  },
+  "DP2_PNG_manifest": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/protected_png/release_manifest.json",
+    "sha256": "f5d74e40f026edbb1a21fbbbed82265feb8e910f8edc2c6afca771cedebfb881",
+    "kind": "existing_PNG_manifest"
+  },
+  "DP2_PNG_csv": {
+    "path": "code_working/_reports/receiver_feature_followup_20260924_v1/protected_png/images.csv",
+    "sha256": "3ad70607eb35451e807c5fcae562e938ff4ee2a0d8818e6b3c79ecf0c0b2ba63",
+    "kind": "existing_PNG_index"
+  }
+}

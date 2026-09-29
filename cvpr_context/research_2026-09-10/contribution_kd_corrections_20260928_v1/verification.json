@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "inputs_unchanged": 15,
+  "implementation_unchanged": 25,
+  "historical_reports_unchanged": 8,
+  "old_predictions_exact": 24,
+  "old_bootstraps_exact": 24,
+  "contrast_max_abs": 0.0,
+  "evaluation_after_label_seal": true,
+  "elapsed_minutes": 7.2172696,
+  "label_KKT_max_abs": 1.1102230246251565e-16,
+  "ridge_primal_dual_max_abs": 3.885780586188048e-16,
+  "bootstrap_sklearn_max_abs": 1.1102230246251565e-16,
+  "output_MiB_before_report": 5.936924934387207
+}

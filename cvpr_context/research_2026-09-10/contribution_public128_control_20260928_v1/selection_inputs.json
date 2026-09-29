@@ -1,0 +1,29 @@
+{
+  "P_DINO": {
+    "path": "code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+    "kind": "public_P",
+    "phases": [
+      "select",
+      "construct"
+    ],
+    "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+  },
+  "P_RN": {
+    "path": "code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+    "kind": "public_P",
+    "phases": [
+      "select",
+      "construct",
+      "evaluate"
+    ],
+    "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+  },
+  "P_roster": {
+    "path": "code_working/_reports/downstream_master_20260917_v1/public_real_images_private.csv",
+    "sha256": "4c912fcfbb81acfd9c5b3b6767ae8f33b554ae94f621825762afd87808c4063e",
+    "kind": "public_P_metadata",
+    "phases": [
+      "select"
+    ]
+  }
+}

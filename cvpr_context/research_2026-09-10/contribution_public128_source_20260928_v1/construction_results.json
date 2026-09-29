@@ -1,0 +1,59 @@
+{
+  "status": "1-5_LABELS_READY",
+  "item": "1-5",
+  "fits": {
+    "DP1_DINO_ONLY": {
+      "models": [
+        "DINO"
+      ],
+      "target_RMS": {
+        "DINO": 0.25878460360010924
+      },
+      "eta": 3.52806034665936e-06,
+      "anchor": "zero",
+      "initial_objective_zero_label": 0.9999999999999996,
+      "final_objective": 0.0025885039589148592,
+      "relative_target_RMSE": {
+        "DINO": 0.047137789429629734
+      },
+      "iterations": 54,
+      "solver_status": 1,
+      "solver_optimality": 5.589570418931128e-18,
+      "solver_method": "bvls",
+      "box_roundoff_canonicalization_max_abs": 0.0,
+      "independent_projected_gradient_max_abs": 1.1102230246251565e-16,
+      "ridge_primal_dual_max_abs": 5.204170427930421e-17,
+      "labels_at_bound": 100,
+      "labels_positive": 68
+    },
+    "DP2_DINO_ONLY": {
+      "models": [
+        "DINO"
+      ],
+      "target_RMS": {
+        "DINO": 0.27007423994293805
+      },
+      "eta": 3.2392655236271826e-06,
+      "anchor": "zero",
+      "initial_objective_zero_label": 0.9999999999999999,
+      "final_objective": 0.0023218980805749965,
+      "relative_target_RMSE": {
+        "DINO": 0.04436361991491321
+      },
+      "iterations": 56,
+      "solver_status": 1,
+      "solver_optimality": 7.607202899290871e-18,
+      "solver_method": "bvls",
+      "box_roundoff_canonicalization_max_abs": 0.0,
+      "independent_projected_gradient_max_abs": 0.0,
+      "ridge_primal_dual_max_abs": 5.204170427930421e-17,
+      "labels_at_bound": 96,
+      "labels_positive": 66
+    }
+  },
+  "new_label_solves": 2,
+  "V_access": false,
+  "new_Q_access": 0,
+  "new_DP_releases": 0,
+  "seconds": 0.6410000000614673
+}

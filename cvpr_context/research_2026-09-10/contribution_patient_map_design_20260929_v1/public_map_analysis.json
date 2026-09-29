@@ -1,0 +1,457 @@
+{
+  "item": "2-1R2",
+  "scope": "Public geometry and existing-head postprocessing only; no new labels or downstream efficacy.",
+  "computed_utc": "2026-09-29T06:20:12.040599+00:00",
+  "read_log": [
+    {
+      "role": "P_DINO",
+      "path": "project_source/code_working/_reports/receiver_a1a2_s200_20260922_v1/second_targets/private/P_condition_features.npz",
+      "keys": [
+        "z",
+        "patient_ids",
+        "image_ids",
+        "labels",
+        "roles"
+      ],
+      "sha256": "4093700089740598561abe4fef5246c3f1626d9efc9165183872f157f7bfba6f"
+    },
+    {
+      "role": "P_RN",
+      "path": "project_source/code_working/_reports/receiver_resnet18_reuse_20260924_v1/P_projected_features.npz",
+      "keys": [
+        "z",
+        "patient_ids",
+        "image_ids",
+        "labels",
+        "roles"
+      ],
+      "sha256": "bd07854ecc436ccea6845698f0087fd465c71ec163dceb7d3d720e9903626274"
+    },
+    {
+      "role": "P_TARGET",
+      "path": "project_source/code_working/_reports/receiver_feature_followup_20260924_v1/public_target/target.npz",
+      "keys": [
+        "target"
+      ],
+      "sha256": "e50ac1fad0e16dd746e82a7a9808135b709a469a8dc0b0aada9258872ad40f7e"
+    },
+    {
+      "role": "OLD_SOURCE_HEADS",
+      "path": "cvpr_context/research_2026-09-10/contribution_kd_control_20260928_v1/target_weights.npz",
+      "keys": [
+        "DP1_DINO",
+        "DP2_DINO"
+      ],
+      "sha256": "5f1475e9b5782fcbec5c5adeda2d54b9b9e899e68cc545c8dde3ff909b3fdc83"
+    },
+    {
+      "role": "PUBLIC_MAPS",
+      "path": "cvpr_context/research_2026-09-10/contribution_search_20260924/transport_public_maps_and_dp_weights.npz",
+      "keys": [
+        "ResNet18_T0",
+        "ResNet18_T1",
+        "ResNet18_b0",
+        "ResNet18_b1"
+      ],
+      "sha256": "a26b3deaa8084afafad3880bb98996b3b06f3d6d05fd1dbcd68ada2947a33266"
+    },
+    {
+      "role": "OLD_HR_TARGETS",
+      "path": "cvpr_context/research_2026-09-10/contribution_head_reconstruction_20260928_v1/HR_target_weights.npz",
+      "keys": [
+        "DP1_HR_RN_ONLY",
+        "DP2_HR_RN_ONLY"
+      ],
+      "sha256": "5344524b460f5ad639f220b58da6022e376e2bceaafe3e72d49ca5ea9b8827a1"
+    }
+  ],
+  "new_private_queries": 0,
+  "new_private_releases": 0,
+  "V_reads": 0,
+  "new_labels": 0,
+  "population": {
+    "patients": 672,
+    "images": 813,
+    "patient_class_rows": 675,
+    "class_rows": {
+      "0": 669,
+      "1": 6
+    },
+    "mixed_class_patients": 3,
+    "multi_visit_patient_class_groups": 113,
+    "max_visits_in_patient_class_group": 3
+  },
+  "weights": {
+    "patient_equal_groups": {
+      "positive_class_mass": 0.006696428571428571,
+      "group_ESS": 673.5033557046983,
+      "patient_ESS": 672.0000000000001,
+      "max_patient_mass": 0.001488095238095238
+    },
+    "class_balanced_groups": {
+      "positive_class_mass": 0.49999999999999994,
+      "group_ESS": 23.786666666666665,
+      "patient_ESS": 23.577092511013216,
+      "max_patient_mass": 0.08408071748878923
+    }
+  },
+  "clipping_order": [
+    {
+      "cap": 1.9061329951133719,
+      "groups_clipped": 34,
+      "images_clipped": 51,
+      "groups_with_clip_order_gap": 13,
+      "weighted_clip_order_gap_norm": 0.005849427594007738,
+      "max_clip_order_gap_norm": 0.05711164840019565,
+      "relative_weighted_clip_order_gap": 0.004200142518524035
+    },
+    {
+      "cap": 1.5917066731966771,
+      "groups_clipped": 124,
+      "images_clipped": 175,
+      "groups_with_clip_order_gap": 44,
+      "weighted_clip_order_gap_norm": 0.03242795201045195,
+      "max_clip_order_gap_norm": 0.28434978784111914,
+      "relative_weighted_clip_order_gap": 0.023986567736252188
+    }
+  ],
+  "covariance_decomposition": {
+    "patient_equal": {
+      "between_within_identity_error": 6.591949208711867e-17,
+      "within_trace_fraction": 0.043873215741439736,
+      "within_cross_fro_fraction": 0.038099747497735426
+    },
+    "class_balanced": {
+      "between_within_identity_error": 7.502679033599691e-17,
+      "within_trace_fraction": 0.02409122216535047,
+      "within_cross_fro_fraction": 0.0140578338406625
+    }
+  },
+  "checks": {
+    "public_target_reconstruction": 4.5102810375396984e-17,
+    "map_reproduction_0": 1.887379141862766e-15,
+    "map_reproduction_1": 2.5396351688300456e-15,
+    "HR_target_reproduction_DP1": 2.914335439641036e-16,
+    "HR_target_reproduction_DP2": 2.255140518769849e-16
+  },
+  "map_variants": {
+    "HR": [
+      {
+        "cap_index": 0,
+        "fixed_lambda": 3.0107448502066288e-05,
+        "own_trace_lambda_diagnostic_only": 3.0107448502066288e-05,
+        "independent_fit_error": 3.574918139293004e-14,
+        "relative_T_difference_from_HR": 0.0,
+        "intercept_difference_norm": 0.0,
+        "matched_training_weighted_error": 0.39993494997968565,
+        "patient_summary_weighted_error_on_HR_inputs": 0.39993494997968565
+      },
+      {
+        "cap_index": 1,
+        "fixed_lambda": 2.836862823850081e-05,
+        "own_trace_lambda_diagnostic_only": 2.836862823850081e-05,
+        "independent_fit_error": 3.416711358283919e-14,
+        "relative_T_difference_from_HR": 0.0,
+        "intercept_difference_norm": 0.0,
+        "matched_training_weighted_error": 0.39955909591855476,
+        "patient_summary_weighted_error_on_HR_inputs": 0.39955909591855476
+      }
+    ],
+    "UNCLIPPED": [
+      {
+        "cap_index": 0,
+        "fixed_lambda": 3.0107448502066288e-05,
+        "own_trace_lambda_diagnostic_only": 3.0269335872665724e-05,
+        "independent_fit_error": 6.439293542825908e-14,
+        "relative_T_difference_from_HR": 0.009069680210557646,
+        "intercept_difference_norm": 0.0006209523934541136,
+        "matched_training_weighted_error": 0.40000358926016005,
+        "patient_summary_weighted_error_on_HR_inputs": 0.3999428820431824
+      },
+      {
+        "cap_index": 1,
+        "fixed_lambda": 2.836862823850081e-05,
+        "own_trace_lambda_diagnostic_only": 3.0269335872665724e-05,
+        "independent_fit_error": 8.384959393481495e-14,
+        "relative_T_difference_from_HR": 0.06748264065951728,
+        "intercept_difference_norm": 0.005731649800473721,
+        "matched_training_weighted_error": 0.3999935737992376,
+        "patient_summary_weighted_error_on_HR_inputs": 0.40002011241981444
+      }
+    ],
+    "CLIP_BEFORE_MEAN": [
+      {
+        "cap_index": 0,
+        "fixed_lambda": 3.0107448502066288e-05,
+        "own_trace_lambda_diagnostic_only": 3.007186978201937e-05,
+        "independent_fit_error": 6.444844657949034e-14,
+        "relative_T_difference_from_HR": 0.0029921500503389377,
+        "intercept_difference_norm": 0.00021380206130731672,
+        "matched_training_weighted_error": 0.39992886921479803,
+        "patient_summary_weighted_error_on_HR_inputs": 0.3999346253604904
+      },
+      {
+        "cap_index": 1,
+        "fixed_lambda": 2.836862823850081e-05,
+        "own_trace_lambda_diagnostic_only": 2.8097642608924778e-05,
+        "independent_fit_error": 7.457923167919489e-14,
+        "relative_T_difference_from_HR": 0.0186461765908905,
+        "intercept_difference_norm": 0.0015782251587784944,
+        "matched_training_weighted_error": 0.3995218735350211,
+        "patient_summary_weighted_error_on_HR_inputs": 0.3995758715114797
+      }
+    ],
+    "CLASS_BALANCED_MAP": [
+      {
+        "cap_index": 0,
+        "fixed_lambda": 3.0107448502066288e-05,
+        "own_trace_lambda_diagnostic_only": 2.8365819998190748e-05,
+        "independent_fit_error": 2.3991919562149633e-13,
+        "relative_T_difference_from_HR": 0.8661258502782755,
+        "intercept_difference_norm": 0.045893319214735565,
+        "matched_training_weighted_error": 0.21925855286284207,
+        "patient_summary_weighted_error_on_HR_inputs": 0.43197672210236604
+      },
+      {
+        "cap_index": 1,
+        "fixed_lambda": 2.836862823850081e-05,
+        "own_trace_lambda_diagnostic_only": 2.7497555132581543e-05,
+        "independent_fit_error": 2.372824159380116e-13,
+        "relative_T_difference_from_HR": 0.8534467484432571,
+        "intercept_difference_norm": 0.044536288683142924,
+        "matched_training_weighted_error": 0.21834353055068143,
+        "patient_summary_weighted_error_on_HR_inputs": 0.4304603829164584
+      }
+    ],
+    "UNCENTERED": [
+      {
+        "cap_index": 0,
+        "fixed_lambda": 3.0107448502066288e-05,
+        "own_trace_lambda_diagnostic_only": 3.0305308609043856e-05,
+        "independent_fit_error": 3.447242491461111e-14,
+        "relative_T_difference_from_HR": 0.09332980894205674,
+        "intercept_difference_norm": 0.04772909087640305,
+        "matched_training_weighted_error": 0.40058827628254245,
+        "patient_summary_weighted_error_on_HR_inputs": 0.40058827628254245
+      },
+      {
+        "cap_index": 1,
+        "fixed_lambda": 2.836862823850081e-05,
+        "own_trace_lambda_diagnostic_only": 2.8557675328101395e-05,
+        "independent_fit_error": 3.0253577421035516e-14,
+        "relative_T_difference_from_HR": 0.09551424940081714,
+        "intercept_difference_norm": 0.04956090473313849,
+        "matched_training_weighted_error": 0.40026609108368205,
+        "patient_summary_weighted_error_on_HR_inputs": 0.40026609108368205
+      }
+    ],
+    "IMAGE_LEVEL_MAP": [
+      {
+        "cap_index": 0,
+        "fixed_lambda": 3.0107448502066288e-05,
+        "own_trace_lambda_diagnostic_only": 3.144866711245202e-05,
+        "independent_fit_error": 3.3929022785761376e-14,
+        "relative_T_difference_from_HR": 0.18111429149189434,
+        "intercept_difference_norm": 0.007079142456069284,
+        "matched_training_weighted_error": 0.42752447822246004,
+        "patient_summary_weighted_error_on_HR_inputs": 0.4013138423878654
+      },
+      {
+        "cap_index": 1,
+        "fixed_lambda": 2.836862823850081e-05,
+        "own_trace_lambda_diagnostic_only": 2.9365468050983195e-05,
+        "independent_fit_error": 2.751271432899216e-14,
+        "relative_T_difference_from_HR": 0.18078320183751273,
+        "intercept_difference_norm": 0.006927353850245289,
+        "matched_training_weighted_error": 0.4270539192981102,
+        "patient_summary_weighted_error_on_HR_inputs": 0.40090114221700146
+      }
+    ]
+  },
+  "public_target_difference_only": {
+    "HR": {
+      "DP1": {
+        "public_image_target_score_difference_rms": 6.798663487231167e-17,
+        "relative_public_target_score_difference": 6.281709575188848e-16,
+        "target_coefficient_difference_norm": 6.188011529848804e-16
+      },
+      "DP2": {
+        "public_image_target_score_difference_rms": 8.400121284187824e-17,
+        "relative_public_target_score_difference": 9.951624471525497e-16,
+        "target_coefficient_difference_norm": 6.768636597768078e-16
+      }
+    },
+    "UNCLIPPED": {
+      "DP1": {
+        "public_image_target_score_difference_rms": 0.0036468940392769614,
+        "relative_public_target_score_difference": 0.033695930456406606,
+        "target_coefficient_difference_norm": 0.023922641529113685
+      },
+      "DP2": {
+        "public_image_target_score_difference_rms": 0.0032874845962227324,
+        "relative_public_target_score_difference": 0.03894683308813253,
+        "target_coefficient_difference_norm": 0.02166956358313969
+      }
+    },
+    "CLIP_BEFORE_MEAN": {
+      "DP1": {
+        "public_image_target_score_difference_rms": 0.0009153834479899435,
+        "relative_public_target_score_difference": 0.00845779906743058,
+        "target_coefficient_difference_norm": 0.007214582727261676
+      },
+      "DP2": {
+        "public_image_target_score_difference_rms": 0.0013733092792969062,
+        "relative_public_target_score_difference": 0.016269596317079263,
+        "target_coefficient_difference_norm": 0.009307350823889464
+      }
+    },
+    "CLASS_BALANCED_MAP": {
+      "DP1": {
+        "public_image_target_score_difference_rms": 0.041832731739317223,
+        "relative_public_target_score_difference": 0.3865187209467195,
+        "target_coefficient_difference_norm": 0.2344415517986123
+      },
+      "DP2": {
+        "public_image_target_score_difference_rms": 0.04538430052692467,
+        "relative_public_target_score_difference": 0.5376678508166078,
+        "target_coefficient_difference_norm": 0.26595822746589565
+      }
+    },
+    "UNCENTERED": {
+      "DP1": {
+        "public_image_target_score_difference_rms": 0.002305939536313349,
+        "relative_public_target_score_difference": 0.02130601476638959,
+        "target_coefficient_difference_norm": 0.019453527115004043
+      },
+      "DP2": {
+        "public_image_target_score_difference_rms": 0.002331912701587312,
+        "relative_public_target_score_difference": 0.02762617195808877,
+        "target_coefficient_difference_norm": 0.019665701282639114
+      }
+    },
+    "IMAGE_LEVEL_MAP": {
+      "DP1": {
+        "public_image_target_score_difference_rms": 0.0061068995279313105,
+        "relative_public_target_score_difference": 0.05642545672597429,
+        "target_coefficient_difference_norm": 0.0596755004625192
+      },
+      "DP2": {
+        "public_image_target_score_difference_rms": 0.005698549741575201,
+        "relative_public_target_score_difference": 0.06751072412158407,
+        "target_coefficient_difference_norm": 0.06830757718091711
+      }
+    }
+  },
+  "public_patient_cv": {
+    "HR": [
+      {
+        "cap_index": 0,
+        "patient_weighted_R2_for_HR_input": 0.17986769163087646,
+        "patient_weighted_MSE": 0.504640700959993,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.5043882255431235,
+        "positive_group_MSE_six_patients_only": 0.5175128337135534
+      },
+      {
+        "cap_index": 1,
+        "patient_weighted_R2_for_HR_input": 0.18243276442931877,
+        "patient_weighted_MSE": 0.5030623700958019,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.5027975164744479,
+        "positive_group_MSE_six_patients_only": 0.518774473803946
+      }
+    ],
+    "UNCLIPPED": [
+      {
+        "cap_index": 0,
+        "patient_weighted_R2_for_HR_input": 0.18004087628416443,
+        "patient_weighted_MSE": 0.504534137636077,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.5042787876896709,
+        "positive_group_MSE_six_patients_only": 0.5177132255957895
+      },
+      {
+        "cap_index": 1,
+        "patient_weighted_R2_for_HR_input": 0.18505549775241348,
+        "patient_weighted_MSE": 0.5014485597763065,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.5011785535143245,
+        "positive_group_MSE_six_patients_only": 0.5179863172322277
+      }
+    ],
+    "CLIP_BEFORE_MEAN": [
+      {
+        "cap_index": 0,
+        "patient_weighted_R2_for_HR_input": 0.17979704194285784,
+        "patient_weighted_MSE": 0.5046841728580277,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.5044321737164106,
+        "positive_group_MSE_six_patients_only": 0.5175785389428026
+      },
+      {
+        "cap_index": 1,
+        "patient_weighted_R2_for_HR_input": 0.18173161939089544,
+        "patient_weighted_MSE": 0.5034937960011758,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.5032323276424367,
+        "positive_group_MSE_six_patients_only": 0.5190643604800157
+      }
+    ],
+    "CLASS_BALANCED_MAP": [
+      {
+        "cap_index": 0,
+        "patient_weighted_R2_for_HR_input": 0.13555007318821755,
+        "patient_weighted_MSE": 0.5319100498291455,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.5315204596027372,
+        "positive_group_MSE_six_patients_only": 0.5462720035485686
+      },
+      {
+        "cap_index": 1,
+        "patient_weighted_R2_for_HR_input": 0.1401671425362987,
+        "patient_weighted_MSE": 0.5290690922319136,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.5286547182606465,
+        "positive_group_MSE_six_patients_only": 0.5487593952700075
+      }
+    ],
+    "UNCENTERED": [
+      {
+        "cap_index": 0,
+        "patient_weighted_R2_for_HR_input": 0.1811955304443399,
+        "patient_weighted_MSE": 0.5038236602182126,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.5035685423482804,
+        "positive_group_MSE_six_patients_only": 0.515293606540611
+      },
+      {
+        "cap_index": 1,
+        "patient_weighted_R2_for_HR_input": 0.18358974853630694,
+        "patient_weighted_MSE": 0.5023504590239029,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.5020833498759208,
+        "positive_group_MSE_six_patients_only": 0.5163445115608968
+      }
+    ],
+    "IMAGE_LEVEL_MAP": [
+      {
+        "cap_index": 0,
+        "patient_weighted_R2_for_HR_input": 0.19368134879461052,
+        "patient_weighted_MSE": 0.49614093383364993,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.49587838889869906,
+        "positive_group_MSE_six_patients_only": 0.506838785152551
+      },
+      {
+        "cap_index": 1,
+        "patient_weighted_R2_for_HR_input": 0.19548324994187538,
+        "patient_weighted_MSE": 0.4950321948549056,
+        "constant_MSE": 0.6153162066782831,
+        "negative_group_MSE": 0.49476589146778216,
+        "positive_group_MSE_six_patients_only": 0.5074226351485945
+      }
+    ]
+  },
+  "note": "All variants use original HR per-cap lambda fixed. CV uses fixed full-P lambda and is a geometry diagnostic, not an independent unbiased method-performance estimate. Positive CV class has only six patients. Public target difference/CV cannot establish AUROC mechanism.",
+  "calculation_seconds": 1.001416000071913
+}

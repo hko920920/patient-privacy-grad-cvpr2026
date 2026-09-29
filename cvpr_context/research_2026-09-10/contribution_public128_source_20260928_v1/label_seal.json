@@ -1,0 +1,12 @@
+{
+  "status": "TWO_DINO_LABELS_SEALED_BEFORE_EVALUATION",
+  "utc": "2026-09-28T08:08:18.931786+00:00",
+  "contract_sha256": "cc888c2a25315cf39e569982bca13d4b566077d07945ce77343c65d8048647f7",
+  "files": {
+    "soft_labels.npz": "a7fb847b10ed2e7fa519d0dc1fcd45893c78db45bc1c29e02e88bbda44581071",
+    "construction_results.json": "444c84e91b9f85c4384e09b88105d111200298dfd0a46fbd8d9467da200e3654",
+    "construction_inputs.json": "4d3587cfc525e5f23c108d4ae6aee880b3d1d4501efd529d515942c8702f5b7b",
+    "label_packets/DP1_DINO_ONLY.csv": "0acc45216b6bac445487b3e9982265b73b53be10623d49d90ce55f0682841c5e",
+    "label_packets/DP2_DINO_ONLY.csv": "73fb1f54a130947d3814b5651ccd3f0731bf26414f8a1183ef753447a1306704"
+  }
+}

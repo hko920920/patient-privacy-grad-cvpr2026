@@ -1,0 +1,62 @@
+{
+  "item": "2-1",
+  "started_utc": "2026-09-28T08:12:31+00:00",
+  "contract_recorded_utc": "2026-09-28T08:18:48.313844+00:00",
+  "started_before_contract": "Read-only code and primary-literature inspection began after the user-facing ETA; no numerical execution preceded this contract.",
+  "eta_minutes": [
+    60,
+    120
+  ],
+  "scope": "Operation and closest-prior comparison; no efficacy experiment.",
+  "questions": [
+    "Exact current MT, teacher-score KD, source-only label solve and signed public-weight equivalence",
+    "Closest primary papers and their overlap, differences and access conditions",
+    "Whether one distinct and meaningful 2-2 contrast remains"
+  ],
+  "allowed": [
+    "Read existing local code/contracts/aggregate reports",
+    "Read primary publication sources",
+    "Reuse already computed algebraic validation",
+    "Optional small public/toy algebra only, with no V"
+  ],
+  "prohibited": [
+    "Raw Q access",
+    "New DP summary or noise",
+    "New image/label bank or V efficacy/readout",
+    "Encoder forward",
+    "Expert/Reserved access",
+    "Tuning against V",
+    "Renaming equivalent operations as independent baselines"
+  ],
+  "planned_sources": [
+    "Balog et al. ICML2018 kernel mean embedding database release",
+    "Nguyen et al. ICLR2021 KIP / Label Solve",
+    "Wang et al. ICML2025 POST",
+    "Optional CVPR2026 Hard Truths about Soft Labels"
+  ],
+  "code_hashes": {
+    "cvpr_context/research_2026-09-10/contribution_search_20260924/public_transport_probe.py": "73ead179998cccd993a40dd146e7c445a7d52b1623542d0da4d274bc1b332914",
+    "cvpr_context/research_2026-09-10/contribution_search_20260924/validate_public_transport.py": "6bb463a0d2d28f773becae64ad7cbc77e1d97de4546d140aaf06683dbd0d4fba",
+    "cvpr_context/research_2026-09-10/contribution_search_20260924/joint_compiler.py": "570086a20a390aa9917206f997f14fd3d24787ac9dbe659555b74194efe19f8d",
+    "cvpr_context/research_2026-09-10/contribution_search_20260924/source_label_baselines.py": "bfb2e38c8a7b4452b33b2b0dd9c46c6626fb42a287bcf7f915e8472e34b363a5",
+    "cvpr_context/research_2026-09-10/contribution_search_20260924/fixed_image_compilation.py": "0d208461dce6a749ef580f72f5f637de126b20e9c2d0e19998fae4f23a6bbc6d",
+    "cvpr_context/research_2026-09-10/contribution_search_20260924/geometry_diagnostic.py": "e9fc0a6ebfa025b75a67f3697010ad2b075a14e74b77e6b75b28146de626b370",
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/construct_labels.py": "d7fe9be4c56db5a49e6929d838268164179d39bcb1253773c44db16ae9a6c90f",
+    "cvpr_context/research_2026-09-10/contribution_public128_control_20260928_v1/carrier_common.py": "5a371bcffc525f4ecf700269814291c1a28ec2897372f7cde2d53c03c8865768"
+  },
+  "input_report_hashes": {
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_NUMBERED_PLAN_20260928.md": "ee0c8b452022a9bd68411c5c8243158cbc6c7deec4ae9e257dcd6336e5cec30c",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_LABEL_STRATEGY_20260928.md": "33a148b8d3e590065e71423c789d9cdec28b194fd46560e18354361621c50ca5",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_1_5_SOURCE_CONTROL_RESULTS_20260928.md": "66ee4c71765af6248efe5719d71ce12c008d53863137e1def0210136f9321f53",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_PUBLIC128_KD_RESULTS_20260928.md": "22d328222917eaf5f6323379bd46410c46810018728d342a5d77954178393687"
+  },
+  "records_before": {
+    "project_source/AGENTS.md": "eb4d316aa673619dcc6b23dfdf532636b06b80e394b8d971aa002e521086995a",
+    "project_source/CURRENT_STATUS.md": "240318445431712400e27b483d4a4c85043e2b798c6702a6e29a95777faa19b6",
+    "project_source/WORKLOG.md": "97b9c3572d3aa0f23a0f6c73e0782d3c41c20f577d948e061176f04c88c958a0",
+    "cvpr_context/research_2026-09-10/RESEARCH_FRAMEWORK.md": "053a32937dde8c523bcba79944c7e33eb78a0ef4c9a058d37d0405e62130767b",
+    "cvpr_context/research_2026-09-10/research_state.json": "88110699935b6590b19589f6679a426cf276d3a2eb82b77d3c317dcb2b029d1c",
+    "cvpr_context/research_2026-09-10/PUBLIC_TRANSFER_NUMBERED_PLAN_20260928.md": "ee0c8b452022a9bd68411c5c8243158cbc6c7deec4ae9e257dcd6336e5cec30c"
+  },
+  "output": "One operation/novelty comparison report and a justified 2-2 specification, or explicit absence of a distinct comparison."
+}

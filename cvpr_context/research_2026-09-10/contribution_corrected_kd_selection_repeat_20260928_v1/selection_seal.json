@@ -1,0 +1,10 @@
+{
+  "status": "PUBLIC128_SEALED_BEFORE_TARGET_ACCESS",
+  "utc": "2026-09-28T09:02:22.140729+00:00",
+  "contract_sha256": "b2e67d3e7688ea3b6e9bbbb33ce3ab871f16a02d6461085cd594f54bfa95206b",
+  "files": {
+    "public128_selection.npz": "dedbd484ee12d5f3c3414480a60f75e8b7e6caaa8215ee24c2a9d24a015e10f4",
+    "public128_manifest.json": "afee8f6344348fb0de1bb03e777090e37e948b7dd1e0e8e8dc24e13ffdf6c76d",
+    "selection_inputs.json": "89bc051501a64157634eedbc87af07630656b0dc77543241a7f11bb48f952aea"
+  }
+}

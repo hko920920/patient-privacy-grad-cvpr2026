@@ -1,0 +1,26 @@
+{
+  "phase": "construction",
+  "error": "Independent projected-gradient optimality",
+  "completed_label_CSVs": [
+    "DP1_PUBLIC_JOINT.csv",
+    "DP1_PUBLIC_RN_ONLY.csv",
+    "DP1_SYN_JOINT.csv",
+    "DP1_SYN_RN_ONLY.csv"
+  ],
+  "failed_cell": "DP2_SYN_RN_ONLY",
+  "no_V_evaluation": true,
+  "goal_unchanged": true,
+  "recorded_utc": "2026-09-28T07:26:37.869916+00:00",
+  "files": {
+    "access_log.jsonl": "960e9bf24dc8d185e4b0c4bf27b303ddd8c7050907052cbf7b477bb59bce1e6a",
+    "carrier_common.py": "5a371bcffc525f4ecf700269814291c1a28ec2897372f7cde2d53c03c8865768",
+    "construct_labels.py": "15e01fa3d4d09ae2c550e851643845de5fa24eef6100066d154382aa99df0f57",
+    "contract.json": "02e9581bdbef2aec40993e335a12558527e7fa65535c4c53515c4bd49bbe7b21",
+    "EXECUTION_CONTRACT.md": "55e3c6a112e98fb2ebd2fe8082768e0cbec6bca0a39ad19f8c1c0dfd432fe305",
+    "selection_seal.json": "d3c588d6cc83ee4eb915179acdfe3dbceef858d382c16245535143f9e73ecace",
+    "label_packets\\DP1_PUBLIC_JOINT.csv": "f6233d4c04470f34f92ebb75eda3dbe0840ba3b70b23a8e9acebea6242ef3fed",
+    "label_packets\\DP1_PUBLIC_RN_ONLY.csv": "0332254bafca0f511d88435b4b297b85c697e339b64adfaa38572337cd11f37a",
+    "label_packets\\DP1_SYN_JOINT.csv": "57b1c79527eb25bcba0524d9276068e3dc3eea22d3348b91f21e0216b0317697",
+    "label_packets\\DP1_SYN_RN_ONLY.csv": "c8348f49fe320b3e9522a8a7f8b66e1a04cdeb081b46b65cf7d3f15406db94b7"
+  }
+}
